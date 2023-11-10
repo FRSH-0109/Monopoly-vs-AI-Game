@@ -2,12 +2,11 @@ LIBS=-L SFML/lib/ -l sfml-graphics -l sfml-window -l sfml-system
 
 all: monopolyVsAI
 
-main.o: Monopoly/main.cpp
-	g++ -c "Monopoly/main.cpp" -o main.o -I SFML/include
+Monopoly/main.o: Monopoly/main.cpp
+	g++ -c "Monopoly/main.cpp" -o Monopoly/main.o -I SFML/include
 
-monopolyVsAI: main.o
-	g++ -o monopolyVsAI main.o $(LIBS)
-	export LD_LIBRARY_PATH=SFML/lib
+monopolyVsAI: Monopoly/main.o
+	g++ -o Monopoly/monopolyVsAI Monopoly/main.o $(LIBS)
 
 clean:
 	rm -f monopolyVsAI *.o
