@@ -1,13 +1,16 @@
-LIBS=-L SFML/lib/ -l sfml-graphics -l sfml-window -l sfml-system
+LIBS :=-L SFML/lib/ -l sfml-graphics -l sfml-window -l sfml-system
 CXX := g++
+INC := -I Monopoly/
+SRC := Monopoly/*.o
+OBJ := Monopoly/main.o Monopoly/gameEngine.o
 
 all: monopolyVsAI clean
 
 Monopoly/%.o: Monopoly/%.cpp
-	$(CXX) -c $< -o $@ -I SFML/include
+	$(CXX) -c $< -o $@ -I SFML/include $(INC)
 
-monopolyVsAI: Monopoly/main.o
-	$(CXX) -o Monopoly/monopolyVsAI Monopoly/main.o $(LIBS)
+monopolyVsAI: $(OBJ)
+	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC)
 
 clean:
 	rm -f Monopoly/*.o
