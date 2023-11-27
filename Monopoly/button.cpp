@@ -9,6 +9,18 @@
 
 #include "button.h"
 
+void ButtonExit::clicked()
+{
+  //getContextWindow()->getWindow().close();
+}
+
+void ButtonPlay::clicked()
+{
+  std::cout << "Radzik GEJ" << std::endl;
+}
+
+void Button::clicked(){}
+
 Button::Button(std::string btnText,
 	sf::Vector2f buttonSize,
 	int charSize,

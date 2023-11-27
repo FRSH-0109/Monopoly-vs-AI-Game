@@ -19,13 +19,13 @@ void Menu::create() {
 	setFont(getFont());
 
 	std::shared_ptr<Button> buttonExit(
-		new Button("Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+		new ButtonExit("Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonExit->setFont(getFont());
 	buttonExit->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 
 	std::shared_ptr<Button> buttonPlay(
-		new Button("Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+		new ButtonPlay("Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 100});
@@ -71,11 +71,11 @@ void Menu::pollForEvents(sf::Event& event) {
 		case sf::Event::MouseButtonPressed:
 			for (auto element : buttons_) {
 				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					if (element->getName() == "Exit") {
-						getContextWindow()->getWindow().close();
-					} else if (element->getName() == "Play") {
-						std::cout << "Radzik GEJ" << std::endl;
-					}
+					element->clicked();
+
+          if(element->getName() == "Exit") {
+            getContextWindow()->getWindow().close();
+          }
 				}
 			}
 			break;

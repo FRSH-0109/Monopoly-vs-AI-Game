@@ -39,19 +39,22 @@ void GameEngine::clear() {
 	getContextWindow()->getWindow().clear(sf::Color::White);
 }
 
-void GameEngine::display() {
-	static sf::Clock clock_frames;
-	static sf::Time timeElapsedFromLastFrame_ms = sf::milliseconds(0);
+void GameEngine::draw() {
+	switch (getActiveScreen()) {
+		case MainMenu:
+			getMenu().draw();
+			break;
+		case GameMenu:
 
-	timeElapsedFromLastFrame_ms = clock_frames.getElapsedTime();
-	if (timeElapsedFromLastFrame_ms >= frameRateDelayMs_) {
-		clock_frames.restart();
-		getContextWindow()->display();
+			break;
+		case Game:
+
+			break;
 	}
 }
 
 void GameEngine::pollForEvents(sf::Event& event) {
-	switch (event.type) {
+	switch (event.type) {  // handling general events
 		case sf::Event::Closed:
 			getContextWindow()->getWindow().close();
 			break;
@@ -64,6 +67,29 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			// and align shape
 			break;
 	}
+
+	switch (getActiveScreen()) {  // handling screen specific events
+		case MainMenu:
+			getMenu().pollForEvents(event);
+			break;
+		case GameMenu:
+
+			break;
+		case Game:
+
+			break;
+	}
+}
+
+void GameEngine::display() {
+	static sf::Clock clock_frames;
+	static sf::Time timeElapsedFromLastFrame_ms = sf::milliseconds(0);
+
+	timeElapsedFromLastFrame_ms = clock_frames.getElapsedTime();
+	if (timeElapsedFromLastFrame_ms >= frameRateDelayMs_) {
+		clock_frames.restart();
+		getContextWindow()->display();
+	}
 }
 
 void GameEngine::worker() {
@@ -75,24 +101,8 @@ void GameEngine::worker() {
 		sf::Event event;
 		while (getContextWindow()->getWindow().pollEvent(event)) {
 			pollForEvents(event);
-			switch (getActiveScreen()) {
-				case MainMenu:
-					getMenu().pollForEvents(event);
-					break;
-				case Game:
-
-					break;
-			}
 		}
-
-		switch (getActiveScreen()) {
-			case MainMenu:
-				getMenu().draw();
-				break;
-			case Game:
-
-				break;
-		}
+		draw();
 		display();
 	}
 }

@@ -28,6 +28,7 @@ class GameEngine {
 	void clear();
 	void display();
 	void pollForEvents(sf::Event& event);
+	void draw();
 	void worker();
 
 	void menuCreate();
