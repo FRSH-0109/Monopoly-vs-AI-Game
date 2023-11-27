@@ -1,56 +1,90 @@
-#include "gameEngine.hpp"
-#include "button.hpp"
+#include "gameEngine.h"
 
-GameEngine::GameEngine() {}
+GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) {
+  this->windowWidth_ = WindowWidth;
+  this->windowHeight_ = WindowHeight;
+  
+  this->frameRateHz_ = frameRateHz;
+  this->frameRateDelayMs_ = sf::milliseconds(1000.0 / this->frameRateHz_);
+  this->activeScreen_ = MainMenu;
 
-void GameEngine::createWindow() {
-  this->window_.create(sf::VideoMode(1000, 1000), "MonopolyVsAI",
-                       sf::Style::Default);
-  view_ = this->window_.getDefaultView();
+  this->contextWindow_ = ContextWindow::GetInstance();
+  this->contextWindow_->window_.create(sf::VideoMode(WindowWidth, WindowHeight),
+                                       "MonopolyVsAI", sf::Style::Default);
+  this->contextWindow_->view_ = this->contextWindow_->window_.getDefaultView();
 }
 
-void GameEngine::pollForEvents() {
-  sf::Event event;
-  while (this->window_.pollEvent(event)) {
-    switch (event.type) {
-    case sf::Event::Closed:
-      this->window_.close();
-      break;
-    case sf::Event::Resized:
-      // resize my view
-      this->view_.setSize({static_cast<float>(event.size.width),
-                           static_cast<float>(event.size.height)});
-      this->window_.setView(this->view_);
-      // and align shape
-      break;
-    }
+void GameEngine::clear() { this->contextWindow_->window_.clear(sf::Color::White); }
+
+void GameEngine::display() {
+
+  static sf::Clock clock_frames;
+  static sf::Time timeElapsedFromLastFrame_ms = sf::milliseconds(0);
+
+  timeElapsedFromLastFrame_ms = clock_frames.getElapsedTime();
+  if (timeElapsedFromLastFrame_ms >= this->frameRateDelayMs_) {
+    clock_frames.restart();
+    this->contextWindow_->display();
   }
 }
 
-void GameEngine::menu() {}
-
-// https://termspar.wordpress.com/2019/04/11/c-sfml-textbox-and-button-classes/
+void GameEngine::pollForEvents(sf::Event &event) {
+  switch (event.type) {
+  case sf::Event::Closed:
+    this->contextWindow_->window_.close();
+    break;
+  case sf::Event::Resized:
+    // resize my view
+    this->contextWindow_->view_.setSize(
+        {static_cast<float>(event.size.width),
+         static_cast<float>(event.size.height)});
+    this->contextWindow_->window_.setView(this->contextWindow_->view_);
+    // and align shape
+    break;
+  }
+}
 
 void GameEngine::worker() {
-  sf::Font font;
-  if (!font.loadFromFile("HAPPYMASS.ttf"))
-    std::cout << "Font not found!\n";
 
-  Button btn1("Enter", {200, 100}, 30, sf::Color::Green, sf::Color::Black);
-  btn1.setFont(font);
-  btn1.setPosition({100, 300});
+  this->menuCreate();
 
-  sf::CircleShape circle(200.f);
-  circle.setFillColor(sf::Color::Green);
+  while (this->contextWindow_->isOpen()) {
 
-  while (this->window_.isOpen()) {
-    this->pollForEvents();
+    this->clear();
 
-    this->window_.clear();
+    sf::Event event;
+    while (this->contextWindow_->window_.pollEvent(event)) {
 
-    btn1.drawTo(this->window_);
-    // this->window_.draw(circle);
+      this->pollForEvents(event);
+      switch (this->activeScreen_) {
+      case MainMenu:
+        this->getMenu().pollForEvents(event);
+        break;
+      case Game:
 
-    this->window_.display();
+        break;
+      }
+    }
+
+    switch (this->activeScreen_) {
+    case MainMenu:
+      this->getMenu().draw();
+      break;
+    case Game:
+
+      break;
+    }
+    this->display();
   }
+}
+
+void GameEngine::menuCreate() { this->mainMenu_.create(); }
+
+Menu &GameEngine::getMenu() { return this->mainMenu_; }
+
+uint GameEngine::getWindowWidth() const{
+  return this->windowWidth_;
+}
+uint GameEngine::getWindowHeight() const{
+  return this->windowHeight_;
 }

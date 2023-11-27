@@ -1,5 +1,7 @@
 ﻿---
+BasedOnStyle: WebKit
 AlignAfterOpenBracket: DontAlign
+IndentCaseLabels: 'true'
 IndentWidth: '4'
 Language: Cpp
 SpacesInParentheses: 'false'

@@ -1,0 +1,28 @@
+#ifndef MAIN_MENU_H
+#define MAIN_MENU_H
+
+#include <SFML/Graphics.hpp>
+#include <SFML/System/Clock.hpp>
+#include <iostream>
+#include <memory>
+
+#include "button.h"
+#include "contextWindow.h"
+
+class Menu {
+
+private:
+  ContextWindow *contextWindow_;
+  sf::Font font_;
+  std::vector<std::shared_ptr<Button>> buttons_;
+
+public:
+  void create();
+  void setFont(sf::Font font);
+  sf::Font &getFont();
+  void addButton(std::shared_ptr<Button> buttonTmp);
+  void draw();
+  void pollForEvents(sf::Event &event);
+};
+
+#endif

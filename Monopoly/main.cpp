@@ -1,11 +1,8 @@
 #include "SFML/Graphics.hpp"
-
-#include "gameEngine.hpp"
+#include "gameEngine.h"
 
 int main() {
-  GameEngine gameEngine;
-
-  gameEngine.createWindow();
+  GameEngine gameEngine(30, 1000, 1000);
 
   gameEngine.worker();
 
