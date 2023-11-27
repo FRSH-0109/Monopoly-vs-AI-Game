@@ -24,6 +24,8 @@ public:
   void create();
   void draw();
   void pollForEvents(sf::Event &event);
+
+  ContextWindow *getContextWindow();
 };
 
 #endif

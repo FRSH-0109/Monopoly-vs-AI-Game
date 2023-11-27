@@ -39,6 +39,8 @@ public:
 
   void setActiveScreen(ContextScreen screen);
   ContextScreen getActiveScreen() const;
+
+  ContextWindow *getContextWindow();
 };
 
 #endif

@@ -22,6 +22,7 @@ public:
   bool isOpen();
 
   sf::RenderWindow &getWindow();
+  sf::View &getView();
 };
 
 #endif

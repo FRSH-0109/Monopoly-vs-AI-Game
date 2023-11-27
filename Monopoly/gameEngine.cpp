@@ -18,18 +18,22 @@ GameEngine::GameEngine(double frameRateHz, uint WindowWidth,
   frameRateDelayMs_ = sf::milliseconds(1000.0 / frameRateHz_);
 
   contextWindow_ = ContextWindow::GetInstance();
-  contextWindow_->getWindow().create(sf::VideoMode(WindowWidth, WindowHeight),
-                                     "MonopolyVsAI", sf::Style::Default);
+  getContextWindow()->getWindow().create(
+      sf::VideoMode(WindowWidth, WindowHeight), "MonopolyVsAI",
+      sf::Style::Default);
 
   const sf::Vector2i pos(0, 0);
-  contextWindow_->getWindow().setPosition(pos);
-  contextWindow_->view_ = contextWindow_->getWindow().getDefaultView();
+  getContextWindow()->getWindow().setPosition(pos);
+  getContextWindow()->getView() =
+      getContextWindow()->getWindow().getDefaultView();
 
   setActiveScreen(MainMenu);
 }
 
+ContextWindow *GameEngine::getContextWindow() { return contextWindow_; }
+
 void GameEngine::clear() {
-  contextWindow_->getWindow().clear(sf::Color::White);
+  getContextWindow()->getWindow().clear(sf::Color::White);
 }
 
 void GameEngine::display() {
@@ -40,21 +44,21 @@ void GameEngine::display() {
   timeElapsedFromLastFrame_ms = clock_frames.getElapsedTime();
   if (timeElapsedFromLastFrame_ms >= frameRateDelayMs_) {
     clock_frames.restart();
-    contextWindow_->display();
+    getContextWindow()->display();
   }
 }
 
 void GameEngine::pollForEvents(sf::Event &event) {
   switch (event.type) {
   case sf::Event::Closed:
-    contextWindow_->getWindow().close();
+    getContextWindow()->getWindow().close();
     break;
   case sf::Event::Resized:
     // resize my view
-    contextWindow_->getWindow().setSize(
-        {static_cast<float>(event.size.width),
-         static_cast<float>(event.size.height)});
-    contextWindow_->getWindow().setView(this->contextWindow_->view_);
+    getContextWindow()->getWindow().setSize(
+        {event.size.width, event.size.height});
+    getContextWindow()->getWindow().setView(
+        this->getContextWindow()->getView());
     // and align shape
     break;
   }
@@ -64,12 +68,12 @@ void GameEngine::worker() {
 
   menuCreate();
 
-  while (contextWindow_->isOpen()) {
+  while (getContextWindow()->isOpen()) {
 
     clear();
 
     sf::Event event;
-    while (contextWindow_->getWindow().pollEvent(event)) {
+    while (getContextWindow()->getWindow().pollEvent(event)) {
 
       pollForEvents(event);
       switch (getActiveScreen()) {

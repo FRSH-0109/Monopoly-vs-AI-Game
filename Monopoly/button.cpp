@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  *
- * @brief Source file for button class used in menu 
+ * @brief Source file for button class used in menu
  *
  * @author Kamil Kosnik, Kacper Radzikowski
  *
@@ -19,7 +19,7 @@ Button::Button(std::string btnText, sf::Vector2f buttonSize, int charSize,
 
   text_.setString(btnText);
   text_.setCharacterSize(charSize);
-  text_.setColor(textColor);
+  text_.setFillColor(textColor);
 
   name_ = btnText;
 }
@@ -28,11 +28,11 @@ void Button::setFont(sf::Font &fonts) { text_.setFont(fonts); }
 
 void Button::setBackColor(sf::Color color) { buttonShape_.setFillColor(color); }
 
-void Button::setTextColor(sf::Color color) { text_.setColor(color); }
+void Button::setTextColor(sf::Color color) { text_.setFillColor(color); }
 
 void Button::setPosition(sf::Vector2f point) {
-  point.x -= buttonShape_.getSize().x / 2;
-  point.y -= buttonShape_.getSize().y / 2;
+  point.x -= buttonShape_.getSize().x / 2.0f;
+  point.y -= buttonShape_.getSize().y / 2.0f;
   buttonShape_.setPosition(point);
 
   // Center text on button:

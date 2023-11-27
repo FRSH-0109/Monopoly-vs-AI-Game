@@ -29,3 +29,5 @@ void ContextWindow::clear() { getWindow().clear(); }
 bool ContextWindow::isOpen() { return getWindow().isOpen(); }
 
 sf::RenderWindow &ContextWindow::getWindow() { return window_; }
+
+sf::View &ContextWindow::getView() { return view_; }

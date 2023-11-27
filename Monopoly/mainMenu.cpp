@@ -21,16 +21,20 @@ void Menu::create() {
   std::shared_ptr<Button> buttonExit(
       new Button("Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
   buttonExit->setFont(getFont());
-  buttonExit->setPosition({contextWindow_->getWindow().getSize().x / 2, 300});
+  buttonExit->setPosition(
+      {getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 
   std::shared_ptr<Button> buttonPlay(
       new Button("Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
   buttonPlay->setFont(getFont());
-  buttonPlay->setPosition({contextWindow_->getWindow().getSize().x / 2, 100});
+  buttonPlay->setPosition(
+      {getContextWindow()->getWindow().getSize().x / 2.0f, 100});
 
   addButton(buttonExit);
   addButton(buttonPlay);
 }
+
+ContextWindow *Menu::getContextWindow() { return contextWindow_; }
 
 void Menu::setFont(sf::Font font) { font_ = font; }
 
@@ -43,7 +47,7 @@ void Menu::addButton(std::shared_ptr<Button> buttonTmp) {
 
 void Menu::draw() {
   for (auto element : buttons_) {
-    element->draw(contextWindow_->getWindow());
+    element->draw(getContextWindow()->getWindow());
   }
 }
 
@@ -51,7 +55,7 @@ void Menu::pollForEvents(sf::Event &event) {
   switch (event.type) {
   case sf::Event::MouseMoved:
     for (auto element : buttons_) {
-      if (element->isMouseOver(contextWindow_->getWindow())) {
+      if (element->isMouseOver(getContextWindow()->getWindow())) {
         element->mouseIsOver();
       } else {
         element->mouseIsNotOver();
@@ -60,9 +64,9 @@ void Menu::pollForEvents(sf::Event &event) {
     break;
   case sf::Event::MouseButtonPressed:
     for (auto element : buttons_) {
-      if (element->isMouseOver(contextWindow_->getWindow())) {
+      if (element->isMouseOver(getContextWindow()->getWindow())) {
         if (element->getName() == "Exit") {
-          contextWindow_->getWindow().close();
+          getContextWindow()->getWindow().close();
         } else if (element->getName() == "Play") {
           std::cout << "Radzik GEJ" << std::endl;
         }
