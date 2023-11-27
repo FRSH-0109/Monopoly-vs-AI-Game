@@ -11,9 +11,9 @@
 #include "gameEngine.h"
 
 int main() {
-  GameEngine gameEngine(30, 1000, 1000);
+	GameEngine gameEngine(30, 1000, 1000);
 
-  gameEngine.worker();
+	gameEngine.worker();
 
-  return 0;
+	return 0;
 }

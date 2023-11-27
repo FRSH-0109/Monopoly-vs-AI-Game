@@ -11,36 +11,35 @@
 enum ContextScreen { None, MainMenu, GameMenu, Game };
 
 class GameEngine {
+   private:
+	ContextWindow* contextWindow_;
 
-private:
-  ContextWindow *contextWindow_;
+	ContextScreen activeScreen_;
 
-  ContextScreen activeScreen_;
+	Menu mainMenu_;
 
-  Menu mainMenu_;
+	double frameRateHz_;
+	sf::Time frameRateDelayMs_;
+	uint windowWidth_;
+	uint windowHeight_;
 
-  double frameRateHz_;
-  sf::Time frameRateDelayMs_;
-  uint windowWidth_;
-  uint windowHeight_;
+   public:
+	GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight);
+	void clear();
+	void display();
+	void pollForEvents(sf::Event& event);
+	void worker();
 
-public:
-  GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight);
-  void clear();
-  void display();
-  void pollForEvents(sf::Event &event);
-  void worker();
+	void menuCreate();
+	Menu& getMenu();
 
-  void menuCreate();
-  Menu &getMenu();
+	uint getWindowWidth() const;
+	uint getWindowHeight() const;
 
-  uint getWindowWidth() const;
-  uint getWindowHeight() const;
+	void setActiveScreen(ContextScreen screen);
+	ContextScreen getActiveScreen() const;
 
-  void setActiveScreen(ContextScreen screen);
-  ContextScreen getActiveScreen() const;
-
-  ContextWindow *getContextWindow();
+	ContextWindow* getContextWindow();
 };
 
 #endif

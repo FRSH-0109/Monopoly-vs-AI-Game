@@ -10,22 +10,21 @@
 #include "contextWindow.h"
 
 class Menu {
+   private:
+	ContextWindow* contextWindow_;
+	sf::Font font_;
+	std::vector<std::shared_ptr<Button>> buttons_;
 
-private:
-  ContextWindow *contextWindow_;
-  sf::Font font_;
-  std::vector<std::shared_ptr<Button>> buttons_;
+	void setFont(sf::Font font);
+	sf::Font& getFont();
+	void addButton(std::shared_ptr<Button> buttonTmp);
 
-  void setFont(sf::Font font);
-  sf::Font &getFont();
-  void addButton(std::shared_ptr<Button> buttonTmp);
+   public:
+	void create();
+	void draw();
+	void pollForEvents(sf::Event& event);
 
-public:
-  void create();
-  void draw();
-  void pollForEvents(sf::Event &event);
-
-  ContextWindow *getContextWindow();
+	ContextWindow* getContextWindow();
 };
 
 #endif

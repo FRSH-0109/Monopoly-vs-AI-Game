@@ -11,23 +11,33 @@
 
 #include "contextWindow.h"
 
-ContextWindow *ContextWindow::contextWindow_ = nullptr;
+ContextWindow* ContextWindow::contextWindow_ = nullptr;
 
 ContextWindow::ContextWindow(){};
 
-ContextWindow *ContextWindow::GetInstance() {
-  if (contextWindow_ == nullptr) {
-    contextWindow_ = new ContextWindow();
-  }
-  return contextWindow_;
+ContextWindow* ContextWindow::GetInstance() {
+	if (contextWindow_ == nullptr) {
+		contextWindow_ = new ContextWindow();
+	}
+	return contextWindow_;
 }
 
-void ContextWindow::display() { getWindow().display(); }
+void ContextWindow::display() {
+	getWindow().display();
+}
 
-void ContextWindow::clear() { getWindow().clear(); }
+void ContextWindow::clear() {
+	getWindow().clear();
+}
 
-bool ContextWindow::isOpen() { return getWindow().isOpen(); }
+bool ContextWindow::isOpen() {
+	return getWindow().isOpen();
+}
 
-sf::RenderWindow &ContextWindow::getWindow() { return window_; }
+sf::RenderWindow& ContextWindow::getWindow() {
+	return window_;
+}
 
-sf::View &ContextWindow::getView() { return view_; }
+sf::View& ContextWindow::getView() {
+	return view_;
+}
