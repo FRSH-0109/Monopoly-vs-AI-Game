@@ -1,16 +1,15 @@
 #include "SFML/Graphics.hpp"
 
-class GameEngine
-{
+class GameEngine {
 private:
-    sf::RenderWindow window_;
-    sf::View view_;
+  sf::RenderWindow window_;
+  sf::View view_;
 
 public:
-    GameEngine();
-    void createWindow(); 
-    void pollForEvents();
-    void worker();
+  GameEngine();
+  void createWindow();
+  void pollForEvents();
+  void worker();
 
-    void menu();
+  void menu();
 };

@@ -2,13 +2,12 @@
 
 #include "gameEngine.hpp"
 
-int main()
-{
-    GameEngine gameEngine;
+int main() {
+  GameEngine gameEngine;
 
-    gameEngine.createWindow();
+  gameEngine.createWindow();
 
-    gameEngine.worker();
+  gameEngine.worker();
 
-    return 0;
+  return 0;
 }

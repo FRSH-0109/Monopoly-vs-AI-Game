@@ -1,0 +1,1 @@
+find Monopoly/ -regex '.*\.\(cpp\|hpp\|h\)' -exec clang-format -style=file -i {} \;

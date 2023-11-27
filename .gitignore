@@ -1,0 +1,10 @@
+Debug/*
+Release/*
+*.aps
+*.filters
+*_A.user
+.vs/*
+x64/*
+*.o
+Monopoly/*.o
+Monopoly/monopolyVsAI
