@@ -8,7 +8,7 @@
 #include "contextWindow.h"
 #include "mainMenu.h"
 
-enum ContextScreen { None, MainMenu, Game };
+enum ContextScreen { None, MainMenu, GameMenu, Game };
 
 class GameEngine {
 
@@ -37,7 +37,8 @@ public:
   uint getWindowWidth() const;
   uint getWindowHeight() const;
 
-
+  void setActiveScreen(ContextScreen screen);
+  ContextScreen getActiveScreen() const;
 };
 
 #endif

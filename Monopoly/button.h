@@ -8,26 +8,26 @@ public:
   Button(std::string btnText, sf::Vector2f buttonSize, int charSize,
          sf::Color bgColor, sf::Color textColor);
 
-  // Pass font by reference:
-  void setFont(sf::Font &fonts);
-  void setBackColor(sf::Color color);
-  void setTextColor(sf::Color color);
-  void setPosition(sf::Vector2f point);
   void draw(sf::RenderWindow &window);
 
-  // Check if the mouse is within the bounds of the button:
   bool isMouseOver(sf::RenderWindow &window);
   void mouseIsOver();
   void mouseIsNotOver();
-  std::string& getName();
+
+  void setFont(sf::Font &fonts);
+  void setPosition(sf::Vector2f point);
+  std::string &getName();
 
 private:
-  sf::RectangleShape button;
-  sf::Text text;
+  void setBackColor(sf::Color color);
+  void setTextColor(sf::Color color);
+
+  sf::RectangleShape buttonShape_;
+  sf::Text text_;
   std::string name_;
 
-  int btnWidth;
-  int btnHeight;
+  uint btnWidth;
+  uint btnHeight;
 };
 
 #endif

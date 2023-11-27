@@ -1,20 +1,36 @@
+/**
+ * @file gameEngine.cpp
+ *
+ * @brief Source file for GameEngine class
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "gameEngine.h"
 
-GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) {
-  this->windowWidth_ = WindowWidth;
-  this->windowHeight_ = WindowHeight;
-  
-  this->frameRateHz_ = frameRateHz;
-  this->frameRateDelayMs_ = sf::milliseconds(1000.0 / this->frameRateHz_);
-  this->activeScreen_ = MainMenu;
+GameEngine::GameEngine(double frameRateHz, uint WindowWidth,
+                       uint WindowHeight) {
+  windowWidth_ = WindowWidth;
+  windowHeight_ = WindowHeight;
 
-  this->contextWindow_ = ContextWindow::GetInstance();
-  this->contextWindow_->window_.create(sf::VideoMode(WindowWidth, WindowHeight),
-                                       "MonopolyVsAI", sf::Style::Default);
-  this->contextWindow_->view_ = this->contextWindow_->window_.getDefaultView();
+  frameRateHz_ = frameRateHz;
+  frameRateDelayMs_ = sf::milliseconds(1000.0 / frameRateHz_);
+
+  contextWindow_ = ContextWindow::GetInstance();
+  contextWindow_->getWindow().create(sf::VideoMode(WindowWidth, WindowHeight),
+                                     "MonopolyVsAI", sf::Style::Default);
+
+  const sf::Vector2i pos(0, 0);
+  contextWindow_->getWindow().setPosition(pos);
+  contextWindow_->view_ = contextWindow_->getWindow().getDefaultView();
+
+  setActiveScreen(MainMenu);
 }
 
-void GameEngine::clear() { this->contextWindow_->window_.clear(sf::Color::White); }
+void GameEngine::clear() {
+  contextWindow_->getWindow().clear(sf::Color::White);
+}
 
 void GameEngine::display() {
 
@@ -22,23 +38,23 @@ void GameEngine::display() {
   static sf::Time timeElapsedFromLastFrame_ms = sf::milliseconds(0);
 
   timeElapsedFromLastFrame_ms = clock_frames.getElapsedTime();
-  if (timeElapsedFromLastFrame_ms >= this->frameRateDelayMs_) {
+  if (timeElapsedFromLastFrame_ms >= frameRateDelayMs_) {
     clock_frames.restart();
-    this->contextWindow_->display();
+    contextWindow_->display();
   }
 }
 
 void GameEngine::pollForEvents(sf::Event &event) {
   switch (event.type) {
   case sf::Event::Closed:
-    this->contextWindow_->window_.close();
+    contextWindow_->getWindow().close();
     break;
   case sf::Event::Resized:
     // resize my view
-    this->contextWindow_->view_.setSize(
+    contextWindow_->getWindow().setSize(
         {static_cast<float>(event.size.width),
          static_cast<float>(event.size.height)});
-    this->contextWindow_->window_.setView(this->contextWindow_->view_);
+    contextWindow_->getWindow().setView(this->contextWindow_->view_);
     // and align shape
     break;
   }
@@ -46,19 +62,19 @@ void GameEngine::pollForEvents(sf::Event &event) {
 
 void GameEngine::worker() {
 
-  this->menuCreate();
+  menuCreate();
 
-  while (this->contextWindow_->isOpen()) {
+  while (contextWindow_->isOpen()) {
 
-    this->clear();
+    clear();
 
     sf::Event event;
-    while (this->contextWindow_->window_.pollEvent(event)) {
+    while (contextWindow_->getWindow().pollEvent(event)) {
 
-      this->pollForEvents(event);
-      switch (this->activeScreen_) {
+      pollForEvents(event);
+      switch (getActiveScreen()) {
       case MainMenu:
-        this->getMenu().pollForEvents(event);
+        getMenu().pollForEvents(event);
         break;
       case Game:
 
@@ -66,25 +82,34 @@ void GameEngine::worker() {
       }
     }
 
-    switch (this->activeScreen_) {
+    switch (getActiveScreen()) {
     case MainMenu:
-      this->getMenu().draw();
+      getMenu().draw();
       break;
     case Game:
 
       break;
     }
-    this->display();
+    display();
   }
 }
 
-void GameEngine::menuCreate() { this->mainMenu_.create(); }
+void GameEngine::menuCreate() { mainMenu_.create(); }
 
-Menu &GameEngine::getMenu() { return this->mainMenu_; }
+Menu &GameEngine::getMenu() { return mainMenu_; }
 
-uint GameEngine::getWindowWidth() const{
-  return this->windowWidth_;
+uint GameEngine::getWindowWidth() const { return windowWidth_; }
+
+uint GameEngine::getWindowHeight() const { return windowHeight_; }
+
+void GameEngine::setActiveScreen(ContextScreen screen) {
+  activeScreen_ = screen;
+
+  switch (activeScreen_) {
+  case MainMenu:
+    /// screen dependeent actions /*setters
+    break;
+  }
 }
-uint GameEngine::getWindowHeight() const{
-  return this->windowHeight_;
-}
+
+ContextScreen GameEngine::getActiveScreen() const { return activeScreen_; }

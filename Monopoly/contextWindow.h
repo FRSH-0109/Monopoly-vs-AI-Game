@@ -19,7 +19,9 @@ public:
 
   void display();
   void clear();
-  bool isOpen() const;
+  bool isOpen();
+
+  sf::RenderWindow &getWindow();
 };
 
 #endif

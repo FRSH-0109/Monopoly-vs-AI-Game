@@ -16,11 +16,12 @@ private:
   sf::Font font_;
   std::vector<std::shared_ptr<Button>> buttons_;
 
-public:
-  void create();
   void setFont(sf::Font font);
   sf::Font &getFont();
   void addButton(std::shared_ptr<Button> buttonTmp);
+
+public:
+  void create();
   void draw();
   void pollForEvents(sf::Event &event);
 };

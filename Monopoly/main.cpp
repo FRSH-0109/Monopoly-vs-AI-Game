@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ *
+ * @brief Source file launching monopoly game vs AI project
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "SFML/Graphics.hpp"
 #include "gameEngine.h"
 

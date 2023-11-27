@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ *
+ * @brief Source file for context Window class
+ * It is Singleton class type used mainly for handling SFML window operations
+ * between other classes
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "contextWindow.h"
 
 ContextWindow *ContextWindow::contextWindow_ = nullptr;
@@ -11,8 +22,10 @@ ContextWindow *ContextWindow::GetInstance() {
   return contextWindow_;
 }
 
-void ContextWindow::display() { this->window_.display(); }
+void ContextWindow::display() { getWindow().display(); }
 
-void ContextWindow::clear() { this->window_.clear(); }
+void ContextWindow::clear() { getWindow().clear(); }
 
-bool ContextWindow::isOpen() const { return this->window_.isOpen(); }
+bool ContextWindow::isOpen() { return getWindow().isOpen(); }
+
+sf::RenderWindow &ContextWindow::getWindow() { return window_; }
