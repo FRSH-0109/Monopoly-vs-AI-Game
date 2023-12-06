@@ -28,7 +28,7 @@ GameEngine::GameEngine(double frameRateHz,
 	getContextWindow()->getView() =
 		getContextWindow()->getWindow().getDefaultView();
 
-	setActiveScreen(MainMenu);
+	activeScreen_ = std::make_unique<MainMenuScreen>();
 }
 
 ContextWindow* GameEngine::getContextWindow() {
@@ -37,20 +37,6 @@ ContextWindow* GameEngine::getContextWindow() {
 
 void GameEngine::clear() {
 	getContextWindow()->getWindow().clear(sf::Color::White);
-}
-
-void GameEngine::draw() {
-	switch (getActiveScreen()) {
-		case MainMenu:
-			getMenu().draw();
-			break;
-		case GameMenu:
-
-			break;
-		case Game:
-
-			break;
-	}
 }
 
 void GameEngine::pollForEvents(sf::Event& event) {
@@ -68,15 +54,12 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			break;
 	}
 
-	switch (getActiveScreen()) {  // handling screen specific events
+	switch (activeScreen_->getScreenType()) {	 // handling screen specific events
 		case MainMenu:
-			getMenu().pollForEvents(event);
-			break;
 		case GameMenu:
-
+			activeScreen_->pollForEvents(event);
 			break;
 		case Game:
-
 			break;
 	}
 }
@@ -93,8 +76,6 @@ void GameEngine::display() {
 }
 
 void GameEngine::worker() {
-	menuCreate();
-
 	while (getContextWindow()->isOpen()) {
 		clear();
 
@@ -102,17 +83,21 @@ void GameEngine::worker() {
 		while (getContextWindow()->getWindow().pollEvent(event)) {
 			pollForEvents(event);
 		}
-		draw();
+
+		ScreenEventType type = Idle;
+		switch (activeScreen_->getScreenType()) {
+			case MainMenu:
+			case GameMenu:
+				activeScreen_->draw();
+				type = activeScreen_->worker();
+				break;
+			case Game:
+
+				break;
+		}
+
 		display();
 	}
-}
-
-void GameEngine::menuCreate() {
-	mainMenu_.create();
-}
-
-Menu& GameEngine::getMenu() {
-	return mainMenu_;
 }
 
 uint GameEngine::getWindowWidth() const {
@@ -121,18 +106,4 @@ uint GameEngine::getWindowWidth() const {
 
 uint GameEngine::getWindowHeight() const {
 	return windowHeight_;
-}
-
-void GameEngine::setActiveScreen(ContextScreen screen) {
-	activeScreen_ = screen;
-
-	switch (activeScreen_) {
-		case MainMenu:
-			/// screen dependeent actions /*setters
-			break;
-	}
-}
-
-ContextScreen GameEngine::getActiveScreen() const {
-	return activeScreen_;
 }

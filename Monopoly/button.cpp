@@ -9,19 +9,8 @@
 
 #include "button.h"
 
-void ButtonExit::clicked()
-{
-  //getContextWindow()->getWindow().close();
-}
-
-void ButtonPlay::clicked()
-{
-  std::cout << "Radzik GEJ" << std::endl;
-}
-
-void Button::clicked(){}
-
-Button::Button(std::string btnText,
+Button::Button(ButtonTypes type,
+	std::string btnText,
 	sf::Vector2f buttonSize,
 	int charSize,
 	sf::Color bgColor,
@@ -36,7 +25,7 @@ Button::Button(std::string btnText,
 	text_.setCharacterSize(charSize);
 	text_.setFillColor(textColor);
 
-	name_ = btnText;
+	type_ = type;
 }
 
 void Button::setFont(sf::Font& fonts) {
@@ -96,6 +85,14 @@ void Button::mouseIsNotOver() {
 	setTextColor(sf::Color::Black);
 }
 
-std::string& Button::getName() {
-	return name_;
+ButtonTypes Button::getType() {
+	return type_;
+}
+
+void Button::setIsClicked(bool state) {
+	isClicked_ = state;
+}
+
+bool Button::getIsClicked() {
+	return isClicked_;
 }

@@ -4,19 +4,16 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
 
+#include <memory>
+#include "menuScreen.h"
 #include "button.h"
 #include "contextWindow.h"
-#include "mainMenu.h"
-
-enum ContextScreen { None, MainMenu, GameMenu, Game };
 
 class GameEngine {
    private:
 	ContextWindow* contextWindow_;
 
-	ContextScreen activeScreen_;
-
-	Menu mainMenu_;
+	std::unique_ptr<MenuScreen> activeScreen_;
 
 	double frameRateHz_;
 	sf::Time frameRateDelayMs_;
@@ -28,17 +25,10 @@ class GameEngine {
 	void clear();
 	void display();
 	void pollForEvents(sf::Event& event);
-	void draw();
 	void worker();
-
-	void menuCreate();
-	Menu& getMenu();
 
 	uint getWindowWidth() const;
 	uint getWindowHeight() const;
-
-	void setActiveScreen(ContextScreen screen);
-	ContextScreen getActiveScreen() const;
 
 	ContextWindow* getContextWindow();
 };

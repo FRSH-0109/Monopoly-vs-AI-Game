@@ -4,9 +4,15 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+enum ButtonTypes {
+	PlayButton,
+	ExitButton,
+};
+
 class Button {
    public:
-	Button(std::string btnText,
+	Button(ButtonTypes type,
+		std::string btnText,
 		sf::Vector2f buttonSize,
 		int charSize,
 		sf::Color bgColor,
@@ -20,32 +26,22 @@ class Button {
 
 	void setFont(sf::Font& fonts);
 	void setPosition(sf::Vector2f point);
-	std::string& getName();
-	virtual void clicked();
+	ButtonTypes getType();
+	void setIsClicked(bool state);
+	bool getIsClicked();
 
    private:
-
 	void setBackColor(sf::Color color);
 	void setTextColor(sf::Color color);
 
 	sf::RectangleShape buttonShape_;
 	sf::Text text_;
-	std::string name_;
+	ButtonTypes type_;
 
 	uint btnWidth;
 	uint btnHeight;
-};
 
-class ButtonExit: public Button {
-	public:
-	using Button::Button;
-	void clicked() override;
-};
-
-class ButtonPlay: public Button {
-	public:
-	using Button::Button;
-	void clicked() override;
+	bool isClicked_;
 };
 
 #endif
