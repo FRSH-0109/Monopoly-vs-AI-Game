@@ -5,9 +5,10 @@
 #include <SFML/System/Clock.hpp>
 
 #include <memory>
-#include "menuScreen.h"
 #include "button.h"
 #include "contextWindow.h"
+#include "main.h"
+#include "menuScreen.h"
 
 class GameEngine {
    private:

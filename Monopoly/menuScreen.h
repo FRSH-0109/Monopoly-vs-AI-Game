@@ -4,24 +4,20 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
 
-#include "contextWindow.h"
-#include "button.h"
 #include <memory>
-
-
-enum ActiveScreenType { None, MainMenu, GameMenu, Game };
-
-enum ScreenEventType { Idle, Exit, Play };
+#include "button.h"
+#include "contextWindow.h"
+#include "main.h"
 
 class MenuScreen {
 	ContextWindow* contextWindow_;
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
 	ActiveScreenType type_;
-   
+
    public:
-	virtual ScreenEventType worker() =0;
-	virtual void pollForEvents(sf::Event& event) =0;
+	virtual ScreenEventType worker() = 0;
+	virtual void pollForEvents(sf::Event& event) = 0;
 
 	sf::Font& getFont();
 	void setFont(sf::Font font);
@@ -33,7 +29,6 @@ class MenuScreen {
 	ActiveScreenType getScreenType();
 	void setScreenType(ActiveScreenType type);
 };
-
 
 class GameMenuScreen : public MenuScreen {
    public:

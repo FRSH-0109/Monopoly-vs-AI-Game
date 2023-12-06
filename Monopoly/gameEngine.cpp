@@ -54,7 +54,8 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			break;
 	}
 
-	switch (activeScreen_->getScreenType()) {	 // handling screen specific events
+	switch (
+		activeScreen_->getScreenType()) {  // handling screen specific events
 		case MainMenu:
 		case GameMenu:
 			activeScreen_->pollForEvents(event);
@@ -84,15 +85,35 @@ void GameEngine::worker() {
 			pollForEvents(event);
 		}
 
-		ScreenEventType type = Idle;
+		ScreenEventType eventType = Idle;
 		switch (activeScreen_->getScreenType()) {
 			case MainMenu:
 			case GameMenu:
 				activeScreen_->draw();
-				type = activeScreen_->worker();
+				eventType = activeScreen_->worker();
 				break;
 			case Game:
 
+				break;
+		}
+
+		switch (eventType) {
+			case Play:
+				activeScreen_ = std::make_unique<GameMenuScreen>();
+				break;
+			case Exit:
+				getContextWindow()->window_.close();
+				break;
+
+			case ReturnToMainMenu:
+				activeScreen_ = std::make_unique<MainMenuScreen>();
+				break;
+
+			case Log:
+				std::cout << "LOG!" << std::endl;
+				break;
+			case Idle:
+			defualt:
 				break;
 		}
 

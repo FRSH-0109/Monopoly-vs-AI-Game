@@ -4,14 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-enum ButtonTypes {
-	PlayButton,
-	ExitButton,
-};
+#include "main.h"
 
 class Button {
    public:
-	Button(ButtonTypes type,
+	Button(ScreenEventType type,
 		std::string btnText,
 		sf::Vector2f buttonSize,
 		int charSize,
@@ -23,10 +20,10 @@ class Button {
 	bool isMouseOver(sf::RenderWindow& window);
 	virtual void mouseIsOver();
 	virtual void mouseIsNotOver();
+	ScreenEventType getEventType();
 
 	void setFont(sf::Font& fonts);
 	void setPosition(sf::Vector2f point);
-	ButtonTypes getType();
 	void setIsClicked(bool state);
 	bool getIsClicked();
 
@@ -36,7 +33,7 @@ class Button {
 
 	sf::RectangleShape buttonShape_;
 	sf::Text text_;
-	ButtonTypes type_;
+	ScreenEventType type_;
 
 	uint btnWidth;
 	uint btnHeight;

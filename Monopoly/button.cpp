@@ -9,7 +9,7 @@
 
 #include "button.h"
 
-Button::Button(ButtonTypes type,
+Button::Button(ScreenEventType type,
 	std::string btnText,
 	sf::Vector2f buttonSize,
 	int charSize,
@@ -26,6 +26,10 @@ Button::Button(ButtonTypes type,
 	text_.setFillColor(textColor);
 
 	type_ = type;
+}
+
+ScreenEventType Button::getEventType() {
+	return type_;
 }
 
 void Button::setFont(sf::Font& fonts) {
@@ -83,10 +87,6 @@ void Button::mouseIsOver() {
 void Button::mouseIsNotOver() {
 	setBackColor(sf::Color::Red);
 	setTextColor(sf::Color::Black);
-}
-
-ButtonTypes Button::getType() {
-	return type_;
 }
 
 void Button::setIsClicked(bool state) {

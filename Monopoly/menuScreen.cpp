@@ -27,13 +27,11 @@ ContextWindow* MenuScreen::getContextWindow() {
 	return contextWindow_;
 }
 
-ActiveScreenType MenuScreen::getScreenType()
-{
+ActiveScreenType MenuScreen::getScreenType() {
 	return type_;
 }
 
-void MenuScreen::setScreenType(ActiveScreenType type)
-{
+void MenuScreen::setScreenType(ActiveScreenType type) {
 	type_ = type;
 }
 
@@ -52,14 +50,14 @@ void MainMenuScreen::mainMenuCreate() {
 	setFont(getFont());
 
 	std::shared_ptr<Button> buttonExit(new Button(
-		ExitButton, "Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+		Exit, "Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonExit->setFont(getFont());
 	buttonExit->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 
 	std::shared_ptr<Button> buttonPlay(new Button(
-		PlayButton, "Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
-	buttonPlay->setFont(getFont()); 
+		Play, "Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 100});
 
@@ -68,13 +66,25 @@ void MainMenuScreen::mainMenuCreate() {
 }
 
 ScreenEventType MainMenuScreen::worker() {
-	ScreenEventType data = Idle;
-	return data;
+	ScreenEventType eventType = Idle;
+	for (auto element : getButtons()) {
+		if (element->getIsClicked()) {
+			element->setIsClicked(false);
+			return element->getEventType();
+		}
+	}
+	return eventType;
 }
 
 ScreenEventType GameMenuScreen::worker() {
-	ScreenEventType data = Idle;
-	return data;
+	ScreenEventType eventType = Idle;
+	for (auto element : getButtons()) {
+		if (element->getIsClicked()) {
+			element->setIsClicked(false);
+			return element->getEventType();
+		}
+	}
+	return eventType;
 }
 
 GameMenuScreen::GameMenuScreen() {
@@ -91,14 +101,14 @@ void GameMenuScreen::gameMenuCreate() {
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonExit(new Button(ExitButton, "Players",
+	std::shared_ptr<Button> buttonExit(new Button(ReturnToMainMenu, "Players",
 		{100, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonExit->setFont(getFont());
 	buttonExit->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 
-	std::shared_ptr<Button> buttonPlay(new Button(PlayButton, "Ai players",
-		{100, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonPlay(new Button(
+		Log, "Ai players", {100, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 100});
