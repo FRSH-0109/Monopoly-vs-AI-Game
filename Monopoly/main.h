@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-enum ActiveScreenType { None, MainMenu, GameMenu, Game };
+enum ActiveScreenType { None, MainMenu, GameMenu, MonopolyGame };
 
 enum ScreenEventType {
 	Idle,

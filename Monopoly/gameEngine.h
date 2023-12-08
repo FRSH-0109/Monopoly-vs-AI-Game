@@ -5,17 +5,17 @@
 #include <SFML/System/Clock.hpp>
 
 #include <memory>
+#include "activeScreen.h"
 #include "button.h"
 #include "contextWindow.h"
 #include "main.h"
-#include "menuScreen.h"
 #include "monopolyGameEngine.h"
 
 class GameEngine {
    private:
 	ContextWindow* contextWindow_;
 
-	std::unique_ptr<MenuScreen> activeScreen_;
+	std::unique_ptr<ActiveScreen> activeScreen_;
 
 	double frameRateHz_;
 	sf::Time frameRateDelayMs_;

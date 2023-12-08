@@ -1,43 +1,51 @@
-#include "menuScreen.h"
+#include "activeScreen.h"
 
-void MenuScreen::setFont(sf::Font font) {
+ActiveScreen::ActiveScreen() {}
+ActiveScreen::~ActiveScreen() {}
+
+void ActiveScreen::setFont(sf::Font font) {
 	font_ = font;
 }
 
-sf::Font& MenuScreen::getFont() {
+sf::Font& ActiveScreen::getFont() {
 	return font_;
 }
 
-void MenuScreen::addButton(std::shared_ptr<Button> buttonTmp) {
+void ActiveScreen::addButton(std::shared_ptr<Button> buttonTmp) {
 	std::shared_ptr<Button> button = buttonTmp;
 	buttons_.push_back(button);
 }
 
-void MenuScreen::draw() {
+void ActiveScreen::draw() {
 	for (auto element : buttons_) {
 		element->draw(getContextWindow()->getWindow());
 	}
 }
 
-void MenuScreen::setContextWindow(ContextWindow* cw) {
+void ActiveScreen::setContextWindow(ContextWindow* cw) {
 	contextWindow_ = cw;
 }
 
-ContextWindow* MenuScreen::getContextWindow() {
+ContextWindow* ActiveScreen::getContextWindow() {
 	return contextWindow_;
 }
 
-ActiveScreenType MenuScreen::getScreenType() {
+ActiveScreenType ActiveScreen::getScreenType() {
 	return type_;
 }
 
-void MenuScreen::setScreenType(ActiveScreenType type) {
+void ActiveScreen::setScreenType(ActiveScreenType type) {
 	type_ = type;
 }
 
 MainMenuScreen::MainMenuScreen() {
+	std::cout << "MMS constructor" << std::endl;
 	setScreenType(MainMenu);
 	mainMenuCreate();
+}
+
+MainMenuScreen::~MainMenuScreen() {
+	std::cout << "MMS deconstructor" << std::endl;
 }
 
 void MainMenuScreen::mainMenuCreate() {
@@ -88,8 +96,13 @@ ScreenEventType GameMenuScreen::worker() {
 }
 
 GameMenuScreen::GameMenuScreen() {
+	std::cout << "GMS constructor" << std::endl;
 	setScreenType(GameMenu);
 	gameMenuCreate();
+}
+
+GameMenuScreen::~GameMenuScreen() {
+	std::cout << "GMS deconstructor" << std::endl;
 }
 
 void GameMenuScreen::gameMenuCreate() {
@@ -147,7 +160,7 @@ void GameMenuScreen::gameMenuCreate() {
 	}
 }
 
-std::vector<std::shared_ptr<Button>>& MenuScreen::getButtons() {
+std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {
 	return buttons_;
 }
 

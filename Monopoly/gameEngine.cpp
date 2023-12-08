@@ -53,7 +53,7 @@ void GameEngine::pollForEvents(sf::Event& event) {
 		case GameMenu:
 			activeScreen_->pollForEvents(event);
 			break;
-		case Game:
+		case MonopolyGame:
 			break;
 	}
 }
@@ -85,26 +85,27 @@ void GameEngine::worker() {
 				activeScreen_->draw();
 				eventType = activeScreen_->worker();
 				break;
-			case Game:
+			case MonopolyGame:
 
 				break;
 		}
 
 		switch (eventType) {
 			case Play:
+				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameMenuScreen>();
 				break;
 			case Exit:
 				getContextWindow()->window_.close();
 				break;
 			case ReturnToMainMenu:
+				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
 			case AddPlayer:
 				monopolyEngine.setPlayersHumanNumber(monopolyEngine.getPlayersHumanNumber() + 1);
 				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
 				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
-        std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
 				break;
 			case AddAIPlayer:
 				monopolyEngine.setPlayersAINumber(monopolyEngine.getPlayersAINumber() + 1);
@@ -120,6 +121,9 @@ void GameEngine::worker() {
 				monopolyEngine.setPlayersAINumber(monopolyEngine.getPlayersAINumber() - 1);
 				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
 				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
+				break;
+			case StartGame:
+				// activeScreen_ = std::make_unique<MonopolyGameScreen>();
 				break;
 			case Idle:
 				break;

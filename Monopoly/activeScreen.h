@@ -9,13 +9,15 @@
 #include "contextWindow.h"
 #include "main.h"
 
-class MenuScreen {
+class ActiveScreen {
 	ContextWindow* contextWindow_;
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
 	ActiveScreenType type_;
 
    public:
+	ActiveScreen();
+	virtual ~ActiveScreen();
 	virtual ScreenEventType worker() = 0;
 	virtual void pollForEvents(sf::Event& event) = 0;
 
@@ -30,17 +32,19 @@ class MenuScreen {
 	void setScreenType(ActiveScreenType type);
 };
 
-class GameMenuScreen : public MenuScreen {
+class GameMenuScreen : public ActiveScreen {
    public:
 	GameMenuScreen();
+	~GameMenuScreen();
 	void gameMenuCreate();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
 };
 
-class MainMenuScreen : public MenuScreen {
+class MainMenuScreen : public ActiveScreen {
    public:
 	MainMenuScreen();
+	~MainMenuScreen();
 	void mainMenuCreate();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
