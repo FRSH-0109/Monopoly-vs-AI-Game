@@ -16,6 +16,12 @@ void ActiveScreen::addButton(std::shared_ptr<Button> buttonTmp) {
 	buttons_.push_back(button);
 }
 
+void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp)
+{
+	std::shared_ptr<sf::Text> text = textTmp;
+	texts_.push_back(text);
+}
+
 void ActiveScreen::draw() {
 	for (auto element : buttons_) {
 		element->draw(getContextWindow()->getWindow());
@@ -158,6 +164,11 @@ void GameMenuScreen::gameMenuCreate() {
 	for (auto element : getButtons()) {
 		element->setIsClicked(false);
 	}
+
+	// std::shared_ptr<sf::Text> text1("PLAYERNUM", getFont(), 30);
+	// text1->setPosition((getContextWindow()->getWindow().getSize().x / 2.0f), 300);
+	// text1->setColor(sf::Color::Black);
+	// addText(text1);
 }
 
 std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {

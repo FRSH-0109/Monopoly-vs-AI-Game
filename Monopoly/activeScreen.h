@@ -13,6 +13,7 @@ class ActiveScreen {
 	ContextWindow* contextWindow_;
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
+	std::vector<std::shared_ptr<sf::Text>> texts_;
 	ActiveScreenType type_;
 
    public:
@@ -24,6 +25,7 @@ class ActiveScreen {
 	sf::Font& getFont();
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);
+	void addText(std::shared_ptr<sf::Text> textTmp);
 	std::vector<std::shared_ptr<Button>>& getButtons();
 	void draw();
 	ContextWindow* getContextWindow();
