@@ -97,7 +97,6 @@ bool Button::getIsClicked() {
 	return isClicked_;
 }
 
-sf::Vector2f Button::getSize()
-{
+sf::Vector2f Button::getSize() {
 	return sf::Vector2f(btnWidth, btnHeight);
 }

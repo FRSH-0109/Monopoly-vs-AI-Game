@@ -105,13 +105,17 @@ void GameMenuScreen::gameMenuCreate() {
 		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonAddPlayer->setFont(getFont());
 	buttonAddPlayer->setPosition(
-		{(getContextWindow()->getWindow().getSize().x / 2.0f) - buttonAddPlayer->getSize().x, 100});
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) -
+				buttonAddPlayer->getSize().x,
+			100});
 
-	std::shared_ptr<Button> buttonRemovePlayer(new Button(RemovePlayer, "Remove Player",
-		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonRemovePlayer(new Button(RemovePlayer,
+		"Remove Player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonRemovePlayer->setFont(getFont());
 	buttonRemovePlayer->setPosition(
-		{(getContextWindow()->getWindow().getSize().x / 2.0f) +  buttonRemovePlayer->getSize().x, 100});
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) +
+				buttonRemovePlayer->getSize().x,
+			100});
 
 	std::shared_ptr<Button> buttonAddAIPlayer(new Button(AddAIPlayer,
 		"Add AI player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
