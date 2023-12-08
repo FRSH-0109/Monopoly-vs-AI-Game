@@ -101,20 +101,34 @@ void GameMenuScreen::gameMenuCreate() {
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonExit(new Button(ReturnToMainMenu, "Players",
-		{100, 100}, 30, sf::Color::Red, sf::Color::Black));
-	buttonExit->setFont(getFont());
-	buttonExit->setPosition(
+	std::shared_ptr<Button> buttonAddPlayer(new Button(AddPlayer, "Add Player",
+		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonAddPlayer->setFont(getFont());
+	buttonAddPlayer->setPosition(
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) - buttonAddPlayer->getSize().x, 100});
+
+	std::shared_ptr<Button> buttonRemovePlayer(new Button(RemovePlayer, "Remove Player",
+		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonRemovePlayer->setFont(getFont());
+	buttonRemovePlayer->setPosition(
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) +  buttonRemovePlayer->getSize().x, 100});
+
+	std::shared_ptr<Button> buttonAddAIPlayer(new Button(AddAIPlayer,
+		"Add AI player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonAddAIPlayer->setFont(getFont());
+	buttonAddAIPlayer->setPosition(
 		{getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 
-	std::shared_ptr<Button> buttonPlay(new Button(
-		Log, "Ai players", {100, 100}, 30, sf::Color::Red, sf::Color::Black));
-	buttonPlay->setFont(getFont());
-	buttonPlay->setPosition(
-		{getContextWindow()->getWindow().getSize().x / 2.0f, 100});
+	std::shared_ptr<Button> buttonReturn(new Button(ReturnToMainMenu, "Return",
+		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonReturn->setFont(getFont());
+	buttonReturn->setPosition(
+		{getContextWindow()->getWindow().getSize().x / 2.0f, 500});
 
-	addButton(buttonExit);
-	addButton(buttonPlay);
+	addButton(buttonAddPlayer);
+	addButton(buttonRemovePlayer);
+	addButton(buttonAddAIPlayer);
+	addButton(buttonReturn);
 }
 
 std::vector<std::shared_ptr<Button>>& MenuScreen::getButtons() {

@@ -26,6 +26,7 @@ class Button {
 	void setPosition(sf::Vector2f point);
 	void setIsClicked(bool state);
 	bool getIsClicked();
+	sf::Vector2f getSize();
 
    private:
 	void setBackColor(sf::Color color);

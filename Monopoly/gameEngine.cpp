@@ -104,13 +104,20 @@ void GameEngine::worker() {
 			case Exit:
 				getContextWindow()->window_.close();
 				break;
-
 			case ReturnToMainMenu:
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
-
-			case Log:
-				std::cout << "LOG!" << std::endl;
+			case AddPlayer:
+				std::cout << "Player ++" << std::endl;
+				break;
+			case AddAIPlayer:
+				std::cout << "Player AI ++" << std::endl;
+				break;
+			case RemovePlayer:
+				std::cout << "Player --" << std::endl;
+				break;
+			case RemoveAIPlayer:
+				std::cout << "Player AI --" << std::endl;
 				break;
 			case Idle:
 			defualt:
