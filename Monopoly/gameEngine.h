@@ -9,6 +9,7 @@
 #include "contextWindow.h"
 #include "main.h"
 #include "menuScreen.h"
+#include "monopolyGameEngine.h"
 
 class GameEngine {
    private:
@@ -18,8 +19,10 @@ class GameEngine {
 
 	double frameRateHz_;
 	sf::Time frameRateDelayMs_;
-	uint windowWidth_;
-	uint windowHeight_;
+	unsigned int windowWidth_;
+	unsigned int windowHeight_;
+
+	monopolyGameEngine monopolyEngine;
 
    public:
 	GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight);
@@ -28,8 +31,8 @@ class GameEngine {
 	void pollForEvents(sf::Event& event);
 	void worker();
 
-	uint getWindowWidth() const;
-	uint getWindowHeight() const;
+	unsigned int getWindowWidth() const;
+	unsigned int getWindowHeight() const;
 
 	ContextWindow* getContextWindow();
 };

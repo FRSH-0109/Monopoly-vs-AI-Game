@@ -9,9 +9,7 @@
 
 #include "gameEngine.h"
 
-GameEngine::GameEngine(double frameRateHz,
-	uint WindowWidth,
-	uint WindowHeight) {
+GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) {
 	windowWidth_ = WindowWidth;
 	windowHeight_ = WindowHeight;
 
@@ -20,13 +18,11 @@ GameEngine::GameEngine(double frameRateHz,
 
 	contextWindow_ = ContextWindow::GetInstance();
 	getContextWindow()->getWindow().create(
-		sf::VideoMode(WindowWidth, WindowHeight), "MonopolyVsAI",
-		sf::Style::Default);
+		sf::VideoMode(WindowWidth, WindowHeight), "MonopolyVsAI", sf::Style::Default);
 
 	const sf::Vector2i pos(0, 0);
 	getContextWindow()->getWindow().setPosition(pos);
-	getContextWindow()->getView() =
-		getContextWindow()->getWindow().getDefaultView();
+	getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
 
 	activeScreen_ = std::make_unique<MainMenuScreen>();
 }
@@ -46,16 +42,13 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			break;
 		case sf::Event::Resized:
 			// resize my view
-			getContextWindow()->getWindow().setSize(
-				{event.size.width, event.size.height});
-			getContextWindow()->getWindow().setView(
-				this->getContextWindow()->getView());
+			getContextWindow()->getWindow().setSize({event.size.width, event.size.height});
+			getContextWindow()->getWindow().setView(this->getContextWindow()->getView());
 			// and align shape
 			break;
 	}
 
-	switch (
-		activeScreen_->getScreenType()) {  // handling screen specific events
+	switch (activeScreen_->getScreenType()) {  // handling screen specific events
 		case MainMenu:
 		case GameMenu:
 			activeScreen_->pollForEvents(event);
@@ -108,18 +101,28 @@ void GameEngine::worker() {
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
 			case AddPlayer:
-				std::cout << "Player ++" << std::endl;
+				monopolyEngine.setPlayersHumanNumber(monopolyEngine.getPlayersHumanNumber() + 1);
+				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
+				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
+        std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
 				break;
 			case AddAIPlayer:
-				std::cout << "Player AI ++" << std::endl;
+				monopolyEngine.setPlayersAINumber(monopolyEngine.getPlayersAINumber() + 1);
+				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
+				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
 				break;
 			case RemovePlayer:
-				std::cout << "Player --" << std::endl;
+				monopolyEngine.setPlayersHumanNumber(monopolyEngine.getPlayersHumanNumber() - 1);
+				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
+				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
 				break;
 			case RemoveAIPlayer:
-				std::cout << "Player AI --" << std::endl;
+				monopolyEngine.setPlayersAINumber(monopolyEngine.getPlayersAINumber() - 1);
+				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
+				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
 				break;
 			case Idle:
+				break;
 			defualt:
 				break;
 		}
@@ -128,10 +131,10 @@ void GameEngine::worker() {
 	}
 }
 
-uint GameEngine::getWindowWidth() const {
+unsigned int GameEngine::getWindowWidth() const {
 	return windowWidth_;
 }
 
-uint GameEngine::getWindowHeight() const {
+unsigned int GameEngine::getWindowHeight() const {
 	return windowHeight_;
 }

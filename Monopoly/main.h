@@ -12,6 +12,7 @@ enum ScreenEventType {
 	RemovePlayer,
 	AddAIPlayer,
 	RemoveAIPlayer,
+	StartGame,
 };
 
 #endif

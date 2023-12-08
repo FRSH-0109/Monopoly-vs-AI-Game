@@ -51,8 +51,7 @@ void Button::setPosition(sf::Vector2f point) {
 
 	// Center text on button:
 	float xPos = (point.x + btnWidth / 2) - (text_.getLocalBounds().width / 2);
-	float yPos =
-		(point.y + btnHeight / 2.2) - (text_.getLocalBounds().height / 2);
+	float yPos = (point.y + btnHeight / 2.2) - (text_.getLocalBounds().height / 2);
 	text_.setPosition(xPos, yPos);
 }
 
@@ -72,8 +71,7 @@ bool Button::isMouseOver(sf::RenderWindow& window) {
 	int btnxPosWidth = buttonShape_.getPosition().x + btnWidth;
 	int btnyPosHeight = buttonShape_.getPosition().y + btnHeight;
 
-	if (mouseX < btnxPosWidth && mouseX > btnPosX && mouseY < btnyPosHeight &&
-		mouseY > btnPosY) {
+	if (mouseX < btnxPosWidth && mouseX > btnPosX && mouseY < btnyPosHeight && mouseY > btnPosY) {
 		return true;
 	}
 	return false;

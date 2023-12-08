@@ -49,20 +49,20 @@ void MainMenuScreen::mainMenuCreate() {
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonExit(new Button(
-		Exit, "Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonExit(new Button(Exit, "Exit", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonExit->setFont(getFont());
-	buttonExit->setPosition(
-		{getContextWindow()->getWindow().getSize().x / 2.0f, 300});
+	buttonExit->setPosition({getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 
-	std::shared_ptr<Button> buttonPlay(new Button(
-		Play, "Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonPlay(new Button(Play, "Play", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonPlay->setFont(getFont());
-	buttonPlay->setPosition(
-		{getContextWindow()->getWindow().getSize().x / 2.0f, 100});
+	buttonPlay->setPosition({getContextWindow()->getWindow().getSize().x / 2.0f, 100});
 
 	addButton(buttonExit);
 	addButton(buttonPlay);
+
+	for (auto element : getButtons()) {
+		element->setIsClicked(false);
+	}
 }
 
 ScreenEventType MainMenuScreen::worker() {
@@ -101,38 +101,50 @@ void GameMenuScreen::gameMenuCreate() {
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonAddPlayer(new Button(AddPlayer, "Add Player",
-		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonPlay(
+		new Button(StartGame, "Start game", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonPlay->setFont(getFont());
+	buttonPlay->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f), 100});
+
+	std::shared_ptr<Button> buttonAddPlayer(
+		new Button(AddPlayer, "Add Player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonAddPlayer->setFont(getFont());
 	buttonAddPlayer->setPosition(
-		{(getContextWindow()->getWindow().getSize().x / 2.0f) -
-				buttonAddPlayer->getSize().x,
-			100});
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) - buttonAddPlayer->getSize().x, 300});
 
-	std::shared_ptr<Button> buttonRemovePlayer(new Button(RemovePlayer,
-		"Remove Player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonRemovePlayer(
+		new Button(RemovePlayer, "Remove Player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonRemovePlayer->setFont(getFont());
 	buttonRemovePlayer->setPosition(
-		{(getContextWindow()->getWindow().getSize().x / 2.0f) +
-				buttonRemovePlayer->getSize().x,
-			100});
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) + buttonRemovePlayer->getSize().x, 300});
 
-	std::shared_ptr<Button> buttonAddAIPlayer(new Button(AddAIPlayer,
-		"Add AI player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonAddAIPlayer(
+		new Button(AddAIPlayer, "Add AI player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonAddAIPlayer->setFont(getFont());
 	buttonAddAIPlayer->setPosition(
-		{getContextWindow()->getWindow().getSize().x / 2.0f, 300});
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) - buttonAddAIPlayer->getSize().x, 500});
 
-	std::shared_ptr<Button> buttonReturn(new Button(ReturnToMainMenu, "Return",
-		{200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	std::shared_ptr<Button> buttonRemoveAIPlayer(
+		new Button(RemoveAIPlayer, "Remove AI Player", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
+	buttonRemoveAIPlayer->setFont(getFont());
+	buttonRemoveAIPlayer->setPosition(
+		{(getContextWindow()->getWindow().getSize().x / 2.0f) + buttonRemoveAIPlayer->getSize().x, 500});
+
+	std::shared_ptr<Button> buttonReturn(
+		new Button(ReturnToMainMenu, "Return", {200, 100}, 30, sf::Color::Red, sf::Color::Black));
 	buttonReturn->setFont(getFont());
-	buttonReturn->setPosition(
-		{getContextWindow()->getWindow().getSize().x / 2.0f, 500});
+	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f), 700});
 
 	addButton(buttonAddPlayer);
 	addButton(buttonRemovePlayer);
 	addButton(buttonAddAIPlayer);
+	addButton(buttonRemoveAIPlayer);
 	addButton(buttonReturn);
+	addButton(buttonPlay);
+
+	for (auto element : getButtons()) {
+		element->setIsClicked(false);
+	}
 }
 
 std::vector<std::shared_ptr<Button>>& MenuScreen::getButtons() {
