@@ -5,17 +5,15 @@ SRC := Monopoly/*.o
 OBJ := Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o
 all: monopolyVsAI clean
 
-Monopoly/tests/monopolyTests.o: Monopoly/tests/monopolyTests.cpp
-	$(CXX) -c $< -o $@ $(INC)
-
 Monopoly/%.o: Monopoly/%.cpp
 	$(CXX) -c $< -o $@ -I SFML/include $(INC)
 
 monopolyVsAI: $(OBJ)
 	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC)
 
-monopolyTests: Monopoly/tests/monopolyTests.o
-	$(CXX) -o monopolyTest.out Monopoly/tests/monopolyTests.o
+monopolyTests:
+	cmake Monopoly/tests/CMakeLists.txt
+	make -C Monopoly/tests/
 
 clean:
 	rm -f Monopoly/*.o
