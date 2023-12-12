@@ -4,7 +4,7 @@ INC := -I Monopoly/
 SRC := Monopoly/*.o
 OBJ := Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o
 all: monopolyVsAI clean
-tests: monopolyTests cleanTests
+tests: monopolyTests
 
 Monopoly/%.o: Monopoly/%.cpp
 	$(CXX) -c $< -o $@ -I SFML/include $(INC)
