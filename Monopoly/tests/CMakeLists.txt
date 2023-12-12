@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(MonopolyVsAI)
 #udo apt install catch2 -y
-find_package(Catch2 2 REQUIRED)
+find_package(Catch2 REQUIRED)
 # These tests can use the Catch2-provided main
 add_executable(tests monopolyTests.cpp)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)

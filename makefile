@@ -12,7 +12,15 @@ Monopoly/%.o: Monopoly/%.cpp
 monopolyVsAI: $(OBJ)
 	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC)
 
-monopolyTests:
+testsConfig:
+	mkdir Monopoly/tests/catch2
+	git clone https://github.com/catchorg/Catch2.git Monopoly/tests/catch2
+	cd Monopoly/tests/catch2
+	cmake -Bbuild -H. -DBUILD_TESTING=OFF Monopoly/tests/catch2
+	sudo cmake --build build/ --target install
+	cd ../..
+
+tests:
 	cmake Monopoly/tests/CMakeLists.txt
 	make -C Monopoly/tests/
 
