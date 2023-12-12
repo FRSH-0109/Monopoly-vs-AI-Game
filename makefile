@@ -4,6 +4,7 @@ INC := -I Monopoly/
 SRC := Monopoly/*.o
 OBJ := Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o
 all: monopolyVsAI clean
+tests: monopolyTests cleanTests
 
 Monopoly/%.o: Monopoly/%.cpp
 	$(CXX) -c $< -o $@ -I SFML/include $(INC)
@@ -17,8 +18,11 @@ monopolyTests:
 
 clean:
 	rm -f Monopoly/*.o
+
+cleanTests:
 	rm -frd Monopoly/tests/CMakeFiles
 	rm -f Monopoly/tests/*cmake
 	rm -f Monopoly/tests/CMakeCache.txt
 	rm -f Monopoly/tests/Makefile
 	rm -f Monopoly/tests/tests
+
