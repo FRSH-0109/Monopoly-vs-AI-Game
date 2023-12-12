@@ -23,6 +23,7 @@ testsConfig:
 tests:
 	cmake Monopoly/tests/CMakeLists.txt
 	make -C Monopoly/tests/
+	rm -f monopolyTests
 
 cleanAll: clean cleanTests cleanTestsConfig
 
