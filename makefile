@@ -17,3 +17,8 @@ monopolyTests:
 
 clean:
 	rm -f Monopoly/*.o
+	rm -frd Monopoly/tests/CMakeFiles
+	rm -f Monopoly/tests/*cmake
+	rm -f Monopoly/tests/CMakeCache.txt
+	rm -f Monopoly/tests/Makefile
+	rm -f Monopoly/tests/tests
