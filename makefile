@@ -14,15 +14,17 @@ monopolyVsAI: $(OBJ)
 
 testsConfig:
 	mkdir Monopoly/tests/catch2
-	git clone https://github.com/catchorg/Catch2.git Monopoly/tests/catch2
+	git clone --depth 1 https://github.com/catchorg/Catch2.git Monopoly/tests/catch2
 	cd Monopoly/tests/catch2
-	cmake -Bbuild -H. -DBUILD_TESTING=OFF Monopoly/tests/catch2
-	sudo cmake --build build/ --target install
+	cmake -BMonopoly/tests/build -H. -DBUILD_TESTING=OFF Monopoly/tests/catch2
+	sudo cmake --build Monopoly/tests/build/ --target install
 	cd ../..
 
 tests:
 	cmake Monopoly/tests/CMakeLists.txt
 	make -C Monopoly/tests/
+
+cleanAll: clean cleanTests cleanTestsConfig
 
 clean:
 	rm -f Monopoly/*.o
@@ -33,4 +35,8 @@ cleanTests:
 	rm -f Monopoly/tests/CMakeCache.txt
 	rm -f Monopoly/tests/Makefile
 	rm -f Monopoly/tests/tests
+	rm -f monopolyTests
 
+cleanTestsConfig:
+	rm -frd Monopoly/tests/build
+	rm -frd Monopoly/tests/catch2
