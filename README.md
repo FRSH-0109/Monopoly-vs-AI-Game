@@ -6,8 +6,8 @@ Project of Monopoly vs AI game
     2. Run "sh monopolyVsAI.sh" for launching game
 
 ## Tests framework Build linux
-Unit testing framework-  Catch2 
-This part have to be done only once, repeat only if "make cleanAll" or make cleanTestsConfig" was called
+Unit testing framework-  Catch2\\
+This part have to be done only once, repeat only if "make cleanAll" or make cleanTestsConfig" was called\\
     1. Run "make testsConfig" for tests Catch2 framework building
 
 ## Tests Build and Run on linux
