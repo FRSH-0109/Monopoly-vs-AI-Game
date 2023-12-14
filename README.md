@@ -50,6 +50,10 @@ For cleaning only game files run
 
     make clean
 
-For cleaninig only tests files and framework run
+For cleaninig only tests files run
 
     make cleanTests
+
+For cleaning tests framework run
+
+    make cleanTestsConfig
