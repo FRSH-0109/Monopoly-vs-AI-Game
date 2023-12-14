@@ -25,7 +25,7 @@ For downloading and building tests framework run
     make testsConfig
 
 ## Tests Build and Run on linux
-To build avaiable tests runm
+To build avaiable tests run
 
     make tests
 For launching testing script run
