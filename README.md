@@ -1,6 +1,10 @@
 # Monopoly-vs-AI-Game
 Project of Monopoly vs AI game
 
+## Used libraries
+* SFML v.2.6.0 - Graphic library used in games and multimedia projects
+* Catch v.2 - Unit test framework used for testing our code
+
 ## Build project on linux
     1. Run "make" for project building
     2. Run "sh monopolyVsAI.sh" for launching game
@@ -17,7 +21,7 @@ This part have to be done only once, repeat only if "make cleanAll" or "make cle
     2. Run "sh monopolyTests" for launching testing script
 
 ## Code formatting
-Before running clang-format you should have it installed. If not run:
+Before running clang-format you need to have it installed. In case you don't have it installed run:
 
     sudo apt install clang-format
 
