@@ -1,1 +1,1 @@
-find Monopoly/ -regex '.*\.\(cpp\|hpp\|h\)' -exec clang-format -style=file:./config_files/.clang-format -i {} \;
+find Monopoly/ -maxdepth 2 -regex '.*\.\(cpp\|hpp\|h\)' -exec clang-format -style=file:./config_files/.clang-format -i {} \;
