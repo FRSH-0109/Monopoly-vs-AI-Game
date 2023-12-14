@@ -8,3 +8,6 @@ x64/*
 *.o
 Monopoly/*.o
 Monopoly/monopolyVsAI
+build/*
+Monopoly/tests/_deps/*
+Monopoly/tests/CMakeFiles/*
