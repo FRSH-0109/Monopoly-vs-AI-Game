@@ -11,3 +11,9 @@ Monopoly/monopolyVsAI
 build/*
 Monopoly/tests/_deps/*
 Monopoly/tests/CMakeFiles/*
+Monopoly/tests/build/*
+Monopoly/tests/catch2/*
+Monopoly/tests/tests
+Monopoly/tests/Makefile
+Monopoly/tests/CMakeCache.txt
+Monopoly/tests/cmake_install.cmake
