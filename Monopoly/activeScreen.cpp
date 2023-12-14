@@ -16,8 +16,7 @@ void ActiveScreen::addButton(std::shared_ptr<Button> buttonTmp) {
 	buttons_.push_back(button);
 }
 
-void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp)
-{
+void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp) {
 	std::shared_ptr<sf::Text> text = textTmp;
 	texts_.push_back(text);
 }
