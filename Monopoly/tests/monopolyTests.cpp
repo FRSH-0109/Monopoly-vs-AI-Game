@@ -61,9 +61,21 @@ TEST_CASE("monopolyGameEngine") {
 		REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 	}
 
+	SECTION("monopolyGameEngine setPlayersHumanNumber() - illegal amount of players") {
+		monopolyEngine.setPlayersHumanNumber(5);
+		REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
+		REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
+	}
+
 	SECTION("monopolyGameEngine setPlayersAINumber()") {
 		monopolyEngine.setPlayersAINumber(2);
 		REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 		REQUIRE(monopolyEngine.getPlayersAINumber() == 2);
+	}
+
+	SECTION("monopolyGameEngine setPlayersAINumber() - illegal amount of players") {
+		monopolyEngine.setPlayersAINumber(5);
+		REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
+		REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 	}
 }
