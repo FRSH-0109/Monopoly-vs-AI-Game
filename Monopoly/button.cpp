@@ -9,21 +9,14 @@
 
 #include "button.h"
 
-Button::Button(ScreenEventType type,
-	std::string btnText,
-	sf::Vector2f buttonSize,
-	int charSize,
-	sf::Color bgColor,
-	sf::Color textColor) {
+Button::Button(ScreenEventType type, std::string btnText, sf::Vector2f buttonSize, int charSize) {
 	buttonShape_.setSize(buttonSize);
-	buttonShape_.setFillColor(bgColor);
 
 	btnWidth = buttonSize.x;
 	btnHeight = buttonSize.y;
 
 	text_.setString(btnText);
 	text_.setCharacterSize(charSize);
-	text_.setFillColor(textColor);
 
 	type_ = type;
 }
@@ -36,12 +29,24 @@ void Button::setFont(sf::Font& fonts) {
 	text_.setFont(fonts);
 }
 
-void Button::setBackColor(sf::Color color) {
-	buttonShape_.setFillColor(color);
+void Button::setMainBackColor(sf::Color color) {
+	mainBackColor_ = color;
+	text_.setFillColor(mainTextColor_);
+	buttonShape_.setFillColor(mainBackColor_);
 }
 
-void Button::setTextColor(sf::Color color) {
-	text_.setFillColor(color);
+void Button::setMainTextColor(sf::Color color) {
+	mainTextColor_ = color;
+	text_.setFillColor(mainTextColor_);
+	buttonShape_.setFillColor(mainBackColor_);
+}
+
+void Button::setFocusBackColor(sf::Color color) {
+	focusTextColor_ = color;
+}
+
+void Button::setFocusTextColor(sf::Color color) {
+	focusTextColor_ = color;
 }
 
 void Button::setPosition(sf::Vector2f point) {
@@ -78,13 +83,13 @@ bool Button::isMouseOver(sf::RenderWindow& window) {
 }
 
 void Button::mouseIsOver() {
-	setBackColor(sf::Color::Black);
-	setTextColor(sf::Color::Red);
+	text_.setFillColor(focusTextColor_);
+	buttonShape_.setFillColor(focusBackColor_);
 }
 
 void Button::mouseIsNotOver() {
-	setBackColor(sf::Color::Red);
-	setTextColor(sf::Color::Black);
+	text_.setFillColor(mainTextColor_);
+	buttonShape_.setFillColor(mainBackColor_);
 }
 
 void Button::setIsClicked(bool state) {
@@ -97,4 +102,12 @@ bool Button::getIsClicked() {
 
 sf::Vector2f Button::getSize() {
 	return sf::Vector2f(btnWidth, btnHeight);
+}
+
+void Button::setIsVisible(bool state) {
+	isVisible_ = state;
+}
+
+bool Button::getIsVisible() {
+	return isVisible_;
 }
