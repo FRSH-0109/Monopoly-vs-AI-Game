@@ -1,4 +1,4 @@
-LIBS :=-L SFML/lib/ -l sfml-graphics -l sfml-window -l sfml-system
+LIBS :=-L SFML_Monopoly/lib/ -l sfml-graphics -l sfml-window -l sfml-system
 CXX := g++ -g -std=c++14 -Wextra -Wall -Wpedantic
 INC := -I Monopoly/
 SRC := Monopoly/*.o
@@ -7,7 +7,7 @@ all: monopolyVsAI clean
 tests: monopolyTests
 
 Monopoly/%.o: Monopoly/%.cpp
-	$(CXX) -c $< -o $@ -I SFML/include $(INC)
+	$(CXX) -c $< -o $@ -I SFML_Monopoly/include $(INC)
 
 monopolyVsAI: $(OBJ)
 	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC)
