@@ -4,7 +4,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
 
+#include <list>
 #include <memory>
+#include <string>
 #include "button.h"
 #include "contextWindow.h"
 #include "main.h"
@@ -32,15 +34,31 @@ class ActiveScreen {
 	void setContextWindow(ContextWindow*);
 	ActiveScreenType getScreenType();
 	void setScreenType(ActiveScreenType type);
+
+	virtual void eventHandle(ScreenEventType) = 0;
 };
 
 class GameMenuScreen : public ActiveScreen {
+	struct playerSettings {
+		bool isNone;
+		bool isHuman;
+		int level;
+	};
+
+	std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
+
+	void createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep);
+
    public:
 	GameMenuScreen();
 	~GameMenuScreen();
 	void gameMenuCreate();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
+
+	void setPlayerSettings(int index, bool isNone, bool isHuman, int level);
+
+	void eventHandle(ScreenEventType eventType);
 };
 
 class MainMenuScreen : public ActiveScreen {
@@ -50,6 +68,8 @@ class MainMenuScreen : public ActiveScreen {
 	void mainMenuCreate();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
+
+	void eventHandle(ScreenEventType eventType);
 };
 
 #endif

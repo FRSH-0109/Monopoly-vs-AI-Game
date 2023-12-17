@@ -90,45 +90,23 @@ void GameEngine::worker() {
 				break;
 		}
 
-		switch (eventType) {
-			case Play:
+		if (activeScreen_->getScreenType() == MainMenu) {
+			activeScreen_->eventHandle(eventType);
+			if (eventType == Play) {
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameMenuScreen>();
-				break;
-			case Exit:
+			} else if (eventType == Exit) {
 				getContextWindow()->window_.close();
-				break;
-			case ReturnToMainMenu:
+			}
+		}
+		if (activeScreen_->getScreenType() == GameMenu) {
+			activeScreen_->eventHandle(eventType);
+			if (eventType == ReturnToMainMenu) {
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
-				break;
-			case AddPlayer:
-				monopolyEngine.setPlayersHumanNumber(monopolyEngine.getPlayersHumanNumber() + 1);
-				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
-				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
-				break;
-			case AddAIPlayer:
-				monopolyEngine.setPlayersAINumber(monopolyEngine.getPlayersAINumber() + 1);
-				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
-				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
-				break;
-			case RemovePlayer:
-				monopolyEngine.setPlayersHumanNumber(monopolyEngine.getPlayersHumanNumber() - 1);
-				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
-				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
-				break;
-			case RemoveAIPlayer:
-				monopolyEngine.setPlayersAINumber(monopolyEngine.getPlayersAINumber() - 1);
-				std::cout << "Player:" << monopolyEngine.getPlayersHumanNumber() << std::endl;
-				std::cout << "Player AI:" << monopolyEngine.getPlayersAINumber() << std::endl;
-				break;
-			case StartGame:
-				// activeScreen_ = std::make_unique<MonopolyGameScreen>();
-				break;
-			case Idle:
-				break;
-			defualt:
-				break;
+			} else if (eventType == StartGame) {
+				/// pass
+			}
 		}
 
 		display();

@@ -10,12 +10,12 @@
 #include "main.h"
 
 class HouseException : public std::exception {
-    unsigned int invalid_number_;
+	unsigned int invalid_number_;
 
-    public:
-    HouseException(unsigned int houses) : invalid_number_(houses){};
-    HouseException(const HouseException& e) throw() : invalid_number_(e.invalid_number_){};
-    const unsigned int getInvalidNumber() { return invalid_number_; };
+   public:
+	HouseException(unsigned int houses) : invalid_number_(houses){};
+	HouseException(const HouseException& e) throw() : invalid_number_(e.invalid_number_){};
+	const unsigned int getInvalidNumber() { return invalid_number_; };
 };
 
 class Field {
