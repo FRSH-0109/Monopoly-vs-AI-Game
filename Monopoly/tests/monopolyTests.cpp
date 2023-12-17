@@ -7,9 +7,13 @@
  *
  */
 
+#include <map>
+#include <string>
+#include "../Field.hpp"
 #include "../activeScreen.h"
 #include "../contextWindow.h"
 #include "../gameEngine.h"
+#include "../main.h"
 #include "../monopolyGameEngine.h"
 #include "catch2/src/catch2/catch_all.hpp"
 
@@ -78,4 +82,37 @@ TEST_CASE("monopolyGameEngine") {
 		REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 		REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 	}
+}
+
+TEST_CASE("PropertyField class") {
+	const unsigned int TEST_ID = 1;
+	const FieldType TEST_TYPE = PROPERTY;
+	const std::string TEST_NAME = "Białystok";
+	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+	const unsigned int TEST_HEIGHT = 1000;
+	const unsigned int TEST_WIDTH = 200;
+	const float TEST_ROTATION = 0.0;
+	const unsigned int TEST_PRICE = 400;
+	const std::map<PropertyTiers, unsigned int> TEST_RENT = {{NO_HOUESES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
+		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
+	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
+	const unsigned int TEST_MORTAGE = 200;
+
+	PropertyField test_field = PropertyField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_HEIGHT, TEST_WIDTH,
+		TEST_ROTATION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+
+	REQUIRE(test_field.getId() == TEST_ID);
+	REQUIRE(test_field.getName() == TEST_NAME);
+	REQUIRE(test_field.getGraphicPath() == TEST_PATH);
+	REQUIRE(test_field.getHeight() == TEST_HEIGHT);
+	REQUIRE(test_field.getWidth() == TEST_WIDTH);
+	REQUIRE(test_field.getRotation() == TEST_ROTATION);
+	REQUIRE(test_field.getPrice() == TEST_PRICE);
+	REQUIRE(test_field.getRentValues() == TEST_RENT);
+	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
+	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
+	REQUIRE(test_field.getHouseNumber() == 0);
+	REQUIRE(test_field.getIsHotel() == false);
+	REQUIRE(test_field.getIsMortaged() == false);
+	REQUIRE(test_field.getUnmortageValue() == 220);
 }
