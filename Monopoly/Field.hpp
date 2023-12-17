@@ -14,8 +14,8 @@ class Field {
 	FieldType type_;
 	std::string name_;
 	std::string graphic_path_;
-	unsigned int height_;
 	unsigned int width_;
+	unsigned int height_;
 	float rotation_;
 
    public:
@@ -23,18 +23,18 @@ class Field {
 		const FieldType type,
 		const std::string name,
 		const std::string graphic_path,
-		const unsigned int height,
 		const unsigned int width,
+		const unsigned int height,
 		const float rotation)
-		: id_(id), name_(name), graphic_path_(graphic_path), height_(height), width_(width), rotation_(rotation) {
+		: id_(id), name_(name), graphic_path_(graphic_path), width_(width), height_(height), rotation_(rotation) {
 		std::cout << "Field constructor" << std::endl;
 	};
 
 	const unsigned int getId() { return id_; };
 	const std::string getName() { return name_; };
 	const std::string getGraphicPath() { return graphic_path_; };
-	const unsigned int getHeight() { return height_; };
 	const unsigned int getWidth() { return width_; };
+	const unsigned int getHeight() { return height_; };
 	const float getRotation() { return rotation_; };
 
 	void setHeight(unsigned int new_height, const GameEngine& game_engine);
@@ -58,14 +58,14 @@ class PropertyField : public Field {
 		const FieldType type,
 		const std::string name,
 		const std::string graphic_path,
-		const unsigned int height,
 		const unsigned int width,
+		const unsigned int height,
 		const float rotation,
 		const unsigned int price,
 		const std::map<PropertyTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, height, width, rotation),
+		: Field(id, type, name, graphic_path, width, height, rotation),
 		  price_(price),
 		  rent_values_(rent_values),
 		  group_members_(group_members),
