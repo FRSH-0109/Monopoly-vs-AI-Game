@@ -25,7 +25,11 @@ void Field::setRotation(float new_roation) {
 };
 
 void PropertyField::setHouseNumber(unsigned int new_house_number){
-
+    if (new_house_number <= 4) {
+        house_number_ = new_house_number;
+    } else {
+        throw(HouseException(new_house_number));
+    }
 };
 
 void PropertyField::setIsHotel(bool new_state){

@@ -145,4 +145,18 @@ TEST_CASE("PropertyField class") {
 		REQUIRE_THROWS_AS(test_field.setHeight(NEW_TEST_HEIGHT, test_engine), DimensionException);
 		REQUIRE_THROWS_AS(test_field.setRotation(NEW_TEST_ROTATION), RotationException);
 	}
+
+	SECTION("PropertyField class setters - basic scenario") {
+		const unsigned int NEW_HOSUE_NUMBER = 3;
+
+		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
+
+		REQUIRE(test_field.getHouseNumber() == NEW_HOSUE_NUMBER);
+	}
+
+	SECTION("PropertyField class setters - exception throws") {
+		const unsigned int NEW_HOSUE_NUMBER = 7;
+
+		REQUIRE_THROWS_AS(test_field.setHouseNumber(NEW_HOSUE_NUMBER), HouseException);
+	}
 }
