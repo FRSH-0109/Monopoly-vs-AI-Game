@@ -141,7 +141,7 @@ void GameMenuScreen::gameMenuCreate() {
 
 	std::shared_ptr<Button> buttonReturn(new Button(ReturnToMainMenu, "Return", {200, 100}, 30));
 	buttonReturn->setFont(getFont());
-	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f), 700});
+	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f), 800});
 	buttonReturn->setMainBackColor(sf::Color::Red);
 	buttonReturn->setMainTextColor(sf::Color::Black);
 	buttonReturn->setFocusBackColor(sf::Color::Black);
@@ -160,7 +160,7 @@ void GameMenuScreen::gameMenuCreate() {
 	sf::Vector2f col3(getContextWindow()->getWindow().getSize().x / 2.0f + 100, 200);
 	sf::Vector2f col4(getContextWindow()->getWindow().getSize().x / 2.0f + 300, 200);
 	int y_step = 100;
-
+///////////////////////////////////////////////////////////////////////////////////////////
 	std::shared_ptr<sf::Text> Player1Text(new sf::Text("Player 1", getFont(), 30));
 	Player1Text->setOrigin(Player1Text->getGlobalBounds().getSize() / 2.f +
 						   Player1Text->getLocalBounds().getPosition());  // text origin at center
@@ -199,7 +199,7 @@ void GameMenuScreen::gameMenuCreate() {
 	buttonPlayer1SetAILevel1->setMainBackColor(sf::Color::Green);
 	buttonPlayer1SetAILevel1->setMainTextColor(sf::Color::Black);
 	buttonPlayer1SetAILevel1->setFocusBackColor(sf::Color::Black);
-	buttonPlayer1SetAILevel1->setFocusTextColor(sf::Color::Red);
+	buttonPlayer1SetAILevel1->setFocusTextColor(sf::Color::Green);
 	addButton(buttonPlayer1SetAILevel1);
 
 	std::shared_ptr<Button> buttonPlayer1SetAILevel2(new Button(AddPlayer, "2", {50, 100}, 30));
@@ -208,7 +208,7 @@ void GameMenuScreen::gameMenuCreate() {
 	buttonPlayer1SetAILevel2->setMainBackColor(sf::Color::White);
 	buttonPlayer1SetAILevel2->setMainTextColor(sf::Color::Black);
 	buttonPlayer1SetAILevel2->setFocusBackColor(sf::Color::Black);
-	buttonPlayer1SetAILevel2->setFocusTextColor(sf::Color::Red);
+	buttonPlayer1SetAILevel2->setFocusTextColor(sf::Color::White);
 	addButton(buttonPlayer1SetAILevel2);
 
 	std::shared_ptr<Button> buttonPlayer1SetAILevel3(new Button(AddPlayer, "3", {50, 100}, 30));
@@ -217,9 +217,9 @@ void GameMenuScreen::gameMenuCreate() {
 	buttonPlayer1SetAILevel3->setMainBackColor(sf::Color::White);
 	buttonPlayer1SetAILevel3->setMainTextColor(sf::Color::Black);
 	buttonPlayer1SetAILevel3->setFocusBackColor(sf::Color::Black);
-	buttonPlayer1SetAILevel3->setFocusTextColor(sf::Color::Red);
+	buttonPlayer1SetAILevel3->setFocusTextColor(sf::Color::White);
 	addButton(buttonPlayer1SetAILevel3);
-
+///////////////////////////////////////////////////////////////////////////////////////////
 	std::shared_ptr<sf::Text> Player2Text(new sf::Text("Player 2", getFont(), 30));
 	Player2Text->setOrigin(Player2Text->getGlobalBounds().getSize() / 2.f +
 						   Player2Text->getLocalBounds().getPosition());  // text origin at center
@@ -230,10 +230,10 @@ void GameMenuScreen::gameMenuCreate() {
 	std::shared_ptr<Button> buttonPlayer2SetHuman(new Button(AddPlayer, "Human", {150, 100}, 30));
 	buttonPlayer2SetHuman->setFont(getFont());
 	buttonPlayer2SetHuman->setPosition(sf::Vector2f(col2.x, col2.y + y_step));
-	buttonPlayer2SetHuman->setMainBackColor(sf::Color::Red);
+	buttonPlayer2SetHuman->setMainBackColor(sf::Color::Green);
 	buttonPlayer2SetHuman->setMainTextColor(sf::Color::Black);
 	buttonPlayer2SetHuman->setFocusBackColor(sf::Color::Black);
-	buttonPlayer2SetHuman->setFocusTextColor(sf::Color::Red);
+	buttonPlayer2SetHuman->setFocusTextColor(sf::Color::Green);
 	addButton(buttonPlayer2SetHuman);
 
 	std::shared_ptr<Button> buttonPlayer2SetAI(new Button(AddPlayer, "AI", {150, 100}, 30));
@@ -242,18 +242,53 @@ void GameMenuScreen::gameMenuCreate() {
 	buttonPlayer2SetAI->setMainBackColor(sf::Color::White);
 	buttonPlayer2SetAI->setMainTextColor(sf::Color::Black);
 	buttonPlayer2SetAI->setFocusBackColor(sf::Color::Black);
-	buttonPlayer2SetAI->setFocusTextColor(sf::Color::Red);
+	buttonPlayer2SetAI->setFocusTextColor(sf::Color::White);
 	addButton(buttonPlayer2SetAI);
 
-	std::shared_ptr<sf::Text> Player3Text(new sf::Text("Player 3", getFont(), 30));
-	Player3Text->setPosition((getContextWindow()->getWindow().getSize().x / 2.0f) + 100, 400);
-	Player3Text->setColor(sf::Color::Black);
-	addText(Player3Text);
+	std::shared_ptr<sf::Text> Player2TextAILevel(new sf::Text("AI level", getFont(), 30));
+	Player2TextAILevel->setOrigin(Player2TextAILevel->getGlobalBounds().getSize() / 2.f +
+								  Player2TextAILevel->getLocalBounds().getPosition());	// text origin at center
+	Player2TextAILevel->setPosition(sf::Vector2f(col2.x, col2.y + y_step * 3));
+	Player2TextAILevel->setColor(sf::Color::Black);
+	addText(Player2TextAILevel);
 
-	std::shared_ptr<sf::Text> Player4Text(new sf::Text("Player 4", getFont(), 30));
-	Player4Text->setPosition((getContextWindow()->getWindow().getSize().x / 2.0f) + 300, 500);
-	Player4Text->setColor(sf::Color::Black);
-	addText(Player4Text);
+	std::shared_ptr<Button> buttonPlayer2SetAILevel1(new Button(AddPlayer, "1", {50, 100}, 30));
+	buttonPlayer2SetAILevel1->setFont(getFont());
+	buttonPlayer2SetAILevel1->setPosition(sf::Vector2f(col2.x - 50, col2.y + y_step * 4));
+	buttonPlayer2SetAILevel1->setMainBackColor(sf::Color::Green);
+	buttonPlayer2SetAILevel1->setMainTextColor(sf::Color::Black);
+	buttonPlayer2SetAILevel1->setFocusBackColor(sf::Color::Black);
+	buttonPlayer2SetAILevel1->setFocusTextColor(sf::Color::Green);
+	addButton(buttonPlayer2SetAILevel1);
+
+	std::shared_ptr<Button> buttonPlayer2SetAILevel2(new Button(AddPlayer, "2", {50, 100}, 30));
+	buttonPlayer2SetAILevel2->setFont(getFont());
+	buttonPlayer2SetAILevel2->setPosition(sf::Vector2f(col2.x, col2.y + y_step * 4));
+	buttonPlayer2SetAILevel2->setMainBackColor(sf::Color::White);
+	buttonPlayer2SetAILevel2->setMainTextColor(sf::Color::Black);
+	buttonPlayer2SetAILevel2->setFocusBackColor(sf::Color::Black);
+	buttonPlayer2SetAILevel2->setFocusTextColor(sf::Color::White);
+	addButton(buttonPlayer2SetAILevel2);
+
+	std::shared_ptr<Button> buttonPlayer2SetAILevel3(new Button(AddPlayer, "3", {50, 100}, 30));
+	buttonPlayer2SetAILevel3->setFont(getFont());
+	buttonPlayer2SetAILevel3->setPosition(sf::Vector2f(col2.x + 50, col2.y + y_step * 4));
+	buttonPlayer2SetAILevel3->setMainBackColor(sf::Color::White);
+	buttonPlayer2SetAILevel3->setMainTextColor(sf::Color::Black);
+	buttonPlayer2SetAILevel3->setFocusBackColor(sf::Color::Black);
+	buttonPlayer2SetAILevel3->setFocusTextColor(sf::Color::White);
+	addButton(buttonPlayer2SetAILevel3);
+	///////////////////////////////////////////////////////////////////////////////////////////
+
+	// std::shared_ptr<sf::Text> Player3Text(new sf::Text("Player 3", getFont(), 30));
+	// Player3Text->setPosition((getContextWindow()->getWindow().getSize().x / 2.0f) + 100, 400);
+	// Player3Text->setColor(sf::Color::Black);
+	// addText(Player3Text);
+
+	// std::shared_ptr<sf::Text> Player4Text(new sf::Text("Player 4", getFont(), 30));
+	// Player4Text->setPosition((getContextWindow()->getWindow().getSize().x / 2.0f) + 300, 500);
+	// Player4Text->setColor(sf::Color::Black);
+	// addText(Player4Text);
 }
 
 std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {
