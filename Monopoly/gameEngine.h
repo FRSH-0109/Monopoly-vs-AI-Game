@@ -11,6 +11,24 @@
 #include "main.h"
 #include "monopolyGameEngine.h"
 
+class DimensionException : public std::exception {
+	unsigned int bad_dimension_;
+
+   public:
+	DimensionException(unsigned int dimension) : bad_dimension_(dimension){};
+	DimensionException(const DimensionException& e) throw() : bad_dimension_(e.bad_dimension_){};
+	const unsigned int getBadDimension() { return bad_dimension_; };
+};
+
+class RotationException : public std::exception {
+	float bad_rotation_;
+
+   public:
+	RotationException(float rotation) : bad_rotation_(rotation){};
+	RotationException(const RotationException& e) throw() : bad_rotation_(e.bad_rotation_){};
+	const float getBadRotation() { return bad_rotation_; };
+};
+
 class GameEngine {
    private:
 	ContextWindow* contextWindow_;

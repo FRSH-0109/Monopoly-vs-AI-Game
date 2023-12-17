@@ -20,13 +20,13 @@
 using namespace std;
 
 TEST_CASE("GameEngine class") {
-	GameEngine testEngine = GameEngine(30, 1000, 1200);
+	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(testEngine.getWindowWidth() == 1000);
-	REQUIRE(testEngine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getWindowWidth() == 1000);
+	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	SECTION("GameEngine getContextWindow()") {
-		REQUIRE(testEngine.getContextWindow() == ContextWindow::GetInstance());
+		REQUIRE(test_engine.getContextWindow() == ContextWindow::GetInstance());
 	}
 }
 
@@ -85,6 +85,11 @@ TEST_CASE("monopolyGameEngine") {
 }
 
 TEST_CASE("PropertyField class") {
+	GameEngine test_engine = GameEngine(30, 1000, 1200);
+
+	REQUIRE(test_engine.getWindowWidth() == 1000);
+	REQUIRE(test_engine.getWindowHeight() == 1200);
+
 	const unsigned int TEST_ID = 1;
 	const FieldType TEST_TYPE = PROPERTY;
 	const std::string TEST_NAME = "Białystok";
@@ -115,4 +120,19 @@ TEST_CASE("PropertyField class") {
 	REQUIRE(test_field.getIsHotel() == false);
 	REQUIRE(test_field.getIsMortaged() == false);
 	REQUIRE(test_field.getUnmortageValue() == 220);
+	REQUIRE(test_field.getOwner() == nullptr);
+
+	SECTION("Field class setters - basic scenario") {
+		const unsigned int NEW_TEST_HEIGHT = 800;
+		const unsigned int NEW_TEST_WIDTH = 600;
+		const float NEW_TEST_ROTATION = 45.9;
+
+		test_field.setHeight(NEW_TEST_HEIGHT, test_engine);
+		test_field.setWidth(NEW_TEST_WIDTH, test_engine);
+		test_field.setRotation(NEW_TEST_ROTATION);
+
+		REQUIRE(test_field.getHeight() == NEW_TEST_HEIGHT);
+		REQUIRE(test_field.getWidth() == NEW_TEST_WIDTH);
+		REQUIRE(test_field.getRotation() == NEW_TEST_ROTATION);
+	}
 }

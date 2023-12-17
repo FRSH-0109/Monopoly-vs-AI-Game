@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include "Player.h"
+#include "gameEngine.h"
 #include "main.h"
 
 class Field {
@@ -35,6 +36,10 @@ class Field {
 	const unsigned int getHeight() { return height_; };
 	const unsigned int getWidth() { return width_; };
 	const float getRotation() { return rotation_; };
+
+	void setHeight(unsigned int new_height, const GameEngine& game_engine);
+	void setWidth(unsigned int new_width, const GameEngine& game_engine);
+	void setRotation(float new_roation);
 };
 
 class PropertyField : public Field {
@@ -46,6 +51,7 @@ class PropertyField : public Field {
 	bool is_hotel_;
 	bool is_mortaged_;
 	unsigned int unmortage_value_;
+	Player* owner_;
 
    public:
 	PropertyField(const unsigned int id,
@@ -63,7 +69,11 @@ class PropertyField : public Field {
 		  price_(price),
 		  rent_values_(rent_values),
 		  group_members_(group_members),
-		  mortage_(mortage) {
+		  mortage_(mortage),
+		  house_number_(0),
+		  is_hotel_(false),
+		  is_mortaged_(false),
+		  owner_(nullptr) {
 		std::cout << "PropertyField constructor" << std::endl;
 	};
 
@@ -75,9 +85,12 @@ class PropertyField : public Field {
 	const bool getIsHotel() { return is_hotel_; };
 	const bool getIsMortaged() { return is_mortaged_; };
 	const unsigned int getUnmortageValue() { return static_cast<int>(1.1 * mortage_); };
-	/* TO DO
-	Dopisać gettery i sprawdzić poprawność implemntacji
-	*/
+	const Player* getOwner() { return owner_; };
+
+	void setHouseNumber(unsigned int new_house_number);
+	void setIsHotel(bool new_state);
+	void setIsMortaged(bool new_state);
+	void setOwner(Player* new_owner);
 };
 
 #endif

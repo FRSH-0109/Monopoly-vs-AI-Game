@@ -1,20 +1,41 @@
 #include "Field.hpp"
 
-// Field::Field(const unsigned int id, const FieldType type,
-//     const std::string name, const std::string graphic_path,
-//     const unsigned int height, const unsigned int width,
-//     const float rotation): id_(id), type_(type), name_(name),
-//     graphic_path_(graphic_path), height_(height),
-//     width_(width), rotation_(rotation)
-//     { std::cout << "Field constructor" << std::endl; };
+void Field::setHeight(unsigned int new_height, const GameEngine& game_engine) {
+    if (game_engine.getWindowHeight() >= new_height && new_height != 0) {
+        height_ = new_height;
+    } else {
+        throw (DimensionException(new_height));
+    }
+};
 
-// PropertyField::PropertyField(const unsigned int id, FieldType type, const std::string name,
-//     const std::string graphic_path, const unsigned int height,
-//     const unsigned int width, const float rotation,
-//     const unsigned int price,
-//     const std::map<PropertyTiers, unsigned int> rent_values,
-//     const std::vector<unsigned int> group_members,
-//     const unsigned int mortage): price_(price),
-//     rent_values_(rent_values), group_members_(group_members),
-//     mortage_(mortage)
-//     { std::cout << "PropertyField constructor" << std::endl; };
+void Field::setWidth(unsigned int new_width, const GameEngine& game_engine) {
+    if (game_engine.getWindowWidth() >= new_width && new_width != 0) {
+        width_ = new_width;
+    } else {
+        throw (DimensionException(new_width));
+    }
+};
+
+void Field::setRotation(float new_roation) {
+    if (new_roation > 0.0 && new_roation < 360.0) {
+        rotation_ = new_roation;
+    } else {
+        throw (RotationException(new_roation));
+    }
+};
+
+void PropertyField::setHouseNumber(unsigned int new_house_number) {
+
+};
+
+void PropertyField::setIsHotel(bool new_state) {
+
+};
+
+void PropertyField::setIsMortaged(bool new_state) {
+
+};
+
+void PropertyField::setOwner(Player* new_owner) {
+
+}
