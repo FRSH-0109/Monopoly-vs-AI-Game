@@ -162,11 +162,40 @@ TEST_CASE("PropertyField class") {
 		REQUIRE(test_field.getIsHotel() == NEW_HOTEL_STATE);
 		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
 		REQUIRE(test_field.getOwner() == OWNER_PTR);
+
+		test_field.setOwner(nullptr);
+
+		REQUIRE(test_field.getOwner() == nullptr);
 	}
 
 	SECTION("PropertyField class setters - exception throws") {
 		const unsigned int NEW_HOSUE_NUMBER = 7;
 
 		REQUIRE_THROWS_AS(test_field.setHouseNumber(NEW_HOSUE_NUMBER), HouseException);
+	}
+
+	SECTION("PropertyField::resetDefault() method") {
+		Player NEW_OWNER = Player();
+		const unsigned int NEW_HOSUE_NUMBER = 3;
+		const bool NEW_HOTEL_STATE = true;
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
+		test_field.setIsHotel(NEW_HOTEL_STATE);
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		CHECK(test_field.getHouseNumber() == NEW_HOSUE_NUMBER);
+		CHECK(test_field.getIsHotel() == NEW_HOTEL_STATE);
+		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getOwner() == OWNER_PTR);
+
+		test_field.resetDefault();
+
+		REQUIRE(test_field.getHouseNumber() == 0);
+		REQUIRE(test_field.getIsHotel() == false);
+		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getOwner() == nullptr);
 	}
 }

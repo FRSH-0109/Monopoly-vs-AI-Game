@@ -100,6 +100,7 @@ class PropertyField : public Field {
 	void setIsHotel(bool new_state);
 	void setIsMortaged(bool new_state);
 	void setOwner(Player* new_owner);
+	void resetDefault();
 };
 
 #endif
