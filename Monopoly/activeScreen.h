@@ -48,6 +48,7 @@ class GameMenuScreen : public ActiveScreen {
 	std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 
 	void createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep);
+	bool isButtonEventTypeSetAILevel(ScreenEventType eventType);
 
    public:
 	GameMenuScreen();

@@ -23,7 +23,10 @@ void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp) {
 
 void ActiveScreen::draw() {
 	for (auto element : buttons_) {
-		element->draw(getContextWindow()->getWindow());
+		if(element->getIsVisible())
+		{
+			element->draw(getContextWindow()->getWindow());
+		}
 	}
 
 	for (auto element : texts_) {
@@ -87,12 +90,13 @@ void MainMenuScreen::mainMenuCreate() {
 
 	for (auto element : getButtons()) {
 		element->setIsClicked(false);
+		element->setIsVisible(true);
 	}
 }
 
 ScreenEventType MainMenuScreen::worker() {
 	ScreenEventType eventType = Idle;
-	for (auto element : getButtons()) {
+	for (auto element : getButtons()) {		
 		if (element->getIsClicked()) {
 			element->setIsClicked(false);
 			return element->getEventType();
@@ -104,9 +108,12 @@ ScreenEventType MainMenuScreen::worker() {
 ScreenEventType GameMenuScreen::worker() {
 	ScreenEventType eventType = Idle;
 	for (auto element : getButtons()) {
-		if (element->getIsClicked()) {
-			element->setIsClicked(false);
-			return element->getEventType();
+		if(element->getIsVisible())
+		{
+			if (element->getIsClicked()) {
+				element->setIsClicked(false);
+				return element->getEventType();
+			}
 		}
 	}
 	return eventType;
@@ -211,6 +218,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	ScreenEventType buttonAILevel1Event = Idle;
 	ScreenEventType buttonAILevel2Event = Idle;
 	ScreenEventType buttonAILevel3Event = Idle;
+	bool isHiddenCol = false;
 	switch (colNum) {
 		case 1:
 			playerTextString = "Player 1";
@@ -240,6 +248,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 			buttonAILevel1Event = Player3SetAILevel1;
 			buttonAILevel2Event = Player3SetAILevel2;
 			buttonAILevel3Event = Player3SetAILevel3;
+			isHiddenCol= true;
 			break;
 
 		case 4:
@@ -250,6 +259,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 			buttonAILevel1Event = Player4SetAILevel1;
 			buttonAILevel2Event = Player4SetAILevel2;
 			buttonAILevel3Event = Player4SetAILevel3;
+			isHiddenCol = true;
 			break;
 
 		default:
@@ -269,7 +279,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	buttonPlayerSetNone->setFocusBackColor(FocusButtonBackColor);
 	buttonPlayerSetNone->setFocusTextColor(FocusButtonTextColor);
 	buttonPlayerSetNone->setIsClicked(false);
-	buttonPlayerSetNone->setIsVisible(true);
+	buttonPlayerSetNone->setIsVisible(!isHiddenCol);
 	addButton(buttonPlayerSetNone);
 
 	std::shared_ptr<Button> buttonPlayerSetHuman(new Button(buttonNoneEvent, "Human", buttonSize, fontSize));
@@ -280,7 +290,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	buttonPlayerSetHuman->setFocusBackColor(FocusButtonBackColor);
 	buttonPlayerSetHuman->setFocusTextColor(FocusButtonTextColor);
 	buttonPlayerSetHuman->setIsClicked(false);
-	buttonPlayerSetHuman->setIsVisible(true);
+	buttonPlayerSetHuman->setIsVisible(!isHiddenCol);
 	addButton(buttonPlayerSetHuman);
 
 	std::shared_ptr<Button> buttonPlayerSetAI(new Button(buttonAIEvent, "AI", buttonSize, fontSize));
@@ -291,7 +301,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	buttonPlayerSetAI->setFocusBackColor(FocusButtonBackColor);
 	buttonPlayerSetAI->setFocusTextColor(FocusButtonTextColor);
 	buttonPlayerSetAI->setIsClicked(false);
-	buttonPlayerSetAI->setIsVisible(true);
+	buttonPlayerSetAI->setIsVisible(!isHiddenCol);
 	addButton(buttonPlayerSetAI);
 
 	std::shared_ptr<sf::Text> PlayerTextAILevel(new sf::Text("AI level", getFont(), fontSize));
@@ -471,5 +481,28 @@ void GameMenuScreen::eventHandle(ScreenEventType eventType) {
 		case Player4SetAILevel3:
 			setPlayerSettings(3, false, true, 3);
 			break;
+	}
+}
+
+bool GameMenuScreen::isButtonEventTypeSetAILevel(ScreenEventType eventType)
+{
+	if(eventType == Player1SetAILevel1 || eventType == Player1SetAILevel2 || eventType == Player1SetAILevel3)  
+	{
+		return true;
+	}
+	else if(eventType == Player2SetAILevel1 || eventType == Player2SetAILevel2 || eventType == Player2SetAILevel3)  
+	{
+		return true;
+	}
+	else if(eventType == Player3SetAILevel1 || eventType == Player3SetAILevel2 || eventType == Player3SetAILevel3)  
+	{
+		return true;
+	}
+	else if(eventType == Player4SetAILevel1 || eventType == Player4SetAILevel2 || eventType == Player4SetAILevel3)  
+	{
+		return true;
+	}
+	else{
+		return false;
 	}
 }

@@ -7,10 +7,10 @@ all: monopolyVsAI clean
 tests: monopolyTests
 
 Monopoly/%.o: Monopoly/%.cpp
-	$(CXX) -c $< -o $@ -I SFML_Monopoly/include $(INC)
+	$(CXX) -c $< -o $@ -I SFML_Monopoly/include $(INC) -g
 
 monopolyVsAI: $(OBJ)
-	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC)
+	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC) -g
 
 testsConfig:
 	mkdir Monopoly/tests/catch2

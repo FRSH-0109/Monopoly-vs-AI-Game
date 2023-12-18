@@ -84,29 +84,28 @@ void GameEngine::worker() {
 			case GameMenu:
 				activeScreen_->draw();
 				eventType = activeScreen_->worker();
+				activeScreen_->eventHandle(eventType);
 				break;
 			case MonopolyGame:
 
 				break;
 		}
 
-		if (activeScreen_->getScreenType() == MainMenu) {
-			activeScreen_->eventHandle(eventType);
-			if (eventType == Play) {
+		switch (eventType) {
+			case Play:
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameMenuScreen>();
-			} else if (eventType == Exit) {
+				break;
+			case Exit:
 				getContextWindow()->window_.close();
-			}
-		}
-		if (activeScreen_->getScreenType() == GameMenu) {
-			activeScreen_->eventHandle(eventType);
-			if (eventType == ReturnToMainMenu) {
+				break;
+			case ReturnToMainMenu:
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
-			} else if (eventType == StartGame) {
-				/// pass
-			}
+				break;
+			case StartGame:
+				getContextWindow()->window_.close();
+				break;
 		}
 
 		display();
