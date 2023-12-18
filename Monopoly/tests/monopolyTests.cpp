@@ -9,7 +9,9 @@
 
 #include <map>
 #include <string>
+#include <fstream>
 #include "../Field.hpp"
+#include "../Board.h"
 #include "../activeScreen.h"
 #include "../contextWindow.h"
 #include "../gameEngine.h"
@@ -198,4 +200,17 @@ TEST_CASE("PropertyField class") {
 		REQUIRE(test_field.getIsMortaged() == false);
 		REQUIRE(test_field.getOwner() == nullptr);
 	}
+}
+
+TEST_CASE("Board class") {
+	/*
+	TO DO
+	Sprawić by zapewnić, żeby ścieżka zawsze działała
+	*/
+	std::string TEST_PATH = "Monopoly/tests/test_board.json";
+	std::ifstream f(TEST_PATH);
+	std::cout << "Testing path" << std::endl;
+	std::cout << f.rdbuf();
+	std::cout << "Finished testing path" << std::endl;
+	Board TEST_BOARD = Board(TEST_PATH);
 }

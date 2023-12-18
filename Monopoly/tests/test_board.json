@@ -1,0 +1,35 @@
+{
+    "Fields": [
+        {
+            "id": 1,
+            "type": "PROPERTY",
+            "name": "Świętochłowice",
+            "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
+            "width": 80,
+            "height": 200,
+            "rotation": 0.0,
+            "price": 60,
+            "mortage": 30
+        },
+        {
+            "id": 2,
+            "type": "COMUNITY_CHEST",
+            "name": "Kasa Społeczna",
+            "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
+            "width": 80,
+            "height": 200,
+            "rotation": 0.0
+        },
+        {
+            "id": 3,
+            "type": "PROPERTY",
+            "name": "Bełchatów",
+            "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
+            "width": 80,
+            "height": 200,
+            "rotation": 0.0,
+            "price": 60,
+            "mortage": 30
+        }
+    ]
+}
