@@ -33,11 +33,13 @@ void PropertyField::setHouseNumber(unsigned int new_house_number) {
 };
 
 void PropertyField::setIsHotel(bool new_state){
-
+	is_hotel_ = new_state;
 };
 
 void PropertyField::setIsMortaged(bool new_state){
-
+	is_mortaged_ = new_state;
 };
 
-void PropertyField::setOwner(Player* new_owner) {}
+void PropertyField::setOwner(Player* new_owner_ptr) {
+	owner_ = new_owner_ptr;
+};

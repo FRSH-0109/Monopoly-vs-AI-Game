@@ -147,11 +147,21 @@ TEST_CASE("PropertyField class") {
 	}
 
 	SECTION("PropertyField class setters - basic scenario") {
+		Player NEW_OWNER = Player();
 		const unsigned int NEW_HOSUE_NUMBER = 3;
+		const bool NEW_HOTEL_STATE = true;
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
 
 		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
+		test_field.setIsHotel(NEW_HOTEL_STATE);
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
 
 		REQUIRE(test_field.getHouseNumber() == NEW_HOSUE_NUMBER);
+		REQUIRE(test_field.getIsHotel() == NEW_HOTEL_STATE);
+		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getOwner() == OWNER_PTR);
 	}
 
 	SECTION("PropertyField class setters - exception throws") {

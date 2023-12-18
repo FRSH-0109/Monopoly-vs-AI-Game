@@ -94,7 +94,7 @@ class PropertyField : public Field {
 	const bool getIsHotel() { return is_hotel_; };
 	const bool getIsMortaged() { return is_mortaged_; };
 	const unsigned int getUnmortageValue() { return static_cast<int>(1.1 * mortage_); };
-	const Player* getOwner() { return owner_; };
+	Player* getOwner() { return owner_; };
 
 	void setHouseNumber(unsigned int new_house_number);
 	void setIsHotel(bool new_state);
