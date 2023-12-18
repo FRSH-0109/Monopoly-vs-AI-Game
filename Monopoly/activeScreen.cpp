@@ -23,8 +23,7 @@ void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp) {
 
 void ActiveScreen::draw() {
 	for (auto element : buttons_) {
-		if(element->getIsVisible())
-		{
+		if (element->getIsVisible()) {
 			element->draw(getContextWindow()->getWindow());
 		}
 	}
@@ -96,7 +95,7 @@ void MainMenuScreen::mainMenuCreate() {
 
 ScreenEventType MainMenuScreen::worker() {
 	ScreenEventType eventType = Idle;
-	for (auto element : getButtons()) {		
+	for (auto element : getButtons()) {
 		if (element->getIsClicked()) {
 			element->setIsClicked(false);
 			return element->getEventType();
@@ -108,8 +107,7 @@ ScreenEventType MainMenuScreen::worker() {
 ScreenEventType GameMenuScreen::worker() {
 	ScreenEventType eventType = Idle;
 	for (auto element : getButtons()) {
-		if(element->getIsVisible())
-		{
+		if (element->getIsVisible()) {
 			if (element->getIsClicked()) {
 				element->setIsClicked(false);
 				return element->getEventType();
@@ -248,7 +246,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 			buttonAILevel1Event = Player3SetAILevel1;
 			buttonAILevel2Event = Player3SetAILevel2;
 			buttonAILevel3Event = Player3SetAILevel3;
-			isHiddenCol= true;
+			isHiddenCol = true;
 			break;
 
 		case 4:
@@ -484,25 +482,16 @@ void GameMenuScreen::eventHandle(ScreenEventType eventType) {
 	}
 }
 
-bool GameMenuScreen::isButtonEventTypeSetAILevel(ScreenEventType eventType)
-{
-	if(eventType == Player1SetAILevel1 || eventType == Player1SetAILevel2 || eventType == Player1SetAILevel3)  
-	{
+bool GameMenuScreen::isButtonEventTypeSetAILevel(ScreenEventType eventType) {
+	if (eventType == Player1SetAILevel1 || eventType == Player1SetAILevel2 || eventType == Player1SetAILevel3) {
 		return true;
-	}
-	else if(eventType == Player2SetAILevel1 || eventType == Player2SetAILevel2 || eventType == Player2SetAILevel3)  
-	{
+	} else if (eventType == Player2SetAILevel1 || eventType == Player2SetAILevel2 || eventType == Player2SetAILevel3) {
 		return true;
-	}
-	else if(eventType == Player3SetAILevel1 || eventType == Player3SetAILevel2 || eventType == Player3SetAILevel3)  
-	{
+	} else if (eventType == Player3SetAILevel1 || eventType == Player3SetAILevel2 || eventType == Player3SetAILevel3) {
 		return true;
-	}
-	else if(eventType == Player4SetAILevel1 || eventType == Player4SetAILevel2 || eventType == Player4SetAILevel3)  
-	{
+	} else if (eventType == Player4SetAILevel1 || eventType == Player4SetAILevel2 || eventType == Player4SetAILevel3) {
 		return true;
-	}
-	else{
+	} else {
 		return false;
 	}
 }
