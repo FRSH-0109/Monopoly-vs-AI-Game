@@ -17,3 +17,4 @@ Monopoly/tests/tests
 Monopoly/tests/Makefile
 Monopoly/tests/CMakeCache.txt
 Monopoly/tests/cmake_install.cmake
+.vscode/
