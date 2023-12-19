@@ -24,11 +24,20 @@ class Button {
 	sf::Vector2f getSize();
 	void setIsVisible(bool state);
 	bool getIsVisible();
+	void setIsActive(bool state);
+	bool getIsActive();
+	void setIsFocus(bool state);
+	bool getIsFocus();
 
-	void setMainBackColor(sf::Color color);
-	void setMainTextColor(sf::Color color);
+	void setActiveBackColor(sf::Color color);
+	void setActiveTextColor(sf::Color color);
+	void setInactiveBackColor(sf::Color color);
+	void setInactiveTextColor(sf::Color color);
 	void setFocusBackColor(sf::Color color);
 	void setFocusTextColor(sf::Color color);
+	void setButtonFocus();
+	void setButtonUnfocus();
+	void updateColors();
 
    private:
 	sf::RectangleShape buttonShape_;
@@ -40,9 +49,13 @@ class Button {
 
 	bool isClicked_;
 	bool isVisible_;
+	bool isActive_;
+	bool isFocus_;
 
-	sf::Color mainBackColor_;
-	sf::Color mainTextColor_;
+	sf::Color activeBackColor_;
+	sf::Color activeTextColor_;
+	sf::Color inActiveBackColor_;
+	sf::Color inActiveTextColor_;
 	sf::Color focusBackColor_;
 	sf::Color focusTextColor_;
 };

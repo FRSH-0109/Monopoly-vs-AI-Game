@@ -34,8 +34,7 @@ class ActiveScreen {
 	void setContextWindow(ContextWindow*);
 	ActiveScreenType getScreenType();
 	void setScreenType(ActiveScreenType type);
-
-	virtual void eventHandle(ScreenEventType) = 0;
+	void buttonSetColors(std::shared_ptr<Button> buttonPtr);
 };
 
 class GameMenuScreen : public ActiveScreen {
@@ -46,9 +45,7 @@ class GameMenuScreen : public ActiveScreen {
 	};
 
 	std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
-
 	void createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep);
-	bool isButtonEventTypeSetAILevel(ScreenEventType eventType);
 
    public:
 	GameMenuScreen();
@@ -59,7 +56,13 @@ class GameMenuScreen : public ActiveScreen {
 
 	void setPlayerSettings(int index, bool isNone, bool isHuman, int level);
 
-	void eventHandle(ScreenEventType eventType);
+	void buttonClickHandle(std::shared_ptr<Button> buttonPtr);
+	void setOtherButtonsInactive(std::shared_ptr<Button> buttonPtr);
+	int getPlayerNumFromEventType(ScreenEventType event);
+	void setAILevelColumnVisibility(int playerNum, bool visible);
+	bool isEventTypeAILevel(int playerNum, ScreenEventType event);
+	bool isEventTypeSetAI(int playerNum, ScreenEventType event);
+	void setDefaultAILevelButtonsFocus(int playerNum);
 };
 
 class MainMenuScreen : public ActiveScreen {
@@ -69,8 +72,6 @@ class MainMenuScreen : public ActiveScreen {
 	void mainMenuCreate();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
-
-	void eventHandle(ScreenEventType eventType);
 };
 
 #endif
