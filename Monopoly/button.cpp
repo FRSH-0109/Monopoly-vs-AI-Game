@@ -29,16 +29,20 @@ void Button::setFont(sf::Font& fonts) {
 	text_.setFont(fonts);
 }
 
-void Button::setMainBackColor(sf::Color color) {
-	mainBackColor_ = color;
-	text_.setFillColor(mainTextColor_);
-	buttonShape_.setFillColor(mainBackColor_);
+void Button::setActiveBackColor(sf::Color color) {
+	activeBackColor_ = color;
 }
 
-void Button::setMainTextColor(sf::Color color) {
-	mainTextColor_ = color;
-	text_.setFillColor(mainTextColor_);
-	buttonShape_.setFillColor(mainBackColor_);
+void Button::setActiveTextColor(sf::Color color) {
+	activeTextColor_ = color;
+}
+
+void Button::setInactiveBackColor(sf::Color color) {
+	inActiveBackColor_ = color;
+}
+
+void Button::setInactiveTextColor(sf::Color color) {
+	inActiveTextColor_ = color;
 }
 
 void Button::setFocusBackColor(sf::Color color) {
@@ -47,6 +51,14 @@ void Button::setFocusBackColor(sf::Color color) {
 
 void Button::setFocusTextColor(sf::Color color) {
 	focusTextColor_ = color;
+}
+
+void Button::setButtonFocus() {
+	setIsFocus(true);
+}
+
+void Button::setButtonUnfocus() {
+	setIsFocus(false);
 }
 
 void Button::setPosition(sf::Vector2f point) {
@@ -83,13 +95,11 @@ bool Button::isMouseOver(sf::RenderWindow& window) {
 }
 
 void Button::mouseIsOver() {
-	text_.setFillColor(focusTextColor_);
-	buttonShape_.setFillColor(focusBackColor_);
+	setButtonFocus();
 }
 
 void Button::mouseIsNotOver() {
-	text_.setFillColor(mainTextColor_);
-	buttonShape_.setFillColor(mainBackColor_);
+	setButtonUnfocus();
 }
 
 void Button::setIsClicked(bool state) {
@@ -110,4 +120,35 @@ void Button::setIsVisible(bool state) {
 
 bool Button::getIsVisible() {
 	return isVisible_;
+}
+
+void Button::setIsActive(bool state) {
+	isActive_ = state;
+}
+
+bool Button::getIsActive() {
+	return isActive_;
+}
+
+void Button::setIsFocus(bool state) {
+	isFocus_ = state;
+}
+
+bool Button::getIsFocus() {
+	return isFocus_;
+}
+
+void Button::updateColors() {
+	if (isFocus_) {
+		buttonShape_.setFillColor(focusBackColor_);
+		text_.setFillColor(focusTextColor_);
+	} else {
+		if (isActive_) {
+			buttonShape_.setFillColor(activeBackColor_);
+			text_.setFillColor(activeTextColor_);
+		} else {
+			buttonShape_.setFillColor(inActiveBackColor_);
+			text_.setFillColor(inActiveTextColor_);
+		}
+	}
 }
