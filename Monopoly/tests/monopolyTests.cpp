@@ -7,11 +7,11 @@
  *
  */
 
+#include <fstream>
 #include <map>
 #include <string>
-#include <fstream>
-#include "../Field.hpp"
 #include "../Board.h"
+#include "../Field.hpp"
 #include "../activeScreen.h"
 #include "../contextWindow.h"
 #include "../gameEngine.h"
@@ -282,7 +282,7 @@ TEST_CASE("PropertyField class") {
 
 TEST_CASE("Board class") {
 	/*
-	TO DO
+	* TODO:
 	Sprawić by zapewnić, żeby ścieżka zawsze działała
 	*/
 	std::vector<PossibleFields> test_board;
@@ -379,4 +379,69 @@ TEST_CASE("Board class") {
 			}
 		}
 	}
+}
+
+TEST_CASE("Player class") {
+	unsigned int FIELD_ID_1 = 1;
+	unsigned int FIELD_ID_2 = 2;
+	unsigned int FIELD_ID_3 = 3;
+	unsigned int FIELD_ID_4 = 4;
+	unsigned int AMOUT_1 = 123;
+	unsigned int AMOUT_2 = 23;
+	unsigned int AMOUT_3 = 100;
+	unsigned int POSITION_1 = 6;
+	unsigned int POSITION_2 = 8;
+	unsigned int JAILSTATUS_1 = 3;
+	unsigned int JAILSTATUS_2 = 2;
+	Player PLAYER1;
+	Player PLAYER2(AMOUT_1);
+
+	//MONEY TESTS
+	REQUIRE(PLAYER1.getMoney() == 0);
+	PLAYER1.addMoney(AMOUT_2);
+	REQUIRE(PLAYER1.getMoney() == AMOUT_2);
+	PLAYER1.addMoney(AMOUT_3);
+	REQUIRE(PLAYER1.getMoney() == AMOUT_3 + AMOUT_2);
+	REQUIRE(PLAYER1.substractMoney(AMOUT_1) == true);
+	REQUIRE(PLAYER1.getMoney() == 0);
+	REQUIRE(PLAYER1.substractMoney(AMOUT_1) == false);
+	REQUIRE(PLAYER1.getMoney() == 0);
+	REQUIRE(PLAYER2.getMoney() == AMOUT_1);
+
+	//POSITION TESTS
+	REQUIRE(PLAYER1.getPositon() == 0);	
+	PLAYER1.setPositon(POSITION_1);	
+	REQUIRE(PLAYER1.getPositon() == POSITION_1);
+	PLAYER1.setPositon(POSITION_2);
+	REQUIRE(PLAYER1.getPositon() == POSITION_2);
+
+	//JAILSTATUS TESTS
+	REQUIRE(PLAYER1.getJailStatus() == 0);
+	PLAYER1.setJailStatus(JAILSTATUS_1);
+	REQUIRE(PLAYER1.getJailStatus() == JAILSTATUS_1);
+	PLAYER1.reduceJailStatus();
+	REQUIRE(PLAYER1.getJailStatus() == JAILSTATUS_2);
+
+	//FILED OWNED TESTS
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
+	PLAYER1.addFieldOwnedId(FIELD_ID_1);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == true);
+	PLAYER1.addFieldOwnedId(FIELD_ID_2);
+	PLAYER1.addFieldOwnedId(FIELD_ID_3);
+	PLAYER1.addFieldOwnedId(FIELD_ID_4);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == true);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == true);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == true);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == true);
+	PLAYER1.removeFiledOwnedId(FIELD_ID_1);
+	PLAYER1.removeFiledOwnedId(FIELD_ID_3);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == true);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == false);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == true);
+	PLAYER1.clearFiledOwnedId();
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == false);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == false);
+	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == false);
 }

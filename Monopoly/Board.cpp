@@ -1,3 +1,4 @@
+#include "Board.h"
 #include <fstream>
 #include <iostream>
 #include <string>
