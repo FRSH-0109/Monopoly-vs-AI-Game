@@ -1,35 +1,37 @@
-{
-    "Fields": [
-        {
-            "id": 1,
-            "type": "PROPERTY",
-            "name": "Świętochłowice",
-            "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
-            "width": 80,
-            "height": 200,
-            "rotation": 0.0,
-            "price": 60,
-            "mortage": 30
-        },
-        {
-            "id": 2,
-            "type": "COMUNITY_CHEST",
-            "name": "Kasa Społeczna",
-            "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
-            "width": 80,
-            "height": 200,
-            "rotation": 0.0
-        },
-        {
-            "id": 3,
-            "type": "PROPERTY",
-            "name": "Bełchatów",
-            "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
-            "width": 80,
-            "height": 200,
-            "rotation": 0.0,
-            "price": 60,
-            "mortage": 30
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "type": "PROPERTY",
+        "name": "Świętochłowice",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
+        "width": 80,
+        "height": 200,
+        "rotation": 0.0,
+        "price": 60,
+        "rent_values": [2, 10, 30, 90, 160, 250],
+        "group_members": [3],
+        "mortage": 30
+    },
+    {
+        "id": 2,
+        "type": "COMUNITY_CHEST",
+        "name": "Kasa Społeczna",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
+        "width": 80,
+        "height": 200,
+        "rotation": 0.0
+    },
+    {
+        "id": 3,
+        "type": "PROPERTY",
+        "name": "Bełchatów",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_brown.png",
+        "width": 80,
+        "height": 200,
+        "rotation": 0.0,
+        "price": 60,
+        "rent_values": [4, 20, 60, 180, 320, 450],
+        "group_members": [1],
+        "mortage": 30
+    }
+]

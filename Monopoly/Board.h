@@ -2,14 +2,24 @@
 #define BOARD_H
 
 #include <vector>
+#include <memory>
+#include <variant>
+#include "../json/json.hpp"
 #include "Field.hpp"
 
+using json = nlohmann::json;
+
+using PossibleFields = std::variant<Field, PropertyField>;
+
 class Board {
-    unsigned int file_number_;
-    std::vector<Field> board_;
+    unsigned int field_number_;
+    std::vector<PossibleFields> board_;
 
     public:
-    Board(std::string file_path);
+    Board(const std::string file_path);
+    std::vector<PossibleFields> getBoard();
 };
+
+std::map<PropertyTiers, unsigned int> jsonToRent(const json& element);
 
 #endif

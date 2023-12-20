@@ -35,11 +35,12 @@ class Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation)
-		: id_(id), name_(name), graphic_path_(graphic_path), width_(width), height_(height), rotation_(rotation) {
+		: id_(id), type_(type), name_(name), graphic_path_(graphic_path), width_(width), height_(height), rotation_(rotation) {
 		std::cout << "Field constructor" << std::endl;
 	};
 
 	const unsigned int getId() { return id_; };
+	const FieldType getType() { return type_; };
 	const std::string getName() { return name_; };
 	const std::string getGraphicPath() { return graphic_path_; };
 	const unsigned int getWidth() { return width_; };

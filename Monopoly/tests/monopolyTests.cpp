@@ -100,15 +100,16 @@ TEST_CASE("PropertyField class") {
 	const unsigned int TEST_HEIGHT = 1000;
 	const float TEST_ROTATION = 0.0;
 	const unsigned int TEST_PRICE = 400;
-	const std::map<PropertyTiers, unsigned int> TEST_RENT = {{NO_HOUESES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
+	const std::map<PropertyTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
 	const unsigned int TEST_MORTAGE = 200;
 
-	PropertyField test_field = PropertyField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT,
+	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT,
 		TEST_ROTATION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
+	REQUIRE(test_field.getType() == TEST_TYPE);
 	REQUIRE(test_field.getName() == TEST_NAME);
 	REQUIRE(test_field.getGraphicPath() == TEST_PATH);
 	REQUIRE(test_field.getWidth() == TEST_WIDTH);
@@ -202,15 +203,180 @@ TEST_CASE("PropertyField class") {
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TEST_CASE("Board class") {
 	/*
 	TO DO
 	Sprawić by zapewnić, żeby ścieżka zawsze działała
 	*/
+	std::vector<PossibleFields> test_board;
+
+	unsigned int test_id = 1;
+	FieldType test_type = PROPERTY;
+	std::string test_name = "Świętochłowice";
+	std::string test_path = "/textures_and_fonts/textures/monopoly_single_square_brown.png";
+	unsigned int test_width = 80;
+	unsigned int test_height = 200;
+	float test_rotation = 0.0;
+	unsigned int test_price = 60;
+	std::map<PropertyTiers, unsigned int> test_rent = {{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30},
+		{THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
+	std::vector<unsigned int> test_group_members = {3};
+	unsigned int test_mortage= 30;
+
+	const PropertyField test_field_1 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation, test_price, test_rent, test_group_members, test_mortage);
+
+	test_board.push_back(test_field_1);
+
+	test_id = 2;
+	test_type = COMMUNITY_CHEST;
+	test_name = "Kasa Społeczna";
+	test_width = 80;
+	test_height = 200;
+	test_rotation = 0.0;
+
+	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation);
+
+	test_board.push_back(test_field_2);
+
+	test_id = 3;
+	test_type = PROPERTY;
+	test_name = "Bełchatów";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_brown.png";
+	test_width = 80;
+	test_height = 200;
+	test_rotation = 0.0;
+	test_price = 60;
+	test_rent = {{NO_HOUSES, 4}, {ONE_HOUSE, 20}, {TWO_HOUESES, 60},
+		{THREE_HOUSES, 180}, {FOUR_HOUSES, 320}, {HOTEL, 450}};
+	test_group_members = {1};
+	test_mortage= 30;
+
+	const PropertyField test_field_3 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation, test_price, test_rent, test_group_members, test_mortage);
+
+	test_board.push_back(test_field_3);
+
 	std::string TEST_PATH = "Monopoly/tests/test_board.json";
 	std::ifstream f(TEST_PATH);
-	std::cout << "Testing path" << std::endl;
-	std::cout << f.rdbuf();
-	std::cout << "Finished testing path" << std::endl;
 	Board TEST_BOARD = Board(TEST_PATH);
+
+	std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
+	REQUIRE(test_board.size() == created_board.size());
+	for(int i = 0; i < test_board.size(); ++i) {
+
+		FieldType test_field_type = std::visit([](Field& field) { return field.getType(); }, test_board[i]);
+
+		switch(test_field_type) {
+			case PROPERTY:
+			{
+				PropertyField field_from_created = std::get<PropertyField>(created_board[i]);
+				PropertyField field_from_test = std::get<PropertyField>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				CHECK(field_from_created.getPrice() == field_from_test.getPrice());
+				CHECK(field_from_created.getRentValues() == field_from_test.getRentValues());
+				CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
+				CHECK(field_from_created.getMortage() == field_from_test.getMortage());
+				break;
+			}
+
+			case COMMUNITY_CHEST:
+			{
+				Field field_from_created = std::get<Field>(created_board[i]);
+				Field field_from_test = std::get<Field>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				break;
+			}
+		}
+	}
 }
