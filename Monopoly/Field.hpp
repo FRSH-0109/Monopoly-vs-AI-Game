@@ -110,6 +110,50 @@ class PropertyField : public Field {
 	void resetDefault();
 };
 
+class StationField : public Field {
+	unsigned int price_;
+	std::map<StationTiers, unsigned int> rent_values_;
+	std::vector<unsigned int> group_members_;
+	unsigned int mortage_;
+	bool is_mortaged_;
+	unsigned int unmortage_value_;
+	Player* owner_;
+
+	public:
+	StationField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const unsigned int price,
+		const std::map<StationTiers, unsigned int> rent_values,
+		const std::vector<unsigned int> group_members,
+		const unsigned int mortage)
+		: Field(id, type, name, graphic_path, width, height, rotation),
+			price_(price),
+			rent_values_(rent_values),
+			group_members_(group_members),
+			mortage_(mortage),
+			is_mortaged_(false),
+		  	owner_(nullptr) {
+		std::cout << "StationField constructor" << std::endl;
+	};
+
+	const unsigned int getPrice() { return price_; };
+	const std::map<StationTiers, unsigned int> getRentValues() { return rent_values_; };
+	const std::vector<unsigned int> getGroupMembers() { return group_members_; };
+	const unsigned int getMortage() { return mortage_; };
+	const bool getIsMortaged() { return is_mortaged_; };
+	const unsigned int getUnmortageValue() { return static_cast<int>(1.1 * mortage_); };
+	Player* getOwner() { return owner_; };
+
+	void setIsMortaged(bool new_state);
+	void setOwner(Player* new_owner);
+	void resetDefault();
+};
+
 class TaxField : public Field {
 	unsigned int tax_value_;
 

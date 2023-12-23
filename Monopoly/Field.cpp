@@ -50,3 +50,16 @@ void PropertyField::resetDefault() {
 	PropertyField::setIsMortaged(false);
 	PropertyField::setOwner(nullptr);
 };
+
+void StationField::setIsMortaged(bool new_state) {
+	is_mortaged_ = new_state;
+};
+
+void StationField::setOwner(Player* new_owner_ptr) {
+	owner_ = new_owner_ptr;
+};
+
+void StationField::resetDefault() {
+	StationField::setIsMortaged(false);
+	StationField::setOwner(nullptr);
+};
