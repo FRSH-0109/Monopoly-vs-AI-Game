@@ -53,13 +53,24 @@ Board::Board(const std::string file_path) {
 				break;
             }
 
-			case UTILITY:
-
+			case UTILITY: {
+                unsigned int price = element["price"];
+                unsigned int mortage = element["mortage"];
+                std::map<UtilityTiers, unsigned int> rent_multipliers = jsonToUtilityRent(element);
+                std::vector<unsigned int> group_members = element["group_members"];
+                UtilityField new_field = UtilityField(
+                    id, type, name, graphic_path, width, height, rotation, price, rent_multipliers, group_members, mortage);
+                board_.push_back(new_field);
 				break;
+            }
 
 			case GO:
 
 				break;
+
+            case CHANCE:
+
+                break;
 
 			case COMMUNITY_CHEST: {
 				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
@@ -119,3 +130,11 @@ std::map<StationTiers, unsigned int> jsonToStationRent(const json& element) {
     rent_values.emplace(std::make_pair(FOUR_STATIONS, list_of_rents[3]));
     return rent_values;
 };
+
+std::map<UtilityTiers, unsigned int>jsonToUtilityRent(const json& element) {
+    std::map<UtilityTiers, unsigned int> rent_multipliers;
+	std::vector<unsigned int> list_of_rents = element["rent_multipliers"];
+    rent_multipliers.emplace(std::make_pair(ONE_UTILITY, list_of_rents[0]));
+    rent_multipliers.emplace(std::make_pair(TWO_UTILITIES, list_of_rents[1]));
+    return rent_multipliers;
+}

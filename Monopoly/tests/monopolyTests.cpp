@@ -274,6 +274,76 @@ TEST_CASE("StationField class") {
 	}
 }
 
+TEST_CASE("Utility class") {
+	GameEngine test_engine = GameEngine(30, 1000, 1200);
+
+	REQUIRE(test_engine.getWindowWidth() == 1000);
+	REQUIRE(test_engine.getWindowHeight() == 1200);
+
+	const unsigned int TEST_ID = 1;
+	const FieldType TEST_TYPE = PROPERTY;
+	const std::string TEST_NAME = "Elektrownia";
+	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+	const unsigned int TEST_WIDTH = 200;
+	const unsigned int TEST_HEIGHT = 1000;
+	const float TEST_ROTATION = 0.0;
+	const unsigned int TEST_PRICE = 150;
+	const std::map<UtilityTiers, unsigned int> TEST_RENT = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
+	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {28};
+	const unsigned int TEST_MORTAGE = 75;
+
+	UtilityField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT,
+		TEST_ROTATION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+
+	REQUIRE(test_field.getId() == TEST_ID);
+	REQUIRE(test_field.getType() == TEST_TYPE);
+	REQUIRE(test_field.getName() == TEST_NAME);
+	REQUIRE(test_field.getGraphicPath() == TEST_PATH);
+	REQUIRE(test_field.getWidth() == TEST_WIDTH);
+	REQUIRE(test_field.getHeight() == TEST_HEIGHT);
+	REQUIRE(test_field.getRotation() == TEST_ROTATION);
+	REQUIRE(test_field.getPrice() == TEST_PRICE);
+	REQUIRE(test_field.getRentMultipliers() == TEST_RENT);
+	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
+	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
+	REQUIRE(test_field.getIsMortaged() == false);
+	REQUIRE(test_field.getUnmortageValue() == 83);
+	REQUIRE(test_field.getOwner() == nullptr);
+
+	SECTION("UtilityField class setters") {
+		Player NEW_OWNER = Player();
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getOwner() == OWNER_PTR);
+
+		test_field.setOwner(nullptr);
+
+		REQUIRE(test_field.getOwner() == nullptr);
+	}
+
+	SECTION("UtilityField::resetDefault() method") {
+		Player NEW_OWNER = Player();
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getOwner() == OWNER_PTR);
+
+		test_field.resetDefault();
+
+		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getOwner() == nullptr);
+	}
+}
+
 TEST_CASE("TaxField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
@@ -452,6 +522,23 @@ TEST_CASE("Board class") {
 
 	test_board.push_back(test_field_5);
 
+	test_id = 12;
+	test_type = UTILITY;
+	test_name = "Elektrownia";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_empty.png";
+	test_width = 80;
+	test_height = 200;
+	test_rotation = 270.0;
+	test_price = 150;
+	std::map<UtilityTiers, unsigned int> test_rent_multipliers = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
+	test_group_members = {28};
+	test_mortage = 75;
+
+	const UtilityField test_field_6 = UtilityField(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation, test_price, test_rent_multipliers, test_group_members, test_mortage);
+
+	test_board.push_back(test_field_6);
+
 	std::string TEST_PATH = "Monopoly/tests/test_board.json";
 	std::ifstream f(TEST_PATH);
 	Board TEST_BOARD = Board(TEST_PATH);
@@ -459,9 +546,6 @@ TEST_CASE("Board class") {
 	std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
 	REQUIRE(TEST_BOARD.getFieldNumber() == created_board.size());
 	REQUIRE(test_board.size() == created_board.size());
-
-	std::cout << "Created board: " << created_board.size() << std::endl;
-	std::cout << "Test board: " << test_board.size() << std::endl;
 
 	for (int i = 0; i < test_board.size(); ++i) {
 		FieldType test_field_type = std::visit([](Field& field) { return field.getType(); }, test_board[i]);
@@ -496,6 +580,23 @@ TEST_CASE("Board class") {
 				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
 				CHECK(field_from_created.getPrice() == field_from_test.getPrice());
 				CHECK(field_from_created.getRentValues() == field_from_test.getRentValues());
+				CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
+				CHECK(field_from_created.getMortage() == field_from_test.getMortage());
+				break;
+			}
+
+			case UTILITY: {
+				UtilityField field_from_created = std::get<UtilityField>(created_board[i]);
+				UtilityField field_from_test = std::get<UtilityField>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				CHECK(field_from_created.getPrice() == field_from_test.getPrice());
+				CHECK(field_from_created.getRentMultipliers() == field_from_test.getRentMultipliers());
 				CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
 				CHECK(field_from_created.getMortage() == field_from_test.getMortage());
 				break;
