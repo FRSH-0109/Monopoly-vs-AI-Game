@@ -27,7 +27,6 @@ class Player {
 	void setJailStatus(unsigned int newJailStatus);
 	unsigned int getJailStatus() const;
 	void reduceJailStatus();
-
 };
 
 #endif

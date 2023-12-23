@@ -55,18 +55,15 @@ unsigned int Player::getMoney() const {
 }
 
 void Player::addMoney(unsigned int value) {
-	if(money_ + value <=  UINT_MAX)
-	{
+	if (money_ + value <= UINT_MAX) {
 		money_ += value;
 	}
 }
 
 bool Player::substractMoney(unsigned int value) {
-	if(value > money_)
-	{
+	if (value > money_) {
 		return false;
-	}
-	else{
+	} else {
 		money_ -= value;
 		return true;
 	}
@@ -80,8 +77,8 @@ unsigned int Player::getJailStatus() const {
 	return jailStatus_;
 }
 
-void Player::reduceJailStatus(){
-	if(jailStatus_ != 0) {
-		jailStatus_-= 1;
+void Player::reduceJailStatus() {
+	if (jailStatus_ != 0) {
+		jailStatus_ -= 1;
 	}
 }
