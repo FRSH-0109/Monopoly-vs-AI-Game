@@ -33,5 +33,28 @@
         "rent_values": [4, 20, 60, 180, 320, 450],
         "group_members": [1],
         "mortage": 30
+    },
+    {
+        "id": 4,
+        "type": "TAX",
+        "name": "Podatek Dochodowy",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 80,
+        "height": 200,
+        "rotation": 0.0,
+        "tax_value": 200
+    },
+    {
+        "id": 5,
+        "type": "STATION",
+        "name": "Dworzec Centralny",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_purple.png",
+        "width": 80,
+        "height": 200,
+        "rotation": 0.0,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
     }
 ]

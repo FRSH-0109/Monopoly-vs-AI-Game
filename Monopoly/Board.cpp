@@ -12,8 +12,6 @@
 
 using json = nlohmann::json;
 
-using PossibleFields = std::variant<Field, PropertyField>;
-
 Board::Board(const std::string file_path) {
 	std::map<std::string, FieldType> str_to_type = {{"PROPERTY", PROPERTY}, {"STATION", STATION}, {"UTILITY", UTILITY},
 		{"GO", GO}, {"CHANCE", CHANCE}, {"COMUNITY_CHEST", COMMUNITY_CHEST}, {"TAX", TAX}, {"JAIL", JAIL},
@@ -36,7 +34,7 @@ Board::Board(const std::string file_path) {
 			case PROPERTY: {
 				unsigned int price = element["price"];
 				unsigned int mortage = element["mortage"];
-				std::map<PropertyTiers, unsigned int> rent_values = jsonToRent(element);
+				std::map<PropertyTiers, unsigned int> rent_values = jsonToPropertyRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				PropertyField new_field = PropertyField(
 					id, type, name, graphic_path, width, height, rotation, price, rent_values, group_members, mortage);
@@ -44,9 +42,16 @@ Board::Board(const std::string file_path) {
 				break;
 			}
 
-			case STATION:
-
+			case STATION: {
+                unsigned int price = element["price"];
+                unsigned int mortage = element["mortage"];
+                std::map<StationTiers, unsigned int> rent_values = jsonToStationRent(element);
+                std::vector<unsigned int> group_members = element["group_members"];
+                StationField new_field = StationField(
+                    id, type, name, graphic_path, width, height, rotation, price, rent_values, group_members, mortage);
+                board_.push_back(new_field);
 				break;
+            }
 
 			case UTILITY:
 
@@ -62,9 +67,12 @@ Board::Board(const std::string file_path) {
 				break;
 			}
 
-			case TAX:
-
-				break;
+			case TAX:{
+                unsigned int tax_value = element["tax_value"];
+                TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, tax_value);
+                board_.push_back(new_field);
+                break;
+            }
 
 			case JAIL:
 
@@ -79,13 +87,18 @@ Board::Board(const std::string file_path) {
 				break;
 		}
 	}
+    field_number_ = board_.size();
 };
 
-std::vector<PossibleFields> Board::getBoard() {
+const std::vector<PossibleFields> Board::getBoard() {
 	return board_;
 };
 
-std::map<PropertyTiers, unsigned int> jsonToRent(const json& element) {
+const unsigned int Board::getFieldNumber() {
+    return field_number_;
+};
+
+std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {
 	std::map<PropertyTiers, unsigned int> rent_values;
 	std::vector<unsigned int> list_of_rents = element["rent_values"];
 	rent_values.emplace(std::make_pair(NO_HOUSES, list_of_rents[0]));
@@ -95,4 +108,14 @@ std::map<PropertyTiers, unsigned int> jsonToRent(const json& element) {
 	rent_values.emplace(std::make_pair(FOUR_HOUSES, list_of_rents[4]));
 	rent_values.emplace(std::make_pair(HOTEL, list_of_rents[5]));
 	return rent_values;
-}
+};
+
+std::map<StationTiers, unsigned int> jsonToStationRent(const json& element) {
+    std::map<StationTiers, unsigned int> rent_values;
+	std::vector<unsigned int> list_of_rents = element["rent_values"];
+    rent_values.emplace(std::make_pair(ONE_STATION, list_of_rents[0]));
+    rent_values.emplace(std::make_pair(TWO_STATIONS, list_of_rents[1]));
+    rent_values.emplace(std::make_pair(THREE_STATIONS, list_of_rents[2]));
+    rent_values.emplace(std::make_pair(FOUR_STATIONS, list_of_rents[3]));
+    return rent_values;
+};

@@ -9,7 +9,7 @@
 
 using json = nlohmann::json;
 
-using PossibleFields = std::variant<Field, PropertyField>;
+using PossibleFields = std::variant<Field, PropertyField, StationField, TaxField>;
 
 class Board {
 	unsigned int field_number_;
@@ -17,9 +17,11 @@ class Board {
 
    public:
 	Board(const std::string file_path);
-	std::vector<PossibleFields> getBoard();
+	const std::vector<PossibleFields> getBoard();
+    const unsigned int getFieldNumber();
 };
 
-std::map<PropertyTiers, unsigned int> jsonToRent(const json& element);
+std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element);
+std::map<StationTiers, unsigned int> jsonToStationRent(const json& element);
 
 #endif
