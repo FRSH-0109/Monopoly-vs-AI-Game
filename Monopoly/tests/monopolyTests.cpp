@@ -105,8 +105,8 @@ TEST_CASE("PropertyField class") {
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
 	const unsigned int TEST_MORTAGE = 200;
 
-	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT,
-		TEST_ROTATION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -203,6 +203,34 @@ TEST_CASE("PropertyField class") {
 	}
 }
 
+TEST_CASE("TaxField class") {
+	GameEngine test_engine = GameEngine(30, 1000, 1200);
+
+	REQUIRE(test_engine.getWindowWidth() == 1000);
+	REQUIRE(test_engine.getWindowHeight() == 1200);
+
+	const unsigned int TEST_ID = 2;
+	const FieldType TEST_TYPE = TAX;
+	const std::string TEST_NAME = "Domiar Podatkowy";
+	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_empty.png";
+	const unsigned int TEST_WIDTH = 200;
+	const unsigned int TEST_HEIGHT = 1000;
+	const float TEST_ROTATION = 0.0;
+	const unsigned int TEST_TAX_VALUE = 100;
+
+	TaxField test_tax_field =
+		TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION, TEST_TAX_VALUE);
+
+	REQUIRE(test_tax_field.getId() == TEST_ID);
+	REQUIRE(test_tax_field.getType() == TEST_TYPE);
+	REQUIRE(test_tax_field.getName() == TEST_NAME);
+	REQUIRE(test_tax_field.getGraphicPath() == TEST_PATH);
+	REQUIRE(test_tax_field.getWidth() == TEST_WIDTH);
+	REQUIRE(test_tax_field.getHeight() == TEST_HEIGHT);
+	REQUIRE(test_tax_field.getRotation() == TEST_ROTATION);
+	REQUIRE(test_tax_field.getTaxValue() == TEST_TAX_VALUE);
+}
+
 TEST_CASE("Player class") {
 	unsigned int FIELD_ID_1 = 1;
 	unsigned int FIELD_ID_2 = 2;
@@ -218,7 +246,7 @@ TEST_CASE("Player class") {
 	Player PLAYER1;
 	Player PLAYER2(AMOUT_1);
 
-	//MONEY TESTS
+	// MONEY TESTS
 	REQUIRE(PLAYER1.getMoney() == 0);
 	PLAYER1.addMoney(AMOUT_2);
 	REQUIRE(PLAYER1.getMoney() == AMOUT_2);
@@ -230,21 +258,21 @@ TEST_CASE("Player class") {
 	REQUIRE(PLAYER1.getMoney() == 0);
 	REQUIRE(PLAYER2.getMoney() == AMOUT_1);
 
-	//POSITION TESTS
+	// POSITION TESTS
 	REQUIRE(PLAYER1.getPositon() == 0);
 	PLAYER1.setPositon(POSITION_1);
 	REQUIRE(PLAYER1.getPositon() == POSITION_1);
 	PLAYER1.setPositon(POSITION_2);
 	REQUIRE(PLAYER1.getPositon() == POSITION_2);
 
-	//JAILSTATUS TESTS
+	// JAILSTATUS TESTS
 	REQUIRE(PLAYER1.getJailStatus() == 0);
 	PLAYER1.setJailStatus(JAILSTATUS_1);
 	REQUIRE(PLAYER1.getJailStatus() == JAILSTATUS_1);
 	PLAYER1.reduceJailStatus();
 	REQUIRE(PLAYER1.getJailStatus() == JAILSTATUS_2);
 
-	//FILED OWNED TESTS
+	// FILED OWNED TESTS
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
 	PLAYER1.addFieldOwnedId(FIELD_ID_1);
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == true);
@@ -283,10 +311,10 @@ TEST_CASE("Board class") {
 	unsigned int test_height = 200;
 	float test_rotation = 0.0;
 	unsigned int test_price = 60;
-	std::map<PropertyTiers, unsigned int> test_rent = {{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30},
-		{THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
+	std::map<PropertyTiers, unsigned int> test_rent = {
+		{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30}, {THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
 	std::vector<unsigned int> test_group_members = {3};
-	unsigned int test_mortage= 30;
+	unsigned int test_mortage = 30;
 
 	const PropertyField test_field_1 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
 		test_rotation, test_price, test_rent, test_group_members, test_mortage);
@@ -300,8 +328,7 @@ TEST_CASE("Board class") {
 	test_height = 200;
 	test_rotation = 0.0;
 
-	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation);
+	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
 
 	test_board.push_back(test_field_2);
 
@@ -313,10 +340,10 @@ TEST_CASE("Board class") {
 	test_height = 200;
 	test_rotation = 0.0;
 	test_price = 60;
-	test_rent = {{NO_HOUSES, 4}, {ONE_HOUSE, 20}, {TWO_HOUESES, 60},
-		{THREE_HOUSES, 180}, {FOUR_HOUSES, 320}, {HOTEL, 450}};
+	test_rent = {
+		{NO_HOUSES, 4}, {ONE_HOUSE, 20}, {TWO_HOUESES, 60}, {THREE_HOUSES, 180}, {FOUR_HOUSES, 320}, {HOTEL, 450}};
 	test_group_members = {1};
-	test_mortage= 30;
+	test_mortage = 30;
 
 	const PropertyField test_field_3 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
 		test_rotation, test_price, test_rent, test_group_members, test_mortage);
@@ -329,13 +356,11 @@ TEST_CASE("Board class") {
 
 	std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
 	REQUIRE(test_board.size() == created_board.size());
-	for(int i = 0; i < test_board.size(); ++i) {
-
+	for (int i = 0; i < test_board.size(); ++i) {
 		FieldType test_field_type = std::visit([](Field& field) { return field.getType(); }, test_board[i]);
 
-		switch(test_field_type) {
-			case PROPERTY:
-			{
+		switch (test_field_type) {
+			case PROPERTY: {
 				PropertyField field_from_created = std::get<PropertyField>(created_board[i]);
 				PropertyField field_from_test = std::get<PropertyField>(test_board[i]);
 				CHECK(field_from_created.getId() == field_from_test.getId());
@@ -352,8 +377,7 @@ TEST_CASE("Board class") {
 				break;
 			}
 
-			case COMMUNITY_CHEST:
-			{
+			case COMMUNITY_CHEST: {
 				Field field_from_created = std::get<Field>(created_board[i]);
 				Field field_from_test = std::get<Field>(test_board[i]);
 				CHECK(field_from_created.getId() == field_from_test.getId());

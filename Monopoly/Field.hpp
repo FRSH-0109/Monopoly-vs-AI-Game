@@ -35,7 +35,13 @@ class Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation)
-		: id_(id), type_(type), name_(name), graphic_path_(graphic_path), width_(width), height_(height), rotation_(rotation) {
+		: id_(id),
+		  type_(type),
+		  name_(name),
+		  graphic_path_(graphic_path),
+		  width_(width),
+		  height_(height),
+		  rotation_(rotation) {
 		std::cout << "Field constructor" << std::endl;
 	};
 
@@ -102,6 +108,25 @@ class PropertyField : public Field {
 	void setIsMortaged(bool new_state);
 	void setOwner(Player* new_owner);
 	void resetDefault();
+};
+
+class TaxField : public Field {
+	unsigned int tax_value_;
+
+   public:
+	TaxField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const unsigned int tax_value)
+		: Field(id, type, name, graphic_path, width, height, rotation), tax_value_(tax_value) {
+		std::cout << "TaxField constructor" << std::endl;
+	};
+
+	const unsigned int getTaxValue() { return tax_value_; };
 };
 
 #endif
