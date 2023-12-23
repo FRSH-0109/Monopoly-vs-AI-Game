@@ -1,6 +1,7 @@
 #ifndef FIELD_H
 #define FIELD_H
 
+#include <cmath>
 #include <iostream>
 #include <map>
 #include <string>
@@ -100,7 +101,7 @@ class PropertyField : public Field {
 	const unsigned int getHouseNumber() { return house_number_; };
 	const bool getIsHotel() { return is_hotel_; };
 	const bool getIsMortaged() { return is_mortaged_; };
-	const unsigned int getUnmortageValue() { return static_cast<int>(1.1 * mortage_); };
+	const unsigned int getUnmortageValue() { return static_cast<int>(round(1.1 * mortage_)); };
 	Player* getOwner() { return owner_; };
 
 	void setHouseNumber(unsigned int new_house_number);
@@ -146,7 +147,51 @@ class StationField : public Field {
 	const std::vector<unsigned int> getGroupMembers() { return group_members_; };
 	const unsigned int getMortage() { return mortage_; };
 	const bool getIsMortaged() { return is_mortaged_; };
-	const unsigned int getUnmortageValue() { return static_cast<int>(1.1 * mortage_); };
+	const unsigned int getUnmortageValue() { return static_cast<int>(round(1.1 * mortage_)); };
+	Player* getOwner() { return owner_; };
+
+	void setIsMortaged(bool new_state);
+	void setOwner(Player* new_owner);
+	void resetDefault();
+};
+
+class UtilityField : public Field {
+	unsigned int price_;
+	std::map<UtilityTiers, unsigned int> rent_multipliers_;
+	std::vector<unsigned int> group_members_;
+	unsigned int mortage_;
+	bool is_mortaged_;
+	unsigned int unmortage_value_;
+	Player* owner_;
+
+	public:
+		UtilityField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const unsigned int price,
+		const std::map<UtilityTiers, unsigned int> rent_multipliers,
+		const std::vector<unsigned int> group_members,
+		const unsigned int mortage)
+		: Field(id, type, name, graphic_path, width, height, rotation),
+			price_(price),
+			rent_multipliers_(rent_multipliers),
+			group_members_(group_members),
+			mortage_(mortage),
+			is_mortaged_(false),
+		  	owner_(nullptr) {
+		std::cout << "UtilityField constructor" << std::endl;
+	};
+
+	const unsigned int getPrice() { return price_; };
+	const std::map<UtilityTiers, unsigned int> getRentMultipliers() { return rent_multipliers_; };
+	const std::vector<unsigned int> getGroupMembers() { return group_members_; };
+	const unsigned int getMortage() { return mortage_; };
+	const bool getIsMortaged() { return is_mortaged_; };
+	const unsigned int getUnmortageValue() { return static_cast<int>(round(1.1 * mortage_)); };
 	Player* getOwner() { return owner_; };
 
 	void setIsMortaged(bool new_state);
