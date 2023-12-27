@@ -82,3 +82,41 @@ void Player::reduceJailStatus() {
 		jailStatus_ -= 1;
 	}
 }
+
+void Player::setId(unsigned int newId)
+{
+	//TODO: catch exception and tests to do
+	if(id_ >= 0 && id_ <=3)
+	{
+		id_ = newId;
+		switch (id_)
+		{
+		case 0:
+			setColor(sf::Color::Green);
+			break;
+		case 1:
+			setColor(sf::Color::Red);
+			break;
+		case 2:
+			setColor(sf::Color::Blue);
+			break;
+		case 3:
+			setColor(sf::Color::Yellow);
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+unsigned int Player::getId() const {
+	return id_;
+}
+
+void Player::setColor(sf::Color newColor) {
+	color_ = newColor;
+}
+
+sf::Color Player::getColor() const {
+	return color_
+}

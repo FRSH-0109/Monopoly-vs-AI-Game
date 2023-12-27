@@ -4,8 +4,11 @@
 #include <bits/stdc++.h>
 #include <vector>
 #include "main.h"
+#include <SFML/Graphics.hpp>
 
 class Player {
+	unsigned int id_;
+	sf::Color color_;
 	unsigned int position_;
 	std::vector<unsigned int> fieldsOwnedId_;
 	unsigned int money_;
@@ -27,6 +30,10 @@ class Player {
 	void setJailStatus(unsigned int newJailStatus);
 	unsigned int getJailStatus() const;
 	void reduceJailStatus();
+	void setId(unsigned int newId);
+	unsigned int getId() const;
+	void setColor(sf::Color newColor);
+	sf::Color getColor() const;
 };
 
 #endif
