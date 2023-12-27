@@ -118,5 +118,5 @@ void Player::setColor(sf::Color newColor) {
 }
 
 sf::Color Player::getColor() const {
-	return color_
+	return color_;
 }
