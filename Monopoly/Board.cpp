@@ -111,7 +111,7 @@ Board::Board(const std::string file_path) {
     field_number_ = board_.size();
 };
 
-const std::vector<PossibleFields> Board::getBoard() {
+const std::vector<PossibleFields>& Board::getBoard() {
 	return board_;
 };
 

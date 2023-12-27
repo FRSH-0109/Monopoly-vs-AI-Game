@@ -17,7 +17,7 @@ class Board {
 
    public:
 	Board(const std::string file_path);
-	const std::vector<PossibleFields> getBoard();
+	const std::vector<PossibleFields>& getBoard();
     const unsigned int getFieldNumber();
 };
 
