@@ -2,7 +2,9 @@
 #define MONOPOLY_GAME_ENGINE_H
 
 #include <memory>
+#include <vector>
 #include "main.h"
+#include "activeScreen.h"
 
 class monopolyGameEngine {
 	unsigned int playersHumanNumber_;
@@ -16,6 +18,7 @@ class monopolyGameEngine {
 	void setPlayersHumanNumber(int number);
 	unsigned int getPlayersAINumber();
 	void setPlayersAINumber(int number);
+	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
 };
 
 #endif

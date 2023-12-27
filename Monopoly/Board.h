@@ -18,7 +18,7 @@ class Board {
    public:
 	Board(const std::string file_path);
 	const std::vector<PossibleFields>& getBoard();
-    const unsigned int getFieldNumber();
+	const unsigned int getFieldNumber();
 };
 
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element);

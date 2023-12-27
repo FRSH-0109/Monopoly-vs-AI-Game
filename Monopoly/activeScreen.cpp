@@ -639,3 +639,7 @@ void GameMenuScreen::setDefaultAILevelButtonsFocus(int playerNum) {
 void ActiveScreen::buttonSetColors(std::shared_ptr<Button> buttonPtr) {
 	buttonPtr->updateColors();
 }
+
+std::vector<std::shared_ptr<playerSettings>> GameMenuScreen::getPlayersSettings() const{
+	return playerSettingsList_;
+}

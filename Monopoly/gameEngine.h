@@ -10,6 +10,8 @@
 #include "contextWindow.h"
 #include "main.h"
 #include "monopolyGameEngine.h"
+#include "GameScreen.h"
+#include "variant"
 
 class DimensionException : public std::exception {
 	unsigned int bad_dimension_;
@@ -29,6 +31,8 @@ class RotationException : public std::exception {
 	const float getBadRotation() { return bad_rotation_; };
 };
 
+//using PossibleScreens = std::variant<std::unique_ptr<ActiveScreen>, std::unique_ptr<MainMenuScreen>, std::unique_ptr<GameMenuScreen>, std::unique_ptr<GameScreen>>;
+
 class GameEngine {
    private:
 	ContextWindow* contextWindow_;
@@ -39,8 +43,6 @@ class GameEngine {
 	sf::Time frameRateDelayMs_;
 	unsigned int windowWidth_;
 	unsigned int windowHeight_;
-
-	monopolyGameEngine monopolyEngine;
 
    public:
 	GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight);

@@ -103,7 +103,8 @@ void GameEngine::worker() {
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
 			case StartGame:
-				getContextWindow()->window_.close();
+				activeScreen_.reset();
+				//activeScreen_ = std::make_unique<GameScreen>();
 				break;
 		}
 

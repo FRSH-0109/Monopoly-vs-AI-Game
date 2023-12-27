@@ -1,6 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+struct playerSettings {
+	bool isNone;
+	bool isHuman;
+	int level;
+};
+
 enum ActiveScreenType { None, MainMenu, GameMenu, MonopolyGame };
 
 enum ScreenEventType {

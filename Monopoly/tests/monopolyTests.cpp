@@ -217,13 +217,13 @@ TEST_CASE("StationField class") {
 	const unsigned int TEST_HEIGHT = 1000;
 	const float TEST_ROTATION = 0.0;
 	const unsigned int TEST_PRICE = 200;
-	const std::map<StationTiers, unsigned int> TEST_RENT = {{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100},
-		{FOUR_STATIONS, 200}};
+	const std::map<StationTiers, unsigned int> TEST_RENT = {
+		{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100}, {FOUR_STATIONS, 200}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {15, 25, 35};
 	const unsigned int TEST_MORTAGE = 100;
 
-	StationField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT,
-		TEST_ROTATION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+	StationField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -292,8 +292,8 @@ TEST_CASE("Utility class") {
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {28};
 	const unsigned int TEST_MORTAGE = 75;
 
-	UtilityField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT,
-		TEST_ROTATION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+	UtilityField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -511,8 +511,8 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	unsigned int test_tax_value = 200;
 
-	const TaxField test_field_4 = TaxField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_tax_value);
+	const TaxField test_field_4 =
+		TaxField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_tax_value);
 	test_board.push_back(test_field_4);
 
 	test_id = 5;

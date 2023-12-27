@@ -83,28 +83,25 @@ void Player::reduceJailStatus() {
 	}
 }
 
-void Player::setId(unsigned int newId)
-{
-	//TODO: catch exception and tests to do
-	if(id_ >= 0 && id_ <=3)
-	{
+void Player::setId(unsigned int newId) {
+	// TODO: catch exception and tests to do
+	if (id_ <= 3) {
 		id_ = newId;
-		switch (id_)
-		{
-		case 0:
-			setColor(sf::Color::Green);
-			break;
-		case 1:
-			setColor(sf::Color::Red);
-			break;
-		case 2:
-			setColor(sf::Color::Blue);
-			break;
-		case 3:
-			setColor(sf::Color::Yellow);
-			break;
-		default:
-			break;
+		switch (id_) {
+			case 0:
+				setColor(sf::Color::Green);
+				break;
+			case 1:
+				setColor(sf::Color::Red);
+				break;
+			case 2:
+				setColor(sf::Color::Blue);
+				break;
+			case 3:
+				setColor(sf::Color::Yellow);
+				break;
+			default:
+				break;
 		}
 	}
 }
@@ -119,4 +116,21 @@ void Player::setColor(sf::Color newColor) {
 
 sf::Color Player::getColor() const {
 	return color_;
+}
+
+void Player::setIsAi(bool isAiState){
+	isAi_ = isAiState;
+}
+
+bool Player::getIsAi(){
+	return isAi_;
+}
+
+void Player::setAiLevel(unsigned int aiLevel){
+	// TODO excetpion
+	aiLevel_ = aiLevel;
+}
+
+unsigned int Player::getAiLevel(){
+	return aiLevel_;
 }

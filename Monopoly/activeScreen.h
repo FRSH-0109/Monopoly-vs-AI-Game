@@ -9,6 +9,7 @@
 #include <string>
 #include "button.h"
 #include "contextWindow.h"
+#include "monopolyGameEngine.h"
 #include "main.h"
 
 class ActiveScreen {
@@ -38,12 +39,6 @@ class ActiveScreen {
 };
 
 class GameMenuScreen : public ActiveScreen {
-	struct playerSettings {
-		bool isNone;
-		bool isHuman;
-		int level;
-	};
-
 	std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 	void createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep);
 
@@ -63,6 +58,7 @@ class GameMenuScreen : public ActiveScreen {
 	bool isEventTypeAILevel(int playerNum, ScreenEventType event);
 	bool isEventTypeSetAI(int playerNum, ScreenEventType event);
 	void setDefaultAILevelButtonsFocus(int playerNum);
+	std::vector<std::shared_ptr<playerSettings>> getPlayersSettings() const;
 };
 
 class MainMenuScreen : public ActiveScreen {

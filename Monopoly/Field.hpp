@@ -120,7 +120,7 @@ class StationField : public Field {
 	unsigned int unmortage_value_;
 	Player* owner_;
 
-	public:
+   public:
 	StationField(const unsigned int id,
 		const FieldType type,
 		const std::string name,
@@ -133,12 +133,12 @@ class StationField : public Field {
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
 		: Field(id, type, name, graphic_path, width, height, rotation),
-			price_(price),
-			rent_values_(rent_values),
-			group_members_(group_members),
-			mortage_(mortage),
-			is_mortaged_(false),
-		  	owner_(nullptr) {
+		  price_(price),
+		  rent_values_(rent_values),
+		  group_members_(group_members),
+		  mortage_(mortage),
+		  is_mortaged_(false),
+		  owner_(nullptr) {
 		std::cout << "StationField constructor" << std::endl;
 	};
 
@@ -164,8 +164,8 @@ class UtilityField : public Field {
 	unsigned int unmortage_value_;
 	Player* owner_;
 
-	public:
-		UtilityField(const unsigned int id,
+   public:
+	UtilityField(const unsigned int id,
 		const FieldType type,
 		const std::string name,
 		const std::string graphic_path,
@@ -177,12 +177,12 @@ class UtilityField : public Field {
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
 		: Field(id, type, name, graphic_path, width, height, rotation),
-			price_(price),
-			rent_multipliers_(rent_multipliers),
-			group_members_(group_members),
-			mortage_(mortage),
-			is_mortaged_(false),
-		  	owner_(nullptr) {
+		  price_(price),
+		  rent_multipliers_(rent_multipliers),
+		  group_members_(group_members),
+		  mortage_(mortage),
+		  is_mortaged_(false),
+		  owner_(nullptr) {
 		std::cout << "UtilityField constructor" << std::endl;
 	};
 

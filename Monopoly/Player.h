@@ -2,11 +2,13 @@
 #define PLAYER_H
 
 #include <bits/stdc++.h>
+#include <SFML/Graphics.hpp>
 #include <vector>
 #include "main.h"
-#include <SFML/Graphics.hpp>
 
 class Player {
+	bool isAi_;
+	unsigned int aiLevel_;
 	unsigned int id_;
 	sf::Color color_;
 	unsigned int position_;
@@ -34,6 +36,11 @@ class Player {
 	unsigned int getId() const;
 	void setColor(sf::Color newColor);
 	sf::Color getColor() const;
+	void setIsAi(bool isAiState);
+	bool getIsAi();
+	void setAiLevel(unsigned int aiLevel);
+	unsigned int getAiLevel();
+
 };
 
 #endif

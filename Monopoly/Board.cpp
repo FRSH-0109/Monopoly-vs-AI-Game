@@ -43,26 +43,26 @@ Board::Board(const std::string file_path) {
 			}
 
 			case STATION: {
-                unsigned int price = element["price"];
-                unsigned int mortage = element["mortage"];
-                std::map<StationTiers, unsigned int> rent_values = jsonToStationRent(element);
-                std::vector<unsigned int> group_members = element["group_members"];
-                StationField new_field = StationField(
-                    id, type, name, graphic_path, width, height, rotation, price, rent_values, group_members, mortage);
-                board_.push_back(new_field);
+				unsigned int price = element["price"];
+				unsigned int mortage = element["mortage"];
+				std::map<StationTiers, unsigned int> rent_values = jsonToStationRent(element);
+				std::vector<unsigned int> group_members = element["group_members"];
+				StationField new_field = StationField(
+					id, type, name, graphic_path, width, height, rotation, price, rent_values, group_members, mortage);
+				board_.push_back(new_field);
 				break;
-            }
+			}
 
 			case UTILITY: {
-                unsigned int price = element["price"];
-                unsigned int mortage = element["mortage"];
-                std::map<UtilityTiers, unsigned int> rent_multipliers = jsonToUtilityRent(element);
-                std::vector<unsigned int> group_members = element["group_members"];
-                UtilityField new_field = UtilityField(
-                    id, type, name, graphic_path, width, height, rotation, price, rent_multipliers, group_members, mortage);
-                board_.push_back(new_field);
+				unsigned int price = element["price"];
+				unsigned int mortage = element["mortage"];
+				std::map<UtilityTiers, unsigned int> rent_multipliers = jsonToUtilityRent(element);
+				std::vector<unsigned int> group_members = element["group_members"];
+				UtilityField new_field = UtilityField(id, type, name, graphic_path, width, height, rotation, price,
+					rent_multipliers, group_members, mortage);
+				board_.push_back(new_field);
 				break;
-            }
+			}
 
 			case GO: {
 				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
@@ -70,24 +70,18 @@ Board::Board(const std::string file_path) {
 				break;
 			}
 
-            case CHANCE: {
-				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
-				board_.push_back(new_field);
-				break;
-			}
-
-			case COMMUNITY_CHEST: {
+			case CHANCE: {
 				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
 				board_.push_back(new_field);
 				break;
 			}
 
 			case TAX: {
-                unsigned int tax_value = element["tax_value"];
-                TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, tax_value);
-                board_.push_back(new_field);
-                break;
-            }
+				unsigned int tax_value = element["tax_value"];
+				TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, tax_value);
+				board_.push_back(new_field);
+				break;
+			}
 
 			case JAIL: {
 				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
@@ -108,7 +102,7 @@ Board::Board(const std::string file_path) {
 			}
 		}
 	}
-    field_number_ = board_.size();
+	field_number_ = board_.size();
 };
 
 const std::vector<PossibleFields>& Board::getBoard() {
@@ -116,7 +110,7 @@ const std::vector<PossibleFields>& Board::getBoard() {
 };
 
 const unsigned int Board::getFieldNumber() {
-    return field_number_;
+	return field_number_;
 };
 
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {
@@ -132,19 +126,19 @@ std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {
 };
 
 std::map<StationTiers, unsigned int> jsonToStationRent(const json& element) {
-    std::map<StationTiers, unsigned int> rent_values;
+	std::map<StationTiers, unsigned int> rent_values;
 	std::vector<unsigned int> list_of_rents = element["rent_values"];
-    rent_values.emplace(std::make_pair(ONE_STATION, list_of_rents[0]));
-    rent_values.emplace(std::make_pair(TWO_STATIONS, list_of_rents[1]));
-    rent_values.emplace(std::make_pair(THREE_STATIONS, list_of_rents[2]));
-    rent_values.emplace(std::make_pair(FOUR_STATIONS, list_of_rents[3]));
-    return rent_values;
+	rent_values.emplace(std::make_pair(ONE_STATION, list_of_rents[0]));
+	rent_values.emplace(std::make_pair(TWO_STATIONS, list_of_rents[1]));
+	rent_values.emplace(std::make_pair(THREE_STATIONS, list_of_rents[2]));
+	rent_values.emplace(std::make_pair(FOUR_STATIONS, list_of_rents[3]));
+	return rent_values;
 };
 
-std::map<UtilityTiers, unsigned int>jsonToUtilityRent(const json& element) {
-    std::map<UtilityTiers, unsigned int> rent_multipliers;
+std::map<UtilityTiers, unsigned int> jsonToUtilityRent(const json& element) {
+	std::map<UtilityTiers, unsigned int> rent_multipliers;
 	std::vector<unsigned int> list_of_rents = element["rent_multipliers"];
-    rent_multipliers.emplace(std::make_pair(ONE_UTILITY, list_of_rents[0]));
-    rent_multipliers.emplace(std::make_pair(TWO_UTILITIES, list_of_rents[1]));
-    return rent_multipliers;
+	rent_multipliers.emplace(std::make_pair(ONE_UTILITY, list_of_rents[0]));
+	rent_multipliers.emplace(std::make_pair(TWO_UTILITIES, list_of_rents[1]));
+	return rent_multipliers;
 }
