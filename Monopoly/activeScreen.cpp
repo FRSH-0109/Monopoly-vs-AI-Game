@@ -640,6 +640,11 @@ void ActiveScreen::buttonSetColors(std::shared_ptr<Button> buttonPtr) {
 	buttonPtr->updateColors();
 }
 
-std::vector<std::shared_ptr<playerSettings>> GameMenuScreen::getPlayersSettings() const{
+std::vector<std::shared_ptr<playerSettings>> GameMenuScreen::getPlayersSettings() const {
 	return playerSettingsList_;
+}
+
+std::vector<std::shared_ptr<playerSettings>> ActiveScreen::getPlayersSettings() const {
+	std::vector<std::shared_ptr<playerSettings>> empty;
+	return empty;
 }

@@ -9,8 +9,8 @@
 #include <string>
 #include "button.h"
 #include "contextWindow.h"
-#include "monopolyGameEngine.h"
 #include "main.h"
+#include "monopolyGameEngine.h"
 
 class ActiveScreen {
 	ContextWindow* contextWindow_;
@@ -36,6 +36,7 @@ class ActiveScreen {
 	ActiveScreenType getScreenType();
 	void setScreenType(ActiveScreenType type);
 	void buttonSetColors(std::shared_ptr<Button> buttonPtr);
+	virtual std::vector<std::shared_ptr<playerSettings>> getPlayersSettings() const;
 };
 
 class GameMenuScreen : public ActiveScreen {

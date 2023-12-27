@@ -5,12 +5,13 @@
 #include <SFML/System/Clock.hpp>
 
 #include <memory>
+#include "GameScreen.h"
 #include "activeScreen.h"
 #include "button.h"
 #include "contextWindow.h"
 #include "main.h"
 #include "monopolyGameEngine.h"
-#include "GameScreen.h"
+#include "typeinfo"
 #include "variant"
 
 class DimensionException : public std::exception {
@@ -31,7 +32,8 @@ class RotationException : public std::exception {
 	const float getBadRotation() { return bad_rotation_; };
 };
 
-//using PossibleScreens = std::variant<std::unique_ptr<ActiveScreen>, std::unique_ptr<MainMenuScreen>, std::unique_ptr<GameMenuScreen>, std::unique_ptr<GameScreen>>;
+// using PossibleScreens = std::variant<std::unique_ptr<ActiveScreen>, std::unique_ptr<MainMenuScreen>,
+// std::unique_ptr<GameMenuScreen>, std::unique_ptr<GameScreen>>;
 
 class GameEngine {
    private:

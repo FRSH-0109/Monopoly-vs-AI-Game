@@ -40,7 +40,6 @@ class Player {
 	bool getIsAi();
 	void setAiLevel(unsigned int aiLevel);
 	unsigned int getAiLevel();
-
 };
 
 #endif

@@ -118,19 +118,19 @@ sf::Color Player::getColor() const {
 	return color_;
 }
 
-void Player::setIsAi(bool isAiState){
+void Player::setIsAi(bool isAiState) {
 	isAi_ = isAiState;
 }
 
-bool Player::getIsAi(){
+bool Player::getIsAi() {
 	return isAi_;
 }
 
-void Player::setAiLevel(unsigned int aiLevel){
+void Player::setAiLevel(unsigned int aiLevel) {
 	// TODO excetpion
 	aiLevel_ = aiLevel;
 }
 
-unsigned int Player::getAiLevel(){
+unsigned int Player::getAiLevel() {
 	return aiLevel_;
 }

@@ -42,8 +42,7 @@ void monopolyGameEngine::setPlayersAINumber(int number) {
 
 void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list) {
 	// TODO Parsować po wektorze playerSettings i generować na jego podstawie przeshufflowaną listę graczy)
-	for (auto it : player_settings_list)
-	{
+	for (auto it : player_settings_list) {
 		it->isNone;
 	};
 }

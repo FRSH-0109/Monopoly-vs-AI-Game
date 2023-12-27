@@ -90,6 +90,7 @@ void GameEngine::worker() {
 				break;
 		}
 
+		std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 		switch (eventType) {
 			case Play:
 				activeScreen_.reset();
@@ -103,8 +104,9 @@ void GameEngine::worker() {
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
 			case StartGame:
+				playerSettingsList_ = activeScreen_->getPlayersSettings();
 				activeScreen_.reset();
-				//activeScreen_ = std::make_unique<GameScreen>();
+				activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
 				break;
 		}
 

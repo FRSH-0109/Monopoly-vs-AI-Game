@@ -3,8 +3,8 @@
 
 #include <memory>
 #include <vector>
-#include "main.h"
 #include "activeScreen.h"
+#include "main.h"
 
 class monopolyGameEngine {
 	unsigned int playersHumanNumber_;
