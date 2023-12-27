@@ -1,5 +1,14 @@
 [
     {
+        "id": 0,
+        "type": "GO",
+        "name": "Start",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_clear.png",
+        "width": 200,
+        "height": 200,
+        "rotation": 0.0
+    },
+    {
         "id": 1,
         "type": "PROPERTY",
         "name": "Świętochłowice",
@@ -58,6 +67,24 @@
         "mortage": 100
     },
     {
+        "id": 7,
+        "type": "CHANCE",
+        "name": "Szansa",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_clear.png",
+        "width": 80,
+        "height": 200,
+        "rotation": 0.0
+    },
+    {
+        "id": 10,
+        "type": "JAIL",
+        "name": "Więzienie",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_clear.png",
+        "width": 200,
+        "height": 200,
+        "rotation": 0.0
+    },
+    {
         "id": 12,
         "type": "UTILITY",
         "name": "Elektrownia",
@@ -69,5 +96,23 @@
         "rent_multipliers": [4, 10],
         "group_members": [28],
         "mortage": 75
+    },
+    {
+        "id": 20,
+        "type": "FREE_PARKING",
+        "name": "Bezpłatny Parking",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_clear.png",
+        "width": 200,
+        "height": 200,
+        "rotation": 180.0
+    },
+    {
+        "id": 30,
+        "type": "GO_TO_JAIL",
+        "name": "Idziesz do więzienia!",
+        "graphic_path": "/textures_and_fonts/textures/monopoly_single_square_clear.png",
+        "width": 200,
+        "height": 200,
+        "rotation": 180.0
     }
 ]

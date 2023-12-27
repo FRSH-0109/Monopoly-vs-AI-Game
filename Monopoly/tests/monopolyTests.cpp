@@ -444,13 +444,24 @@ TEST_CASE("Board class") {
 	*/
 	std::vector<PossibleFields> test_board;
 
-	unsigned int test_id = 1;
-	FieldType test_type = PROPERTY;
-	std::string test_name = "Świętochłowice";
-	std::string test_path = "/textures_and_fonts/textures/monopoly_single_square_brown.png";
-	unsigned int test_width = 80;
+	unsigned int test_id = 0;
+	FieldType test_type = GO;
+	std::string test_name = "Start";
+	std::string test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	unsigned int test_width = 200;
 	unsigned int test_height = 200;
 	float test_rotation = 0.0;
+
+	const Field test_field = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	test_board.push_back(test_field);
+
+	test_id = 1;
+	test_type = PROPERTY;
+	test_name = "Świętochłowice";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_brown.png";
+	test_width = 80;
+	test_height = 200;
+	test_rotation = 0.0;
 	unsigned int test_price = 60;
 	std::map<PropertyTiers, unsigned int> test_rent = {
 		{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30}, {THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
@@ -522,6 +533,30 @@ TEST_CASE("Board class") {
 
 	test_board.push_back(test_field_5);
 
+	test_id = 7;
+	test_type = CHANCE;
+	test_name = "Szansa";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_width = 80;
+	test_height = 200;
+	test_rotation = 0.0;
+
+	const Field test_field_6 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+
+	test_board.push_back(test_field_6);
+
+	test_id = 10;
+	test_type = JAIL;
+	test_name = "Więzienie";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_width = 200;
+	test_height = 200;
+	test_rotation = 0.0;
+
+	const Field test_field_7 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+
+	test_board.push_back(test_field_7);
+
 	test_id = 12;
 	test_type = UTILITY;
 	test_name = "Elektrownia";
@@ -534,10 +569,34 @@ TEST_CASE("Board class") {
 	test_group_members = {28};
 	test_mortage = 75;
 
-	const UtilityField test_field_6 = UtilityField(test_id, test_type, test_name, test_path, test_width, test_height,
+	const UtilityField test_field_8 = UtilityField(test_id, test_type, test_name, test_path, test_width, test_height,
 		test_rotation, test_price, test_rent_multipliers, test_group_members, test_mortage);
 
-	test_board.push_back(test_field_6);
+	test_board.push_back(test_field_8);
+
+	test_id = 20;
+	test_type = FREE_PARKING;
+	test_name = "Bezpłatny Parking";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_width = 200;
+	test_height = 200;
+	test_rotation = 180.0;
+
+	const Field test_field_9 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+
+	test_board.push_back(test_field_9);
+
+	test_id = 30;
+	test_type = GO_TO_JAIL;
+	test_name = "Idziesz do więzienia!";
+	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_width = 200;
+	test_height = 200;
+	test_rotation = 180.0;
+
+	const Field test_field_10 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+
+	test_board.push_back(test_field_10);
 
 	std::string TEST_PATH = "Monopoly/tests/test_board.json";
 	std::ifstream f(TEST_PATH);
@@ -602,6 +661,32 @@ TEST_CASE("Board class") {
 				break;
 			}
 
+			case GO: {
+				Field field_from_created = std::get<Field>(created_board[i]);
+				Field field_from_test = std::get<Field>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				break;
+			}
+
+			case CHANCE: {
+				Field field_from_created = std::get<Field>(created_board[i]);
+				Field field_from_test = std::get<Field>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				break;
+			}
+
 			case COMMUNITY_CHEST: {
 				Field field_from_created = std::get<Field>(created_board[i]);
 				Field field_from_test = std::get<Field>(test_board[i]);
@@ -626,6 +711,45 @@ TEST_CASE("Board class") {
 				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
 				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
 				CHECK(field_from_created.getTaxValue() == field_from_test.getTaxValue());
+				break;
+			}
+
+			case JAIL: {
+				Field field_from_created = std::get<Field>(created_board[i]);
+				Field field_from_test = std::get<Field>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				break;
+			}
+
+			case FREE_PARKING: {
+				Field field_from_created = std::get<Field>(created_board[i]);
+				Field field_from_test = std::get<Field>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
+				break;
+			}
+
+			case GO_TO_JAIL: {
+				Field field_from_created = std::get<Field>(created_board[i]);
+				Field field_from_test = std::get<Field>(test_board[i]);
+				CHECK(field_from_created.getId() == field_from_test.getId());
+				CHECK(field_from_created.getType() == field_from_test.getType());
+				CHECK(field_from_created.getName() == field_from_test.getName());
+				CHECK(field_from_created.getGraphicPath() == field_from_test.getGraphicPath());
+				CHECK(field_from_created.getWidth() == field_from_test.getWidth());
+				CHECK(field_from_created.getHeight() == field_from_test.getHeight());
+				CHECK(field_from_created.getRotation() == field_from_test.getRotation());
 				break;
 			}
 		}

@@ -64,13 +64,17 @@ Board::Board(const std::string file_path) {
 				break;
             }
 
-			case GO:
-
+			case GO: {
+				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
+				board_.push_back(new_field);
 				break;
+			}
 
-            case CHANCE:
-
-                break;
+            case CHANCE: {
+				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
+				board_.push_back(new_field);
+				break;
+			}
 
 			case COMMUNITY_CHEST: {
 				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
@@ -78,24 +82,30 @@ Board::Board(const std::string file_path) {
 				break;
 			}
 
-			case TAX:{
+			case TAX: {
                 unsigned int tax_value = element["tax_value"];
                 TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, tax_value);
                 board_.push_back(new_field);
                 break;
             }
 
-			case JAIL:
-
+			case JAIL: {
+				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
+				board_.push_back(new_field);
 				break;
+			}
 
-			case FREE_PARKING:
-
+			case FREE_PARKING: {
+				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
+				board_.push_back(new_field);
 				break;
+			}
 
-			case GO_TO_JAIL:
-
+			case GO_TO_JAIL: {
+				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
+				board_.push_back(new_field);
 				break;
+			}
 		}
 	}
     field_number_ = board_.size();
