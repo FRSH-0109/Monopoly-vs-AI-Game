@@ -1,5 +1,4 @@
-#ifndef CONTEXT_WINDOW_H
-#define CONTEXT_WINDOW_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 
@@ -23,5 +22,3 @@ class ContextWindow {
 	sf::RenderWindow& getWindow();
 	sf::View& getView();
 };
-
-#endif

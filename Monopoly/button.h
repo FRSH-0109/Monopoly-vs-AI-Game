@@ -1,5 +1,4 @@
-#ifndef BUTTON_H
-#define BUTTON_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -59,5 +58,3 @@ class Button {
 	sf::Color focusBackColor_;
 	sf::Color focusTextColor_;
 };
-
-#endif

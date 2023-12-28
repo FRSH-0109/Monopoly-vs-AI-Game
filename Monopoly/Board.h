@@ -1,11 +1,15 @@
-#ifndef BOARD_H
-#define BOARD_H
+#pragma once
 
+#include <fstream>
+#include <iostream>
+#include <map>
 #include <memory>
+#include <string>
 #include <variant>
 #include <vector>
 #include "../json/json.hpp"
-#include "Field.hpp"
+#include "Field.h"
+#include "main.h"
 
 using json = nlohmann::json;
 
@@ -19,10 +23,9 @@ class Board {
 	Board(const std::string file_path);
 	const std::vector<PossibleFields>& getBoard();
 	const unsigned int getFieldNumber();
+	void clearBoard();
 };
 
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element);
 std::map<StationTiers, unsigned int> jsonToStationRent(const json& element);
 std::map<UtilityTiers, unsigned int> jsonToUtilityRent(const json& element);
-
-#endif

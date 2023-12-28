@@ -1,13 +1,11 @@
-#ifndef FIELD_H
-#define FIELD_H
-
+#pragma once
 #include <cmath>
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
 #include "Player.h"
-#include "gameEngine.h"
+#include "contextWindow.h"
 #include "main.h"
 
 class HouseException : public std::exception {
@@ -16,10 +14,11 @@ class HouseException : public std::exception {
    public:
 	HouseException(unsigned int houses) : invalid_number_(houses){};
 	HouseException(const HouseException& e) throw() : invalid_number_(e.invalid_number_){};
-	const unsigned int getInvalidNumber() { return invalid_number_; };
+	const unsigned int getInvalidNumber();
 };
 
 class Field {
+	ContextWindow* contextWindow_;
 	unsigned int id_;
 	FieldType type_;
 	std::string name_;
@@ -27,6 +26,8 @@ class Field {
 	unsigned int width_;
 	unsigned int height_;
 	float rotation_;
+	sf::Texture texture_;
+	sf::Sprite sprite_;
 
    public:
 	Field(const unsigned int id,
@@ -35,27 +36,22 @@ class Field {
 		const std::string graphic_path,
 		const unsigned int width,
 		const unsigned int height,
-		const float rotation)
-		: id_(id),
-		  type_(type),
-		  name_(name),
-		  graphic_path_(graphic_path),
-		  width_(width),
-		  height_(height),
-		  rotation_(rotation) {
-		std::cout << "Field constructor" << std::endl;
-	};
+		const float rotation);
 
-	const unsigned int getId() { return id_; };
-	const FieldType getType() { return type_; };
-	const std::string getName() { return name_; };
-	const std::string getGraphicPath() { return graphic_path_; };
-	const unsigned int getWidth() { return width_; };
-	const unsigned int getHeight() { return height_; };
-	const float getRotation() { return rotation_; };
+	const unsigned int getId();
+	const FieldType getType();
+	const std::string getName();
+	const std::string getGraphicPath();
+	const unsigned int getWidth();
+	const unsigned int getHeight();
+	const float getRotation();
+	const sf::Sprite& getSprite();
 
-	void setHeight(unsigned int new_height, const GameEngine& game_engine);
-	void setWidth(unsigned int new_width, const GameEngine& game_engine);
+	// void setHeight(unsigned int new_height, const GameEngine& game_engine);
+	// void setWidth(unsigned int new_width, const GameEngine& game_engine);
+
+	void setHeight(unsigned int new_height);
+	void setWidth(unsigned int new_width);
 	void setRotation(float new_roation);
 };
 
@@ -94,15 +90,15 @@ class PropertyField : public Field {
 		std::cout << "PropertyField constructor" << std::endl;
 	};
 
-	const unsigned int getPrice() { return price_; };
-	const std::map<PropertyTiers, unsigned int> getRentValues() { return rent_values_; };
-	const std::vector<unsigned int> getGroupMembers() { return group_members_; };
-	const unsigned int getMortage() { return mortage_; };
-	const unsigned int getHouseNumber() { return house_number_; };
-	const bool getIsHotel() { return is_hotel_; };
-	const bool getIsMortaged() { return is_mortaged_; };
-	const unsigned int getUnmortageValue() { return static_cast<int>(round(1.1 * mortage_)); };
-	Player* getOwner() { return owner_; };
+	const unsigned int getPrice();
+	const std::map<PropertyTiers, unsigned int> getRentValues();
+	const std::vector<unsigned int> getGroupMembers();
+	const unsigned int getMortage();
+	const unsigned int getHouseNumber();
+	const bool getIsHotel();
+	const bool getIsMortaged();
+	const unsigned int getUnmortageValue();
+	Player* getOwner();
 
 	void setHouseNumber(unsigned int new_house_number);
 	void setIsHotel(bool new_state);
@@ -142,13 +138,13 @@ class StationField : public Field {
 		std::cout << "StationField constructor" << std::endl;
 	};
 
-	const unsigned int getPrice() { return price_; };
-	const std::map<StationTiers, unsigned int> getRentValues() { return rent_values_; };
-	const std::vector<unsigned int> getGroupMembers() { return group_members_; };
-	const unsigned int getMortage() { return mortage_; };
-	const bool getIsMortaged() { return is_mortaged_; };
-	const unsigned int getUnmortageValue() { return static_cast<int>(round(1.1 * mortage_)); };
-	Player* getOwner() { return owner_; };
+	const unsigned int getPrice();
+	const std::map<StationTiers, unsigned int> getRentValues();
+	const std::vector<unsigned int> getGroupMembers();
+	const unsigned int getMortage();
+	const bool getIsMortaged();
+	const unsigned int getUnmortageValue();
+	Player* getOwner();
 
 	void setIsMortaged(bool new_state);
 	void setOwner(Player* new_owner);
@@ -186,13 +182,13 @@ class UtilityField : public Field {
 		std::cout << "UtilityField constructor" << std::endl;
 	};
 
-	const unsigned int getPrice() { return price_; };
-	const std::map<UtilityTiers, unsigned int> getRentMultipliers() { return rent_multipliers_; };
-	const std::vector<unsigned int> getGroupMembers() { return group_members_; };
-	const unsigned int getMortage() { return mortage_; };
-	const bool getIsMortaged() { return is_mortaged_; };
-	const unsigned int getUnmortageValue() { return static_cast<int>(round(1.1 * mortage_)); };
-	Player* getOwner() { return owner_; };
+	const unsigned int getPrice();
+	const std::map<UtilityTiers, unsigned int> getRentMultipliers();
+	const std::vector<unsigned int> getGroupMembers();
+	const unsigned int getMortage();
+	const bool getIsMortaged();
+	const unsigned int getUnmortageValue();
+	Player* getOwner();
 
 	void setIsMortaged(bool new_state);
 	void setOwner(Player* new_owner);
@@ -215,7 +211,5 @@ class TaxField : public Field {
 		std::cout << "TaxField constructor" << std::endl;
 	};
 
-	const unsigned int getTaxValue() { return tax_value_; };
+	const unsigned int getTaxValue();
 };
-
-#endif

@@ -21,14 +21,22 @@ void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp) {
 	texts_.push_back(text);
 }
 
-void ActiveScreen::draw() {
-	for (auto element : buttons_) {
+void MainMenuScreen::draw() {
+	for (auto element : getButtons()) {
+		if (element->getIsVisible()) {
+			element->draw(getContextWindow()->getWindow());
+		}
+	}
+}
+
+void GameMenuScreen::draw() {
+	for (auto element : getButtons()) {
 		if (element->getIsVisible()) {
 			element->draw(getContextWindow()->getWindow());
 		}
 	}
 
-	for (auto element : texts_) {
+	for (auto element : getTexts()) {
 		getContextWindow()->getWindow().draw(*element);
 	}
 }
@@ -386,6 +394,11 @@ void GameMenuScreen::setPlayerSettings(int index, bool isNone, bool isHuman, int
 
 std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {
 	return buttons_;
+}
+
+std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts()
+{
+	return texts_;
 }
 
 void GameMenuScreen::pollForEvents(sf::Event& event) {

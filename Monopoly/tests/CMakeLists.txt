@@ -4,8 +4,8 @@ project(MonopolyVsAI LANGUAGES CXX)
 find_package(Catch2 REQUIRED)
 # These tests can use the Catch2-provided main
 set(SOURCES monopolyTests.cpp ../gameEngine.cpp ../gameEngine.h ../monopolyGameEngine.cpp ../monopolyGameEngine.h ../activeScreen.cpp 
-../activeScreen.h ../button.cpp ../button.h ../contextWindow.cpp ../contextWindow.h ../Field.hpp ../Field.cpp ../Board.h ../Board.cpp
-../Player.h ../Player.cpp)
+../activeScreen.h ../button.cpp ../button.h ../contextWindow.cpp ../contextWindow.h ../Field.h ../Field.cpp ../Board.h ../Board.cpp
+../Player.h ../Player.cpp ../GameScreen.h ../GameScreen.cpp)
 #set(HEADER_FILES ../gameEngine.h)
 
 #add_library(gameEngineLib ./gameEngine.cpp ../gameEngine.h)

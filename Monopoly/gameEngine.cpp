@@ -86,7 +86,8 @@ void GameEngine::worker() {
 				eventType = activeScreen_->worker();
 				break;
 			case MonopolyGame:
-
+				activeScreen_->draw();
+				//eventType = activeScreen_->worker();
 				break;
 		}
 

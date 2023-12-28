@@ -1,48 +1,34 @@
 #include "monopolyGameEngine.h"
 
-monopolyGameEngine::monopolyGameEngine() {
-	playersHumanNumber_ = 1;
-	playersAINumber_ = 1;
-}
+monopolyGameEngine::monopolyGameEngine() {}
 
-unsigned int monopolyGameEngine::getPlayersHumanNumber() {
-	return playersHumanNumber_;
-}
-
-void monopolyGameEngine::setPlayersHumanNumber(int number) {
-	if (number >= 0) {
-		if (number > playersHumanNumber_) {
-			if (number + playersAINumber_ <= playersMax_) {
-				playersHumanNumber_ = number;
-			}
-		} else if (number < playersHumanNumber_) {
-			if (number + playersAINumber_ >= playersMin_) {
-				playersHumanNumber_ = number;
-			}
-		}
-	}
-}
-
-unsigned int monopolyGameEngine::getPlayersAINumber() {
-	return playersAINumber_;
-}
-void monopolyGameEngine::setPlayersAINumber(int number) {
-	if (number >= 0) {
-		if (number > playersAINumber_) {
-			if (number + playersHumanNumber_ <= playersMax_) {
-				playersAINumber_ = number;
-			}
-		} else if (number < playersAINumber_) {
-			if (number + playersHumanNumber_ >= playersMin_) {
-				playersAINumber_ = number;
-			}
-		}
-	}
+void monopolyGameEngine::createBoard() {
+	gameboard_ = std::make_shared<Board>(GAMEBOARD_FILE_PATH);
 }
 
 void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list) {
 	// TODO Parsować po wektorze playerSettings i generować na jego podstawie przeshufflowaną listę graczy)
 	for (auto it : player_settings_list) {
-		it->isNone;
+		if (!(it->isNone)) {
+			Player new_player = Player();
+			new_player.setIsAi(!(it->isHuman));
+			new_player.setAiLevel(it->level);
+			players_.push_back(new_player);
+		}
 	};
+	auto rng = std::default_random_engine{};
+	std::shuffle(std::begin(players_), std::end(players_), rng);
+}
+
+void monopolyGameEngine::clearPlayers() {
+	players_.clear();
+}
+
+void monopolyGameEngine::clearBoard() {
+	gameboard_->clearBoard();
+}
+
+std::shared_ptr<Board> monopolyGameEngine::getBoard()
+{
+	return gameboard_;
 }

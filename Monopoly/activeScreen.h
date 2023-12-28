@@ -1,5 +1,4 @@
-#ifndef MENU_SCREEN_H
-#define MENU_SCREEN_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
@@ -10,7 +9,7 @@
 #include "button.h"
 #include "contextWindow.h"
 #include "main.h"
-#include "monopolyGameEngine.h"
+// #include "monopolyGameEngine.h"
 
 class ActiveScreen {
 	ContextWindow* contextWindow_;
@@ -24,13 +23,14 @@ class ActiveScreen {
 	virtual ~ActiveScreen();
 	virtual ScreenEventType worker() = 0;
 	virtual void pollForEvents(sf::Event& event) = 0;
+	virtual void draw() =0;
 
 	sf::Font& getFont();
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);
 	void addText(std::shared_ptr<sf::Text> textTmp);
 	std::vector<std::shared_ptr<Button>>& getButtons();
-	void draw();
+	std::vector<std::shared_ptr<sf::Text>>& getTexts();
 	ContextWindow* getContextWindow();
 	void setContextWindow(ContextWindow*);
 	ActiveScreenType getScreenType();
@@ -60,6 +60,7 @@ class GameMenuScreen : public ActiveScreen {
 	bool isEventTypeSetAI(int playerNum, ScreenEventType event);
 	void setDefaultAILevelButtonsFocus(int playerNum);
 	std::vector<std::shared_ptr<playerSettings>> getPlayersSettings() const;
+	void draw();
 };
 
 class MainMenuScreen : public ActiveScreen {
@@ -69,6 +70,5 @@ class MainMenuScreen : public ActiveScreen {
 	void mainMenuCreate();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
+	void draw();
 };
-
-#endif

@@ -1,14 +1,4 @@
 #include "Board.h"
-#include <fstream>
-#include <iostream>
-#include <map>
-#include <memory>
-#include <string>
-#include <variant>
-#include <vector>
-#include "../json/json.hpp"
-#include "Board.h"
-#include "main.h"
 
 using json = nlohmann::json;
 
@@ -111,6 +101,11 @@ const std::vector<PossibleFields>& Board::getBoard() {
 
 const unsigned int Board::getFieldNumber() {
 	return field_number_;
+};
+
+void Board::clearBoard() {
+	board_.clear();
+	field_number_ = board_.size();
 };
 
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {

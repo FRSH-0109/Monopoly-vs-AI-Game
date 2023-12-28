@@ -1,5 +1,4 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#pragma once
 
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
@@ -41,5 +40,3 @@ class Player {
 	void setAiLevel(unsigned int aiLevel);
 	unsigned int getAiLevel();
 };
-
-#endif

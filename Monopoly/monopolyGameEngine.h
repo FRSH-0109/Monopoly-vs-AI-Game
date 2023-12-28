@@ -1,24 +1,28 @@
-#ifndef MONOPOLY_GAME_ENGINE_H
-#define MONOPOLY_GAME_ENGINE_H
+#pragma once
 
+#include <algorithm>
 #include <memory>
+#include <random>
 #include <vector>
+#include "Board.h"
 #include "activeScreen.h"
 #include "main.h"
 
 class monopolyGameEngine {
-	unsigned int playersHumanNumber_;
-	unsigned int playersAINumber_;
 	const unsigned int playersMax_ = 4;
 	const unsigned int playersMin_ = 2;
 
+	const std::string GAMEBOARD_FILE_PATH = "Monopoly/game_config_json/board.json";
+	std::shared_ptr<Board> gameboard_;
+	std::vector<Player> players_;
+
    public:
 	monopolyGameEngine();
-	unsigned int getPlayersHumanNumber();
-	void setPlayersHumanNumber(int number);
-	unsigned int getPlayersAINumber();
-	void setPlayersAINumber(int number);
+	
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
-};
+	void clearPlayers();
+	void createBoard();
+	void clearBoard();
+	std::shared_ptr<Board> getBoard();
 
-#endif
+};

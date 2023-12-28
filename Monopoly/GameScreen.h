@@ -1,4 +1,5 @@
-// TODO ifdef
+#pragma once
+
 #include "activeScreen.h"
 #include "monopolyGameEngine.h"
 
@@ -10,4 +11,5 @@ class GameScreen : public ActiveScreen {
 	~GameScreen();
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
+	void draw();
 };

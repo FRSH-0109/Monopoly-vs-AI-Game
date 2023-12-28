@@ -1,5 +1,22 @@
-#ifndef MAIN_H
-#define MAIN_H
+#pragma once
+
+class DimensionException : public std::exception {
+	unsigned int bad_dimension_;
+
+   public:
+	DimensionException(unsigned int dimension) : bad_dimension_(dimension){};
+	DimensionException(const DimensionException& e) throw() : bad_dimension_(e.bad_dimension_){};
+	const unsigned int getBadDimension() { return bad_dimension_; };
+};
+
+class RotationException : public std::exception {
+	float bad_rotation_;
+
+   public:
+	RotationException(float rotation) : bad_rotation_(rotation){};
+	RotationException(const RotationException& e) throw() : bad_rotation_(e.bad_rotation_){};
+	const float getBadRotation() { return bad_rotation_; };
+};
 
 struct playerSettings {
 	bool isNone;
@@ -48,5 +65,3 @@ enum PropertyTiers { NO_HOUSES, ONE_HOUSE, TWO_HOUESES, THREE_HOUSES, FOUR_HOUSE
 enum StationTiers { ONE_STATION, TWO_STATIONS, THREE_STATIONS, FOUR_STATIONS };
 
 enum UtilityTiers { ONE_UTILITY, TWO_UTILITIES };
-
-#endif
