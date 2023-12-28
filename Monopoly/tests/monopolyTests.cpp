@@ -144,8 +144,8 @@ TEST_CASE("PropertyField class") {
 		const unsigned int NEW_TEST_HEIGHT = 0;
 		const float NEW_TEST_ROTATION = -10.2;
 
-		REQUIRE_THROWS_AS(test_field.setWidth(NEW_TEST_WIDTH, test_engine), DimensionException);
-		REQUIRE_THROWS_AS(test_field.setHeight(NEW_TEST_HEIGHT, test_engine), DimensionException);
+		REQUIRE_THROWS_AS(test_field.setWidth(NEW_TEST_WIDTH), DimensionException);
+		REQUIRE_THROWS_AS(test_field.setHeight(NEW_TEST_HEIGHT), DimensionException);
 		REQUIRE_THROWS_AS(test_field.setRotation(NEW_TEST_ROTATION), RotationException);
 	}
 
@@ -599,11 +599,12 @@ TEST_CASE("Board class") {
 	test_board.push_back(test_field_10);
 
 	std::string TEST_PATH = "Monopoly/tests/test_board.json";
-	std::ifstream f(TEST_PATH);
 	Board TEST_BOARD = Board(TEST_PATH);
 
+	std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
+
 	SECTION("Constructor") {
-		std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
+
 		REQUIRE(TEST_BOARD.getFieldNumber() == created_board.size());
 		REQUIRE(test_board.size() == created_board.size());
 
