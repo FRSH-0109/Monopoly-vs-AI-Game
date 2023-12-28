@@ -66,12 +66,8 @@ void Field::createTexture() {
 	{
 		sprite_.setColor(sf::Color::Green);
 	}
-	// sprite_.setColor(sf::Color::Red);
 	sprite_.setTexture(texture_, true);
-	const sf::Vector2f POS_VECT = sf::Vector2f(100, 100);
-	sprite_.setPosition(POS_VECT);
-	// sprite.setRotation(sf::Vector2f(x, y));
-	const sf::Vector2f SCALE_VECT = sf::Vector2f(0.2, 0.2);
+	const sf::Vector2f SCALE_VECT = sf::Vector2f(0.1f, 0.1f);
 	sprite_.setScale(SCALE_VECT);
 }
 

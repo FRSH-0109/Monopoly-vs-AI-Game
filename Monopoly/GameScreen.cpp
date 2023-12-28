@@ -28,9 +28,22 @@ void GameScreen::pollForEvents(sf::Event& event) {
 }
 
 void GameScreen::draw() {
+	float x_scaled;
+	float y_sclaed;
+	sf::Vector2u texture_origin;
+	sf::Vector2f texture_scale;
+	int dir_x = -1;
+	int dir_y = 0;
+	sf::Vector2f pos_vect = sf::Vector2f(700, 700);
 	for (auto field : monopoly_game_engine_.getBoard()->getBoard()) {
-		unsigned int id = std::visit([](Field& field) { return field.getId(); }, field);
 		sf::Sprite sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
+		sprite.setPosition(pos_vect);
 		getContextWindow()->getWindow().draw(sprite);
+		texture_origin = sprite.getTexture()->getSize();
+		texture_scale = sprite.getScale();
+		x_scaled = round((float)texture_origin.x * texture_scale.x);
+		y_sclaed = round((float)texture_origin.y * texture_scale.y);
+		pos_vect.x += dir_x * x_scaled;
+		pos_vect.y += dir_y * y_sclaed;
 	}
 }
