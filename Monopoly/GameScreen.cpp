@@ -29,10 +29,8 @@ void GameScreen::pollForEvents(sf::Event& event) {
 
 void GameScreen::draw() {
 	for (auto field : monopoly_game_engine_.getBoard()->getBoard()) {
-		unsigned int id =  std::visit([](Field& field) { return field.getId(); }, field);
-		if(id == 30) {
+		unsigned int id = std::visit([](Field& field) { return field.getId(); }, field);
 		sf::Sprite sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
 		getContextWindow()->getWindow().draw(sprite);
-		}
 	}
 }

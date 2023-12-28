@@ -17,16 +17,6 @@ Field::Field(const unsigned int id,
 		  height_(height),
 		  rotation_(rotation) {
 			std::cout << "Field constructor" << std::endl;
-			contextWindow_ = ContextWindow::GetInstance();
-			if(!texture_.loadFromFile(graphic_path_))
-			{
-				sprite_.setColor(sf::Color::Green);
-			}
-			//sprite_.setColor(sf::Color::Green);
-			sprite_.setTexture(texture_, true);
-			sprite_.setPosition(sf::Vector2f(100, 100));
-			// sprite.setRotation(sf::Vector2f(x, y));
-			sprite_.setScale(sf::Vector2f(100, 100));
 		}
 
 const unsigned int HouseException::getInvalidNumber() {
@@ -64,10 +54,25 @@ const float Field::getRotation() {
 const sf::Sprite& Field::getSprite()
 {
 	return sprite_;
-}sf::Sprite sprite;
+}
 
 const sf::Texture& Field::getTexture() {
 	return texture_;
+}
+
+void Field::createTexture() {
+	contextWindow_ = ContextWindow::GetInstance();
+	if(!texture_.loadFromFile(graphic_path_))
+	{
+		sprite_.setColor(sf::Color::Green);
+	}
+	// sprite_.setColor(sf::Color::Red);
+	sprite_.setTexture(texture_, true);
+	const sf::Vector2f POS_VECT = sf::Vector2f(100, 100);
+	sprite_.setPosition(POS_VECT);
+	// sprite.setRotation(sf::Vector2f(x, y));
+	const sf::Vector2f SCALE_VECT = sf::Vector2f(0.2, 0.2);
+	sprite_.setScale(SCALE_VECT);
 }
 
 void Field::setHeight(unsigned int new_height) {

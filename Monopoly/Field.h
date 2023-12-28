@@ -48,6 +48,8 @@ class Field {
 	const sf::Sprite& getSprite();
 	const sf::Texture& getTexture();
 
+	void createTexture();
+
 	// void setHeight(unsigned int new_height, const GameEngine& game_engine);
 	// void setWidth(unsigned int new_width, const GameEngine& game_engine);
 
