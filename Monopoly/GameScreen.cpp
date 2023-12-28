@@ -29,7 +29,7 @@ void GameScreen::pollForEvents(sf::Event& event) {
 
 void GameScreen::draw() {
 	for (auto field : monopoly_game_engine_.getBoard()->getBoard()) {
-		Field field_to_draw = std::get<Field>(field);
-		getContextWindow()->getWindow().draw(field_to_draw.getSprite());
+		sf::Sprite sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
+		getContextWindow()->getWindow().draw(sprite);
 	}
 }

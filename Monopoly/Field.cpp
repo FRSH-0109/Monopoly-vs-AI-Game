@@ -69,7 +69,7 @@ void Field::setHeight(unsigned int new_height) {
 	if (contextWindow_->window_.getSize().y >= new_height && new_height != 0) {
 		height_ = new_height;
 	} else {
-		// throw(DimensionException(new_height));
+		throw(DimensionException(new_height));
 	}
 };
 
@@ -77,7 +77,7 @@ void Field::setWidth(unsigned int new_width) {
 	if (contextWindow_->window_.getSize().x >= new_width && new_width != 0) {
 		width_ = new_width;
 	} else {
-		// throw(DimensionException(new_width));
+		throw(DimensionException(new_width));
 	}
 };
 
@@ -85,7 +85,7 @@ void Field::setRotation(float new_roation) {
 	if (new_roation > 0.0 && new_roation < 360.0) {
 		rotation_ = new_roation;
 	} else {
-		// throw(RotationException(new_roation));
+		throw(RotationException(new_roation));
 	}
 };
 
