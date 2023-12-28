@@ -20,12 +20,13 @@ Field::Field(const unsigned int id,
 			contextWindow_ = ContextWindow::GetInstance();
 			if(!texture_.loadFromFile(graphic_path_))
 			{
-				//TODO exception
+				sprite_.setColor(sf::Color::Green);
 			}
-			sprite_.setTexture(texture_);
-			sprite_.setPosition(sf::Vector2f(id*10, id*10));
+			//sprite_.setColor(sf::Color::Green);
+			sprite_.setTexture(texture_, true);
+			sprite_.setPosition(sf::Vector2f(100, 100));
 			// sprite.setRotation(sf::Vector2f(x, y));
-			// sprite.setScale(sf::Vector2f(x, y));
+			sprite_.setScale(sf::Vector2f(100, 100));
 		}
 
 const unsigned int HouseException::getInvalidNumber() {
@@ -63,6 +64,10 @@ const float Field::getRotation() {
 const sf::Sprite& Field::getSprite()
 {
 	return sprite_;
+}sf::Sprite sprite;
+
+const sf::Texture& Field::getTexture() {
+	return texture_;
 }
 
 void Field::setHeight(unsigned int new_height) {
