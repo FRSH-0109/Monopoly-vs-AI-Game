@@ -18,12 +18,16 @@ using PossibleFields = std::variant<Field, PropertyField, StationField, UtilityF
 class Board {
 	unsigned int field_number_;
 	std::vector<PossibleFields> board_;
+	sf::Vector2i BOARD_POSITION = sf::Vector2i(750, 700);
+	float BOARD_SCALE = 1;
 
    public:
 	Board(const std::string file_path);
 	const std::vector<PossibleFields>& getBoard();
 	const unsigned int getFieldNumber();
 	void clearBoard();
+	sf::Vector2i getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y);
+	float getFieldRotation(unsigned int id);
 };
 
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element);

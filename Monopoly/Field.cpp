@@ -4,20 +4,23 @@
 // HouseException(const HouseException& e) throw() : invalid_number_(e.invalid_number_){};
 
 Field::Field(const unsigned int id,
-		const FieldType type,
-		const std::string name,
-		const std::string graphic_path,
-		const unsigned int width,
-		const unsigned int height,
-		const float rotation) : id_(id),
-		  type_(type),
-		  name_(name),
-		  graphic_path_(graphic_path),
-		  width_(width),
-		  height_(height),
-		  rotation_(rotation) {
-			std::cout << "Field constructor" << std::endl;
-		}
+	const FieldType type,
+	const std::string name,
+	const std::string graphic_path,
+	const unsigned int width,
+	const unsigned int height,
+	const float rotation,
+	const sf::Vector2i position)
+	: id_(id),
+	  type_(type),
+	  name_(name),
+	  graphic_path_(graphic_path),
+	  width_(width),
+	  height_(height),
+	  rotation_(rotation),
+	  position_(position){
+	std::cout << "Field constructor" << std::endl;
+}
 
 const unsigned int HouseException::getInvalidNumber() {
 	return invalid_number_;
@@ -51,8 +54,7 @@ const float Field::getRotation() {
 	return rotation_;
 };
 
-const sf::Sprite& Field::getSprite()
-{
+const sf::Sprite& Field::getSprite() {
 	return sprite_;
 }
 
@@ -60,10 +62,13 @@ const sf::Texture& Field::getTexture() {
 	return texture_;
 }
 
+const sf::Vector2i& Field::getPosition() {
+	return position_;
+}
+
 void Field::createTexture() {
 	contextWindow_ = ContextWindow::GetInstance();
-	if(!texture_.loadFromFile(graphic_path_))
-	{
+	if (!texture_.loadFromFile(graphic_path_)) {
 		sprite_.setColor(sf::Color::Green);
 	}
 	sprite_.setTexture(texture_, true);
@@ -71,8 +76,9 @@ void Field::createTexture() {
 	float scale_x = (float)this->width_ / (float)texture_dim.x;
 	float scale_y = (float)this->height_ / (float)texture_dim.y;
 	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
-	// const sf::Vector2f SCALE_VECT = sf::Vector2f(0.1f, 0.1f);
 	sprite_.setScale(SCALE_VECT);
+	sprite_.setPosition(position_.x, position_.y);
+	sprite_.setRotation(rotation_);
 }
 
 void Field::setHeight(unsigned int new_height) {
@@ -98,6 +104,10 @@ void Field::setRotation(float new_roation) {
 		throw(RotationException(new_roation));
 	}
 };
+
+void Field::setPosition(sf::Vector2i pos) {
+	position_ = pos;
+}
 
 const unsigned int PropertyField::getPrice() {
 	return price_;

@@ -10,16 +10,19 @@ Board::Board(const std::string file_path) {
 	std::ifstream f(file_path);
 	json data = json::parse(f);
 
+	sf::Vector2i position = BOARD_POSITION;
 	for (auto& element : data) {
 		unsigned int id = element["id"];
 		std::string name = element["name"];
 		std::string graphic_path = element["graphic_path"];
-		unsigned int width = element["width"];
-		unsigned int height = element["height"];
-		float rotation = element["rotation"];
+		unsigned int width = element["width"]*BOARD_SCALE;
+		unsigned int height = element["height"]*BOARD_SCALE;
+		//float rotation = element["rotation"];
 		std::string type_in_str = element["type"];
 		FieldType type = str_to_type[type_in_str];
 
+		position = getFieldPositon(id, position, width, height);
+		float rotation = getFieldRotation(id);
 		switch (type) {
 			case PROPERTY: {
 				unsigned int price = element["price"];
@@ -27,7 +30,7 @@ Board::Board(const std::string file_path) {
 				std::map<PropertyTiers, unsigned int> rent_values = jsonToPropertyRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				PropertyField new_field = PropertyField(
-					id, type, name, graphic_path, width, height, rotation, price, rent_values, group_members, mortage);
+					id, type, name, graphic_path, width, height, rotation, position, price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
 			}
@@ -38,7 +41,7 @@ Board::Board(const std::string file_path) {
 				std::map<StationTiers, unsigned int> rent_values = jsonToStationRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				StationField new_field = StationField(
-					id, type, name, graphic_path, width, height, rotation, price, rent_values, group_members, mortage);
+					id, type, name, graphic_path, width, height, rotation, position, price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
 			}
@@ -48,7 +51,7 @@ Board::Board(const std::string file_path) {
 				unsigned int mortage = element["mortage"];
 				std::map<UtilityTiers, unsigned int> rent_multipliers = jsonToUtilityRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
-				UtilityField new_field = UtilityField(id, type, name, graphic_path, width, height, rotation, price,
+				UtilityField new_field = UtilityField(id, type, name, graphic_path, width, height, rotation, position, price,
 					rent_multipliers, group_members, mortage);
 				board_.push_back(new_field);
 				break;
@@ -56,7 +59,7 @@ Board::Board(const std::string file_path) {
 
 			case TAX: {
 				unsigned int tax_value = element["tax_value"];
-				TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, tax_value);
+				TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, position, tax_value);
 				board_.push_back(new_field);
 				break;
 			}
@@ -67,7 +70,7 @@ Board::Board(const std::string file_path) {
 			case JAIL:
 			case FREE_PARKING:
 			case GO_TO_JAIL: {
-				Field new_field = Field(id, type, name, graphic_path, width, height, rotation);
+				Field new_field = Field(id, type, name, graphic_path, width, height, rotation, position);
 				board_.push_back(new_field);
 				break;
 			}
@@ -78,6 +81,60 @@ Board::Board(const std::string file_path) {
 		std::visit([](Field& visited_field) { visited_field.createTexture(); }, field);
 	}
 };
+
+sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y)
+{
+	if(id <= 10)
+	{
+		return sf::Vector2i(prevPos.x-x, prevPos.y);
+	}
+	else if (id > 10 && id <= 20){
+		if(id == 11)
+		{
+			return sf::Vector2i(prevPos.x+y, prevPos.y-x);
+		}
+		else{
+			return sf::Vector2i(prevPos.x, prevPos.y-x);
+		}
+	}
+	else if (id > 20 && id <= 30){
+		if(id == 21)
+		{
+			return sf::Vector2i(prevPos.x+x, prevPos.y+y);
+		}
+		else{
+			return sf::Vector2i(prevPos.x+x, prevPos.y);
+		}
+	}
+	else if (id > 30 && id <= 40){
+		if(id == 31)
+		{
+			return sf::Vector2i(prevPos.x-y, prevPos.y+x);
+		}
+		else{
+			return sf::Vector2i(prevPos.x, prevPos.y+x);
+		}
+	}
+	return sf::Vector2i(0, 0);
+}
+
+float Board::getFieldRotation(unsigned int id)
+{
+	if(id <= 10)
+	{
+		return 0.0;
+	}
+	else if (id > 10 && id <= 20){
+		return 90.0;
+	}
+	else if (id > 20 && id <= 30){
+		return 180.0;
+	}
+	else if (id > 30 && id <= 40){
+		return 270.0;
+	}
+	return 0.0;
+}
 
 const std::vector<PossibleFields>& Board::getBoard() {
 	return board_;

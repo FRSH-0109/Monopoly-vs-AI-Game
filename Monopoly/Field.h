@@ -28,6 +28,7 @@ class Field {
 	float rotation_;
 	sf::Texture texture_;
 	sf::Sprite sprite_;
+	sf::Vector2i position_;
 
    public:
 	Field(const unsigned int id,
@@ -36,7 +37,8 @@ class Field {
 		const std::string graphic_path,
 		const unsigned int width,
 		const unsigned int height,
-		const float rotation);
+		const float rotation,
+		const sf::Vector2i boardOrigin);
 
 	const unsigned int getId();
 	const FieldType getType();
@@ -47,6 +49,7 @@ class Field {
 	const float getRotation();
 	const sf::Sprite& getSprite();
 	const sf::Texture& getTexture();
+	const sf::Vector2i& getPosition();
 
 	void createTexture();
 
@@ -56,6 +59,7 @@ class Field {
 	void setHeight(unsigned int new_height);
 	void setWidth(unsigned int new_width);
 	void setRotation(float new_roation);
+	void setPosition(sf::Vector2i pos);
 };
 
 class PropertyField : public Field {
@@ -77,11 +81,12 @@ class PropertyField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
+		const sf::Vector2i position_,
 		const unsigned int price,
 		const std::map<PropertyTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, width, height, rotation),
+		: Field(id, type, name, graphic_path, width, height, rotation, position_),
 		  price_(price),
 		  rent_values_(rent_values),
 		  group_members_(group_members),
@@ -127,11 +132,12 @@ class StationField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
+		const sf::Vector2i position_,
 		const unsigned int price,
 		const std::map<StationTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, width, height, rotation),
+		: Field(id, type, name, graphic_path, width, height, rotation, position_),
 		  price_(price),
 		  rent_values_(rent_values),
 		  group_members_(group_members),
@@ -171,11 +177,12 @@ class UtilityField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
+		const sf::Vector2i position_,
 		const unsigned int price,
 		const std::map<UtilityTiers, unsigned int> rent_multipliers,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, width, height, rotation),
+		: Field(id, type, name, graphic_path, width, height, rotation, position_),
 		  price_(price),
 		  rent_multipliers_(rent_multipliers),
 		  group_members_(group_members),
@@ -209,8 +216,9 @@ class TaxField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
+		const sf::Vector2i position_,
 		const unsigned int tax_value)
-		: Field(id, type, name, graphic_path, width, height, rotation), tax_value_(tax_value) {
+		: Field(id, type, name, graphic_path, width, height, rotation, position_), tax_value_(tax_value) {
 		std::cout << "TaxField constructor" << std::endl;
 	};
 

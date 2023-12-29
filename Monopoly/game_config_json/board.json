@@ -5,8 +5,7 @@
         "name": "Start",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
-        "height": 100,
-        "rotation": 0.0
+        "height": 100
     },
     {
         "id": 1,
@@ -15,7 +14,6 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
         "height": 100,
-        "rotation": 0.0,
         "price": 60,
         "rent_values": [2, 10, 30, 90, 160, 250],
         "group_members": [3],
@@ -25,10 +23,9 @@
         "id": 2,
         "type": "COMUNITY_CHEST",
         "name": "Kasa Społeczna",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
-        "height": 100,
-        "rotation": 0.0
+        "height": 100
     },
     {
         "id": 3,
@@ -37,7 +34,6 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
         "height": 100,
-        "rotation": 0.0,
         "price": 60,
         "rent_values": [4, 20, 60, 180, 320, 450],
         "group_members": [1],
@@ -50,17 +46,27 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
-        "rotation": 0.0,
         "tax_value": 200
     },
     {
         "id": 5,
         "type": "STATION",
         "name": "Dworzec Centralny",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_purple.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
-        "rotation": 0.0,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 6,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
+        "width": 60,
+        "height": 100,
         "price": 200,
         "rent_values": [25, 50, 100, 200],
         "group_members": [15, 25, 35],
@@ -72,8 +78,31 @@
         "name": "Szansa",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
+        "height": 100
+    },
+    {
+        "id": 8,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
+        "width": 60,
         "height": 100,
-        "rotation": 0.0
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 9,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
     },
     {
         "id": 10,
@@ -81,8 +110,19 @@
         "name": "Więzienie",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
+        "height": 100
+    },
+    {
+        "id": 11,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
+        "width": 60,
         "height": 100,
-        "rotation": 0.0
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
     },
     {
         "id": 12,
@@ -91,11 +131,90 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
-        "rotation": 90.0,
         "price": 150,
         "rent_multipliers": [4, 10],
         "group_members": [28],
         "mortage": 75
+    },
+    {
+        "id": 13,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 14,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 15,
+        "type": "STATION",
+        "name": "Dworzec INNY",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 16,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 17,
+        "type": "COMUNITY_CHEST",
+        "name": "Kasa Społeczna",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100
+    },
+    {
+        "id": 18,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 19,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
     },
     {
         "id": 20,
@@ -103,8 +222,7 @@
         "name": "Bezpłatny Parking",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
-        "height": 100,
-        "rotation": 180.0
+        "height": 100
     },
     {
         "id": 21,
@@ -113,11 +231,102 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
-        "rotation": 180.0,
         "price": 220,
         "rent_values": [18, 90, 250, 700, 875, 1050],
         "group_members": [23, 24],
         "mortage": 110
+    },
+    {
+        "id": 22,
+        "type": "CHANCE",
+        "name": "Szansa",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100
+    },
+    {
+        "id": 23,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 24,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 25,
+        "type": "STATION",
+        "name": "Dworzec INNY",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 26,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 27,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 28,
+        "type": "UTILITY",
+        "name": "Wodociągi WTF",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100,
+        "price": 150,
+        "rent_multipliers": [4, 10],
+        "group_members": [28],
+        "mortage": 75
+    },
+    {
+        "id": 29,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
     },
     {
         "id": 30,
@@ -125,7 +334,103 @@
         "name": "Idziesz do więzienia!",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
+        "height": 100
+    },
+    {
+        "id": 31,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
+        "width": 60,
         "height": 100,
-        "rotation": 180.0
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 32,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 33,
+        "type": "COMUNITY_CHEST",
+        "name": "Kasa Społeczna",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100
+    },
+    {
+        "id": 34,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 35,
+        "type": "STATION",
+        "name": "Dworzec INNY",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 36,
+        "type": "CHANCE",
+        "name": "Szansa",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100
+    },
+    {
+        "id": 37,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
+    },
+    {
+        "id": 38,
+        "type": "TAX",
+        "name": "Podatek Dochodowy",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "width": 60,
+        "height": 100,
+        "tax_value": 200
+    },
+    {
+        "id": 39,
+        "type": "PROPERTY",
+        "name": "IDONTKNOW",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
+        "width": 60,
+        "height": 100,
+        "price": 200,
+        "rent_values": [25, 50, 100, 200],
+        "group_members": [15, 25, 35],
+        "mortage": 100
     }
 ]
