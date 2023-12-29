@@ -1,5 +1,6 @@
+OPT ?= -O3
 LIBS :=-L SFML_Monopoly/lib/ -l sfml-graphics -l sfml-window -l sfml-system
-CXX := g++ -g -std=c++17 -Wextra -Wall -Wpedantic
+CXX := g++ -std=c++17 -Wextra -Wall -Wpedantic
 INC := -I Monopoly/
 SRC := Monopoly/*.o
 OBJ := Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o Monopoly/Field.o Monopoly/Board.o Monopoly/Player.o Monopoly/GameScreen.o
@@ -7,10 +8,11 @@ all: monopolyVsAI clean
 tests: monopolyTests
 
 Monopoly/%.o: Monopoly/%.cpp
-	$(CXX) -c $< -o $@ -I SFML_Monopoly/include $(INC) -g
+	$(CXX) -c $< -o $@ -I SFML_Monopoly/include $(INC) $(OPT)
 
 monopolyVsAI: $(OBJ)
-	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC) -g
+	$(CXX) -o Monopoly/monopolyVsAI $(SRC) $(LIBS) $(INC) $(OPT)
+	$(info Optimimzation is $(OPT))
 
 testsConfig:
 	mkdir Monopoly/tests/catch2
