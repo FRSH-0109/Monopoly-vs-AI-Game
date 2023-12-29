@@ -67,7 +67,11 @@ void Field::createTexture() {
 		sprite_.setColor(sf::Color::Green);
 	}
 	sprite_.setTexture(texture_, true);
-	const sf::Vector2f SCALE_VECT = sf::Vector2f(0.1f, 0.1f);
+	sf::Vector2u texture_dim = texture_.getSize();
+	float scale_x = (float)this->width_ / (float)texture_dim.x;
+	float scale_y = (float)this->height_ / (float)texture_dim.y;
+	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+	// const sf::Vector2f SCALE_VECT = sf::Vector2f(0.1f, 0.1f);
 	sprite_.setScale(SCALE_VECT);
 }
 
