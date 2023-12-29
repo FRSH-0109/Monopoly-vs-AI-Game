@@ -23,7 +23,7 @@ class ActiveScreen {
 	virtual ~ActiveScreen();
 	virtual ScreenEventType worker() = 0;
 	virtual void pollForEvents(sf::Event& event) = 0;
-	virtual void draw() =0;
+	virtual void draw() = 0;
 
 	sf::Font& getFont();
 	void setFont(sf::Font font);

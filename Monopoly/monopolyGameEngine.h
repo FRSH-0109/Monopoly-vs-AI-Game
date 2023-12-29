@@ -18,11 +18,10 @@ class monopolyGameEngine {
 
    public:
 	monopolyGameEngine();
-	
+
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
 	void clearPlayers();
 	void createBoard();
 	void clearBoard();
 	std::shared_ptr<Board> getBoard();
-
 };

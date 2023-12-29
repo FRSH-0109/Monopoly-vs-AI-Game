@@ -228,6 +228,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 	sf::Color textColor = sf::Color::Black;
+	sf::Color playerTextColor = sf::Color::Black;;
 
 	ScreenEventType buttonNoneEvent = Idle;
 	ScreenEventType buttonHumanEvent = Idle;
@@ -237,6 +238,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	ScreenEventType buttonAILevel3Event = Idle;
 	switch (colNum) {
 		case 1:
+			playerTextColor = sf::Color::Green;
 			playerTextString = "Player 1";
 			buttonNoneEvent = Player1SetNone;
 			buttonHumanEvent = Player1SetHuman;
@@ -247,6 +249,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 			break;
 
 		case 2:
+			playerTextColor = sf::Color::Red;
 			playerTextString = "Player 2";
 			buttonNoneEvent = Player2SetNone;
 			buttonHumanEvent = Player2SetHuman;
@@ -257,6 +260,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 			break;
 
 		case 3:
+			playerTextColor = sf::Color::Blue;
 			playerTextString = "Player 3";
 			buttonNoneEvent = Player3SetNone;
 			buttonHumanEvent = Player3SetHuman;
@@ -267,6 +271,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 			break;
 
 		case 4:
+			playerTextColor = sf::Color::Yellow;
 			playerTextString = "Player 4";
 			buttonNoneEvent = Player4SetNone;
 			buttonHumanEvent = Player4SetHuman;
@@ -282,7 +287,9 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	std::shared_ptr<sf::Text> PlayerText(new sf::Text(playerTextString, getFont(), fontSize));
 	PlayerText->setOrigin(PlayerText->getGlobalBounds().getSize() / 2.f + PlayerText->getLocalBounds().getPosition());
 	PlayerText->setPosition(posStart);
-	PlayerText->setColor(textColor);
+	PlayerText->setColor(playerTextColor);
+	PlayerText->setOutlineColor(sf::Color::Black);
+	PlayerText->setOutlineThickness(3);
 	addText(PlayerText);
 
 	std::shared_ptr<Button> buttonPlayerSetNone(new Button(buttonNoneEvent, "None", buttonSize, fontSize));
@@ -396,8 +403,7 @@ std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {
 	return buttons_;
 }
 
-std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts()
-{
+std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts() {
 	return texts_;
 }
 
@@ -640,10 +646,37 @@ int GameMenuScreen::getPlayerNumFromEventType(ScreenEventType event) {
 }
 
 void GameMenuScreen::setDefaultAILevelButtonsFocus(int playerNum) {
+	ScreenEventType level1Event;
+	ScreenEventType level2Event;
+	ScreenEventType level3Event;
+	switch (playerNum) {
+		case 1:
+			level1Event = Player1SetAILevel1;
+			level2Event = Player1SetAILevel2;
+			level3Event = Player1SetAILevel3;
+			break;
+		case 2:
+			level1Event = Player2SetAILevel1;
+			level2Event = Player2SetAILevel2;
+			level3Event = Player2SetAILevel3;
+			break;
+		case 3:
+			level1Event = Player3SetAILevel1;
+			level2Event = Player3SetAILevel2;
+			level3Event = Player3SetAILevel3;
+			break;
+		case 4:
+			level1Event = Player4SetAILevel1;
+			level2Event = Player4SetAILevel2;
+			level3Event = Player4SetAILevel3;
+			break;
+		default:
+			return;
+	}
 	for (auto element : getButtons()) {
-		if (element->getEventType() == Player1SetAILevel1) {
+		if (element->getEventType() == level1Event) {
 			element->setIsActive(true);
-		} else if (element->getEventType() == Player1SetAILevel2 || element->getEventType() == Player1SetAILevel3) {
+		} else if (element->getEventType() == level2Event || element->getEventType() == level3Event) {
 			element->setIsActive(false);
 		}
 	}
