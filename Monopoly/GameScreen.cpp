@@ -28,6 +28,14 @@ ScreenEventType GameScreen::worker() {
 	ScreenEventType eventType = Idle;
 	for (auto element : getButtons()) {
 		if (element->getIsVisible()) {
+			if (element->isMouseOver(getContextWindow()->getWindow())) {
+				element->mouseIsOver();
+				if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+					element->setIsClicked(true);
+				}
+			} else {
+				element->mouseIsNotOver();
+			}	
 			if (element->getIsClicked()) {
 				// setOtherButtonsInactive(element);
 				// buttonClickHandle(element);
@@ -43,24 +51,7 @@ ScreenEventType GameScreen::worker() {
 }
 
 void GameScreen::pollForEvents(sf::Event& event) {
-	switch (event.type) {
-		case sf::Event::MouseMoved:
-			for (auto element : getButtons()) {
-				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					element->mouseIsOver();
-				} else {
-					element->mouseIsNotOver();
-				}
-			}
-			break;
-		case sf::Event::MouseButtonPressed:
-			for (auto element : getButtons()) {
-				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					element->setIsClicked(true);
-				}
-			}
-			break;
-	}
+	
 }
 
 void GameScreen::draw() {

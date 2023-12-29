@@ -106,6 +106,14 @@ void MainMenuScreen::mainMenuCreate() {
 ScreenEventType MainMenuScreen::worker() {
 	ScreenEventType eventType = Idle;
 	for (auto element : getButtons()) {
+		if (element->isMouseOver(getContextWindow()->getWindow())) {
+				element->mouseIsOver();
+				if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+					element->setIsClicked(true);
+				}
+		} else {
+			element->mouseIsNotOver();
+		}	
 		if (element->getIsClicked()) {
 			element->setIsClicked(false);
 			return element->getEventType();
@@ -120,6 +128,14 @@ ScreenEventType GameMenuScreen::worker() {
 	ScreenEventType eventType = Idle;
 	for (auto element : getButtons()) {
 		if (element->getIsVisible()) {
+			if (element->isMouseOver(getContextWindow()->getWindow())) {
+				element->mouseIsOver();
+				if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+					element->setIsClicked(true);
+				}
+			} else {
+				element->mouseIsNotOver();
+			}	
 			if (element->getIsClicked()) {
 				setOtherButtonsInactive(element);
 				buttonClickHandle(element);
@@ -180,7 +196,7 @@ void GameMenuScreen::gameMenuCreate() {
 
 	std::shared_ptr<Button> buttonPlay(new Button(StartGame, "Start game", {200, 100}, 30));
 	buttonPlay->setFont(getFont());
-	buttonPlay->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f), 100});
+	buttonPlay->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f)-200, 700});
 	buttonPlay->setInactiveBackColor(sf::Color::Red);
 	buttonPlay->setInactiveTextColor(sf::Color::Black);
 	buttonPlay->setFocusBackColor(sf::Color::Black);
@@ -188,7 +204,7 @@ void GameMenuScreen::gameMenuCreate() {
 
 	std::shared_ptr<Button> buttonReturn(new Button(ReturnToMainMenu, "Return", {200, 100}, 30));
 	buttonReturn->setFont(getFont());
-	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f), 900});
+	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f)+200, 700});
 	buttonReturn->setInactiveBackColor(sf::Color::Red);
 	buttonReturn->setInactiveTextColor(sf::Color::Black);
 	buttonReturn->setFocusBackColor(sf::Color::Black);
@@ -204,10 +220,10 @@ void GameMenuScreen::gameMenuCreate() {
 		element->setIsFocus(false);
 	}
 
-	sf::Vector2f col1(getContextWindow()->getWindow().getSize().x / 2.0f - 300, 200);
-	sf::Vector2f col2(getContextWindow()->getWindow().getSize().x / 2.0f - 100, 200);
-	sf::Vector2f col3(getContextWindow()->getWindow().getSize().x / 2.0f + 100, 200);
-	sf::Vector2f col4(getContextWindow()->getWindow().getSize().x / 2.0f + 300, 200);
+	sf::Vector2f col1(getContextWindow()->getWindow().getSize().x / 2.0f - 300, 100);
+	sf::Vector2f col2(getContextWindow()->getWindow().getSize().x / 2.0f - 100, 100);
+	sf::Vector2f col3(getContextWindow()->getWindow().getSize().x / 2.0f + 100, 100);
+	sf::Vector2f col4(getContextWindow()->getWindow().getSize().x / 2.0f + 300, 100);
 	int y_step = 100;
 
 	createPlayerSettingsColumn(1, col1, y_step);
@@ -218,11 +234,13 @@ void GameMenuScreen::gameMenuCreate() {
 
 void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep) {
 	int fontSize = 30;
+	int fontSizeSmall = 25;
 	std::string playerTextString = "Player X";
+	sf::Color grey(192,192,192);
 	sf::Vector2f buttonSize = sf::Vector2f(150, 100);
 	sf::Vector2f buttonSizeSmall = sf::Vector2f(50, 100);
 	sf::Color activeButtonBackColor = sf::Color::Green;
-	sf::Color inActiveButtonBackColor = sf::Color::White;
+	sf::Color inActiveButtonBackColor = grey;
 	sf::Color FocusButtonBackColor = sf::Color::Black;
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
@@ -337,16 +355,16 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	buttonPlayerSetAI->setIsFocus(false);
 	addButton(buttonPlayerSetAI);
 
-	std::shared_ptr<sf::Text> PlayerTextAILevel(new sf::Text("AI level", getFont(), fontSize));
+	std::shared_ptr<sf::Text> PlayerTextAILevel(new sf::Text("AI level", getFont(), fontSizeSmall));
 	PlayerTextAILevel->setOrigin(PlayerTextAILevel->getGlobalBounds().getSize() / 2.f +
 								 PlayerTextAILevel->getLocalBounds().getPosition());  // text origin at center
-	PlayerTextAILevel->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 4));
-	PlayerTextAILevel->setColor(sf::Color::White);
+	PlayerTextAILevel->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 3.8));
+	PlayerTextAILevel->setColor(sf::Color::Black);
 	addText(PlayerTextAILevel);
 
 	std::shared_ptr<Button> buttonPlayerSetAILevel1(new Button(buttonAILevel1Event, "1", buttonSizeSmall, fontSize));
 	buttonPlayerSetAILevel1->setFont(getFont());
-	buttonPlayerSetAILevel1->setPosition(sf::Vector2f(posStart.x - buttonSizeSmall.x, posStart.y + yStep * 5));
+	buttonPlayerSetAILevel1->setPosition(sf::Vector2f(posStart.x - buttonSizeSmall.x, posStart.y + yStep * 4.5));
 	buttonPlayerSetAILevel1->setActiveBackColor(activeButtonBackColor);
 	buttonPlayerSetAILevel1->setActiveTextColor(activeButtonTextColor);
 	buttonPlayerSetAILevel1->setInactiveBackColor(inActiveButtonBackColor);
@@ -361,7 +379,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 
 	std::shared_ptr<Button> buttonPlayerSetAILevel2(new Button(buttonAILevel2Event, "2", buttonSizeSmall, fontSize));
 	buttonPlayerSetAILevel2->setFont(getFont());
-	buttonPlayerSetAILevel2->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 5));
+	buttonPlayerSetAILevel2->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 4.5));
 	buttonPlayerSetAILevel2->setActiveBackColor(activeButtonBackColor);
 	buttonPlayerSetAILevel2->setActiveTextColor(activeButtonTextColor);
 	buttonPlayerSetAILevel2->setInactiveBackColor(inActiveButtonBackColor);
@@ -376,7 +394,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 
 	std::shared_ptr<Button> buttonPlayerSetAILevel3(new Button(buttonAILevel3Event, "3", buttonSizeSmall, fontSize));
 	buttonPlayerSetAILevel3->setFont(getFont());
-	buttonPlayerSetAILevel3->setPosition(sf::Vector2f(posStart.x + buttonSizeSmall.x, posStart.y + yStep * 5));
+	buttonPlayerSetAILevel3->setPosition(sf::Vector2f(posStart.x + buttonSizeSmall.x, posStart.y + yStep * 4.5));
 	buttonPlayerSetAILevel3->setActiveBackColor(activeButtonBackColor);
 	buttonPlayerSetAILevel3->setActiveTextColor(activeButtonTextColor);
 	buttonPlayerSetAILevel3->setInactiveBackColor(inActiveButtonBackColor);
@@ -408,45 +426,11 @@ std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts() {
 }
 
 void GameMenuScreen::pollForEvents(sf::Event& event) {
-	switch (event.type) {
-		case sf::Event::MouseMoved:
-			for (auto element : getButtons()) {
-				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					element->mouseIsOver();
-				} else {
-					element->mouseIsNotOver();
-				}
-			}
-			break;
-		case sf::Event::MouseButtonPressed:
-			for (auto element : getButtons()) {
-				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					element->setIsClicked(true);
-				}
-			}
-			break;
-	}
+	
 }
 
 void MainMenuScreen::pollForEvents(sf::Event& event) {
-	switch (event.type) {
-		case sf::Event::MouseMoved:
-			for (auto element : getButtons()) {
-				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					element->mouseIsOver();
-				} else {
-					element->mouseIsNotOver();
-				}
-			}
-			break;
-		case sf::Event::MouseButtonPressed:
-			for (auto element : getButtons()) {
-				if (element->isMouseOver(getContextWindow()->getWindow())) {
-					element->setIsClicked(true);
-				}
-			}
-			break;
-	}
+
 }
 
 void GameMenuScreen::buttonClickHandle(std::shared_ptr<Button> buttonPtr) {
