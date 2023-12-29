@@ -79,16 +79,8 @@ void Button::draw(sf::RenderWindow& window) {
 
 // Check if the mouse is within the bounds of the button:
 bool Button::isMouseOver(sf::RenderWindow& window) {
-	int mouseX = sf::Mouse::getPosition(window).x;
-	int mouseY = sf::Mouse::getPosition(window).y;
-
-	int btnPosX = buttonShape_.getPosition().x;
-	int btnPosY = buttonShape_.getPosition().y;
-
-	int btnxPosWidth = buttonShape_.getPosition().x + btnWidth;
-	int btnyPosHeight = buttonShape_.getPosition().y + btnHeight;
-
-	if (mouseX < btnxPosWidth && mouseX > btnPosX && mouseY < btnyPosHeight && mouseY > btnPosY) {
+	if (buttonShape_.getGlobalBounds().contains(
+			sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))) {
 		return true;
 	}
 	return false;

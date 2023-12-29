@@ -28,7 +28,6 @@ void monopolyGameEngine::clearBoard() {
 	gameboard_->clearBoard();
 }
 
-std::shared_ptr<Board> monopolyGameEngine::getBoard()
-{
+std::shared_ptr<Board> monopolyGameEngine::getBoard() {
 	return gameboard_;
 }

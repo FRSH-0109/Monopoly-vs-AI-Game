@@ -47,15 +47,7 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			// and align shape
 			break;
 	}
-
-	switch (activeScreen_->getScreenType()) {  // handling screen specific events
-		case MainMenu:
-		case GameMenu:
-			activeScreen_->pollForEvents(event);
-			break;
-		case MonopolyGame:
-			break;
-	}
+	activeScreen_->pollForEvents(event);
 }
 
 void GameEngine::display() {
@@ -79,19 +71,9 @@ void GameEngine::worker() {
 		}
 
 		ScreenEventType eventType = Idle;
-		switch (activeScreen_->getScreenType()) {
-			case MainMenu:
-			case GameMenu:
-				activeScreen_->draw();
-				eventType = activeScreen_->worker();
-				break;
-			case MonopolyGame:
-				activeScreen_->draw();
-				//eventType = activeScreen_->worker();
-				break;
-		}
+		activeScreen_->draw();
+		eventType = activeScreen_->worker();
 
-		std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 		switch (eventType) {
 			case Play:
 				activeScreen_.reset();
@@ -105,6 +87,7 @@ void GameEngine::worker() {
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
 			case StartGame:
+				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 				playerSettingsList_ = activeScreen_->getPlayersSettings();
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
