@@ -32,6 +32,6 @@ class Board {
 	PossibleFields& getFieldById(unsigned int wanted_id);
 };
 
-std::map<StreetTiers, unsigned int> jsonToPropertyRent(const json& element);
+std::map<StreetTiers, unsigned int> jsonToStreetRent(const json& element);
 std::map<StationTiers, unsigned int> jsonToStationRent(const json& element);
 std::map<UtilityTiers, unsigned int> jsonToUtilityRent(const json& element);

@@ -86,6 +86,23 @@ TEST_CASE("monopolyGameEngine") {
 	// }
 }
 
+TEST_CASE ("STREETField class") {
+	GameEngine test_engine = GameEngine(30, 1000, 1200);
+
+	REQUIRE(test_engine.getWindowWidth() == 1000);
+	REQUIRE(test_engine.getWindowHeight() == 1200);
+
+	const unsigned int TEST_ID = 1;
+	const FieldType TEST_TYPE = STREET;
+	const std::string TEST_NAME = "Białystok";
+	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+	const unsigned int TEST_WIDTH = 200;
+	const unsigned int TEST_HEIGHT = 1000;
+	const float TEST_ROTATION = 0.0;
+	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
+	const unsigned int TEST_PRICE = 400;
+}
+
 TEST_CASE("StreetField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
@@ -93,7 +110,7 @@ TEST_CASE("StreetField class") {
 	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	const unsigned int TEST_ID = 1;
-	const FieldType TEST_TYPE = PROPERTY;
+	const FieldType TEST_TYPE = STREET;
 	const std::string TEST_NAME = "Białystok";
 	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
 	const unsigned int TEST_WIDTH = 200;
@@ -213,7 +230,7 @@ TEST_CASE("StationField class") {
 	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	const unsigned int TEST_ID = 1;
-	const FieldType TEST_TYPE = PROPERTY;
+	const FieldType TEST_TYPE = STREET;
 	const std::string TEST_NAME = "Dworzec Centralny";
 	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
 	const unsigned int TEST_WIDTH = 200;
@@ -285,7 +302,7 @@ TEST_CASE("Utility class") {
 	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	const unsigned int TEST_ID = 1;
-	const FieldType TEST_TYPE = PROPERTY;
+	const FieldType TEST_TYPE = STREET;
 	const std::string TEST_NAME = "Elektrownia";
 	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
 	const unsigned int TEST_WIDTH = 200;
@@ -478,7 +495,7 @@ TEST_CASE("Board class") {
 	test_board.push_back(test_field);
 
 	test_id = 1;
-	test_type = PROPERTY;
+	test_type = STREET;
 	test_name = "Świętochłowice";
 	test_path = "textures_and_fonts/textures/monopoly_single_square_brown.png";
 	test_width = 80;
@@ -509,7 +526,7 @@ TEST_CASE("Board class") {
 	test_board.push_back(test_field_2);
 
 	test_id = 3;
-	test_type = PROPERTY;
+	test_type = STREET;
 	test_name = "Bełchatów";
 	test_path = "textures_and_fonts/textures/monopoly_single_square_brown.png";
 	test_width = 80;
@@ -644,7 +661,7 @@ TEST_CASE("Board class") {
 			FieldType test_field_type = std::visit([](Field& field) { return field.getType(); }, test_board[i]);
 
 			switch (test_field_type) {
-				case PROPERTY: {
+				case STREET: {
 					StreetField field_from_created = std::get<StreetField>(created_board[i]);
 					StreetField field_from_test = std::get<StreetField>(test_board[i]);
 					CHECK(field_from_created.getId() == field_from_test.getId());

@@ -93,7 +93,7 @@ class StreetField : public Field {
 		  is_hotel_(false),
 		  is_mortaged_(false),
 		  owner_(nullptr) {
-		std::cout << "PropertyField constructor" << std::endl;
+		std::cout << "StreetField constructor" << std::endl;
 	};
 
 	const unsigned int getPrice();

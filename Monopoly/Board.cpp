@@ -3,7 +3,7 @@
 using json = nlohmann::json;
 
 Board::Board(const std::string file_path) {
-	std::map<std::string, FieldType> str_to_type = {{"PROPERTY", PROPERTY}, {"STATION", STATION}, {"UTILITY", UTILITY},
+	std::map<std::string, FieldType> str_to_type = {{"STREET", STREET}, {"STATION", STATION}, {"UTILITY", UTILITY},
 		{"GO", GO}, {"CHANCE", CHANCE}, {"COMUNITY_CHEST", COMMUNITY_CHEST}, {"TAX", TAX}, {"JAIL", JAIL},
 		{"FREE_PARKING", FREE_PARKING}, {"GO_TO_JAIL", GO_TO_JAIL}};
 
@@ -26,10 +26,10 @@ Board::Board(const std::string file_path) {
 		sf::Vector2i position = getFieldPositon(id, position, width, height);
 		float rotation = getFieldRotation(id);
 		switch (type) {
-			case PROPERTY: {
+			case STREET: {
 				unsigned int price = element["price"];
 				unsigned int mortage = element["mortage"];
-				std::map<StreetTiers, unsigned int> rent_values = jsonToPropertyRent(element);
+				std::map<StreetTiers, unsigned int> rent_values = jsonToStreetRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				StreetField new_field = StreetField(id, type, name, graphic_path, width, height, rotation, position,
 					price, rent_values, group_members, mortage);
@@ -152,7 +152,7 @@ PossibleFields& Board::getFieldById(unsigned int wanted_id) {
 	}
 }
 
-std::map<StreetTiers, unsigned int> jsonToPropertyRent(const json& element) {
+std::map<StreetTiers, unsigned int> jsonToStreetRent(const json& element) {
 	std::map<StreetTiers, unsigned int> rent_values;
 	std::vector<unsigned int> list_of_rents = element["rent_values"];
 	rent_values.emplace(std::make_pair(NO_HOUSES, list_of_rents[0]));
