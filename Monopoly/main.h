@@ -18,13 +18,13 @@ class RotationException : public std::exception {
 	const float getBadRotation() { return bad_rotation_; };
 };
 
-class SpritePositionException : public std::exception {
-	float bad_position_;
+class SpriteOffsetException : public std::exception {
+	float bad_offset_;
 
 	public:
-	SpritePositionException(float position) : bad_position_(position) {};
-	SpritePositionException(const SpritePositionException& e) throw() : bad_position_(e.bad_position_) {};
-	const float getBadPosition() { return bad_position_; };
+	SpriteOffsetException(float offset) : bad_offset_(offset) {};
+	SpriteOffsetException(const SpriteOffsetException& e) throw() : bad_offset_(e.bad_offset_) {};
+	const float getBadOffset() { return bad_offset_; };
 };
 
 struct playerSettings {

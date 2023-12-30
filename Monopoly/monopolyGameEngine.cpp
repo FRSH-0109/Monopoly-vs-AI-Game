@@ -28,15 +28,16 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	for (Player& player : players_) {
 		player.createSprite();
 		if (i % 2 == 0) {
-			player.setSpritePositionX(0.33f);
+			player.setSpriteOffsetX(0.33f);
 		} else {
-			player.setSpritePositionX(0.66f);
+			player.setSpriteOffsetX(0.66f);
 		}
 		if (i >= 0 && i < 2) {
-			player.setSpritePositionY(0.33f);
+			player.setSpriteOffsetY(0.33f);
 		} else if (i >=2 && i < 4) {
-			player.setSpritePositionY(0.66f);
+			player.setSpriteOffsetY(0.66f);
 		}
+		//player.setSpritePosition(sf::Vector2f(getBoard() player.getSpriteOffsetX(), player.getSpriteOffsetY()));
 		++i;
 	}
 }
@@ -129,8 +130,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 				int oldPos = players_[playerIndexturn_].getPositon();
 				int newPos = (oldPos + rolledVal) % 40;
 				players_[playerIndexturn_].setPositon(newPos);
+				sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
+				players_[playerIndexturn_].setSpritePosition(newPlayerSpritePos);
 				rollDiceButton_->setIsVisible(false);
-				setTurnState(MovePlayer);
+				setTurnState(TurnEnd);
 			}
 			break;
 		case MovePlayer:
@@ -143,6 +146,32 @@ void monopolyGameEngine::monopolyGameWorker() {
 		default:
 			break;
 	}
+}
+
+sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition()
+{
+	float x_offset;
+	float y_offset;
+	unsigned int player_position = players_[playerIndexturn_].getPositon();
+	PossibleFields& curr_field = getBoard()->getFieldById(player_position);
+	unsigned int curr_field_width = std::visit([](Field& field) { return field.getWidth(); }, curr_field);
+	unsigned int curr_field_height = std::visit([](Field& field) { return field.getHeight(); }, curr_field);
+	if (player_position <= 10 ) {
+		x_offset = (float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetX();
+		y_offset = (float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetY();
+	} else if (player_position > 10 && player_position <= 20) {
+		x_offset = -(float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetX();
+		y_offset = (float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetY();
+	} else if (player_position > 20 && player_position <= 30) {
+		x_offset = -(float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetX();
+		y_offset = -(float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetY();
+	} else if (player_position > 30 && player_position <= 40) {
+		x_offset = (float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetX();
+		y_offset = -(float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetY();
+	}
+	float pos_x = (float)std::visit([](Field& field) { return field.getPosition().x; }, curr_field) + x_offset;
+	float pos_y = (float)std::visit([](Field& field) { return field.getPosition().y; }, curr_field) + y_offset;
+	return sf::Vector2f(pos_x, pos_y);
 }
 
 void monopolyGameEngine::setFont(sf::Font font) {

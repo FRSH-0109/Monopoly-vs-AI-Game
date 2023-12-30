@@ -18,8 +18,8 @@ class Player {
 	unsigned int jailStatus_;
 	sf::Texture player_texture_;
 	sf::Sprite player_sprite_;
-	float sprite_position_x_;
-	float sprite_position_y_;
+	float sprite_offset_x_;
+	float sprite_offset_y_;
 
    public:
 	Player();
@@ -48,8 +48,9 @@ class Player {
 	void createSprite();
 	sf::Texture& getTexture();
 	sf::Sprite& getSprite();
-	float getSpritePositionX() const;
-	float getSpritePositionY() const;
-	void setSpritePositionX(const float pos_x);
-	void setSpritePositionY(const float pos_y);
+	float getSpriteOffsetX() const;
+	float getSpriteOffsetY() const;
+	void setSpriteOffsetX(const float offset_x);
+	void setSpriteOffsetY(const float offset_y);
+	void setSpritePosition(sf::Vector2f newPos);
 };

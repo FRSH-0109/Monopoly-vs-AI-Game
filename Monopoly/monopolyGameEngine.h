@@ -48,6 +48,7 @@ class monopolyGameEngine {
 	unsigned int getFontSize() const;
 	void buttonsWorker();
 	void turnInfoTextWorker();
+	sf::Vector2f getUpdatePlayerSpritePosition();
 
 	unsigned int rollDice() const;
 

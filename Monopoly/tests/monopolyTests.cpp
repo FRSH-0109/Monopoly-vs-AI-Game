@@ -443,18 +443,18 @@ TEST_CASE("Player class") {
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == false);
 
 	SECTION("setSpritePositionX() and setSpritePositionY() - correct data") {
-		PLAYER1.setSpritePositionX(0.5);
-		PLAYER1.setSpritePositionY(0.25);
+		PLAYER1.setSpriteOffsetX(0.5);
+		PLAYER1.setSpriteOffsetY(0.25);
 
-		REQUIRE(PLAYER1.getSpritePositionX() == 0.5);
-		REQUIRE(PLAYER1.getSpritePositionY() == 0.25);
+		REQUIRE(PLAYER1.getSpriteOffsetX() == 0.5);
+		REQUIRE(PLAYER1.getSpriteOffsetY() == 0.25);
 	}
 
 	SECTION("setSpritePositionX() and setSpritePositionY() - wrong data") {
-		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionX(-0.4), SpritePositionException);
-		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionX(25.1), SpritePositionException);
-		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionY(1.2), SpritePositionException);
-		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionY(-0.5), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetX(-0.4), SpriteOffsetException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetX(25.1), SpriteOffsetException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetY(1.2), SpriteOffsetException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetY(-0.5), SpriteOffsetException);
 	}
 }
 
