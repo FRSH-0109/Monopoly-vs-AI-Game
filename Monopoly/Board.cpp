@@ -10,7 +10,7 @@ Board::Board(const std::string file_path) {
 	std::ifstream f(file_path);
 	json data = json::parse(f);
 
-	sf::Vector2i position = BOARD_POSITION;
+	sf::Vector2i position = BOARD_POSITION_;
 	for (auto& element : data) {
 		unsigned int id = element["id"];
 		std::string name = element["name"];
@@ -23,7 +23,7 @@ Board::Board(const std::string file_path) {
 		std::string type_in_str = element["type"];
 		FieldType type = str_to_type[type_in_str];
 
-		position = getFieldPositon(id, position, width, height);
+		sf::Vector2i position = getFieldPositon(id, position, width, height);
 		float rotation = getFieldRotation(id);
 		switch (type) {
 			case PROPERTY: {
@@ -86,7 +86,9 @@ Board::Board(const std::string file_path) {
 };
 
 sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y) {
-	if (id <= 10) {
+	if (id == 0) {
+		return sf::Vector2i(BOARD_POSITION_.x, BOARD_POSITION_.y);
+	} else if (id > 0 && id <= 10) {
 		return sf::Vector2i(prevPos.x - x, prevPos.y);
 	} else if (id > 10 && id <= 20) {
 		if (id == 11) {
@@ -130,6 +132,10 @@ const std::vector<PossibleFields>& Board::getBoard() {
 const unsigned int Board::getFieldNumber() {
 	return field_number_;
 };
+
+const sf::Vector2i Board::getBoardPosition() {
+	return BOARD_POSITION_;
+}
 
 void Board::clearBoard() {
 	board_.clear();

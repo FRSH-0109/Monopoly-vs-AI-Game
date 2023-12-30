@@ -29,11 +29,11 @@ class monopolyGameEngine {
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
 	std::vector<std::shared_ptr<sf::Text>> texts_;
-	sf::Vector2f ROLL_DICE_BUTTON_POSITION = sf::Vector2f(865, 120);
+	sf::Vector2f ROLL_DICE_BUTTON_POSITION = sf::Vector2f(965, 120);
 	std::shared_ptr<Button> rollDiceButton_;
-	sf::Vector2f TURN_INFO_TEXT_POSITION = sf::Vector2f(800, 50);
+	sf::Vector2f TURN_INFO_TEXT_POSITION = sf::Vector2f(900, 50);
 	std::shared_ptr<sf::Text> turnInfoText_;
-	sf::Vector2f ROLLED_VALUE_TEXT_POSITION = sf::Vector2f(800, 100);
+	sf::Vector2f ROLLED_VALUE_TEXT_POSITION = sf::Vector2f(900, 100);
 	std::shared_ptr<sf::Text> rolledValueText_;
 
 	// game staff

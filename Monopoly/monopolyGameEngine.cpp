@@ -37,7 +37,12 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 		} else if (i >=2 && i < 4) {
 			player.setSpriteOffsetY(0.66f);
 		}
-		//player.setSpritePosition(sf::Vector2f(getBoard() player.getSpriteOffsetX(), player.getSpriteOffsetY()));
+		const sf::Vector2i BOARD_POSITION = gameboard_->getBoardPosition();
+		const unsigned int FIELD_WIDTH = std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(0));
+		const unsigned int FIELD_HEIGHT = std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0));
+		const float SPRITE_POSITION_X = (float)BOARD_POSITION.x + (float)FIELD_WIDTH * player.getSpriteOffsetX();
+		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player.getSpriteOffsetY();
+		player.setSpritePosition(sf::Vector2f(SPRITE_POSITION_X, SPRITE_POSITION_Y));
 		++i;
 	}
 }
@@ -137,7 +142,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 			break;
 		case MovePlayer:
-	
+
 			break;
 		case TurnEnd:
 			incPlayerIndexTurn();
