@@ -441,6 +441,21 @@ TEST_CASE("Player class") {
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == false);
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == false);
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == false);
+
+	SECTION("setSpritePositionX() and setSpritePositionY() - correct data") {
+		PLAYER1.setSpritePositionX(0.5);
+		PLAYER1.setSpritePositionY(0.25);
+
+		REQUIRE(PLAYER1.getSpritePositionX() == 0.5);
+		REQUIRE(PLAYER1.getSpritePositionY() == 0.25);
+	}
+
+	SECTION("setSpritePositionX() and setSpritePositionY() - wrong data") {
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionX(-0.4), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionX(25.1), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionY(1.2), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionY(-0.5), SpritePositionException);
+	}
 }
 
 TEST_CASE("Board class") {
