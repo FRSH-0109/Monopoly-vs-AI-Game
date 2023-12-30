@@ -15,8 +15,10 @@ Board::Board(const std::string file_path) {
 		unsigned int id = element["id"];
 		std::string name = element["name"];
 		std::string graphic_path = element["graphic_path"];
-		unsigned int width = element["width"]*BOARD_SCALE;
-		unsigned int height = element["height"]*BOARD_SCALE;
+		unsigned int width_from_file = element["width"];
+		unsigned int height_from_file = element["height"];
+		unsigned int width = width_from_file * BOARD_SCALE;
+		unsigned int height = height_from_file * BOARD_SCALE;
 		//float rotation = element["rotation"];
 		std::string type_in_str = element["type"];
 		FieldType type = str_to_type[type_in_str];
