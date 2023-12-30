@@ -19,6 +19,7 @@ enum TurnState {
 class monopolyGameEngine {
 	const unsigned int playersMax_ = 4;
 	const unsigned int playersMin_ = 2;
+	const unsigned int PLAYER_MONEY_DEFAULT = 1500;
 
 	const std::string GAMEBOARD_FILE_PATH = "Monopoly/game_config_json/board.json";
 	std::shared_ptr<Board> gameboard_;
@@ -65,6 +66,7 @@ class monopolyGameEngine {
 	void createTextTurnInfo();
 	void createTextRolledValue();
 	void createTextPlayersInfo();
+	void updateTextPlayersInfo();
 	sf::Font& getFont();
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);

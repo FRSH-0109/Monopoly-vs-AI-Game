@@ -9,22 +9,24 @@ void monopolyGameEngine::createBoard() {
 }
 
 void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list) {
-	std::vector<sf::Color> PLAYER_COLORS = {sf::Color::Green, sf::Color::Red, sf::Color::Blue, sf::Color::Yellow};
 	int i = 0;
 	// TODO Parsować po wektorze playerSettings i generować na jego podstawie przeshufflowaną listę graczy)
+	int playerId = 0;
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
-			Player new_player = Player();
+			Player new_player = Player(PLAYER_MONEY_DEFAULT);
 			new_player.setIsAi(!(it->isHuman));
 			new_player.setAiLevel(it->level);
-			new_player.setColor(PLAYER_COLORS[i]);
+			new_player.setId(playerId);
 			players_.push_back(new_player);
 			++i;
 		}
+		++playerId;
 	};
 	i = 0;
-	auto rng = std::default_random_engine{};
-	std::shuffle(std::begin(players_), std::end(players_), rng);
+	std::random_device rd;
+    std::mt19937 g(rd());
+	std::shuffle(std::begin(players_), std::end(players_), g);
 	for (Player& player : players_) {
 		player.createSprite();
 		if (i % 2 == 0) {
@@ -250,7 +252,7 @@ void monopolyGameEngine::createTextPlayersInfo()
 {
 	sf::Vector2f defPos = PLAYERS_INFO_TEXT_POSITION;
 	for (int i = 0; i < players_.size(); ++i)
-	{
+	{	
 		if(i > 0)
 		{
 			defPos.x += 140;
@@ -261,10 +263,30 @@ void monopolyGameEngine::createTextPlayersInfo()
 		playerText->setOutlineColor(sf::Color::Black);
 		playerText->setOutlineThickness(2);
 		addText(playerText);
+		player1InfoText_.push_back(playerText);
 
-		std::shared_ptr<sf::Text> playerMoneyText(new sf::Text("Money " + std::to_string(players_[i].getMoney()) , getFont(), getFontSize()-10));
+		std::shared_ptr<sf::Text> playerMoneyText(new sf::Text("Money: " + std::to_string(players_[i].getMoney()) , getFont(), getFontSize()-7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
 		playerMoneyText->setColor(sf::Color::Black);
 		addText(playerMoneyText);
+		player2InfoText_.push_back(playerMoneyText);
+
+		std::shared_ptr<sf::Text> playerPositionText(new sf::Text("Position: " + std::to_string(players_[i].getPositon()+1) , getFont(), getFontSize()-7));
+		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
+		playerPositionText->setColor(sf::Color::Black);
+		addText(playerPositionText);
+		player3InfoText_.push_back(playerPositionText);
+
+		const std::string streetName = std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(players_[i].getPositon()));
+		std::shared_ptr<sf::Text> playerPositionNameText(new sf::Text(streetName, getFont(), getFontSize()-7));
+		playerPositionNameText->setPosition(sf::Vector2f(defPos.x, defPos.y + 110));
+		playerPositionNameText->setColor(sf::Color::Black);
+		addText(playerPositionNameText);
+		player4InfoText_.push_back(playerPositionNameText);
 	}
+}
+
+void monopolyGameEngine::updateTextPlayersInfo()
+{
+	// player1InfoText_[0].setString()
 }
