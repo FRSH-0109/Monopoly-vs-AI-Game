@@ -91,7 +91,7 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 80,
         "height": 200,
-        "rotation": 270.0,
+        "rotation": 90.0,
         "price": 150,
         "rent_multipliers": [4, 10],
         "group_members": [28],
@@ -104,7 +104,7 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_clear.png",
         "width": 200,
         "height": 200,
-        "rotation": 180.0
+        "rotation": 90.0
     },
     {
         "id": 30,
