@@ -3,9 +3,11 @@
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "contextWindow.h"
 #include "main.h"
 
 class Player {
+	ContextWindow* contextWindow_;
 	bool isAi_;
 	unsigned int aiLevel_;
 	unsigned int id_;
@@ -14,6 +16,10 @@ class Player {
 	std::vector<unsigned int> fieldsOwnedId_;
 	unsigned int money_;
 	unsigned int jailStatus_;
+	sf::Texture player_texture_;
+	sf::Sprite player_sprite_;
+	float sprite_position_x_;
+	float sprite_position_y_;
 
    public:
 	Player();
@@ -39,4 +45,9 @@ class Player {
 	bool getIsAi();
 	void setAiLevel(unsigned int aiLevel);
 	unsigned int getAiLevel();
+	void createSprite();
+	sf::Texture& getTexture();
+	sf::Sprite& getSprite();
+	float getSpritePositionX() const;
+	float getSpritePositionY() const;
 };

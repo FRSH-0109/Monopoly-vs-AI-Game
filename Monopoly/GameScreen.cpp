@@ -77,6 +77,10 @@ void GameScreen::draw() {
 		sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
 		getContextWindow()->getWindow().draw(sprite);
 	}
+	for (auto player : monopoly_game_engine_.getPlayers()) {
+		sprite = player.getSprite();
+		getContextWindow()->getWindow().draw(sprite);
+	}
 }
 
 void GameScreen::createButtonRollDice() {

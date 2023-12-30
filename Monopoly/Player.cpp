@@ -134,3 +134,37 @@ void Player::setAiLevel(unsigned int aiLevel) {
 unsigned int Player::getAiLevel() {
 	return aiLevel_;
 }
+
+void Player::createSprite() {
+	const float width = 25.0;
+	const float height = 25.0;
+	const std::string TEXTURE_PATH = "textures_and_fonts/textures/Pionek_monopoly.png";
+	contextWindow_ = ContextWindow::GetInstance();
+	if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
+		player_sprite_.setColor(sf::Color::Black);
+	}
+	player_sprite_.setTexture(player_texture_, true);
+	player_sprite_.setColor(color_);
+	sf::Vector2u texture_dim = player_texture_.getSize();
+	float scale_x = (float)width / (float)texture_dim.x;
+	float scale_y = (float)height / (float)texture_dim.y;
+	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+	player_sprite_.setScale(SCALE_VECT);
+	player_sprite_.setPosition(sf::Vector2f(900, 900));
+}
+
+sf::Texture& Player::getTexture() {
+	return player_texture_;
+}
+
+sf::Sprite& Player::getSprite() {
+	return player_sprite_;
+}
+
+float Player::getSpritePositionX() const {
+	return sprite_position_x_;
+}
+
+float Player::getSpritePositionY() const {
+	return sprite_position_y_;
+}
