@@ -60,9 +60,9 @@ class Field {
 	void setPosition(sf::Vector2i pos);
 };
 
-class PropertyField : public Field {
+class StreetField : public Field {
 	unsigned int price_;
-	std::map<PropertyTiers, unsigned int> rent_values_;
+	std::map<StreetTiers, unsigned int> rent_values_;
 	std::vector<unsigned int> group_members_;
 	unsigned int mortage_;
 	unsigned int house_number_;
@@ -72,7 +72,7 @@ class PropertyField : public Field {
 	Player* owner_;
 
    public:
-	PropertyField(const unsigned int id,
+	StreetField(const unsigned int id,
 		const FieldType type,
 		const std::string name,
 		const std::string graphic_path,
@@ -81,7 +81,7 @@ class PropertyField : public Field {
 		const float rotation,
 		const sf::Vector2i position,
 		const unsigned int price,
-		const std::map<PropertyTiers, unsigned int> rent_values,
+		const std::map<StreetTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
 		: Field(id, type, name, graphic_path, width, height, rotation, position),
@@ -97,7 +97,7 @@ class PropertyField : public Field {
 	};
 
 	const unsigned int getPrice();
-	const std::map<PropertyTiers, unsigned int> getRentValues();
+	const std::map<StreetTiers, unsigned int> getRentValues();
 	const std::vector<unsigned int> getGroupMembers();
 	const unsigned int getMortage();
 	const unsigned int getHouseNumber();

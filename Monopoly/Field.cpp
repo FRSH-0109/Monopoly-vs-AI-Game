@@ -113,35 +113,35 @@ void Field::setPosition(sf::Vector2i pos) {
 	position_ = pos;
 }
 
-const unsigned int PropertyField::getPrice() {
+const unsigned int StreetField::getPrice() {
 	return price_;
 };
-const std::map<PropertyTiers, unsigned int> PropertyField::getRentValues() {
+const std::map<StreetTiers, unsigned int> StreetField::getRentValues() {
 	return rent_values_;
 };
-const std::vector<unsigned int> PropertyField::getGroupMembers() {
+const std::vector<unsigned int> StreetField::getGroupMembers() {
 	return group_members_;
 };
-const unsigned int PropertyField::getMortage() {
+const unsigned int StreetField::getMortage() {
 	return mortage_;
 };
-const unsigned int PropertyField::getHouseNumber() {
+const unsigned int StreetField::getHouseNumber() {
 	return house_number_;
 };
-const bool PropertyField::getIsHotel() {
+const bool StreetField::getIsHotel() {
 	return is_hotel_;
 };
-const bool PropertyField::getIsMortaged() {
+const bool StreetField::getIsMortaged() {
 	return is_mortaged_;
 };
-const unsigned int PropertyField::getUnmortageValue() {
+const unsigned int StreetField::getUnmortageValue() {
 	return static_cast<int>(round(1.1 * mortage_));
 };
-Player* PropertyField::getOwner() {
+Player* StreetField::getOwner() {
 	return owner_;
 };
 
-void PropertyField::setHouseNumber(unsigned int new_house_number) {
+void StreetField::setHouseNumber(unsigned int new_house_number) {
 	if (new_house_number <= 4) {
 		house_number_ = new_house_number;
 	} else {
@@ -149,23 +149,23 @@ void PropertyField::setHouseNumber(unsigned int new_house_number) {
 	}
 };
 
-void PropertyField::setIsHotel(bool new_state) {
+void StreetField::setIsHotel(bool new_state) {
 	is_hotel_ = new_state;
 };
 
-void PropertyField::setIsMortaged(bool new_state) {
+void StreetField::setIsMortaged(bool new_state) {
 	is_mortaged_ = new_state;
 };
 
-void PropertyField::setOwner(Player* new_owner_ptr) {
+void StreetField::setOwner(Player* new_owner_ptr) {
 	owner_ = new_owner_ptr;
 };
 
-void PropertyField::resetDefault() {
-	PropertyField::setHouseNumber(0);
-	PropertyField::setIsHotel(false);
-	PropertyField::setIsMortaged(false);
-	PropertyField::setOwner(nullptr);
+void StreetField::resetDefault() {
+	StreetField::setHouseNumber(0);
+	StreetField::setIsHotel(false);
+	StreetField::setIsMortaged(false);
+	StreetField::setOwner(nullptr);
 };
 
 const unsigned int StationField::getPrice() {

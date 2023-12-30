@@ -29,9 +29,9 @@ Board::Board(const std::string file_path) {
 			case PROPERTY: {
 				unsigned int price = element["price"];
 				unsigned int mortage = element["mortage"];
-				std::map<PropertyTiers, unsigned int> rent_values = jsonToPropertyRent(element);
+				std::map<StreetTiers, unsigned int> rent_values = jsonToPropertyRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
-				PropertyField new_field = PropertyField(id, type, name, graphic_path, width, height, rotation, position,
+				StreetField new_field = StreetField(id, type, name, graphic_path, width, height, rotation, position,
 					price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
@@ -152,8 +152,8 @@ PossibleFields& Board::getFieldById(unsigned int wanted_id) {
 	}
 }
 
-std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {
-	std::map<PropertyTiers, unsigned int> rent_values;
+std::map<StreetTiers, unsigned int> jsonToPropertyRent(const json& element) {
+	std::map<StreetTiers, unsigned int> rent_values;
 	std::vector<unsigned int> list_of_rents = element["rent_values"];
 	rent_values.emplace(std::make_pair(NO_HOUSES, list_of_rents[0]));
 	rent_values.emplace(std::make_pair(ONE_HOUSE, list_of_rents[1]));

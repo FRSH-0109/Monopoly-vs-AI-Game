@@ -77,19 +77,20 @@ void GameScreen::draw() {
 	for (auto field : monopoly_game_engine_.getBoard()->getBoard()) {
 		sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
 		getContextWindow()->getWindow().draw(sprite);
-		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
-		if (field_type == PROPERTY || field_type == UTILITY || field_type == STATION) {
-			sf::RectangleShape owner_flag;
-			unsigned int field_id = std::visit([](Field& field) { return field.getId(); }, field);
-			float field_width = std::visit([](Field& field) { return (float)field.getWidth(); }, field);
-			float field_height = std::visit([](Field& field) { return (float)field.getHeight(); }, field);
-			if ((field_id >= 0 && field_id <= 10) ||(field_id > 20 && field_id <= 30)) {
-				owner_flag = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
-			} else if ((field_id > 10 && field_id <= 20) ||(field_id > 30 && field_id <= 40)) {
-				owner_flag = sf::RectangleShape(sf::Vector2f(field_height * 0.1f, field_width - 20.0f));
-			}
 
-		}
+		// FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
+		// if (field_type == PROPERTY || field_type == UTILITY || field_type == STATION) {
+		// 	sf::RectangleShape owner_flag;
+		// 	unsigned int field_id = std::visit([](Field& field) { return field.getId(); }, field);
+		// 	float field_width = std::visit([](Field& field) { return (float)field.getWidth(); }, field);
+		// 	float field_height = std::visit([](Field& field) { return (float)field.getHeight(); }, field);
+		// 	if ((field_id >= 0 && field_id <= 10) ||(field_id > 20 && field_id <= 30)) {
+		// 		owner_flag = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
+		// 	} else if ((field_id > 10 && field_id <= 20) ||(field_id > 30 && field_id <= 40)) {
+		// 		owner_flag = sf::RectangleShape(sf::Vector2f(field_height * 0.1f, field_width - 20.0f));
+		// 	}
+		// 	std::visit([](PropertyField& field) { return field.getOwner()->getColor(); }, field);
+		// }
 	}
 
 	for (auto player : monopoly_game_engine_.getPlayers()) {
