@@ -80,7 +80,7 @@ Board::Board(const std::string file_path) {
 	}
 	field_number_ = board_.size();
 	for (auto& field : board_) {
-		std::visit([](Field& visited_field) { visited_field.createTexture(); }, field);
+		std::visit([](Field& visited_field) { visited_field.createSprite(); }, field);
 	}
 };
 
