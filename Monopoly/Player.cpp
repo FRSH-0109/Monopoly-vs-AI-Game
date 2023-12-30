@@ -85,7 +85,7 @@ void Player::reduceJailStatus() {
 
 void Player::setId(unsigned int newId) {
 	// TODO: catch exception and tests to do
-	if (id_ <= 3) {
+	if (newId <= 3) {
 		id_ = newId;
 		switch (id_) {
 			case 0:
