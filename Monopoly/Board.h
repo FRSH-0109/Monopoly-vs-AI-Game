@@ -18,7 +18,7 @@ using PossibleFields = std::variant<Field, PropertyField, StationField, UtilityF
 class Board {
 	unsigned int field_number_;
 	std::vector<PossibleFields> board_;
-	sf::Vector2i BOARD_POSITION_ = sf::Vector2i(750, 700);
+	sf::Vector2i BOARD_POSITION_ = sf::Vector2i(700, 700);
 	float BOARD_SCALE = 1;
 
    public:

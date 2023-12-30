@@ -11,7 +11,7 @@
 #include "gameEngine.h"
 
 int main() {
-	GameEngine gameEngine(30, 1200, 1000);
+	GameEngine gameEngine(30, 1400, 1000);
 
 	gameEngine.worker();
 

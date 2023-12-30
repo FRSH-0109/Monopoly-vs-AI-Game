@@ -21,6 +21,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonRollDice();
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
+	monopoly_game_engine_.createTextPlayersInfo();
 }
 
 GameScreen::~GameScreen() {

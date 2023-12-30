@@ -35,6 +35,11 @@ class monopolyGameEngine {
 	std::shared_ptr<sf::Text> turnInfoText_;
 	sf::Vector2f ROLLED_VALUE_TEXT_POSITION = sf::Vector2f(900, 100);
 	std::shared_ptr<sf::Text> rolledValueText_;
+	sf::Vector2f PLAYERS_INFO_TEXT_POSITION = sf::Vector2f(850, 500);
+	std::vector<std::shared_ptr<sf::Text>> player1InfoText_;
+	std::vector<std::shared_ptr<sf::Text>> player2InfoText_;
+	std::vector<std::shared_ptr<sf::Text>> player3InfoText_;
+	std::vector<std::shared_ptr<sf::Text>> player4InfoText_;
 
 	// game staff
 	TurnState turnState_;
@@ -59,6 +64,7 @@ class monopolyGameEngine {
 	void createButtonRollDice();
 	void createTextTurnInfo();
 	void createTextRolledValue();
+	void createTextPlayersInfo();
 	sf::Font& getFont();
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);

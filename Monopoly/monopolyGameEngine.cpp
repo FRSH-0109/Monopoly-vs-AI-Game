@@ -232,8 +232,6 @@ void monopolyGameEngine::createButtonRollDice() {
 
 void monopolyGameEngine::createTextTurnInfo() {
 	std::shared_ptr<sf::Text> turnInfoText(new sf::Text("Turn: ", getFont(), getFontSize()));
-	// turnInfoText->setOrigin(
-	// 	turnInfoText->getGlobalBounds().getSize() / 2.f + turnInfoText->getLocalBounds().getPosition());
 	turnInfoText->setPosition(TURN_INFO_TEXT_POSITION);
 	turnInfoText->setColor(sf::Color::Black);
 	turnInfoText_ = turnInfoText;
@@ -242,10 +240,31 @@ void monopolyGameEngine::createTextTurnInfo() {
 
 void monopolyGameEngine::createTextRolledValue() {
 	std::shared_ptr<sf::Text> rolledValueText(new sf::Text("", getFont(), getFontSize()));
-	// rolledValueText->setOrigin(
-	// 	rolledValueText->getGlobalBounds().getSize() / 2.f + rolledValueText->getLocalBounds().getPosition());
 	rolledValueText->setPosition(ROLLED_VALUE_TEXT_POSITION);
 	rolledValueText->setColor(sf::Color::Black);
 	rolledValueText_ = rolledValueText;
 	addText(rolledValueText);
+}
+
+void monopolyGameEngine::createTextPlayersInfo()
+{
+	sf::Vector2f defPos = PLAYERS_INFO_TEXT_POSITION;
+	for (int i = 0; i < players_.size(); ++i)
+	{
+		if(i > 0)
+		{
+			defPos.x += 140;
+		}
+		std::shared_ptr<sf::Text> playerText(new sf::Text("Player " + std::to_string(i+1) , getFont(), getFontSize()));
+		playerText->setPosition(defPos);
+		playerText->setColor(players_[i].getColor());
+		playerText->setOutlineColor(sf::Color::Black);
+		playerText->setOutlineThickness(2);
+		addText(playerText);
+
+		std::shared_ptr<sf::Text> playerMoneyText(new sf::Text("Money " + std::to_string(players_[i].getMoney()) , getFont(), getFontSize()-10));
+		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
+		playerMoneyText->setColor(sf::Color::Black);
+		addText(playerMoneyText);
+	}
 }
