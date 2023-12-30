@@ -20,10 +20,22 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			++i;
 		}
 	};
+	i = 0;
 	auto rng = std::default_random_engine{};
 	std::shuffle(std::begin(players_), std::end(players_), rng);
 	for (Player& player: players_) {
 		player.createSprite();
+		if (i % 2 == 0) {
+			player.setSpritePositionX(0.33f);
+		} else {
+			player.setSpritePositionX(0.66f);
+		}
+		if (i >= 0 && i < 2) {
+			player.setSpritePositionY(0.33f);
+		} else if (i >=2 && i < 4) {
+			player.setSpritePositionY(0.66f);
+		}
+		++i;
 	}
 }
 
@@ -39,6 +51,6 @@ std::shared_ptr<Board> monopolyGameEngine::getBoard() {
 	return gameboard_;
 }
 
-std::vector<Player> monopolyGameEngine::getPlayers() {
+std::vector<Player>& monopolyGameEngine::getPlayers() {
 	return players_;
 }

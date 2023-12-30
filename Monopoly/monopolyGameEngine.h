@@ -24,5 +24,5 @@ class monopolyGameEngine {
 	void createBoard();
 	void clearBoard();
 	std::shared_ptr<Board> getBoard();
-	std::vector<Player> getPlayers();
+	std::vector<Player>& getPlayers();
 };
