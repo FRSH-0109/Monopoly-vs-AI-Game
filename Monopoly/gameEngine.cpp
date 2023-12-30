@@ -47,7 +47,6 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			// and align shape
 			break;
 	}
-	// activeScreen_->pollForEvents(event);
 }
 
 void GameEngine::display() {

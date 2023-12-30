@@ -18,7 +18,8 @@ Field::Field(const unsigned int id,
 	  width_(width),
 	  height_(height),
 	  rotation_(rotation),
-	  position_(position){
+	  position_(position) {
+	contextWindow_ = ContextWindow::GetInstance();
 	std::cout << "Field constructor" << std::endl;
 }
 
@@ -67,7 +68,6 @@ const sf::Vector2i& Field::getPosition() {
 }
 
 void Field::createSprite() {
-	contextWindow_ = ContextWindow::GetInstance();
 	if (!texture_.loadFromFile(graphic_path_)) {
 		sprite_.setColor(sf::Color::Green);
 	}

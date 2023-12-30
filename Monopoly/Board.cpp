@@ -19,7 +19,7 @@ Board::Board(const std::string file_path) {
 		unsigned int height_from_file = element["height"];
 		unsigned int width = width_from_file * BOARD_SCALE;
 		unsigned int height = height_from_file * BOARD_SCALE;
-		//float rotation = element["rotation"];
+		// float rotation = element["rotation"];
 		std::string type_in_str = element["type"];
 		FieldType type = str_to_type[type_in_str];
 
@@ -31,8 +31,8 @@ Board::Board(const std::string file_path) {
 				unsigned int mortage = element["mortage"];
 				std::map<PropertyTiers, unsigned int> rent_values = jsonToPropertyRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
-				PropertyField new_field = PropertyField(
-					id, type, name, graphic_path, width, height, rotation, position, price, rent_values, group_members, mortage);
+				PropertyField new_field = PropertyField(id, type, name, graphic_path, width, height, rotation, position,
+					price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
 			}
@@ -42,8 +42,8 @@ Board::Board(const std::string file_path) {
 				unsigned int mortage = element["mortage"];
 				std::map<StationTiers, unsigned int> rent_values = jsonToStationRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
-				StationField new_field = StationField(
-					id, type, name, graphic_path, width, height, rotation, position, price, rent_values, group_members, mortage);
+				StationField new_field = StationField(id, type, name, graphic_path, width, height, rotation, position,
+					price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
 			}
@@ -53,15 +53,16 @@ Board::Board(const std::string file_path) {
 				unsigned int mortage = element["mortage"];
 				std::map<UtilityTiers, unsigned int> rent_multipliers = jsonToUtilityRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
-				UtilityField new_field = UtilityField(id, type, name, graphic_path, width, height, rotation, position, price,
-					rent_multipliers, group_members, mortage);
+				UtilityField new_field = UtilityField(id, type, name, graphic_path, width, height, rotation, position,
+					price, rent_multipliers, group_members, mortage);
 				board_.push_back(new_field);
 				break;
 			}
 
 			case TAX: {
 				unsigned int tax_value = element["tax_value"];
-				TaxField new_field = TaxField(id, type, name, graphic_path, width, height, rotation, position, tax_value);
+				TaxField new_field =
+					TaxField(id, type, name, graphic_path, width, height, rotation, position, tax_value);
 				board_.push_back(new_field);
 				break;
 			}
@@ -84,55 +85,39 @@ Board::Board(const std::string file_path) {
 	}
 };
 
-sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y)
-{
-	if(id <= 10)
-	{
-		return sf::Vector2i(prevPos.x-x, prevPos.y);
-	}
-	else if (id > 10 && id <= 20){
-		if(id == 11)
-		{
-			return sf::Vector2i(prevPos.x+y, prevPos.y-x);
+sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y) {
+	if (id <= 10) {
+		return sf::Vector2i(prevPos.x - x, prevPos.y);
+	} else if (id > 10 && id <= 20) {
+		if (id == 11) {
+			return sf::Vector2i(prevPos.x + y, prevPos.y - x);
+		} else {
+			return sf::Vector2i(prevPos.x, prevPos.y - x);
 		}
-		else{
-			return sf::Vector2i(prevPos.x, prevPos.y-x);
+	} else if (id > 20 && id <= 30) {
+		if (id == 21) {
+			return sf::Vector2i(prevPos.x + x, prevPos.y + y);
+		} else {
+			return sf::Vector2i(prevPos.x + x, prevPos.y);
 		}
-	}
-	else if (id > 20 && id <= 30){
-		if(id == 21)
-		{
-			return sf::Vector2i(prevPos.x+x, prevPos.y+y);
-		}
-		else{
-			return sf::Vector2i(prevPos.x+x, prevPos.y);
-		}
-	}
-	else if (id > 30 && id <= 40){
-		if(id == 31)
-		{
-			return sf::Vector2i(prevPos.x-y, prevPos.y+x);
-		}
-		else{
-			return sf::Vector2i(prevPos.x, prevPos.y+x);
+	} else if (id > 30 && id <= 40) {
+		if (id == 31) {
+			return sf::Vector2i(prevPos.x - y, prevPos.y + x);
+		} else {
+			return sf::Vector2i(prevPos.x, prevPos.y + x);
 		}
 	}
 	return sf::Vector2i(0, 0);
 }
 
-float Board::getFieldRotation(unsigned int id)
-{
-	if(id <= 10)
-	{
+float Board::getFieldRotation(unsigned int id) {
+	if (id <= 10) {
 		return 0.0;
-	}
-	else if (id > 10 && id <= 20){
+	} else if (id > 10 && id <= 20) {
 		return 90.0;
-	}
-	else if (id > 20 && id <= 30){
+	} else if (id > 20 && id <= 30) {
 		return 180.0;
-	}
-	else if (id > 30 && id <= 40){
+	} else if (id > 30 && id <= 40) {
 		return 270.0;
 	}
 	return 0.0;
