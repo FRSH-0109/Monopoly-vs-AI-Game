@@ -6,9 +6,6 @@
 class GameScreen : public ActiveScreen {
 	monopolyGameEngine monopoly_game_engine_;
 
-	void createButtonRollDice();
-	void setOtherButtonsInactive(std::shared_ptr<Button> buttonPtr);
-
    public:
 	GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettingsList_);
 	~GameScreen();

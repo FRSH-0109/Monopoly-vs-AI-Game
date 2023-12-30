@@ -54,9 +54,6 @@ class Field {
 
 	void createSprite();
 
-	// void setHeight(unsigned int new_height, const GameEngine& game_engine);
-	// void setWidth(unsigned int new_width, const GameEngine& game_engine);
-
 	void setHeight(unsigned int new_height);
 	void setWidth(unsigned int new_width);
 	void setRotation(float new_roation);

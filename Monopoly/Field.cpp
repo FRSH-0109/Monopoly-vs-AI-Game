@@ -72,7 +72,6 @@ const sf::Vector2i& Field::getPosition() {
 }
 
 void Field::createSprite() {
-	contextWindow_ = ContextWindow::GetInstance();
 	if (!texture_.loadFromFile(graphic_path_)) {
 		sprite_.setColor(sf::Color::Green);
 	}
