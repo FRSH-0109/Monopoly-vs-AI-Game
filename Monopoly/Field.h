@@ -38,8 +38,9 @@ class Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
-		const sf::Vector2i boardOrigin);
+		const sf::Vector2i position);
 
+	ContextWindow* getContextWindow();
 	const unsigned int getId();
 	const FieldType getType();
 	const std::string getName();
@@ -81,12 +82,12 @@ class PropertyField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
-		const sf::Vector2i position_,
+		const sf::Vector2i position,
 		const unsigned int price,
 		const std::map<PropertyTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, width, height, rotation, position_),
+		: Field(id, type, name, graphic_path, width, height, rotation, position),
 		  price_(price),
 		  rent_values_(rent_values),
 		  group_members_(group_members),
@@ -132,12 +133,12 @@ class StationField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
-		const sf::Vector2i position_,
+		const sf::Vector2i position,
 		const unsigned int price,
 		const std::map<StationTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, width, height, rotation, position_),
+		: Field(id, type, name, graphic_path, width, height, rotation, position),
 		  price_(price),
 		  rent_values_(rent_values),
 		  group_members_(group_members),
@@ -177,12 +178,12 @@ class UtilityField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
-		const sf::Vector2i position_,
+		const sf::Vector2i position,
 		const unsigned int price,
 		const std::map<UtilityTiers, unsigned int> rent_multipliers,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
-		: Field(id, type, name, graphic_path, width, height, rotation, position_),
+		: Field(id, type, name, graphic_path, width, height, rotation, position),
 		  price_(price),
 		  rent_multipliers_(rent_multipliers),
 		  group_members_(group_members),
@@ -216,9 +217,9 @@ class TaxField : public Field {
 		const unsigned int width,
 		const unsigned int height,
 		const float rotation,
-		const sf::Vector2i position_,
+		const sf::Vector2i position,
 		const unsigned int tax_value)
-		: Field(id, type, name, graphic_path, width, height, rotation, position_), tax_value_(tax_value) {
+		: Field(id, type, name, graphic_path, width, height, rotation, position), tax_value_(tax_value) {
 		std::cout << "TaxField constructor" << std::endl;
 	};
 
