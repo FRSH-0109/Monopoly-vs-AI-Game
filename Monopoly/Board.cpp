@@ -136,6 +136,16 @@ void Board::clearBoard() {
 	field_number_ = board_.size();
 };
 
+PossibleFields& Board::getFieldById(unsigned int wanted_id) {
+	unsigned int field_id;
+	for(auto it = board_.begin(); it != board_.end(); ++it) {
+		field_id = std::visit([](Field& field) { return field.getId(); }, *it);
+		if(field_id == wanted_id) {
+			return *it;
+		}
+	}
+}
+
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {
 	std::map<PropertyTiers, unsigned int> rent_values;
 	std::vector<unsigned int> list_of_rents = element["rent_values"];

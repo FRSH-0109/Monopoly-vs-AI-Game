@@ -99,6 +99,7 @@ TEST_CASE("PropertyField class") {
 	const unsigned int TEST_WIDTH = 200;
 	const unsigned int TEST_HEIGHT = 1000;
 	const float TEST_ROTATION = 0.0;
+	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 400;
 	const std::map<PropertyTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
@@ -106,7 +107,7 @@ TEST_CASE("PropertyField class") {
 	const unsigned int TEST_MORTAGE = 200;
 
 	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -125,6 +126,8 @@ TEST_CASE("PropertyField class") {
 	REQUIRE(test_field.getUnmortageValue() == 220);
 	REQUIRE(test_field.getOwner() == nullptr);
 
+	test_field.getContextWindow();
+
 	SECTION("Field class setters - basic scenario") {
 		const unsigned int NEW_TEST_WIDTH = 600;
 		const unsigned int NEW_TEST_HEIGHT = 800;
@@ -134,9 +137,9 @@ TEST_CASE("PropertyField class") {
 		test_field.setHeight(NEW_TEST_HEIGHT);
 		test_field.setRotation(NEW_TEST_ROTATION);
 
-		REQUIRE(test_field.getWidth() == NEW_TEST_WIDTH);
-		REQUIRE(test_field.getHeight() == NEW_TEST_HEIGHT);
-		REQUIRE(test_field.getRotation() == NEW_TEST_ROTATION);
+		CHECK(test_field.getWidth() == NEW_TEST_WIDTH);
+		CHECK(test_field.getHeight() == NEW_TEST_HEIGHT);
+		CHECK(test_field.getRotation() == NEW_TEST_ROTATION);
 	}
 
 	SECTION("Field class setters - exception throws") {
@@ -144,9 +147,9 @@ TEST_CASE("PropertyField class") {
 		const unsigned int NEW_TEST_HEIGHT = 0;
 		const float NEW_TEST_ROTATION = -10.2;
 
-		REQUIRE_THROWS_AS(test_field.setWidth(NEW_TEST_WIDTH), DimensionException);
-		REQUIRE_THROWS_AS(test_field.setHeight(NEW_TEST_HEIGHT), DimensionException);
-		REQUIRE_THROWS_AS(test_field.setRotation(NEW_TEST_ROTATION), RotationException);
+		CHECK_THROWS_AS(test_field.setWidth(NEW_TEST_WIDTH), DimensionException);
+		CHECK_THROWS_AS(test_field.setHeight(NEW_TEST_HEIGHT), DimensionException);
+		CHECK_THROWS_AS(test_field.setRotation(NEW_TEST_ROTATION), RotationException);
 	}
 
 	SECTION("PropertyField class setters - basic scenario") {
@@ -216,6 +219,7 @@ TEST_CASE("StationField class") {
 	const unsigned int TEST_WIDTH = 200;
 	const unsigned int TEST_HEIGHT = 1000;
 	const float TEST_ROTATION = 0.0;
+	sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 200;
 	const std::map<StationTiers, unsigned int> TEST_RENT = {
 		{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100}, {FOUR_STATIONS, 200}};
@@ -223,7 +227,7 @@ TEST_CASE("StationField class") {
 	const unsigned int TEST_MORTAGE = 100;
 
 	StationField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -287,13 +291,14 @@ TEST_CASE("Utility class") {
 	const unsigned int TEST_WIDTH = 200;
 	const unsigned int TEST_HEIGHT = 1000;
 	const float TEST_ROTATION = 0.0;
+	sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 150;
 	const std::map<UtilityTiers, unsigned int> TEST_RENT = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {28};
 	const unsigned int TEST_MORTAGE = 75;
 
 	UtilityField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -357,10 +362,11 @@ TEST_CASE("TaxField class") {
 	const unsigned int TEST_WIDTH = 200;
 	const unsigned int TEST_HEIGHT = 1000;
 	const float TEST_ROTATION = 0.0;
+	sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_TAX_VALUE = 100;
 
 	TaxField test_tax_field =
-		TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION, TEST_TAX_VALUE);
+		TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION, TEST_POSITION, TEST_TAX_VALUE);
 
 	REQUIRE(test_tax_field.getId() == TEST_ID);
 	REQUIRE(test_tax_field.getType() == TEST_TYPE);
@@ -435,6 +441,21 @@ TEST_CASE("Player class") {
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == false);
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == false);
 	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == false);
+
+	SECTION("setSpritePositionX() and setSpritePositionY() - correct data") {
+		PLAYER1.setSpritePositionX(0.5);
+		PLAYER1.setSpritePositionY(0.25);
+
+		REQUIRE(PLAYER1.getSpritePositionX() == 0.5);
+		REQUIRE(PLAYER1.getSpritePositionY() == 0.25);
+	}
+
+	SECTION("setSpritePositionX() and setSpritePositionY() - wrong data") {
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionX(-0.4), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionX(25.1), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionY(1.2), SpritePositionException);
+		REQUIRE_THROWS_AS(PLAYER1.setSpritePositionY(-0.5), SpritePositionException);
+	}
 }
 
 TEST_CASE("Board class") {
@@ -447,21 +468,23 @@ TEST_CASE("Board class") {
 	unsigned int test_id = 0;
 	FieldType test_type = GO;
 	std::string test_name = "Start";
-	std::string test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	std::string test_path = "textures_and_fonts/textures/monopoly_single_square_clear.png";
 	unsigned int test_width = 200;
 	unsigned int test_height = 200;
 	float test_rotation = 0.0;
+	sf::Vector2i test_position = sf::Vector2i(20, 20);
 
-	const Field test_field = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	const Field test_field = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 	test_board.push_back(test_field);
 
 	test_id = 1;
 	test_type = PROPERTY;
 	test_name = "Świętochłowice";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_brown.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_brown.png";
 	test_width = 80;
 	test_height = 200;
 	test_rotation = 0.0;
+	test_position = sf::Vector2i(40, 40);
 	unsigned int test_price = 60;
 	std::map<PropertyTiers, unsigned int> test_rent = {
 		{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30}, {THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
@@ -469,7 +492,7 @@ TEST_CASE("Board class") {
 	unsigned int test_mortage = 30;
 
 	const PropertyField test_field_1 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_price, test_rent, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_rent, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_1);
 
@@ -479,15 +502,16 @@ TEST_CASE("Board class") {
 	test_width = 80;
 	test_height = 200;
 	test_rotation = 0.0;
+	test_position = sf::Vector2i(60, 60);
 
-	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_2);
 
 	test_id = 3;
 	test_type = PROPERTY;
 	test_name = "Bełchatów";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_brown.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_brown.png";
 	test_width = 80;
 	test_height = 200;
 	test_rotation = 0.0;
@@ -496,32 +520,35 @@ TEST_CASE("Board class") {
 		{NO_HOUSES, 4}, {ONE_HOUSE, 20}, {TWO_HOUESES, 60}, {THREE_HOUSES, 180}, {FOUR_HOUSES, 320}, {HOTEL, 450}};
 	test_group_members = {1};
 	test_mortage = 30;
+	test_position = sf::Vector2i(80, 80);
 
-	const PropertyField test_field_3 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_price, test_rent, test_group_members, test_mortage);
+	PropertyField test_field_3 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation, test_position, test_price, test_rent, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_3);
 
 	test_id = 4;
 	test_type = TAX;
 	test_name = "Podatek Dochodowy";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_empty.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_empty.png";
 	test_width = 80;
 	test_height = 200;
 	test_rotation = 0.0;
+	test_position = sf::Vector2i(100, 100);
 	unsigned int test_tax_value = 200;
 
 	const TaxField test_field_4 =
-		TaxField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_tax_value);
+		TaxField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position, test_tax_value);
 	test_board.push_back(test_field_4);
 
 	test_id = 5;
 	test_type = STATION;
 	test_name = "Dworzec Centralny";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_purple.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_purple.png";
 	test_width = 80;
 	test_height = 200;
 	test_rotation = 0.0;
+	test_position = sf::Vector2i(120, 120);
 	test_price = 200;
 	std::map<StationTiers, unsigned int> test_rent_station = {
 		{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100}, {FOUR_STATIONS, 200}};
@@ -529,72 +556,77 @@ TEST_CASE("Board class") {
 	test_mortage = 100;
 
 	const StationField test_field_5 = StationField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_price, test_rent_station, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_rent_station, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_5);
 
 	test_id = 7;
 	test_type = CHANCE;
 	test_name = "Szansa";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_clear.png";
 	test_width = 80;
 	test_height = 200;
 	test_rotation = 0.0;
+	test_position = sf::Vector2i(140, 140);
 
-	const Field test_field_6 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	const Field test_field_6 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_6);
 
 	test_id = 10;
 	test_type = JAIL;
 	test_name = "Więzienie";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_clear.png";
 	test_width = 200;
 	test_height = 200;
 	test_rotation = 0.0;
+	test_position = sf::Vector2i(160, 160);
 
-	const Field test_field_7 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	const Field test_field_7 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_7);
 
 	test_id = 12;
 	test_type = UTILITY;
 	test_name = "Elektrownia";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_empty.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_empty.png";
 	test_width = 80;
 	test_height = 200;
-	test_rotation = 270.0;
+	test_rotation = 90.0;
+	test_position = sf::Vector2i(180, 180);
 	test_price = 150;
 	std::map<UtilityTiers, unsigned int> test_rent_multipliers = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
 	test_group_members = {28};
 	test_mortage = 75;
 
 	const UtilityField test_field_8 = UtilityField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_price, test_rent_multipliers, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_rent_multipliers, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_8);
 
 	test_id = 20;
 	test_type = FREE_PARKING;
 	test_name = "Bezpłatny Parking";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_clear.png";
 	test_width = 200;
 	test_height = 200;
-	test_rotation = 180.0;
+	test_rotation = 90.0;
+	test_position = sf::Vector2i(200, 200);
 
-	const Field test_field_9 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	const Field test_field_9 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_9);
 
 	test_id = 30;
 	test_type = GO_TO_JAIL;
 	test_name = "Idziesz do więzienia!";
-	test_path = "/textures_and_fonts/textures/monopoly_single_square_clear.png";
+	test_path = "textures_and_fonts/textures/monopoly_single_square_clear.png";
 	test_width = 200;
 	test_height = 200;
 	test_rotation = 180.0;
+	test_position = sf::Vector2i(220, 220);
 
-	const Field test_field_10 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation);
+	const Field test_field_10 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_10);
 
@@ -761,5 +793,20 @@ TEST_CASE("Board class") {
 	SECTION("clearBoard() method") {
 		TEST_BOARD.clearBoard();
 		REQUIRE(TEST_BOARD.getFieldNumber() == 0);
+	}
+
+	SECTION("getFieldById() method") {
+		PropertyField given_field = std::get<PropertyField>(TEST_BOARD.getFieldById(3));
+		CHECK(given_field.getId() == test_field_3.getId());
+		CHECK(given_field.getType() == test_field_3.getType());
+		CHECK(given_field.getName() == test_field_3.getName());
+		CHECK(given_field.getGraphicPath() == test_field_3.getGraphicPath());
+		CHECK(given_field.getWidth() == test_field_3.getWidth());
+		CHECK(given_field.getHeight() == test_field_3.getHeight());
+		CHECK(given_field.getRotation() == test_field_3.getRotation());
+		CHECK(given_field.getPrice() == test_field_3.getPrice());
+		CHECK(given_field.getRentValues() == test_field_3.getRentValues());
+		CHECK(given_field.getGroupMembers() == test_field_3.getGroupMembers());
+		CHECK(given_field.getMortage() == test_field_3.getMortage());
 	}
 }

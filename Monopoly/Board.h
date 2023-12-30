@@ -28,6 +28,7 @@ class Board {
 	void clearBoard();
 	sf::Vector2i getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y);
 	float getFieldRotation(unsigned int id);
+	PossibleFields& getFieldById(unsigned int wanted_id);
 };
 
 std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element);

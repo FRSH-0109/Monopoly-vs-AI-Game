@@ -50,4 +50,6 @@ class Player {
 	sf::Sprite& getSprite();
 	float getSpritePositionX() const;
 	float getSpritePositionY() const;
+	void setSpritePositionX(const float pos_x);
+	void setSpritePositionY(const float pos_y);
 };

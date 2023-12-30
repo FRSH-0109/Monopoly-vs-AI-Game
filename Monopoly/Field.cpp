@@ -19,8 +19,12 @@ Field::Field(const unsigned int id,
 	  height_(height),
 	  rotation_(rotation),
 	  position_(position) {
-	contextWindow_ = ContextWindow::GetInstance();
 	std::cout << "Field constructor" << std::endl;
+}
+
+ContextWindow* Field::getContextWindow() {
+	contextWindow_ = ContextWindow::GetInstance();
+	return contextWindow_;
 }
 
 const unsigned int HouseException::getInvalidNumber() {

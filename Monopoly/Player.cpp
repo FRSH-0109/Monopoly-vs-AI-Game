@@ -145,12 +145,12 @@ void Player::createSprite() {
 	}
 	player_sprite_.setTexture(player_texture_, true);
 	player_sprite_.setColor(color_);
+	// player_sprite_.setOrigin(sf::Vector2f(10.0f, 10.0f));
 	sf::Vector2u texture_dim = player_texture_.getSize();
 	float scale_x = (float)width / (float)texture_dim.x;
 	float scale_y = (float)height / (float)texture_dim.y;
 	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
 	player_sprite_.setScale(SCALE_VECT);
-	player_sprite_.setPosition(sf::Vector2f(900, 900));
 }
 
 sf::Texture& Player::getTexture() {
@@ -167,4 +167,20 @@ float Player::getSpritePositionX() const {
 
 float Player::getSpritePositionY() const {
 	return sprite_position_y_;
+}
+
+void Player::setSpritePositionX(const float pos_x) {
+	if (pos_x >= 0.0 && pos_x <= 1.0) {
+		sprite_position_x_ = pos_x;
+	} else {
+		throw(SpritePositionException(pos_x));
+	}
+}
+
+void Player::setSpritePositionY(const float pos_y) {
+	if (pos_y >= 0.0 && pos_y <= 1.0) {
+		sprite_position_y_ = pos_y;
+	} else {
+		throw(SpritePositionException(pos_y));
+	}
 }
