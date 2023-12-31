@@ -101,29 +101,12 @@ unsigned int monopolyGameEngine::getFontSize() const {
 }
 
 void monopolyGameEngine::turnInfoTextWorker() {
-	switch (getPlayerIndexTurn()) {
-		case 0:
-			turnInfoText_->setString("Turn: Player 1");
-			break;
-
-		case 1:
-			turnInfoText_->setString("Turn: Player 2");
-			break;
-
-		case 2:
-			turnInfoText_->setString("Turn: Player 3");
-			break;
-
-		case 3:
-			turnInfoText_->setString("Turn: Player 4");
-			break;
-		default:
-			break;
-	}
+	turnInfoText_->setString("Turn: Player " + std::to_string(getPlayerIndexTurn()+1));
 }
 
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
+	updateTextPlayersInfo();
 
 	switch (getTurnState()) {
 		case RollDice:
@@ -253,40 +236,67 @@ void monopolyGameEngine::createTextPlayersInfo()
 	sf::Vector2f defPos = PLAYERS_INFO_TEXT_POSITION;
 	for (int i = 0; i < players_.size(); ++i)
 	{	
+		int id = players_[i].getId();
 		if(i > 0)
 		{
-			defPos.x += 140;
+			defPos.x += 180;
 		}
-		std::shared_ptr<sf::Text> playerText(new sf::Text("Player " + std::to_string(i+1) , getFont(), getFontSize()));
+		std::shared_ptr<sf::Text> playerText(new sf::Text("Player " + std::to_string(id+1) , getFont(), getFontSize()));
 		playerText->setPosition(defPos);
-		playerText->setColor(players_[i].getColor());
+		playerText->setColor(players_[id].getColor());
 		playerText->setOutlineColor(sf::Color::Black);
 		playerText->setOutlineThickness(2);
 		addText(playerText);
-		player1InfoText_.push_back(playerText);
 
-		std::shared_ptr<sf::Text> playerMoneyText(new sf::Text("Money: " + std::to_string(players_[i].getMoney()) , getFont(), getFontSize()-7));
+		std::shared_ptr<sf::Text> playerMoneyText(new sf::Text("Money: " + std::to_string(players_[id].getMoney()) , getFont(), getFontSize()-7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
 		playerMoneyText->setColor(sf::Color::Black);
 		addText(playerMoneyText);
-		player2InfoText_.push_back(playerMoneyText);
 
-		std::shared_ptr<sf::Text> playerPositionText(new sf::Text("Position: " + std::to_string(players_[i].getPositon()+1) , getFont(), getFontSize()-7));
+		std::shared_ptr<sf::Text> playerPositionText(new sf::Text("Position: " + std::to_string(players_[id].getPositon()+1) , getFont(), getFontSize()-7));
 		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
 		playerPositionText->setColor(sf::Color::Black);
 		addText(playerPositionText);
-		player3InfoText_.push_back(playerPositionText);
 
-		const std::string streetName = std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(players_[i].getPositon()));
+		const std::string streetName = std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(players_[id].getPositon()));
 		std::shared_ptr<sf::Text> playerPositionNameText(new sf::Text(streetName, getFont(), getFontSize()-7));
 		playerPositionNameText->setPosition(sf::Vector2f(defPos.x, defPos.y + 110));
 		playerPositionNameText->setColor(sf::Color::Black);
 		addText(playerPositionNameText);
-		player4InfoText_.push_back(playerPositionNameText);
+
+		std::vector<std::shared_ptr<sf::Text>> playerInfoTextTmp;
+		playerInfoTextTmp.push_back(playerText);
+		playerInfoTextTmp.push_back(playerMoneyText);
+		playerInfoTextTmp.push_back(playerPositionText);
+		playerInfoTextTmp.push_back(playerPositionNameText);
+		playerInfoText_[id].push_back(playerText);
+		playerInfoText_[id].push_back(playerMoneyText);
+		playerInfoText_[id].push_back(playerPositionText);
+		playerInfoText_[id].push_back(playerPositionNameText);
 	}
 }
 
 void monopolyGameEngine::updateTextPlayersInfo()
 {
-	// player1InfoText_[0].setString()
+	bool isPlayerinGame[4] = {false, false, false, false};
+	for(auto player: players_)
+	{
+		const std::string streetName = std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player.getPositon()));
+		int id = player.getId();
+		playerInfoText_[id][1]->setString("Money: " + std::to_string(player.getMoney()));
+		playerInfoText_[id][2]->setString("Position: " + std::to_string(player.getPositon()+1));
+		playerInfoText_[id][3]->setString(streetName);
+		isPlayerinGame[id] = true;
+	}
+
+	for (int i = 0; i < playersMax_; ++i)
+	{
+		if(!isPlayerinGame[i])
+		{
+			int id = players_[i].getId();
+			playerInfoText_[id][1]->setString("Bankrupt");
+			playerInfoText_[id][2]->setString("");
+			playerInfoText_[id][3]->setString("");
+		}
+	}
 }
