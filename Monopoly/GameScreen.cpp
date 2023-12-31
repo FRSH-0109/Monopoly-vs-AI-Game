@@ -78,19 +78,72 @@ void GameScreen::draw() {
 		sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
 		getContextWindow()->getWindow().draw(sprite);
 
-		// FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
-		// if (field_type == STREET || field_type == UTILITY || field_type == STATION) {
-		// 	sf::RectangleShape owner_flag;
-		// 	unsigned int field_id = std::visit([](Field& field) { return field.getId(); }, field);
-		// 	float field_width = std::visit([](Field& field) { return (float)field.getWidth(); }, field);
-		// 	float field_height = std::visit([](Field& field) { return (float)field.getHeight(); }, field);
-		// 	if ((field_id >= 0 && field_id <= 10) ||(field_id > 20 && field_id <= 30)) {
-		// 		owner_flag = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
-		// 	} else if ((field_id > 10 && field_id <= 20) ||(field_id > 30 && field_id <= 40)) {
-		// 		owner_flag = sf::RectangleShape(sf::Vector2f(field_height * 0.1f, field_width - 20.0f));
-		// 	}
-		// 	std::visit([](PropertyField& field) { return field.getOwner()->getColor(); }, field);
-		// }
+		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
+		if (field_type == STREET || field_type == UTILITY || field_type == STATION) {
+			float flag_x_pos;
+			float flag_y_pos;
+			unsigned int field_id = std::visit([](Field& field) { return field.getId(); }, field);
+			float field_width = std::visit([](Field& field) { return (float)field.getWidth(); }, field);
+			float field_height = std::visit([](Field& field) { return (float)field.getHeight(); }, field);
+			float field_rotation = std::visit([](Field& field) { return (float)field.getRotation(); }, field);
+			const sf::Vector2i& field_pos = std::visit([](Field& field) { return field.getPosition(); }, field);
+			sf::RectangleShape owner_flag = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
+
+			// if ((field_id >= 0 && field_id <= 10) ||(field_id > 20 && field_id <= 30)) {
+			// 	owner_flag = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
+			// } else if ((field_id > 10 && field_id <= 20) ||(field_id > 30 && field_id <= 40)) {
+			// 	owner_flag = sf::RectangleShape(sf::Vector2f(field_height * 0.1f, field_width - 20.0f));
+			// }
+
+			if (field_id >= 0 && field_id <= 10) {
+				flag_x_pos = (float)field_pos.x + 10.0f;
+				flag_y_pos = (float)field_pos.y + field_height + 8.0f;
+			} else if (field_id > 10 && field_id <= 20) {
+				flag_x_pos = (float)field_pos.x - field_height - 8.0f;
+				flag_y_pos = (float)field_pos.y + 10.0f;
+			} else if (field_id > 20 && field_id <= 30) {
+				flag_x_pos = (float)field_pos.x - 10.0f;
+				flag_y_pos = (float)field_pos.y - field_height - 8.0f;
+			} else if (field_id > 30 && field_id <= 40) {
+				flag_x_pos = (float)field_pos.x + field_height + 8.0f;
+				flag_y_pos = (float)field_pos.y - 10.0f;
+			}
+
+			owner_flag.setRotation(field_rotation);
+			owner_flag.setOutlineThickness(2.0f);
+			owner_flag.setOutlineColor(sf::Color::Black);
+			owner_flag.setPosition(sf::Vector2f(flag_x_pos, flag_y_pos));
+
+			switch (field_type) {
+				case STREET: {
+					StreetField field_specified = std::get<StreetField>(field);
+					Player* owner_ptr = field_specified.getOwner();
+					if (owner_ptr != nullptr) {
+						owner_flag.setFillColor(owner_ptr->getColor());
+					}
+					break;
+				}
+
+				case UTILITY: {
+					UtilityField field_specified = std::get<UtilityField>(field);
+					Player* owner_ptr = field_specified.getOwner();
+					if (owner_ptr != nullptr) {
+						owner_flag.setFillColor(owner_ptr->getColor());
+					}
+					break;
+				}
+
+				case STATION: {
+					StationField field_specified = std::get<StationField>(field);
+					Player* owner_ptr = field_specified.getOwner();
+					if (owner_ptr != nullptr) {
+						owner_flag.setFillColor(owner_ptr->getColor());
+					}
+					break;
+				}
+			}
+			getContextWindow()->getWindow().draw(owner_flag);
+		}
 	}
 
 	for (auto player : monopoly_game_engine_.getPlayers()) {
