@@ -35,7 +35,7 @@ ScreenEventType GameScreen::worker() {
 			if (element->isMouseOver(getContextWindow()->getWindow())) {
 				element->mouseIsOver();
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-					 element->setIsClicked(true);
+					element->setIsClicked(true);
 				}
 			} else {
 				element->mouseIsNotOver();
@@ -59,7 +59,6 @@ ScreenEventType GameScreen::worker() {
 void GameScreen::pollForEvents(sf::Event& event) {}
 
 void GameScreen::draw() {
-
 	std::shared_ptr<Board> game_board_ptr = monopoly_game_engine_.getBoard();
 
 	// draw buttons and texts

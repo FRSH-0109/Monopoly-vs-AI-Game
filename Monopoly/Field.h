@@ -100,134 +100,104 @@ class PropertyField : public Field {
 	void resetDefault();
 };
 
-	class StreetField : public PropertyField {
-		std::map<StreetTiers, unsigned int> rent_values_;
-		unsigned int house_number_;
-		bool is_hotel_;
+class StreetField : public PropertyField {
+	std::map<StreetTiers, unsigned int> rent_values_;
+	unsigned int house_number_;
+	bool is_hotel_;
 
-	   public:
-		StreetField(const unsigned int id,
-			const FieldType type,
-			const std::string name,
-			const std::string graphic_path,
-			const unsigned int width,
-			const unsigned int height,
-			const float rotation,
-			const sf::Vector2i position,
-			const unsigned int price,
-			const std::map<StreetTiers, unsigned int> rent_values,
-			const std::vector<unsigned int> group_members,
-			const unsigned int mortage)
-			: PropertyField(id,
-				  type,
-				  name,
-				  graphic_path,
-				  width,
-				  height,
-				  rotation,
-				  position,
-				  price,
-				  group_members,
-				  mortage),
-			  rent_values_(rent_values),
-			  house_number_(0),
-			  is_hotel_(false) {
-			std::cout << "StreetField constructor" << std::endl;
-		};
-
-		const std::map<StreetTiers, unsigned int> getRentValues();
-		const unsigned int getHouseNumber();
-		const bool getIsHotel();
-
-		void setHouseNumber(unsigned int new_house_number);
-		void setIsHotel(bool new_state);
-		void resetDefault();
+   public:
+	StreetField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const sf::Vector2i position,
+		const unsigned int price,
+		const std::map<StreetTiers, unsigned int> rent_values,
+		const std::vector<unsigned int> group_members,
+		const unsigned int mortage)
+		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
+		  rent_values_(rent_values),
+		  house_number_(0),
+		  is_hotel_(false) {
+		std::cout << "StreetField constructor" << std::endl;
 	};
 
-	class StationField : public PropertyField {
-		std::map<StationTiers, unsigned int> rent_values_;
+	const std::map<StreetTiers, unsigned int> getRentValues();
+	const unsigned int getHouseNumber();
+	const bool getIsHotel();
 
-	   public:
-		StationField(const unsigned int id,
-			const FieldType type,
-			const std::string name,
-			const std::string graphic_path,
-			const unsigned int width,
-			const unsigned int height,
-			const float rotation,
-			const sf::Vector2i position,
-			const unsigned int price,
-			const std::map<StationTiers, unsigned int> rent_values,
-			const std::vector<unsigned int> group_members,
-			const unsigned int mortage)
-			: PropertyField(id,
-				  type,
-				  name,
-				  graphic_path,
-				  width,
-				  height,
-				  rotation,
-				  position,
-				  price,
-				  group_members,
-				  mortage),
-			  rent_values_(rent_values) {
-			std::cout << "StationField constructor" << std::endl;
-		};
+	void setHouseNumber(unsigned int new_house_number);
+	void setIsHotel(bool new_state);
+	void resetDefault();
+};
 
-		const std::map<StationTiers, unsigned int> getRentValues();
+class StationField : public PropertyField {
+	std::map<StationTiers, unsigned int> rent_values_;
+
+   public:
+	StationField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const sf::Vector2i position,
+		const unsigned int price,
+		const std::map<StationTiers, unsigned int> rent_values,
+		const std::vector<unsigned int> group_members,
+		const unsigned int mortage)
+		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
+		  rent_values_(rent_values) {
+		std::cout << "StationField constructor" << std::endl;
 	};
 
-	class UtilityField : public PropertyField {
-		std::map<UtilityTiers, unsigned int> rent_multipliers_;
+	const std::map<StationTiers, unsigned int> getRentValues();
+};
 
-	   public:
-		UtilityField(const unsigned int id,
-			const FieldType type,
-			const std::string name,
-			const std::string graphic_path,
-			const unsigned int width,
-			const unsigned int height,
-			const float rotation,
-			const sf::Vector2i position,
-			const unsigned int price,
-			const std::map<UtilityTiers, unsigned int> rent_multipliers,
-			const std::vector<unsigned int> group_members,
-			const unsigned int mortage)
-			: PropertyField(id,
-				  type,
-				  name,
-				  graphic_path,
-				  width,
-				  height,
-				  rotation,
-				  position,
-				  price,
-				  group_members,
-				  mortage),
-			  rent_multipliers_(rent_multipliers) {
-			std::cout << "UtilityField constructor" << std::endl;
-		};
+class UtilityField : public PropertyField {
+	std::map<UtilityTiers, unsigned int> rent_multipliers_;
 
-		const std::map<UtilityTiers, unsigned int> getRentMultipliers();
+   public:
+	UtilityField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const sf::Vector2i position,
+		const unsigned int price,
+		const std::map<UtilityTiers, unsigned int> rent_multipliers,
+		const std::vector<unsigned int> group_members,
+		const unsigned int mortage)
+		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
+		  rent_multipliers_(rent_multipliers) {
+		std::cout << "UtilityField constructor" << std::endl;
 	};
 
-	class TaxField : public Field {
-		unsigned int tax_value_;
+	const std::map<UtilityTiers, unsigned int> getRentMultipliers();
+};
 
-	   public:
-		TaxField(const unsigned int id,
-			const FieldType type,
-			const std::string name,
-			const std::string graphic_path,
-			const unsigned int width,
-			const unsigned int height,
-			const float rotation,
-			const sf::Vector2i position,
-			const unsigned int tax_value)
-			: Field(id, type, name, graphic_path, width, height, rotation, position), tax_value_(tax_value) {
-			std::cout << "TaxField constructor" << std::endl;
-		};
+class TaxField : public Field {
+	unsigned int tax_value_;
 
-		const unsigned int getTaxValue();
+   public:
+	TaxField(const unsigned int id,
+		const FieldType type,
+		const std::string name,
+		const std::string graphic_path,
+		const unsigned int width,
+		const unsigned int height,
+		const float rotation,
+		const sf::Vector2i position,
+		const unsigned int tax_value)
+		: Field(id, type, name, graphic_path, width, height, rotation, position), tax_value_(tax_value) {
+		std::cout << "TaxField constructor" << std::endl;
 	};
+
+	const unsigned int getTaxValue();
+};
