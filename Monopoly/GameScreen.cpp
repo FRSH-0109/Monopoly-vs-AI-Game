@@ -79,7 +79,7 @@ void GameScreen::draw() {
 		getContextWindow()->getWindow().draw(sprite);
 
 		// FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
-		// if (field_type == PROPERTY || field_type == UTILITY || field_type == STATION) {
+		// if (field_type == STREET || field_type == UTILITY || field_type == STATION) {
 		// 	sf::RectangleShape owner_flag;
 		// 	unsigned int field_id = std::visit([](Field& field) { return field.getId(); }, field);
 		// 	float field_width = std::visit([](Field& field) { return (float)field.getWidth(); }, field);

@@ -144,9 +144,9 @@ void Board::clearBoard() {
 
 PossibleFields& Board::getFieldById(unsigned int wanted_id) {
 	unsigned int field_id;
-	for(auto it = board_.begin(); it != board_.end(); ++it) {
+	for (auto it = board_.begin(); it != board_.end(); ++it) {
 		field_id = std::visit([](Field& field) { return field.getId(); }, *it);
-		if(field_id == wanted_id) {
+		if (field_id == wanted_id) {
 			return *it;
 		}
 	}

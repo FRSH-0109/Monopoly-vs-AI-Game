@@ -21,9 +21,9 @@ class RotationException : public std::exception {
 class SpriteOffsetException : public std::exception {
 	float bad_offset_;
 
-	public:
-	SpriteOffsetException(float offset) : bad_offset_(offset) {};
-	SpriteOffsetException(const SpriteOffsetException& e) throw() : bad_offset_(e.bad_offset_) {};
+   public:
+	SpriteOffsetException(float offset) : bad_offset_(offset){};
+	SpriteOffsetException(const SpriteOffsetException& e) throw() : bad_offset_(e.bad_offset_){};
 	const float getBadOffset() { return bad_offset_; };
 };
 
