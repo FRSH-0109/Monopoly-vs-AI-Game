@@ -21,9 +21,9 @@ class RotationException : public std::exception {
 class SpriteOffsetException : public std::exception {
 	float bad_offset_;
 
-	public:
-	SpriteOffsetException(float offset) : bad_offset_(offset) {};
-	SpriteOffsetException(const SpriteOffsetException& e) throw() : bad_offset_(e.bad_offset_) {};
+   public:
+	SpriteOffsetException(float offset) : bad_offset_(offset){};
+	SpriteOffsetException(const SpriteOffsetException& e) throw() : bad_offset_(e.bad_offset_){};
 	const float getBadOffset() { return bad_offset_; };
 };
 
@@ -67,9 +67,9 @@ enum ScreenEventType {
 	StartGame,
 };
 
-enum FieldType { PROPERTY, STATION, UTILITY, GO, CHANCE, COMMUNITY_CHEST, TAX, JAIL, FREE_PARKING, GO_TO_JAIL };
+enum FieldType { STREET, STATION, UTILITY, GO, CHANCE, COMMUNITY_CHEST, TAX, JAIL, FREE_PARKING, GO_TO_JAIL };
 
-enum PropertyTiers { NO_HOUSES, ONE_HOUSE, TWO_HOUESES, THREE_HOUSES, FOUR_HOUSES, HOTEL };
+enum StreetTiers { NO_HOUSES, ONE_HOUSE, TWO_HOUESES, THREE_HOUSES, FOUR_HOUSES, HOTEL };
 
 enum StationTiers { ONE_STATION, TWO_STATIONS, THREE_STATIONS, FOUR_STATIONS };
 

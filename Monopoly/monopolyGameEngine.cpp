@@ -25,7 +25,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	};
 	i = 0;
 	std::random_device rd;
-    std::mt19937 g(rd());
+	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
 	for (Player& player : players_) {
 		player.createSprite();
@@ -36,12 +36,14 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 		}
 		if (i >= 0 && i < 2) {
 			player.setSpriteOffsetY(0.33f);
-		} else if (i >=2 && i < 4) {
+		} else if (i >= 2 && i < 4) {
 			player.setSpriteOffsetY(0.66f);
 		}
 		const sf::Vector2i BOARD_POSITION = gameboard_->getBoardPosition();
-		const unsigned int FIELD_WIDTH = std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(0));
-		const unsigned int FIELD_HEIGHT = std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0));
+		const unsigned int FIELD_WIDTH =
+			std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(0));
+		const unsigned int FIELD_HEIGHT =
+			std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0));
 		const float SPRITE_POSITION_X = (float)BOARD_POSITION.x + (float)FIELD_WIDTH * player.getSpriteOffsetX();
 		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player.getSpriteOffsetY();
 		player.setSpritePosition(sf::Vector2f(SPRITE_POSITION_X, SPRITE_POSITION_Y));
@@ -138,15 +140,14 @@ void monopolyGameEngine::monopolyGameWorker() {
 	}
 }
 
-sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition()
-{
+sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	float x_offset;
 	float y_offset;
 	unsigned int player_position = players_[playerIndexturn_].getPositon();
 	PossibleFields& curr_field = getBoard()->getFieldById(player_position);
 	unsigned int curr_field_width = std::visit([](Field& field) { return field.getWidth(); }, curr_field);
 	unsigned int curr_field_height = std::visit([](Field& field) { return field.getHeight(); }, curr_field);
-	if (player_position <= 10 ) {
+	if (player_position <= 10) {
 		x_offset = (float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetX();
 		y_offset = (float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetY();
 	} else if (player_position > 10 && player_position <= 20) {
@@ -231,8 +232,7 @@ void monopolyGameEngine::createTextRolledValue() {
 	addText(rolledValueText);
 }
 
-void monopolyGameEngine::createTextPlayersInfo()
-{
+void monopolyGameEngine::createTextPlayersInfo() {
 	sf::Vector2f defPos = PLAYERS_INFO_TEXT_POSITION;
 	for (int i = 0; i < players_.size(); ++i)
 	{	
@@ -247,7 +247,7 @@ void monopolyGameEngine::createTextPlayersInfo()
 		playerText->setOutlineColor(sf::Color::Black);
 		playerText->setOutlineThickness(2);
 		addText(playerText);
-
+    
 		std::shared_ptr<sf::Text> playerMoneyText(new sf::Text("Money: " + std::to_string(players_[id].getMoney()) , getFont(), getFontSize()-7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
 		playerMoneyText->setColor(sf::Color::Black);

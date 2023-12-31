@@ -93,7 +93,7 @@ TEST_CASE("PropertyField class") {
 	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	const unsigned int TEST_ID = 1;
-	const FieldType TEST_TYPE = PROPERTY;
+	const FieldType TEST_TYPE = STREET;
 	const std::string TEST_NAME = "Białystok";
 	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
 	const unsigned int TEST_WIDTH = 200;
@@ -101,12 +101,81 @@ TEST_CASE("PropertyField class") {
 	const float TEST_ROTATION = 0.0;
 	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 400;
-	const std::map<PropertyTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
-		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
 	const unsigned int TEST_MORTAGE = 200;
 
 	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_POSITION, TEST_PRICE, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+
+	REQUIRE(test_field.getId() == TEST_ID);
+	REQUIRE(test_field.getType() == TEST_TYPE);
+	REQUIRE(test_field.getName() == TEST_NAME);
+	REQUIRE(test_field.getGraphicPath() == TEST_PATH);
+	REQUIRE(test_field.getWidth() == TEST_WIDTH);
+	REQUIRE(test_field.getHeight() == TEST_HEIGHT);
+	REQUIRE(test_field.getRotation() == TEST_ROTATION);
+	REQUIRE(test_field.getPrice() == TEST_PRICE);
+	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
+	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
+	REQUIRE(test_field.getIsMortaged() == false);
+	REQUIRE(test_field.getUnmortageValue() == 220);
+	REQUIRE(test_field.getOwner() == nullptr);
+
+	SECTION("PropertyField setters") {
+		Player NEW_OWNER = Player();
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getOwner() == OWNER_PTR);
+
+		test_field.setOwner(nullptr);
+
+		REQUIRE(test_field.getOwner() == nullptr);
+	}
+
+	SECTION("PropertyField::resetDefault() method") {
+		Player NEW_OWNER = Player();
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getOwner() == OWNER_PTR);
+
+		test_field.resetDefault();
+
+		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getOwner() == nullptr);
+	}
+}
+
+TEST_CASE("StreetField class") {
+	GameEngine test_engine = GameEngine(30, 1000, 1200);
+
+	REQUIRE(test_engine.getWindowWidth() == 1000);
+	REQUIRE(test_engine.getWindowHeight() == 1200);
+
+	const unsigned int TEST_ID = 1;
+	const FieldType TEST_TYPE = STREET;
+	const std::string TEST_NAME = "Białystok";
+	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+	const unsigned int TEST_WIDTH = 200;
+	const unsigned int TEST_HEIGHT = 1000;
+	const float TEST_ROTATION = 0.0;
+	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
+	const unsigned int TEST_PRICE = 400;
+	const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
+		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
+	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
+	const unsigned int TEST_MORTAGE = 200;
+
+	StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
 		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
@@ -152,7 +221,7 @@ TEST_CASE("PropertyField class") {
 		CHECK_THROWS_AS(test_field.setRotation(NEW_TEST_ROTATION), RotationException);
 	}
 
-	SECTION("PropertyField class setters - basic scenario") {
+	SECTION("StreetField class setters - basic scenario") {
 		Player NEW_OWNER = Player();
 		const unsigned int NEW_HOSUE_NUMBER = 3;
 		const bool NEW_HOTEL_STATE = true;
@@ -174,13 +243,13 @@ TEST_CASE("PropertyField class") {
 		REQUIRE(test_field.getOwner() == nullptr);
 	}
 
-	SECTION("PropertyField class setters - exception throws") {
+	SECTION("StreetField class setters - exception throws") {
 		const unsigned int NEW_HOSUE_NUMBER = 7;
 
 		REQUIRE_THROWS_AS(test_field.setHouseNumber(NEW_HOSUE_NUMBER), HouseException);
 	}
 
-	SECTION("PropertyField::resetDefault() method") {
+	SECTION("StreetField::resetDefault() method") {
 		Player NEW_OWNER = Player();
 		const unsigned int NEW_HOSUE_NUMBER = 3;
 		const bool NEW_HOTEL_STATE = true;
@@ -213,7 +282,7 @@ TEST_CASE("StationField class") {
 	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	const unsigned int TEST_ID = 1;
-	const FieldType TEST_TYPE = PROPERTY;
+	const FieldType TEST_TYPE = STREET;
 	const std::string TEST_NAME = "Dworzec Centralny";
 	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
 	const unsigned int TEST_WIDTH = 200;
@@ -285,7 +354,7 @@ TEST_CASE("Utility class") {
 	REQUIRE(test_engine.getWindowHeight() == 1200);
 
 	const unsigned int TEST_ID = 1;
-	const FieldType TEST_TYPE = PROPERTY;
+	const FieldType TEST_TYPE = STREET;
 	const std::string TEST_NAME = "Elektrownia";
 	const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
 	const unsigned int TEST_WIDTH = 200;
@@ -365,8 +434,8 @@ TEST_CASE("TaxField class") {
 	sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_TAX_VALUE = 100;
 
-	TaxField test_tax_field =
-		TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION, TEST_POSITION, TEST_TAX_VALUE);
+	TaxField test_tax_field = TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_POSITION, TEST_TAX_VALUE);
 
 	REQUIRE(test_tax_field.getId() == TEST_ID);
 	REQUIRE(test_tax_field.getType() == TEST_TYPE);
@@ -474,11 +543,12 @@ TEST_CASE("Board class") {
 	float test_rotation = 0.0;
 	sf::Vector2i test_position = sf::Vector2i(20, 20);
 
-	const Field test_field = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 	test_board.push_back(test_field);
 
 	test_id = 1;
-	test_type = PROPERTY;
+	test_type = STREET;
 	test_name = "Świętochłowice";
 	test_path = "textures_and_fonts/textures/monopoly_single_square_brown.png";
 	test_width = 80;
@@ -486,12 +556,12 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(40, 40);
 	unsigned int test_price = 60;
-	std::map<PropertyTiers, unsigned int> test_rent = {
+	std::map<StreetTiers, unsigned int> test_rent = {
 		{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30}, {THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
 	std::vector<unsigned int> test_group_members = {3};
 	unsigned int test_mortage = 30;
 
-	const PropertyField test_field_1 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
+	const StreetField test_field_1 = StreetField(test_id, test_type, test_name, test_path, test_width, test_height,
 		test_rotation, test_position, test_price, test_rent, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_1);
@@ -504,12 +574,13 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(60, 60);
 
-	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_2 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_2);
 
 	test_id = 3;
-	test_type = PROPERTY;
+	test_type = STREET;
 	test_name = "Bełchatów";
 	test_path = "textures_and_fonts/textures/monopoly_single_square_brown.png";
 	test_width = 80;
@@ -522,7 +593,7 @@ TEST_CASE("Board class") {
 	test_mortage = 30;
 	test_position = sf::Vector2i(80, 80);
 
-	PropertyField test_field_3 = PropertyField(test_id, test_type, test_name, test_path, test_width, test_height,
+	StreetField test_field_3 = StreetField(test_id, test_type, test_name, test_path, test_width, test_height,
 		test_rotation, test_position, test_price, test_rent, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_3);
@@ -537,8 +608,8 @@ TEST_CASE("Board class") {
 	test_position = sf::Vector2i(100, 100);
 	unsigned int test_tax_value = 200;
 
-	const TaxField test_field_4 =
-		TaxField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position, test_tax_value);
+	const TaxField test_field_4 = TaxField(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation, test_position, test_tax_value);
 	test_board.push_back(test_field_4);
 
 	test_id = 5;
@@ -569,7 +640,8 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(140, 140);
 
-	const Field test_field_6 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_6 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_6);
 
@@ -582,7 +654,8 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(160, 160);
 
-	const Field test_field_7 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_7 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_7);
 
@@ -613,7 +686,8 @@ TEST_CASE("Board class") {
 	test_rotation = 90.0;
 	test_position = sf::Vector2i(200, 200);
 
-	const Field test_field_9 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_9 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_9);
 
@@ -626,7 +700,8 @@ TEST_CASE("Board class") {
 	test_rotation = 180.0;
 	test_position = sf::Vector2i(220, 220);
 
-	const Field test_field_10 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_10 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_10);
 
@@ -636,7 +711,6 @@ TEST_CASE("Board class") {
 	std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
 
 	SECTION("Constructor") {
-
 		REQUIRE(TEST_BOARD.getFieldNumber() == created_board.size());
 		REQUIRE(test_board.size() == created_board.size());
 
@@ -644,9 +718,9 @@ TEST_CASE("Board class") {
 			FieldType test_field_type = std::visit([](Field& field) { return field.getType(); }, test_board[i]);
 
 			switch (test_field_type) {
-				case PROPERTY: {
-					PropertyField field_from_created = std::get<PropertyField>(created_board[i]);
-					PropertyField field_from_test = std::get<PropertyField>(test_board[i]);
+				case STREET: {
+					StreetField field_from_created = std::get<StreetField>(created_board[i]);
+					StreetField field_from_test = std::get<StreetField>(test_board[i]);
 					CHECK(field_from_created.getId() == field_from_test.getId());
 					CHECK(field_from_created.getType() == field_from_test.getType());
 					CHECK(field_from_created.getName() == field_from_test.getName());
@@ -796,7 +870,7 @@ TEST_CASE("Board class") {
 	}
 
 	SECTION("getFieldById() method") {
-		PropertyField given_field = std::get<PropertyField>(TEST_BOARD.getFieldById(3));
+		StreetField given_field = std::get<StreetField>(TEST_BOARD.getFieldById(3));
 		CHECK(given_field.getId() == test_field_3.getId());
 		CHECK(given_field.getType() == test_field_3.getType());
 		CHECK(given_field.getName() == test_field_3.getName());

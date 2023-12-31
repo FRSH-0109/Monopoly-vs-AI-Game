@@ -4,7 +4,6 @@
 #include <memory>
 #include <random>
 #include <vector>
-#include <random>
 #include "Board.h"
 #include "activeScreen.h"
 #include "main.h"

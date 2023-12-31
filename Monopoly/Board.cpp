@@ -3,7 +3,7 @@
 using json = nlohmann::json;
 
 Board::Board(const std::string file_path) {
-	std::map<std::string, FieldType> str_to_type = {{"PROPERTY", PROPERTY}, {"STATION", STATION}, {"UTILITY", UTILITY},
+	std::map<std::string, FieldType> str_to_type = {{"STREET", STREET}, {"STATION", STATION}, {"UTILITY", UTILITY},
 		{"GO", GO}, {"CHANCE", CHANCE}, {"COMUNITY_CHEST", COMMUNITY_CHEST}, {"TAX", TAX}, {"JAIL", JAIL},
 		{"FREE_PARKING", FREE_PARKING}, {"GO_TO_JAIL", GO_TO_JAIL}};
 
@@ -26,12 +26,12 @@ Board::Board(const std::string file_path) {
 		sf::Vector2i position = getFieldPositon(id, position, width, height);
 		float rotation = getFieldRotation(id);
 		switch (type) {
-			case PROPERTY: {
+			case STREET: {
 				unsigned int price = element["price"];
 				unsigned int mortage = element["mortage"];
-				std::map<PropertyTiers, unsigned int> rent_values = jsonToPropertyRent(element);
+				std::map<StreetTiers, unsigned int> rent_values = jsonToStreetRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
-				PropertyField new_field = PropertyField(id, type, name, graphic_path, width, height, rotation, position,
+				StreetField new_field = StreetField(id, type, name, graphic_path, width, height, rotation, position,
 					price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
@@ -144,16 +144,16 @@ void Board::clearBoard() {
 
 PossibleFields& Board::getFieldById(unsigned int wanted_id) {
 	unsigned int field_id;
-	for(auto it = board_.begin(); it != board_.end(); ++it) {
+	for (auto it = board_.begin(); it != board_.end(); ++it) {
 		field_id = std::visit([](Field& field) { return field.getId(); }, *it);
-		if(field_id == wanted_id) {
+		if (field_id == wanted_id) {
 			return *it;
 		}
 	}
 }
 
-std::map<PropertyTiers, unsigned int> jsonToPropertyRent(const json& element) {
-	std::map<PropertyTiers, unsigned int> rent_values;
+std::map<StreetTiers, unsigned int> jsonToStreetRent(const json& element) {
+	std::map<StreetTiers, unsigned int> rent_values;
 	std::vector<unsigned int> list_of_rents = element["rent_values"];
 	rent_values.emplace(std::make_pair(NO_HOUSES, list_of_rents[0]));
 	rent_values.emplace(std::make_pair(ONE_HOUSE, list_of_rents[1]));
