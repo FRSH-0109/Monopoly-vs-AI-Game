@@ -10,7 +10,7 @@
     {
         "id": 1,
         "type": "PROPERTY",
-        "name": "Świętochłowice",
+        "name": "Swietochlowice",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
         "height": 100,
@@ -22,7 +22,7 @@
     {
         "id": 2,
         "type": "COMUNITY_CHEST",
-        "name": "Kasa Społeczna",
+        "name": "Kasa Spoleczna",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100
@@ -30,7 +30,7 @@
     {
         "id": 3,
         "type": "PROPERTY",
-        "name": "Bełchatów",
+        "name": "Belchatow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
         "height": 100,
@@ -63,7 +63,7 @@
     {
         "id": 6,
         "type": "PROPERTY",
-        "name": "WARSZAWA",
+        "name": "Warszawa",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
@@ -83,7 +83,7 @@
     {
         "id": 8,
         "type": "PROPERTY",
-        "name": "LUBLIN",
+        "name": "Lublin",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
@@ -95,7 +95,7 @@
     {
         "id": 9,
         "type": "PROPERTY",
-        "name": "KATOWICE",
+        "name": "Katowice",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
@@ -107,7 +107,7 @@
     {
         "id": 10,
         "type": "JAIL",
-        "name": "WIĘZIENIE",
+        "name": "Wiezienie",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
         "height": 100
@@ -115,7 +115,7 @@
     {
         "id": 11,
         "type": "PROPERTY",
-        "name": "TORUŃ",
+        "name": "Torun",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
@@ -139,7 +139,7 @@
     {
         "id": 13,
         "type": "PROPERTY",
-        "name": "IDONTKNOW",
+        "name": "Rybnik",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
@@ -151,7 +151,7 @@
     {
         "id": 14,
         "type": "PROPERTY",
-        "name": "ŁÓDŹ",
+        "name": "Lodz",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
@@ -163,7 +163,7 @@
     {
         "id": 15,
         "type": "STATION",
-        "name": "LOTNISKO",
+        "name": "Lotniko",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
@@ -175,7 +175,7 @@
     {
         "id": 16,
         "type": "PROPERTY",
-        "name": "CHOJNICE",
+        "name": "Chojnice",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
@@ -187,7 +187,7 @@
     {
         "id": 17,
         "type": "COMUNITY_CHEST",
-        "name": "Kasa Społeczna",
+        "name": "Kasa Spoleczna",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100
@@ -195,7 +195,7 @@
     {
         "id": 18,
         "type": "PROPERTY",
-        "name": "ELBLĄG",
+        "name": "Elblag",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
@@ -207,7 +207,7 @@
     {
         "id": 19,
         "type": "PROPERTY",
-        "name": "SZCZECIN",
+        "name": "Szczecin",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
@@ -219,7 +219,7 @@
     {
         "id": 20,
         "type": "FREE_PARKING",
-        "name": "Bezpłatny Parking",
+        "name": "Bezplatny Parking",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
         "height": 100
@@ -227,7 +227,7 @@
     {
         "id": 21,
         "type": "PROPERTY",
-        "name": "Zielona Góra",
+        "name": "Zielona Gora",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
@@ -247,7 +247,7 @@
     {
         "id": 23,
         "type": "PROPERTY",
-        "name": "BYDGOSZCZ",
+        "name": "Bydgoszcz",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
@@ -259,7 +259,7 @@
     {
         "id": 24,
         "type": "PROPERTY",
-        "name": "TARNÓW",
+        "name": "Tarnow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
@@ -271,7 +271,7 @@
     {
         "id": 25,
         "type": "STATION",
-        "name": "DWORZEC METRA",
+        "name": "Dworzec metra",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
@@ -283,7 +283,7 @@
     {
         "id": 26,
         "type": "PROPERTY",
-        "name": "PIOTRKÓW TRYBUNALSKI",
+        "name": "Piotrkow Trybunalski",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
@@ -295,7 +295,7 @@
     {
         "id": 27,
         "type": "PROPERTY",
-        "name": "WROCŁAW",
+        "name": "Wroclaw",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
@@ -307,7 +307,7 @@
     {
         "id": 28,
         "type": "UTILITY",
-        "name": "PORTAL SPOŁECZNOŚCIOWY",
+        "name": "Portal Spolecznosciowy",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
@@ -319,7 +319,7 @@
     {
         "id": 29,
         "type": "PROPERTY",
-        "name": "KALISZ",
+        "name": "Kalisz",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
@@ -331,7 +331,7 @@
     {
         "id": 30,
         "type": "GO_TO_JAIL",
-        "name": "Idziesz do więzienia!",
+        "name": "Idziesz do wiezienia!",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 100,
         "height": 100
@@ -339,7 +339,7 @@
     {
         "id": 31,
         "type": "PROPERTY",
-        "name": "KRAKÓW",
+        "name": "Krakow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
@@ -351,7 +351,7 @@
     {
         "id": 32,
         "type": "PROPERTY",
-        "name": "GDYNIA",
+        "name": "Gdynia",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
@@ -363,7 +363,7 @@
     {
         "id": 33,
         "type": "COMUNITY_CHEST",
-        "name": "Kasa Społeczna",
+        "name": "Kasa Spoleczna",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100
@@ -371,7 +371,7 @@
     {
         "id": 34,
         "type": "PROPERTY",
-        "name": "POZNAŃ",
+        "name": "Poznan",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
@@ -383,7 +383,7 @@
     {
         "id": 35,
         "type": "STATION",
-        "name": "PORT MORSKI",
+        "name": "Port Morski",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
         "width": 60,
         "height": 100,
@@ -403,7 +403,7 @@
     {
         "id": 37,
         "type": "PROPERTY",
-        "name": "GORZÓW",
+        "name": "Gorzow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
         "height": 100,
@@ -424,7 +424,7 @@
     {
         "id": 39,
         "type": "PROPERTY",
-        "name": "BIAŁYSTOK",
+        "name": "Bialystok",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
         "height": 100,
