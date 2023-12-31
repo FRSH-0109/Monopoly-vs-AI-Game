@@ -17,11 +17,12 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createBoard();
 	monopoly_game_engine_.clearPlayers();
 	monopoly_game_engine_.createPlayers(playerSettingsList_);
-	monopoly_game_engine_.setPlayerIndexTurn(0);
+	monopoly_game_engine_.setPlayerIndexTurn(monopoly_game_engine_.getPlayers()[0].getId());
 	monopoly_game_engine_.createButtonRollDice();
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
 	monopoly_game_engine_.createTextPlayersInfo();
+	monopoly_game_engine_.createButtonBuyResign();
 }
 
 GameScreen::~GameScreen() {
@@ -35,7 +36,7 @@ ScreenEventType GameScreen::worker() {
 			if (element->isMouseOver(getContextWindow()->getWindow())) {
 				element->mouseIsOver();
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-					 element->setIsClicked(true);
+					element->setIsClicked(true);
 				}
 			} else {
 				element->mouseIsNotOver();
@@ -59,7 +60,6 @@ ScreenEventType GameScreen::worker() {
 void GameScreen::pollForEvents(sf::Event& event) {}
 
 void GameScreen::draw() {
-
 	std::shared_ptr<Board> game_board_ptr = monopoly_game_engine_.getBoard();
 
 	// draw buttons and texts
@@ -95,5 +95,12 @@ void GameScreen::draw() {
 
 	for (auto player : monopoly_game_engine_.getPlayers()) {
 		getContextWindow()->getWindow().draw(player.getSprite());
+	}
+
+	if (monopoly_game_engine_.getTurnState()) {
+		getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
+		for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
+			getContextWindow()->getWindow().draw(*text_ptr);
+		}
 	}
 }

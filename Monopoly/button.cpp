@@ -130,6 +130,10 @@ bool Button::getIsFocus() {
 	return isFocus_;
 }
 
+sf::Text& Button::getText() {
+	return text_;
+}
+
 void Button::updateColors() {
 	if (isFocus_) {
 		buttonShape_.setFillColor(focusBackColor_);

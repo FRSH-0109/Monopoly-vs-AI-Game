@@ -13,7 +13,7 @@
 
 using json = nlohmann::json;
 
-using PossibleFields = std::variant<Field, StreetField, StationField, UtilityField, TaxField>;
+using PossibleFields = std::variant<Field, PropertyField, StreetField, StationField, UtilityField, TaxField>;
 
 class Board {
 	unsigned int field_number_;

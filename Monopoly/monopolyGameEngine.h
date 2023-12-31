@@ -10,14 +10,13 @@
 
 enum TurnState {
 	RollDice,
-	MovePlayer,
+	FieldAction,
+	BuyAction,
 
 	TurnEnd,
 };
 
 class monopolyGameEngine {
-	const unsigned int playersMax_ = 4;
-	const unsigned int playersMin_ = 2;
 	const unsigned int PLAYER_MONEY_DEFAULT = 1500;
 
 	const std::string GAMEBOARD_FILE_PATH = "Monopoly/game_config_json/board.json";
@@ -35,22 +34,36 @@ class monopolyGameEngine {
 	std::shared_ptr<sf::Text> turnInfoText_;
 	sf::Vector2f ROLLED_VALUE_TEXT_POSITION = sf::Vector2f(900, 100);
 	std::shared_ptr<sf::Text> rolledValueText_;
-	sf::Vector2f PLAYERS_INFO_TEXT_POSITION = sf::Vector2f(850, 500);
+	sf::Vector2f PLAYERS_INFO_TEXT_POSITION = sf::Vector2f(850, 700);
 	std::array<std::vector<std::shared_ptr<sf::Text>>, 4> playerInfoText_;
+
+	sf::Vector2f BUY_BUTTON_POSITION = sf::Vector2f(965, 220);
+	std::shared_ptr<Button> buyFieldButton_;
+	std::shared_ptr<Button> resignBuyFieldButton_;
+
+	sf::Vector2f PROPERTY_DATA_POSITION = sf::Vector2f(910, 260);
+	float PROPERTY_DATA_SCALE = 4;
+	sf::Sprite propertyDataSprite_;
+	sf::Texture propertyDataTexture_;
+	std::vector<std::shared_ptr<sf::Text>> propertyDataTexts_;
 
 	// game staff
 	TurnState turnState_;
-	unsigned int PLAYERS_MAX = 4;
-	unsigned int PLAYERS_MIN = 2;
+	const unsigned int PLAYERS_MAX = 4;
+	const unsigned int PLAYERS_MIN = 2;
+	unsigned int playersStartingAmount_ = 0;
 	unsigned int playerIndexturn_;
 	unsigned int getPlayerIndexTurn() const;
 	void incPlayerIndexTurn();
 	void setTurnState(TurnState newState);
-	TurnState getTurnState() const;
 	unsigned int getFontSize() const;
 	void buttonsWorker();
 	void turnInfoTextWorker();
 	sf::Vector2f getUpdatePlayerSpritePosition();
+	void clearPropertyData();
+	void showPropertyData(unsigned int pos);
+	unsigned int getFieldPriceByPosition(unsigned int pos);
+	void addOwnerToPropertyField(Player* player, unsigned int pos);
 
 	unsigned int rollDice() const;
 
@@ -63,12 +76,15 @@ class monopolyGameEngine {
 	void createTextRolledValue();
 	void createTextPlayersInfo();
 	void updateTextPlayersInfo();
+	void createButtonBuyResign();
 	sf::Font& getFont();
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);
 	void addText(std::shared_ptr<sf::Text> textTmp);
 	std::vector<std::shared_ptr<Button>>& getButtons();
 	std::vector<std::shared_ptr<sf::Text>>& getTexts();
+	sf::Sprite& getPropertyDataSprite();
+	std::vector<std::shared_ptr<sf::Text>>& getPropertyDataTexts();
 
 	// game staff
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
@@ -78,5 +94,6 @@ class monopolyGameEngine {
 	std::shared_ptr<Board> getBoard();
 	std::vector<Player>& getPlayers();
 	void setPlayerIndexTurn(unsigned int indx);
+	TurnState getTurnState() const;
 	void monopolyGameWorker();
 };
