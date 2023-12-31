@@ -86,7 +86,7 @@ TEST_CASE("monopolyGameEngine") {
 	// }
 }
 
-TEST_CASE ("STREETField class") {
+TEST_CASE("PropertyField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
 	REQUIRE(test_engine.getWindowWidth() == 1000);
@@ -101,6 +101,58 @@ TEST_CASE ("STREETField class") {
 	const float TEST_ROTATION = 0.0;
 	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 400;
+	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
+	const unsigned int TEST_MORTAGE = 200;
+
+	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_POSITION, TEST_PRICE, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+
+	REQUIRE(test_field.getId() == TEST_ID);
+	REQUIRE(test_field.getType() == TEST_TYPE);
+	REQUIRE(test_field.getName() == TEST_NAME);
+	REQUIRE(test_field.getGraphicPath() == TEST_PATH);
+	REQUIRE(test_field.getWidth() == TEST_WIDTH);
+	REQUIRE(test_field.getHeight() == TEST_HEIGHT);
+	REQUIRE(test_field.getRotation() == TEST_ROTATION);
+	REQUIRE(test_field.getPrice() == TEST_PRICE);
+	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
+	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
+	REQUIRE(test_field.getIsMortaged() == false);
+	REQUIRE(test_field.getUnmortageValue() == 220);
+	REQUIRE(test_field.getOwner() == nullptr);
+
+	SECTION("PropertyField setters") {
+		Player NEW_OWNER = Player();
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getOwner() == OWNER_PTR);
+
+		test_field.setOwner(nullptr);
+
+		REQUIRE(test_field.getOwner() == nullptr);
+	}
+
+	SECTION("PropertyField::resetDefault() method") {
+		Player NEW_OWNER = Player();
+		const bool NEW_MORTAGE_STATE = true;
+		Player* OWNER_PTR = &NEW_OWNER;
+
+		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setOwner(OWNER_PTR);
+
+		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getOwner() == OWNER_PTR);
+
+		test_field.resetDefault();
+
+		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getOwner() == nullptr);
+	}
 }
 
 TEST_CASE("StreetField class") {
@@ -382,8 +434,8 @@ TEST_CASE("TaxField class") {
 	sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_TAX_VALUE = 100;
 
-	TaxField test_tax_field =
-		TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION, TEST_POSITION, TEST_TAX_VALUE);
+	TaxField test_tax_field = TaxField(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+		TEST_POSITION, TEST_TAX_VALUE);
 
 	REQUIRE(test_tax_field.getId() == TEST_ID);
 	REQUIRE(test_tax_field.getType() == TEST_TYPE);
@@ -491,7 +543,8 @@ TEST_CASE("Board class") {
 	float test_rotation = 0.0;
 	sf::Vector2i test_position = sf::Vector2i(20, 20);
 
-	const Field test_field = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 	test_board.push_back(test_field);
 
 	test_id = 1;
@@ -521,7 +574,8 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(60, 60);
 
-	const Field test_field_2 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_2 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_2);
 
@@ -554,8 +608,8 @@ TEST_CASE("Board class") {
 	test_position = sf::Vector2i(100, 100);
 	unsigned int test_tax_value = 200;
 
-	const TaxField test_field_4 =
-		TaxField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position, test_tax_value);
+	const TaxField test_field_4 = TaxField(test_id, test_type, test_name, test_path, test_width, test_height,
+		test_rotation, test_position, test_tax_value);
 	test_board.push_back(test_field_4);
 
 	test_id = 5;
@@ -586,7 +640,8 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(140, 140);
 
-	const Field test_field_6 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_6 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_6);
 
@@ -599,7 +654,8 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(160, 160);
 
-	const Field test_field_7 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_7 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_7);
 
@@ -630,7 +686,8 @@ TEST_CASE("Board class") {
 	test_rotation = 90.0;
 	test_position = sf::Vector2i(200, 200);
 
-	const Field test_field_9 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_9 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_9);
 
@@ -643,7 +700,8 @@ TEST_CASE("Board class") {
 	test_rotation = 180.0;
 	test_position = sf::Vector2i(220, 220);
 
-	const Field test_field_10 = Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
+	const Field test_field_10 =
+		Field(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position);
 
 	test_board.push_back(test_field_10);
 
@@ -653,7 +711,6 @@ TEST_CASE("Board class") {
 	std::vector<PossibleFields> created_board = TEST_BOARD.getBoard();
 
 	SECTION("Constructor") {
-
 		REQUIRE(TEST_BOARD.getFieldNumber() == created_board.size());
 		REQUIRE(test_board.size() == created_board.size());
 
