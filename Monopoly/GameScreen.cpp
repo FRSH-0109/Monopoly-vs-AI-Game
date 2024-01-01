@@ -116,7 +116,7 @@ void GameScreen::draw() {
 
 			switch (field_type) {
 				case STREET: {
-					StreetField field_specified = std::get<StreetField>(field);
+					StreetField& field_specified = std::get<StreetField>(field);
 					Player* owner_ptr = field_specified.getOwner();
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
@@ -125,7 +125,7 @@ void GameScreen::draw() {
 				}
 
 				case UTILITY: {
-					UtilityField field_specified = std::get<UtilityField>(field);
+					UtilityField& field_specified = std::get<UtilityField>(field);
 					Player* owner_ptr = field_specified.getOwner();
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
@@ -134,7 +134,7 @@ void GameScreen::draw() {
 				}
 
 				case STATION: {
-					StationField field_specified = std::get<StationField>(field);
+					StationField& field_specified = std::get<StationField>(field);
 					Player* owner_ptr = field_specified.getOwner();
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
