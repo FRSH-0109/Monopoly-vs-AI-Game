@@ -19,28 +19,46 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			new_player.setIsAi(!(it->isHuman));
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
-			// Section for Ownership flag display - REMOVE AFTER TESTS
-			// if (i == 0) {
-			// 	test_field = std::get<StreetField>(this->getBoard()->getFieldById(1));
-			// 	test_field.setOwner(&new_player);
-			// } else if (i == 1) {
-			// 	test_field = std::get<StreetField>(this->getBoard()->getFieldById(21));
-			// 	test_field.setOwner(&new_player);
-			// } else if (i == 2) {
-			// 	test_field = std::get<StreetField>(this->getBoard()->getFieldById(21));
-			// 	test_field.setOwner(&new_player);
-			// }
-			// End of section for Ownership flag display
 			players_.push_back(new_player);
-			++i;
 		}
 		++playerId;
 	};
 	playersStartingAmount_ = i;
+
+	// Section for Ownership flag display - REMOVE AFTER TESTS
+	i = 0;
+	for (Player& player: players_) {
+		if (i == 0) {
+			StreetField& test_field_1 = std::get<StreetField>(this->getBoard()->getFieldById(1));
+			test_field_1.setOwner(&player);
+			// std::visit([](StreetField& field, Player* new_owner)
+			// {
+			// 	field.setOwner(new_owner);
+			// }, std::get<StreetField>(gameboard_->getFieldById(1)), &new_player);
+			// test_field = std::get<StreetField>(this->getBoard()->getFieldById(1));
+			// test_field.setOwner(&new_player);
+		} else if (i == 1) {
+			UtilityField& test_field_2 = std::get<UtilityField>(this->getBoard()->getFieldById(12));
+			test_field_2.setOwner(&player);
+			// std::visit([](UtilityField& field, Player* new_owner)
+			// {
+			// 	field.setOwner(new_owner);
+			// }, std::get<UtilityField>(gameboard_->getFieldById(12)), &new_player);
+			// test_field = std::get<StreetField>(this->getBoard()->getFieldById(21));
+			// test_field.setOwner(&new_player);
+		} else if (i == 2) {
+			StationField& test_field_3 = std::get<StationField>(this->getBoard()->getFieldById(25));
+			test_field_3.setOwner(&player);
+		}
+		++i;
+	}
+	// End of section for Ownership flag display
+
 	i = 0;
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
+
 	for (Player& player : players_) {
 		player.createSprite();
 		if (i % 2 == 0) {
