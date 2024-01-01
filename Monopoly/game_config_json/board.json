@@ -9,7 +9,7 @@
     },
     {
         "id": 1,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Swietochlowice",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
@@ -29,7 +29,7 @@
     },
     {
         "id": 3,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Belchatow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
@@ -62,7 +62,7 @@
     },
     {
         "id": 6,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Warszawa",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
@@ -82,7 +82,7 @@
     },
     {
         "id": 8,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Lublin",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
@@ -94,7 +94,7 @@
     },
     {
         "id": 9,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Katowice",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
@@ -114,7 +114,7 @@
     },
     {
         "id": 11,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Torun",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
@@ -138,7 +138,7 @@
     },
     {
         "id": 13,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Rybnik",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
@@ -150,7 +150,7 @@
     },
     {
         "id": 14,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Lodz",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
@@ -174,7 +174,7 @@
     },
     {
         "id": 16,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Chojnice",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
@@ -194,7 +194,7 @@
     },
     {
         "id": 18,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Elblag",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
@@ -206,7 +206,7 @@
     },
     {
         "id": 19,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Szczecin",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
@@ -226,7 +226,7 @@
     },
     {
         "id": 21,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Zielona Gora",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
@@ -246,7 +246,7 @@
     },
     {
         "id": 23,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Bydgoszcz",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
@@ -258,7 +258,7 @@
     },
     {
         "id": 24,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Tarnow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
@@ -282,7 +282,7 @@
     },
     {
         "id": 26,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Piotrkow Trybunalski",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
@@ -294,7 +294,7 @@
     },
     {
         "id": 27,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Wroclaw",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
@@ -318,7 +318,7 @@
     },
     {
         "id": 29,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Kalisz",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
@@ -338,7 +338,7 @@
     },
     {
         "id": 31,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Krakow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
@@ -350,7 +350,7 @@
     },
     {
         "id": 32,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Gdynia",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
@@ -370,7 +370,7 @@
     },
     {
         "id": 34,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Poznan",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
@@ -402,7 +402,7 @@
     },
     {
         "id": 37,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Gorzow",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
@@ -423,7 +423,7 @@
     },
     {
         "id": 39,
-        "type": "PROPERTY",
+        "type": "STREET",
         "name": "Bialystok",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
