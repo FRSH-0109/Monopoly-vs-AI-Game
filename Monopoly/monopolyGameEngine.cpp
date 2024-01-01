@@ -533,18 +533,17 @@ unsigned int monopolyGameEngine::getFieldPriceByPosition(unsigned int pos) {
 }
 
 void monopolyGameEngine::addOwnerToPropertyField(Player* player, unsigned int pos) {
-	// FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
-	// if (fieldType == STREET)
-	// {
-	// 	static_cast<StreetField>(getBoard()->getFieldById(pos))
-	// 	std::get<PropertyField>(getBoard()->getFieldById(pos).setOwner(player));
-	// }
-	// else if(fieldType == STATION)
-	// {
-	// 	std::get<StationField>(getBoard()->getFieldById(pos).setOwner(player));
-	// }
-	// else	//fieldType == UTILITY
-	// {
-	// 	std::get<UtilityField>(getBoard()->getFieldById(pos).setOwner(player));
-	// }
+	FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
+	if (fieldType == STREET)
+	{
+		std::get<StreetField>(getBoard()->getFieldById(pos)).setOwner(player);
+	}
+	else if(fieldType == STATION)
+	{
+		std::get<StationField>(getBoard()->getFieldById(pos)).setOwner(player);
+	}
+	else	//fieldType == UTILITY
+	{
+		std::get<UtilityField>(getBoard()->getFieldById(pos)).setOwner(player);
+	}
 }
