@@ -12,12 +12,25 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	int i = 0;
 	// TODO Parsować po wektorze playerSettings i generować na jego podstawie przeshufflowaną listę graczy)
 	int playerId = 0;
+	// PropertyField& test_field = std::get<StreetField>(this->getBoard()->getFieldById(1));
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
 			Player new_player = Player(PLAYER_MONEY_DEFAULT);
 			new_player.setIsAi(!(it->isHuman));
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
+			// Section for Ownership flag display - REMOVE AFTER TESTS
+			// if (i == 0) {
+			// 	test_field = std::get<StreetField>(this->getBoard()->getFieldById(1));
+			// 	test_field.setOwner(&new_player);
+			// } else if (i == 1) {
+			// 	test_field = std::get<StreetField>(this->getBoard()->getFieldById(21));
+			// 	test_field.setOwner(&new_player);
+			// } else if (i == 2) {
+			// 	test_field = std::get<StreetField>(this->getBoard()->getFieldById(21));
+			// 	test_field.setOwner(&new_player);
+			// }
+			// End of section for Ownership flag display
 			players_.push_back(new_player);
 			++i;
 		}
