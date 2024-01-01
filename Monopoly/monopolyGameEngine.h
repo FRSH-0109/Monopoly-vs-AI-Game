@@ -63,7 +63,7 @@ class monopolyGameEngine {
 	void clearPropertyData();
 	void showPropertyData(unsigned int pos);
 	unsigned int getFieldPriceByPosition(unsigned int pos);
-	void addOwnerToPropertyField(Player* player, unsigned int pos);
+	void addOwnerToPropertyField(std::shared_ptr<Player> player, unsigned int pos);
 
 	unsigned int rollDice() const;
 

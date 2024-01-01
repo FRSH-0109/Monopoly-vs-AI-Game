@@ -132,7 +132,7 @@ const unsigned int PropertyField::getUnmortageValue() {
 	return static_cast<int>(round(1.1 * mortage_));
 };
 
-Player* PropertyField::getOwner() {
+std::shared_ptr<Player>  PropertyField::getOwner() {
 	return owner_;
 };
 
@@ -140,7 +140,7 @@ void PropertyField::setIsMortaged(bool new_state) {
 	is_mortaged_ = new_state;
 };
 
-void PropertyField::setOwner(Player* new_owner_ptr) {
+void PropertyField::setOwner(std::shared_ptr<Player> new_owner_ptr) {
 	owner_ = new_owner_ptr;
 };
 

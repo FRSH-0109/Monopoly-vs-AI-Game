@@ -124,7 +124,7 @@ TEST_CASE("PropertyField class") {
 	SECTION("PropertyField setters") {
 		Player NEW_OWNER = Player();
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setIsMortaged(NEW_MORTAGE_STATE);
 		test_field.setOwner(OWNER_PTR);
@@ -140,7 +140,7 @@ TEST_CASE("PropertyField class") {
 	SECTION("PropertyField::resetDefault() method") {
 		Player NEW_OWNER = Player();
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setIsMortaged(NEW_MORTAGE_STATE);
 		test_field.setOwner(OWNER_PTR);
@@ -226,7 +226,7 @@ TEST_CASE("StreetField class") {
 		const unsigned int NEW_HOSUE_NUMBER = 3;
 		const bool NEW_HOTEL_STATE = true;
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
 		test_field.setIsHotel(NEW_HOTEL_STATE);
@@ -254,7 +254,7 @@ TEST_CASE("StreetField class") {
 		const unsigned int NEW_HOSUE_NUMBER = 3;
 		const bool NEW_HOTEL_STATE = true;
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
 		test_field.setIsHotel(NEW_HOTEL_STATE);
@@ -316,7 +316,7 @@ TEST_CASE("StationField class") {
 	SECTION("StationField setters") {
 		Player NEW_OWNER = Player();
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setIsMortaged(NEW_MORTAGE_STATE);
 		test_field.setOwner(OWNER_PTR);
@@ -332,7 +332,7 @@ TEST_CASE("StationField class") {
 	SECTION("StationField::resetDefault() method") {
 		Player NEW_OWNER = Player();
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setIsMortaged(NEW_MORTAGE_STATE);
 		test_field.setOwner(OWNER_PTR);
@@ -387,7 +387,7 @@ TEST_CASE("Utility class") {
 	SECTION("UtilityField class setters") {
 		Player NEW_OWNER = Player();
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setIsMortaged(NEW_MORTAGE_STATE);
 		test_field.setOwner(OWNER_PTR);
@@ -403,7 +403,7 @@ TEST_CASE("Utility class") {
 	SECTION("UtilityField::resetDefault() method") {
 		Player NEW_OWNER = Player();
 		const bool NEW_MORTAGE_STATE = true;
-		Player* OWNER_PTR = &NEW_OWNER;
+		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setIsMortaged(NEW_MORTAGE_STATE);
 		test_field.setOwner(OWNER_PTR);

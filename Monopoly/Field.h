@@ -66,7 +66,7 @@ class PropertyField : public Field {
 	unsigned int mortage_;
 	bool is_mortaged_;
 	unsigned int unmortage_value_;
-	Player* owner_;
+	std::shared_ptr<Player> owner_;
 
    public:
 	PropertyField(const unsigned int id,
@@ -93,10 +93,10 @@ class PropertyField : public Field {
 	const unsigned int getMortage();
 	const bool getIsMortaged();
 	const unsigned int getUnmortageValue();
-	Player* getOwner();
+	std::shared_ptr<Player> getOwner();
 
 	void setIsMortaged(bool new_state);
-	void setOwner(Player* new_owner);
+	void setOwner(std::shared_ptr<Player>  new_owner);
 	void resetDefault();
 };
 

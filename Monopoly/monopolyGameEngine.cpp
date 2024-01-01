@@ -25,35 +25,6 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	};
 	playersStartingAmount_ = i;
 
-	// Section for Ownership flag display - REMOVE AFTER TESTS
-	i = 0;
-	for (Player& player: players_) {
-		if (i == 0) {
-			StreetField& test_field_1 = std::get<StreetField>(this->getBoard()->getFieldById(1));
-			test_field_1.setOwner(&player);
-			// std::visit([](StreetField& field, Player* new_owner)
-			// {
-			// 	field.setOwner(new_owner);
-			// }, std::get<StreetField>(gameboard_->getFieldById(1)), &new_player);
-			// test_field = std::get<StreetField>(this->getBoard()->getFieldById(1));
-			// test_field.setOwner(&new_player);
-		} else if (i == 1) {
-			UtilityField& test_field_2 = std::get<UtilityField>(this->getBoard()->getFieldById(12));
-			test_field_2.setOwner(&player);
-			// std::visit([](UtilityField& field, Player* new_owner)
-			// {
-			// 	field.setOwner(new_owner);
-			// }, std::get<UtilityField>(gameboard_->getFieldById(12)), &new_player);
-			// test_field = std::get<StreetField>(this->getBoard()->getFieldById(21));
-			// test_field.setOwner(&new_player);
-		} else if (i == 2) {
-			StationField& test_field_3 = std::get<StationField>(this->getBoard()->getFieldById(25));
-			test_field_3.setOwner(&player);
-		}
-		++i;
-	}
-	// End of section for Ownership flag display
-
 	i = 0;
 	std::random_device rd;
 	std::mt19937 g(rd());
@@ -165,7 +136,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 			FieldType fieldType =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 			if (fieldType == STREET || fieldType == STATION || fieldType == UTILITY) {
-				Player* owner = nullptr;
+				std::shared_ptr<Player> owner = nullptr;
 				if (fieldType == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
 					owner = field.getOwner();
@@ -201,7 +172,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 				if (players_[playerIndexturn_].getMoney() >= price) {  // possible to buy property
 					players_[playerIndexturn_].setMoney(players_[playerIndexturn_].getMoney() - price);
 					players_[playerIndexturn_].addFieldOwnedId(pos);
-					addOwnerToPropertyField(&players_[playerIndexturn_], pos);
+					std::shared_ptr<Player> player_ptr = std::make_shared<Player>(players_[playerIndexturn_]);
+					addOwnerToPropertyField(player_ptr, pos);
 
 					buyFieldButton_->setIsActive(false);
 					resignBuyFieldButton_->setIsVisible(false);
@@ -550,7 +522,7 @@ unsigned int monopolyGameEngine::getFieldPriceByPosition(unsigned int pos) {
 	return 0;
 }
 
-void monopolyGameEngine::addOwnerToPropertyField(Player* player, unsigned int pos) {
+void monopolyGameEngine::addOwnerToPropertyField(std::shared_ptr<Player> player, unsigned int pos) {
 	FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	if (fieldType == STREET)
 	{
