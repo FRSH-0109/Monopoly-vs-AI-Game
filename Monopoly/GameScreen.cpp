@@ -17,11 +17,12 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createBoard();
 	monopoly_game_engine_.clearPlayers();
 	monopoly_game_engine_.createPlayers(playerSettingsList_);
-	monopoly_game_engine_.setPlayerIndexTurn(0);
+	monopoly_game_engine_.setPlayerIndexTurn(monopoly_game_engine_.getPlayers()[0].getId());
 	monopoly_game_engine_.createButtonRollDice();
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
 	monopoly_game_engine_.createTextPlayersInfo();
+	monopoly_game_engine_.createButtonBuyResign();
 }
 
 GameScreen::~GameScreen() {
@@ -147,5 +148,12 @@ void GameScreen::draw() {
 
 	for (auto player : monopoly_game_engine_.getPlayers()) {
 		getContextWindow()->getWindow().draw(player.getSprite());
+	}
+
+	if (monopoly_game_engine_.getTurnState()) {
+		getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
+		for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
+			getContextWindow()->getWindow().draw(*text_ptr);
+		}
 	}
 }
