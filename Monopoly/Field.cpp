@@ -136,6 +136,10 @@ std::shared_ptr<Player>  PropertyField::getOwner() {
 	return owner_;
 };
 
+sf::RectangleShape PropertyField::getOwnerFlag() {
+	return owner_flag_;
+}
+
 void PropertyField::setIsMortaged(bool new_state) {
 	is_mortaged_ = new_state;
 };
@@ -147,6 +151,40 @@ void PropertyField::setOwner(std::shared_ptr<Player> new_owner_ptr) {
 void PropertyField::resetDefault() {
 	PropertyField::setIsMortaged(false);
 	PropertyField::setOwner(nullptr);
+};
+
+void PropertyField::createFlagSprite() {
+	float flag_x_pos;
+	float flag_y_pos;
+	unsigned int field_id = this->getId();
+	float field_width = (float)this->getWidth();
+	float field_height = (float)this->getHeight();
+	float field_rotation = this->getRotation();
+	const sf::Vector2i& field_pos = this->getPosition();
+	owner_flag_ = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
+
+	if (field_id >= 0 && field_id <= 10) {
+		flag_x_pos = (float)field_pos.x + 10.0f;
+		flag_y_pos = (float)field_pos.y + field_height + 8.0f;
+	} else if (field_id > 10 && field_id <= 20) {
+		flag_x_pos = (float)field_pos.x - field_height - 8.0f;
+		flag_y_pos = (float)field_pos.y + 10.0f;
+	} else if (field_id > 20 && field_id <= 30) {
+		flag_x_pos = (float)field_pos.x - 10.0f;
+		flag_y_pos = (float)field_pos.y - field_height - 8.0f;
+	} else if (field_id > 30 && field_id <= 40) {
+		flag_x_pos = (float)field_pos.x + field_height + 8.0f;
+		flag_y_pos = (float)field_pos.y - 10.0f;
+	}
+
+	owner_flag_.setRotation(field_rotation);
+	owner_flag_.setOutlineThickness(2.0f);
+	owner_flag_.setOutlineColor(sf::Color::Black);
+	owner_flag_.setPosition(sf::Vector2f(flag_x_pos, flag_y_pos));
+
+	if (owner_ != nullptr) {
+		owner_flag_.setFillColor(owner_->getColor());
+	}
 };
 
 const std::map<StreetTiers, unsigned int> StreetField::getRentValues() {
