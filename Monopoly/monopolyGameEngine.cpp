@@ -427,17 +427,41 @@ void monopolyGameEngine::clearPropertyData() {
 void monopolyGameEngine::showPropertyData(unsigned int pos) {
 	FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	unsigned int price;
-	unsigned int rents[5] = {0};
+	unsigned int mortage;
+	unsigned int housePrice;
+	unsigned int hotelPrice;
+	unsigned int rents[7];
 	if (fieldType == STREET) {
 		StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
 		price = field.getPrice();
+		std::map<StreetTiers, unsigned int> rentsMap = field.getRentValues();
+		rents[0] = rentsMap[NO_HOUSES];
+		rents[1] = rentsMap[NO_HOUSES] * 2;
+		rents[2] = rentsMap[ONE_HOUSE];
+		rents[3] = rentsMap[TWO_HOUESES];
+		rents[4] = rentsMap[THREE_HOUSES];
+		rents[5] = rentsMap[FOUR_HOUSES];
+		rents[6] = rentsMap[HOTEL];
+		mortage = field.getMortage();
+		housePrice = field.getHousePrice();
+		hotelPrice = field.getHotelPrice();
 	} else if (fieldType == STATION) {
 		StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
 		price = field.getPrice();
+		std::map<StationTiers, unsigned int> rentsMap = field.getRentValues();
+		rents[0] = rentsMap[ONE_STATION];
+		rents[1] = rentsMap[TWO_STATIONS];
+		rents[2] = rentsMap[THREE_STATIONS];
+		rents[3] = rentsMap[FOUR_STATIONS];
+		mortage = field.getMortage();
 	} else	// fieldType == UTILITY
 	{
 		UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
 		price = field.getPrice();
+		std::map<UtilityTiers, unsigned int> rentsMap = field.getRentMultipliers();
+		rents[0] = rentsMap[ONE_UTILITY];
+		rents[1] = rentsMap[TWO_UTILITIES];
+		mortage = field.getMortage();
 	}
 
 	unsigned int width = std::visit([](Field& field) { return field.getWidth(); }, getBoard()->getFieldById(pos));
@@ -467,46 +491,186 @@ void monopolyGameEngine::showPropertyData(unsigned int pos) {
 	propertyName->setColor(sf::Color::Black);
 	propertyDataTexts_.push_back(propertyName);
 
+	const float yOffset = 90;
+	const float yOffset_step = 25;
+	const float rentPricesOffsetX = 180;
+
 	std::shared_ptr<sf::Text> propertyPrice(
 		new sf::Text("Price: " + std::to_string(price), getFont(), getFontSize() - 2));
-	propertyPrice->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 90));
+	propertyPrice->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset));
 	propertyPrice->setColor(sf::Color::Black);
 	propertyDataTexts_.push_back(propertyPrice);
 
-	std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
-	propertyRent1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 115));
-	propertyRent1->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent1);
+	std::shared_ptr<sf::Text> propertyMortage(new sf::Text("Mortage:", getFont(), getFontSize() - 2));
+	propertyMortage->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*8));
+	propertyMortage->setColor(sf::Color::Black);
+	propertyDataTexts_.push_back(propertyMortage);
 
-	std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  with color set: ", getFont(), getFontSize() - 2));
-	propertyRent2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 140));
-	propertyRent2->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent2);
+	std::shared_ptr<sf::Text> propertyMortagePrice(new sf::Text(std::to_string(mortage), getFont(), getFontSize() - 2));
+	propertyMortagePrice->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*8));
+	propertyMortagePrice->setColor(sf::Color::Black);
+	propertyDataTexts_.push_back(propertyMortagePrice);
 
-	std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  with 1 house: ", getFont(), getFontSize() - 2));
-	propertyRent3->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 165));
-	propertyRent3->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent3);
+	if (fieldType == STREET) {
+		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
+		propertyRent1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*1));
+		propertyRent1->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent1);
 
-	std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  with 2 houses: ", getFont(), getFontSize() - 2));
-	propertyRent4->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 190));
-	propertyRent4->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent4);
+		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  with color set:", getFont(), getFontSize() - 2));
+		propertyRent2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*2));
+		propertyRent2->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent2);
 
-	std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  with 3 houses: ", getFont(), getFontSize() - 2));
-	propertyRent5->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 215));
-	propertyRent5->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent5);
+		std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  with 1 house:", getFont(), getFontSize() - 2));
+		propertyRent3->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*3));
+		propertyRent3->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent3);
 
-	std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  with 4 houses: ", getFont(), getFontSize() - 2));
-	propertyRent6->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 240));
-	propertyRent6->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent6);
+		std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  with 2 houses:", getFont(), getFontSize() - 2));
+		propertyRent4->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*4));
+		propertyRent4->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent4);
 
-	std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  with hotel: ", getFont(), getFontSize() - 2));
-	propertyRent7->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + 265));
-	propertyRent7->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyRent7);
+		std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  with 3 houses:", getFont(), getFontSize() - 2));
+		propertyRent5->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*5));
+		propertyRent5->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent5);
+
+		std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  with 4 houses:", getFont(), getFontSize() - 2));
+		propertyRent6->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*6));
+		propertyRent6->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent6);
+
+		std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  with hotel:", getFont(), getFontSize() - 2));
+		propertyRent7->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*7));
+		propertyRent7->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent7);
+
+		std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Houses cost:", getFont(), getFontSize() - 2));
+		propertyHouseCost->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*9));
+		propertyHouseCost->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyHouseCost);
+
+		std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Hotel cost:", getFont(), getFontSize() - 2));
+		propertyHotelCost->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*10));
+		propertyHotelCost->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyHotelCost);
+
+		std::shared_ptr<sf::Text> propertyRentCost1(new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
+		propertyRentCost1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*1));
+		propertyRentCost1->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost1);
+
+		std::shared_ptr<sf::Text> propertyRentCost2(new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
+		propertyRentCost2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*2));
+		propertyRentCost2->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost2);
+
+		std::shared_ptr<sf::Text> propertyRentCost3(new sf::Text(std::to_string(rents[2]), getFont(), getFontSize() - 2));
+		propertyRentCost3->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*3));
+		propertyRentCost3->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost3);
+
+		std::shared_ptr<sf::Text> propertyRentCost4(new sf::Text(std::to_string(rents[3]), getFont(), getFontSize() - 2));
+		propertyRentCost4->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*4));
+		propertyRentCost4->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost4);
+
+		std::shared_ptr<sf::Text> propertyRentCost5(new sf::Text(std::to_string(rents[4]), getFont(), getFontSize() - 2));
+		propertyRentCost5->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*5));
+		propertyRentCost5->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost5);
+
+		std::shared_ptr<sf::Text> propertyRentCost6(new sf::Text(std::to_string(rents[5]), getFont(), getFontSize() - 2));
+		propertyRentCost6->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*6));
+		propertyRentCost6->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost6);
+
+		std::shared_ptr<sf::Text> propertyRentCost7(new sf::Text(std::to_string(rents[6]), getFont(), getFontSize() - 2));
+		propertyRentCost7->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*7));
+		propertyRentCost7->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost7);
+
+		std::shared_ptr<sf::Text> propertyHousePrice(new sf::Text(std::to_string(housePrice), getFont(), getFontSize() - 2));
+		propertyHousePrice->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*9));
+		propertyHousePrice->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyHousePrice);
+
+		std::shared_ptr<sf::Text> propertyHotelPrice(new sf::Text(std::to_string(hotelPrice), getFont(), getFontSize() - 2));
+		propertyHotelPrice->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*10));
+		propertyHotelPrice->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyHotelPrice);
+	}
+	else if(fieldType == STATION)
+	{
+		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
+		propertyRent1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*1));
+		propertyRent1->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent1);
+
+		std::shared_ptr<sf::Text> propertyRent2(new sf::Text(" if 2 are owned:", getFont(), getFontSize() - 2));
+		propertyRent2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*2));
+		propertyRent2->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent2);
+
+		std::shared_ptr<sf::Text> propertyRent3(new sf::Text(" if 3 are owned:", getFont(), getFontSize() - 2));
+		propertyRent3->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*3));
+		propertyRent3->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent3);
+
+		std::shared_ptr<sf::Text> propertyRent4(new sf::Text(" if 4 are owned:", getFont(), getFontSize() - 2));
+		propertyRent4->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*4));
+		propertyRent4->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent4);
+
+		std::shared_ptr<sf::Text> propertyRentCost1(new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
+		propertyRentCost1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*1));
+		propertyRentCost1->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost1);
+
+		std::shared_ptr<sf::Text> propertyRentCost2(new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
+		propertyRentCost2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*2));
+		propertyRentCost2->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost2);
+
+		std::shared_ptr<sf::Text> propertyRentCost3(new sf::Text(std::to_string(rents[2]), getFont(), getFontSize() - 2));
+		propertyRentCost3->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*3));
+		propertyRentCost3->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost3);
+
+		std::shared_ptr<sf::Text> propertyRentCost4(new sf::Text(std::to_string(rents[3]), getFont(), getFontSize() - 2));
+		propertyRentCost4->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*4));
+		propertyRentCost4->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost4);
+	}
+	else
+	{
+		std::shared_ptr<sf::Text> propertyRent(new sf::Text("Rent:", getFont(), getFontSize() - 2));
+		propertyRent->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*1));
+		propertyRent->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent);
+
+		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("1 utility is owned: ", getFont(), getFontSize() - 2));
+		propertyRent1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*3));
+		propertyRent1->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent1);
+
+		std::shared_ptr<sf::Text> propertyRentCost1(new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
+		propertyRentCost1->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*4));
+		propertyRentCost1->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost1);
+
+		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("2 utilities are owned: ", getFont(), getFontSize() - 2));
+		propertyRent2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*6));
+		propertyRent2->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRent2);
+
+		std::shared_ptr<sf::Text> propertyRentCost2(new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
+		propertyRentCost2->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step*7));
+		propertyRentCost2->setColor(sf::Color::Black);
+		propertyDataTexts_.push_back(propertyRentCost2);
+	}
 }
 
 unsigned int monopolyGameEngine::getFieldPriceByPosition(unsigned int pos) {
