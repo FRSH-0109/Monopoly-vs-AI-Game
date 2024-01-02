@@ -129,8 +129,9 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 	return fields_owned;
 }
 
-unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal) const {
+unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal) {
 	unsigned int rent_to_pay;
+	int pos = players_[playerIndexturn_].getPositon();
 	FieldType field_type =
 		std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	if (field_type == STREET) {

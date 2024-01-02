@@ -97,6 +97,6 @@ class monopolyGameEngine {
 	TurnState getTurnState() const;
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
 	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;
-	unsigned int calculateRent() const;
+	unsigned int calculateRent(unsigned int rolledVal);
 	void monopolyGameWorker();
 };
