@@ -67,10 +67,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 100,
+        "rent_values": [6, 30, 90, 270, 400, 550],
+        "group_members": [8, 9],
+        "mortage": 50
     },
     {
         "id": 7,
@@ -87,10 +87,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 100,
+        "rent_values": [6, 30, 90, 270, 400, 550],
+        "group_members": [6, 9],
+        "mortage": 50
     },
     {
         "id": 9,
@@ -99,10 +99,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 120,
+        "rent_values": [8, 40, 100, 300, 450, 600],
+        "group_members": [6, 8],
+        "mortage": 60
     },
     {
         "id": 10,
@@ -119,10 +119,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 140,
+        "rent_values": [10, 50, 150, 450, 625, 750],
+        "group_members": [13, 14],
+        "mortage": 70
     },
     {
         "id": 12,
@@ -143,10 +143,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 140,
+        "rent_values": [10, 50, 150, 450, 625, 750],
+        "group_members": [11, 14],
+        "mortage": 70
     },
     {
         "id": 14,
@@ -155,10 +155,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 160,
+        "rent_values": [12, 60, 500, 700],
+        "group_members": [11, 13],
+        "mortage": 80
     },
     {
         "id": 15,
@@ -169,7 +169,7 @@
         "height": 100,
         "price": 200,
         "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
+        "group_members": [5, 25, 35],
         "mortage": 100
     },
     {
@@ -179,10 +179,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 180,
+        "rent_values": [14, 70, 200, 550, 750, 950],
+        "group_members": [18, 19],
+        "mortage": 90
     },
     {
         "id": 17,
@@ -199,10 +199,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 180,
+        "rent_values": [14, 70, 200, 550, 750, 950],
+        "group_members": [16, 19],
+        "mortage": 90
     },
     {
         "id": 19,
@@ -212,8 +212,8 @@
         "width": 60,
         "height": 100,
         "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
+        "rent_values": [16, 80, 220, 600, 800, 1000],
+        "group_members": [16, 18],
         "mortage": 100
     },
     {
@@ -251,10 +251,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 220,
+        "rent_values": [18, 90, 250, 700, 875, 1050],
+        "group_members": [21, 24],
+        "mortage": 110
     },
     {
         "id": 24,
@@ -263,10 +263,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 240,
+        "rent_values": [20, 100, 300, 750, 925, 1100],
+        "group_members": [21, 23],
+        "mortage": 120
     },
     {
         "id": 25,
@@ -277,7 +277,7 @@
         "height": 100,
         "price": 200,
         "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
+        "group_members": [5, 15, 35],
         "mortage": 100
     },
     {
@@ -287,10 +287,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 260,
+        "rent_values": [22, 110, 330, 800, 975, 1150],
+        "group_members": [27, 29],
+        "mortage": 130
     },
     {
         "id": 27,
@@ -299,10 +299,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 260,
+        "rent_values": [22, 110, 330, 800, 975, 1150],
+        "group_members": [26, 29],
+        "mortage": 130
     },
     {
         "id": 28,
@@ -313,7 +313,7 @@
         "height": 100,
         "price": 150,
         "rent_multipliers": [4, 10],
-        "group_members": [28],
+        "group_members": [12],
         "mortage": 75
     },
     {
@@ -323,10 +323,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 280,
+        "rent_values": [24, 120, 360, 850, 1025, 1200],
+        "group_members": [26, 27],
+        "mortage": 140
     },
     {
         "id": 30,
@@ -343,10 +343,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 300,
+        "rent_values": [26, 130, 390, 900, 1100, 1275],
+        "group_members": [32, 33],
+        "mortage": 150
     },
     {
         "id": 32,
@@ -355,10 +355,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 300,
+        "rent_values": [26, 130, 390, 900, 1100, 1275],
+        "group_members": [31, 33],
+        "mortage": 150
     },
     {
         "id": 33,
@@ -375,10 +375,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 320,
+        "rent_values": [28, 150, 450, 1000, 1200, 1400],
+        "group_members": [31, 32],
+        "mortage": 160
     },
     {
         "id": 35,
@@ -389,7 +389,7 @@
         "height": 100,
         "price": 200,
         "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
+        "group_members": [5, 15, 25],
         "mortage": 100
     },
     {
@@ -407,10 +407,10 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 350,
+        "rent_values": [35, 175, 500, 1100, 1300, 1500],
+        "group_members": [39],
+        "mortage": 175
     },
     {
         "id": 38,
@@ -428,9 +428,9 @@
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
         "height": 100,
-        "price": 200,
-        "rent_values": [25, 50, 100, 200],
-        "group_members": [15, 25, 35],
-        "mortage": 100
+        "price": 400,
+        "rent_values": [50, 200, 1400, 1700, 2000],
+        "group_members": [37],
+        "mortage": 200
     }
 ]
