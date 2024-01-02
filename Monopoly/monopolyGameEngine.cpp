@@ -310,33 +310,34 @@ void monopolyGameEngine::createTextRolledValue() {
 
 void monopolyGameEngine::createTextPlayersInfo() {
 	sf::Vector2f defPos = PLAYERS_INFO_TEXT_POSITION;
-	for (int i = 0; i < players_.size(); ++i) {
-		int id = players_[i].getId();
+	int i=0;
+	for (auto player: players_) {
+		int id = player.getId();
 		if (i > 0) {
 			defPos.x += 180;
 		}
 		std::shared_ptr<sf::Text> playerText(
 			new sf::Text("Player " + std::to_string(id + 1), getFont(), getFontSize()));
 		playerText->setPosition(defPos);
-		playerText->setColor(players_[id].getColor());
+		playerText->setColor(player.getColor());
 		playerText->setOutlineColor(sf::Color::Black);
 		playerText->setOutlineThickness(2);
 		addText(playerText);
 
 		std::shared_ptr<sf::Text> playerMoneyText(
-			new sf::Text("Money: " + std::to_string(players_[id].getMoney()), getFont(), getFontSize() - 7));
+			new sf::Text("Money: " + std::to_string(player.getMoney()), getFont(), getFontSize() - 7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
 		playerMoneyText->setColor(sf::Color::Black);
 		addText(playerMoneyText);
 
 		std::shared_ptr<sf::Text> playerPositionText(
-			new sf::Text("Position: " + std::to_string(players_[id].getPositon() + 1), getFont(), getFontSize() - 7));
+			new sf::Text("Position: " + std::to_string(player.getPositon() + 1), getFont(), getFontSize() - 7));
 		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
 		playerPositionText->setColor(sf::Color::Black);
 		addText(playerPositionText);
 
 		const std::string streetName = std::visit(
-			[](Field& field) { return field.getName(); }, getBoard()->getFieldById(players_[id].getPositon()));
+			[](Field& field) { return field.getName(); }, getBoard()->getFieldById(player.getPositon()));
 		std::shared_ptr<sf::Text> playerPositionNameText(new sf::Text(streetName, getFont(), getFontSize() - 7));
 		playerPositionNameText->setPosition(sf::Vector2f(defPos.x, defPos.y + 110));
 		playerPositionNameText->setColor(sf::Color::Black);
@@ -351,6 +352,8 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		playerInfoText_[id].push_back(playerMoneyText);
 		playerInfoText_[id].push_back(playerPositionText);
 		playerInfoText_[id].push_back(playerPositionNameText);
+
+		++i;
 	}
 }
 

@@ -17,7 +17,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createBoard();
 	monopoly_game_engine_.clearPlayers();
 	monopoly_game_engine_.createPlayers(playerSettingsList_);
-	monopoly_game_engine_.setPlayerIndexTurn(monopoly_game_engine_.getPlayers()[0].getId());
+	monopoly_game_engine_.setPlayerIndexTurn(0);
 	monopoly_game_engine_.createButtonRollDice();
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
