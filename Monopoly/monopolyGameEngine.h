@@ -12,7 +12,7 @@ enum TurnState {
 	RollDice,
 	FieldAction,
 	BuyAction,
-
+	PayRent,
 	TurnEnd,
 };
 
@@ -95,5 +95,8 @@ class monopolyGameEngine {
 	std::vector<Player>& getPlayers();
 	void setPlayerIndexTurn(unsigned int indx);
 	TurnState getTurnState() const;
+	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
+	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;
+	unsigned int calculateRent() const;
 	void monopolyGameWorker();
 };

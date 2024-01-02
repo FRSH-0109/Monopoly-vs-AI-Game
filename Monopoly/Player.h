@@ -27,6 +27,7 @@ class Player {
 	unsigned int getPositon() const;
 	void setPositon(unsigned int newPosition);
 	bool hasFiledOwnedId(unsigned int id) const;
+	std::vector<unsigned int> getFiledOwnedId() const;
 	void addFieldOwnedId(unsigned int id);
 	void removeFiledOwnedId(unsigned int id);
 	void clearFiledOwnedId();

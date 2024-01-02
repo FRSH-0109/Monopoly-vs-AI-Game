@@ -31,6 +31,10 @@ bool Player::hasFiledOwnedId(unsigned int id) const {
 	return false;
 }
 
+std::vector<unsigned int> Player::getFiledOwnedId() {
+	return fieldsOwnedId_;
+}
+
 void Player::addFieldOwnedId(unsigned int id) {
 	if (hasFiledOwnedId(id) == false) {
 		fieldsOwnedId_.push_back(id);

@@ -151,6 +151,8 @@ class StreetField : public PropertyField {
 	void setHouseNumber(unsigned int new_house_number);
 	void setIsHotel(bool new_state);
 	void resetDefault();
+
+	const unsigned int calculateRent();
 };
 
 class StationField : public PropertyField {
@@ -175,6 +177,8 @@ class StationField : public PropertyField {
 	};
 
 	const std::map<StationTiers, unsigned int> getRentValues();
+
+	const unsigned int calculateRent();
 };
 
 class UtilityField : public PropertyField {
@@ -199,6 +203,8 @@ class UtilityField : public PropertyField {
 	};
 
 	const std::map<UtilityTiers, unsigned int> getRentMultipliers();
+
+	const unsigned int calculateRent(unsigned int dice_roll);
 };
 
 class TaxField : public Field {
