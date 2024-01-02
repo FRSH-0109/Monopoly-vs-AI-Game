@@ -16,6 +16,8 @@
         "height": 100,
         "price": 60,
         "rent_values": [2, 10, 30, 90, 160, 250],
+        "house_price": 50,
+        "hotel_price": 50,
         "group_members": [3],
         "mortage": 30
     },
@@ -36,6 +38,8 @@
         "height": 100,
         "price": 60,
         "rent_values": [4, 20, 60, 180, 320, 450],
+        "house_price": 50,
+        "hotel_price": 50,
         "group_members": [1],
         "mortage": 30
     },
@@ -69,6 +73,8 @@
         "height": 100,
         "price": 100,
         "rent_values": [6, 30, 90, 270, 400, 550],
+        "house_price": 50,
+        "hotel_price": 50,
         "group_members": [8, 9],
         "mortage": 50
     },
@@ -89,6 +95,8 @@
         "height": 100,
         "price": 100,
         "rent_values": [6, 30, 90, 270, 400, 550],
+        "house_price": 50,
+        "hotel_price": 50,
         "group_members": [6, 9],
         "mortage": 50
     },
@@ -101,6 +109,8 @@
         "height": 100,
         "price": 120,
         "rent_values": [8, 40, 100, 300, 450, 600],
+        "house_price": 50,
+        "hotel_price": 50,
         "group_members": [6, 8],
         "mortage": 60
     },
@@ -121,6 +131,8 @@
         "height": 100,
         "price": 140,
         "rent_values": [10, 50, 150, 450, 625, 750],
+        "house_price": 100,
+        "hotel_price": 100,
         "group_members": [13, 14],
         "mortage": 70
     },
@@ -145,6 +157,8 @@
         "height": 100,
         "price": 140,
         "rent_values": [10, 50, 150, 450, 625, 750],
+        "house_price": 100,
+        "hotel_price": 100,
         "group_members": [11, 14],
         "mortage": 70
     },
@@ -157,6 +171,8 @@
         "height": 100,
         "price": 160,
         "rent_values": [12, 60, 500, 700],
+        "house_price": 100,
+        "hotel_price": 100,
         "group_members": [11, 13],
         "mortage": 80
     },
@@ -181,6 +197,8 @@
         "height": 100,
         "price": 180,
         "rent_values": [14, 70, 200, 550, 750, 950],
+        "house_price": 100,
+        "hotel_price": 100,
         "group_members": [18, 19],
         "mortage": 90
     },
@@ -201,6 +219,8 @@
         "height": 100,
         "price": 180,
         "rent_values": [14, 70, 200, 550, 750, 950],
+        "house_price": 100,
+        "hotel_price": 100,
         "group_members": [16, 19],
         "mortage": 90
     },
@@ -213,6 +233,8 @@
         "height": 100,
         "price": 200,
         "rent_values": [16, 80, 220, 600, 800, 1000],
+        "house_price": 100,
+        "hotel_price": 100,
         "group_members": [16, 18],
         "mortage": 100
     },
@@ -233,6 +255,8 @@
         "height": 100,
         "price": 220,
         "rent_values": [18, 90, 250, 700, 875, 1050],
+        "house_price": 150,
+        "hotel_price": 150,
         "group_members": [23, 24],
         "mortage": 110
     },
@@ -253,6 +277,8 @@
         "height": 100,
         "price": 220,
         "rent_values": [18, 90, 250, 700, 875, 1050],
+        "house_price": 150,
+        "hotel_price": 150,
         "group_members": [21, 24],
         "mortage": 110
     },
@@ -265,6 +291,8 @@
         "height": 100,
         "price": 240,
         "rent_values": [20, 100, 300, 750, 925, 1100],
+        "house_price": 150,
+        "hotel_price": 150,
         "group_members": [21, 23],
         "mortage": 120
     },
@@ -289,6 +317,8 @@
         "height": 100,
         "price": 260,
         "rent_values": [22, 110, 330, 800, 975, 1150],
+        "house_price": 150,
+        "hotel_price": 150,
         "group_members": [27, 29],
         "mortage": 130
     },
@@ -301,6 +331,8 @@
         "height": 100,
         "price": 260,
         "rent_values": [22, 110, 330, 800, 975, 1150],
+        "house_price": 150,
+        "hotel_price": 150,
         "group_members": [26, 29],
         "mortage": 130
     },
@@ -325,6 +357,8 @@
         "height": 100,
         "price": 280,
         "rent_values": [24, 120, 360, 850, 1025, 1200],
+        "house_price": 150,
+        "hotel_price": 150,
         "group_members": [26, 27],
         "mortage": 140
     },
@@ -345,6 +379,8 @@
         "height": 100,
         "price": 300,
         "rent_values": [26, 130, 390, 900, 1100, 1275],
+        "house_price": 200,
+        "hotel_price": 200,
         "group_members": [32, 33],
         "mortage": 150
     },
@@ -357,6 +393,8 @@
         "height": 100,
         "price": 300,
         "rent_values": [26, 130, 390, 900, 1100, 1275],
+        "house_price": 200,
+        "hotel_price": 200,
         "group_members": [31, 33],
         "mortage": 150
     },
@@ -377,6 +415,8 @@
         "height": 100,
         "price": 320,
         "rent_values": [28, 150, 450, 1000, 1200, 1400],
+        "house_price": 200,
+        "hotel_price": 200,
         "group_members": [31, 32],
         "mortage": 160
     },
@@ -409,6 +449,8 @@
         "height": 100,
         "price": 350,
         "rent_values": [35, 175, 500, 1100, 1300, 1500],
+        "house_price": 200,
+        "hotel_price": 200,
         "group_members": [39],
         "mortage": 175
     },
@@ -430,6 +472,8 @@
         "height": 100,
         "price": 400,
         "rent_values": [50, 200, 1400, 1700, 2000],
+        "house_price": 200,
+        "hotel_price": 200,
         "group_members": [37],
         "mortage": 200
     }
