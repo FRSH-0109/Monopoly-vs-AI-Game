@@ -105,7 +105,16 @@ class PropertyField : public Field {
 };
 
 class StreetField : public PropertyField {
+	/*
+		TODO Dodać pola ceny domku, ceny hotelu,
+		poprawić konstruktor by odbierał te dane,
+		gettery tych pól,
+		uzupełnić testy,
+		uzupełnić board.json i test_board.json
+	*/
 	std::map<StreetTiers, unsigned int> rent_values_;
+	unsigned int house_price_;
+	unsigned int hotel_price_;
 	unsigned int house_number_;
 	bool is_hotel_;
 
@@ -119,17 +128,23 @@ class StreetField : public PropertyField {
 		const float rotation,
 		const sf::Vector2i position,
 		const unsigned int price,
+		const unsigned int house_price,
+		const unsigned int hotel_price,
 		const std::map<StreetTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int mortage)
 		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
 		  rent_values_(rent_values),
+		  house_price_(house_price),
+		  hotel_price_(hotel_price),
 		  house_number_(0),
 		  is_hotel_(false) {
 		std::cout << "StreetField constructor" << std::endl;
 	};
 
 	const std::map<StreetTiers, unsigned int> getRentValues();
+	const unsigned int getHousePrice();
+	const unsigned int getHotelPrice();
 	const unsigned int getHouseNumber();
 	const bool getIsHotel();
 

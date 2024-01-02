@@ -128,6 +128,7 @@ const unsigned int PropertyField::getMortage() {
 const bool PropertyField::getIsMortaged() {
 	return is_mortaged_;
 };
+
 const unsigned int PropertyField::getUnmortageValue() {
 	return static_cast<int>(round(1.1 * mortage_));
 };
@@ -189,6 +190,14 @@ void PropertyField::createFlagSprite() {
 
 const std::map<StreetTiers, unsigned int> StreetField::getRentValues() {
 	return rent_values_;
+};
+
+const unsigned int StreetField::getHousePrice() {
+	return house_price_;
+};
+
+const unsigned int StreetField::getHotelPrice() {
+	return hotel_price_;
 };
 
 const unsigned int StreetField::getHouseNumber() {

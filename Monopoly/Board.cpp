@@ -27,12 +27,15 @@ Board::Board(const std::string file_path) {
 		float rotation = getFieldRotation(id);
 		switch (type) {
 			case STREET: {
+				// TODO dodać parsowanie ceny domku i hotelu
 				unsigned int price = element["price"];
+				unsigned int house_price = element["house_price"];
+				unsigned int hotel_price = element["hotel_price"];
 				unsigned int mortage = element["mortage"];
 				std::map<StreetTiers, unsigned int> rent_values = jsonToStreetRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				StreetField new_field = StreetField(id, type, name, graphic_path, width, height, rotation, position,
-					price, rent_values, group_members, mortage);
+					price, house_price, hotel_price, rent_values, group_members, mortage);
 				board_.push_back(new_field);
 				break;
 			}

@@ -170,13 +170,15 @@ TEST_CASE("StreetField class") {
 	const float TEST_ROTATION = 0.0;
 	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 400;
+	const unsigned int TEST_HOUSE_PRICE = 200;
+	const unsigned int TEST_HOTEL_PRICE = 250;
 	const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
 	const unsigned int TEST_MORTAGE = 200;
 
 	StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -186,6 +188,8 @@ TEST_CASE("StreetField class") {
 	REQUIRE(test_field.getHeight() == TEST_HEIGHT);
 	REQUIRE(test_field.getRotation() == TEST_ROTATION);
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
+	REQUIRE(test_field.getHousePrice() == TEST_HOUSE_PRICE);
+	REQUIRE(test_field.getHotelPrice() == TEST_HOTEL_PRICE);
 	REQUIRE(test_field.getRentValues() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
 	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
@@ -556,13 +560,16 @@ TEST_CASE("Board class") {
 	test_rotation = 0.0;
 	test_position = sf::Vector2i(40, 40);
 	unsigned int test_price = 60;
+	unsigned int test_house_price = 50;
+	unsigned int test_hotel_price = 70;
 	std::map<StreetTiers, unsigned int> test_rent = {
 		{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30}, {THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
 	std::vector<unsigned int> test_group_members = {3};
 	unsigned int test_mortage = 30;
 
 	const StreetField test_field_1 = StreetField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_position, test_price, test_rent, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_house_price, test_hotel_price, test_rent,
+		test_group_members, test_mortage);
 
 	test_board.push_back(test_field_1);
 
@@ -587,6 +594,8 @@ TEST_CASE("Board class") {
 	test_height = 200;
 	test_rotation = 0.0;
 	test_price = 60;
+	test_house_price = 50;
+	test_hotel_price = 70;
 	test_rent = {
 		{NO_HOUSES, 4}, {ONE_HOUSE, 20}, {TWO_HOUESES, 60}, {THREE_HOUSES, 180}, {FOUR_HOUSES, 320}, {HOTEL, 450}};
 	test_group_members = {1};
@@ -594,7 +603,8 @@ TEST_CASE("Board class") {
 	test_position = sf::Vector2i(80, 80);
 
 	StreetField test_field_3 = StreetField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_position, test_price, test_rent, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_house_price, test_hotel_price, test_rent,
+		test_group_members, test_mortage);
 
 	test_board.push_back(test_field_3);
 
@@ -729,6 +739,8 @@ TEST_CASE("Board class") {
 					CHECK(field_from_created.getHeight() == field_from_test.getHeight());
 					CHECK(field_from_created.getRotation() == field_from_test.getRotation());
 					CHECK(field_from_created.getPrice() == field_from_test.getPrice());
+					CHECK(field_from_created.getHousePrice() == field_from_test.getHousePrice());
+					CHECK(field_from_created.getHotelPrice() == field_from_test.getHotelPrice());
 					CHECK(field_from_created.getRentValues() == field_from_test.getRentValues());
 					CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
 					CHECK(field_from_created.getMortage() == field_from_test.getMortage());
@@ -879,6 +891,8 @@ TEST_CASE("Board class") {
 		CHECK(given_field.getHeight() == test_field_3.getHeight());
 		CHECK(given_field.getRotation() == test_field_3.getRotation());
 		CHECK(given_field.getPrice() == test_field_3.getPrice());
+		CHECK(given_field.getHousePrice() == test_field_3.getHousePrice());
+		CHECK(given_field.getHotelPrice() == test_field_3.getHotelPrice());
 		CHECK(given_field.getRentValues() == test_field_3.getRentValues());
 		CHECK(given_field.getGroupMembers() == test_field_3.getGroupMembers());
 		CHECK(given_field.getMortage() == test_field_3.getMortage());
