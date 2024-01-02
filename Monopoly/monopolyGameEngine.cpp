@@ -270,6 +270,11 @@ void monopolyGameEngine::monopolyGameWorker() {
 					std::cout << "Rent to pay: " << rent_to_pay << std::endl;
 					setTurnState(PayRent);
 				}
+				else
+				{
+					std::cout << "No action - player owns this field" << field_type << std::endl;
+					setTurnState(TurnEnd);
+				}
 			} else {
 				std::cout << "No action" << field_type << std::endl;
 				setTurnState(TurnEnd);
@@ -314,6 +319,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 			setTurnState(TurnEnd);
 		}
+		break;
 
 		case TurnEnd:
 			rolledValueText_->setString("");
