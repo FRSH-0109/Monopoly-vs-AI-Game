@@ -106,7 +106,7 @@ unsigned int monopolyGameEngine::getFontSize() const {
 }
 
 void monopolyGameEngine::turnInfoTextWorker() {
-	turnInfoText_->setString("Turn: Player " + std::to_string(getPlayerIndexTurn() + 1));
+	turnInfoText_->setString("Turn: Player " + std::to_string(players_[getPlayerIndexTurn()].getId() + 1));
 }
 
 void monopolyGameEngine::monopolyGameWorker() {
