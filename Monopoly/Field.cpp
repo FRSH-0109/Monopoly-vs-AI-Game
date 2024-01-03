@@ -133,7 +133,7 @@ const unsigned int PropertyField::getUnmortageValue() {
 	return static_cast<int>(round(1.1 * mortage_));
 };
 
-std::shared_ptr<Player>  PropertyField::getOwner() {
+std::shared_ptr<Player> PropertyField::getOwner() {
 	return owner_;
 };
 

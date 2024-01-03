@@ -5,8 +5,8 @@
 #include <random>
 #include <vector>
 #include "Board.h"
-#include "activeScreen.h"
 #include "NotificationWall.h"
+#include "activeScreen.h"
 #include "main.h"
 
 enum TurnState {
@@ -72,6 +72,7 @@ class monopolyGameEngine {
 	unsigned int rollDice() const;
 
 	void movePlayer(unsigned int turnIndex, unsigned int positionIncrement);
+	void notificationAdd(unsigned int index, std::string text);
 
    public:
 	monopolyGameEngine();

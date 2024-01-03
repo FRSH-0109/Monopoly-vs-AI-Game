@@ -87,7 +87,6 @@ TEST_CASE("monopolyGameEngine") {
 	monopoly_engine.setPlayerIndexTurn(0);
 
 	SECTION("groupCompleted() method") {
-
 		SECTION("StreetField") {
 			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 6, 8, 9, 15, 28, 37, 39};
 			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 28, 37, 39};
@@ -113,12 +112,9 @@ TEST_CASE("monopolyGameEngine") {
 		}
 	}
 
-	SECTION("calculateGroupFieldOwned() method") {
-
-	}
+	SECTION("calculateGroupFieldOwned() method") {}
 
 	SECTION("calculateRent() method") {
-
 		SECTION("Street is mortaged") {
 			std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3)).setIsMortaged(true);
 			unsigned int expected_rent = 0;
@@ -673,9 +669,9 @@ TEST_CASE("Board class") {
 	std::vector<unsigned int> test_group_members = {3};
 	unsigned int test_mortage = 30;
 
-	const StreetField test_field_1 = StreetField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_position, test_price, test_house_price, test_hotel_price, test_rent,
-		test_group_members, test_mortage);
+	const StreetField test_field_1 =
+		StreetField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position,
+			test_price, test_house_price, test_hotel_price, test_rent, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_1);
 
@@ -708,9 +704,9 @@ TEST_CASE("Board class") {
 	test_mortage = 30;
 	test_position = sf::Vector2i(80, 80);
 
-	StreetField test_field_3 = StreetField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_position, test_price, test_house_price, test_hotel_price, test_rent,
-		test_group_members, test_mortage);
+	StreetField test_field_3 =
+		StreetField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position,
+			test_price, test_house_price, test_hotel_price, test_rent, test_group_members, test_mortage);
 
 	test_board.push_back(test_field_3);
 

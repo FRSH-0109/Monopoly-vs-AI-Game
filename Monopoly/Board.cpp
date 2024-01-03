@@ -85,7 +85,7 @@ Board::Board(const std::string file_path) {
 	field_number_ = board_.size();
 	for (auto& field : board_) {
 		std::visit([](Field& visited_field) { visited_field.createSprite(); }, field);
-		FieldType type = std::visit([] (Field& visited_field) { return visited_field.getType(); }, field);
+		FieldType type = std::visit([](Field& visited_field) { return visited_field.getType(); }, field);
 		switch (type) {
 			case STREET: {
 				StreetField& visited_field = std::get<StreetField>(field);

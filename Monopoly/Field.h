@@ -98,7 +98,7 @@ class PropertyField : public Field {
 	sf::RectangleShape getOwnerFlag();
 
 	void setIsMortaged(bool new_state);
-	void setOwner(std::shared_ptr<Player>  new_owner);
+	void setOwner(std::shared_ptr<Player> new_owner);
 	void resetDefault();
 
 	void createFlagSprite();

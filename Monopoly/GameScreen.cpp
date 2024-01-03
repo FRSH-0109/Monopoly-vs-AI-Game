@@ -82,7 +82,6 @@ void GameScreen::draw() {
 		if (field_type == STREET || field_type == UTILITY || field_type == STATION) {
 			sf::RectangleShape owner_flag;
 			switch (field_type) {
-
 				case STREET: {
 					StreetField& field_specified = std::get<StreetField>(field);
 					owner_flag = field_specified.getOwnerFlag();
@@ -129,9 +128,8 @@ void GameScreen::draw() {
 		}
 	}
 
-	//Notifications wall draw
-	for(auto notiTextPtr : monopoly_game_engine_.getNotificationsWall().getWall())
-	{
+	// Notifications wall draw
+	for (auto notiTextPtr : monopoly_game_engine_.getNotificationsWall().getWall()) {
 		getContextWindow()->getWindow().draw(*notiTextPtr);
 	}
 }
