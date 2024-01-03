@@ -128,4 +128,10 @@ void GameScreen::draw() {
 			getContextWindow()->getWindow().draw(*text_ptr);
 		}
 	}
+
+	//Notifications wall draw
+	for(auto notiTextPtr : monopoly_game_engine_.getNotificationsWall().getWall())
+	{
+		getContextWindow()->getWindow().draw(*notiTextPtr);
+	}
 }

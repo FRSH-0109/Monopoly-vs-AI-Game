@@ -190,6 +190,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 				std::string rol = "Rolled Value: ";
 				std::string val = std::to_string(rolledVal);
 				rolledValueText_->setString(rol + val);
+				notificationsWall_.addToWall("Player " + std::to_string(players_[playerIndexturn_].getId()+1) + ": " + rol + val);
 				int oldPos = players_[playerIndexturn_].getPositon();
 				int newPos = (oldPos + rolledVal) % 40;
 				players_[playerIndexturn_].setPositon(newPos);
@@ -203,6 +204,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 			int pos = players_[playerIndexturn_].getPositon();
 			FieldType field_type =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
+			std::string textWhereIsPlayer("is on field " + std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+			notificationsWall_.addToWall("Player " + std::to_string(players_[playerIndexturn_].getId()+1) + ": " + textWhereIsPlayer);
 			if (field_type == STREET || field_type == STATION || field_type == UTILITY) {
 				std::shared_ptr<Player> owner = nullptr;
 				if (field_type == STREET) {
@@ -289,6 +292,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 			buyFieldButton_->setIsVisible(true);
 			if (buyFieldButton_->getIsActive()) {
 				if (players_[playerIndexturn_].getMoney() >= price) {  // possible to buy property
+					std::string textPlayerBoughtProperty("bought field " + std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+					notificationsWall_.addToWall("Player " + std::to_string(players_[playerIndexturn_].getId()+1) + ": " + textPlayerBoughtProperty);
 					players_[playerIndexturn_].setMoney(players_[playerIndexturn_].getMoney() - price);
 					players_[playerIndexturn_].addFieldOwnedId(pos);
 					std::shared_ptr<Player> player_ptr = std::make_shared<Player>(players_[playerIndexturn_]);
@@ -308,6 +313,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 
 			if (resignBuyFieldButton_->getIsActive()) {
+				std::string textPlayerResginedProperty("resigned to buy field " + std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+				notificationsWall_.addToWall("Player " + std::to_string(players_[playerIndexturn_].getId()+1) + ": " + textPlayerResginedProperty);
 				resignBuyFieldButton_->setIsActive(false);
 				resignBuyFieldButton_->setIsVisible(false);
 				buyFieldButton_->setIsVisible(false);
@@ -828,4 +835,9 @@ void monopolyGameEngine::addOwnerToPropertyField(std::shared_ptr<Player> player,
 	{
 		std::get<UtilityField>(getBoard()->getFieldById(pos)).setOwner(player);
 	}
+}
+
+NotificationWall& monopolyGameEngine::getNotificationsWall()
+{
+	return notificationsWall_;
 }

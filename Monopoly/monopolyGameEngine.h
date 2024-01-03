@@ -6,6 +6,7 @@
 #include <vector>
 #include "Board.h"
 #include "activeScreen.h"
+#include "NotificationWall.h"
 #include "main.h"
 
 enum TurnState {
@@ -47,6 +48,8 @@ class monopolyGameEngine {
 	sf::Texture propertyDataTexture_;
 	std::vector<std::shared_ptr<sf::Text>> propertyDataTexts_;
 
+	NotificationWall notificationsWall_;
+
 	// game staff
 	TurnState turnState_;
 	const unsigned int PLAYERS_MAX = 4;
@@ -85,6 +88,7 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<sf::Text>>& getTexts();
 	sf::Sprite& getPropertyDataSprite();
 	std::vector<std::shared_ptr<sf::Text>>& getPropertyDataTexts();
+	NotificationWall& getNotificationsWall();
 
 	// game staff
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
