@@ -129,9 +129,8 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 	return fields_owned;
 }
 
-unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal) {
+unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal, int pos) {
 	unsigned int rent_to_pay;
-	int pos = players_[playerIndexturn_].getPositon();
 	FieldType field_type =
 		std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	if (field_type == STREET) {
@@ -146,7 +145,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal) {
 			std::map<unsigned int, StreetTiers> house_number_map = {{1, ONE_HOUSE}, {2, TWO_HOUESES}, {3, THREE_HOUSES}, {4, FOUR_HOUSES}};
 			StreetTiers rent_tier = house_number_map[house_number];
 			rent_to_pay = rent_values[rent_tier];
-		} else if (groupCompleted(players_[playerIndexturn_].getFiledOwnedId(), field)) {
+		} else if (groupCompleted(field.getOwner()->getFiledOwnedId(), field)) {
 			rent_to_pay = 2 * rent_values[NO_HOUSES];
 		} else {
 			rent_to_pay = rent_values[NO_HOUSES];
@@ -157,7 +156,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal) {
 			rent_to_pay = 0;
 		} else {
 			std::map <StationTiers, unsigned int> rent_values = field.getRentValues();
-			const unsigned int stations_owned = calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
+			const unsigned int stations_owned = calculateGroupFieldsOwned(field.getOwner()->getFiledOwnedId(), field);
 			std::map<unsigned int, StationTiers> stations_number_map = {{1, ONE_STATION}, {2, TWO_STATIONS}, {3, THREE_STATIONS}, {4, FOUR_STATIONS}};
 			StationTiers rent_tier = stations_number_map[stations_owned];
 			rent_to_pay = rent_values[rent_tier];
@@ -168,12 +167,13 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal) {
 			rent_to_pay = 0;
 		} else {
 			std::map <UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
-			const unsigned int utility_owned = calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
+			const unsigned int utility_owned = calculateGroupFieldsOwned(field.getOwner()->getFiledOwnedId(), field);
 			std::map<unsigned int, UtilityTiers> utility_number_map = {{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
 			UtilityTiers utility_tier = utility_number_map[utility_owned];
 			rent_to_pay = rolledVal * rent_multipliers[utility_tier];
 		}
 	}
+	return rent_to_pay;
 }
 
 void monopolyGameEngine::monopolyGameWorker() {
@@ -208,7 +208,6 @@ void monopolyGameEngine::monopolyGameWorker() {
 				if (field_type == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
 					owner = field.getOwner();
-
 				} else if (field_type == STATION) {
 					StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
 					owner = field.getOwner();

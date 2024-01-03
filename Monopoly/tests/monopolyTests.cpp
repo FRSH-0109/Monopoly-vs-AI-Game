@@ -57,7 +57,113 @@ TEST_CASE("ActiveScreen classes") {
 }
 
 TEST_CASE("monopolyGameEngine") {
-	monopolyGameEngine monopolyEngine = monopolyGameEngine();
+	monopolyGameEngine monopoly_engine = monopolyGameEngine();
+	monopoly_engine.createBoard();
+	monopoly_engine.clearPlayers();
+
+	playerSettings player_1_settings;
+	player_1_settings.isNone = false;
+	player_1_settings.isHuman = true;
+	player_1_settings.level = 1;
+	std::shared_ptr<playerSettings> player_1_settings_ptr = std::make_shared<playerSettings>(player_1_settings);
+
+	playerSettings player_2_settings;
+	player_2_settings.isNone = false;
+	player_2_settings.isHuman = false;
+	player_2_settings.level = 2;
+	std::shared_ptr<playerSettings> player_2_settings_ptr = std::make_shared<playerSettings>(player_2_settings);
+
+	playerSettings player_3_settings;
+	player_3_settings.isNone = false;
+	player_3_settings.isHuman = true;
+	player_3_settings.level = 1;
+	std::shared_ptr<playerSettings> player_3_settings_ptr = std::make_shared<playerSettings>(player_3_settings);
+
+	std::vector<std::shared_ptr<playerSettings>> player_settings_list;
+	player_settings_list.push_back(player_1_settings_ptr);
+	player_settings_list.push_back(player_2_settings_ptr);
+	player_settings_list.push_back(player_3_settings_ptr);
+	monopoly_engine.createPlayers(player_settings_list);
+	monopoly_engine.setPlayerIndexTurn(0);
+
+	SECTION("groupCompleted() method") {
+
+		SECTION("StreetField") {
+			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 6, 8, 9, 15, 28, 37, 39};
+			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 28, 37, 39};
+			StreetField& test_field_8 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(8));
+			REQUIRE(monopoly_engine.groupCompleted(PLAYER_FIELDS_1, test_field_8) == true);
+			REQUIRE(monopoly_engine.groupCompleted(PLAYER_FIELDS_2, test_field_8) == false);
+		}
+
+		SECTION("StationField") {
+			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 5, 9, 15, 25, 28, 35, 37, 39};
+			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 23, 28, 37, 39};
+			StationField& test_field_35 = std::get<StationField>(monopoly_engine.getBoard()->getFieldById(35));
+			REQUIRE(monopoly_engine.groupCompleted(PLAYER_FIELDS_1, test_field_35) == true);
+			REQUIRE(monopoly_engine.groupCompleted(PLAYER_FIELDS_2, test_field_35) == false);
+		}
+
+		SECTION("UtilityField") {
+			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 5, 9, 12, 25, 28, 37, 39};
+			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 23, 37, 39};
+			UtilityField& test_field_28 = std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(28));
+			REQUIRE(monopoly_engine.groupCompleted(PLAYER_FIELDS_1, test_field_28) == true);
+			REQUIRE(monopoly_engine.groupCompleted(PLAYER_FIELDS_2, test_field_28) == false);
+		}
+	}
+
+	SECTION("calculateGroupFieldOwned() method") {
+
+	}
+
+	SECTION("calculateRent() method") {
+
+		SECTION("Street is mortaged") {
+			std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3)).setIsMortaged(true);
+			unsigned int expected_rent = 0;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Street with Hotel case") {
+			std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3)).setIsHotel(true);
+			unsigned int expected_rent = 450;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Street with Houses") {
+			StreetField& test_field_3 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3));
+			test_field_3.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			test_field_3.setHouseNumber(3);
+			unsigned int expected_rent = 180;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Street without houses in a full group house") {
+			StreetField& test_field_1 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(1));
+			test_field_1.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			monopoly_engine.getPlayers()[0].addFieldOwnedId(1);
+			StreetField& test_field_3 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3));
+			test_field_3.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			monopoly_engine.getPlayers()[0].addFieldOwnedId(3);
+			unsigned int expected_rent = 8;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Street without a full group house") {
+			StreetField& test_field_1 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(1));
+			test_field_1.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[2]));
+			StreetField& test_field_3 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3));
+			test_field_3.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			unsigned int expected_rent = 4;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
+			CHECK(calculated_rent == expected_rent);
+		}
+	}
 	// REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 	// REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 
