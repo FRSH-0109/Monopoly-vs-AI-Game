@@ -194,6 +194,12 @@ void monopolyGameEngine::movePlayer(unsigned int turnIndex, unsigned int positio
 	players_[turnIndex].setSpritePosition(newPlayerSpritePos);
 }
 
+void monopolyGameEngine::handlePassingStart(unsigned int oldPos, unsigned int newPos) {
+	if (newPos < oldPos) {	// start passed
+		players_[playerIndexturn_].addMoney(START_PASSING_MONEY_);
+	}
+}
+
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
@@ -211,7 +217,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 				notificationAdd(playerIndexturn_, rol + val);
 
+				int oldPos = players_[playerIndexturn_].getPositon();
 				movePlayer(playerIndexturn_, rolledVal);
+				int newPos = players_[playerIndexturn_].getPositon();
+				handlePassingStart(oldPos, newPos);
 
 				rollDiceButton_->setIsVisible(false);
 				setTurnState(FieldAction);

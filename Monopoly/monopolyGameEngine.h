@@ -19,6 +19,7 @@ enum TurnState {
 
 class monopolyGameEngine {
 	const unsigned int PLAYER_MONEY_DEFAULT = 1500;
+	const unsigned int START_PASSING_MONEY_ = 200;
 
 	const std::string GAMEBOARD_FILE_PATH = "Monopoly/game_config_json/board.json";
 	std::shared_ptr<Board> gameboard_;
@@ -73,6 +74,7 @@ class monopolyGameEngine {
 
 	void movePlayer(unsigned int turnIndex, unsigned int positionIncrement);
 	void notificationAdd(unsigned int index, std::string text);
+	void handlePassingStart(unsigned int oldPos, unsigned int newPos);
 
    public:
 	monopolyGameEngine();
