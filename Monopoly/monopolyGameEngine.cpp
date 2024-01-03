@@ -86,10 +86,19 @@ void monopolyGameEngine::incPlayerIndexTurn() {
 	}
 }
 
+bool monopolyGameEngine::isRollDiceButtonClicked()
+{
+	if (rollDiceButton_->getIsActive()) {
+		rollDiceButton_->setIsActive(false);
+		return true;
+	}
+	return false;
+}
+
 unsigned int monopolyGameEngine::rollDice() const {	 // dices roll for 1-12 move
 	std::random_device rd;
 	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dist(2, 12);
+	std::uniform_int_distribution<> dist(1, 6);
 	return dist(gen);
 }
 void monopolyGameEngine::setTurnState(TurnState newState) {
@@ -176,6 +185,15 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal, int pos) 
 	return rent_to_pay;
 }
 
+void monopolyGameEngine::movePlayer(unsigned int turnIndex, unsigned int positionIncrement)
+{
+	int oldPos = players_[turnIndex].getPositon();
+	int newPos = (oldPos + positionIncrement) % 40;
+	players_[turnIndex].setPositon(newPos);
+	sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
+	players_[turnIndex].setSpritePosition(newPlayerSpritePos);
+}
+
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
@@ -183,19 +201,19 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 	switch (getTurnState()) {
 		case RollDice: {
-			rollDiceButton_->setIsVisible(true);
-			if (rollDiceButton_->getIsActive()) {
-				rollDiceButton_->setIsActive(false);
-				rolledVal = rollDice();
+			if(isRollDiceButtonClicked())
+			{
+				unsigned int roll1 = rollDice();
+				unsigned int roll2 = rollDice();
+				rolledVal = roll1 + roll2;
 				std::string rol = "Rolled Value: ";
 				std::string val = std::to_string(rolledVal);
 				rolledValueText_->setString(rol + val);
+
 				notificationsWall_.addToWall("Player " + std::to_string(players_[playerIndexturn_].getId()+1) + ": " + rol + val);
-				int oldPos = players_[playerIndexturn_].getPositon();
-				int newPos = (oldPos + rolledVal) % 40;
-				players_[playerIndexturn_].setPositon(newPos);
-				sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
-				players_[playerIndexturn_].setSpritePosition(newPlayerSpritePos);
+
+				movePlayer(playerIndexturn_, rolledVal);
+
 				rollDiceButton_->setIsVisible(false);
 				setTurnState(FieldAction);
 			}
@@ -328,6 +346,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 		break;
 
 		case TurnEnd:
+			rollDiceButton_->setIsVisible(true);
 			rolledValueText_->setString("");
 			resignBuyFieldButton_->setIsVisible(false);
 			buyFieldButton_->setIsVisible(false);
@@ -416,7 +435,7 @@ void monopolyGameEngine::createButtonRollDice() {
 	buttonRollDice->setFocusBackColor(FocusButtonBackColor);
 	buttonRollDice->setFocusTextColor(FocusButtonTextColor);
 	buttonRollDice->setIsClicked(false);
-	buttonRollDice->setIsVisible(false);
+	buttonRollDice->setIsVisible(true);
 	buttonRollDice->setIsActive(false);
 	buttonRollDice->setIsFocus(false);
 	rollDiceButton_ = buttonRollDice;

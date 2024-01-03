@@ -68,7 +68,10 @@ class monopolyGameEngine {
 	unsigned int getFieldPriceByPosition(unsigned int pos);
 	void addOwnerToPropertyField(std::shared_ptr<Player> player, unsigned int pos);
 
+	bool isRollDiceButtonClicked();
 	unsigned int rollDice() const;
+
+	void movePlayer(unsigned int turnIndex, unsigned int positionIncrement);
 
    public:
 	monopolyGameEngine();
