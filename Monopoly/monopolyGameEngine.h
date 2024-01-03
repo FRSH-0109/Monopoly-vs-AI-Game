@@ -49,6 +49,17 @@ class monopolyGameEngine {
 	sf::Texture propertyDataTexture_;
 	std::vector<std::shared_ptr<sf::Text>> propertyDataTexts_;
 
+	sf::Vector2f ALL_PROPERTY_DATA_POSITION = sf::Vector2f(1400, 260);
+	sf::Sprite allPropertyDataSprite_;
+	sf::Texture allPropertyDataTexture_;
+	std::vector<std::shared_ptr<sf::Text>> allPropertyDataTexts_;
+	sf::Vector2f NEXT_PROPERTY_BUTTON_POSITION = sf::Vector2f(1595, 220);
+	sf::Vector2f PREVIOUS_PROPERTY_BUTTON_POSITION = sf::Vector2f(1445, 220);
+	std::shared_ptr<Button> nextPropertyButton_;
+	std::shared_ptr<Button> previousPropertyButton_;
+	unsigned int currentPropertyShowed_ = 1;
+	sf::Time BUTTON_CLICK_DELAY_MS = sf::milliseconds(1000);
+
 	NotificationWall notificationsWall_;
 
 	// game staff
@@ -64,8 +75,7 @@ class monopolyGameEngine {
 	void buttonsWorker();
 	void turnInfoTextWorker();
 	sf::Vector2f getUpdatePlayerSpritePosition();
-	void clearPropertyData();
-	void showPropertyData(unsigned int pos);
+	void clearPropertyData(bool isPropertyShownToBuy);
 	unsigned int getFieldPriceByPosition(unsigned int pos);
 	void addOwnerToPropertyField(std::shared_ptr<Player> player, unsigned int pos);
 
@@ -75,6 +85,7 @@ class monopolyGameEngine {
 	void movePlayer(unsigned int turnIndex, unsigned int positionIncrement);
 	void notificationAdd(unsigned int index, std::string text);
 	void handlePassingStart(unsigned int oldPos, unsigned int newPos);
+	void showAllPropertiesWorker();
 
    public:
 	monopolyGameEngine();
@@ -86,6 +97,9 @@ class monopolyGameEngine {
 	void createTextPlayersInfo();
 	void updateTextPlayersInfo();
 	void createButtonBuyResign();
+	void createButtonNextProperty();
+	void createButtonPerviousProperty();
+	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);
@@ -94,6 +108,8 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<sf::Text>>& getTexts();
 	sf::Sprite& getPropertyDataSprite();
 	std::vector<std::shared_ptr<sf::Text>>& getPropertyDataTexts();
+	sf::Sprite& getAllPropertyDataSprite();
+	std::vector<std::shared_ptr<sf::Text>>& getAllPropertyDataTexts();
 	NotificationWall& getNotificationsWall();
 
 	// game staff

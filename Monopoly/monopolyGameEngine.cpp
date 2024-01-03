@@ -200,9 +200,69 @@ void monopolyGameEngine::handlePassingStart(unsigned int oldPos, unsigned int ne
 	}
 }
 
+void monopolyGameEngine::showAllPropertiesWorker() {
+	static bool allowToClickNext = true;
+	static bool allowToClickPrev = true;
+
+	if (nextPropertyButton_->getIsClicked() == false) {
+		allowToClickNext = true;
+		nextPropertyButton_->setIsActive(false);
+	}
+
+	if (previousPropertyButton_->getIsClicked() == false) {
+		allowToClickPrev = true;
+		previousPropertyButton_->setIsActive(false);
+	}
+
+	if (nextPropertyButton_->getIsActive() && allowToClickNext) {
+		allowToClickNext = false;
+		nextPropertyButton_->setIsActive(false);
+		++currentPropertyShowed_;
+		if (currentPropertyShowed_ == 40) {
+			currentPropertyShowed_ = 1;
+		}
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
+		while (!(field_type == STREET || field_type == STATION || field_type == UTILITY)) {
+			++currentPropertyShowed_;
+			if (currentPropertyShowed_ == 40) {
+				currentPropertyShowed_ = 1;
+			}
+			field_type = std::visit(
+				[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
+		}
+		clearPropertyData(false);
+		showPropertyData(currentPropertyShowed_, false);
+	}
+
+	if (previousPropertyButton_->getIsActive() && allowToClickPrev) {
+		allowToClickPrev = false;
+		previousPropertyButton_->setIsActive(false);
+		if (currentPropertyShowed_ == 0) {
+			currentPropertyShowed_ = 39;
+		} else {
+			--currentPropertyShowed_;
+		}
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
+		while (!(field_type == STREET || field_type == STATION || field_type == UTILITY)) {
+			if (currentPropertyShowed_ == 0) {
+				currentPropertyShowed_ = 39;
+			} else {
+				--currentPropertyShowed_;
+			}
+			field_type = std::visit(
+				[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
+		}
+		clearPropertyData(false);
+		showPropertyData(currentPropertyShowed_, false);
+	}
+}
+
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
+	showAllPropertiesWorker();
 	static int rolledVal;
 
 	switch (getTurnState()) {
@@ -250,8 +310,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 				if (owner == nullptr) {
 					setTurnState(BuyAction);
-					clearPropertyData();
-					showPropertyData(pos);
+					clearPropertyData(true);
+					showPropertyData(pos, true);
 				} else if (owner->getId() != players_[playerIndexturn_].getId()) {
 					unsigned int rent_to_pay;
 					std::cout << "Field taken, Rent to pay" << field_type << std::endl;
@@ -435,6 +495,14 @@ std::vector<std::shared_ptr<sf::Text>>& monopolyGameEngine::getPropertyDataTexts
 	return propertyDataTexts_;
 }
 
+sf::Sprite& monopolyGameEngine::getAllPropertyDataSprite() {
+	return allPropertyDataSprite_;
+}
+
+std::vector<std::shared_ptr<sf::Text>>& monopolyGameEngine::getAllPropertyDataTexts() {
+	return allPropertyDataTexts_;
+}
+
 void monopolyGameEngine::createButtonRollDice() {
 	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
@@ -588,11 +656,65 @@ void monopolyGameEngine::createButtonBuyResign() {
 	addButton(buttonResign);
 }
 
-void monopolyGameEngine::clearPropertyData() {
-	propertyDataTexts_.clear();
+void monopolyGameEngine::createButtonNextProperty() {
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonNext(new Button(Idle, "Next", buttonSize, getFontSize()));
+	buttonNext->setFont(getFont());
+	buttonNext->setPosition(NEXT_PROPERTY_BUTTON_POSITION);
+	buttonNext->setActiveBackColor(activeButtonBackColor);
+	buttonNext->setActiveTextColor(activeButtonTextColor);
+	buttonNext->setInactiveBackColor(inActiveButtonBackColor);
+	buttonNext->setInactiveTextColor(inActiveButtonTextColor);
+	buttonNext->setFocusBackColor(FocusButtonBackColor);
+	buttonNext->setFocusTextColor(FocusButtonTextColor);
+	buttonNext->setIsClicked(false);
+	buttonNext->setIsVisible(true);
+	buttonNext->setIsActive(false);
+	buttonNext->setIsFocus(false);
+	nextPropertyButton_ = buttonNext;
+	addButton(buttonNext);
 }
 
-void monopolyGameEngine::showPropertyData(unsigned int pos) {
+void monopolyGameEngine::createButtonPerviousProperty() {
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonPrev(new Button(Idle, "Previous", buttonSize, getFontSize()));
+	buttonPrev->setFont(getFont());
+	buttonPrev->setPosition(PREVIOUS_PROPERTY_BUTTON_POSITION);
+	buttonPrev->setActiveBackColor(activeButtonBackColor);
+	buttonPrev->setActiveTextColor(activeButtonTextColor);
+	buttonPrev->setInactiveBackColor(inActiveButtonBackColor);
+	buttonPrev->setInactiveTextColor(inActiveButtonTextColor);
+	buttonPrev->setFocusBackColor(FocusButtonBackColor);
+	buttonPrev->setFocusTextColor(FocusButtonTextColor);
+	buttonPrev->setIsClicked(false);
+	buttonPrev->setIsVisible(true);
+	buttonPrev->setIsActive(false);
+	buttonPrev->setIsFocus(false);
+	previousPropertyButton_ = buttonPrev;
+	addButton(buttonPrev);
+}
+
+void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {
+	if (isPropertyShownToBuy) {
+		propertyDataTexts_.clear();
+	} else {
+		allPropertyDataTexts_.clear();
+	}
+}
+
+void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShownToBuy) {
 	FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	unsigned int price;
 	unsigned int mortage;
@@ -636,28 +758,51 @@ void monopolyGameEngine::showPropertyData(unsigned int pos) {
 	unsigned int height = std::visit([](Field& field) { return field.getHeight(); }, getBoard()->getFieldById(pos));
 	std::string graphic_path =
 		std::visit([](Field& field) { return field.getGraphicPath(); }, getBoard()->getFieldById(pos));
-	if (!propertyDataTexture_.loadFromFile(graphic_path)) {
-		propertyDataSprite_.setColor(sf::Color::Green);
+
+	sf::Vector2f dataPos;
+	if (isPropertyShownToBuy) {
+		dataPos = PROPERTY_DATA_POSITION;
+		if (!propertyDataTexture_.loadFromFile(graphic_path)) {
+			propertyDataSprite_.setColor(sf::Color::Green);
+		}
+		propertyDataSprite_.setTexture(propertyDataTexture_, true);
+		sf::Vector2u texture_dim = propertyDataTexture_.getSize();
+		float scale_x = (float)width / (float)texture_dim.x;
+		float scale_y = (float)height / (float)texture_dim.y;
+		const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+		propertyDataSprite_.setScale(SCALE_VECT * PROPERTY_DATA_SCALE);
+		propertyDataSprite_.setPosition(dataPos.x, dataPos.y);
+		propertyDataSprite_.setRotation(0);
+
+	} else {
+		dataPos = ALL_PROPERTY_DATA_POSITION;
+		if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
+			allPropertyDataSprite_.setColor(sf::Color::Green);
+		}
+		allPropertyDataSprite_.setTexture(allPropertyDataTexture_, true);
+		sf::Vector2u texture_dim = allPropertyDataTexture_.getSize();
+		float scale_x = (float)width / (float)texture_dim.x;
+		float scale_y = (float)height / (float)texture_dim.y;
+		const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+		allPropertyDataSprite_.setScale(SCALE_VECT * PROPERTY_DATA_SCALE);
+		allPropertyDataSprite_.setPosition(dataPos.x, dataPos.y);
+		allPropertyDataSprite_.setRotation(0);
 	}
-	propertyDataSprite_.setTexture(propertyDataTexture_, true);
-	sf::Vector2u texture_dim = propertyDataTexture_.getSize();
-	float scale_x = (float)width / (float)texture_dim.x;
-	float scale_y = (float)height / (float)texture_dim.y;
-	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
-	propertyDataSprite_.setScale(SCALE_VECT * PROPERTY_DATA_SCALE);
-	propertyDataSprite_.setPosition(PROPERTY_DATA_POSITION.x, PROPERTY_DATA_POSITION.y);
-	propertyDataSprite_.setRotation(0);
 
 	const std::string streetName =
 		std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos));
 	std::shared_ptr<sf::Text> propertyName(new sf::Text(streetName, getFont(), getFontSize() - 2));
 	propertyName->setOrigin(
 		propertyName->getGlobalBounds().getSize() / 2.f + propertyName->getLocalBounds().getPosition());
+	sf::Sprite dataSprite;
+	if (isPropertyShownToBuy) {
+		dataSprite = propertyDataSprite_;
+	} else {
+		dataSprite = allPropertyDataSprite_;
+	}
 	propertyName->setPosition(
-		sf::Vector2f(PROPERTY_DATA_POSITION.x + (propertyDataSprite_.getGlobalBounds().getSize().x / 2.f),
-			PROPERTY_DATA_POSITION.y + 80));
+		sf::Vector2f(dataPos.x + (dataSprite.getGlobalBounds().getSize().x / 2.f), dataPos.y + 80));
 	propertyName->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyName);
 
 	const float yOffset = 90;
 	const float yOffset_step = 25;
@@ -665,223 +810,257 @@ void monopolyGameEngine::showPropertyData(unsigned int pos) {
 
 	std::shared_ptr<sf::Text> propertyPrice(
 		new sf::Text("Price: " + std::to_string(price), getFont(), getFontSize() - 2));
-	propertyPrice->setPosition(sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset));
+	propertyPrice->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset));
 	propertyPrice->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyPrice);
 
 	std::shared_ptr<sf::Text> propertyMortage(new sf::Text("Mortage:", getFont(), getFontSize() - 2));
-	propertyMortage->setPosition(
-		sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 8));
+	propertyMortage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
 	propertyMortage->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyMortage);
 
 	std::shared_ptr<sf::Text> propertyMortagePrice(new sf::Text(std::to_string(mortage), getFont(), getFontSize() - 2));
-	propertyMortagePrice->setPosition(sf::Vector2f(
-		PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 8));
+	propertyMortagePrice->setPosition(
+		sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 8));
 	propertyMortagePrice->setColor(sf::Color::Black);
-	propertyDataTexts_.push_back(propertyMortagePrice);
+
+	if (isPropertyShownToBuy) {
+		propertyDataTexts_.push_back(propertyName);
+		propertyDataTexts_.push_back(propertyMortagePrice);
+		propertyDataTexts_.push_back(propertyPrice);
+		propertyDataTexts_.push_back(propertyMortage);
+	} else {
+		allPropertyDataTexts_.push_back(propertyName);
+		allPropertyDataTexts_.push_back(propertyMortagePrice);
+		allPropertyDataTexts_.push_back(propertyPrice);
+		allPropertyDataTexts_.push_back(propertyMortage);
+	}
 
 	if (fieldType == STREET) {
 		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
-		propertyRent1->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 1));
+		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRent1->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent1);
 
 		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  with color set:", getFont(), getFontSize() - 2));
-		propertyRent2->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 2));
+		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
 		propertyRent2->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent2);
 
 		std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  with 1 house:", getFont(), getFontSize() - 2));
-		propertyRent3->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 3));
+		propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRent3->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent3);
 
 		std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  with 2 houses:", getFont(), getFontSize() - 2));
-		propertyRent4->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 4));
+		propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRent4->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent4);
 
 		std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  with 3 houses:", getFont(), getFontSize() - 2));
-		propertyRent5->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 5));
+		propertyRent5->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 5));
 		propertyRent5->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent5);
 
 		std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  with 4 houses:", getFont(), getFontSize() - 2));
-		propertyRent6->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 6));
+		propertyRent6->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
 		propertyRent6->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent6);
 
 		std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  with hotel:", getFont(), getFontSize() - 2));
-		propertyRent7->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 7));
+		propertyRent7->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 7));
 		propertyRent7->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent7);
 
 		std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Houses cost:", getFont(), getFontSize() - 2));
-		propertyHouseCost->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 9));
+		propertyHouseCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 9));
 		propertyHouseCost->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyHouseCost);
 
 		std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Hotel cost:", getFont(), getFontSize() - 2));
-		propertyHotelCost->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 10));
+		propertyHotelCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 10));
 		propertyHotelCost->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyHotelCost);
 
 		std::shared_ptr<sf::Text> propertyRentCost1(
 			new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
-		propertyRentCost1->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 1));
+		propertyRentCost1->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRentCost1->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost1);
 
 		std::shared_ptr<sf::Text> propertyRentCost2(
 			new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
-		propertyRentCost2->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 2));
+		propertyRentCost2->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 2));
 		propertyRentCost2->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost2);
 
 		std::shared_ptr<sf::Text> propertyRentCost3(
 			new sf::Text(std::to_string(rents[2]), getFont(), getFontSize() - 2));
-		propertyRentCost3->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 3));
+		propertyRentCost3->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRentCost3->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost3);
 
 		std::shared_ptr<sf::Text> propertyRentCost4(
 			new sf::Text(std::to_string(rents[3]), getFont(), getFontSize() - 2));
-		propertyRentCost4->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 4));
+		propertyRentCost4->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRentCost4->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost4);
 
 		std::shared_ptr<sf::Text> propertyRentCost5(
 			new sf::Text(std::to_string(rents[4]), getFont(), getFontSize() - 2));
-		propertyRentCost5->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 5));
+		propertyRentCost5->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 5));
 		propertyRentCost5->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost5);
 
 		std::shared_ptr<sf::Text> propertyRentCost6(
 			new sf::Text(std::to_string(rents[5]), getFont(), getFontSize() - 2));
-		propertyRentCost6->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 6));
+		propertyRentCost6->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 6));
 		propertyRentCost6->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost6);
 
 		std::shared_ptr<sf::Text> propertyRentCost7(
 			new sf::Text(std::to_string(rents[6]), getFont(), getFontSize() - 2));
-		propertyRentCost7->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 7));
+		propertyRentCost7->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 7));
 		propertyRentCost7->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost7);
 
 		std::shared_ptr<sf::Text> propertyHousePrice(
 			new sf::Text(std::to_string(housePrice), getFont(), getFontSize() - 2));
-		propertyHousePrice->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 9));
+		propertyHousePrice->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 9));
 		propertyHousePrice->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyHousePrice);
 
 		std::shared_ptr<sf::Text> propertyHotelPrice(
 			new sf::Text(std::to_string(hotelPrice), getFont(), getFontSize() - 2));
-		propertyHotelPrice->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 10));
+		propertyHotelPrice->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 10));
 		propertyHotelPrice->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyHotelPrice);
+
+		if (isPropertyShownToBuy) {
+			propertyDataTexts_.push_back(propertyRent1);
+			propertyDataTexts_.push_back(propertyRent2);
+			propertyDataTexts_.push_back(propertyRent3);
+			propertyDataTexts_.push_back(propertyRent4);
+			propertyDataTexts_.push_back(propertyRent5);
+			propertyDataTexts_.push_back(propertyRent6);
+			propertyDataTexts_.push_back(propertyRent7);
+			propertyDataTexts_.push_back(propertyHouseCost);
+			propertyDataTexts_.push_back(propertyRentCost1);
+			propertyDataTexts_.push_back(propertyRentCost2);
+			propertyDataTexts_.push_back(propertyRentCost3);
+			propertyDataTexts_.push_back(propertyRentCost4);
+			propertyDataTexts_.push_back(propertyRentCost5);
+			propertyDataTexts_.push_back(propertyRentCost6);
+			propertyDataTexts_.push_back(propertyRentCost7);
+			propertyDataTexts_.push_back(propertyHousePrice);
+			propertyDataTexts_.push_back(propertyHotelPrice);
+		} else {
+			allPropertyDataTexts_.push_back(propertyRent1);
+			allPropertyDataTexts_.push_back(propertyRent2);
+			allPropertyDataTexts_.push_back(propertyRent3);
+			allPropertyDataTexts_.push_back(propertyRent4);
+			allPropertyDataTexts_.push_back(propertyRent5);
+			allPropertyDataTexts_.push_back(propertyRent6);
+			allPropertyDataTexts_.push_back(propertyRent7);
+			allPropertyDataTexts_.push_back(propertyHouseCost);
+			allPropertyDataTexts_.push_back(propertyHotelCost);
+			allPropertyDataTexts_.push_back(propertyRentCost1);
+			allPropertyDataTexts_.push_back(propertyRentCost2);
+			allPropertyDataTexts_.push_back(propertyRentCost3);
+			allPropertyDataTexts_.push_back(propertyRentCost4);
+			allPropertyDataTexts_.push_back(propertyRentCost5);
+			allPropertyDataTexts_.push_back(propertyRentCost6);
+			allPropertyDataTexts_.push_back(propertyRentCost7);
+			allPropertyDataTexts_.push_back(propertyHousePrice);
+			allPropertyDataTexts_.push_back(propertyHotelPrice);
+		}
 	} else if (fieldType == STATION) {
 		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
-		propertyRent1->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 1));
+		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRent1->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent1);
 
 		std::shared_ptr<sf::Text> propertyRent2(new sf::Text(" if 2 are owned:", getFont(), getFontSize() - 2));
-		propertyRent2->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 2));
+		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
 		propertyRent2->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent2);
 
 		std::shared_ptr<sf::Text> propertyRent3(new sf::Text(" if 3 are owned:", getFont(), getFontSize() - 2));
-		propertyRent3->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 3));
+		propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRent3->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent3);
 
 		std::shared_ptr<sf::Text> propertyRent4(new sf::Text(" if 4 are owned:", getFont(), getFontSize() - 2));
-		propertyRent4->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 4));
+		propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRent4->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent4);
 
 		std::shared_ptr<sf::Text> propertyRentCost1(
 			new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
-		propertyRentCost1->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 1));
+		propertyRentCost1->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRentCost1->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost1);
 
 		std::shared_ptr<sf::Text> propertyRentCost2(
 			new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
-		propertyRentCost2->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 2));
+		propertyRentCost2->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 2));
 		propertyRentCost2->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost2);
 
 		std::shared_ptr<sf::Text> propertyRentCost3(
 			new sf::Text(std::to_string(rents[2]), getFont(), getFontSize() - 2));
-		propertyRentCost3->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 3));
+		propertyRentCost3->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRentCost3->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost3);
 
 		std::shared_ptr<sf::Text> propertyRentCost4(
 			new sf::Text(std::to_string(rents[3]), getFont(), getFontSize() - 2));
-		propertyRentCost4->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 4));
+		propertyRentCost4->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRentCost4->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost4);
+
+		if (isPropertyShownToBuy) {
+			propertyDataTexts_.push_back(propertyRent1);
+			propertyDataTexts_.push_back(propertyRent2);
+			propertyDataTexts_.push_back(propertyRent3);
+			propertyDataTexts_.push_back(propertyRent4);
+			propertyDataTexts_.push_back(propertyRentCost1);
+			propertyDataTexts_.push_back(propertyRentCost2);
+			propertyDataTexts_.push_back(propertyRentCost3);
+			propertyDataTexts_.push_back(propertyRentCost4);
+		} else {
+			allPropertyDataTexts_.push_back(propertyRent1);
+			allPropertyDataTexts_.push_back(propertyRent2);
+			allPropertyDataTexts_.push_back(propertyRent3);
+			allPropertyDataTexts_.push_back(propertyRent4);
+			allPropertyDataTexts_.push_back(propertyRentCost1);
+			allPropertyDataTexts_.push_back(propertyRentCost2);
+			allPropertyDataTexts_.push_back(propertyRentCost3);
+			allPropertyDataTexts_.push_back(propertyRentCost4);
+		}
 	} else {
 		std::shared_ptr<sf::Text> propertyRent(new sf::Text("Rent:", getFont(), getFontSize() - 2));
-		propertyRent->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 1));
+		propertyRent->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRent->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent);
 
 		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("1 utility is owned: ", getFont(), getFontSize() - 2));
-		propertyRent1->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 3));
+		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRent1->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent1);
 
 		std::shared_ptr<sf::Text> propertyRentCost1(
 			new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
-		propertyRentCost1->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 4));
+		propertyRentCost1->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRentCost1->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost1);
 
 		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("2 utilities are owned: ", getFont(), getFontSize() - 2));
-		propertyRent2->setPosition(
-			sf::Vector2f(PROPERTY_DATA_POSITION.x + 20, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 6));
+		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
 		propertyRent2->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRent2);
 
 		std::shared_ptr<sf::Text> propertyRentCost2(
 			new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
-		propertyRentCost2->setPosition(sf::Vector2f(
-			PROPERTY_DATA_POSITION.x + rentPricesOffsetX, PROPERTY_DATA_POSITION.y + yOffset + yOffset_step * 7));
+		propertyRentCost2->setPosition(
+			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 7));
 		propertyRentCost2->setColor(sf::Color::Black);
-		propertyDataTexts_.push_back(propertyRentCost2);
+
+		if (isPropertyShownToBuy) {
+			propertyDataTexts_.push_back(propertyRent);
+			propertyDataTexts_.push_back(propertyRent1);
+			propertyDataTexts_.push_back(propertyRent2);
+			propertyDataTexts_.push_back(propertyRentCost1);
+			propertyDataTexts_.push_back(propertyRentCost2);
+		} else {
+			allPropertyDataTexts_.push_back(propertyRent);
+			allPropertyDataTexts_.push_back(propertyRent1);
+			allPropertyDataTexts_.push_back(propertyRent2);
+			allPropertyDataTexts_.push_back(propertyRentCost1);
+			allPropertyDataTexts_.push_back(propertyRentCost2);
+		}
 	}
 }
 

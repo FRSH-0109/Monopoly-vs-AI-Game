@@ -179,7 +179,7 @@
     {
         "id": 15,
         "type": "STATION",
-        "name": "Lotniko",
+        "name": "Lotnisko",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_station.png",
         "width": 60,
         "height": 100,
@@ -471,7 +471,7 @@
         "width": 60,
         "height": 100,
         "price": 400,
-        "rent_values": [50, 200, 1400, 1700, 2000],
+        "rent_values": [50, 200, 600, 1400, 1700, 2000],
         "house_price": 200,
         "hotel_price": 200,
         "group_members": [37],

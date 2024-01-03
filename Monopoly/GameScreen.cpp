@@ -23,6 +23,9 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createTextRolledValue();
 	monopoly_game_engine_.createTextPlayersInfo();
 	monopoly_game_engine_.createButtonBuyResign();
+	monopoly_game_engine_.createButtonNextProperty();
+	monopoly_game_engine_.createButtonPerviousProperty();
+	monopoly_game_engine_.showPropertyData(1, false);
 }
 
 GameScreen::~GameScreen() {
@@ -37,15 +40,14 @@ ScreenEventType GameScreen::worker() {
 				element->mouseIsOver();
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 					element->setIsClicked(true);
+				} else {
+					element->setIsClicked(false);
 				}
 			} else {
 				element->mouseIsNotOver();
 			}
 			if (element->getIsClicked()) {
-				// setOtherButtonsInactive(element);
-				// buttonClickHandle(element);
 				element->setIsActive(true);
-				element->setIsClicked(false);
 			}
 		}
 
@@ -121,11 +123,16 @@ void GameScreen::draw() {
 		getContextWindow()->getWindow().draw(player.getSprite());
 	}
 
-	if (monopoly_game_engine_.getTurnState()) {
+	if (monopoly_game_engine_.getTurnState() == BuyAction) {
 		getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
 		for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
 			getContextWindow()->getWindow().draw(*text_ptr);
 		}
+	}
+
+	getContextWindow()->getWindow().draw(monopoly_game_engine_.getAllPropertyDataSprite());
+	for (auto text_ptr : monopoly_game_engine_.getAllPropertyDataTexts()) {
+		getContextWindow()->getWindow().draw(*text_ptr);
 	}
 
 	// Notifications wall draw
