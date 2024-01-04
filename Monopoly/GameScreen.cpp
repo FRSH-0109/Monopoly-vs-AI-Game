@@ -45,6 +45,7 @@ ScreenEventType GameScreen::worker() {
 				}
 			} else {
 				element->mouseIsNotOver();
+				element->setIsClicked(false);
 			}
 			if (element->getIsClicked()) {
 				element->setIsActive(true);

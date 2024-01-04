@@ -267,9 +267,17 @@ void monopolyGameEngine::monopolyGameWorker() {
 	showAllPropertiesWorker();
 	static int rolledVal;
 
+	static bool allowToClickRollDice = true;
+
+	if (rollDiceButton_->getIsClicked() == false) {
+		allowToClickRollDice = true;
+		rollDiceButton_->setIsActive(false);
+	}
+
 	switch (getTurnState()) {
 		case RollDice: {
-			if (isRollDiceButtonClicked()) {
+			if (isRollDiceButtonClicked() && allowToClickRollDice) {
+				allowToClickRollDice = false;
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
 				rolledVal = roll1 + roll2;
