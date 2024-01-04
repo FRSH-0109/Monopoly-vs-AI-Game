@@ -138,7 +138,7 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 	return fields_owned;
 }
 
-unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal, int pos) {
+unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos) {
 	unsigned int rent_to_pay;
 	FieldType field_type = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	if (field_type == STREET) {
@@ -182,7 +182,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal, int pos) 
 			const unsigned int utility_owned = calculateGroupFieldsOwned(player_owns, field);
 			std::map<unsigned int, UtilityTiers> utility_number_map = {{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
 			UtilityTiers utility_tier = utility_number_map[utility_owned];
-			rent_to_pay = rolledVal * rent_multipliers[utility_tier];
+			rent_to_pay = rolled_val * rent_multipliers[utility_tier];
 		}
 	}
 	return rent_to_pay;
@@ -265,22 +265,22 @@ void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
 	showAllPropertiesWorker();
-	static int rolledVal;
+	static int rolled_val;
 
 	switch (getTurnState()) {
 		case RollDice: {
 			if (isRollDiceButtonClicked()) {
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
-				rolledVal = roll1 + roll2;
+				rolled_val = roll1 + roll2;
 				std::string rol = "Rolled value: ";
-				std::string val = std::to_string(rolledVal);
+				std::string val = std::to_string(rolled_val);
 				rolledValueText_->setString(rol + val);
 
 				notificationAdd(playerIndexturn_, rol + val);
 
 				int oldPos = players_[playerIndexturn_].getPositon();
-				movePlayer(playerIndexturn_, rolledVal);
+				movePlayer(playerIndexturn_, rolled_val);
 				int newPos = players_[playerIndexturn_].getPositon();
 				handlePassingStart(oldPos, newPos);
 
@@ -315,56 +315,56 @@ void monopolyGameEngine::monopolyGameWorker() {
 					clearPropertyData(true);
 					showPropertyData(pos, true);
 				} else if (owner->getId() != players_[playerIndexturn_].getId()) {
-					unsigned int rent_to_pay;
-					std::cout << "Field taken, Rent to pay" << field_type << std::endl;
-					// unsigned int rent_to_pay = calculateRent();
-					// FieldType field_type =
-					// 	std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
-					if (field_type == STREET) {
-						StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
-						unsigned int house_number = field.getHouseNumber();
-						std::map<StreetTiers, unsigned int> rent_values = field.getRentValues();
-						if (field.getIsMortaged()) {
-							rent_to_pay = 0;
-						} else if (field.getIsHotel()) {
-							rent_to_pay = rent_values[HOTEL];
-						} else if (house_number != 0) {
-							std::map<unsigned int, StreetTiers> house_number_map = {
-								{1, ONE_HOUSE}, {2, TWO_HOUESES}, {3, THREE_HOUSES}, {4, FOUR_HOUSES}};
-							StreetTiers rent_tier = house_number_map[house_number];
-							rent_to_pay = rent_values[rent_tier];
-						} else if (groupCompleted(players_[playerIndexturn_].getFiledOwnedId(), field)) {
-							rent_to_pay = 2 * rent_values[NO_HOUSES];
-						} else {
-							rent_to_pay = rent_values[NO_HOUSES];
-						}
-					} else if (field_type == STATION) {
-						StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
-						if (field.getIsMortaged()) {
-							rent_to_pay = 0;
-						} else {
-							std::map<StationTiers, unsigned int> rent_values = field.getRentValues();
-							const unsigned int stations_owned =
-								calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
-							std::map<unsigned int, StationTiers> stations_number_map = {
-								{1, ONE_STATION}, {2, TWO_STATIONS}, {3, THREE_STATIONS}, {4, FOUR_STATIONS}};
-							StationTiers rent_tier = stations_number_map[stations_owned];
-							rent_to_pay = rent_values[rent_tier];
-						}
-					} else if (field_type == UTILITY) {
-						UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
-						if (field.getIsMortaged()) {
-							rent_to_pay = 0;
-						} else {
-							std::map<UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
-							const unsigned int utility_owned =
-								calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
-							std::map<unsigned int, UtilityTiers> utility_number_map = {
-								{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
-							UtilityTiers utility_tier = utility_number_map[utility_owned];
-							rent_to_pay = rolledVal * rent_multipliers[utility_tier];
-						}
-					}
+					unsigned int rent_to_pay = calculateRent(rolled_val, pos);
+					// std::cout << "Field taken, Rent to pay" << field_type << std::endl;
+					// // unsigned int rent_to_pay = calculateRent();
+					// // FieldType field_type =
+					// // 	std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
+					// if (field_type == STREET) {
+					// 	StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
+					// 	unsigned int house_number = field.getHouseNumber();
+					// 	std::map<StreetTiers, unsigned int> rent_values = field.getRentValues();
+					// 	if (field.getIsMortaged()) {
+					// 		rent_to_pay = 0;
+					// 	} else if (field.getIsHotel()) {
+					// 		rent_to_pay = rent_values[HOTEL];
+					// 	} else if (house_number != 0) {
+					// 		std::map<unsigned int, StreetTiers> house_number_map = {
+					// 			{1, ONE_HOUSE}, {2, TWO_HOUESES}, {3, THREE_HOUSES}, {4, FOUR_HOUSES}};
+					// 		StreetTiers rent_tier = house_number_map[house_number];
+					// 		rent_to_pay = rent_values[rent_tier];
+					// 	} else if (groupCompleted(players_[playerIndexturn_].getFiledOwnedId(), field)) {
+					// 		rent_to_pay = 2 * rent_values[NO_HOUSES];
+					// 	} else {
+					// 		rent_to_pay = rent_values[NO_HOUSES];
+					// 	}
+					// } else if (field_type == STATION) {
+					// 	StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
+					// 	if (field.getIsMortaged()) {
+					// 		rent_to_pay = 0;
+					// 	} else {
+					// 		std::map<StationTiers, unsigned int> rent_values = field.getRentValues();
+					// 		const unsigned int stations_owned =
+					// 			calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
+					// 		std::map<unsigned int, StationTiers> stations_number_map = {
+					// 			{1, ONE_STATION}, {2, TWO_STATIONS}, {3, THREE_STATIONS}, {4, FOUR_STATIONS}};
+					// 		StationTiers rent_tier = stations_number_map[stations_owned];
+					// 		rent_to_pay = rent_values[rent_tier];
+					// 	}
+					// } else if (field_type == UTILITY) {
+					// 	UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
+					// 	if (field.getIsMortaged()) {
+					// 		rent_to_pay = 0;
+					// 	} else {
+					// 		std::map<UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
+					// 		const unsigned int utility_owned =
+					// 			calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
+					// 		std::map<unsigned int, UtilityTiers> utility_number_map = {
+					// 			{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
+					// 		UtilityTiers utility_tier = utility_number_map[utility_owned];
+					// 		rent_to_pay = rolled_val * rent_multipliers[utility_tier];
+					// 	}
+					// }
 					std::cout << "Rent to pay: " << rent_to_pay << std::endl;
 					setTurnState(PayRent);
 				} else {
