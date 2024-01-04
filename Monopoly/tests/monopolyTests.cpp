@@ -112,7 +112,31 @@ TEST_CASE("monopolyGameEngine") {
 		}
 	}
 
-	SECTION("calculateGroupFieldOwned() method") {}
+	SECTION("calculateGroupFieldOwned() method") {
+		SECTION("StreetField") {
+			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 6, 8, 9, 15, 28, 37, 39};
+			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 28, 37, 39};
+			StreetField& test_field_8 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(8));
+			REQUIRE(monopoly_engine.calculateGroupFieldsOwned(PLAYER_FIELDS_1, test_field_8) == 3);
+			REQUIRE(monopoly_engine.calculateGroupFieldsOwned(PLAYER_FIELDS_2, test_field_8) == 2);
+		}
+
+		SECTION("StationField") {
+			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 5, 9, 15, 25, 28, 35, 37, 39};
+			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 23, 28, 35, 37, 39};
+			StationField& test_field_35 = std::get<StationField>(monopoly_engine.getBoard()->getFieldById(35));
+			REQUIRE(monopoly_engine.calculateGroupFieldsOwned(PLAYER_FIELDS_1, test_field_35) == 4);
+			REQUIRE(monopoly_engine.calculateGroupFieldsOwned(PLAYER_FIELDS_2, test_field_35) == 2);
+		}
+
+		SECTION("UtilityField") {
+			std::vector<unsigned int> PLAYER_FIELDS_1 = {1, 5, 9, 12, 25, 28, 37, 39};
+			std::vector<unsigned int> PLAYER_FIELDS_2 = {1, 3, 9, 15, 23, 28, 37, 39};
+			UtilityField& test_field_28 = std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(28));
+			REQUIRE(monopoly_engine.calculateGroupFieldsOwned(PLAYER_FIELDS_1, test_field_28) == 2);
+			REQUIRE(monopoly_engine.calculateGroupFieldsOwned(PLAYER_FIELDS_2, test_field_28) == 1);
+		}
+	}
 
 	SECTION("calculateRent() method") {
 		SECTION("Street is mortaged") {
@@ -132,6 +156,7 @@ TEST_CASE("monopolyGameEngine") {
 		SECTION("Street with Houses") {
 			StreetField& test_field_3 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3));
 			test_field_3.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			monopoly_engine.getPlayers()[0].addFieldOwnedId(3);
 			test_field_3.setHouseNumber(3);
 			unsigned int expected_rent = 180;
 			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
@@ -153,10 +178,75 @@ TEST_CASE("monopolyGameEngine") {
 		SECTION("Street without a full group house") {
 			StreetField& test_field_1 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(1));
 			test_field_1.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[2]));
+			monopoly_engine.getPlayers()[2].addFieldOwnedId(1);
 			StreetField& test_field_3 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3));
 			test_field_3.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			monopoly_engine.getPlayers()[0].addFieldOwnedId(3);
 			unsigned int expected_rent = 4;
 			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Station is mortaged") {
+			std::get<StationField>(monopoly_engine.getBoard()->getFieldById(15)).setIsMortaged(true);
+			unsigned int expected_rent = 0;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 15);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("1 station") {
+			StationField& test_field_15 = std::get<StationField>(monopoly_engine.getBoard()->getFieldById(15));
+			test_field_15.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			monopoly_engine.getPlayers()[0].addFieldOwnedId(15);
+			unsigned int expected_rent = 25;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 15);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Multiple stations") {
+			StationField& test_field_15 = std::get<StationField>(monopoly_engine.getBoard()->getFieldById(15));
+			std::shared_ptr<Player> fields_owner = std::make_shared<Player>(monopoly_engine.getPlayers()[0]);
+			test_field_15.setOwner(fields_owner);
+			fields_owner->addFieldOwnedId(15);
+			StationField& test_field_25 = std::get<StationField>(monopoly_engine.getBoard()->getFieldById(25));
+			test_field_25.setOwner(fields_owner);
+			fields_owner->addFieldOwnedId(25);
+			StationField& test_field_35 = std::get<StationField>(monopoly_engine.getBoard()->getFieldById(35));
+			test_field_35.setOwner(fields_owner);
+			fields_owner->addFieldOwnedId(35);
+			unsigned int expected_rent = 100;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 15);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("Utility is mortaged") {
+			std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(12)).setIsMortaged(true);
+			unsigned int expected_rent = 0;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 12);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("1 Utility owned") {
+			UtilityField& test_field_12 = std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(12));
+			test_field_12.setOwner(std::make_shared<Player>(monopoly_engine.getPlayers()[0]));
+			monopoly_engine.getPlayers()[0].addFieldOwnedId(12);
+			const unsigned int DICE_ROLL = 7;
+			unsigned int expected_rent = 4 * DICE_ROLL;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(DICE_ROLL, 12);
+			CHECK(calculated_rent == expected_rent);
+		}
+
+		SECTION("2 Utilities owned") {
+			UtilityField& test_field_12 = std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(12));
+			std::shared_ptr<Player> fields_owner = std::make_shared<Player>(monopoly_engine.getPlayers()[0]);
+			test_field_12.setOwner(fields_owner);
+			fields_owner->addFieldOwnedId(12);
+			UtilityField& test_field_28 = std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(28));
+			test_field_28.setOwner(fields_owner);
+			fields_owner->addFieldOwnedId(28);
+			const unsigned int DICE_ROLL = 4;
+			unsigned int expected_rent = 10 * DICE_ROLL;
+			unsigned int calculated_rent = monopoly_engine.calculateRent(DICE_ROLL, 12);
 			CHECK(calculated_rent == expected_rent);
 		}
 	}

@@ -165,7 +165,8 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal, int pos) 
 			rent_to_pay = 0;
 		} else {
 			std::map<StationTiers, unsigned int> rent_values = field.getRentValues();
-			const unsigned int stations_owned = calculateGroupFieldsOwned(field.getOwner()->getFiledOwnedId(), field);
+			std::vector<unsigned int> player_owns = field.getOwner()->getFiledOwnedId();
+			const unsigned int stations_owned = calculateGroupFieldsOwned(player_owns, field);
 			std::map<unsigned int, StationTiers> stations_number_map = {
 				{1, ONE_STATION}, {2, TWO_STATIONS}, {3, THREE_STATIONS}, {4, FOUR_STATIONS}};
 			StationTiers rent_tier = stations_number_map[stations_owned];
@@ -177,7 +178,8 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolledVal, int pos) 
 			rent_to_pay = 0;
 		} else {
 			std::map<UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
-			const unsigned int utility_owned = calculateGroupFieldsOwned(field.getOwner()->getFiledOwnedId(), field);
+			std::vector<unsigned int> player_owns = field.getOwner()->getFiledOwnedId();
+			const unsigned int utility_owned = calculateGroupFieldsOwned(player_owns, field);
 			std::map<unsigned int, UtilityTiers> utility_number_map = {{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
 			UtilityTiers utility_tier = utility_number_map[utility_owned];
 			rent_to_pay = rolledVal * rent_multipliers[utility_tier];
