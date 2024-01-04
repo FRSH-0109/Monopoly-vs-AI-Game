@@ -324,57 +324,15 @@ void monopolyGameEngine::monopolyGameWorker() {
 					showPropertyData(pos, true);
 				} else if (owner->getId() != players_[playerIndexturn_]->getId()) {
 					unsigned int rent_to_pay = calculateRent(rolled_val, pos);
-					// std::cout << "Field taken, Rent to pay" << field_type << std::endl;
-					// // unsigned int rent_to_pay = calculateRent();
-					// // FieldType field_type =
-					// // 	std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
-					// if (field_type == STREET) {
-					// 	StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
-					// 	unsigned int house_number = field.getHouseNumber();
-					// 	std::map<StreetTiers, unsigned int> rent_values = field.getRentValues();
-					// 	if (field.getIsMortaged()) {
-					// 		rent_to_pay = 0;
-					// 	} else if (field.getIsHotel()) {
-					// 		rent_to_pay = rent_values[HOTEL];
-					// 	} else if (house_number != 0) {
-					// 		std::map<unsigned int, StreetTiers> house_number_map = {
-					// 			{1, ONE_HOUSE}, {2, TWO_HOUESES}, {3, THREE_HOUSES}, {4, FOUR_HOUSES}};
-					// 		StreetTiers rent_tier = house_number_map[house_number];
-					// 		rent_to_pay = rent_values[rent_tier];
-					// 	} else if (groupCompleted(players_[playerIndexturn_].getFiledOwnedId(), field)) {
-					// 		rent_to_pay = 2 * rent_values[NO_HOUSES];
-					// 	} else {
-					// 		rent_to_pay = rent_values[NO_HOUSES];
-					// 	}
-					// } else if (field_type == STATION) {
-					// 	StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
-					// 	if (field.getIsMortaged()) {
-					// 		rent_to_pay = 0;
-					// 	} else {
-					// 		std::map<StationTiers, unsigned int> rent_values = field.getRentValues();
-					// 		const unsigned int stations_owned =
-					// 			calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
-					// 		std::map<unsigned int, StationTiers> stations_number_map = {
-					// 			{1, ONE_STATION}, {2, TWO_STATIONS}, {3, THREE_STATIONS}, {4, FOUR_STATIONS}};
-					// 		StationTiers rent_tier = stations_number_map[stations_owned];
-					// 		rent_to_pay = rent_values[rent_tier];
-					// 	}
-					// } else if (field_type == UTILITY) {
-					// 	UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
-					// 	if (field.getIsMortaged()) {
-					// 		rent_to_pay = 0;
-					// 	} else {
-					// 		std::map<UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
-					// 		const unsigned int utility_owned =
-					// 			calculateGroupFieldsOwned(players_[playerIndexturn_].getFiledOwnedId(), field);
-					// 		std::map<unsigned int, UtilityTiers> utility_number_map = {
-					// 			{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
-					// 		UtilityTiers utility_tier = utility_number_map[utility_owned];
-					// 		rent_to_pay = rolled_val * rent_multipliers[utility_tier];
-					// 	}
-					// }
-					std::cout << "Rent to pay: " << rent_to_pay << std::endl;
-					setTurnState(PayRent);
+					std::string notification("Rent to pay: " + std::to_string(rent_to_pay));
+					notificationAdd(playerIndexturn_, notification);
+					if (players_[playerIndexturn_]->getMoney() >= rent_to_pay) {
+						players_[playerIndexturn_]->substractMoney(rent_to_pay);
+						owner->addMoney(rent_to_pay);
+						setTurnState(TurnEnd);
+					} else {
+						setTurnState(PayRent);
+					}
 				} else {
 					std::cout << "No action - player owns this field" << field_type << std::endl;
 					setTurnState(TurnEnd);
@@ -399,7 +357,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
 					notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
 
-					players_[playerIndexturn_]->setMoney(players_[playerIndexturn_]->getMoney() - price);
+					players_[playerIndexturn_]->substractMoney(price);
 					players_[playerIndexturn_]->addFieldOwnedId(pos);
 					std::shared_ptr<Player> player_ptr = players_[playerIndexturn_];
 					addOwnerToPropertyField(player_ptr, pos);
@@ -415,6 +373,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 					setTurnState(TurnEnd);
 				}
 				buyFieldButton_->setIsActive(false);
+
 			}
 
 			if (resignBuyFieldButton_->getIsActive()) {
@@ -430,6 +389,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 		} break;
 
 		case PayRent: {
+			// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia nieruchomości
+			std::cout << "Gracz ma problemy finansowe" << std::endl;
 			setTurnState(TurnEnd);
 		} break;
 
