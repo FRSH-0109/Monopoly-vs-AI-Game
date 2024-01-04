@@ -42,12 +42,13 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			player->setSpriteOffsetY(0.66f);
 		}
 		const sf::Vector2i BOARD_POSITION = gameboard_->getBoardPosition();
+		const float HEIGHT_OFFSET = 20.0;
 		const unsigned int FIELD_WIDTH =
 			std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(0));
 		const unsigned int FIELD_HEIGHT =
-			std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0));
+			std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0)) - HEIGHT_OFFSET;
 		const float SPRITE_POSITION_X = (float)BOARD_POSITION.x + (float)FIELD_WIDTH * player->getSpriteOffsetX();
-		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player->getSpriteOffsetY();
+		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player->getSpriteOffsetY() + (float)HEIGHT_OFFSET;
 		player->setSpritePosition(sf::Vector2f(SPRITE_POSITION_X, SPRITE_POSITION_Y));
 		++i;
 	}
@@ -410,21 +411,22 @@ void monopolyGameEngine::monopolyGameWorker() {
 sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	float x_offset;
 	float y_offset;
+	const float HEIGHT_OFFSET = 20.0; // If we want piece to go lower we increase this value.
 	unsigned int player_position = players_[playerIndexturn_]->getPositon();
 	PossibleFields& curr_field = getBoard()->getFieldById(player_position);
 	unsigned int curr_field_width = std::visit([](Field& field) { return field.getWidth(); }, curr_field);
 	unsigned int curr_field_height = std::visit([](Field& field) { return field.getHeight(); }, curr_field);
 	if (player_position <= 10) {
 		x_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
-		y_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY();
+		y_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY() + HEIGHT_OFFSET;
 	} else if (player_position > 10 && player_position <= 20) {
-		x_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX();
+		x_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX() - HEIGHT_OFFSET;
 		y_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetY();
 	} else if (player_position > 20 && player_position <= 30) {
 		x_offset = -(float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
-		y_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY();
+		y_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY() - HEIGHT_OFFSET;
 	} else if (player_position > 30 && player_position <= 40) {
-		x_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX();
+		x_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX() + HEIGHT_OFFSET;
 		y_offset = -(float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetY();
 	}
 	float pos_x = (float)std::visit([](Field& field) { return field.getPosition().x; }, curr_field) + x_offset;
