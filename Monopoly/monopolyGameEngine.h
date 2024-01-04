@@ -23,7 +23,7 @@ class monopolyGameEngine {
 
 	const std::string GAMEBOARD_FILE_PATH = "Monopoly/game_config_json/board.json";
 	std::shared_ptr<Board> gameboard_;
-	std::vector<Player> players_;
+	std::vector<std::shared_ptr<Player>> players_;
 
 	// gui
 	const unsigned int FONT_SIZE = 30;
@@ -118,7 +118,7 @@ class monopolyGameEngine {
 	void createBoard();
 	void clearBoard();
 	std::shared_ptr<Board> getBoard();
-	std::vector<Player>& getPlayers();
+	std::vector<std::shared_ptr<Player>>& getPlayers();
 	void setPlayerIndexTurn(unsigned int indx);
 	TurnState getTurnState() const;
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;

@@ -18,7 +18,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			new_player.setIsAi(!(it->isHuman));
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
-			players_.push_back(new_player);
+			players_.push_back(std::make_shared<Player>(new_player));
 		}
 		++playerId;
 	};
@@ -29,26 +29,26 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
 
-	for (Player& player : players_) {
-		player.createSprite();
+	for (std::shared_ptr<Player> player : players_) {
+		player->createSprite();
 		if (i % 2 == 0) {
-			player.setSpriteOffsetX(0.33f);
+			player->setSpriteOffsetX(0.33f);
 		} else {
-			player.setSpriteOffsetX(0.66f);
+			player->setSpriteOffsetX(0.66f);
 		}
 		if (i >= 0 && i < 2) {
-			player.setSpriteOffsetY(0.33f);
+			player->setSpriteOffsetY(0.33f);
 		} else if (i >= 2 && i < 4) {
-			player.setSpriteOffsetY(0.66f);
+			player->setSpriteOffsetY(0.66f);
 		}
 		const sf::Vector2i BOARD_POSITION = gameboard_->getBoardPosition();
 		const unsigned int FIELD_WIDTH =
 			std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(0));
 		const unsigned int FIELD_HEIGHT =
 			std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0));
-		const float SPRITE_POSITION_X = (float)BOARD_POSITION.x + (float)FIELD_WIDTH * player.getSpriteOffsetX();
-		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player.getSpriteOffsetY();
-		player.setSpritePosition(sf::Vector2f(SPRITE_POSITION_X, SPRITE_POSITION_Y));
+		const float SPRITE_POSITION_X = (float)BOARD_POSITION.x + (float)FIELD_WIDTH * player->getSpriteOffsetX();
+		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player->getSpriteOffsetY();
+		player->setSpritePosition(sf::Vector2f(SPRITE_POSITION_X, SPRITE_POSITION_Y));
 		++i;
 	}
 }
@@ -65,7 +65,7 @@ std::shared_ptr<Board> monopolyGameEngine::getBoard() {
 	return gameboard_;
 }
 
-std::vector<Player>& monopolyGameEngine::getPlayers() {
+std::vector<std::shared_ptr<Player>>& monopolyGameEngine::getPlayers() {
 	return players_;
 }
 
@@ -113,7 +113,7 @@ unsigned int monopolyGameEngine::getFontSize() const {
 }
 
 void monopolyGameEngine::turnInfoTextWorker() {
-	turnInfoText_->setString("Turn: Player " + std::to_string(players_[getPlayerIndexTurn()].getId() + 1));
+	turnInfoText_->setString("Turn: Player " + std::to_string(players_[getPlayerIndexTurn()]->getId() + 1));
 }
 
 bool monopolyGameEngine::groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const {
@@ -189,16 +189,16 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 }
 
 void monopolyGameEngine::movePlayer(unsigned int turnIndex, unsigned int positionIncrement) {
-	int oldPos = players_[turnIndex].getPositon();
+	int oldPos = players_[turnIndex]->getPositon();
 	int newPos = (oldPos + positionIncrement) % 40;
-	players_[turnIndex].setPositon(newPos);
+	players_[turnIndex]->setPositon(newPos);
 	sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
-	players_[turnIndex].setSpritePosition(newPlayerSpritePos);
+	players_[turnIndex]->setSpritePosition(newPlayerSpritePos);
 }
 
 void monopolyGameEngine::handlePassingStart(unsigned int oldPos, unsigned int newPos) {
 	if (newPos < oldPos) {	// start passed
-		players_[playerIndexturn_].addMoney(START_PASSING_MONEY_);
+		players_[playerIndexturn_]->addMoney(START_PASSING_MONEY_);
 	}
 }
 
@@ -287,9 +287,9 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 				notificationAdd(playerIndexturn_, rol + val);
 
-				int oldPos = players_[playerIndexturn_].getPositon();
+				int oldPos = players_[playerIndexturn_]->getPositon();
 				movePlayer(playerIndexturn_, rolled_val);
-				int newPos = players_[playerIndexturn_].getPositon();
+				int newPos = players_[playerIndexturn_]->getPositon();
 				handlePassingStart(oldPos, newPos);
 
 				rollDiceButton_->setIsVisible(false);
@@ -297,7 +297,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 		} break;
 		case FieldAction: {
-			int pos = players_[playerIndexturn_].getPositon();
+			int pos = players_[playerIndexturn_]->getPositon();
 			FieldType field_type =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 
@@ -322,7 +322,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 					setTurnState(BuyAction);
 					clearPropertyData(true);
 					showPropertyData(pos, true);
-				} else if (owner->getId() != players_[playerIndexturn_].getId()) {
+				} else if (owner->getId() != players_[playerIndexturn_]->getId()) {
 					unsigned int rent_to_pay = calculateRent(rolled_val, pos);
 					// std::cout << "Field taken, Rent to pay" << field_type << std::endl;
 					// // unsigned int rent_to_pay = calculateRent();
@@ -385,23 +385,23 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 		} break;
 		case BuyAction: {
-			int pos = players_[playerIndexturn_].getPositon();
+			int pos = players_[playerIndexturn_]->getPositon();
 			unsigned int price = getFieldPriceByPosition(pos);
 			FieldType fieldType =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 			resignBuyFieldButton_->setIsVisible(true);
 			buyFieldButton_->setIsVisible(true);
 			if (buyFieldButton_->getIsActive()) {
-				if (players_[playerIndexturn_].getMoney() >= price) {  // possible to buy property
+				if (players_[playerIndexturn_]->getMoney() >= price) {  // possible to buy property
 
 					std::string textPlayerBoughtProperty(
 						"bought field " +
 						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
 					notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
 
-					players_[playerIndexturn_].setMoney(players_[playerIndexturn_].getMoney() - price);
-					players_[playerIndexturn_].addFieldOwnedId(pos);
-					std::shared_ptr<Player> player_ptr = std::make_shared<Player>(players_[playerIndexturn_]);
+					players_[playerIndexturn_]->setMoney(players_[playerIndexturn_]->getMoney() - price);
+					players_[playerIndexturn_]->addFieldOwnedId(pos);
+					std::shared_ptr<Player> player_ptr = players_[playerIndexturn_];
 					addOwnerToPropertyField(player_ptr, pos);
 
 					buyFieldButton_->setIsActive(false);
@@ -449,22 +449,22 @@ void monopolyGameEngine::monopolyGameWorker() {
 sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	float x_offset;
 	float y_offset;
-	unsigned int player_position = players_[playerIndexturn_].getPositon();
+	unsigned int player_position = players_[playerIndexturn_]->getPositon();
 	PossibleFields& curr_field = getBoard()->getFieldById(player_position);
 	unsigned int curr_field_width = std::visit([](Field& field) { return field.getWidth(); }, curr_field);
 	unsigned int curr_field_height = std::visit([](Field& field) { return field.getHeight(); }, curr_field);
 	if (player_position <= 10) {
-		x_offset = (float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetX();
-		y_offset = (float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetY();
+		x_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
+		y_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY();
 	} else if (player_position > 10 && player_position <= 20) {
-		x_offset = -(float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetX();
-		y_offset = (float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetY();
+		x_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX();
+		y_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetY();
 	} else if (player_position > 20 && player_position <= 30) {
-		x_offset = -(float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetX();
-		y_offset = -(float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetY();
+		x_offset = -(float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
+		y_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY();
 	} else if (player_position > 30 && player_position <= 40) {
-		x_offset = (float)curr_field_height * players_[playerIndexturn_].getSpriteOffsetX();
-		y_offset = -(float)curr_field_width * players_[playerIndexturn_].getSpriteOffsetY();
+		x_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX();
+		y_offset = -(float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetY();
 	}
 	float pos_x = (float)std::visit([](Field& field) { return field.getPosition().x; }, curr_field) + x_offset;
 	float pos_y = (float)std::visit([](Field& field) { return field.getPosition().y; }, curr_field) + y_offset;
@@ -558,32 +558,32 @@ void monopolyGameEngine::createTextPlayersInfo() {
 	sf::Vector2f defPos = PLAYERS_INFO_TEXT_POSITION;
 	int i = 0;
 	for (auto player : players_) {
-		int id = player.getId();
+		int id = player->getId();
 		if (i > 0) {
 			defPos.x += 180;
 		}
 		std::shared_ptr<sf::Text> playerText(
 			new sf::Text("Player " + std::to_string(id + 1), getFont(), getFontSize()));
 		playerText->setPosition(defPos);
-		playerText->setColor(player.getColor());
+		playerText->setColor(player->getColor());
 		playerText->setOutlineColor(sf::Color::Black);
 		playerText->setOutlineThickness(2);
 		addText(playerText);
 
 		std::shared_ptr<sf::Text> playerMoneyText(
-			new sf::Text("Money: " + std::to_string(player.getMoney()), getFont(), getFontSize() - 7));
+			new sf::Text("Money: " + std::to_string(player->getMoney()), getFont(), getFontSize() - 7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
 		playerMoneyText->setColor(sf::Color::Black);
 		addText(playerMoneyText);
 
 		std::shared_ptr<sf::Text> playerPositionText(
-			new sf::Text("Position: " + std::to_string(player.getPositon() + 1), getFont(), getFontSize() - 7));
+			new sf::Text("Position: " + std::to_string(player->getPositon() + 1), getFont(), getFontSize() - 7));
 		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
 		playerPositionText->setColor(sf::Color::Black);
 		addText(playerPositionText);
 
 		const std::string streetName =
-			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player.getPositon()));
+			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPositon()));
 		std::shared_ptr<sf::Text> playerPositionNameText(new sf::Text(streetName, getFont(), getFontSize() - 7));
 		playerPositionNameText->setPosition(sf::Vector2f(defPos.x, defPos.y + 110));
 		playerPositionNameText->setColor(sf::Color::Black);
@@ -607,17 +607,17 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 	bool isPlayerinGame[4] = {false, false, false, false};
 	for (auto player : players_) {
 		const std::string streetName =
-			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player.getPositon()));
-		int id = player.getId();
-		playerInfoText_[id][1]->setString("Money: " + std::to_string(player.getMoney()));
-		playerInfoText_[id][2]->setString("Position: " + std::to_string(player.getPositon() + 1));
+			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPositon()));
+		int id = player->getId();
+		playerInfoText_[id][1]->setString("Money: " + std::to_string(player->getMoney()));
+		playerInfoText_[id][2]->setString("Position: " + std::to_string(player->getPositon() + 1));
 		playerInfoText_[id][3]->setString(streetName);
 		isPlayerinGame[id] = true;
 	}
 
 	for (int i = 0; i < playersStartingAmount_; ++i) {
 		if (!isPlayerinGame[i]) {
-			int id = players_[i].getId();
+			int id = players_[i]->getId();
 			playerInfoText_[id][1]->setString("Bankrupt");
 			playerInfoText_[id][2]->setString("");
 			playerInfoText_[id][3]->setString("");
@@ -1107,5 +1107,5 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 }
 
 void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
-	notificationsWall_.addToWall("Player " + std::to_string(players_[index].getId() + 1) + ": " + text);
+	notificationsWall_.addToWall("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text);
 }
