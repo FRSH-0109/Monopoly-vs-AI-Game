@@ -26,7 +26,6 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<Player>> players_;
 
 	// gui
-	sf::Time BUTTON_CLICK_DELAY_MS = sf::milliseconds(1000);
 	const unsigned int FONT_SIZE = 30;
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
@@ -96,7 +95,7 @@ class monopolyGameEngine {
 	unsigned int getFieldPriceByPosition(unsigned int pos);
 	void addOwnerToPropertyField(std::shared_ptr<Player> player, unsigned int pos);
 
-	bool isRollDiceButtonClicked();
+	bool isButtonClicked(std::shared_ptr<Button> button_ptr);
 	unsigned int rollDice() const;
 
 	void movePlayer(unsigned int turnIndex, unsigned int positionIncrement);

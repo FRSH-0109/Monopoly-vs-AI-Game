@@ -38,20 +38,17 @@ GameScreen::~GameScreen() {
 ScreenEventType GameScreen::worker() {
 	ScreenEventType eventType = Idle;
 	for (auto element : monopoly_game_engine_.getButtons()) {
+		element->setIsClicked(false);
+		element->setIsActive(false);
 		if (element->getIsVisible()) {
 			if (element->isMouseOver(getContextWindow()->getWindow())) {
 				element->mouseIsOver();
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 					element->setIsClicked(true);
-				} else {
-					element->setIsClicked(false);
+					element->setIsActive(true);
 				}
 			} else {
 				element->mouseIsNotOver();
-				element->setIsClicked(false);
-			}
-			if (element->getIsClicked()) {
-				element->setIsActive(true);
 			}
 		}
 

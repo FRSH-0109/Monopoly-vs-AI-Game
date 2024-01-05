@@ -88,9 +88,9 @@ void monopolyGameEngine::incPlayerIndexTurn() {
 	}
 }
 
-bool monopolyGameEngine::isRollDiceButtonClicked() {
-	if (rollDiceButton_->getIsActive()) {
-		rollDiceButton_->setIsActive(false);
+bool monopolyGameEngine::isButtonClicked(std::shared_ptr<Button> button_ptr) {
+	if (button_ptr->getIsActive()) {
+		button_ptr->setIsActive(false);
 		return true;
 	}
 	return false;
@@ -344,7 +344,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 	switch (getTurnState()) {
 		case RollDice: {
-			if (isRollDiceButtonClicked() && allowToClickRollDice) {
+			if (isButtonClicked(rollDiceButton_) && allowToClickRollDice) {
 				allowToClickRollDice = false;
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
@@ -463,12 +463,14 @@ void monopolyGameEngine::monopolyGameWorker() {
 		} break;
 
 		case TurnEnd:
-			rollDiceButton_->setIsVisible(true);
-			rolledValueText_->setString("");
-			resignBuyFieldButton_->setIsVisible(false);
-			buyFieldButton_->setIsVisible(false);
-			incPlayerIndexTurn();
-			setTurnState(RollDice);
+			if (isButtonClicked(nextTurnButton_)) {
+				rollDiceButton_->setIsVisible(true);
+				rolledValueText_->setString("");
+				resignBuyFieldButton_->setIsVisible(false);
+				buyFieldButton_->setIsVisible(false);
+				incPlayerIndexTurn();
+				setTurnState(RollDice);
+			}
 			break;
 		default:
 			break;
