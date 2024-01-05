@@ -27,6 +27,8 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonPerviousProperty();
 	monopoly_game_engine_.showPropertyData(1, false);
 	monopoly_game_engine_.createButtonsBuySellHouseHotel();
+	monopoly_game_engine_.createButtonsBankrupt();
+	monopoly_game_engine_.createButtonsNextTurn();
 }
 
 GameScreen::~GameScreen() {

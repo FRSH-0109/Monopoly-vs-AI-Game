@@ -37,7 +37,7 @@ class monopolyGameEngine {
 	std::shared_ptr<sf::Text> turnInfoText_;
 	sf::Vector2f ROLLED_VALUE_TEXT_POSITION = sf::Vector2f(900, 100);
 	std::shared_ptr<sf::Text> rolledValueText_;
-	sf::Vector2f PLAYERS_INFO_TEXT_POSITION = sf::Vector2f(850, 700);
+	sf::Vector2f PLAYERS_INFO_TEXT_POSITION = sf::Vector2f(850, 800);
 	std::array<std::vector<std::shared_ptr<sf::Text>>, 4> playerInfoText_;
 
 	sf::Vector2f BUY_BUTTON_POSITION = sf::Vector2f(965, 220);
@@ -72,6 +72,11 @@ class monopolyGameEngine {
 	sf::Vector2f SELL_HOUSE_BUTTON_POSITION = sf::Vector2f(1445, 180);
 	sf::Vector2f BUY_HOTEL_BUTTON_POSITION = sf::Vector2f(1595, 120);
 	sf::Vector2f SELL_HOTEL_BUTTON_POSITION = sf::Vector2f(1595, 180);
+
+	std::shared_ptr<Button> bankruptButton_;
+	std::shared_ptr<Button> nextTurnButton_;
+	sf::Vector2f BANKRUPT_BUTTON_POSITION = sf::Vector2f(1245, 120);
+	sf::Vector2f NEXT_TURN_BUTTON_POSITION = sf::Vector2f(1245, 180);
 
 	NotificationWall notificationsWall_;
 
@@ -112,6 +117,8 @@ class monopolyGameEngine {
 	void createButtonNextProperty();
 	void createButtonPerviousProperty();
 	void createButtonsBuySellHouseHotel();
+	void createButtonsBankrupt();
+	void createButtonsNextTurn();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	unsigned int getFontSize() const;

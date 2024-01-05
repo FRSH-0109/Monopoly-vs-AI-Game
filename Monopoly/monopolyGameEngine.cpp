@@ -829,6 +829,56 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	addButton(buttonSellHotel);
 }
 
+void monopolyGameEngine::createButtonsBankrupt() {
+	sf::Vector2f buttonSize = sf::Vector2f(140, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonBankrupt(new Button(Idle, "Go Bankrupt", buttonSize, getFontSize()));
+	buttonBankrupt->setFont(getFont());
+	buttonBankrupt->setPosition(BANKRUPT_BUTTON_POSITION);
+	buttonBankrupt->setActiveBackColor(activeButtonBackColor);
+	buttonBankrupt->setActiveTextColor(activeButtonTextColor);
+	buttonBankrupt->setInactiveBackColor(inActiveButtonBackColor);
+	buttonBankrupt->setInactiveTextColor(inActiveButtonTextColor);
+	buttonBankrupt->setFocusBackColor(FocusButtonBackColor);
+	buttonBankrupt->setFocusTextColor(FocusButtonTextColor);
+	buttonBankrupt->setIsClicked(false);
+	buttonBankrupt->setIsVisible(true);
+	buttonBankrupt->setIsActive(false);
+	buttonBankrupt->setIsFocus(false);
+	bankruptButton_ = buttonBankrupt;
+	addButton(buttonBankrupt);
+}
+
+void monopolyGameEngine::createButtonsNextTurn() {
+	sf::Vector2f buttonSize = sf::Vector2f(140, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonNextTurn(new Button(Idle, "Next turn", buttonSize, getFontSize()));
+	buttonNextTurn->setFont(getFont());
+	buttonNextTurn->setPosition(NEXT_TURN_BUTTON_POSITION);
+	buttonNextTurn->setActiveBackColor(activeButtonBackColor);
+	buttonNextTurn->setActiveTextColor(activeButtonTextColor);
+	buttonNextTurn->setInactiveBackColor(inActiveButtonBackColor);
+	buttonNextTurn->setInactiveTextColor(inActiveButtonTextColor);
+	buttonNextTurn->setFocusBackColor(FocusButtonBackColor);
+	buttonNextTurn->setFocusTextColor(FocusButtonTextColor);
+	buttonNextTurn->setIsClicked(false);
+	buttonNextTurn->setIsVisible(true);
+	buttonNextTurn->setIsActive(false);
+	buttonNextTurn->setIsFocus(false);
+	nextTurnButton_ = buttonNextTurn;
+	addButton(buttonNextTurn);
+}
+
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {
 	if (isPropertyShownToBuy) {
 		propertyDataTexts_.clear();
