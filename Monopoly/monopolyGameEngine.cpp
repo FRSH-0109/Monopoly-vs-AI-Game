@@ -5,7 +5,7 @@ monopolyGameEngine::monopolyGameEngine() {
 }
 
 void monopolyGameEngine::createBoard() {
-	gameboard_ = std::make_shared<Board>(GAMEBOARD_FILE_PATH);
+	gameboard_ = std::make_shared<Board>(GAMEBOARD_FILE_PATH_);
 }
 
 void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list) {
@@ -14,7 +14,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	int playerId = 0;
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
-			Player new_player = Player(PLAYER_MONEY_DEFAULT);
+			Player new_player = Player(PLAYER_MONEY_DEFAULT_);
 			new_player.setIsAi(!(it->isHuman));
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
@@ -72,7 +72,7 @@ std::vector<std::shared_ptr<Player>>& monopolyGameEngine::getPlayers() {
 }
 
 void monopolyGameEngine::setPlayerIndexTurn(unsigned int indx) {
-	if (indx < PLAYERS_MAX) {
+	if (indx < PLAYERS_MAX_) {
 		playerIndexturn_ = indx;
 	}
 }
@@ -117,6 +117,38 @@ unsigned int monopolyGameEngine::getFontSize() const {
 
 void monopolyGameEngine::turnInfoTextWorker() {
 	turnInfoText_->setString("Turn: Player " + std::to_string(players_[getPlayerIndexTurn()]->getId() + 1));
+}
+
+unsigned int monopolyGameEngine::getHouseCount() {
+	return house_count_;
+}
+
+unsigned int monopolyGameEngine::getHotelCount() {
+	return hotel_count_;
+}
+
+void monopolyGameEngine::setHouseCount(unsigned int new_count) {
+	house_count_ = new_count;
+}
+
+void monopolyGameEngine::setHotelCount(unsigned int new_count) {
+	hotel_count_ = new_count;
+}
+
+void monopolyGameEngine::addHouses(unsigned int added_amount) {
+	setHouseCount(house_count_ + added_amount);
+}
+
+void monopolyGameEngine::substractHouses(unsigned int substracted_amount) {
+	setHouseCount(house_count_ - substracted_amount);
+}
+
+void monopolyGameEngine::addHotels(unsigned int added_amount) {
+	setHotelCount(hotel_count_ + added_amount);
+}
+
+void monopolyGameEngine::substractHotels(unsigned int substracted_amount) {
+	setHotelCount(hotel_count_ - substracted_amount);
 }
 
 bool monopolyGameEngine::groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const {

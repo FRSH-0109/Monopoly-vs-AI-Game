@@ -18,10 +18,10 @@ enum TurnState {
 };
 
 class monopolyGameEngine {
-	const unsigned int PLAYER_MONEY_DEFAULT = 1500;
+	const unsigned int PLAYER_MONEY_DEFAULT_ = 1500;
 	const unsigned int START_PASSING_MONEY_ = 200;
 
-	const std::string GAMEBOARD_FILE_PATH = "Monopoly/game_config_json/board.json";
+	const std::string GAMEBOARD_FILE_PATH_ = "Monopoly/game_config_json/board.json";
 	std::shared_ptr<Board> gameboard_;
 	std::vector<std::shared_ptr<Player>> players_;
 
@@ -81,9 +81,11 @@ class monopolyGameEngine {
 
 	// game staff
 	TurnState turnState_;
-	const unsigned int PLAYERS_MAX = 4;
-	const unsigned int PLAYERS_MIN = 2;
+	const unsigned int PLAYERS_MAX_ = 4;
+	const unsigned int PLAYERS_MIN_ = 2;
 	unsigned int playersStartingAmount_ = 0;
+	unsigned int house_count_ = 32;
+	unsigned int hotel_count_ = 12;
 	unsigned int playerIndexturn_;
 	unsigned int getPlayerIndexTurn() const;
 	void incPlayerIndexTurn();
@@ -143,6 +145,15 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<Player>>& getPlayers();
 	void setPlayerIndexTurn(unsigned int indx);
 	TurnState getTurnState() const;
+	unsigned int getHouseCount();
+	unsigned int getHotelCount();
+	void setHouseCount(unsigned int new_count);
+	void setHotelCount(unsigned int new_count);
+
+	void addHouses(unsigned int added_amount);
+	void substractHouses(unsigned int substracted_amount);
+	void addHotels(unsigned int added_amount);
+	void substractHotels(unsigned int substracted_amount);
 
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
 	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;

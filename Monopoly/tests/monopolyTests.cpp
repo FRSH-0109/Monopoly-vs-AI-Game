@@ -85,6 +85,31 @@ TEST_CASE("monopolyGameEngine") {
 	player_settings_list.push_back(player_3_settings_ptr);
 	monopoly_engine.createPlayers(player_settings_list);
 	monopoly_engine.setPlayerIndexTurn(0);
+	REQUIRE(monopoly_engine.getHouseCount() == 32);
+	REQUIRE(monopoly_engine.getHotelCount() == 12);
+
+	SECTION("setHouseCount() and setHotelCount() method") {
+		monopoly_engine.setHouseCount(10);
+		monopoly_engine.setHotelCount(8);
+		CHECK(monopoly_engine.getHouseCount() == 10);
+		CHECK(monopoly_engine.getHotelCount() == 8);
+	}
+
+	SECTION("substractHouses() and addHouses() methods") {
+		monopoly_engine.substractHouses(3);
+		CHECK(monopoly_engine.getHouseCount() == 29);
+
+		monopoly_engine.addHouses(2);
+		CHECK(monopoly_engine.getHouseCount() == 31);
+	}
+
+	SECTION("addHotels() and substractHotels() methods") {
+		monopoly_engine.substractHotels(1);
+		CHECK(monopoly_engine.getHotelCount() == 11);
+
+		monopoly_engine.addHotels(1);
+		CHECK(monopoly_engine.getHotelCount() == 12);
+	}
 
 	SECTION("groupCompleted() method") {
 		SECTION("StreetField") {
@@ -493,7 +518,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(8);
 
 			test_field_9.setOwner(builder);
-			other_player->addFieldOwnedId(9);
+			builder->addFieldOwnedId(9);
 
 			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 
@@ -516,7 +541,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_8.setHouseNumber(4);
 
 			test_field_9.setOwner(builder);
-			other_player->addFieldOwnedId(9);
+			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(4);
 
 			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
@@ -542,7 +567,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_8.setOwner(builder);
 			builder->addFieldOwnedId(8);
 
-			test_field_9.setOwner(builder);
+			test_field_9.setOwner(other_player);
 			other_player->addFieldOwnedId(9);
 
 			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
@@ -561,7 +586,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(8);
 
 			test_field_9.setOwner(builder);
-			other_player->addFieldOwnedId(9);
+			builder->addFieldOwnedId(9);
 
 			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 
@@ -584,7 +609,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_8.setHouseNumber(4);
 
 			test_field_9.setOwner(builder);
-			other_player->addFieldOwnedId(9);
+			builder->addFieldOwnedId(9);
 			test_field_9.setIsHotel(true);
 
 			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == true);
@@ -1227,7 +1252,7 @@ TEST_CASE("Board class") {
 	test_path = "textures_and_fonts/textures/monopoly_single_square_clear.png";
 	test_width = 200;
 	test_height = 200;
-	test_rotation = 90.0;
+	test_rotation = 180.0;
 	test_position = sf::Vector2i(200, 200);
 
 	const Field test_field_9 =
