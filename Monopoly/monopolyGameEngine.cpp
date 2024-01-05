@@ -272,22 +272,7 @@ void monopolyGameEngine::handlePassingStart(unsigned int oldPos, unsigned int ne
 }
 
 void monopolyGameEngine::showAllPropertiesWorker() {
-	static bool allowToClickNext = true;
-	static bool allowToClickPrev = true;
-
-	if (nextPropertyButton_->getIsClicked() == false) {
-		allowToClickNext = true;
-		nextPropertyButton_->setIsActive(false);
-	}
-
-	if (previousPropertyButton_->getIsClicked() == false) {
-		allowToClickPrev = true;
-		previousPropertyButton_->setIsActive(false);
-	}
-
-	if (nextPropertyButton_->getIsActive() && allowToClickNext) {
-		allowToClickNext = false;
-		nextPropertyButton_->setIsActive(false);
+	if (isButtonClicked(nextPropertyButton_)) {
 		++currentPropertyShowed_;
 		if (currentPropertyShowed_ == 40) {
 			currentPropertyShowed_ = 1;
@@ -306,9 +291,7 @@ void monopolyGameEngine::showAllPropertiesWorker() {
 		showPropertyData(currentPropertyShowed_, false);
 	}
 
-	if (previousPropertyButton_->getIsActive() && allowToClickPrev) {
-		allowToClickPrev = false;
-		previousPropertyButton_->setIsActive(false);
+	if (isButtonClicked(previousPropertyButton_)) {
 		if (currentPropertyShowed_ == 0) {
 			currentPropertyShowed_ = 39;
 		} else {
