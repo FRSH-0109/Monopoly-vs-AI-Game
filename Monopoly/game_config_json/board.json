@@ -25,7 +25,7 @@
         "id": 2,
         "type": "COMUNITY_CHEST",
         "name": "Kasa Spoleczna",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chest.png",
         "width": 60,
         "height": 100
     },
@@ -82,7 +82,7 @@
         "id": 7,
         "type": "CHANCE",
         "name": "Szansa",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chance.png",
         "width": 60,
         "height": 100
     },
@@ -206,7 +206,7 @@
         "id": 17,
         "type": "COMUNITY_CHEST",
         "name": "Kasa Spoleczna",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chest.png",
         "width": 60,
         "height": 100
     },
@@ -264,7 +264,7 @@
         "id": 22,
         "type": "CHANCE",
         "name": "Szansa",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chance.png",
         "width": 60,
         "height": 100
     },
@@ -402,7 +402,7 @@
         "id": 33,
         "type": "COMUNITY_CHEST",
         "name": "Kasa Spoleczna",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chest.png",
         "width": 60,
         "height": 100
     },
@@ -436,7 +436,7 @@
         "id": 36,
         "type": "CHANCE",
         "name": "Szansa",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chance.png",
         "width": 60,
         "height": 100
     },
