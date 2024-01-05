@@ -128,7 +128,7 @@ void GameScreen::draw() {
 	}
 
 	for (auto player : monopoly_game_engine_.getPlayers()) {
-		getContextWindow()->getWindow().draw(player.getSprite());
+		getContextWindow()->getWindow().draw(player->getSprite());
 	}
 
 	if (monopoly_game_engine_.getTurnState() == BuyAction) {

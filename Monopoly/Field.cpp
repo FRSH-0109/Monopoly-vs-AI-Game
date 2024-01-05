@@ -22,7 +22,6 @@ Field::Field(const unsigned int id,
 	nameText_.setString(name);
 	nameText_.setColor(sf::Color::Black);
 	nameText_.setPosition(sf::Vector2f(position.x, position.y));
-	std::cout << "Field constructor" << std::endl;
 }
 
 ContextWindow* Field::getContextWindow() {

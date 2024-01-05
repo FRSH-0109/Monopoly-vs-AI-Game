@@ -140,8 +140,8 @@ unsigned int Player::getAiLevel() {
 }
 
 void Player::createSprite() {
-	const float width = 20.0;
-	const float height = 20.0;
+	const float WIDTH = 20.0;
+	const float HEIGHT = 20.0;
 	const std::string TEXTURE_PATH = "textures_and_fonts/textures/Pionek_monopoly.png";
 	contextWindow_ = ContextWindow::GetInstance();
 	if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
@@ -152,8 +152,8 @@ void Player::createSprite() {
 	player_sprite_.setOrigin(
 		player_sprite_.getGlobalBounds().getSize() / 2.f + player_sprite_.getLocalBounds().getPosition());
 	sf::Vector2u texture_dim = player_texture_.getSize();
-	float scale_x = (float)width / (float)texture_dim.x;
-	float scale_y = (float)height / (float)texture_dim.y;
+	float scale_x = (float)WIDTH / (float)texture_dim.x;
+	float scale_y = (float)HEIGHT / (float)texture_dim.y;
 	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
 	player_sprite_.setScale(SCALE_VECT);
 }
