@@ -46,8 +46,11 @@ ScreenEventType GameScreen::worker() {
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 					element->setIsClicked(true);
 					element->setIsActive(true);
+				} else {
+					element->setWasReleased(true);
 				}
 			} else {
+				element->setWasReleased(true);
 				element->mouseIsNotOver();
 			}
 		}

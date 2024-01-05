@@ -89,7 +89,8 @@ void monopolyGameEngine::incPlayerIndexTurn() {
 }
 
 bool monopolyGameEngine::isButtonClicked(std::shared_ptr<Button> button_ptr) {
-	if (button_ptr->getIsActive()) {
+	if (button_ptr->getIsActive() && button_ptr->getWasReleased()) {
+		button_ptr->setWasReleased(false);
 		button_ptr->setIsActive(false);
 		return true;
 	}
@@ -335,17 +336,15 @@ void monopolyGameEngine::monopolyGameWorker() {
 	showAllPropertiesWorker();
 	static int rolled_val;
 
-	static bool allowToClickRollDice = true;
-
-	if (rollDiceButton_->getIsClicked() == false) {
-		allowToClickRollDice = true;
-		rollDiceButton_->setIsActive(false);
+	if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
+		if (makePlayerBankrupt(playerIndexturn_)) {
+			notificationAdd(playerIndexturn_, "decided to go bankrupt!");
+		}
 	}
 
 	switch (getTurnState()) {
 		case RollDice: {
-			if (isButtonClicked(rollDiceButton_) && allowToClickRollDice) {
-				allowToClickRollDice = false;
+			if (isButtonClicked(rollDiceButton_)) {
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
 				rolled_val = roll1 + roll2;
@@ -1297,4 +1296,11 @@ sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sp
 	text.setPosition(sf::Vector2f(newXpos, newYpos));
 	text.setRotation(rotation);
 	return text;
+}
+
+bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
+	// check if index is legal
+	// remove player from players vector
+	// remove all ownerships
+	return true;
 }

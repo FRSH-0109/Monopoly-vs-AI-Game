@@ -134,6 +134,14 @@ sf::Text& Button::getText() {
 	return text_;
 }
 
+void Button::setWasReleased(bool state) {
+	wasReleased_ = state;
+}
+
+bool Button::getWasReleased() {
+	return wasReleased_;
+}
+
 void Button::updateColors() {
 	if (isFocus_) {
 		buttonShape_.setFillColor(focusBackColor_);

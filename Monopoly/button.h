@@ -27,6 +27,8 @@ class Button {
 	bool getIsActive();
 	void setIsFocus(bool state);
 	bool getIsFocus();
+	void setWasReleased(bool state);
+	bool getWasReleased();
 	sf::Text& getText();
 
 	void setActiveBackColor(sf::Color color);
@@ -51,6 +53,7 @@ class Button {
 	bool isVisible_;
 	bool isActive_;
 	bool isFocus_;
+	bool wasReleased_;
 
 	sf::Color activeBackColor_;
 	sf::Color activeTextColor_;
