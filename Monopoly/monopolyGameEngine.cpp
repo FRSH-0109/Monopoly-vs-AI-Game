@@ -1109,3 +1109,27 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
 	notificationsWall_.addToWall("Player " + std::to_string(players_[index].getId() + 1) + ": " + text);
 }
+
+sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sprite, float rotation) {
+	text.setFont(getFont());
+	text.setCharacterSize(getFontSize() - 15);
+	float newXpos = text.getPosition().x;
+	float newYpos = text.getPosition().y;
+	if (rotation == 0) {
+		newXpos += sprite.getGlobalBounds().getSize().x / 2.f;
+		newYpos += 25;
+	} else if (rotation == 90) {
+		newYpos += sprite.getGlobalBounds().getSize().y / 2.f;
+		newXpos -= 25;
+	} else if (rotation == 180) {
+		newXpos -= sprite.getGlobalBounds().getSize().x / 2.f;
+		newYpos -= 25;
+	} else {
+		newYpos -= sprite.getGlobalBounds().getSize().y / 2.f;
+		newXpos += 25;
+	}
+	text.setOrigin(text.getGlobalBounds().getSize() / 2.f + text.getLocalBounds().getPosition());
+	text.setPosition(sf::Vector2f(newXpos, newYpos));
+	text.setRotation(rotation);
+	return text;
+}

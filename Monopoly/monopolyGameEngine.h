@@ -71,7 +71,6 @@ class monopolyGameEngine {
 	unsigned int getPlayerIndexTurn() const;
 	void incPlayerIndexTurn();
 	void setTurnState(TurnState newState);
-	unsigned int getFontSize() const;
 	void buttonsWorker();
 	void turnInfoTextWorker();
 	sf::Vector2f getUpdatePlayerSpritePosition();
@@ -101,6 +100,7 @@ class monopolyGameEngine {
 	void createButtonPerviousProperty();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
+	unsigned int getFontSize() const;
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);
 	void addText(std::shared_ptr<sf::Text> textTmp);
@@ -111,6 +111,7 @@ class monopolyGameEngine {
 	sf::Sprite& getAllPropertyDataSprite();
 	std::vector<std::shared_ptr<sf::Text>>& getAllPropertyDataTexts();
 	NotificationWall& getNotificationsWall();
+	sf::Text getPropertyNameToDraw(sf::Text text, sf::Sprite& sprite, float rotation);
 
 	// game staff
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);

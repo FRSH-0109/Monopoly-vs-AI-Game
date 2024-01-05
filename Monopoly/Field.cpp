@@ -19,6 +19,9 @@ Field::Field(const unsigned int id,
 	  height_(height),
 	  rotation_(rotation),
 	  position_(position) {
+	nameText_.setString(name);
+	nameText_.setColor(sf::Color::Black);
+	nameText_.setPosition(sf::Vector2f(position.x, position.y));
 	std::cout << "Field constructor" << std::endl;
 }
 
@@ -61,6 +64,10 @@ const float Field::getRotation() {
 
 const sf::Sprite& Field::getSprite() {
 	return sprite_;
+}
+
+const sf::Text& Field::getNameText() {
+	return nameText_;
 }
 
 const sf::Texture& Field::getTexture() {

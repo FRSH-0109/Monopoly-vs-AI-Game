@@ -78,10 +78,17 @@ void GameScreen::draw() {
 	// draw board
 	sf::Sprite sprite;
 	for (auto field : monopoly_game_engine_.getBoard()->getBoard()) {
+		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
 		sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
 		getContextWindow()->getWindow().draw(sprite);
+		float rotation = std::visit([](Field& field) { return field.getRotation(); }, field);
+		sf::Text nameText;
+		if (field_type == STREET || field_type == UTILITY || field_type == STATION || field_type == TAX) {
+			nameText = std::visit([](Field& field) { return field.getNameText(); }, field);
+			nameText = monopoly_game_engine_.getPropertyNameToDraw(nameText, sprite, rotation);
+			getContextWindow()->getWindow().draw(nameText);
+		}
 
-		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, field);
 		if (field_type == STREET || field_type == UTILITY || field_type == STATION) {
 			sf::RectangleShape owner_flag;
 			switch (field_type) {

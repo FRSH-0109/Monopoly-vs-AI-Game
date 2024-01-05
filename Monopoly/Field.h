@@ -29,6 +29,7 @@ class Field {
 	sf::Texture texture_;
 	sf::Sprite sprite_;
 	sf::Vector2i position_;
+	sf::Text nameText_;
 
    public:
 	Field(const unsigned int id,
@@ -51,6 +52,7 @@ class Field {
 	const sf::Sprite& getSprite();
 	const sf::Texture& getTexture();
 	const sf::Vector2i& getPosition();
+	const sf::Text& getNameText();
 
 	void createSprite();
 

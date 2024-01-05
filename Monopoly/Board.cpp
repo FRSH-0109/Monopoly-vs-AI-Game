@@ -116,15 +116,15 @@ sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsig
 		return sf::Vector2i(BOARD_POSITION_.x, BOARD_POSITION_.y);
 	} else if (id > 0 && id <= 10) {
 		return sf::Vector2i(prevPos.x - x, prevPos.y);
-	} else if (id > 10 && id <= 20) {
+	} else if (id > 10 && id < 20) {
 		if (id == 11) {
 			return sf::Vector2i(prevPos.x + y, prevPos.y - x);
 		} else {
 			return sf::Vector2i(prevPos.x, prevPos.y - x);
 		}
-	} else if (id > 20 && id <= 30) {
-		if (id == 21) {
-			return sf::Vector2i(prevPos.x + x, prevPos.y + y);
+	} else if (id >= 20 && id <= 30) {
+		if (id == 20) {
+			return sf::Vector2i(prevPos.x, prevPos.y);
 		} else {
 			return sf::Vector2i(prevPos.x + x, prevPos.y);
 		}
@@ -141,9 +141,9 @@ sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsig
 float Board::getFieldRotation(unsigned int id) {
 	if (id <= 10) {
 		return 0.0;
-	} else if (id > 10 && id <= 20) {
+	} else if (id > 10 && id < 20) {
 		return 90.0;
-	} else if (id > 20 && id <= 30) {
+	} else if (id >= 20 && id <= 30) {
 		return 180.0;
 	} else if (id > 30 && id <= 40) {
 		return 270.0;

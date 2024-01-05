@@ -3,14 +3,14 @@
         "id": 0,
         "type": "GO",
         "name": "Start",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_go.png",
         "width": 100,
         "height": 100
     },
     {
         "id": 1,
         "type": "STREET",
-        "name": "Swietochlowice",
+        "name": "112",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
         "height": 100,
@@ -32,7 +32,7 @@
     {
         "id": 3,
         "type": "STREET",
-        "name": "Belchatow",
+        "name": "P109",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_brown.png",
         "width": 60,
         "height": 100,
@@ -46,8 +46,8 @@
     {
         "id": 4,
         "type": "TAX",
-        "name": "Podatek Dochodowy",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "name": "Poprawka",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_tax.png",
         "width": 60,
         "height": 100,
         "tax_value": 200
@@ -67,7 +67,7 @@
     {
         "id": 6,
         "type": "STREET",
-        "name": "Warszawa",
+        "name": "P110",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
@@ -89,7 +89,7 @@
     {
         "id": 8,
         "type": "STREET",
-        "name": "Lublin",
+        "name": "P111",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
@@ -103,7 +103,7 @@
     {
         "id": 9,
         "type": "STREET",
-        "name": "Katowice",
+        "name": "P210",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_lightblue.png",
         "width": 60,
         "height": 100,
@@ -118,14 +118,14 @@
         "id": 10,
         "type": "JAIL",
         "name": "Wiezienie",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_jail.png",
         "width": 100,
         "height": 100
     },
     {
         "id": 11,
         "type": "STREET",
-        "name": "Torun",
+        "name": "P211",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
@@ -151,7 +151,7 @@
     {
         "id": 13,
         "type": "STREET",
-        "name": "Rybnik",
+        "name": "P212",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
@@ -165,7 +165,7 @@
     {
         "id": 14,
         "type": "STREET",
-        "name": "Lodz",
+        "name": "P213",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_pink.png",
         "width": 60,
         "height": 100,
@@ -191,7 +191,7 @@
     {
         "id": 16,
         "type": "STREET",
-        "name": "Chojnice",
+        "name": "310",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
@@ -213,7 +213,7 @@
     {
         "id": 18,
         "type": "STREET",
-        "name": "Elblag",
+        "name": "311",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
@@ -227,7 +227,7 @@
     {
         "id": 19,
         "type": "STREET",
-        "name": "Szczecin",
+        "name": "312",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_orange.png",
         "width": 60,
         "height": 100,
@@ -242,14 +242,14 @@
         "id": 20,
         "type": "FREE_PARKING",
         "name": "Bezplatny Parking",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_parking.png",
         "width": 100,
         "height": 100
     },
     {
         "id": 21,
         "type": "STREET",
-        "name": "Zielona Gora",
+        "name": "313",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
@@ -271,7 +271,7 @@
     {
         "id": 23,
         "type": "STREET",
-        "name": "Bydgoszcz",
+        "name": "401",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
@@ -285,7 +285,7 @@
     {
         "id": 24,
         "type": "STREET",
-        "name": "Tarnow",
+        "name": "402",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_red.png",
         "width": 60,
         "height": 100,
@@ -311,7 +311,7 @@
     {
         "id": 26,
         "type": "STREET",
-        "name": "Piotrkow Trybunalski",
+        "name": "403",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
@@ -325,7 +325,7 @@
     {
         "id": 27,
         "type": "STREET",
-        "name": "Wroclaw",
+        "name": "405",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
@@ -351,7 +351,7 @@
     {
         "id": 29,
         "type": "STREET",
-        "name": "Kalisz",
+        "name": "406",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_yellow.png",
         "width": 60,
         "height": 100,
@@ -366,14 +366,14 @@
         "id": 30,
         "type": "GO_TO_JAIL",
         "name": "Idziesz do wiezienia!",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_go_to_jail.png",
         "width": 100,
         "height": 100
     },
     {
         "id": 31,
         "type": "STREET",
-        "name": "Krakow",
+        "name": "501",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
@@ -387,7 +387,7 @@
     {
         "id": 32,
         "type": "STREET",
-        "name": "Gdynia",
+        "name": "502",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
@@ -409,7 +409,7 @@
     {
         "id": 34,
         "type": "STREET",
-        "name": "Poznan",
+        "name": "503",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_green.png",
         "width": 60,
         "height": 100,
@@ -435,7 +435,7 @@
     {
         "id": 36,
         "type": "CHANCE",
-        "name": "Szansa",
+        "name": "504",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chance.png",
         "width": 60,
         "height": 100
@@ -443,7 +443,7 @@
     {
         "id": 37,
         "type": "STREET",
-        "name": "Gorzow",
+        "name": "505",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
         "height": 100,
@@ -457,8 +457,8 @@
     {
         "id": 38,
         "type": "TAX",
-        "name": "Podatek Dochodowy",
-        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_empty.png",
+        "name": "Poprawka",
+        "graphic_path": "textures_and_fonts/textures/monopoly_single_square_tax.png",
         "width": 60,
         "height": 100,
         "tax_value": 200
@@ -466,7 +466,7 @@
     {
         "id": 39,
         "type": "STREET",
-        "name": "Bialystok",
+        "name": "506",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_darkblue.png",
         "width": 60,
         "height": 100,
