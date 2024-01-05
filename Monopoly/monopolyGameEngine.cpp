@@ -48,7 +48,8 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 		const unsigned int FIELD_HEIGHT =
 			std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(0)) - HEIGHT_OFFSET;
 		const float SPRITE_POSITION_X = (float)BOARD_POSITION.x + (float)FIELD_WIDTH * player->getSpriteOffsetX();
-		const float SPRITE_POSITION_Y = (float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player->getSpriteOffsetY() + (float)HEIGHT_OFFSET;
+		const float SPRITE_POSITION_Y =
+			(float)BOARD_POSITION.y + (float)FIELD_HEIGHT * player->getSpriteOffsetY() + (float)HEIGHT_OFFSET;
 		player->setSpritePosition(sf::Vector2f(SPRITE_POSITION_X, SPRITE_POSITION_Y));
 		++i;
 	}
@@ -142,10 +143,11 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if(!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHousePrice() && field_houses < 4) { // W tym if trzeba będzie dodać kontrolę budynków w puli
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHousePrice() &&
+		field_houses < 4) {	 // W tym if trzeba będzie dodać kontrolę budynków w puli
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if(field_houses > group_member.getHouseNumber() || group_member.getIsMortaged()) {
+			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortaged()) {
 				return false;
 			}
 		}
@@ -158,10 +160,10 @@ bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, Street
 bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if(!field.getIsMortaged() && groupCompleted(builder_ownes, field) && field_houses > 0) {
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && field_houses > 0) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if(field_houses < group_member.getHouseNumber() || group_member.getIsMortaged()) {
+			if (field_houses < group_member.getHouseNumber() || group_member.getIsMortaged()) {
 				return false;
 			}
 		}
@@ -174,10 +176,11 @@ bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, Stre
 bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if(!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHotelPrice() && field_houses == 4) {
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHotelPrice() &&
+		field_houses == 4) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortaged()) {
+			if ((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortaged()) {
 				return false;
 			}
 		}
@@ -190,10 +193,10 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 bool monopolyGameEngine::isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if(!field.getIsMortaged() && groupCompleted(builder_ownes, field) && field.getIsHotel()) {
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && field.getIsHotel()) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if(group_member.getIsMortaged()) {
+			if (group_member.getIsMortaged()) {
 				return false;
 			}
 		}
@@ -415,7 +418,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 			resignBuyFieldButton_->setIsVisible(true);
 			buyFieldButton_->setIsVisible(true);
 			if (buyFieldButton_->getIsActive()) {
-				if (players_[playerIndexturn_]->getMoney() >= price) {  // possible to buy property
+				if (players_[playerIndexturn_]->getMoney() >= price) {	// possible to buy property
 
 					std::string textPlayerBoughtProperty(
 						"bought field " +
@@ -438,7 +441,6 @@ void monopolyGameEngine::monopolyGameWorker() {
 					setTurnState(TurnEnd);
 				}
 				buyFieldButton_->setIsActive(false);
-
 			}
 
 			if (resignBuyFieldButton_->getIsActive()) {
@@ -454,7 +456,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 		} break;
 
 		case PayRent: {
-			// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia nieruchomości
+			// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia
+			// nieruchomości
 			std::cout << "Gracz ma problemy finansowe" << std::endl;
 			setTurnState(TurnEnd);
 		} break;
@@ -475,7 +478,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	float x_offset;
 	float y_offset;
-	const float HEIGHT_OFFSET = 20.0; // If we want piece to go lower we increase this value.
+	const float HEIGHT_OFFSET = 20.0;  // If we want piece to go lower we increase this value.
 	unsigned int player_position = players_[playerIndexturn_]->getPositon();
 	PossibleFields& curr_field = getBoard()->getFieldById(player_position);
 	unsigned int curr_field_width = std::visit([](Field& field) { return field.getWidth(); }, curr_field);
@@ -741,6 +744,89 @@ void monopolyGameEngine::createButtonPerviousProperty() {
 	buttonPrev->setIsFocus(false);
 	previousPropertyButton_ = buttonPrev;
 	addButton(buttonPrev);
+}
+
+void monopolyGameEngine::createButtonsBuySellHouseHotel() {
+	houseText_ = std::make_shared<sf::Text>("House", getFont(), getFontSize() - 2);
+	houseText_->setPosition(HOUSE_TEXT_POSITION);
+	houseText_->setColor(sf::Color::Black);
+	houseText_->setOrigin(houseText_->getGlobalBounds().getSize() / 2.f + houseText_->getLocalBounds().getPosition());
+	hotelText_ = std::make_shared<sf::Text>("Hotel", getFont(), getFontSize() - 2);
+	hotelText_->setPosition(HOTEL_TEXT_POSITION);
+	hotelText_->setColor(sf::Color::Black);
+	hotelText_->setOrigin(hotelText_->getGlobalBounds().getSize() / 2.f + hotelText_->getLocalBounds().getPosition());
+	addText(houseText_);
+	addText(hotelText_);
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonBuyHouse(new Button(Idle, "Buy", buttonSize, getFontSize()));
+	buttonBuyHouse->setFont(getFont());
+	buttonBuyHouse->setPosition(BUY_HOUSE_BUTTON_POSITION);
+	buttonBuyHouse->setActiveBackColor(activeButtonBackColor);
+	buttonBuyHouse->setActiveTextColor(activeButtonTextColor);
+	buttonBuyHouse->setInactiveBackColor(inActiveButtonBackColor);
+	buttonBuyHouse->setInactiveTextColor(inActiveButtonTextColor);
+	buttonBuyHouse->setFocusBackColor(FocusButtonBackColor);
+	buttonBuyHouse->setFocusTextColor(FocusButtonTextColor);
+	buttonBuyHouse->setIsClicked(false);
+	buttonBuyHouse->setIsVisible(true);
+	buttonBuyHouse->setIsActive(false);
+	buttonBuyHouse->setIsFocus(false);
+	buyHouseButton_ = buttonBuyHouse;
+	addButton(buttonBuyHouse);
+
+	std::shared_ptr<Button> buttonSellHouse(new Button(Idle, "Sell", buttonSize, getFontSize()));
+	buttonSellHouse->setFont(getFont());
+	buttonSellHouse->setPosition(SELL_HOUSE_BUTTON_POSITION);
+	buttonSellHouse->setActiveBackColor(activeButtonBackColor);
+	buttonSellHouse->setActiveTextColor(activeButtonTextColor);
+	buttonSellHouse->setInactiveBackColor(inActiveButtonBackColor);
+	buttonSellHouse->setInactiveTextColor(inActiveButtonTextColor);
+	buttonSellHouse->setFocusBackColor(FocusButtonBackColor);
+	buttonSellHouse->setFocusTextColor(FocusButtonTextColor);
+	buttonSellHouse->setIsClicked(false);
+	buttonSellHouse->setIsVisible(true);
+	buttonSellHouse->setIsActive(false);
+	buttonSellHouse->setIsFocus(false);
+	sellHouseButton_ = buttonSellHouse;
+	addButton(buttonSellHouse);
+
+	std::shared_ptr<Button> buttonBuyHotel(new Button(Idle, "Buy", buttonSize, getFontSize()));
+	buttonBuyHotel->setFont(getFont());
+	buttonBuyHotel->setPosition(BUY_HOTEL_BUTTON_POSITION);
+	buttonBuyHotel->setActiveBackColor(activeButtonBackColor);
+	buttonBuyHotel->setActiveTextColor(activeButtonTextColor);
+	buttonBuyHotel->setInactiveBackColor(inActiveButtonBackColor);
+	buttonBuyHotel->setInactiveTextColor(inActiveButtonTextColor);
+	buttonBuyHotel->setFocusBackColor(FocusButtonBackColor);
+	buttonBuyHotel->setFocusTextColor(FocusButtonTextColor);
+	buttonBuyHotel->setIsClicked(false);
+	buttonBuyHotel->setIsVisible(true);
+	buttonBuyHotel->setIsActive(false);
+	buttonBuyHotel->setIsFocus(false);
+	buyHotelButton_ = buttonBuyHotel;
+	addButton(buttonBuyHotel);
+
+	std::shared_ptr<Button> buttonSellHotel(new Button(Idle, "Sell", buttonSize, getFontSize()));
+	buttonSellHotel->setFont(getFont());
+	buttonSellHotel->setPosition(SELL_HOTEL_BUTTON_POSITION);
+	buttonSellHotel->setActiveBackColor(activeButtonBackColor);
+	buttonSellHotel->setActiveTextColor(activeButtonTextColor);
+	buttonSellHotel->setInactiveBackColor(inActiveButtonBackColor);
+	buttonSellHotel->setInactiveTextColor(inActiveButtonTextColor);
+	buttonSellHotel->setFocusBackColor(FocusButtonBackColor);
+	buttonSellHotel->setFocusTextColor(FocusButtonTextColor);
+	buttonSellHotel->setIsClicked(false);
+	buttonSellHotel->setIsVisible(true);
+	buttonSellHotel->setIsActive(false);
+	buttonSellHotel->setIsFocus(false);
+	sellHouseButton_ = buttonSellHotel;
+	addButton(buttonSellHotel);
 }
 
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {

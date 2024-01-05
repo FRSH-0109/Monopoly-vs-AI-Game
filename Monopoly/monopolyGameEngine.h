@@ -26,6 +26,7 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<Player>> players_;
 
 	// gui
+	sf::Time BUTTON_CLICK_DELAY_MS = sf::milliseconds(1000);
 	const unsigned int FONT_SIZE = 30;
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
@@ -53,12 +54,24 @@ class monopolyGameEngine {
 	sf::Sprite allPropertyDataSprite_;
 	sf::Texture allPropertyDataTexture_;
 	std::vector<std::shared_ptr<sf::Text>> allPropertyDataTexts_;
-	sf::Vector2f NEXT_PROPERTY_BUTTON_POSITION = sf::Vector2f(1595, 220);
-	sf::Vector2f PREVIOUS_PROPERTY_BUTTON_POSITION = sf::Vector2f(1445, 220);
+	sf::Vector2f NEXT_PROPERTY_BUTTON_POSITION = sf::Vector2f(1595, 700);
+	sf::Vector2f PREVIOUS_PROPERTY_BUTTON_POSITION = sf::Vector2f(1445, 700);
 	std::shared_ptr<Button> nextPropertyButton_;
 	std::shared_ptr<Button> previousPropertyButton_;
 	unsigned int currentPropertyShowed_ = 1;
-	sf::Time BUTTON_CLICK_DELAY_MS = sf::milliseconds(1000);
+
+	std::shared_ptr<sf::Text> houseText_;
+	std::shared_ptr<sf::Text> hotelText_;
+	sf::Vector2f HOUSE_TEXT_POSITION = sf::Vector2f(1445, 80);
+	sf::Vector2f HOTEL_TEXT_POSITION = sf::Vector2f(1595, 80);
+	std::shared_ptr<Button> buyHouseButton_;
+	std::shared_ptr<Button> sellHouseButton_;
+	std::shared_ptr<Button> buyHotelButton_;
+	std::shared_ptr<Button> sellHotelButton_;
+	sf::Vector2f BUY_HOUSE_BUTTON_POSITION = sf::Vector2f(1445, 120);
+	sf::Vector2f SELL_HOUSE_BUTTON_POSITION = sf::Vector2f(1445, 180);
+	sf::Vector2f BUY_HOTEL_BUTTON_POSITION = sf::Vector2f(1595, 120);
+	sf::Vector2f SELL_HOTEL_BUTTON_POSITION = sf::Vector2f(1595, 180);
 
 	NotificationWall notificationsWall_;
 
@@ -98,6 +111,7 @@ class monopolyGameEngine {
 	void createButtonBuyResign();
 	void createButtonNextProperty();
 	void createButtonPerviousProperty();
+	void createButtonsBuySellHouseHotel();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	unsigned int getFontSize() const;
