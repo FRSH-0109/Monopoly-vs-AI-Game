@@ -87,7 +87,7 @@ class PropertyField : public Field {
 		  mortage_(mortage),
 		  is_mortaged_(false),
 		  owner_(nullptr) {
-		std::cout << "PropertyField constructor" << std::endl;
+		// std::cout << "PropertyField constructor" << std::endl;
 	};
 	const unsigned int getPrice();
 	const std::vector<unsigned int> getGroupMembers();
@@ -139,7 +139,7 @@ class StreetField : public PropertyField {
 		  hotel_price_(hotel_price),
 		  house_number_(0),
 		  is_hotel_(false) {
-		std::cout << "StreetField constructor" << std::endl;
+		// std::cout << "StreetField constructor" << std::endl;
 	};
 
 	const std::map<StreetTiers, unsigned int> getRentValues();
@@ -173,7 +173,7 @@ class StationField : public PropertyField {
 		const unsigned int mortage)
 		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
 		  rent_values_(rent_values) {
-		std::cout << "StationField constructor" << std::endl;
+		// std::cout << "StationField constructor" << std::endl;
 	};
 
 	const std::map<StationTiers, unsigned int> getRentValues();
@@ -199,7 +199,7 @@ class UtilityField : public PropertyField {
 		const unsigned int mortage)
 		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
 		  rent_multipliers_(rent_multipliers) {
-		std::cout << "UtilityField constructor" << std::endl;
+		// std::cout << "UtilityField constructor" << std::endl;
 	};
 
 	const std::map<UtilityTiers, unsigned int> getRentMultipliers();
@@ -221,7 +221,7 @@ class TaxField : public Field {
 		const sf::Vector2i position,
 		const unsigned int tax_value)
 		: Field(id, type, name, graphic_path, width, height, rotation, position), tax_value_(tax_value) {
-		std::cout << "TaxField constructor" << std::endl;
+		// std::cout << "TaxField constructor" << std::endl;
 	};
 
 	const unsigned int getTaxValue();

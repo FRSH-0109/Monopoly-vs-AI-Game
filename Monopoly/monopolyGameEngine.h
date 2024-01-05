@@ -121,8 +121,15 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<Player>>& getPlayers();
 	void setPlayerIndexTurn(unsigned int indx);
 	TurnState getTurnState() const;
+
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
 	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;
+
+	bool isBuildingLegal(std::shared_ptr<Player> builder, StreetField& field);
+	bool isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
+	bool isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field);
+	bool isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
+
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
 	void monopolyGameWorker();
 };

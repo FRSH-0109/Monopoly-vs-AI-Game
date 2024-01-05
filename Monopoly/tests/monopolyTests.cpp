@@ -250,6 +250,348 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(calculated_rent == expected_rent);
 		}
 	}
+
+	SECTION("isBuildingLegal() method") {
+		StreetField& test_field_6 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(6));
+		StreetField& test_field_8 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(8));
+		StreetField& test_field_9 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(9));
+		std::shared_ptr<Player> builder = monopoly_engine.getPlayers()[0];
+		std::shared_ptr<Player> other_player = monopoly_engine.getPlayers()[2];
+
+		SECTION("Group not completed") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(other_player);
+			other_player->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isBuildingLegal(other_player, test_field_9) == false);
+		}
+
+		SECTION("Property is mortaged") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setIsMortaged(true);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("Houses are uneven") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setHouseNumber(2);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(3);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(2);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == true);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_9) == true);
+		}
+
+		SECTION("Houses are even") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setHouseNumber(2);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(2);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(2);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == true);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == true);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_9) == true);
+		}
+
+		SECTION("All properties have full number of houses") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setHouseNumber(4);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(4);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(4);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("Hosue limit is reached") {
+			// TODO
+		}
+	}
+
+	SECTION("isDestroyingLegal() method") {
+		StreetField& test_field_6 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(6));
+		StreetField& test_field_8 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(8));
+		StreetField& test_field_9 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(9));
+		std::shared_ptr<Player> builder = monopoly_engine.getPlayers()[0];
+		std::shared_ptr<Player> other_player = monopoly_engine.getPlayers()[2];
+
+		SECTION("Group color not completed") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(other_player);
+			other_player->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isDestroyingLegal(other_player, test_field_9) == false);
+		}
+
+		SECTION("Building is mortaged") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setIsMortaged(true);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(1);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(1);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("Property doesn't have building") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("Buildings are uneven") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setHouseNumber(2);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(2);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(1);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == true);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == true);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("Buildings are even") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setHouseNumber(3);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(3);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(3);
+
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == true);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == true);
+			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_9) == true);
+		}
+	}
+
+	SECTION("isHotelBuildingLegal() method") {
+		StreetField& test_field_6 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(6));
+		StreetField& test_field_8 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(8));
+		StreetField& test_field_9 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(9));
+		std::shared_ptr<Player> builder = monopoly_engine.getPlayers()[0];
+		std::shared_ptr<Player> other_player = monopoly_engine.getPlayers()[2];
+
+		SECTION("Group color not completed") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(other_player);
+			other_player->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelBuildingLegal(other_player, test_field_9) == false);
+		}
+
+		SECTION("Property is Mortaged") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(builder);
+			other_player->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("No hotels in a bank") {
+			// TODO
+		}
+
+		SECTION("Passing case") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setIsHotel(true);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(4);
+
+			test_field_9.setOwner(builder);
+			other_player->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(4);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == true);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_9) == true);
+		}
+	}
+
+	SECTION("isHotelDestroyingLegal() method") {
+		StreetField& test_field_6 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(6));
+		StreetField& test_field_8 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(8));
+		StreetField& test_field_9 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(9));
+		std::shared_ptr<Player> builder = monopoly_engine.getPlayers()[0];
+		std::shared_ptr<Player> other_player = monopoly_engine.getPlayers()[2];
+
+		SECTION("Group color not completed") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(builder);
+			other_player->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(other_player, test_field_9) == false);
+		}
+
+		SECTION("Street is mortaged") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+
+			test_field_9.setOwner(builder);
+			other_player->addFieldOwnedId(9);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_9) == false);
+		}
+
+		SECTION("Not enough houses in a bank") {
+			// TODO
+		}
+
+		SECTION("Passing case") {
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setIsHotel(true);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(4);
+
+			test_field_9.setOwner(builder);
+			other_player->addFieldOwnedId(9);
+			test_field_9.setIsHotel(true);
+
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == true);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_9) == true);
+		}
+	}
 	// REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 	// REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 

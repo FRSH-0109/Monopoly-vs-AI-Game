@@ -19,7 +19,7 @@ Field::Field(const unsigned int id,
 	  height_(height),
 	  rotation_(rotation),
 	  position_(position) {
-	std::cout << "Field constructor" << std::endl;
+	// std::cout << "Field constructor" << std::endl;
 }
 
 ContextWindow* Field::getContextWindow() {
