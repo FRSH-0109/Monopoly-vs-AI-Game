@@ -350,6 +350,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 	updateTextPlayersInfo();
 	showAllPropertiesWorker();
 	static int rolled_val;
+	static unsigned int money_to_find;
 
 	if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
 		if (makePlayerBankrupt(playerIndexturn_)) {
@@ -359,6 +360,66 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 	switch (getTurnState()) {
 		case RollDice: {
+			if (isButtonClicked(buyHouseButton_)) {
+				FieldType field_type = std::visit(
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+				);
+				if (field_type == STREET) {
+					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+					if(isBuildingLegal(players_[playerIndexturn_], field)) {
+						std::cout << "House builded!" << std::endl;
+					} else {
+						std::cout << "Unable to buy house" << std::endl;
+					}
+				} else {
+					std::cout << "Can't buy house on a non street field" << std::endl;
+				}
+			}
+			if (isButtonClicked(sellHouseButton_)) {
+				FieldType field_type = std::visit(
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+				);
+				if (field_type == STREET) {
+					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+					if(isDestroyingLegal(players_[playerIndexturn_], field)) {
+						std::cout << "House destroyed!" << std::endl;
+					} else {
+						std::cout << "Unable to sell house" << std::endl;
+					}
+				} else {
+					std::cout << "Can't sell house on a non street field" << std::endl;
+				}
+			}
+			if (isButtonClicked(buyHotelButton_)) {
+				FieldType field_type = std::visit(
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+				);
+				if (field_type == STREET) {
+					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+					if(isHotelBuildingLegal(players_[playerIndexturn_], field)) {
+						std::cout << "Hotel builded!" << std::endl;
+					} else {
+						std::cout << "Unable to buy hotel" << std::endl;
+					}
+				} else {
+					std::cout << "Can't buy hotel on a non street field" << std::endl;
+				}
+			}
+			if (isButtonClicked(sellHotelButton_)) {
+				FieldType field_type = std::visit(
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+				);
+				if (field_type == STREET) {
+					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+					if(isBuildingLegal(players_[playerIndexturn_], field)) {
+						std::cout << "Hotel destroyed!" << std::endl;
+					} else {
+						std::cout << "Unable to sell hotel" << std::endl;
+					}
+				} else {
+					std::cout << "Can't sell hotel on a non street field" << std::endl;
+				}
+			}
 			if (isButtonClicked(rollDiceButton_)) {
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
@@ -413,17 +474,29 @@ void monopolyGameEngine::monopolyGameWorker() {
 						owner->addMoney(rent_to_pay);
 						setTurnState(TurnEnd);
 					} else {
+						money_to_find = rent_to_pay;
 						setTurnState(PayRent);
 					}
 				} else {
 					std::cout << "No action - player owns this field" << field_type << std::endl;
 					setTurnState(TurnEnd);
 				}
+			} else if (field_type == TAX) {
+				TaxField field = std::get<TaxField>(getBoard()->getFieldById(pos));
+				unsigned int tax_to_pay = field.getTaxValue();
+				if (players_[playerIndexturn_]->getMoney() >= tax_to_pay) {
+						players_[playerIndexturn_]->substractMoney(tax_to_pay);
+						setTurnState(TurnEnd);
+					} else {
+						money_to_find = tax_to_pay;
+						setTurnState(PayRent);
+					}
 			} else {
 				std::cout << "No action" << field_type << std::endl;
 				setTurnState(TurnEnd);
 			}
 		} break;
+
 		case BuyAction: {
 			int pos = players_[playerIndexturn_]->getPositon();
 			unsigned int price = getFieldPriceByPosition(pos);
@@ -472,7 +545,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 		case PayRent: {
 			// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia
 			// nieruchomości
-			std::cout << "Gracz ma problemy finansowe" << std::endl;
+			std::cout << "Gracz ma problemy finansowe " << money_to_find << " do znalezienia" << std::endl;
 			setTurnState(TurnEnd);
 		} break;
 
@@ -841,7 +914,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buttonSellHotel->setIsVisible(true);
 	buttonSellHotel->setIsActive(false);
 	buttonSellHotel->setIsFocus(false);
-	sellHouseButton_ = buttonSellHotel;
+	sellHotelButton_ = buttonSellHotel;
 	addButton(buttonSellHotel);
 }
 
