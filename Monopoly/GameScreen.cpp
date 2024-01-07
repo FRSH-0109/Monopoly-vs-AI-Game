@@ -30,6 +30,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonsBankrupt();
 	monopoly_game_engine_.createButtonsNextTurn();
 	monopoly_game_engine_.createButtonsJailPay();
+	monopoly_game_engine_.createAvailableHousesHotelText();
 }
 
 GameScreen::~GameScreen() {
