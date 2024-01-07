@@ -197,7 +197,7 @@ bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, Street
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHousePrice() &&
-		field_houses < 4 && getHouseCount() > 0) {	 // W tym if trzeba będzie dodać kontrolę budynków w puli
+		field_houses < 4 && getHouseCount() > 0) {	// W tym if trzeba będzie dodać kontrolę budynków w puli
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
 			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortaged()) {
@@ -230,7 +230,7 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHotelPrice() &&
-		field_houses == 4 && getHotelCount() > 0) {
+		field_houses == 4 && getHotelCount() > 0 && !field.getIsHotel()) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
 			if ((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortaged()) {
@@ -476,15 +476,15 @@ void monopolyGameEngine::monopolyGameWorker() {
 				notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
 
 				unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
-				if(player_jail_status == 0) {
-					if(roll1 == roll2) {
+				if (player_jail_status == 0) {
+					if (roll1 == roll2) {
 						isDouble = true;
 						double_turns += 1;
 					} else {
 						isDouble = false;
 					}
 
-					if(double_turns == 3) {
+					if (double_turns == 3) {
 						std::string notification_msg = "Went to Jail on doubles";
 						sendToJail(playerIndexturn_);
 						players_[playerIndexturn_]->setJailStatus(3);
@@ -502,7 +502,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 						setTurnState(FieldAction);
 					}
 				} else {
-					if(roll1 == roll2) {
+					if (roll1 == roll2) {
 						players_[playerIndexturn_]->setJailStatus(0);
 
 						int oldPos = players_[playerIndexturn_]->getPositon();
@@ -516,12 +516,13 @@ void monopolyGameEngine::monopolyGameWorker() {
 						rollDiceButton_->setIsVisible(false);
 						setTurnState(FieldAction);
 					} else if (player_jail_status == 1) {
-						if(players_[playerIndexturn_]->getMoney() < JAIL_BAILOUT) {
+						if (players_[playerIndexturn_]->getMoney() < JAIL_BAILOUT) {
 							money_to_find = JAIL_BAILOUT;
-							std::cout << "Gracz ma problemy finansowe " << money_to_find << " do zapłacenia" << std::endl;
-							while(players_[playerIndexturn_]->getMoney() < JAIL_BAILOUT) {
-								// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia
-								// nieruchomości
+							std::cout << "Gracz ma problemy finansowe " << money_to_find << " do zapłacenia"
+									  << std::endl;
+							while (players_[playerIndexturn_]->getMoney() < JAIL_BAILOUT) {
+								// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli
+								// i/lub zastawienia nieruchomości
 								buildingsManagingWorker();
 							}
 						}
@@ -593,12 +594,12 @@ void monopolyGameEngine::monopolyGameWorker() {
 				TaxField field = std::get<TaxField>(getBoard()->getFieldById(pos));
 				unsigned int tax_to_pay = field.getTaxValue();
 				if (players_[playerIndexturn_]->getMoney() >= tax_to_pay) {
-						players_[playerIndexturn_]->substractMoney(tax_to_pay);
-						setTurnState(TurnEnd);
-					} else {
-						money_to_find = tax_to_pay;
-						setTurnState(PayRent);
-					}
+					players_[playerIndexturn_]->substractMoney(tax_to_pay);
+					setTurnState(TurnEnd);
+				} else {
+					money_to_find = tax_to_pay;
+					setTurnState(PayRent);
+				}
 			} else if (field_type == GO_TO_JAIL) {
 				std::string notification_msg = "Goes to jail via GO TO JAIL";
 				notificationAdd(playerIndexturn_, notification_msg);
@@ -1084,6 +1085,32 @@ void monopolyGameEngine::createButtonsNextTurn() {
 	buttonNextTurn->setIsFocus(false);
 	nextTurnButton_ = buttonNextTurn;
 	addButton(buttonNextTurn);
+}
+
+void monopolyGameEngine::createButtonsJailPay() {
+	sf::Vector2f buttonSize = sf::Vector2f(210, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonJailPay(
+		new Button(Idle, "Pay " + std::to_string(JAIL_PAY_MONEY) + " to leave jail", buttonSize, getFontSize()));
+	buttonJailPay->setFont(getFont());
+	buttonJailPay->setPosition(JAIL_APY_BUTTON_POSITION);
+	buttonJailPay->setActiveBackColor(activeButtonBackColor);
+	buttonJailPay->setActiveTextColor(activeButtonTextColor);
+	buttonJailPay->setInactiveBackColor(inActiveButtonBackColor);
+	buttonJailPay->setInactiveTextColor(inActiveButtonTextColor);
+	buttonJailPay->setFocusBackColor(FocusButtonBackColor);
+	buttonJailPay->setFocusTextColor(FocusButtonTextColor);
+	buttonJailPay->setIsClicked(false);
+	buttonJailPay->setIsVisible(true);
+	buttonJailPay->setIsActive(true);
+	buttonJailPay->setIsFocus(false);
+	jailPayButton_ = buttonJailPay;
+	addButton(buttonJailPay);
 }
 
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {

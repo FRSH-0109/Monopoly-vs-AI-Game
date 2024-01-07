@@ -29,6 +29,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonsBuySellHouseHotel();
 	monopoly_game_engine_.createButtonsBankrupt();
 	monopoly_game_engine_.createButtonsNextTurn();
+	monopoly_game_engine_.createButtonsJailPay();
 }
 
 GameScreen::~GameScreen() {
@@ -104,18 +105,18 @@ void GameScreen::draw() {
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
 
-						if (field_specified.getHouseNumber() != 0) {
+						if (field_specified.getIsHotel()) {
+							sf::Sprite hotel_sprite = monopoly_game_engine_.getHotelSprite(field_specified);
+							sf::Texture hotel_texture = monopoly_game_engine_.getHotelTexture();
+							hotel_sprite.setTexture(hotel_texture, true);
+							getContextWindow()->getWindow().draw(hotel_sprite);
+						} else if (field_specified.getHouseNumber() != 0) {
 							for (unsigned int i = 1; i <= field_specified.getHouseNumber(); ++i) {
 								sf::Sprite house_sprite = monopoly_game_engine_.getHouseSprite(field_specified, i);
 								sf::Texture house_texture = monopoly_game_engine_.getHouseTexture();
 								house_sprite.setTexture(house_texture, true);
 								getContextWindow()->getWindow().draw(house_sprite);
 							}
-						} else if (field_specified.getIsHotel()) {
-							sf::Sprite hotel_sprite = monopoly_game_engine_.getHotelSprite(field_specified);
-							sf::Texture hotel_texture = monopoly_game_engine_.getHotelTexture();
-							hotel_sprite.setTexture(hotel_texture, true);
-							getContextWindow()->getWindow().draw(hotel_sprite);
 						}
 					}
 				} break;
