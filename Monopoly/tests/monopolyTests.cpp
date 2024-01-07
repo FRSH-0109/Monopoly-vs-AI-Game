@@ -380,7 +380,25 @@ TEST_CASE("monopolyGameEngine") {
 		}
 
 		SECTION("Hosue limit is reached") {
-			// TODO
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setHouseNumber(2);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(2);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(2);
+
+			monopoly_engine.setHouseCount(0);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_9) == false);
 		}
 	}
 
@@ -528,7 +546,26 @@ TEST_CASE("monopolyGameEngine") {
 		}
 
 		SECTION("No hotels in a bank") {
-			// TODO
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setIsHotel(true);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(4);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setHouseNumber(4);
+
+		    monopoly_engine.setHouseCount(0);
+
+			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == true);
+			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_9) == true);
 		}
 
 		SECTION("Passing case") {
@@ -596,7 +633,29 @@ TEST_CASE("monopolyGameEngine") {
 		}
 
 		SECTION("Not enough houses in a bank") {
-			// TODO
+			test_field_6.setOwner(builder);
+			builder->addFieldOwnedId(6);
+			test_field_6.setIsHotel(true);
+
+			test_field_8.setOwner(builder);
+			builder->addFieldOwnedId(8);
+			test_field_8.setHouseNumber(4);
+
+			test_field_9.setOwner(builder);
+			builder->addFieldOwnedId(9);
+			test_field_9.setIsHotel(true);
+
+			monopoly_engine.setHouseCount(0);
+
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_9) == false);
+
+			monopoly_engine.setHouseCount(3);
+
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
+			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_9) == false);
 		}
 
 		SECTION("Passing case") {
