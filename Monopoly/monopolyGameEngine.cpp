@@ -463,7 +463,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 				std::string val = std::to_string(rolled_val);
 				rolledValueText_->setString(rol + val);
 
-				notificationAdd(playerIndexturn_, rol + val1 + ", " + val2);
+				notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
 
 				int oldPos = players_[playerIndexturn_]->getPositon();
 				movePlayer(playerIndexturn_, rolled_val);
