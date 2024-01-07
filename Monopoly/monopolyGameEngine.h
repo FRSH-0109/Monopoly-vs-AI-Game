@@ -59,6 +59,10 @@ class monopolyGameEngine {
 	std::shared_ptr<Button> previousPropertyButton_;
 	unsigned int currentPropertyShowed_ = 1;
 
+	std::shared_ptr<sf::Text> availableHousesText_;
+	std::shared_ptr<sf::Text> availableHotelsText_;
+	sf::Vector2f AVAILABLE_HOUSE_TEXT_POSITION = sf::Vector2f(1675, 110);
+
 	std::shared_ptr<sf::Text> houseText_;
 	std::shared_ptr<sf::Text> hotelText_;
 	sf::Vector2f HOUSE_TEXT_POSITION = sf::Vector2f(1445, 80);
@@ -85,7 +89,7 @@ class monopolyGameEngine {
 	// pay jail button
 	std::shared_ptr<Button> jailPayButton_;
 	sf::Vector2f JAIL_APY_BUTTON_POSITION = sf::Vector2f(1000, 250);
-	unsigned int JAIL_PAY_MONEY = 50;
+	const unsigned int JAIL_PAY_MONEY = 50;
 
 	NotificationWall notificationsWall_;
 
@@ -179,6 +183,8 @@ class monopolyGameEngine {
 	bool isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	sf::Sprite getHouseSprite(StreetField& field, unsigned int housesNumber);
 	sf::Sprite getHotelSprite(StreetField& field);
+	void createAvailableHousesHotelText();
+	void updateAvailableHousesHotelText();
 
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
 	void buildingsManagingWorker();
