@@ -85,7 +85,7 @@ class monopolyGameEngine {
 	// pay jail button
 	std::shared_ptr<Button> jailPayButton_;
 	sf::Vector2f JAIL_APY_BUTTON_POSITION = sf::Vector2f(1000, 250);
-	unsigned int JAIL_PAY_MONEY = 50;
+	const unsigned int JAIL_PAY_MONEY = 50;
 
 	NotificationWall notificationsWall_;
 
