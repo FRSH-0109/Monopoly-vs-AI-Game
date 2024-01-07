@@ -456,12 +456,14 @@ void monopolyGameEngine::monopolyGameWorker() {
 			if (isButtonClicked(rollDiceButton_)) {
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
+				std::string val1 = std::to_string(roll1);
+				std::string val2 = std::to_string(roll2);
 				rolled_val = roll1 + roll2;
 				std::string rol = "Rolled value: ";
 				std::string val = std::to_string(rolled_val);
 				rolledValueText_->setString(rol + val);
 
-				notificationAdd(playerIndexturn_, rol + val);
+				notificationAdd(playerIndexturn_, rol + val1 + ", " + val2);
 
 				int oldPos = players_[playerIndexturn_]->getPositon();
 				movePlayer(playerIndexturn_, rolled_val);
