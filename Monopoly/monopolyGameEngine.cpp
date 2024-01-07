@@ -609,10 +609,10 @@ sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	if (player_position <= 10) {
 		x_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
 		y_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY() + HEIGHT_OFFSET;
-	} else if (player_position > 10 && player_position <= 20) {
+	} else if (player_position > 10 && player_position < 20) {
 		x_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX() - HEIGHT_OFFSET;
 		y_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetY();
-	} else if (player_position > 20 && player_position <= 30) {
+	} else if (player_position >= 20 && player_position <= 30) {
 		x_offset = -(float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
 		y_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY() - HEIGHT_OFFSET;
 	} else if (player_position > 30 && player_position <= 40) {
