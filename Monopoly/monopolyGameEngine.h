@@ -170,5 +170,6 @@ class monopolyGameEngine {
 	bool isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
 
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
+	void buildingsManagingWorker();
 	void monopolyGameWorker();
 };

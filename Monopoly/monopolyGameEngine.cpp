@@ -25,6 +25,20 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
 			players_.push_back(std::make_shared<Player>(new_player));
+			if(new_player.getId() == 1) {
+				players_[1]->addFieldOwnedId(16);
+				players_[1]->addFieldOwnedId(18);
+				players_[1]->addFieldOwnedId(19);
+				std::get<StreetField>(gameboard_->getFieldById(16)).setOwner(players_[1]);
+				std::get<StreetField>(gameboard_->getFieldById(18)).setOwner(players_[1]);
+				std::get<StreetField>(gameboard_->getFieldById(19)).setOwner(players_[1]);
+			}
+			if(new_player.getId() == 2) {
+				players_[2]->addFieldOwnedId(1);
+				players_[2]->addFieldOwnedId(3);
+				std::get<StreetField>(gameboard_->getFieldById(1)).setOwner(players_[2]);
+				std::get<StreetField>(gameboard_->getFieldById(3)).setOwner(players_[2]);
+			}
 		}
 		++playerId;
 	};
@@ -351,6 +365,82 @@ void monopolyGameEngine::showAllPropertiesWorker() {
 	}
 }
 
+void monopolyGameEngine::buildingsManagingWorker() {
+	if (isButtonClicked(buyHouseButton_)) {
+		FieldType field_type = std::visit(
+			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+		);
+		if (field_type == STREET) {
+			// Ostatnia poprawka - dodałem referencje - sprawdzić czy poprawa
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if(isBuildingLegal(players_[playerIndexturn_], field)) {
+				players_[playerIndexturn_]->substractMoney(field.getHousePrice());
+				field.setHouseNumber(field.getHouseNumber() + 1);
+				substractHouses(1);
+				std::cout << "House builded!" << std::endl;
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to buy house");
+			}
+		} else {
+			std::cout << "Can't buy house on a non street field" << std::endl;
+		}
+	}
+	if (isButtonClicked(sellHouseButton_)) {
+		FieldType field_type = std::visit(
+			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+		);
+		if (field_type == STREET) {
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if(isDestroyingLegal(players_[playerIndexturn_], field)) {
+				players_[playerIndexturn_]->addMoney(field.getHousePrice() / 2);
+				field.setHouseNumber(field.getHouseNumber() - 1);
+				addHouses(1);
+				std::cout << "House destroyed!" << std::endl;
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to sell house");
+			}
+		} else {
+			std::cout << "Can't sell house on a non street field" << std::endl;
+		}
+	}
+	if (isButtonClicked(buyHotelButton_)) {
+		FieldType field_type = std::visit(
+			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+		);
+		if (field_type == STREET) {
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if(isHotelBuildingLegal(players_[playerIndexturn_], field)) {
+				players_[playerIndexturn_]->substractMoney(field.getHotelPrice());
+				field.setIsHotel(true);
+				substractHotels(1);
+				std::cout << "Hotel builded!" << std::endl;
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to buy hotel");
+			}
+		} else {
+			std::cout << "Can't buy hotel on a non street field" << std::endl;
+		}
+	}
+	if (isButtonClicked(sellHotelButton_)) {
+		FieldType field_type = std::visit(
+			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
+		);
+		if (field_type == STREET) {
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if(isHotelDestroyingLegal(players_[playerIndexturn_], field)) {
+				players_[playerIndexturn_]->addMoney(field.getHotelPrice() / 2);
+				field.setIsHotel(false);
+				addHotels(1);
+				std::cout << "Hotel destroyed!" << std::endl;
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to sell hotel");
+			}
+		} else {
+			std::cout << "Can't sell hotel on a non street field" << std::endl;
+		}
+	}
+}
+
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
@@ -366,62 +456,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 	switch (getTurnState()) {
 		case RollDice: {
-			if (isButtonClicked(buyHouseButton_)) {
-				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
-				if (field_type == STREET) {
-					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if (isBuildingLegal(players_[playerIndexturn_], field)) {
-						std::cout << "House builded!" << std::endl;
-					} else {
-						std::cout << "Unable to buy house" << std::endl;
-					}
-				} else {
-					std::cout << "Can't buy house on a non street field" << std::endl;
-				}
-			}
-			if (isButtonClicked(sellHouseButton_)) {
-				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
-				if (field_type == STREET) {
-					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if (isDestroyingLegal(players_[playerIndexturn_], field)) {
-						std::cout << "House destroyed!" << std::endl;
-					} else {
-						std::cout << "Unable to sell house" << std::endl;
-					}
-				} else {
-					std::cout << "Can't sell house on a non street field" << std::endl;
-				}
-			}
-			if (isButtonClicked(buyHotelButton_)) {
-				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
-				if (field_type == STREET) {
-					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if (isHotelBuildingLegal(players_[playerIndexturn_], field)) {
-						std::cout << "Hotel builded!" << std::endl;
-					} else {
-						std::cout << "Unable to buy hotel" << std::endl;
-					}
-				} else {
-					std::cout << "Can't buy hotel on a non street field" << std::endl;
-				}
-			}
-			if (isButtonClicked(sellHotelButton_)) {
-				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
-				if (field_type == STREET) {
-					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if (isBuildingLegal(players_[playerIndexturn_], field)) {
-						std::cout << "Hotel destroyed!" << std::endl;
-					} else {
-						std::cout << "Unable to sell hotel" << std::endl;
-					}
-				} else {
-					std::cout << "Can't sell hotel on a non street field" << std::endl;
-				}
-			}
+			buildingsManagingWorker();
 			if (isButtonClicked(rollDiceButton_)) {
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
@@ -552,6 +587,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 		} break;
 
 		case TurnEnd:
+			buildingsManagingWorker();
 			if (isButtonClicked(nextTurnButton_)) {
 				rollDiceButton_->setIsVisible(true);
 				rolledValueText_->setString("");
@@ -577,10 +613,10 @@ sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	if (player_position <= 10) {
 		x_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
 		y_offset = (float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY() + HEIGHT_OFFSET;
-	} else if (player_position > 10 && player_position <= 20) {
+	} else if (player_position > 10 && player_position < 20) {
 		x_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetX() - HEIGHT_OFFSET;
 		y_offset = (float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetY();
-	} else if (player_position > 20 && player_position <= 30) {
+	} else if (player_position >= 20 && player_position <= 30) {
 		x_offset = -(float)curr_field_width * players_[playerIndexturn_]->getSpriteOffsetX();
 		y_offset = -(float)curr_field_height * players_[playerIndexturn_]->getSpriteOffsetY() - HEIGHT_OFFSET;
 	} else if (player_position > 30 && player_position <= 40) {
