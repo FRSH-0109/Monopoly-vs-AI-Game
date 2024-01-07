@@ -25,20 +25,20 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
 			players_.push_back(std::make_shared<Player>(new_player));
-			if (new_player.getId() == 1) {
-				players_[1]->addFieldOwnedId(8);
-				players_[1]->addFieldOwnedId(9);
-				players_[1]->addFieldOwnedId(21);
-				std::get<StreetField>(gameboard_->getFieldById(8)).setOwner(players_[1]);
-				std::get<StreetField>(gameboard_->getFieldById(9)).setOwner(players_[1]);
-				std::get<StreetField>(gameboard_->getFieldById(21)).setOwner(players_[1]);
-			}
-			if (new_player.getId() == 2) {
-				players_[2]->addFieldOwnedId(1);
-				players_[2]->addFieldOwnedId(3);
-				std::get<StreetField>(gameboard_->getFieldById(1)).setOwner(players_[2]);
-				std::get<StreetField>(gameboard_->getFieldById(3)).setOwner(players_[2]);
-			}
+			// if (new_player.getId() == 1) {
+			// 	players_[1]->addFieldOwnedId(16);
+			// 	players_[1]->addFieldOwnedId(18);
+			// 	players_[1]->addFieldOwnedId(19);
+			// 	std::get<StreetField>(gameboard_->getFieldById(16)).setOwner(players_[1]);
+			// 	std::get<StreetField>(gameboard_->getFieldById(18)).setOwner(players_[1]);
+			// 	std::get<StreetField>(gameboard_->getFieldById(19)).setOwner(players_[1]);
+			// }
+			// if (new_player.getId() == 2) {
+			// 	players_[2]->addFieldOwnedId(1);
+			// 	players_[2]->addFieldOwnedId(3);
+			// 	std::get<StreetField>(gameboard_->getFieldById(1)).setOwner(players_[2]);
+			// 	std::get<StreetField>(gameboard_->getFieldById(3)).setOwner(players_[2]);
+			// }
 		}
 		++playerId;
 	};
@@ -229,7 +229,8 @@ bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, Stre
 bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHotelPrice() &&
+
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() >= field.getHotelPrice() &&
 		field_houses == 4 && getHotelCount() > 0 && !field.getIsHotel()) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
