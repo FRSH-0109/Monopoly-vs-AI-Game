@@ -311,6 +311,13 @@ void monopolyGameEngine::movePlayer(unsigned int turnIndex, unsigned int positio
 	players_[turnIndex]->setSpritePosition(newPlayerSpritePos);
 }
 
+void monopolyGameEngine::sendToJail(unsigned int turnIndex) {
+	const unsigned int JAIL_ID = 10;
+	players_[turnIndex]->setPositon(JAIL_ID);
+	sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
+	players_[turnIndex]->setSpritePosition(newPlayerSpritePos);
+}
+
 void monopolyGameEngine::handlePassingStart(unsigned int oldPos, unsigned int newPos) {
 	if (newPos < oldPos) {	// start passed
 		players_[playerIndexturn_]->addMoney(START_PASSING_MONEY_);
@@ -441,6 +448,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 	showAllPropertiesWorker();
 	static int rolled_val;
 	static unsigned int money_to_find;
+	static unsigned int double_turns = 0;
+	static bool isDouble;
 
 	if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
 		if (makePlayerBankrupt(playerIndexturn_)) {
@@ -465,13 +474,29 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 				notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
 
-				int oldPos = players_[playerIndexturn_]->getPositon();
-				movePlayer(playerIndexturn_, rolled_val);
-				int newPos = players_[playerIndexturn_]->getPositon();
-				handlePassingStart(oldPos, newPos);
+				if(roll1 == roll2) {
+					isDouble = true;
+					double_turns += 1;
+				} else {
+					isDouble = false;
+				}
 
-				rollDiceButton_->setIsVisible(false);
-				setTurnState(FieldAction);
+				if(double_turns == 3) {
+					std::string notification_msg = "Went to Jail on doubles";
+					sendToJail(playerIndexturn_);
+					notificationAdd(playerIndexturn_, notification_msg);
+
+					rollDiceButton_->setIsVisible(false);
+					setTurnState(TurnEnd);
+				} else {
+					int oldPos = players_[playerIndexturn_]->getPositon();
+					movePlayer(playerIndexturn_, rolled_val);
+					int newPos = players_[playerIndexturn_]->getPositon();
+					handlePassingStart(oldPos, newPos);
+
+					rollDiceButton_->setIsVisible(false);
+					setTurnState(FieldAction);
+				}
 			}
 		} break;
 		case FieldAction: {
@@ -526,6 +551,11 @@ void monopolyGameEngine::monopolyGameWorker() {
 						money_to_find = tax_to_pay;
 						setTurnState(PayRent);
 					}
+			} else if (field_type == GO_TO_JAIL) {
+				std::string notification_msg = "Goes to jail via GO TO JAIL";
+				notificationAdd(playerIndexturn_, notification_msg);
+				sendToJail(playerIndexturn_);
+				setTurnState(TurnEnd);
 			} else {
 				std::cout << "No action" << field_type << std::endl;
 				setTurnState(TurnEnd);
@@ -591,7 +621,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 				rolledValueText_->setString("");
 				resignBuyFieldButton_->setIsVisible(false);
 				buyFieldButton_->setIsVisible(false);
-				incPlayerIndexTurn();
+				if (!isDouble) {
+					double_turns = 0;
+					incPlayerIndexTurn();
+				}
 				setTurnState(RollDice);
 			}
 			break;
