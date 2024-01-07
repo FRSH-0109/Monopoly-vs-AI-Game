@@ -106,6 +106,7 @@ class monopolyGameEngine {
 	unsigned int rollDice() const;
 
 	void movePlayer(unsigned int turnIndex, unsigned int positionIncrement);
+	void sendToJail(unsigned int turnIndex);
 	void notificationAdd(unsigned int index, std::string text);
 	void handlePassingStart(unsigned int oldPos, unsigned int newPos);
 	bool makePlayerBankrupt(unsigned int playerIndexTurn);
