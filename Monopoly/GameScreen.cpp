@@ -85,6 +85,8 @@ void GameScreen::draw() {
 		sprite = std::visit([](Field& field) { return field.getSprite(); }, field);
 		getContextWindow()->getWindow().draw(sprite);
 		float rotation = std::visit([](Field& field) { return field.getRotation(); }, field);
+
+		// draw property name text
 		sf::Text nameText;
 		if (field_type == STREET || field_type == UTILITY || field_type == STATION || field_type == TAX) {
 			nameText = std::visit([](Field& field) { return field.getNameText(); }, field);
@@ -101,9 +103,22 @@ void GameScreen::draw() {
 					std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
+
+						// draw houses or hotel
+						sf::Sprite house_sprite;
+						sf::Texture house_texture = monopoly_game_engine_.getHouseTexture();
+						house_sprite.setTexture(house_texture, true);
+						// sf::Vector2u texture_dim = house_texture.getSize();
+						// float scale_x = (float)house_sprite. / (float)house_texture.x;
+						// float scale_y = (float)this->height_ / (float)house_texture.y;
+						// const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+						// house_sprite.setScale(SCALE_VECT);
+						house_sprite.setPosition(0, 0);
+						// house_sprite.setRotation(rotation_);
+						getContextWindow()->getWindow().draw(house_sprite);
 					}
-					break;
-				}
+
+				} break;
 
 				case UTILITY: {
 					UtilityField& field_specified = std::get<UtilityField>(field);
@@ -112,8 +127,7 @@ void GameScreen::draw() {
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
 					}
-					break;
-				}
+				} break;
 
 				case STATION: {
 					StationField& field_specified = std::get<StationField>(field);
@@ -122,18 +136,19 @@ void GameScreen::draw() {
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
 					}
-					break;
-				}
+				} break;
 			}
 
 			getContextWindow()->getWindow().draw(owner_flag);
 		}
 	}
 
+	// draw player
 	for (auto player : monopoly_game_engine_.getPlayers()) {
 		getContextWindow()->getWindow().draw(player->getSprite());
 	}
 
+	// draw property data for buy/sell
 	if (monopoly_game_engine_.getTurnState() == BuyAction) {
 		getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
 		for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
@@ -141,6 +156,7 @@ void GameScreen::draw() {
 		}
 	}
 
+	// draw property browser
 	getContextWindow()->getWindow().draw(monopoly_game_engine_.getAllPropertyDataSprite());
 	for (auto text_ptr : monopoly_game_engine_.getAllPropertyDataTexts()) {
 		getContextWindow()->getWindow().draw(*text_ptr);

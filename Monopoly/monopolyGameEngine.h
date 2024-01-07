@@ -77,6 +77,10 @@ class monopolyGameEngine {
 	sf::Vector2f BANKRUPT_BUTTON_POSITION = sf::Vector2f(1245, 120);
 	sf::Vector2f NEXT_TURN_BUTTON_POSITION = sf::Vector2f(1245, 180);
 
+	// housese and hotels
+	sf::Texture houseTexture_;
+	sf::Texture hotelTexture_;
+
 	NotificationWall notificationsWall_;
 
 	// game staff
@@ -135,6 +139,8 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<sf::Text>>& getAllPropertyDataTexts();
 	NotificationWall& getNotificationsWall();
 	sf::Text getPropertyNameToDraw(sf::Text text, sf::Sprite& sprite, float rotation);
+	sf::Texture& getHouseTexture();
+	sf::Texture& getHotelTexture();
 
 	// game staff
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);

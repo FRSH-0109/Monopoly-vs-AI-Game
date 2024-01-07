@@ -2,6 +2,12 @@
 
 monopolyGameEngine::monopolyGameEngine() {
 	turnState_ = RollDice;
+	if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
+		// TODO: exception
+	}
+	if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
+		// TODO: exception
+	}
 }
 
 void monopolyGameEngine::createBoard() {
@@ -362,11 +368,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 		case RollDice: {
 			if (isButtonClicked(buyHouseButton_)) {
 				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-				);
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 				if (field_type == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if(isBuildingLegal(players_[playerIndexturn_], field)) {
+					if (isBuildingLegal(players_[playerIndexturn_], field)) {
 						std::cout << "House builded!" << std::endl;
 					} else {
 						std::cout << "Unable to buy house" << std::endl;
@@ -377,11 +382,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 			if (isButtonClicked(sellHouseButton_)) {
 				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-				);
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 				if (field_type == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if(isDestroyingLegal(players_[playerIndexturn_], field)) {
+					if (isDestroyingLegal(players_[playerIndexturn_], field)) {
 						std::cout << "House destroyed!" << std::endl;
 					} else {
 						std::cout << "Unable to sell house" << std::endl;
@@ -392,11 +396,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 			if (isButtonClicked(buyHotelButton_)) {
 				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-				);
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 				if (field_type == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if(isHotelBuildingLegal(players_[playerIndexturn_], field)) {
+					if (isHotelBuildingLegal(players_[playerIndexturn_], field)) {
 						std::cout << "Hotel builded!" << std::endl;
 					} else {
 						std::cout << "Unable to buy hotel" << std::endl;
@@ -407,11 +410,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 			if (isButtonClicked(sellHotelButton_)) {
 				FieldType field_type = std::visit(
-					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-				);
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 				if (field_type == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-					if(isBuildingLegal(players_[playerIndexturn_], field)) {
+					if (isBuildingLegal(players_[playerIndexturn_], field)) {
 						std::cout << "Hotel destroyed!" << std::endl;
 					} else {
 						std::cout << "Unable to sell hotel" << std::endl;
@@ -485,12 +487,12 @@ void monopolyGameEngine::monopolyGameWorker() {
 				TaxField field = std::get<TaxField>(getBoard()->getFieldById(pos));
 				unsigned int tax_to_pay = field.getTaxValue();
 				if (players_[playerIndexturn_]->getMoney() >= tax_to_pay) {
-						players_[playerIndexturn_]->substractMoney(tax_to_pay);
-						setTurnState(TurnEnd);
-					} else {
-						money_to_find = tax_to_pay;
-						setTurnState(PayRent);
-					}
+					players_[playerIndexturn_]->substractMoney(tax_to_pay);
+					setTurnState(TurnEnd);
+				} else {
+					money_to_find = tax_to_pay;
+					setTurnState(PayRent);
+				}
 			} else {
 				std::cout << "No action" << field_type << std::endl;
 				setTurnState(TurnEnd);
@@ -1391,4 +1393,12 @@ bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	// remove player from players vector
 	// remove all ownerships
 	return true;
+}
+
+sf::Texture& monopolyGameEngine::getHouseTexture() {
+	return houseTexture_;
+}
+
+sf::Texture& monopolyGameEngine::getHotelTexture() {
+	return hotelTexture_;
 }
