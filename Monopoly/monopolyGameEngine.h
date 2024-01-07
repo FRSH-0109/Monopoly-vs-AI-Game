@@ -78,6 +78,7 @@ class monopolyGameEngine {
 	sf::Vector2f NEXT_TURN_BUTTON_POSITION = sf::Vector2f(1245, 180);
 
 	// housese and hotels
+	sf::Vector2f houseSize_ = sf::Vector2f(22, 13);
 	sf::Texture houseTexture_;
 	sf::Texture hotelTexture_;
 
@@ -141,6 +142,7 @@ class monopolyGameEngine {
 	sf::Text getPropertyNameToDraw(sf::Text text, sf::Sprite& sprite, float rotation);
 	sf::Texture& getHouseTexture();
 	sf::Texture& getHotelTexture();
+	sf::Vector2f& getHouseSize();
 
 	// game staff
 	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
@@ -168,6 +170,8 @@ class monopolyGameEngine {
 	bool isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	bool isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	bool isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
+	sf::Sprite getHouseSprite(StreetField& field, unsigned int housesNumber);
+	sf::Sprite getHotelSprite(StreetField& field);
 
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
 	void buildingsManagingWorker();

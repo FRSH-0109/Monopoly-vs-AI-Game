@@ -104,20 +104,20 @@ void GameScreen::draw() {
 					if (owner_ptr != nullptr) {
 						owner_flag.setFillColor(owner_ptr->getColor());
 
-						// draw houses or hotel
-						sf::Sprite house_sprite;
-						sf::Texture house_texture = monopoly_game_engine_.getHouseTexture();
-						house_sprite.setTexture(house_texture, true);
-						// sf::Vector2u texture_dim = house_texture.getSize();
-						// float scale_x = (float)house_sprite. / (float)house_texture.x;
-						// float scale_y = (float)this->height_ / (float)house_texture.y;
-						// const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
-						// house_sprite.setScale(SCALE_VECT);
-						house_sprite.setPosition(0, 0);
-						// house_sprite.setRotation(rotation_);
-						getContextWindow()->getWindow().draw(house_sprite);
+						if (field_specified.getHouseNumber() != 0) {
+							for (unsigned int i = 1; i <= field_specified.getHouseNumber(); ++i) {
+								sf::Sprite house_sprite = monopoly_game_engine_.getHouseSprite(field_specified, i);
+								sf::Texture house_texture = monopoly_game_engine_.getHouseTexture();
+								house_sprite.setTexture(house_texture, true);
+								getContextWindow()->getWindow().draw(house_sprite);
+							}
+						} else if (field_specified.getIsHotel()) {
+							sf::Sprite hotel_sprite = monopoly_game_engine_.getHotelSprite(field_specified);
+							sf::Texture hotel_texture = monopoly_game_engine_.getHotelTexture();
+							hotel_sprite.setTexture(hotel_texture, true);
+							getContextWindow()->getWindow().draw(hotel_sprite);
+						}
 					}
-
 				} break;
 
 				case UTILITY: {
