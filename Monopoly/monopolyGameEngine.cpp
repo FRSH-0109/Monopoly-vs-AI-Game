@@ -450,6 +450,7 @@ void monopolyGameEngine::buildingsManagingWorker() {
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
+	updateAvailableHousesHotelText();
 	showAllPropertiesWorker();
 	unsigned int JAIL_BAILOUT = 50;
 	static int rolled_val;
@@ -709,6 +710,27 @@ void monopolyGameEngine::monopolyGameWorker() {
 		default:
 			break;
 	}
+}
+
+void monopolyGameEngine::updateAvailableHousesHotelText() {
+	availableHousesText_->setString("Houses bank: " + std::to_string(getHouseCount()));
+	availableHotelsText_->setString("Hotels bank: " + std::to_string(getHotelCount()));
+}
+
+void monopolyGameEngine::createAvailableHousesHotelText() {
+	std::shared_ptr<sf::Text> avaHousesText(
+		new sf::Text("Houses bank: " + std::to_string(getHouseCount()), getFont(), getFontSize() - 2));
+	avaHousesText->setPosition(AVAILABLE_HOUSE_TEXT_POSITION);
+	avaHousesText->setColor(sf::Color::Black);
+	availableHousesText_ = avaHousesText;
+	addText(avaHousesText);
+
+	std::shared_ptr<sf::Text> avaHotelsText(
+		new sf::Text("Hotels bank: " + std::to_string(getHotelCount()), getFont(), getFontSize() - 2));
+	avaHotelsText->setPosition(sf::Vector2f(AVAILABLE_HOUSE_TEXT_POSITION.x, AVAILABLE_HOUSE_TEXT_POSITION.y + 30));
+	avaHotelsText->setColor(sf::Color::Black);
+	availableHotelsText_ = avaHotelsText;
+	addText(avaHotelsText);
 }
 
 sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
@@ -1134,8 +1156,8 @@ void monopolyGameEngine::createButtonsJailPay() {
 	buttonJailPay->setFocusBackColor(FocusButtonBackColor);
 	buttonJailPay->setFocusTextColor(FocusButtonTextColor);
 	buttonJailPay->setIsClicked(false);
-	buttonJailPay->setIsVisible(true);
-	buttonJailPay->setIsActive(true);
+	buttonJailPay->setIsVisible(false);
+	buttonJailPay->setIsActive(false);
 	buttonJailPay->setIsFocus(false);
 	jailPayButton_ = buttonJailPay;
 	addButton(buttonJailPay);
