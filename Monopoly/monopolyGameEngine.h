@@ -82,9 +82,10 @@ class monopolyGameEngine {
 	sf::Texture houseTexture_;
 	sf::Texture hotelTexture_;
 
-	//pay jail button
-	std::shared_ptr<Button> payJailButton_;
-	sf::Vector2f PAY_JAIL_BUTTON_POSITION = sf::Vector2f(1245, 120);
+	// pay jail button
+	std::shared_ptr<Button> jailPayButton_;
+	sf::Vector2f JAIL_APY_BUTTON_POSITION = sf::Vector2f(1000, 250);
+	unsigned int JAIL_PAY_MONEY = 50;
 
 	NotificationWall notificationsWall_;
 
@@ -131,6 +132,7 @@ class monopolyGameEngine {
 	void createButtonsBuySellHouseHotel();
 	void createButtonsBankrupt();
 	void createButtonsNextTurn();
+	void createButtonsJailPay();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	unsigned int getFontSize() const;
