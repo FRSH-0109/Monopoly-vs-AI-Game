@@ -446,6 +446,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
 	showAllPropertiesWorker();
+	unsigned int JAIL_BAILOUT = 50;
 	static int rolled_val;
 	static unsigned int money_to_find;
 	static unsigned int double_turns = 0;
@@ -474,28 +475,75 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 				notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
 
-				if(roll1 == roll2) {
-					isDouble = true;
-					double_turns += 1;
+				unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
+				if(player_jail_status == 0) {
+					if(roll1 == roll2) {
+						isDouble = true;
+						double_turns += 1;
+					} else {
+						isDouble = false;
+					}
+
+					if(double_turns == 3) {
+						std::string notification_msg = "Went to Jail on doubles";
+						sendToJail(playerIndexturn_);
+						players_[playerIndexturn_]->setJailStatus(3);
+						notificationAdd(playerIndexturn_, notification_msg);
+
+						rollDiceButton_->setIsVisible(false);
+						setTurnState(TurnEnd);
+					} else {
+						int oldPos = players_[playerIndexturn_]->getPositon();
+						movePlayer(playerIndexturn_, rolled_val);
+						int newPos = players_[playerIndexturn_]->getPositon();
+						handlePassingStart(oldPos, newPos);
+
+						rollDiceButton_->setIsVisible(false);
+						setTurnState(FieldAction);
+					}
 				} else {
-					isDouble = false;
-				}
+					if(roll1 == roll2) {
+						players_[playerIndexturn_]->setJailStatus(0);
 
-				if(double_turns == 3) {
-					std::string notification_msg = "Went to Jail on doubles";
-					sendToJail(playerIndexturn_);
-					notificationAdd(playerIndexturn_, notification_msg);
+						int oldPos = players_[playerIndexturn_]->getPositon();
+						movePlayer(playerIndexturn_, rolled_val);
+						int newPos = players_[playerIndexturn_]->getPositon();
+						handlePassingStart(oldPos, newPos);
 
-					rollDiceButton_->setIsVisible(false);
-					setTurnState(TurnEnd);
-				} else {
-					int oldPos = players_[playerIndexturn_]->getPositon();
-					movePlayer(playerIndexturn_, rolled_val);
-					int newPos = players_[playerIndexturn_]->getPositon();
-					handlePassingStart(oldPos, newPos);
+						std::string notification_msg = "Leaving jail on doubles";
+						notificationAdd(playerIndexturn_, notification_msg);
 
-					rollDiceButton_->setIsVisible(false);
-					setTurnState(FieldAction);
+						rollDiceButton_->setIsVisible(false);
+						setTurnState(FieldAction);
+					} else if (player_jail_status == 1) {
+						if(players_[playerIndexturn_]->getMoney() < JAIL_BAILOUT) {
+							money_to_find = JAIL_BAILOUT;
+							std::cout << "Gracz ma problemy finansowe " << money_to_find << " do zapłacenia" << std::endl;
+							while(players_[playerIndexturn_]->getMoney() < JAIL_BAILOUT) {
+								// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia
+								// nieruchomości
+								buildingsManagingWorker();
+							}
+						}
+
+						players_[playerIndexturn_]->setJailStatus(0);
+						players_[playerIndexturn_]->substractMoney(JAIL_BAILOUT);
+
+						int oldPos = players_[playerIndexturn_]->getPositon();
+						movePlayer(playerIndexturn_, rolled_val);
+						int newPos = players_[playerIndexturn_]->getPositon();
+						handlePassingStart(oldPos, newPos);
+
+						rollDiceButton_->setIsVisible(false);
+						setTurnState(FieldAction);
+
+						std::string notification_msg = "Player left jail on forced bailout";
+						notificationAdd(playerIndexturn_, notification_msg);
+
+					} else {
+						players_[playerIndexturn_]->reduceJailStatus();
+						setTurnState(TurnEnd);
+					}
 				}
 			}
 		} break;
@@ -555,6 +603,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 				std::string notification_msg = "Goes to jail via GO TO JAIL";
 				notificationAdd(playerIndexturn_, notification_msg);
 				sendToJail(playerIndexturn_);
+				players_[playerIndexturn_]->setJailStatus(3);
 				setTurnState(TurnEnd);
 			} else {
 				std::cout << "No action" << field_type << std::endl;
@@ -610,7 +659,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 		case PayRent: {
 			// Tutaj ideowo gracz ma być zmuszony do zrobienia wymiany, sprzedania domków/hoteli i/lub zastawienia
 			// nieruchomości
-			std::cout << "Gracz ma problemy finansowe " << money_to_find << " do znalezienia" << std::endl;
+			std::cout << "Gracz ma problemy finansowe " << money_to_find << " do zapłacenia" << std::endl;
 			setTurnState(TurnEnd);
 		} break;
 
@@ -621,7 +670,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 				rolledValueText_->setString("");
 				resignBuyFieldButton_->setIsVisible(false);
 				buyFieldButton_->setIsVisible(false);
-				if (!isDouble) {
+				if (!isDouble || players_[playerIndexturn_]->getJailStatus() != 0) {
 					double_turns = 0;
 					incPlayerIndexTurn();
 				}
