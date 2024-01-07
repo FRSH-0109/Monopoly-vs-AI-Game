@@ -82,6 +82,10 @@ class monopolyGameEngine {
 	sf::Texture houseTexture_;
 	sf::Texture hotelTexture_;
 
+	//pay jail button
+	std::shared_ptr<Button> payJailButton_;
+	sf::Vector2f PAY_JAIL_BUTTON_POSITION = sf::Vector2f(1245, 120);
+
 	NotificationWall notificationsWall_;
 
 	// game staff
