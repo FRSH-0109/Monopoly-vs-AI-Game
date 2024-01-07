@@ -2,6 +2,12 @@
 
 monopolyGameEngine::monopolyGameEngine() {
 	turnState_ = RollDice;
+	if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
+		// TODO: exception
+	}
+	if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
+		// TODO: exception
+	}
 }
 
 void monopolyGameEngine::createBoard() {
@@ -19,15 +25,15 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 			new_player.setAiLevel(it->level);
 			new_player.setId(playerId);
 			players_.push_back(std::make_shared<Player>(new_player));
-			if(new_player.getId() == 1) {
-				players_[1]->addFieldOwnedId(16);
-				players_[1]->addFieldOwnedId(18);
-				players_[1]->addFieldOwnedId(19);
-				std::get<StreetField>(gameboard_->getFieldById(16)).setOwner(players_[1]);
-				std::get<StreetField>(gameboard_->getFieldById(18)).setOwner(players_[1]);
-				std::get<StreetField>(gameboard_->getFieldById(19)).setOwner(players_[1]);
+			if (new_player.getId() == 1) {
+				players_[1]->addFieldOwnedId(8);
+				players_[1]->addFieldOwnedId(9);
+				players_[1]->addFieldOwnedId(21);
+				std::get<StreetField>(gameboard_->getFieldById(8)).setOwner(players_[1]);
+				std::get<StreetField>(gameboard_->getFieldById(9)).setOwner(players_[1]);
+				std::get<StreetField>(gameboard_->getFieldById(21)).setOwner(players_[1]);
 			}
-			if(new_player.getId() == 2) {
+			if (new_player.getId() == 2) {
 				players_[2]->addFieldOwnedId(1);
 				players_[2]->addFieldOwnedId(3);
 				std::get<StreetField>(gameboard_->getFieldById(1)).setOwner(players_[2]);
@@ -368,13 +374,12 @@ void monopolyGameEngine::showAllPropertiesWorker() {
 
 void monopolyGameEngine::buildingsManagingWorker() {
 	if (isButtonClicked(buyHouseButton_)) {
-		FieldType field_type = std::visit(
-			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-		);
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			// Ostatnia poprawka - dodałem referencje - sprawdzić czy poprawa
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if(isBuildingLegal(players_[playerIndexturn_], field)) {
+			if (isBuildingLegal(players_[playerIndexturn_], field)) {
 				players_[playerIndexturn_]->substractMoney(field.getHousePrice());
 				field.setHouseNumber(field.getHouseNumber() + 1);
 				substractHouses(1);
@@ -387,12 +392,11 @@ void monopolyGameEngine::buildingsManagingWorker() {
 		}
 	}
 	if (isButtonClicked(sellHouseButton_)) {
-		FieldType field_type = std::visit(
-			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-		);
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if(isDestroyingLegal(players_[playerIndexturn_], field)) {
+			if (isDestroyingLegal(players_[playerIndexturn_], field)) {
 				players_[playerIndexturn_]->addMoney(field.getHousePrice() / 2);
 				field.setHouseNumber(field.getHouseNumber() - 1);
 				addHouses(1);
@@ -405,12 +409,11 @@ void monopolyGameEngine::buildingsManagingWorker() {
 		}
 	}
 	if (isButtonClicked(buyHotelButton_)) {
-		FieldType field_type = std::visit(
-			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-		);
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if(isHotelBuildingLegal(players_[playerIndexturn_], field)) {
+			if (isHotelBuildingLegal(players_[playerIndexturn_], field)) {
 				players_[playerIndexturn_]->substractMoney(field.getHotelPrice());
 				field.setIsHotel(true);
 				substractHotels(1);
@@ -423,12 +426,11 @@ void monopolyGameEngine::buildingsManagingWorker() {
 		}
 	}
 	if (isButtonClicked(sellHotelButton_)) {
-		FieldType field_type = std::visit(
-			[](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_)
-		);
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if(isHotelDestroyingLegal(players_[playerIndexturn_], field)) {
+			if (isHotelDestroyingLegal(players_[playerIndexturn_], field)) {
 				players_[playerIndexturn_]->addMoney(field.getHotelPrice() / 2);
 				field.setIsHotel(false);
 				addHotels(1);
@@ -460,9 +462,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 	switch (getTurnState()) {
 		case RollDice: {
-
 			buildingsManagingWorker();
-
 			if (isButtonClicked(rollDiceButton_)) {
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
@@ -1506,7 +1506,99 @@ sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sp
 
 bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	// check if index is legal
-	// remove player from players vector
+	// remove player from playif(rotation == 0)
+	// {
+
+	// }ers vector
 	// remove all ownerships
 	return true;
+}
+
+sf::Texture& monopolyGameEngine::getHouseTexture() {
+	return houseTexture_;
+}
+
+sf::Texture& monopolyGameEngine::getHotelTexture() {
+	return hotelTexture_;
+}
+
+sf::Vector2f& monopolyGameEngine::getHouseSize() {
+	return houseSize_;
+}
+
+sf::Sprite monopolyGameEngine::getHouseSprite(StreetField& field, unsigned int housesNumber) {
+	float rotation = field.getRotation();
+	sf::Vector2i position = field.getPosition();
+	sf::Sprite house_sprite;
+	sf::Texture house_texture = getHouseTexture();
+	house_sprite.setTexture(house_texture, true);
+	sf::Vector2u texture_dim = house_texture.getSize();
+	float scale_x = (float)getHouseSize().x / (float)texture_dim.x;
+	float scale_y = (float)getHouseSize().y / (float)texture_dim.y;
+	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+	house_sprite.setScale(SCALE_VECT);
+	house_sprite.setRotation(rotation);
+	int xOffset = 0;
+	int yOffset = 0;
+	if (rotation == 0) {
+		position.y += 2;
+		position.x -= 3;
+		xOffset = -7 + house_sprite.getGlobalBounds().getSize().x;
+		yOffset = 0;
+	} else if (rotation == 90) {
+		position.y -= 3;
+		position.x -= 2;
+		xOffset = 0;
+		yOffset = -7 + house_sprite.getGlobalBounds().getSize().y;
+	} else if (rotation == 180) {
+		position.y -= 2;
+		position.x += 3;
+		xOffset = 7 - house_sprite.getGlobalBounds().getSize().x;
+		yOffset = 0;
+	} else if (rotation == 270) {
+		position.y += 3;
+		position.x += 2;
+		xOffset = 0;
+		yOffset = 7 - house_sprite.getGlobalBounds().getSize().y;
+	}
+
+	position.x += xOffset * (housesNumber - 1);
+	position.y += yOffset * (housesNumber - 1);
+
+	house_sprite.setPosition(position.x, position.y);
+
+	return house_sprite;
+}
+
+sf::Sprite monopolyGameEngine::getHotelSprite(StreetField& field) {
+	float rotation = field.getRotation();
+	sf::Vector2i position = field.getPosition();
+	sf::Sprite hotel_sprite;
+	sf::Texture hotel_texture = getHouseTexture();
+	sf::Vector2u texture_dim = hotel_texture.getSize();
+	float scale_x = (float)getHouseSize().x / (float)texture_dim.x;
+	float scale_y = (float)getHouseSize().y / (float)texture_dim.y;
+	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
+	hotel_sprite.setScale(SCALE_VECT);
+	hotel_sprite.setRotation(rotation);
+	int xOffset = 0;
+	int yOffset = 0;
+	if (rotation == 0)	// as in hotel sprite calculations to keep the same flow of offsetting
+	{
+		position.y += 2;
+		position.x -= 3;
+	} else if (rotation == 90) {
+		position.y -= 3;
+		position.x -= 2;
+	} else if (rotation == 180) {
+		position.y -= 2;
+		position.x += 3;
+	} else if (rotation == 270) {
+		position.y += 3;
+		position.x += 2;
+	}
+
+	hotel_sprite.setPosition(position.x, position.y);
+
+	return hotel_sprite;
 }
