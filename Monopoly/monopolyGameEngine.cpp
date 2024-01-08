@@ -10,6 +10,13 @@ monopolyGameEngine::monopolyGameEngine() {
 	}
 }
 
+void monopolyGameEngine::setScreenType(GameScreenType newScreenType) {
+	screenType_ = newScreenType;
+}
+const GameScreenType monopolyGameEngine::getScreenType() const {
+	return screenType_;
+}
+
 void monopolyGameEngine::createBoard() {
 	gameboard_ = std::make_shared<Board>(GAMEBOARD_FILE_PATH_);
 }
@@ -230,8 +237,9 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() >= field.getHotelPrice() &&
-		field_houses == 4 && getHotelCount() > 0 && !field.getIsHotel()) {
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) &&
+		builder->getMoney() >= field.getHotelPrice() && field_houses == 4 && getHotelCount() > 0 &&
+		!field.getIsHotel()) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
 			if ((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortaged()) {
@@ -447,11 +455,21 @@ void monopolyGameEngine::buildingsManagingWorker() {
 	}
 }
 
+void monopolyGameEngine::withdrawWorker() {
+	if (isButtonClicked(withdrawButton_)) {	 // player decied to go bankrupt
+		notificationAdd(playerIndexturn_, " is busy, can not withdraw right now");
+		if (getTurnState() == RollDice || getTurnState() == TurnEnd) {
+			setScreenType(WithdrawChoosePlayer);
+		}
+	}
+}
+
 void monopolyGameEngine::monopolyGameWorker() {
 	turnInfoTextWorker();
 	updateTextPlayersInfo();
 	updateAvailableHousesHotelText();
 	showAllPropertiesWorker();
+	withdrawWorker();
 	unsigned int JAIL_BAILOUT = 50;
 	static int rolled_val;
 	static unsigned int money_to_find;
@@ -474,8 +492,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 				jailPayButton_->setIsVisible(false);
 			}
 
-			if(player_jail_status != 0 && isButtonClicked(jailPayButton_)) {
-				if(players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
+			if (player_jail_status != 0 && isButtonClicked(jailPayButton_)) {
+				if (players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
 					std::string notification_msg = "Not enough money for bail out";
 					notificationAdd(playerIndexturn_, notification_msg);
 				} else {
@@ -1148,7 +1166,7 @@ void monopolyGameEngine::createButtonsJailPay() {
 	std::shared_ptr<Button> buttonJailPay(
 		new Button(Idle, "Pay " + std::to_string(JAIL_PAY_MONEY) + " to leave jail", buttonSize, getFontSize()));
 	buttonJailPay->setFont(getFont());
-	buttonJailPay->setPosition(JAIL_APY_BUTTON_POSITION);
+	buttonJailPay->setPosition(JAIL_PAY_BUTTON_POSITION);
 	buttonJailPay->setActiveBackColor(activeButtonBackColor);
 	buttonJailPay->setActiveTextColor(activeButtonTextColor);
 	buttonJailPay->setInactiveBackColor(inActiveButtonBackColor);
@@ -1161,6 +1179,31 @@ void monopolyGameEngine::createButtonsJailPay() {
 	buttonJailPay->setIsFocus(false);
 	jailPayButton_ = buttonJailPay;
 	addButton(buttonJailPay);
+}
+
+void monopolyGameEngine::createButtonWithdraw() {
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonWithdraw(new Button(Idle, "Withdraw", buttonSize, getFontSize()));
+	buttonWithdraw->setFont(getFont());
+	buttonWithdraw->setPosition(WITHDRAW_BUTTON_POSITION);
+	buttonWithdraw->setActiveBackColor(activeButtonBackColor);
+	buttonWithdraw->setActiveTextColor(activeButtonTextColor);
+	buttonWithdraw->setInactiveBackColor(inActiveButtonBackColor);
+	buttonWithdraw->setInactiveTextColor(inActiveButtonTextColor);
+	buttonWithdraw->setFocusBackColor(FocusButtonBackColor);
+	buttonWithdraw->setFocusTextColor(FocusButtonTextColor);
+	buttonWithdraw->setIsClicked(false);
+	buttonWithdraw->setIsVisible(true);
+	buttonWithdraw->setIsActive(false);
+	buttonWithdraw->setIsFocus(false);
+	withdrawButton_ = buttonWithdraw;
+	addButton(buttonWithdraw);
 }
 
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {
