@@ -33,6 +33,8 @@ struct playerSettings {
 	int level;
 };
 
+enum GameScreenType { Boardgame, WithdrawChoosePlayer, WithdrawAddValue, WithdrawDecision, Auction };
+
 enum ActiveScreenType { None, MainMenu, GameMenu, MonopolyGame };
 
 enum ScreenEventType {

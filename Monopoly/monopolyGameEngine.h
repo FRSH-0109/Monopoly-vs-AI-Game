@@ -18,6 +18,7 @@ enum TurnState {
 };
 
 class monopolyGameEngine {
+	GameScreenType screenType_ = Boardgame;
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 1500;
 	const unsigned int START_PASSING_MONEY_ = 200;
 
@@ -100,7 +101,7 @@ class monopolyGameEngine {
 
 	// pay jail button
 	std::shared_ptr<Button> jailPayButton_;
-	sf::Vector2f JAIL_APY_BUTTON_POSITION = sf::Vector2f(1000, 250);
+	sf::Vector2f JAIL_PAY_BUTTON_POSITION = sf::Vector2f(1000, 250);
 	const unsigned int JAIL_PAY_MONEY = 50;
 
 	// Auction change offer buttons
@@ -127,6 +128,10 @@ class monopolyGameEngine {
 	// Auction resign button
 	std::shared_ptr<Button> auctionResignButton_;
 	sf::Vector2f AUCTION_RESIGN_BUTTON_POSITION = sf::Vector2f(1245, 880);
+
+	// withdraw
+	std::shared_ptr<Button> withdrawButton_;
+	sf::Vector2f WITHDRAW_BUTTON_POSITION = sf::Vector2f(400, 900);
 
 	NotificationWall notificationsWall_;
 
@@ -158,8 +163,14 @@ class monopolyGameEngine {
 	bool makePlayerBankrupt(unsigned int playerIndexTurn);
 	void showAllPropertiesWorker();
 
+	// withdraw
+	void withdrawWorker();
+
    public:
 	monopolyGameEngine();
+
+	void setScreenType(GameScreenType newScreenType);
+	const GameScreenType getScreenType() const;
 
 	// gui
 	void createButtonRollDice();
@@ -180,6 +191,7 @@ class monopolyGameEngine {
 	void createButtonsJailPay();
 	void createAuctionOfferButtons();
 	void createAuctionResignButton();
+	void createButtonWithdraw();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	unsigned int getFontSize() const;
