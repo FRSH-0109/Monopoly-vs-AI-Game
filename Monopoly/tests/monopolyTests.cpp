@@ -558,7 +558,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(4);
 
-		    monopoly_engine.setHouseCount(0);
+			monopoly_engine.setHouseCount(0);
 
 			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();

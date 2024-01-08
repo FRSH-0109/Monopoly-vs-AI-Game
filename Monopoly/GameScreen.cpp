@@ -22,6 +22,10 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
 	monopoly_game_engine_.createTextPlayersInfo();
+	monopoly_game_engine_.createTextBidderInfo();
+	monopoly_game_engine_.createTextHighestBidInfo();
+	monopoly_game_engine_.createTextLeadingBidderInfo();
+	monopoly_game_engine_.createCurrentOfferBidderInfo();
 	monopoly_game_engine_.createButtonBuyResign();
 	monopoly_game_engine_.createButtonNextProperty();
 	monopoly_game_engine_.createButtonPerviousProperty();
@@ -30,6 +34,8 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonsBankrupt();
 	monopoly_game_engine_.createButtonsNextTurn();
 	monopoly_game_engine_.createButtonsJailPay();
+	monopoly_game_engine_.createAuctionOfferButtons();
+	monopoly_game_engine_.createAuctionResignButton();
 	monopoly_game_engine_.createAvailableHousesHotelText();
 }
 

@@ -171,6 +171,26 @@ void monopolyGameEngine::substractHotels(unsigned int substracted_amount) {
 	setHotelCount(hotel_count_ - substracted_amount);
 }
 
+unsigned int monopolyGameEngine::performAuction(unsigned int starting_player, unsigned int auctioned_field_id) {
+	unsigned int current_bid = 10;
+	std::vector<std::shared_ptr<Player>> players_bidding = players_;
+	FieldType field_type = std::visit([] (Field& field) { return field.getType(); }, getBoard()->getFieldById(auctioned_field_id));
+	if (field_type == STREET) {
+		// Tutaj trzeba wygenerować ekran aukcji
+		StreetField auctioned_field = std::get<StreetField>(getBoard()->getFieldById(auctioned_field_id));
+	} else if (field_type == STATION) {
+		// Tutaj trzeba wygenerować ekran aukcji
+		StationField auctioned_field = std::get<StationField>(getBoard()->getFieldById(auctioned_field_id));
+	} else if (field_type == UTILITY) {
+		// Tutaj trzeba wygenerować ekran aukcji
+		UtilityField auctioned_field = std::get<UtilityField>(getBoard()->getFieldById(auctioned_field_id));
+	}
+	while (players_bidding.size() > 1) {
+		// Głowna logika aukcji
+	}
+	std::shared_ptr<Player> winner = players_bidding[0];
+}
+
 bool monopolyGameEngine::groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const {
 	std::vector<unsigned int> field_group_members = field.getGroupMembers();
 	for (auto group_member : field_group_members) {
@@ -230,8 +250,9 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() >= field.getHotelPrice() &&
-		field_houses == 4 && getHotelCount() > 0 && !field.getIsHotel()) {
+	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) &&
+		builder->getMoney() >= field.getHotelPrice() && field_houses == 4 && getHotelCount() > 0 &&
+		!field.getIsHotel()) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
 			if ((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortaged()) {
@@ -474,8 +495,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 				jailPayButton_->setIsVisible(false);
 			}
 
-			if(player_jail_status != 0 && isButtonClicked(jailPayButton_)) {
-				if(players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
+			if (player_jail_status != 0 && isButtonClicked(jailPayButton_)) {
+				if (players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
 					std::string notification_msg = "Not enough money for bail out";
 					notificationAdd(playerIndexturn_, notification_msg);
 				} else {
@@ -913,6 +934,38 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 	}
 }
 
+void monopolyGameEngine::createTextBidderInfo() {
+	std::shared_ptr<sf::Text> bidderInfoText(new sf::Text("Current bidder: ", getFont(), getFontSize()));
+	bidderInfoText->setPosition(BIDDER_INFO_TEXT_POSITION);
+	bidderInfoText->setColor(sf::Color::Black);
+	bidderInfoText_ = bidderInfoText;
+	addText(bidderInfoText);
+}
+
+void monopolyGameEngine::createTextHighestBidInfo() {
+	std::shared_ptr<sf::Text> highestBidText(new sf::Text("Highest bid: ", getFont(), getFontSize()));
+	highestBidText->setPosition(HIGHEST_BID_TEXT_POSITION);
+	highestBidText->setColor(sf::Color::Black);
+	highestBidInfoText_ = highestBidText;
+	addText(highestBidText);
+}
+
+void monopolyGameEngine::createTextLeadingBidderInfo() {
+	std::shared_ptr<sf::Text> leadingBidderText(new sf::Text("Leading bidder: ", getFont(), getFontSize()));
+	leadingBidderText->setPosition(LEADING_BIDDER_TEXT_POSITION);
+	leadingBidderText->setColor(sf::Color::Black);
+	leadingBidderInfoText_ = leadingBidderText;
+	addText(leadingBidderText);
+}
+
+void monopolyGameEngine::createCurrentOfferBidderInfo() {
+	std::shared_ptr<sf::Text> currentOfferText(new sf::Text("Current offer: ", getFont(), getFontSize()));
+	currentOfferText->setPosition(CURRENT_OFFER_TEXT_POSITION);
+	currentOfferText->setColor(sf::Color::Black);
+	currentOfferInfoText_ = currentOfferText;
+	addText(currentOfferText);
+}
+
 void monopolyGameEngine::createButtonBuyResign() {
 	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
@@ -1161,6 +1214,162 @@ void monopolyGameEngine::createButtonsJailPay() {
 	buttonJailPay->setIsFocus(false);
 	jailPayButton_ = buttonJailPay;
 	addButton(buttonJailPay);
+}
+
+void monopolyGameEngine::createAuctionOfferButtons() {
+	Text100_ = std::make_shared<sf::Text>("100", getFont(), getFontSize());
+	Text100_->setPosition(TEXT_100_POSITION);
+	Text100_->setColor(sf::Color::Black);
+	Text100_->setOrigin(Text100_->getGlobalBounds().getSize() / 2.f + Text100_->getLocalBounds().getPosition());
+	addText(Text100_);
+
+	Text10_ = std::make_shared<sf::Text>("10", getFont(), getFontSize());
+	Text10_->setPosition(TEXT_10_POSITION);
+	Text10_->setColor(sf::Color::Black);
+	Text10_->setOrigin(Text10_->getGlobalBounds().getSize() / 2.f + Text10_->getLocalBounds().getPosition());
+	addText(Text10_);
+
+	Text1_ = std::make_shared<sf::Text>("1", getFont(), getFontSize());
+	Text1_->setPosition(TEXT_1_POSITION);
+	Text1_->setColor(sf::Color::Black);
+	Text1_->setOrigin(Text1_->getGlobalBounds().getSize() / 2.f + Text1_->getLocalBounds().getPosition());
+	addText(Text1_);
+
+	sf::Vector2f buttonSize = sf::Vector2f(50, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+
+	std::shared_ptr<Button> buttonAdd100(new Button(Idle, "+", buttonSize, getFontSize() + 10));
+	buttonAdd100->setFont(getFont());
+	buttonAdd100->setPosition(ADD_100_BUTTON_POSITION);
+	buttonAdd100->getText().setPosition(ADD_100_BUTTON_POSITION.x - 12, ADD_100_BUTTON_POSITION.y - 28);
+	buttonAdd100->setActiveBackColor(activeButtonBackColor);
+	buttonAdd100->setActiveTextColor(activeButtonTextColor);
+	buttonAdd100->setInactiveBackColor(inActiveButtonBackColor);
+	buttonAdd100->setInactiveTextColor(inActiveButtonTextColor);
+	buttonAdd100->setFocusBackColor(FocusButtonBackColor);
+	buttonAdd100->setFocusTextColor(FocusButtonTextColor);
+	buttonAdd100->setIsClicked(false);
+	buttonAdd100->setIsVisible(true);
+	buttonAdd100->setIsActive(false);
+	buttonAdd100->setIsFocus(false);
+	add100ToOfferButton_ = buttonAdd100;
+	addButton(buttonAdd100);
+
+	std::shared_ptr<Button> buttonAdd10(new Button(Idle, "+", buttonSize, getFontSize() + 10));
+	buttonAdd10->setFont(getFont());
+	buttonAdd10->setPosition(ADD_10_BUTTON_POSITION);
+	buttonAdd10->getText().setPosition(ADD_10_BUTTON_POSITION.x - 12, ADD_10_BUTTON_POSITION.y - 28);
+	buttonAdd10->setActiveBackColor(activeButtonBackColor);
+	buttonAdd10->setActiveTextColor(activeButtonTextColor);
+	buttonAdd10->setInactiveBackColor(inActiveButtonBackColor);
+	buttonAdd10->setInactiveTextColor(inActiveButtonTextColor);
+	buttonAdd10->setFocusBackColor(FocusButtonBackColor);
+	buttonAdd10->setFocusTextColor(FocusButtonTextColor);
+	buttonAdd10->setIsClicked(false);
+	buttonAdd10->setIsVisible(true);
+	buttonAdd10->setIsActive(false);
+	buttonAdd10->setIsFocus(false);
+	add10ToOfferButton_ = buttonAdd10;
+	addButton(buttonAdd10);
+
+	std::shared_ptr<Button> buttonAdd1(new Button(Idle, "+", buttonSize, getFontSize() + 10));
+	buttonAdd1->setFont(getFont());
+	buttonAdd1->setPosition(ADD_1_BUTTON_POSITION);
+	buttonAdd1->getText().setPosition(ADD_1_BUTTON_POSITION.x - 12, ADD_1_BUTTON_POSITION.y - 28);
+	buttonAdd1->setActiveBackColor(activeButtonBackColor);
+	buttonAdd1->setActiveTextColor(activeButtonTextColor);
+	buttonAdd1->setInactiveBackColor(inActiveButtonBackColor);
+	buttonAdd1->setInactiveTextColor(inActiveButtonTextColor);
+	buttonAdd1->setFocusBackColor(FocusButtonBackColor);
+	buttonAdd1->setFocusTextColor(FocusButtonTextColor);
+	buttonAdd1->setIsClicked(false);
+	buttonAdd1->setIsVisible(true);
+	buttonAdd1->setIsActive(false);
+	buttonAdd1->setIsFocus(false);
+	add1ToOfferButton_ = buttonAdd1;
+	addButton(buttonAdd1);
+
+	std::shared_ptr<Button> buttonSubstract100(new Button(Idle, "-", buttonSize, getFontSize() + 10));
+	buttonSubstract100->setFont(getFont());
+	buttonSubstract100->setPosition(SUBSTRACT_100_BUTTON_POSITION);
+	buttonSubstract100->getText().setPosition(SUBSTRACT_100_BUTTON_POSITION.x - 6, SUBSTRACT_100_BUTTON_POSITION.y - 28);
+	buttonSubstract100->setActiveBackColor(activeButtonBackColor);
+	buttonSubstract100->setActiveTextColor(activeButtonTextColor);
+	buttonSubstract100->setInactiveBackColor(inActiveButtonBackColor);
+	buttonSubstract100->setInactiveTextColor(inActiveButtonTextColor);
+	buttonSubstract100->setFocusBackColor(FocusButtonBackColor);
+	buttonSubstract100->setFocusTextColor(FocusButtonTextColor);
+	buttonSubstract100->setIsClicked(false);
+	buttonSubstract100->setIsVisible(true);
+	buttonSubstract100->setIsActive(false);
+	buttonSubstract100->setIsFocus(false);
+	substract100FromOfferButton_ = buttonSubstract100;
+	addButton(buttonSubstract100);
+
+	std::shared_ptr<Button> buttonSubstract10(new Button(Idle, "-", buttonSize, getFontSize() + 10));
+	buttonSubstract10->setFont(getFont());
+	buttonSubstract10->setPosition(SUBSTRACT_10_BUTTON_POSITION);
+	buttonSubstract10->getText().setPosition(SUBSTRACT_10_BUTTON_POSITION.x - 6, SUBSTRACT_10_BUTTON_POSITION.y - 28);
+	buttonSubstract10->setActiveBackColor(activeButtonBackColor);
+	buttonSubstract10->setActiveTextColor(activeButtonTextColor);
+	buttonSubstract10->setInactiveBackColor(inActiveButtonBackColor);
+	buttonSubstract10->setInactiveTextColor(inActiveButtonTextColor);
+	buttonSubstract10->setFocusBackColor(FocusButtonBackColor);
+	buttonSubstract10->setFocusTextColor(FocusButtonTextColor);
+	buttonSubstract10->setIsClicked(false);
+	buttonSubstract10->setIsVisible(true);
+	buttonSubstract10->setIsActive(false);
+	buttonSubstract10->setIsFocus(false);
+	substract10FromOfferButton_ = buttonSubstract10;
+	addButton(buttonSubstract10);
+
+	std::shared_ptr<Button> buttonSubstract1(new Button(Idle, "-", buttonSize, getFontSize() + 10));
+	buttonSubstract1->setFont(getFont());
+	buttonSubstract1->setPosition(SUBSTRACT_1_BUTTON_POSITION);
+	buttonSubstract1->getText().setPosition(SUBSTRACT_1_BUTTON_POSITION.x - 6, SUBSTRACT_1_BUTTON_POSITION.y - 28);
+	buttonSubstract1->setActiveBackColor(activeButtonBackColor);
+	buttonSubstract1->setActiveTextColor(activeButtonTextColor);
+	buttonSubstract1->setInactiveBackColor(inActiveButtonBackColor);
+	buttonSubstract1->setInactiveTextColor(inActiveButtonTextColor);
+	buttonSubstract1->setFocusBackColor(FocusButtonBackColor);
+	buttonSubstract1->setFocusTextColor(FocusButtonTextColor);
+	buttonSubstract1->setIsClicked(false);
+	buttonSubstract1->setIsVisible(true);
+	buttonSubstract1->setIsActive(false);
+	buttonSubstract1->setIsFocus(false);
+	substract1FromOfferButton_ = buttonSubstract1;
+	addButton(buttonSubstract1);
+}
+
+void monopolyGameEngine::createAuctionResignButton() {
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+
+	std::shared_ptr<Button> buttonResignAuction(new Button(Idle, "Resign", buttonSize, getFontSize()));
+	buttonResignAuction->setFont(getFont());
+	buttonResignAuction->setPosition(AUCTION_RESIGN_BUTTON_POSITION);
+	buttonResignAuction->setActiveBackColor(activeButtonBackColor);
+	buttonResignAuction->setActiveTextColor(activeButtonTextColor);
+	buttonResignAuction->setInactiveBackColor(inActiveButtonBackColor);
+	buttonResignAuction->setInactiveTextColor(inActiveButtonTextColor);
+	buttonResignAuction->setFocusBackColor(FocusButtonBackColor);
+	buttonResignAuction->setFocusTextColor(FocusButtonTextColor);
+	buttonResignAuction->setIsClicked(false);
+	buttonResignAuction->setIsVisible(true);
+	buttonResignAuction->setIsActive(false);
+	buttonResignAuction->setIsFocus(false);
+	auctionResignButton_ = buttonResignAuction;
+	addButton(buttonResignAuction);
 }
 
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {

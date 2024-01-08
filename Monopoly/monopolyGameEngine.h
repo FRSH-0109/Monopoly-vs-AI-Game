@@ -63,6 +63,18 @@ class monopolyGameEngine {
 	std::shared_ptr<sf::Text> availableHotelsText_;
 	sf::Vector2f AVAILABLE_HOUSE_TEXT_POSITION = sf::Vector2f(1675, 110);
 
+	std::shared_ptr<sf::Text> bidderInfoText_;
+	sf::Vector2f BIDDER_INFO_TEXT_POSITION = sf::Vector2f(1360, 105);
+
+	std::shared_ptr<sf::Text> highestBidInfoText_;
+	sf::Vector2f HIGHEST_BID_TEXT_POSITION = sf::Vector2f(820, 100);
+
+	std::shared_ptr<sf::Text> leadingBidderInfoText_;
+	sf::Vector2f LEADING_BIDDER_TEXT_POSITION = sf::Vector2f(820, 145);
+
+	std::shared_ptr<sf::Text> currentOfferInfoText_;
+	sf::Vector2f CURRENT_OFFER_TEXT_POSITION = sf::Vector2f(820, 680);
+
 	std::shared_ptr<sf::Text> houseText_;
 	std::shared_ptr<sf::Text> hotelText_;
 	sf::Vector2f HOUSE_TEXT_POSITION = sf::Vector2f(1445, 80);
@@ -90,6 +102,31 @@ class monopolyGameEngine {
 	std::shared_ptr<Button> jailPayButton_;
 	sf::Vector2f JAIL_APY_BUTTON_POSITION = sf::Vector2f(1000, 250);
 	const unsigned int JAIL_PAY_MONEY = 50;
+
+	// Auction change offer buttons
+	std::shared_ptr<sf::Text> Text1_;
+	std::shared_ptr<sf::Text> Text10_;
+	std::shared_ptr<sf::Text> Text100_;
+	sf::Vector2f TEXT_1_POSITION = sf::Vector2f(975, 880);
+	sf::Vector2f TEXT_10_POSITION = sf::Vector2f(975, 820);
+	sf::Vector2f TEXT_100_POSITION = sf::Vector2f(975, 760);
+
+	std::shared_ptr<Button> add1ToOfferButton_;
+	std::shared_ptr<Button> add10ToOfferButton_;
+	std::shared_ptr<Button> add100ToOfferButton_;
+	std::shared_ptr<Button> substract1FromOfferButton_;
+	std::shared_ptr<Button> substract10FromOfferButton_;
+	std::shared_ptr<Button> substract100FromOfferButton_;
+	sf::Vector2f ADD_1_BUTTON_POSITION = sf::Vector2f(900, 880);
+	sf::Vector2f ADD_10_BUTTON_POSITION = sf::Vector2f(900, 820);
+	sf::Vector2f ADD_100_BUTTON_POSITION = sf::Vector2f(900, 760);
+	sf::Vector2f SUBSTRACT_1_BUTTON_POSITION = sf::Vector2f(1050, 880);
+	sf::Vector2f SUBSTRACT_10_BUTTON_POSITION = sf::Vector2f(1050, 820);
+	sf::Vector2f SUBSTRACT_100_BUTTON_POSITION = sf::Vector2f(1050, 760);
+
+	// Auction resign button
+	std::shared_ptr<Button> auctionResignButton_;
+	sf::Vector2f AUCTION_RESIGN_BUTTON_POSITION = sf::Vector2f(1245, 880);
 
 	NotificationWall notificationsWall_;
 
@@ -130,6 +167,10 @@ class monopolyGameEngine {
 	void createTextRolledValue();
 	void createTextPlayersInfo();
 	void updateTextPlayersInfo();
+	void createTextBidderInfo();
+	void createTextHighestBidInfo();
+	void createTextLeadingBidderInfo();
+	void createCurrentOfferBidderInfo();
 	void createButtonBuyResign();
 	void createButtonNextProperty();
 	void createButtonPerviousProperty();
@@ -137,6 +178,8 @@ class monopolyGameEngine {
 	void createButtonsBankrupt();
 	void createButtonsNextTurn();
 	void createButtonsJailPay();
+	void createAuctionOfferButtons();
+	void createAuctionResignButton();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	unsigned int getFontSize() const;
@@ -173,6 +216,8 @@ class monopolyGameEngine {
 	void substractHouses(unsigned int substracted_amount);
 	void addHotels(unsigned int added_amount);
 	void substractHotels(unsigned int substracted_amount);
+
+	unsigned int performAuction(unsigned int starting_player, unsigned int auctioned_field_id);
 
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
 	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;
