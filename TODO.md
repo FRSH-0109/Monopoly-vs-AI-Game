@@ -1,0 +1,9 @@
+-Wymiany (Zaproponowanie wymiany, Klasa/struktura oferty, Akceptacja i odrzucenie oferty/ transfer dóbr)
+-Aukcje
+-Warunki Bankructwa
+-Obsługa bankructwa
+-Zastawianie/Odstawianie
+-Szanse/Kasa Społeczna
+-Uzupełnienie więzienia w oparciu o karty Szans/Kas Społecznych
+-Przystosowanie gry do AI
+-AI
