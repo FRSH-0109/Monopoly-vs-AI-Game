@@ -404,6 +404,26 @@ bool monopolyGameEngine::isHotelDestroyingLegal(std::shared_ptr<Player> builder,
 	return true;
 }
 
+bool monopolyGameEngine::colorGroupEmpty(std::shared_ptr<Player> mortaging, StreetField& field) {
+	std::vector<unsigned int> mortaging_ownes = mortaging->getFiledOwnedId();
+	if (groupCompleted(mortaging_ownes, field)) {
+		unsigned int field_houses = field.getHouseNumber();
+		if (field_houses == 0) {
+			for (int i = 0; i < field.getGroupMembers().size(); ++i) {
+				StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
+				if (group_member.getHouseNumber() != 0) {
+					return false;
+				}
+			}
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		return true;
+	}
+}
+
 unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos) {
 	unsigned int rent_to_pay;
 	FieldType field_type = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
@@ -595,7 +615,7 @@ void monopolyGameEngine::buildingsManagingWorker() {
 			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && !field.getIsMortaged()) {
+			if (field.getOwner() == curr_player && !field.getIsMortaged() && colorGroupEmpty(curr_player, field)) {
 				curr_player->addMoney(field.getMortage());
 				field.setIsMortaged(true);
 				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());

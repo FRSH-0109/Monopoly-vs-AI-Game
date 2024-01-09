@@ -263,6 +263,7 @@ class monopolyGameEngine {
 	bool isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	bool isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	bool isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
+	bool colorGroupEmpty(std::shared_ptr<Player> mortaging, StreetField& field);
 	sf::Sprite getHouseSprite(StreetField& field, unsigned int housesNumber);
 	sf::Sprite getHotelSprite(StreetField& field);
 	void createAvailableHousesHotelText();
