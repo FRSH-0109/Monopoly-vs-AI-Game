@@ -558,7 +558,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(4);
 
-		    monopoly_engine.setHouseCount(0);
+			monopoly_engine.setHouseCount(0);
 
 			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
@@ -1097,11 +1097,11 @@ TEST_CASE("Player class") {
 	REQUIRE(PLAYER2.getMoney() == AMOUT_1);
 
 	// POSITION TESTS
-	REQUIRE(PLAYER1.getPositon() == 0);
-	PLAYER1.setPositon(POSITION_1);
-	REQUIRE(PLAYER1.getPositon() == POSITION_1);
-	PLAYER1.setPositon(POSITION_2);
-	REQUIRE(PLAYER1.getPositon() == POSITION_2);
+	REQUIRE(PLAYER1.getPosition() == 0);
+	PLAYER1.setPosition(POSITION_1);
+	REQUIRE(PLAYER1.getPosition() == POSITION_1);
+	PLAYER1.setPosition(POSITION_2);
+	REQUIRE(PLAYER1.getPosition() == POSITION_2);
 
 	// JAILSTATUS TESTS
 	REQUIRE(PLAYER1.getJailStatus() == 0);

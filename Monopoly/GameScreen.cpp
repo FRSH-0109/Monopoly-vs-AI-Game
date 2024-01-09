@@ -22,6 +22,11 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
 	monopoly_game_engine_.createTextPlayersInfo();
+	monopoly_game_engine_.createTextBiddedProperty();
+	monopoly_game_engine_.createTextBidderInfo();
+	monopoly_game_engine_.createTextHighestBidInfo();
+	monopoly_game_engine_.createTextLeadingBidderInfo();
+	monopoly_game_engine_.createCurrentOfferBidderInfo();
 	monopoly_game_engine_.createButtonBuyResign();
 	monopoly_game_engine_.createButtonNextProperty();
 	monopoly_game_engine_.createButtonPerviousProperty();
@@ -30,14 +35,16 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonsBankrupt();
 	monopoly_game_engine_.createButtonsNextTurn();
 	monopoly_game_engine_.createButtonsJailPay();
+	monopoly_game_engine_.createAuctionOfferButtons();
+	monopoly_game_engine_.createAuctionBidButton();
+	monopoly_game_engine_.createAuctionResignButton();
 	monopoly_game_engine_.createAvailableHousesHotelText();
 	monopoly_game_engine_.createButtonWithdraw();
-
 	monopoly_game_engine_.getWithdraw().setFont(getFont());
 	monopoly_game_engine_.getWithdraw().createChoosePlayerScreen();
 	monopoly_game_engine_.getWithdraw().createValuePlayerScreen();
 	monopoly_game_engine_.getWithdraw().createDecisionPlayerScreen();
-
+  monopoly_game_engine_.createMortagingButton();
 	monopoly_game_engine_.getWithdraw().setBoard(monopoly_game_engine_.getBoard());
 	for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
 		monopoly_game_engine_.addButton(button_ptr);
@@ -117,7 +124,16 @@ void GameScreen::draw() {
 							owner_flag = field_specified.getOwnerFlag();
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
-								owner_flag.setFillColor(owner_ptr->getColor());
+								sf::Color player_color = owner_ptr->getColor();
+								if (field_specified.getIsMortaged()) {
+									player_color.a = 100;
+									if (player_color.b == 255) {
+										player_color.b = 180;
+									} else if (player_color.r == 255 && player_color.g == 0) {
+										player_color.r = 130;
+									}
+								}
+								owner_flag.setFillColor(player_color);
 
 								if (field_specified.getIsHotel()) {
 									sf::Sprite hotel_sprite = monopoly_game_engine_.getHotelSprite(field_specified);
@@ -141,7 +157,16 @@ void GameScreen::draw() {
 							owner_flag = field_specified.getOwnerFlag();
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
-								owner_flag.setFillColor(owner_ptr->getColor());
+								sf::Color player_color = owner_ptr->getColor();
+								if (field_specified.getIsMortaged()) {
+									player_color.a = 100;
+									if (player_color.b == 255) {
+										player_color.b = 180;
+									} else if (player_color.r == 255 && player_color.g == 0) {
+										player_color.r = 130;
+									}
+								}
+								owner_flag.setFillColor(player_color);
 							}
 						} break;
 
@@ -150,7 +175,16 @@ void GameScreen::draw() {
 							owner_flag = field_specified.getOwnerFlag();
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
-								owner_flag.setFillColor(owner_ptr->getColor());
+								sf::Color player_color = owner_ptr->getColor();
+								if (field_specified.getIsMortaged()) {
+									player_color.a = 100;
+									if (player_color.b == 255) {
+										player_color.b = 180;
+									} else if (player_color.r == 255 && player_color.g == 0) {
+										player_color.r = 130;
+									}
+								}
+								owner_flag.setFillColor(player_color);
 							}
 						} break;
 					}
@@ -223,7 +257,21 @@ void GameScreen::draw() {
 			break;
 
 		case Auction:
+			// draw buttons and texts
+			for (auto element : monopoly_game_engine_.getAuctionButtons()) {
+				if (element->getIsVisible()) {
+					element->draw(getContextWindow()->getWindow());
+				}
+			}
+			for (auto element : monopoly_game_engine_.getAuctionTexts()) {
+				getContextWindow()->getWindow().draw(*element);
+			}
 
+			// draw property data for buy/sell
+			getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
+			for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
 			break;
 
 		default:

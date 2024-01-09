@@ -24,8 +24,8 @@ class Player {
    public:
 	Player();
 	Player(unsigned int money);
-	unsigned int getPositon() const;
-	void setPositon(unsigned int newPosition);
+	unsigned int getPosition() const;
+	void setPosition(unsigned int newPosition);
 	bool hasFiledOwnedId(unsigned int id) const;
 	std::vector<unsigned int> getFiledOwnedId() const;
 	void addFieldOwnedId(unsigned int id);
