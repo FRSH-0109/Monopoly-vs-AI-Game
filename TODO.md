@@ -1,8 +1,8 @@
--Wymiany (Zaproponowanie wymiany, Klasa/struktura oferty, Akceptacja i odrzucenie oferty/ transfer dóbr)
+-Wymiany (Zaproponowanie wymiany, Klasa/struktura oferty, Akceptacja i odrzucenie oferty/ transfer dóbr) (DONE)
 -Aukcje (DONE)
 -Warunki Bankructwa
 -Obsługa bankructwa
--Zastawianie/Odstawianie
+-Zastawianie/Odstawianie (DONE)
 -Szanse/Kasa Społeczna
 -Uzupełnienie więzienia w oparciu o karty Szans/Kas Społecznych
 -Przystosowanie gry do AI
