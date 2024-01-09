@@ -33,6 +33,15 @@ struct playerSettings {
 	int level;
 };
 
+enum TurnState {
+	RollDice,
+	FieldAction,
+	BuyAction,
+	PayRent,
+	TurnEnd,
+	WithdrawOngoing,
+};
+
 enum GameScreenType { Boardgame, WithdrawChoosePlayer, WithdrawAddValue, WithdrawDecision, Auction };
 
 enum ActiveScreenType { None, MainMenu, GameMenu, MonopolyGame };

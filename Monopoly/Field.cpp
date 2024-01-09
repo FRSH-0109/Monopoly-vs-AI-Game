@@ -20,7 +20,7 @@ Field::Field(const unsigned int id,
 	  rotation_(rotation),
 	  position_(position) {
 	nameText_.setString(name);
-	nameText_.setColor(sf::Color::Black);
+	nameText_.setFillColor(sf::Color::Black);
 	nameText_.setPosition(sf::Vector2f(position.x, position.y));
 }
 

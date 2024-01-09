@@ -697,7 +697,26 @@ void monopolyGameEngine::withdrawWorker() {
 	if (isButtonClicked(withdrawButton_)) {	 // player decied to go bankrupt
 		notificationAdd(playerIndexturn_, " is busy, can not withdraw right now");
 		if (getTurnState() == RollDice || getTurnState() == TurnEnd) {
+			getWithdraw().setTurnState(getTurnState());
+			setTurnState(WithdrawOngoing);
 			setScreenType(WithdrawChoosePlayer);
+			getWithdraw().setChooseScreenVisible(true);
+			getWithdraw().setPlayer1ToWithdraw(players_[playerIndexturn_]);
+			getWithdraw().getPlayer1Button()->setIsVisible(false);
+			getWithdraw().getPlayer2Button()->setIsVisible(false);
+			getWithdraw().getPlayer3Button()->setIsVisible(false);
+			getWithdraw().getPlayer4Button()->setIsVisible(false);
+			for (auto player_ptr : getPlayers()) {
+				if (player_ptr->getId() == 0 && player_ptr->getId() != players_[playerIndexturn_]->getId()) {
+					getWithdraw().getPlayer1Button()->setIsVisible(true);
+				} else if (player_ptr->getId() == 1 && player_ptr->getId() != players_[playerIndexturn_]->getId()) {
+					getWithdraw().getPlayer2Button()->setIsVisible(true);
+				} else if (player_ptr->getId() == 2 && player_ptr->getId() != players_[playerIndexturn_]->getId()) {
+					getWithdraw().getPlayer3Button()->setIsVisible(true);
+				} else if (player_ptr->getId() == 3 && player_ptr->getId() != players_[playerIndexturn_]->getId()) {
+					getWithdraw().getPlayer4Button()->setIsVisible(true);
+				}
+			}
 		}
 	}
 }
@@ -976,6 +995,141 @@ void monopolyGameEngine::monopolyGameWorker() {
 				setTurnState(RollDice);
 			}
 			break;
+		case WithdrawOngoing:
+			if (isButtonClicked(getWithdraw().getResignButton()) ||
+				isButtonClicked(getWithdraw().getResignValueButton()) ||
+				isButtonClicked(getWithdraw().getResignDecisionButton())) {
+				getWithdraw().setChooseScreenVisible(false);
+				getWithdraw().setValueScreenVisible(false);
+				getWithdraw().setDecisionScreenVisible(false);
+				setScreenType(Boardgame);
+				setTurnState(getWithdraw().getTurnState());
+				getWithdraw().setPlayer2ToWithdraw(nullptr);
+			} else {
+				if (getScreenType() == WithdrawChoosePlayer) {
+					if (isButtonClicked(getWithdraw().getPlayer1Button())) {
+						for (auto player_ptr : getPlayers()) {
+							if (player_ptr->getId() == 0) {
+								getWithdraw().setPlayer2ToWithdraw(player_ptr);
+							}
+						}
+					} else if (isButtonClicked(getWithdraw().getPlayer2Button())) {
+						for (auto player_ptr : getPlayers()) {
+							if (player_ptr->getId() == 1) {
+								getWithdraw().setPlayer2ToWithdraw(player_ptr);
+							}
+						}
+					} else if (isButtonClicked(getWithdraw().getPlayer3Button())) {
+						for (auto player_ptr : getPlayers()) {
+							if (player_ptr->getId() == 2) {
+								getWithdraw().setPlayer2ToWithdraw(player_ptr);
+							}
+						}
+					} else if (isButtonClicked(getWithdraw().getPlayer4Button())) {
+						for (auto player_ptr : getPlayers()) {
+							if (player_ptr->getId() == 3) {
+								getWithdraw().setPlayer2ToWithdraw(player_ptr);
+							}
+						}
+					}
+
+					if (getScreenType() == WithdrawChoosePlayer && getWithdraw().getPlayer2ToWithdraw() != nullptr) {
+						setScreenType(WithdrawAddValue);
+						getWithdraw().setChooseScreenVisible(false);
+						getWithdraw().setValueScreenVisible(true);
+					}
+				} else if (getScreenType() == WithdrawAddValue) {
+					getWithdraw().moneyTextUpdate();
+					if (isButtonClicked(getWithdraw().getPlayer1minus1())) {
+						getWithdraw().moneyTransferIndex(1, -1);
+					} else if (isButtonClicked(getWithdraw().getPlayer1minus10())) {
+						getWithdraw().moneyTransferIndex(1, -10);
+					} else if (isButtonClicked(getWithdraw().getPlayer1minus100())) {
+						getWithdraw().moneyTransferIndex(1, -100);
+					} else if (isButtonClicked(getWithdraw().getPlayer1plus1())) {
+						getWithdraw().moneyTransferIndex(1, 1);
+					} else if (isButtonClicked(getWithdraw().getPlayer1plus10())) {
+						getWithdraw().moneyTransferIndex(1, 10);
+					} else if (isButtonClicked(getWithdraw().getPlayer1plus100())) {
+						getWithdraw().moneyTransferIndex(1, 100);
+					} else if (isButtonClicked(getWithdraw().getPlayer2minus1())) {
+						getWithdraw().moneyTransferIndex(2, -1);
+					} else if (isButtonClicked(getWithdraw().getPlayer2minus10())) {
+						getWithdraw().moneyTransferIndex(2, -10);
+					} else if (isButtonClicked(getWithdraw().getPlayer2minus100())) {
+						getWithdraw().moneyTransferIndex(2, -100);
+					} else if (isButtonClicked(getWithdraw().getPlayer2plus1())) {
+						getWithdraw().moneyTransferIndex(2, 1);
+					} else if (isButtonClicked(getWithdraw().getPlayer2plus10())) {
+						getWithdraw().moneyTransferIndex(2, 10);
+					} else if (isButtonClicked(getWithdraw().getPlayer2plus100())) {
+						getWithdraw().moneyTransferIndex(2, 100);
+					} else if (isButtonClicked(getWithdraw().getPlayer1NextButton())) {
+						getWithdraw().addPropertyPlayerShowed(1, 1);
+						getWithdraw().showProperty(1);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer1PreviousButton())) {
+						getWithdraw().addPropertyPlayerShowed(-1, 1);
+						getWithdraw().showProperty(1);
+					} else if (isButtonClicked(getWithdraw().getPlayer2NextButton())) {
+						getWithdraw().addPropertyPlayerShowed(1, 4);
+						getWithdraw().showProperty(4);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer2PreviousButton())) {
+						getWithdraw().addPropertyPlayerShowed(-1, 4);
+						getWithdraw().showProperty(4);
+					} else if (isButtonClicked(getWithdraw().getPlayer1IndexNextButton())) {
+						getWithdraw().addPropertyPlayerShowed(1, 2);
+						getWithdraw().showProperty(2);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer1IndexPreviousButton())) {
+						getWithdraw().addPropertyPlayerShowed(-1, 2);
+						getWithdraw().showProperty(2);
+					} else if (isButtonClicked(getWithdraw().getPlayer2IndexNextButton())) {
+						getWithdraw().addPropertyPlayerShowed(1, 3);
+						getWithdraw().showProperty(3);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer2IndexPreviousButton())) {
+						getWithdraw().addPropertyPlayerShowed(-1, 3);
+						getWithdraw().showProperty(3);
+					} else if (isButtonClicked(getWithdraw().getPlayer1AddButton())) {
+						getWithdraw().propertyPlayerMoveIndex(1, 1);
+						getWithdraw().showProperty(2);
+						getWithdraw().showProperty(1);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer1RemoveButton())) {
+						getWithdraw().propertyPlayerMoveIndex(-1, 1);
+						getWithdraw().showProperty(1);
+						getWithdraw().showProperty(2);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer2AddButton())) {
+						getWithdraw().propertyPlayerMoveIndex(1, 2);
+						getWithdraw().showProperty(3);
+						getWithdraw().showProperty(4);
+
+					} else if (isButtonClicked(getWithdraw().getPlayer2RemoveButton())) {
+						getWithdraw().propertyPlayerMoveIndex(-1, 2);
+						getWithdraw().showProperty(3);
+						getWithdraw().showProperty(4);
+					} else if (isButtonClicked(getWithdraw().getSubmitValueButton()) &&
+							   getWithdraw().isNonZeroValue()) {
+						setScreenType(WithdrawDecision);
+						getWithdraw().setDecisionScreenVisible(true);
+						getWithdraw().setValueScreenVisible(false);
+					}
+				} else if (getScreenType() == WithdrawDecision) {
+					if (isButtonClicked(getWithdraw().getAcceptDecisionButton())) {
+						getWithdraw().makeWithdraw();
+						getWithdraw().setChooseScreenVisible(false);
+						getWithdraw().setValueScreenVisible(false);
+						getWithdraw().setDecisionScreenVisible(false);
+						setScreenType(Boardgame);
+						setTurnState(getWithdraw().getTurnState());
+						getWithdraw().setPlayer2ToWithdraw(nullptr);
+					}
+				}
+			}
+			break;
 		default:
 			break;
 	}
@@ -990,14 +1144,14 @@ void monopolyGameEngine::createAvailableHousesHotelText() {
 	std::shared_ptr<sf::Text> avaHousesText(
 		new sf::Text("Houses bank: " + std::to_string(getHouseCount()), getFont(), getFontSize() - 2));
 	avaHousesText->setPosition(AVAILABLE_HOUSE_TEXT_POSITION);
-	avaHousesText->setColor(sf::Color::Black);
+	avaHousesText->setFillColor(sf::Color::Black);
 	availableHousesText_ = avaHousesText;
 	addText(avaHousesText);
 
 	std::shared_ptr<sf::Text> avaHotelsText(
 		new sf::Text("Hotels bank: " + std::to_string(getHotelCount()), getFont(), getFontSize() - 2));
 	avaHotelsText->setPosition(sf::Vector2f(AVAILABLE_HOUSE_TEXT_POSITION.x, AVAILABLE_HOUSE_TEXT_POSITION.y + 30));
-	avaHotelsText->setColor(sf::Color::Black);
+	avaHotelsText->setFillColor(sf::Color::Black);
 	availableHotelsText_ = avaHotelsText;
 	addText(avaHotelsText);
 }
@@ -1116,7 +1270,7 @@ void monopolyGameEngine::createButtonRollDice() {
 void monopolyGameEngine::createTextTurnInfo() {
 	std::shared_ptr<sf::Text> turnInfoText(new sf::Text("Turn: ", getFont(), getFontSize()));
 	turnInfoText->setPosition(TURN_INFO_TEXT_POSITION);
-	turnInfoText->setColor(sf::Color::Black);
+	turnInfoText->setFillColor(sf::Color::Black);
 	turnInfoText_ = turnInfoText;
 	addText(turnInfoText);
 }
@@ -1124,7 +1278,7 @@ void monopolyGameEngine::createTextTurnInfo() {
 void monopolyGameEngine::createTextRolledValue() {
 	std::shared_ptr<sf::Text> rolledValueText(new sf::Text("", getFont(), getFontSize()));
 	rolledValueText->setPosition(ROLLED_VALUE_TEXT_POSITION);
-	rolledValueText->setColor(sf::Color::Black);
+	rolledValueText->setFillColor(sf::Color::Black);
 	rolledValueText_ = rolledValueText;
 	addText(rolledValueText);
 }
@@ -1140,7 +1294,7 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		std::shared_ptr<sf::Text> playerText(
 			new sf::Text("Player " + std::to_string(id + 1), getFont(), getFontSize()));
 		playerText->setPosition(defPos);
-		playerText->setColor(player->getColor());
+		playerText->setFillColor(player->getColor());
 		playerText->setOutlineColor(sf::Color::Black);
 		playerText->setOutlineThickness(2);
 		addText(playerText);
@@ -1148,20 +1302,20 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		std::shared_ptr<sf::Text> playerMoneyText(
 			new sf::Text("Money: " + std::to_string(player->getMoney()), getFont(), getFontSize() - 7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
-		playerMoneyText->setColor(sf::Color::Black);
+		playerMoneyText->setFillColor(sf::Color::Black);
 		addText(playerMoneyText);
 
 		std::shared_ptr<sf::Text> playerPositionText(
 			new sf::Text("Position: " + std::to_string(player->getPosition() + 1), getFont(), getFontSize() - 7));
 		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
-		playerPositionText->setColor(sf::Color::Black);
+		playerPositionText->setFillColor(sf::Color::Black);
 		addText(playerPositionText);
 
 		const std::string streetName =
 			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPosition()));
 		std::shared_ptr<sf::Text> playerPositionNameText(new sf::Text(streetName, getFont(), getFontSize() - 7));
 		playerPositionNameText->setPosition(sf::Vector2f(defPos.x, defPos.y + 110));
-		playerPositionNameText->setColor(sf::Color::Black);
+		playerPositionNameText->setFillColor(sf::Color::Black);
 		addText(playerPositionNameText);
 
 		std::vector<std::shared_ptr<sf::Text>> playerInfoTextTmp;
@@ -1334,11 +1488,11 @@ void monopolyGameEngine::createButtonPerviousProperty() {
 void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	houseText_ = std::make_shared<sf::Text>("House", getFont(), getFontSize() - 2);
 	houseText_->setPosition(HOUSE_TEXT_POSITION);
-	houseText_->setColor(sf::Color::Black);
+	houseText_->setFillColor(sf::Color::Black);
 	houseText_->setOrigin(houseText_->getGlobalBounds().getSize() / 2.f + houseText_->getLocalBounds().getPosition());
 	hotelText_ = std::make_shared<sf::Text>("Hotel", getFont(), getFontSize() - 2);
 	hotelText_->setPosition(HOTEL_TEXT_POSITION);
-	hotelText_->setColor(sf::Color::Black);
+	hotelText_->setFillColor(sf::Color::Black);
 	hotelText_->setOrigin(hotelText_->getGlobalBounds().getSize() / 2.f + hotelText_->getLocalBounds().getPosition());
 	addText(houseText_);
 	addText(hotelText_);
@@ -1844,7 +1998,7 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	}
 	propertyName->setPosition(
 		sf::Vector2f(dataPos.x + (dataSprite.getGlobalBounds().getSize().x / 2.f), dataPos.y + 80));
-	propertyName->setColor(sf::Color::Black);
+	propertyName->setFillColor(sf::Color::Black);
 
 	const float yOffset = 90;
 	const float yOffset_step = 25;
@@ -1853,16 +2007,16 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	std::shared_ptr<sf::Text> propertyPrice(
 		new sf::Text("Price: " + std::to_string(price), getFont(), getFontSize() - 2));
 	propertyPrice->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset));
-	propertyPrice->setColor(sf::Color::Black);
+	propertyPrice->setFillColor(sf::Color::Black);
 
 	std::shared_ptr<sf::Text> propertyMortage(new sf::Text("Mortage:", getFont(), getFontSize() - 2));
 	propertyMortage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
-	propertyMortage->setColor(sf::Color::Black);
+	propertyMortage->setFillColor(sf::Color::Black);
 
 	std::shared_ptr<sf::Text> propertyMortagePrice(new sf::Text(std::to_string(mortage), getFont(), getFontSize() - 2));
 	propertyMortagePrice->setPosition(
 		sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 8));
-	propertyMortagePrice->setColor(sf::Color::Black);
+	propertyMortagePrice->setFillColor(sf::Color::Black);
 
 	if (isPropertyShownToBuy) {
 		propertyDataTexts_.push_back(propertyName);
@@ -1879,93 +2033,93 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	if (fieldType == STREET) {
 		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
 		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
-		propertyRent1->setColor(sf::Color::Black);
+		propertyRent1->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  with color set:", getFont(), getFontSize() - 2));
 		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
-		propertyRent2->setColor(sf::Color::Black);
+		propertyRent2->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  with 1 house:", getFont(), getFontSize() - 2));
 		propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
-		propertyRent3->setColor(sf::Color::Black);
+		propertyRent3->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  with 2 houses:", getFont(), getFontSize() - 2));
 		propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
-		propertyRent4->setColor(sf::Color::Black);
+		propertyRent4->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  with 3 houses:", getFont(), getFontSize() - 2));
 		propertyRent5->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 5));
-		propertyRent5->setColor(sf::Color::Black);
+		propertyRent5->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  with 4 houses:", getFont(), getFontSize() - 2));
 		propertyRent6->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
-		propertyRent6->setColor(sf::Color::Black);
+		propertyRent6->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  with hotel:", getFont(), getFontSize() - 2));
 		propertyRent7->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 7));
-		propertyRent7->setColor(sf::Color::Black);
+		propertyRent7->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Houses cost:", getFont(), getFontSize() - 2));
 		propertyHouseCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 9));
-		propertyHouseCost->setColor(sf::Color::Black);
+		propertyHouseCost->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Hotel cost:", getFont(), getFontSize() - 2));
 		propertyHotelCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 10));
-		propertyHotelCost->setColor(sf::Color::Black);
+		propertyHotelCost->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost1(
 			new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
 		propertyRentCost1->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 1));
-		propertyRentCost1->setColor(sf::Color::Black);
+		propertyRentCost1->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost2(
 			new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
 		propertyRentCost2->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 2));
-		propertyRentCost2->setColor(sf::Color::Black);
+		propertyRentCost2->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost3(
 			new sf::Text(std::to_string(rents[2]), getFont(), getFontSize() - 2));
 		propertyRentCost3->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 3));
-		propertyRentCost3->setColor(sf::Color::Black);
+		propertyRentCost3->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost4(
 			new sf::Text(std::to_string(rents[3]), getFont(), getFontSize() - 2));
 		propertyRentCost4->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
-		propertyRentCost4->setColor(sf::Color::Black);
+		propertyRentCost4->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost5(
 			new sf::Text(std::to_string(rents[4]), getFont(), getFontSize() - 2));
 		propertyRentCost5->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 5));
-		propertyRentCost5->setColor(sf::Color::Black);
+		propertyRentCost5->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost6(
 			new sf::Text(std::to_string(rents[5]), getFont(), getFontSize() - 2));
 		propertyRentCost6->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 6));
-		propertyRentCost6->setColor(sf::Color::Black);
+		propertyRentCost6->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost7(
 			new sf::Text(std::to_string(rents[6]), getFont(), getFontSize() - 2));
 		propertyRentCost7->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 7));
-		propertyRentCost7->setColor(sf::Color::Black);
+		propertyRentCost7->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyHousePrice(
 			new sf::Text(std::to_string(housePrice), getFont(), getFontSize() - 2));
 		propertyHousePrice->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 9));
-		propertyHousePrice->setColor(sf::Color::Black);
+		propertyHousePrice->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyHotelPrice(
 			new sf::Text(std::to_string(hotelPrice), getFont(), getFontSize() - 2));
 		propertyHotelPrice->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 10));
-		propertyHotelPrice->setColor(sf::Color::Black);
+		propertyHotelPrice->setFillColor(sf::Color::Black);
 
 		if (isPropertyShownToBuy) {
 			propertyDataTexts_.push_back(propertyRent1);
@@ -2008,43 +2162,43 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	} else if (fieldType == STATION) {
 		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
 		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
-		propertyRent1->setColor(sf::Color::Black);
+		propertyRent1->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent2(new sf::Text(" if 2 are owned:", getFont(), getFontSize() - 2));
 		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
-		propertyRent2->setColor(sf::Color::Black);
+		propertyRent2->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent3(new sf::Text(" if 3 are owned:", getFont(), getFontSize() - 2));
 		propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
-		propertyRent3->setColor(sf::Color::Black);
+		propertyRent3->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent4(new sf::Text(" if 4 are owned:", getFont(), getFontSize() - 2));
 		propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
-		propertyRent4->setColor(sf::Color::Black);
+		propertyRent4->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost1(
 			new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
 		propertyRentCost1->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 1));
-		propertyRentCost1->setColor(sf::Color::Black);
+		propertyRentCost1->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost2(
 			new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
 		propertyRentCost2->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 2));
-		propertyRentCost2->setColor(sf::Color::Black);
+		propertyRentCost2->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost3(
 			new sf::Text(std::to_string(rents[2]), getFont(), getFontSize() - 2));
 		propertyRentCost3->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 3));
-		propertyRentCost3->setColor(sf::Color::Black);
+		propertyRentCost3->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost4(
 			new sf::Text(std::to_string(rents[3]), getFont(), getFontSize() - 2));
 		propertyRentCost4->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
-		propertyRentCost4->setColor(sf::Color::Black);
+		propertyRentCost4->setFillColor(sf::Color::Black);
 
 		if (isPropertyShownToBuy) {
 			propertyDataTexts_.push_back(propertyRent1);
@@ -2068,27 +2222,27 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	} else {
 		std::shared_ptr<sf::Text> propertyRent(new sf::Text("Rent:", getFont(), getFontSize() - 2));
 		propertyRent->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
-		propertyRent->setColor(sf::Color::Black);
+		propertyRent->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("1 utility is owned: ", getFont(), getFontSize() - 2));
 		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
-		propertyRent1->setColor(sf::Color::Black);
+		propertyRent1->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost1(
 			new sf::Text(std::to_string(rents[0]), getFont(), getFontSize() - 2));
 		propertyRentCost1->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
-		propertyRentCost1->setColor(sf::Color::Black);
+		propertyRentCost1->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("2 utilities are owned: ", getFont(), getFontSize() - 2));
 		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
-		propertyRent2->setColor(sf::Color::Black);
+		propertyRent2->setFillColor(sf::Color::Black);
 
 		std::shared_ptr<sf::Text> propertyRentCost2(
 			new sf::Text(std::to_string(rents[1]), getFont(), getFontSize() - 2));
 		propertyRentCost2->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 7));
-		propertyRentCost2->setColor(sf::Color::Black);
+		propertyRentCost2->setFillColor(sf::Color::Black);
 
 		if (isPropertyShownToBuy) {
 			propertyDataTexts_.push_back(propertyRent);
@@ -2170,7 +2324,7 @@ bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	// check if index is legal
 	// remove player from playif(rotation == 0)
 	// {
-
+	// TODO:
 	// }ers vector
 	// remove all ownerships
 	return true;
@@ -2243,8 +2397,6 @@ sf::Sprite monopolyGameEngine::getHotelSprite(StreetField& field) {
 	const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
 	hotel_sprite.setScale(SCALE_VECT);
 	hotel_sprite.setRotation(rotation);
-	int xOffset = 0;
-	int yOffset = 0;
 	if (rotation == 0)	// as in hotel sprite calculations to keep the same flow of offsetting
 	{
 		position.y += 2;
@@ -2263,4 +2415,8 @@ sf::Sprite monopolyGameEngine::getHotelSprite(StreetField& field) {
 	hotel_sprite.setPosition(position.x, position.y);
 
 	return hotel_sprite;
+}
+
+Withdraw& monopolyGameEngine::getWithdraw() {
+	return withdraw_;
 }

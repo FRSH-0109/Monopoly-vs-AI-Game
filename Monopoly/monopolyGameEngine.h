@@ -6,16 +6,9 @@
 #include <vector>
 #include "Board.h"
 #include "NotificationWall.h"
+#include "Withdraw.h"
 #include "activeScreen.h"
 #include "main.h"
-
-enum TurnState {
-	RollDice,
-	FieldAction,
-	BuyAction,
-	PayRent,
-	TurnEnd,
-};
 
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
 
@@ -142,6 +135,7 @@ class monopolyGameEngine {
 	sf::Vector2f AUCTION_RESIGN_BUTTON_POSITION = sf::Vector2f(1330, 880);
 
 	// withdraw
+	Withdraw withdraw_;
 	std::shared_ptr<Button> withdrawButton_;
 	sf::Vector2f WITHDRAW_BUTTON_POSITION = sf::Vector2f(400, 900);
 
@@ -277,4 +271,7 @@ class monopolyGameEngine {
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
 	void buildingsManagingWorker();
 	void monopolyGameWorker();
+
+	// withdraw
+	Withdraw& getWithdraw();
 };
