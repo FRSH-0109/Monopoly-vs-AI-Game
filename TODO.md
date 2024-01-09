@@ -1,5 +1,5 @@
 -Wymiany (Zaproponowanie wymiany, Klasa/struktura oferty, Akceptacja i odrzucenie oferty/ transfer dóbr)
--Aukcje
+-Aukcje (DONE)
 -Warunki Bankructwa
 -Obsługa bankructwa
 -Zastawianie/Odstawianie
