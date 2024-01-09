@@ -127,7 +127,6 @@ void GameScreen::draw() {
 								}
 								owner_flag.setFillColor(player_color);
 
-
 								if (field_specified.getIsHotel()) {
 									sf::Sprite hotel_sprite = monopoly_game_engine_.getHotelSprite(field_specified);
 									sf::Texture hotel_texture = monopoly_game_engine_.getHotelTexture();

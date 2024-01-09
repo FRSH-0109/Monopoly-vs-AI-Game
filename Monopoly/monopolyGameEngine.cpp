@@ -194,17 +194,19 @@ void monopolyGameEngine::performAuction() {
 	static std::shared_ptr<Player> highest_bidder;
 	static unsigned int player_bidding;
 	static std::vector<std::shared_ptr<Player>> players_bidding;
-	switch(getAuctionState()) {
+	switch (getAuctionState()) {
 		case Initialization: {
 			current_bid = 10;
 			bidded_property_id = players_[playerIndexturn_]->getPosition();
 			highest_bidder = nullptr;
 			player_bidding = playerIndexturn_;
 			players_bidding = players_;
-			bidderInfoText_->setString("Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+			bidderInfoText_->setString(
+				"Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
 			highestBidInfoText_->setString("Highest bid: " + std::to_string(current_bid));
 			if (highest_bidder != nullptr) {
-				leadingBidderInfoText_->setString("Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
+				leadingBidderInfoText_->setString(
+					"Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
 			}
 			setAuctionState(PassBiddingTurn);
 			break;
@@ -224,10 +226,12 @@ void monopolyGameEngine::performAuction() {
 				} else {
 					++player_bidding;
 				}
-				bidderInfoText_->setString("Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+				bidderInfoText_->setString(
+					"Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
 				highestBidInfoText_->setString("Highest bid: " + std::to_string(current_bid));
 				if (highest_bidder != nullptr) {
-					leadingBidderInfoText_->setString("Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
+					leadingBidderInfoText_->setString(
+						"Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
 				}
 				setAuctionState(PassBiddingTurn);
 			}
@@ -236,14 +240,15 @@ void monopolyGameEngine::performAuction() {
 				for (auto it = players_bidding.begin(); it != players_bidding.end(); ++it) {
 					if (i == player_bidding) {
 						players_bidding.erase(it);
-						if(player_bidding == players_bidding.size()) {
+						if (player_bidding == players_bidding.size()) {
 							player_bidding = 0;
 						}
 						break;
 					}
 					++i;
 				}
-				bidderInfoText_->setString("Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+				bidderInfoText_->setString(
+					"Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
 			}
 			if (isButtonClicked(add1ToOfferButton_)) {
 				if (current_offer + 1 <= players_bidding[player_bidding]->getMoney()) {
@@ -307,7 +312,6 @@ void monopolyGameEngine::performAuction() {
 			break;
 		}
 	}
-
 }
 
 bool monopolyGameEngine::groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const {
@@ -624,7 +628,8 @@ void monopolyGameEngine::buildingsManagingWorker() {
 			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && field.getIsMortaged() && curr_player->getMoney() >= field.getUnmortageValue()) {
+			if (field.getOwner() == curr_player && field.getIsMortaged() &&
+				curr_player->getMoney() >= field.getUnmortageValue()) {
 				curr_player->substractMoney(field.getUnmortageValue());
 				field.setIsMortaged(false);
 				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
@@ -633,7 +638,8 @@ void monopolyGameEngine::buildingsManagingWorker() {
 			}
 		} else if (field_type == STATION) {
 			StationField& field = std::get<StationField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && field.getIsMortaged() && curr_player->getMoney() >= field.getUnmortageValue()) {
+			if (field.getOwner() == curr_player && field.getIsMortaged() &&
+				curr_player->getMoney() >= field.getUnmortageValue()) {
 				curr_player->substractMoney(field.getUnmortageValue());
 				field.setIsMortaged(false);
 				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
@@ -642,7 +648,8 @@ void monopolyGameEngine::buildingsManagingWorker() {
 			}
 		} else if (field_type == UTILITY) {
 			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && field.getIsMortaged() && curr_player->getMoney() >= field.getUnmortageValue()) {
+			if (field.getOwner() == curr_player && field.getIsMortaged() &&
+				curr_player->getMoney() >= field.getUnmortageValue()) {
 				curr_player->substractMoney(field.getUnmortageValue());
 				field.setIsMortaged(false);
 				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
@@ -654,7 +661,6 @@ void monopolyGameEngine::buildingsManagingWorker() {
 }
 
 void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
-
 	rollDiceButton_->setIsVisible(!is_auction);
 	buyFieldButton_->setIsVisible(!is_auction);
 	resignBuyFieldButton_->setIsVisible(!is_auction);
@@ -757,7 +763,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 						isDouble = false;
 					}
 
-					if (double_turns == 3) {clearPropertyData(false);
+					if (double_turns == 3) {
+						clearPropertyData(false);
 						std::string notification_msg = "Went to Jail on doubles";
 						sendToJail(playerIndexturn_);
 						players_[playerIndexturn_]->setJailStatus(3);
@@ -927,8 +934,8 @@ void monopolyGameEngine::monopolyGameWorker() {
 			if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction) {
 				if (getAuctionState() == NoAuction) {
 					std::string textPlayerResginedProperty(
-					"resigned to buy field " +
-					std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+						"resigned to buy field " +
+						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
 					notificationAdd(playerIndexturn_, textPlayerResginedProperty);
 					resignBuyFieldButton_->setIsVisible(false);
 					buyFieldButton_->setIsVisible(false);
@@ -1567,7 +1574,8 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	std::shared_ptr<Button> buttonSubstract100(new Button(Idle, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract100->setFont(getFont());
 	buttonSubstract100->setPosition(SUBSTRACT_100_BUTTON_POSITION);
-	buttonSubstract100->getText().setPosition(SUBSTRACT_100_BUTTON_POSITION.x - 6, SUBSTRACT_100_BUTTON_POSITION.y - 28);
+	buttonSubstract100->getText().setPosition(
+		SUBSTRACT_100_BUTTON_POSITION.x - 6, SUBSTRACT_100_BUTTON_POSITION.y - 28);
 	buttonSubstract100->setActiveBackColor(activeButtonBackColor);
 	buttonSubstract100->setActiveTextColor(activeButtonTextColor);
 	buttonSubstract100->setInactiveBackColor(inActiveButtonBackColor);

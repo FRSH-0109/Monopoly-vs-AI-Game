@@ -17,13 +17,7 @@ enum TurnState {
 	TurnEnd,
 };
 
-enum AuctionState {
-	NoAuction,
-	Initialization,
-	PassBiddingTurn,
-	Bidding,
-	Ending
-};
+enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
 
 class monopolyGameEngine {
 	GameScreenType screenType_ = Boardgame;
