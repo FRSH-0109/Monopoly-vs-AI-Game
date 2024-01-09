@@ -585,6 +585,72 @@ void monopolyGameEngine::buildingsManagingWorker() {
 			std::cout << "Can't sell hotel on a non street field" << std::endl;
 		}
 	}
+	if (isButtonClicked(mortageButton_)) {
+		std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
+		if (field_type == STREET) {
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if (field.getOwner() == curr_player && !field.getIsMortaged()) {
+				curr_player->addMoney(field.getMortage());
+				field.setIsMortaged(true);
+				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to mortage field " + field.getName());
+			}
+		} else if (field_type == STATION) {
+			StationField& field = std::get<StationField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if (field.getOwner() == curr_player && !field.getIsMortaged()) {
+				curr_player->addMoney(field.getMortage());
+				field.setIsMortaged(true);
+				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to mortage field " + field.getName());
+			}
+		} else if (field_type == UTILITY) {
+			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if (field.getOwner() == curr_player && !field.getIsMortaged()) {
+				curr_player->addMoney(field.getMortage());
+				field.setIsMortaged(true);
+				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to mortage field " + field.getName());
+			}
+		}
+	}
+	if (isButtonClicked(unmortageButton_)) {
+		std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
+		if (field_type == STREET) {
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if (field.getOwner() == curr_player && field.getIsMortaged() && curr_player->getMoney() >= field.getUnmortageValue()) {
+				curr_player->substractMoney(field.getUnmortageValue());
+				field.setIsMortaged(false);
+				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to unmortage field " + field.getName());
+			}
+		} else if (field_type == STATION) {
+			StationField& field = std::get<StationField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if (field.getOwner() == curr_player && field.getIsMortaged() && curr_player->getMoney() >= field.getUnmortageValue()) {
+				curr_player->substractMoney(field.getUnmortageValue());
+				field.setIsMortaged(false);
+				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to unmortage field " + field.getName());
+			}
+		} else if (field_type == UTILITY) {
+			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(currentPropertyShowed_));
+			if (field.getOwner() == curr_player && field.getIsMortaged() && curr_player->getMoney() >= field.getUnmortageValue()) {
+				curr_player->substractMoney(field.getUnmortageValue());
+				field.setIsMortaged(false);
+				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
+			} else {
+				notificationAdd(playerIndexturn_, "Unable to unmortage field " + field.getName());
+			}
+		}
+	}
 }
 
 void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
@@ -1342,7 +1408,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 }
 
 void monopolyGameEngine::createButtonsBankrupt() {
-	sf::Vector2f buttonSize = sf::Vector2f(140, 50);
+	sf::Vector2f buttonSize = sf::Vector2f(160, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
 	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
 	sf::Color FocusButtonBackColor = sf::Color::Black;
@@ -1367,7 +1433,7 @@ void monopolyGameEngine::createButtonsBankrupt() {
 }
 
 void monopolyGameEngine::createButtonsNextTurn() {
-	sf::Vector2f buttonSize = sf::Vector2f(140, 50);
+	sf::Vector2f buttonSize = sf::Vector2f(160, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
 	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
 	sf::Color FocusButtonBackColor = sf::Color::Black;
@@ -1630,6 +1696,48 @@ void monopolyGameEngine::createButtonWithdraw() {
 	buttonWithdraw->setIsFocus(false);
 	withdrawButton_ = buttonWithdraw;
 	addButton(buttonWithdraw);
+}
+
+void monopolyGameEngine::createMortagingButton() {
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+
+	std::shared_ptr<Button> buttonMortage(new Button(Idle, "Mortage", buttonSize, getFontSize()));
+	buttonMortage->setFont(getFont());
+	buttonMortage->setPosition(MORTAGE_BUTTON_POSITION);
+	buttonMortage->setActiveBackColor(activeButtonBackColor);
+	buttonMortage->setActiveTextColor(activeButtonTextColor);
+	buttonMortage->setInactiveBackColor(inActiveButtonBackColor);
+	buttonMortage->setInactiveTextColor(inActiveButtonTextColor);
+	buttonMortage->setFocusBackColor(FocusButtonBackColor);
+	buttonMortage->setFocusTextColor(FocusButtonTextColor);
+	buttonMortage->setIsClicked(false);
+	buttonMortage->setIsVisible(true);
+	buttonMortage->setIsActive(false);
+	buttonMortage->setIsFocus(false);
+	mortageButton_ = buttonMortage;
+	addButton(buttonMortage);
+
+	std::shared_ptr<Button> buttonUnmortage(new Button(Idle, "Unmortage", buttonSize, getFontSize()));
+	buttonUnmortage->setFont(getFont());
+	buttonUnmortage->setPosition(UNMORTAGE_BUTTON_POSITION);
+	buttonUnmortage->setActiveBackColor(activeButtonBackColor);
+	buttonUnmortage->setActiveTextColor(activeButtonTextColor);
+	buttonUnmortage->setInactiveBackColor(inActiveButtonBackColor);
+	buttonUnmortage->setInactiveTextColor(inActiveButtonTextColor);
+	buttonUnmortage->setFocusBackColor(FocusButtonBackColor);
+	buttonUnmortage->setFocusTextColor(FocusButtonTextColor);
+	buttonUnmortage->setIsClicked(false);
+	buttonUnmortage->setIsVisible(true);
+	buttonUnmortage->setIsActive(false);
+	buttonUnmortage->setIsFocus(false);
+	unmortageButton_ = buttonUnmortage;
+	addButton(buttonUnmortage);
 }
 
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {

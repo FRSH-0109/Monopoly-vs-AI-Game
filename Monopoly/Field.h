@@ -97,7 +97,7 @@ class PropertyField : public Field {
 	const bool getIsMortaged();
 	const unsigned int getUnmortageValue();
 	std::shared_ptr<Player> getOwner();
-	sf::RectangleShape getOwnerFlag();
+	sf::RectangleShape& getOwnerFlag();
 
 	void setIsMortaged(bool new_state);
 	void setOwner(std::shared_ptr<Player> new_owner);

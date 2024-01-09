@@ -40,6 +40,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createAuctionResignButton();
 	monopoly_game_engine_.createAvailableHousesHotelText();
 	monopoly_game_engine_.createButtonWithdraw();
+	monopoly_game_engine_.createMortagingButton();
 }
 
 GameScreen::~GameScreen() {
@@ -115,7 +116,17 @@ void GameScreen::draw() {
 							owner_flag = field_specified.getOwnerFlag();
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
-								owner_flag.setFillColor(owner_ptr->getColor());
+								sf::Color player_color = owner_ptr->getColor();
+								if (field_specified.getIsMortaged()) {
+									player_color.a = 100;
+									if (player_color.b == 255) {
+										player_color.b = 180;
+									} else if (player_color.r == 255 && player_color.g == 0) {
+										player_color.r = 130;
+									}
+								}
+								owner_flag.setFillColor(player_color);
+
 
 								if (field_specified.getIsHotel()) {
 									sf::Sprite hotel_sprite = monopoly_game_engine_.getHotelSprite(field_specified);
@@ -139,7 +150,16 @@ void GameScreen::draw() {
 							owner_flag = field_specified.getOwnerFlag();
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
-								owner_flag.setFillColor(owner_ptr->getColor());
+								sf::Color player_color = owner_ptr->getColor();
+								if (field_specified.getIsMortaged()) {
+									player_color.a = 100;
+									if (player_color.b == 255) {
+										player_color.b = 180;
+									} else if (player_color.r == 255 && player_color.g == 0) {
+										player_color.r = 130;
+									}
+								}
+								owner_flag.setFillColor(player_color);
 							}
 						} break;
 
@@ -148,7 +168,16 @@ void GameScreen::draw() {
 							owner_flag = field_specified.getOwnerFlag();
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
-								owner_flag.setFillColor(owner_ptr->getColor());
+								sf::Color player_color = owner_ptr->getColor();
+								if (field_specified.getIsMortaged()) {
+									player_color.a = 100;
+									if (player_color.b == 255) {
+										player_color.b = 180;
+									} else if (player_color.r == 255 && player_color.g == 0) {
+										player_color.r = 130;
+									}
+								}
+								owner_flag.setFillColor(player_color);
 							}
 						} break;
 					}

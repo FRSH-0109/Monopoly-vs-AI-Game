@@ -105,8 +105,8 @@ class monopolyGameEngine {
 
 	std::shared_ptr<Button> bankruptButton_;
 	std::shared_ptr<Button> nextTurnButton_;
-	sf::Vector2f BANKRUPT_BUTTON_POSITION = sf::Vector2f(1245, 120);
-	sf::Vector2f NEXT_TURN_BUTTON_POSITION = sf::Vector2f(1245, 180);
+	sf::Vector2f BANKRUPT_BUTTON_POSITION = sf::Vector2f(1270, 120);
+	sf::Vector2f NEXT_TURN_BUTTON_POSITION = sf::Vector2f(1270, 180);
 
 	// housese and hotels
 	sf::Vector2f houseSize_ = sf::Vector2f(22, 13);
@@ -150,6 +150,12 @@ class monopolyGameEngine {
 	// withdraw
 	std::shared_ptr<Button> withdrawButton_;
 	sf::Vector2f WITHDRAW_BUTTON_POSITION = sf::Vector2f(400, 900);
+
+	// Mortaging mechanic buttons
+	std::shared_ptr<Button> mortageButton_;
+	std::shared_ptr<Button> unmortageButton_;
+	sf::Vector2f MORTAGE_BUTTON_POSITION = sf::Vector2f(1445, 760);
+	sf::Vector2f UNMORTAGE_BUTTON_POSITION = sf::Vector2f(1595, 760);
 
 	NotificationWall notificationsWall_;
 
@@ -216,6 +222,7 @@ class monopolyGameEngine {
 	void createAuctionBidButton();
 	void createAuctionResignButton();
 	void createButtonWithdraw();
+	void createMortagingButton();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	sf::Font& getFont();
 	unsigned int getFontSize() const;

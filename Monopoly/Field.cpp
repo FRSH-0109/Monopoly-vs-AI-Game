@@ -143,7 +143,7 @@ std::shared_ptr<Player> PropertyField::getOwner() {
 	return owner_;
 };
 
-sf::RectangleShape PropertyField::getOwnerFlag() {
+sf::RectangleShape& PropertyField::getOwnerFlag() {
 	return owner_flag_;
 }
 
