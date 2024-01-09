@@ -306,7 +306,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	std::shared_ptr<sf::Text> PlayerText(new sf::Text(playerTextString, getFont(), fontSize));
 	PlayerText->setOrigin(PlayerText->getGlobalBounds().getSize() / 2.f + PlayerText->getLocalBounds().getPosition());
 	PlayerText->setPosition(posStart);
-	PlayerText->setColor(playerTextColor);
+	PlayerText->setFillColor(playerTextColor);
 	PlayerText->setOutlineColor(sf::Color::Black);
 	PlayerText->setOutlineThickness(3);
 	addText(PlayerText);
@@ -360,7 +360,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	PlayerTextAILevel->setOrigin(PlayerTextAILevel->getGlobalBounds().getSize() / 2.f +
 								 PlayerTextAILevel->getLocalBounds().getPosition());  // text origin at center
 	PlayerTextAILevel->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 3.8));
-	PlayerTextAILevel->setColor(sf::Color::Black);
+	PlayerTextAILevel->setFillColor(sf::Color::Black);
 	addText(PlayerTextAILevel);
 
 	std::shared_ptr<Button> buttonPlayerSetAILevel1(new Button(buttonAILevel1Event, "1", buttonSizeSmall, fontSize));

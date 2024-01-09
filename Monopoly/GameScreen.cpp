@@ -32,6 +32,16 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonsJailPay();
 	monopoly_game_engine_.createAvailableHousesHotelText();
 	monopoly_game_engine_.createButtonWithdraw();
+
+	monopoly_game_engine_.getWithdraw().setFont(getFont());
+	monopoly_game_engine_.getWithdraw().createChoosePlayerScreen();
+	monopoly_game_engine_.getWithdraw().createValuePlayerScreen();
+	monopoly_game_engine_.getWithdraw().createDecisionPlayerScreen();
+
+	monopoly_game_engine_.getWithdraw().setBoard(monopoly_game_engine_.getBoard());
+	for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
+		monopoly_game_engine_.addButton(button_ptr);
+	}
 }
 
 GameScreen::~GameScreen() {
@@ -174,16 +184,42 @@ void GameScreen::draw() {
 			}
 		} break;
 
-		case WithdrawChoosePlayer:
-
-			break;
-
 		case WithdrawAddValue:
-
-			break;
-
+			monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer1().setTexture(
+				*monopoly_game_engine_.getWithdraw().getTexturePropertyPlayer1(), true);
+			getContextWindow()->getWindow().draw(monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer1());
+			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer1()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
+			monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer1Index().setTexture(
+				*monopoly_game_engine_.getWithdraw().getTexturePropertyPlayer1Index(), true);
+			getContextWindow()->getWindow().draw(monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer1Index());
+			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer1Index()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
+			monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer2().setTexture(
+				*monopoly_game_engine_.getWithdraw().getTexturePropertyPlayer2(), true);
+			getContextWindow()->getWindow().draw(monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer2());
+			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer2()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
+			monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer2Index().setTexture(
+				*monopoly_game_engine_.getWithdraw().getTexturePropertyPlayer2Index(), true);
+			getContextWindow()->getWindow().draw(monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer2Index());
+			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer2Index()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
+		case WithdrawChoosePlayer:
 		case WithdrawDecision:
+			for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
+				if (button_ptr->getIsVisible()) {
+					button_ptr->draw(getContextWindow()->getWindow());
+				}
+			}
 
+			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTexts()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
 			break;
 
 		case Auction:

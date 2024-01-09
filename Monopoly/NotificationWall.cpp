@@ -18,7 +18,7 @@ std::vector<std::shared_ptr<sf::Text>>& NotificationWall::getWall() {
 
 void NotificationWall::addToWall(std::string text) {
 	std::shared_ptr<sf::Text> newNoti(new sf::Text(text, getFont(), getFontSize() - 2));
-	newNoti->setColor(sf::Color::Black);
+	newNoti->setFillColor(sf::Color::Black);
 	wallTexts_.push_back(newNoti);
 	if (wallTexts_.size() > MAX_NOTIFICATIONS_) {
 		wallTexts_.erase(wallTexts_.begin());
