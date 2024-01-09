@@ -695,7 +695,6 @@ void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
 
 void monopolyGameEngine::withdrawWorker() {
 	if (isButtonClicked(withdrawButton_)) {	 // player decied to go bankrupt
-		notificationAdd(playerIndexturn_, " is busy, can not withdraw right now");
 		if (getTurnState() == RollDice || getTurnState() == TurnEnd) {
 			getWithdraw().setTurnState(getTurnState());
 			setTurnState(WithdrawOngoing);
@@ -717,6 +716,8 @@ void monopolyGameEngine::withdrawWorker() {
 					getWithdraw().getPlayer4Button()->setIsVisible(true);
 				}
 			}
+		} else {
+			notificationAdd(playerIndexturn_, " is busy, can not withdraw right now");
 		}
 	}
 }
