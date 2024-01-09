@@ -130,12 +130,21 @@ unsigned int monopolyGameEngine::rollDice() const {	 // dices roll for 1-12 move
 	std::uniform_int_distribution<> dist(1, 6);
 	return dist(gen);
 }
+
 void monopolyGameEngine::setTurnState(TurnState newState) {
 	turnState_ = newState;
 }
 
 TurnState monopolyGameEngine::getTurnState() const {
 	return turnState_;
+}
+
+void monopolyGameEngine::setAuctionState(AuctionState newState) {
+	auctionState_ = newState;
+}
+
+AuctionState monopolyGameEngine::getAuctionState() {
+	return auctionState_;
 }
 
 unsigned int monopolyGameEngine::getFontSize() const {
@@ -178,24 +187,127 @@ void monopolyGameEngine::substractHotels(unsigned int substracted_amount) {
 	setHotelCount(hotel_count_ - substracted_amount);
 }
 
-unsigned int monopolyGameEngine::performAuction(unsigned int starting_player, unsigned int auctioned_field_id) {
-	unsigned int current_bid = 10;
-	std::vector<std::shared_ptr<Player>> players_bidding = players_;
-	FieldType field_type = std::visit([] (Field& field) { return field.getType(); }, getBoard()->getFieldById(auctioned_field_id));
-	if (field_type == STREET) {
-		// Tutaj trzeba wygenerować ekran aukcji
-		StreetField auctioned_field = std::get<StreetField>(getBoard()->getFieldById(auctioned_field_id));
-	} else if (field_type == STATION) {
-		// Tutaj trzeba wygenerować ekran aukcji
-		StationField auctioned_field = std::get<StationField>(getBoard()->getFieldById(auctioned_field_id));
-	} else if (field_type == UTILITY) {
-		// Tutaj trzeba wygenerować ekran aukcji
-		UtilityField auctioned_field = std::get<UtilityField>(getBoard()->getFieldById(auctioned_field_id));
+void monopolyGameEngine::performAuction() {
+	static unsigned int current_bid;
+	static unsigned int current_offer;
+	static unsigned int bidded_property_id;
+	static std::shared_ptr<Player> highest_bidder;
+	static unsigned int player_bidding;
+	static std::vector<std::shared_ptr<Player>> players_bidding;
+	switch(getAuctionState()) {
+		case Initialization: {
+			current_bid = 10;
+			bidded_property_id = players_[playerIndexturn_]->getPosition();
+			highest_bidder = nullptr;
+			player_bidding = playerIndexturn_;
+			players_bidding = players_;
+			bidderInfoText_->setString("Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+			highestBidInfoText_->setString("Highest bid: " + std::to_string(current_bid));
+			if (highest_bidder != nullptr) {
+				leadingBidderInfoText_->setString("Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
+			}
+			setAuctionState(PassBiddingTurn);
+			break;
+		}
+		case PassBiddingTurn: {
+			current_offer = current_bid + 1;
+			setAuctionState(Bidding);
+			break;
+		}
+		case Bidding: {
+			// Główna logika aukcji
+			if (isButtonClicked(auctionBidButton_)) {
+				highest_bidder = players_bidding[player_bidding];
+				current_bid = current_offer;
+				if (player_bidding == players_bidding.size() - 1) {
+					player_bidding = 0;
+				} else {
+					++player_bidding;
+				}
+				bidderInfoText_->setString("Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+				highestBidInfoText_->setString("Highest bid: " + std::to_string(current_bid));
+				if (highest_bidder != nullptr) {
+					leadingBidderInfoText_->setString("Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
+				}
+				setAuctionState(PassBiddingTurn);
+			}
+			if (isButtonClicked(auctionResignButton_)) {
+				unsigned int i = 0;
+				for (auto it = players_bidding.begin(); it != players_bidding.end(); ++it) {
+					if (i == player_bidding) {
+						players_bidding.erase(it);
+						if(player_bidding == players_bidding.size()) {
+							player_bidding = 0;
+						}
+						break;
+					}
+					++i;
+				}
+				bidderInfoText_->setString("Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+			}
+			if (isButtonClicked(add1ToOfferButton_)) {
+				if (current_offer + 1 <= players_bidding[player_bidding]->getMoney()) {
+					current_offer += 1;
+				} else {
+					current_offer = players_bidding[player_bidding]->getMoney();
+				}
+			}
+			if (isButtonClicked(add10ToOfferButton_)) {
+				if (current_offer + 10 <= players_bidding[player_bidding]->getMoney()) {
+					current_offer += 10;
+				} else {
+					current_offer = players_bidding[player_bidding]->getMoney();
+				}
+			}
+			if (isButtonClicked(add100ToOfferButton_)) {
+				if (current_offer + 100 <= players_bidding[player_bidding]->getMoney()) {
+					current_offer += 100;
+				} else {
+					current_offer = players_bidding[player_bidding]->getMoney();
+				}
+			}
+			if (isButtonClicked(substract1FromOfferButton_)) {
+				if (current_offer - 1 >= current_bid + 1 && current_offer > 1) {
+					current_offer -= 1;
+				} else {
+					current_offer = current_bid + 1;
+				}
+			}
+			if (isButtonClicked(substract10FromOfferButton_)) {
+				if (current_offer - 10 >= current_bid + 1 && current_offer > 10) {
+					current_offer -= 10;
+				} else {
+					current_offer = current_bid + 1;
+				}
+			}
+			if (isButtonClicked(substract100FromOfferButton_)) {
+				if (current_offer - 100 >= current_bid + 1 && current_offer > 100) {
+					current_offer -= 100;
+				} else {
+					current_offer = current_bid + 1;
+				}
+			}
+			currentOfferInfoText_->setString("Current offer: " + std::to_string(current_offer));
+
+			if ((players_bidding.size() == 1 && highest_bidder != nullptr) || players_bidding.size() == 0) {
+				setAuctionState(Ending);
+			}
+			break;
+		}
+		case Ending: {
+			if (highest_bidder != nullptr) {
+				std::shared_ptr<Player> winner = players_bidding[0];
+				addOwnerToPropertyField(winner, bidded_property_id);
+				winner->addFieldOwnedId(bidded_property_id);
+				winner->substractMoney(current_bid);
+			} else {
+				notificationAdd(playerIndexturn_, "Started auction - no winner!");
+			}
+			setAuctionState(NoAuction);
+			break;
+		}
 	}
-	while (players_bidding.size() > 1) {
-		// Głowna logika aukcji
-	}
-	std::shared_ptr<Player> winner = players_bidding[0];
+
 }
 
 bool monopolyGameEngine::groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const {
@@ -339,16 +451,16 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 }
 
 void monopolyGameEngine::movePlayer(unsigned int turnIndex, unsigned int positionIncrement) {
-	int oldPos = players_[turnIndex]->getPositon();
+	int oldPos = players_[turnIndex]->getPosition();
 	int newPos = (oldPos + positionIncrement) % 40;
-	players_[turnIndex]->setPositon(newPos);
+	players_[turnIndex]->setPosition(newPos);
 	sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
 	players_[turnIndex]->setSpritePosition(newPlayerSpritePos);
 }
 
 void monopolyGameEngine::sendToJail(unsigned int turnIndex) {
 	const unsigned int JAIL_ID = 10;
-	players_[turnIndex]->setPositon(JAIL_ID);
+	players_[turnIndex]->setPosition(JAIL_ID);
 	sf::Vector2f newPlayerSpritePos = getUpdatePlayerSpritePosition();
 	players_[turnIndex]->setSpritePosition(newPlayerSpritePos);
 }
@@ -475,6 +587,40 @@ void monopolyGameEngine::buildingsManagingWorker() {
 	}
 }
 
+void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
+
+	rollDiceButton_->setIsVisible(!is_auction);
+	buyFieldButton_->setIsVisible(!is_auction);
+	resignBuyFieldButton_->setIsVisible(!is_auction);
+	nextPropertyButton_->setIsVisible(!is_auction);
+	previousPropertyButton_->setIsVisible(!is_auction);
+	buyHouseButton_->setIsVisible(!is_auction);
+	sellHouseButton_->setIsVisible(!is_auction);
+	buyHotelButton_->setIsVisible(!is_auction);
+	sellHotelButton_->setIsVisible(!is_auction);
+	bankruptButton_->setIsVisible(!is_auction);
+	nextTurnButton_->setIsVisible(!is_auction);
+	withdrawButton_->setIsVisible(!is_auction);
+
+	if (is_auction) {
+		PROPERTY_DATA_POSITION = sf::Vector2f(200, 300);
+	} else {
+		PROPERTY_DATA_POSITION = sf::Vector2f(910, 260);
+	}
+
+	clearPropertyData(true);
+	showPropertyData(players_[playerIndexturn_]->getPosition(), true);
+
+	add1ToOfferButton_->setIsVisible(is_auction);
+	add10ToOfferButton_->setIsVisible(is_auction);
+	add100ToOfferButton_->setIsVisible(is_auction);
+	substract1FromOfferButton_->setIsVisible(is_auction);
+	substract10FromOfferButton_->setIsVisible(is_auction);
+	substract100FromOfferButton_->setIsVisible(is_auction);
+	auctionBidButton_->setIsVisible(is_auction);
+	auctionResignButton_->setIsVisible(is_auction);
+}
+
 void monopolyGameEngine::withdrawWorker() {
 	if (isButtonClicked(withdrawButton_)) {	 // player decied to go bankrupt
 		notificationAdd(playerIndexturn_, " is busy, can not withdraw right now");
@@ -545,7 +691,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 						isDouble = false;
 					}
 
-					if (double_turns == 3) {
+					if (double_turns == 3) {clearPropertyData(false);
 						std::string notification_msg = "Went to Jail on doubles";
 						sendToJail(playerIndexturn_);
 						players_[playerIndexturn_]->setJailStatus(3);
@@ -554,9 +700,9 @@ void monopolyGameEngine::monopolyGameWorker() {
 						rollDiceButton_->setIsVisible(false);
 						setTurnState(TurnEnd);
 					} else {
-						int oldPos = players_[playerIndexturn_]->getPositon();
+						int oldPos = players_[playerIndexturn_]->getPosition();
 						movePlayer(playerIndexturn_, rolled_val);
-						int newPos = players_[playerIndexturn_]->getPositon();
+						int newPos = players_[playerIndexturn_]->getPosition();
 						handlePassingStart(oldPos, newPos);
 
 						rollDiceButton_->setIsVisible(false);
@@ -566,9 +712,9 @@ void monopolyGameEngine::monopolyGameWorker() {
 					if (roll1 == roll2) {
 						players_[playerIndexturn_]->setJailStatus(0);
 
-						int oldPos = players_[playerIndexturn_]->getPositon();
+						int oldPos = players_[playerIndexturn_]->getPosition();
 						movePlayer(playerIndexturn_, rolled_val);
-						int newPos = players_[playerIndexturn_]->getPositon();
+						int newPos = players_[playerIndexturn_]->getPosition();
 						handlePassingStart(oldPos, newPos);
 
 						std::string notification_msg = "Leaving jail on doubles";
@@ -592,9 +738,9 @@ void monopolyGameEngine::monopolyGameWorker() {
 						players_[playerIndexturn_]->setJailStatus(0);
 						players_[playerIndexturn_]->substractMoney(JAIL_BAILOUT);
 
-						int oldPos = players_[playerIndexturn_]->getPositon();
+						int oldPos = players_[playerIndexturn_]->getPosition();
 						movePlayer(playerIndexturn_, rolled_val);
-						int newPos = players_[playerIndexturn_]->getPositon();
+						int newPos = players_[playerIndexturn_]->getPosition();
 						handlePassingStart(oldPos, newPos);
 
 						rollDiceButton_->setIsVisible(false);
@@ -616,7 +762,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 		} break;
 		case FieldAction: {
-			int pos = players_[playerIndexturn_]->getPositon();
+			int pos = players_[playerIndexturn_]->getPosition();
 			FieldType field_type =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 
@@ -680,13 +826,13 @@ void monopolyGameEngine::monopolyGameWorker() {
 		} break;
 
 		case BuyAction: {
-			int pos = players_[playerIndexturn_]->getPositon();
+			int pos = players_[playerIndexturn_]->getPosition();
 			unsigned int price = getFieldPriceByPosition(pos);
 			FieldType fieldType =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 			resignBuyFieldButton_->setIsVisible(true);
 			buyFieldButton_->setIsVisible(true);
-			if (buyFieldButton_->getIsActive()) {
+			if (isButtonClicked(buyFieldButton_)) {
 				if (players_[playerIndexturn_]->getMoney() >= price) {	// possible to buy property
 
 					std::string textPlayerBoughtProperty(
@@ -712,15 +858,27 @@ void monopolyGameEngine::monopolyGameWorker() {
 				buyFieldButton_->setIsActive(false);
 			}
 
-			if (resignBuyFieldButton_->getIsActive()) {
-				std::string textPlayerResginedProperty(
+			if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction) {
+				if (getAuctionState() == NoAuction) {
+					std::string textPlayerResginedProperty(
 					"resigned to buy field " +
 					std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
-				notificationAdd(playerIndexturn_, textPlayerResginedProperty);
-				resignBuyFieldButton_->setIsActive(false);
-				resignBuyFieldButton_->setIsVisible(false);
-				buyFieldButton_->setIsVisible(false);
-				setTurnState(TurnEnd);
+					notificationAdd(playerIndexturn_, textPlayerResginedProperty);
+					resignBuyFieldButton_->setIsVisible(false);
+					buyFieldButton_->setIsVisible(false);
+					boardToAuctionSwitchHandler(true);
+					setScreenType(Auction);
+					setAuctionState(Initialization);
+				}
+				performAuction();
+				if (getAuctionState() == NoAuction) {
+					boardToAuctionSwitchHandler(false);
+					resignBuyFieldButton_->setIsVisible(false);
+					buyFieldButton_->setIsVisible(false);
+					rollDiceButton_->setIsVisible(false);
+					setScreenType(Boardgame);
+					setTurnState(TurnEnd);
+				}
 			}
 		} break;
 
@@ -775,7 +933,7 @@ sf::Vector2f monopolyGameEngine::getUpdatePlayerSpritePosition() {
 	float x_offset;
 	float y_offset;
 	const float HEIGHT_OFFSET = 20.0;  // If we want piece to go lower we increase this value.
-	unsigned int player_position = players_[playerIndexturn_]->getPositon();
+	unsigned int player_position = players_[playerIndexturn_]->getPosition();
 	PossibleFields& curr_field = getBoard()->getFieldById(player_position);
 	unsigned int curr_field_width = std::visit([](Field& field) { return field.getWidth(); }, curr_field);
 	unsigned int curr_field_height = std::visit([](Field& field) { return field.getHeight(); }, curr_field);
@@ -815,12 +973,30 @@ void monopolyGameEngine::addText(std::shared_ptr<sf::Text> textTmp) {
 	texts_.push_back(text);
 }
 
+void monopolyGameEngine::addAuctionButton(std::shared_ptr<Button> buttonTmp) {
+	std::shared_ptr<Button> button = buttonTmp;
+	auctionButtons_.push_back(button);
+}
+
+void monopolyGameEngine::addAuctionText(std::shared_ptr<sf::Text> textTmp) {
+	std::shared_ptr<sf::Text> text = textTmp;
+	auctionTexts_.push_back(text);
+}
+
 std::vector<std::shared_ptr<Button>>& monopolyGameEngine::getButtons() {
 	return buttons_;
 }
 
 std::vector<std::shared_ptr<sf::Text>>& monopolyGameEngine::getTexts() {
 	return texts_;
+}
+
+std::vector<std::shared_ptr<Button>>& monopolyGameEngine::getAuctionButtons() {
+	return auctionButtons_;
+}
+
+std::vector<std::shared_ptr<sf::Text>>& monopolyGameEngine::getAuctionTexts() {
+	return auctionTexts_;
 }
 
 sf::Sprite& monopolyGameEngine::getPropertyDataSprite() {
@@ -903,13 +1079,13 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		addText(playerMoneyText);
 
 		std::shared_ptr<sf::Text> playerPositionText(
-			new sf::Text("Position: " + std::to_string(player->getPositon() + 1), getFont(), getFontSize() - 7));
+			new sf::Text("Position: " + std::to_string(player->getPosition() + 1), getFont(), getFontSize() - 7));
 		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
 		playerPositionText->setColor(sf::Color::Black);
 		addText(playerPositionText);
 
 		const std::string streetName =
-			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPositon()));
+			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPosition()));
 		std::shared_ptr<sf::Text> playerPositionNameText(new sf::Text(streetName, getFont(), getFontSize() - 7));
 		playerPositionNameText->setPosition(sf::Vector2f(defPos.x, defPos.y + 110));
 		playerPositionNameText->setColor(sf::Color::Black);
@@ -933,10 +1109,10 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 	bool isPlayerinGame[4] = {false, false, false, false};
 	for (auto player : players_) {
 		const std::string streetName =
-			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPositon()));
+			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPosition()));
 		int id = player->getId();
 		playerInfoText_[id][1]->setString("Money: " + std::to_string(player->getMoney()));
-		playerInfoText_[id][2]->setString("Position: " + std::to_string(player->getPositon() + 1));
+		playerInfoText_[id][2]->setString("Position: " + std::to_string(player->getPosition() + 1));
 		playerInfoText_[id][3]->setString(streetName);
 		isPlayerinGame[id] = true;
 	}
@@ -951,12 +1127,20 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 	}
 }
 
+void monopolyGameEngine::createTextBiddedProperty() {
+	std::shared_ptr<sf::Text> biddedPropertyText(new sf::Text("Bid for: ", getFont(), getFontSize()));
+	biddedPropertyText->setPosition(BIDDED_PROPERTY_TEXT_POSITION);
+	biddedPropertyText->setColor(sf::Color::Black);
+	biddedPropertyText_ = biddedPropertyText;
+	addAuctionText(biddedPropertyText);
+}
+
 void monopolyGameEngine::createTextBidderInfo() {
 	std::shared_ptr<sf::Text> bidderInfoText(new sf::Text("Current bidder: ", getFont(), getFontSize()));
 	bidderInfoText->setPosition(BIDDER_INFO_TEXT_POSITION);
 	bidderInfoText->setColor(sf::Color::Black);
 	bidderInfoText_ = bidderInfoText;
-	addText(bidderInfoText);
+	addAuctionText(bidderInfoText);
 }
 
 void monopolyGameEngine::createTextHighestBidInfo() {
@@ -964,7 +1148,7 @@ void monopolyGameEngine::createTextHighestBidInfo() {
 	highestBidText->setPosition(HIGHEST_BID_TEXT_POSITION);
 	highestBidText->setColor(sf::Color::Black);
 	highestBidInfoText_ = highestBidText;
-	addText(highestBidText);
+	addAuctionText(highestBidText);
 }
 
 void monopolyGameEngine::createTextLeadingBidderInfo() {
@@ -972,7 +1156,7 @@ void monopolyGameEngine::createTextLeadingBidderInfo() {
 	leadingBidderText->setPosition(LEADING_BIDDER_TEXT_POSITION);
 	leadingBidderText->setColor(sf::Color::Black);
 	leadingBidderInfoText_ = leadingBidderText;
-	addText(leadingBidderText);
+	addAuctionText(leadingBidderText);
 }
 
 void monopolyGameEngine::createCurrentOfferBidderInfo() {
@@ -980,7 +1164,7 @@ void monopolyGameEngine::createCurrentOfferBidderInfo() {
 	currentOfferText->setPosition(CURRENT_OFFER_TEXT_POSITION);
 	currentOfferText->setColor(sf::Color::Black);
 	currentOfferInfoText_ = currentOfferText;
-	addText(currentOfferText);
+	addAuctionText(currentOfferText);
 }
 
 void monopolyGameEngine::createButtonBuyResign() {
@@ -1238,19 +1422,19 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	Text100_->setPosition(TEXT_100_POSITION);
 	Text100_->setColor(sf::Color::Black);
 	Text100_->setOrigin(Text100_->getGlobalBounds().getSize() / 2.f + Text100_->getLocalBounds().getPosition());
-	addText(Text100_);
+	addAuctionText(Text100_);
 
 	Text10_ = std::make_shared<sf::Text>("10", getFont(), getFontSize());
 	Text10_->setPosition(TEXT_10_POSITION);
 	Text10_->setColor(sf::Color::Black);
 	Text10_->setOrigin(Text10_->getGlobalBounds().getSize() / 2.f + Text10_->getLocalBounds().getPosition());
-	addText(Text10_);
+	addAuctionText(Text10_);
 
 	Text1_ = std::make_shared<sf::Text>("1", getFont(), getFontSize());
 	Text1_->setPosition(TEXT_1_POSITION);
 	Text1_->setColor(sf::Color::Black);
 	Text1_->setOrigin(Text1_->getGlobalBounds().getSize() / 2.f + Text1_->getLocalBounds().getPosition());
-	addText(Text1_);
+	addAuctionText(Text1_);
 
 	sf::Vector2f buttonSize = sf::Vector2f(50, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
@@ -1271,11 +1455,12 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	buttonAdd100->setFocusBackColor(FocusButtonBackColor);
 	buttonAdd100->setFocusTextColor(FocusButtonTextColor);
 	buttonAdd100->setIsClicked(false);
-	buttonAdd100->setIsVisible(true);
+	buttonAdd100->setIsVisible(false);
 	buttonAdd100->setIsActive(false);
 	buttonAdd100->setIsFocus(false);
 	add100ToOfferButton_ = buttonAdd100;
 	addButton(buttonAdd100);
+	addAuctionButton(buttonAdd100);
 
 	std::shared_ptr<Button> buttonAdd10(new Button(Idle, "+", buttonSize, getFontSize() + 10));
 	buttonAdd10->setFont(getFont());
@@ -1288,11 +1473,12 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	buttonAdd10->setFocusBackColor(FocusButtonBackColor);
 	buttonAdd10->setFocusTextColor(FocusButtonTextColor);
 	buttonAdd10->setIsClicked(false);
-	buttonAdd10->setIsVisible(true);
+	buttonAdd10->setIsVisible(false);
 	buttonAdd10->setIsActive(false);
 	buttonAdd10->setIsFocus(false);
 	add10ToOfferButton_ = buttonAdd10;
 	addButton(buttonAdd10);
+	addAuctionButton(buttonAdd10);
 
 	std::shared_ptr<Button> buttonAdd1(new Button(Idle, "+", buttonSize, getFontSize() + 10));
 	buttonAdd1->setFont(getFont());
@@ -1305,11 +1491,12 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	buttonAdd1->setFocusBackColor(FocusButtonBackColor);
 	buttonAdd1->setFocusTextColor(FocusButtonTextColor);
 	buttonAdd1->setIsClicked(false);
-	buttonAdd1->setIsVisible(true);
+	buttonAdd1->setIsVisible(false);
 	buttonAdd1->setIsActive(false);
 	buttonAdd1->setIsFocus(false);
 	add1ToOfferButton_ = buttonAdd1;
 	addButton(buttonAdd1);
+	addAuctionButton(buttonAdd1);
 
 	std::shared_ptr<Button> buttonSubstract100(new Button(Idle, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract100->setFont(getFont());
@@ -1322,11 +1509,12 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	buttonSubstract100->setFocusBackColor(FocusButtonBackColor);
 	buttonSubstract100->setFocusTextColor(FocusButtonTextColor);
 	buttonSubstract100->setIsClicked(false);
-	buttonSubstract100->setIsVisible(true);
+	buttonSubstract100->setIsVisible(false);
 	buttonSubstract100->setIsActive(false);
 	buttonSubstract100->setIsFocus(false);
 	substract100FromOfferButton_ = buttonSubstract100;
 	addButton(buttonSubstract100);
+	addAuctionButton(buttonSubstract100);
 
 	std::shared_ptr<Button> buttonSubstract10(new Button(Idle, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract10->setFont(getFont());
@@ -1339,11 +1527,12 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	buttonSubstract10->setFocusBackColor(FocusButtonBackColor);
 	buttonSubstract10->setFocusTextColor(FocusButtonTextColor);
 	buttonSubstract10->setIsClicked(false);
-	buttonSubstract10->setIsVisible(true);
+	buttonSubstract10->setIsVisible(false);
 	buttonSubstract10->setIsActive(false);
 	buttonSubstract10->setIsFocus(false);
 	substract10FromOfferButton_ = buttonSubstract10;
 	addButton(buttonSubstract10);
+	addAuctionButton(buttonSubstract10);
 
 	std::shared_ptr<Button> buttonSubstract1(new Button(Idle, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract1->setFont(getFont());
@@ -1356,11 +1545,39 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	buttonSubstract1->setFocusBackColor(FocusButtonBackColor);
 	buttonSubstract1->setFocusTextColor(FocusButtonTextColor);
 	buttonSubstract1->setIsClicked(false);
-	buttonSubstract1->setIsVisible(true);
+	buttonSubstract1->setIsVisible(false);
 	buttonSubstract1->setIsActive(false);
 	buttonSubstract1->setIsFocus(false);
 	substract1FromOfferButton_ = buttonSubstract1;
 	addButton(buttonSubstract1);
+	addAuctionButton(buttonSubstract1);
+}
+
+void monopolyGameEngine::createAuctionBidButton() {
+	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+
+	std::shared_ptr<Button> buttonBidAuction(new Button(Idle, "Bid", buttonSize, getFontSize()));
+	buttonBidAuction->setFont(getFont());
+	buttonBidAuction->setPosition(AUCTION_BID_BUTTON_POSITION);
+	buttonBidAuction->setActiveBackColor(activeButtonBackColor);
+	buttonBidAuction->setActiveTextColor(activeButtonTextColor);
+	buttonBidAuction->setInactiveBackColor(inActiveButtonBackColor);
+	buttonBidAuction->setInactiveTextColor(inActiveButtonTextColor);
+	buttonBidAuction->setFocusBackColor(FocusButtonBackColor);
+	buttonBidAuction->setFocusTextColor(FocusButtonTextColor);
+	buttonBidAuction->setIsClicked(false);
+	buttonBidAuction->setIsVisible(false);
+	buttonBidAuction->setIsActive(false);
+	buttonBidAuction->setIsFocus(false);
+	auctionBidButton_ = buttonBidAuction;
+	addButton(buttonBidAuction);
+	addAuctionButton(buttonBidAuction);
 }
 
 void monopolyGameEngine::createAuctionResignButton() {
@@ -1382,11 +1599,12 @@ void monopolyGameEngine::createAuctionResignButton() {
 	buttonResignAuction->setFocusBackColor(FocusButtonBackColor);
 	buttonResignAuction->setFocusTextColor(FocusButtonTextColor);
 	buttonResignAuction->setIsClicked(false);
-	buttonResignAuction->setIsVisible(true);
+	buttonResignAuction->setIsVisible(false);
 	buttonResignAuction->setIsActive(false);
 	buttonResignAuction->setIsFocus(false);
 	auctionResignButton_ = buttonResignAuction;
 	addButton(buttonResignAuction);
+	addAuctionButton(buttonResignAuction);
 }
 
 void monopolyGameEngine::createButtonWithdraw() {

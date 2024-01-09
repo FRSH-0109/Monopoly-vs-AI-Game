@@ -1,24 +1,24 @@
 #include "Player.h"
 
 Player::Player() {
-	setPositon(0);
+	setPosition(0);
 	clearFiledOwnedId();
 	setMoney(0);
 	setJailStatus(0);
 }
 
 Player::Player(unsigned int money) {
-	setPositon(0);
+	setPosition(0);
 	clearFiledOwnedId();
 	setMoney(money);
 	setJailStatus(0);
 }
 
-unsigned int Player::getPositon() const {
+unsigned int Player::getPosition() const {
 	return position_;
 }
 
-void Player::setPositon(unsigned int newPosition) {
+void Player::setPosition(unsigned int newPosition) {
 	position_ = newPosition;
 }
 

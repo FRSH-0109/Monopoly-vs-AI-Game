@@ -17,6 +17,14 @@ enum TurnState {
 	TurnEnd,
 };
 
+enum AuctionState {
+	NoAuction,
+	Initialization,
+	PassBiddingTurn,
+	Bidding,
+	Ending
+};
+
 class monopolyGameEngine {
 	GameScreenType screenType_ = Boardgame;
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 1500;
@@ -31,6 +39,8 @@ class monopolyGameEngine {
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
 	std::vector<std::shared_ptr<sf::Text>> texts_;
+	std::vector<std::shared_ptr<Button>> auctionButtons_;
+	std::vector<std::shared_ptr<sf::Text>> auctionTexts_;
 	sf::Vector2f ROLL_DICE_BUTTON_POSITION = sf::Vector2f(965, 120);
 	std::shared_ptr<Button> rollDiceButton_;
 	sf::Vector2f TURN_INFO_TEXT_POSITION = sf::Vector2f(900, 50);
@@ -45,6 +55,7 @@ class monopolyGameEngine {
 	std::shared_ptr<Button> resignBuyFieldButton_;
 
 	sf::Vector2f PROPERTY_DATA_POSITION = sf::Vector2f(910, 260);
+	sf::Vector2f PROPERTY_DATA_AUCTION_POSITION = sf::Vector2f(200, 300);
 	float PROPERTY_DATA_SCALE = 4;
 	sf::Sprite propertyDataSprite_;
 	sf::Texture propertyDataTexture_;
@@ -63,6 +74,9 @@ class monopolyGameEngine {
 	std::shared_ptr<sf::Text> availableHousesText_;
 	std::shared_ptr<sf::Text> availableHotelsText_;
 	sf::Vector2f AVAILABLE_HOUSE_TEXT_POSITION = sf::Vector2f(1675, 110);
+
+	std::shared_ptr<sf::Text> biddedPropertyText_;
+	sf::Vector2f BIDDED_PROPERTY_TEXT_POSITION = sf::Vector2f(200, 250);
 
 	std::shared_ptr<sf::Text> bidderInfoText_;
 	sf::Vector2f BIDDER_INFO_TEXT_POSITION = sf::Vector2f(1360, 105);
@@ -125,9 +139,13 @@ class monopolyGameEngine {
 	sf::Vector2f SUBSTRACT_10_BUTTON_POSITION = sf::Vector2f(1050, 820);
 	sf::Vector2f SUBSTRACT_100_BUTTON_POSITION = sf::Vector2f(1050, 760);
 
+	// Auction bid button
+	std::shared_ptr<Button> auctionBidButton_;
+	sf::Vector2f AUCTION_BID_BUTTON_POSITION = sf::Vector2f(1200, 880);
+
 	// Auction resign button
 	std::shared_ptr<Button> auctionResignButton_;
-	sf::Vector2f AUCTION_RESIGN_BUTTON_POSITION = sf::Vector2f(1245, 880);
+	sf::Vector2f AUCTION_RESIGN_BUTTON_POSITION = sf::Vector2f(1330, 880);
 
 	// withdraw
 	std::shared_ptr<Button> withdrawButton_;
@@ -137,6 +155,7 @@ class monopolyGameEngine {
 
 	// game staff
 	TurnState turnState_;
+	AuctionState auctionState_ = NoAuction;
 	const unsigned int PLAYERS_MAX_ = 4;
 	const unsigned int PLAYERS_MIN_ = 2;
 	unsigned int playersStartingAmount_ = 0;
@@ -163,6 +182,9 @@ class monopolyGameEngine {
 	bool makePlayerBankrupt(unsigned int playerIndexTurn);
 	void showAllPropertiesWorker();
 
+	// Switching game window to auction mode
+	void boardToAuctionSwitchHandler(bool is_auction);
+
 	// withdraw
 	void withdrawWorker();
 
@@ -178,6 +200,7 @@ class monopolyGameEngine {
 	void createTextRolledValue();
 	void createTextPlayersInfo();
 	void updateTextPlayersInfo();
+	void createTextBiddedProperty();
 	void createTextBidderInfo();
 	void createTextHighestBidInfo();
 	void createTextLeadingBidderInfo();
@@ -190,6 +213,7 @@ class monopolyGameEngine {
 	void createButtonsNextTurn();
 	void createButtonsJailPay();
 	void createAuctionOfferButtons();
+	void createAuctionBidButton();
 	void createAuctionResignButton();
 	void createButtonWithdraw();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
@@ -198,8 +222,12 @@ class monopolyGameEngine {
 	void setFont(sf::Font font);
 	void addButton(std::shared_ptr<Button> buttonTmp);
 	void addText(std::shared_ptr<sf::Text> textTmp);
+	void addAuctionButton(std::shared_ptr<Button> buttonTmp);
+	void addAuctionText(std::shared_ptr<sf::Text> textTmp);
 	std::vector<std::shared_ptr<Button>>& getButtons();
 	std::vector<std::shared_ptr<sf::Text>>& getTexts();
+	std::vector<std::shared_ptr<Button>>& getAuctionButtons();
+	std::vector<std::shared_ptr<sf::Text>>& getAuctionTexts();
 	sf::Sprite& getPropertyDataSprite();
 	std::vector<std::shared_ptr<sf::Text>>& getPropertyDataTexts();
 	sf::Sprite& getAllPropertyDataSprite();
@@ -219,6 +247,8 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<Player>>& getPlayers();
 	void setPlayerIndexTurn(unsigned int indx);
 	TurnState getTurnState() const;
+	void setAuctionState(AuctionState newState);
+	AuctionState getAuctionState();
 	unsigned int getHouseCount();
 	unsigned int getHotelCount();
 	void setHouseCount(unsigned int new_count);
@@ -229,7 +259,7 @@ class monopolyGameEngine {
 	void addHotels(unsigned int added_amount);
 	void substractHotels(unsigned int substracted_amount);
 
-	unsigned int performAuction(unsigned int starting_player, unsigned int auctioned_field_id);
+	void performAuction();
 
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
 	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;

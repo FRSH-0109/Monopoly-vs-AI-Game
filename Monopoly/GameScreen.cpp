@@ -22,6 +22,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createTextTurnInfo();
 	monopoly_game_engine_.createTextRolledValue();
 	monopoly_game_engine_.createTextPlayersInfo();
+	monopoly_game_engine_.createTextBiddedProperty();
 	monopoly_game_engine_.createTextBidderInfo();
 	monopoly_game_engine_.createTextHighestBidInfo();
 	monopoly_game_engine_.createTextLeadingBidderInfo();
@@ -35,6 +36,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createButtonsNextTurn();
 	monopoly_game_engine_.createButtonsJailPay();
 	monopoly_game_engine_.createAuctionOfferButtons();
+	monopoly_game_engine_.createAuctionBidButton();
 	monopoly_game_engine_.createAuctionResignButton();
 	monopoly_game_engine_.createAvailableHousesHotelText();
 	monopoly_game_engine_.createButtonWithdraw();
@@ -193,7 +195,21 @@ void GameScreen::draw() {
 			break;
 
 		case Auction:
+			// draw buttons and texts
+			for (auto element : monopoly_game_engine_.getAuctionButtons()) {
+				if (element->getIsVisible()) {
+					element->draw(getContextWindow()->getWindow());
+				}
+			}
+			for (auto element : monopoly_game_engine_.getAuctionTexts()) {
+				getContextWindow()->getWindow().draw(*element);
+			}
 
+			// draw property data for buy/sell
+			getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
+			for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
+				getContextWindow()->getWindow().draw(*text_ptr);
+			}
 			break;
 
 		default:
