@@ -27,11 +27,19 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	int playerId = 0;
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
-			Player new_player = Player(PLAYER_MONEY_DEFAULT_);
-			new_player.setIsAi(!(it->isHuman));
-			new_player.setAiLevel(it->level);
-			new_player.setId(playerId);
-			players_.push_back(std::make_shared<Player>(new_player));
+			if (it->isHuman) {
+				Player new_player = Player(PLAYER_MONEY_DEFAULT_);
+				new_player.setIsAi(!(it->isHuman));
+				new_player.setAiLevel(it->level);
+				new_player.setId(playerId);
+				players_.push_back(std::make_shared<Player>(new_player));
+			} else {
+				AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
+				new_player.setIsAi(!(it->isHuman));
+				new_player.setAiLevel(it->level);
+				new_player.setId(playerId);
+				players_.push_back(std::make_shared<AiPlayer>(new_player));
+			}
 			// if (new_player.getId() == 1) {
 			// 	players_[1]->addFieldOwnedId(16);
 			// 	players_[1]->addFieldOwnedId(18);
@@ -784,6 +792,9 @@ void monopolyGameEngine::monopolyGameWorker() {
 			}
 
 			if (isButtonClicked(rollDiceButton_)) {
+				if (players_[playerIndexturn_]->getIsAi()) {
+					std::cout << players_[playerIndexturn_]->getTest() << std::endl;
+				}
 				unsigned int roll1 = rollDice();
 				unsigned int roll2 = rollDice();
 				std::string val1 = std::to_string(roll1);
