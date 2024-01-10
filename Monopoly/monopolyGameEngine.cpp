@@ -2441,3 +2441,38 @@ sf::Sprite monopolyGameEngine::getHotelSprite(StreetField& field) {
 Withdraw& monopolyGameEngine::getWithdraw() {
 	return withdraw_;
 }
+
+void monopolyGameEngine::createChanceCards()
+{
+	const std::string file_path = CHANCE_FILE_PATH_;
+	const std::string graphic_path = "textures_and_fonts/textures/monopoly_single_square_chance.png";
+	sf::Vector2f position = sf::Vector2f(500,500);
+	std::map<std::string, ChanceType> str_to_type = {{"MovementToProperty", MovementToProperty}, {"MovementWithBuyOrPay", MovementWithBuyOrPay}, {"BankPaysYou", BankPaysYou},
+		{"GetOutOfJailCard", GetOutOfJailCard}, {"MovementSpaces", MovementSpaces}, {"GoToJail", GoToJail}, {"PayForHouseHotel", PayForHouseHotel}, {"Tax", Tax},
+		{"PayPlayers", PayPlayers}};
+
+	std::ifstream f(file_path);
+	json data = json::parse(f);
+
+	for (auto& element : data) {
+		unsigned int id = element["id"];
+		std::string type_in_str = element["type"];
+		unsigned int value = element["value"];
+		std::string text = element["text"];
+		unsigned int width_from_file = element["width"];
+		unsigned int height_from_file = element["height"];
+		ChanceType type = str_to_type[type_in_str];
+
+		ChanceCard card(id, type, value, text, graphic_path, width_from_file, height_from_file, position);
+		chanceCards_.push_back(card);
+	}
+
+	shuffleChanceCards();
+}
+
+void monopolyGameEngine::shuffleChanceCards()
+{
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::shuffle(std::begin(chanceCards_), std::end(chanceCards_), g);
+}
