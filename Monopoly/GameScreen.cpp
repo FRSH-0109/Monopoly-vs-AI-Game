@@ -44,11 +44,12 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.getWithdraw().createChoosePlayerScreen();
 	monopoly_game_engine_.getWithdraw().createValuePlayerScreen();
 	monopoly_game_engine_.getWithdraw().createDecisionPlayerScreen();
-  monopoly_game_engine_.createMortagingButton();
+	monopoly_game_engine_.createMortagingButton();
 	monopoly_game_engine_.getWithdraw().setBoard(monopoly_game_engine_.getBoard());
 	for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
 		monopoly_game_engine_.addButton(button_ptr);
 	}
+	monopoly_game_engine_.createChanceCards();
 }
 
 GameScreen::~GameScreen() {

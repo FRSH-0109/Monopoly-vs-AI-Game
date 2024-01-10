@@ -9,6 +9,7 @@
 #include "Withdraw.h"
 #include "activeScreen.h"
 #include "main.h"
+#include "Chance.h"
 
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
 
@@ -17,6 +18,7 @@ class monopolyGameEngine {
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 1500;
 	const unsigned int START_PASSING_MONEY_ = 200;
 
+	const std::string CHANCE_FILE_PATH_ = "Monopoly/game_config_json/chance.json";
 	const std::string GAMEBOARD_FILE_PATH_ = "Monopoly/game_config_json/board.json";
 	std::shared_ptr<Board> gameboard_;
 	std::vector<std::shared_ptr<Player>> players_;
@@ -144,6 +146,9 @@ class monopolyGameEngine {
 	std::shared_ptr<Button> unmortageButton_;
 	sf::Vector2f MORTAGE_BUTTON_POSITION = sf::Vector2f(1445, 760);
 	sf::Vector2f UNMORTAGE_BUTTON_POSITION = sf::Vector2f(1595, 760);
+
+	//chance cards
+	std::vector<ChanceCard> chanceCards_;
 
 	NotificationWall notificationsWall_;
 
@@ -275,4 +280,8 @@ class monopolyGameEngine {
 
 	// withdraw
 	Withdraw& getWithdraw();
+
+	//chance
+	void createChanceCards();
+	void shuffleChanceCards();
 };
