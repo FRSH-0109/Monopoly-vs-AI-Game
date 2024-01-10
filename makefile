@@ -3,7 +3,7 @@ LIBS :=-L SFML_Monopoly/lib/ -l sfml-graphics -l sfml-window -l sfml-system
 CXX := g++ -std=c++17 -Wextra -Wall -Wpedantic
 INC := -I Monopoly/
 SRC := Monopoly/*.o
-OBJ := Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o Monopoly/Field.o Monopoly/Board.o Monopoly/Player.o Monopoly/GameScreen.o Monopoly/NotificationWall.o Monopoly/Withdraw.o
+OBJ := Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o Monopoly/Field.o Monopoly/Board.o Monopoly/Player.o Monopoly/GameScreen.o Monopoly/NotificationWall.o Monopoly/Withdraw.o Monopoly/Chance.o
 all: monopolyVsAI clean
 tests: monopolyTests
 
