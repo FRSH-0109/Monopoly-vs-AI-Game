@@ -7,8 +7,8 @@
 
 class NotificationWall {
    private:
-	unsigned int MAX_NOTIFICATIONS_ = 10;
-	sf::Vector2f DRAW_OFFSET_ = sf::Vector2f(300, 300);
+	unsigned int MAX_NOTIFICATIONS_ = 15;
+	sf::Vector2f DRAW_OFFSET_ = sf::Vector2f(200, 200);
 	unsigned int Y_STEP_OFFSET_ = 25;
 	std::vector<std::shared_ptr<sf::Text>> wallTexts_;
 	unsigned int FONT_SIZE_ = 25;
