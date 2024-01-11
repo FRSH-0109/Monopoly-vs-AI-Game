@@ -26,7 +26,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	int playerId = 0;
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
-      ++playersStartingAmount_;
+			++playersStartingAmount_;
 			if (it->isHuman) {
 				Player new_player = Player(PLAYER_MONEY_DEFAULT_);
 				new_player.setIsAi(!(it->isHuman));
@@ -948,29 +948,26 @@ void monopolyGameEngine::monopolyGameWorker() {
 				sendToJail(playerIndexturn_);
 				players_[playerIndexturn_]->setJailStatus(3);
 				setTurnState(TurnEnd);
-			}else if (field_type == CHANCE) {
+			} else if (field_type == CHANCE) {
 				ChanceCard chance_card = getChanceCard();
 				updateChanceCard();
 				std::string notification_msg = "Chance Card: ";
 				notificationAdd(playerIndexturn_, notification_msg + chance_card.getText());
 
-				switch(chance_card.getType())
-				{
-					case MovementToProperty:
-						{
-							int oldPos = players_[playerIndexturn_]->getPosition();
-							int posIncrement = (40 + chance_card.getValue()) - oldPos;
-							movePlayer(playerIndexturn_, posIncrement);
-							int newPos = chance_card.getValue();
-							handlePassingStart(oldPos, newPos);
-							setTurnState(FieldAction);
-						}
-					break;
+				switch (chance_card.getType()) {
+					case MovementToProperty: {
+						int oldPos = players_[playerIndexturn_]->getPosition();
+						int posIncrement = (40 + chance_card.getValue()) - oldPos;
+						movePlayer(playerIndexturn_, posIncrement);
+						int newPos = chance_card.getValue();
+						handlePassingStart(oldPos, newPos);
+						setTurnState(FieldAction);
+					} break;
 
 					case BankPaysYou:
 						players_[playerIndexturn_]->addMoney(chance_card.getValue());
 						setTurnState(TurnEnd);
-					break;
+						break;
 
 					case GetOutOfJailCard:
 						players_[playerIndexturn_]->setJailCards(players_[playerIndexturn_]->getJailCards() + 1);
@@ -983,52 +980,42 @@ void monopolyGameEngine::monopolyGameWorker() {
 							setTurnState(TurnEnd);
 					break;
 
-					case PayForHouseHotel:
-						{
-							int sum = 0;
-							for(auto field_id : players_[playerIndexturn_]->getFiledOwnedId())
-							{
-								FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(field_id));
-								if(fieldType == STREET)
-								{
-									StreetField field = std::get<StreetField>(getBoard()->getFieldById(field_id));
-									int hotelCost = field.getIsHotel() * 100;
-									sum += hotelCost;
-									if(hotelCost == 0)
-									{
-										int housesCost = field.getHouseNumber() * 25;
-										sum += housesCost;
-									}
-								}
-							}
-
-							if(sum == 0)
-							{
-								std::string notification_msg = "Amount to pay: " + std::to_string(sum);
-								notificationAdd(playerIndexturn_, notification_msg);
-								setTurnState(TurnEnd);
-							}
-							else
-							{
-								if(players_[playerIndexturn_]->getMoney() >= sum)
-								{
-									players_[playerIndexturn_]->substractMoney(sum);
-									std::string notification_msg = "Paid to bank: " + std::to_string(sum);
-									notificationAdd(playerIndexturn_, notification_msg);
-									setTurnState(TurnEnd);
-								}
-								else
-								{
-									money_to_find = sum;
-									bank_pay_rent = true;
-									players_to_pay_rent.clear();
-									setTurnState(PayRent);
-									std::string notification_msg = "Not enough money. Needed: " + std::to_string(sum);
-									notificationAdd(playerIndexturn_, notification_msg);
+					case PayForHouseHotel: {
+						int sum = 0;
+						for (auto field_id : players_[playerIndexturn_]->getFiledOwnedId()) {
+							FieldType fieldType = std::visit(
+								[](Field& field) { return field.getType(); }, getBoard()->getFieldById(field_id));
+							if (fieldType == STREET) {
+								StreetField field = std::get<StreetField>(getBoard()->getFieldById(field_id));
+								int hotelCost = field.getIsHotel() * 100;
+								sum += hotelCost;
+								if (hotelCost == 0) {
+									int housesCost = field.getHouseNumber() * 25;
+									sum += housesCost;
 								}
 							}
 						}
-					break;
+
+						if (sum == 0) {
+							std::string notification_msg = "Amount to pay: " + std::to_string(sum);
+							notificationAdd(playerIndexturn_, notification_msg);
+							setTurnState(TurnEnd);
+						} else {
+							if (players_[playerIndexturn_]->getMoney() >= sum) {
+								players_[playerIndexturn_]->substractMoney(sum);
+								std::string notification_msg = "Paid to bank: " + std::to_string(sum);
+								notificationAdd(playerIndexturn_, notification_msg);
+								setTurnState(TurnEnd);
+							} else {
+								money_to_find = sum;
+								bank_pay_rent = true;
+								players_to_pay_rent.clear();
+								setTurnState(PayRent);
+								std::string notification_msg = "Not enough money. Needed: " + std::to_string(sum);
+								notificationAdd(playerIndexturn_, notification_msg);
+							}
+						}
+					} break;
 
 					case Tax:
 						{
@@ -1052,86 +1039,45 @@ void monopolyGameEngine::monopolyGameWorker() {
 						}
 					break;
 
-					case MovementWithBuyOrPay:
-						{
-							// int moneyToPay = 0;
-							// FieldType fieldType;
-							// if(chance_card.getValue() == 0)
-							// {
-							// 	FieldType fieldType = UTILITY;
-							// }
-							// else if(chance_card.getValue() == 1)
-							// {
-							// 	FieldType fieldType = STATION;
-							// }
-							// else
-							// {
-							// 	setTurnState(TurnEnd);
-							// }
-							// int id = findNearestField(fieldType, players_[playerIndexturn_]->getPosition());
-							// if(chance_card.getValue() == 0)
-							// {
-							// 	FieldType fieldType = UTILITY;
-							// 	StreetField field = std::get<StreetField>(getBoard()->getFieldById(field_id));
-							// }
-							// else if(chance_card.getValue() == 1)
-							// {
-							// 	FieldType fieldType = STATION;
-							// }
+					case MovementSpaces: {
+						int oldPos = players_[playerIndexturn_]->getPosition();
+						int posIncrement = chance_card.getValue();
+						movePlayer(playerIndexturn_, posIncrement);
+						int newPos = players_[playerIndexturn_]->getPosition();
+						handlePassingStart(oldPos, newPos);
+						FieldType fieldType =
+							std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(newPos));
+
+						setTurnState(FieldAction);
+					} break;
+
+					case PayPlayers: {
+						int toPay = chance_card.getValue() * (players_.size() - 1);
+
+						if (players_[playerIndexturn_]->getMoney() >= toPay) {
+							for (auto player_ptr : players_) {
+								if (player_ptr != players_[playerIndexturn_]) {
+									player_ptr->substractMoney(chance_card.getValue());
+									players_[playerIndexturn_]->addMoney(chance_card.getValue());
+								}
+							}
 							setTurnState(TurnEnd);
-						}
-					break;
-
-					case MovementSpaces:
-						{
-							int oldPos = players_[playerIndexturn_]->getPosition();
-							int posIncrement = chance_card.getValue();
-							movePlayer(playerIndexturn_, posIncrement);
-							int newPos = players_[playerIndexturn_]->getPosition();
-							handlePassingStart(oldPos, newPos);
-							FieldType fieldType =
-								std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(newPos));
-
-							setTurnState(FieldAction);
-						}
-					break;
-
-					case PayPlayers:
-						{
-							int toPay = chance_card.getValue() * (players_.size() - 1);
-
-							if(players_[playerIndexturn_]->getMoney() >= toPay)
-							{
-								for(auto player_ptr : players_)
-								{
-									if(player_ptr != players_[playerIndexturn_])
-									{
-										player_ptr->substractMoney(chance_card.getValue());
-										players_[playerIndexturn_]->addMoney(chance_card.getValue());
-									}
+						} else {
+							players_to_pay_rent.clear();
+							money_to_find = toPay;
+							bank_pay_rent = false;
+							for (auto player_ptr : players_) {
+								if (player_ptr != players_[playerIndexturn_]) {
+									players_to_pay_rent.push_back(player_ptr);
 								}
-								setTurnState(TurnEnd);
 							}
-							else
-							{
-								players_to_pay_rent.clear();
-								money_to_find = toPay;
-								bank_pay_rent = false;
-								for(auto player_ptr : players_)
-								{
-									if(player_ptr != players_[playerIndexturn_])
-									{
-										players_to_pay_rent.push_back(player_ptr);
-									}
-								}
-								setTurnState(PayRent);
-							}
+							setTurnState(PayRent);
 						}
-					break;
+					} break;
 
 					default:
 						setTurnState(TurnEnd);
-					break;
+						break;
 				}
 
 			} else {
@@ -1165,7 +1111,9 @@ void monopolyGameEngine::monopolyGameWorker() {
 					setTurnState(TurnEnd);
 				} else	// NOT possible to buy property
 				{
-					std::string textPlayerBoughtProperty("Can not buy field: "+ std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+					std::string textPlayerBoughtProperty(
+						"Can not buy field: " +
+						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
 					notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
 				}
 			}
@@ -1195,26 +1143,25 @@ void monopolyGameEngine::monopolyGameWorker() {
 		} break;
 
 		case PayRent: {
-			if(playerChanged) {
-				std::string textPlayerrent("Must make money to paid rent of " + std::to_string(money_to_find) + " or go bankrupt");
+			if (playerChanged) {
+				std::string textPlayerrent(
+					"Must make money to paid rent of " + std::to_string(money_to_find) + " or go bankrupt");
 				notificationAdd(playerIndexturn_, textPlayerrent);
 				playerChanged = false;
-				}
-			if(players_[playerIndexturn_]->getMoney() < money_to_find)
-			{	// player trying to get money to pay rent
-				buildingsManagingWorker();
 			}
-			else
-			{	// player has got money to pay rent
+			if (players_[playerIndexturn_]->getMoney() < money_to_find) {  // player trying to get money to pay rent
+				buildingsManagingWorker();
+			} else {  // player has got money to pay rent
 				players_[playerIndexturn_]->substractMoney(money_to_find);
 				unsigned int payment_counter = players_to_pay_rent.size();
-				if(bank_pay_rent){++payment_counter;}
-				for(auto player_ptr : players_to_pay_rent)
-				{
+				if (bank_pay_rent) {
+					++payment_counter;
+				}
+				for (auto player_ptr : players_to_pay_rent) {
 					player_ptr->addMoney(money_to_find / payment_counter);
 				}
 				std::string textPlayerrent("Paid rent of " + std::to_string((money_to_find)));
-					notificationAdd(playerIndexturn_, textPlayerrent);
+				notificationAdd(playerIndexturn_, textPlayerrent);
 				setTurnState(TurnEnd);
 			}
 		} break;
@@ -2533,16 +2480,13 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 	return notificationsWall_;
 }
 
-void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) { // -4
-	if(std::string("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text).size() <= 58)
-	{
+void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {  // -4
+	if (std::string("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text).size() <= 58) {
 		notificationsWall_.addToWall("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text);
-	}
-	else
-	{
-		notificationsWall_.addToWall("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text.substr(0,48) + "-");
-		for(int i = 48; i < text.size(); i += 50)
-		{
+	} else {
+		notificationsWall_.addToWall(
+			"Player " + std::to_string(players_[index]->getId() + 1) + ": " + text.substr(0, 48) + "-");
+		for (int i = 48; i < text.size(); i += 50) {
 			notificationsWall_.addToWall("            " + text.substr(i, 50));
 		}
 	}
@@ -2573,26 +2517,22 @@ sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sp
 }
 
 bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
-	//remove ownerships from fields
-	for(int pos = 0 ; pos < gameboard_->getFieldNumber() ; ++pos)
-	{
+	// remove ownerships from fields
+	for (int pos = 0; pos < gameboard_->getFieldNumber(); ++pos) {
 		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, gameboard_->getFieldById(pos));
 		if (field_type == STREET) {
 			StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
-			if(field.getOwner() == players_[playerIndexTurn])
-			{
+			if (field.getOwner() == players_[playerIndexTurn]) {
 				field.setOwner(nullptr);
 			}
 		} else if (field_type == STATION) {
 			StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
-			if(field.getOwner() == players_[playerIndexTurn])
-			{
+			if (field.getOwner() == players_[playerIndexTurn]) {
 				field.setOwner(nullptr);
 			}
 		} else if (field_type == UTILITY) {
 			UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
-			if(field.getOwner() == players_[playerIndexTurn])
-			{
+			if (field.getOwner() == players_[playerIndexTurn]) {
 				field.setOwner(nullptr);
 			}
 		}
@@ -2692,14 +2632,14 @@ Withdraw& monopolyGameEngine::getWithdraw() {
 	return withdraw_;
 }
 
-void monopolyGameEngine::createChanceCards()
-{
+void monopolyGameEngine::createChanceCards() {
 	const std::string file_path = CHANCE_FILE_PATH_;
 	const std::string graphic_path = "textures_and_fonts/textures/monopoly_single_square_chance.png";
-	sf::Vector2f position = sf::Vector2f(500,500);
-	std::map<std::string, ChanceType> str_to_type = {{"MovementToProperty", MovementToProperty}, {"MovementWithBuyOrPay", MovementWithBuyOrPay}, {"BankPaysYou", BankPaysYou},
-		{"GetOutOfJailCard", GetOutOfJailCard}, {"MovementSpaces", MovementSpaces}, {"GoToJail", GoToJail}, {"PayForHouseHotel", PayForHouseHotel}, {"Tax", Tax},
-		{"PayPlayers", PayPlayers}};
+	sf::Vector2f position = sf::Vector2f(500, 500);
+	std::map<std::string, ChanceType> str_to_type = {{"MovementToProperty", MovementToProperty},
+		{"MovementWithBuyOrPay", MovementWithBuyOrPay}, {"BankPaysYou", BankPaysYou},
+		{"GetOutOfJailCard", GetOutOfJailCard}, {"MovementSpaces", MovementSpaces}, {"GoToJail", GoToJail},
+		{"PayForHouseHotel", PayForHouseHotel}, {"Tax", Tax}, {"PayPlayers", PayPlayers}};
 
 	std::ifstream f(file_path);
 	json data = json::parse(f);
@@ -2720,22 +2660,19 @@ void monopolyGameEngine::createChanceCards()
 	shuffleChanceCards();
 }
 
-void monopolyGameEngine::shuffleChanceCards()
-{
+void monopolyGameEngine::shuffleChanceCards() {
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(chanceCards_), std::end(chanceCards_), g);
 }
 
-ChanceCard& monopolyGameEngine::getChanceCard()
-{
+ChanceCard& monopolyGameEngine::getChanceCard() {
 	return chanceCards_[chanceCardCurrent_];
 }
 
 void monopolyGameEngine::updateChanceCard() {
 	++chanceCardCurrent_;
-	if(chanceCardCurrent_ == chanceCards_.size())
-	{
+	if (chanceCardCurrent_ == chanceCards_.size()) {
 		chanceCardCurrent_ = 0;
 		shuffleChanceCards();
 	}

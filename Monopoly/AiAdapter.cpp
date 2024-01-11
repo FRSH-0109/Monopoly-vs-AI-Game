@@ -2,13 +2,6 @@
 
 AiAdapter::AiAdapter() {
     networkInputs_.assign(127, 0);
-    // networkInputs_.reserve(127);
-    // auto it = networkInputs_.begin();
-    // for (int i = 0; i < 128; ++i) {
-    //     networkInputs_.insert(it, 0.0f);
-    //     advance(it, 1);
-    // }
-    // networkInputs_.clear();
 }
 
 std::vector<float>& AiAdapter::getInputs() {
@@ -16,27 +9,27 @@ std::vector<float>& AiAdapter::getInputs() {
 }
 
 float AiAdapter::convertMoney(unsigned int money) {
-    float money_normalized = (float) money / 6000.0f;
-    float money_clamped = std::clamp(money_normalized, 0.0f, 1.0f);
-    return money_clamped;
+	float money_normalized = (float)money / 6000.0f;
+	float money_clamped = std::clamp(money_normalized, 0.0f, 1.0f);
+	return money_clamped;
 }
 
 float AiAdapter::convertMoneyValue(float value) {
-    return value * 6000.0f;
+	return value * 6000.0f;
 }
 
 float AiAdapter::convertHouseValue(float value) {
-    if (value <= 0.5f) {
-        return 0.0f;
-    } else {
-        return value * 15.0f;
-    }
+	if (value <= 0.5f) {
+		return 0.0f;
+	} else {
+		return value * 15.0f;
+	}
 }
 
 float AiAdapter::convertPosition(unsigned int position) {
-    float position_normalized = (float) position / 39.0f;
-    float position_clamped = std::clamp(position_normalized, 0.0f, 1.0f);
-    return position_clamped;
+	float position_normalized = (float)position / 39.0f;
+	float position_clamped = std::clamp(position_normalized, 0.0f, 1.0f);
+	return position_clamped;
 }
 
 float AiAdapter::convertCard(unsigned int cards) {

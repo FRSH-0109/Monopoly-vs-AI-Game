@@ -10,6 +10,7 @@
 #include <fstream>
 #include <map>
 #include <string>
+#include "../AiAdapter.h"
 #include "../Board.h"
 #include "../Field.h"
 #include "../activeScreen.h"
@@ -17,7 +18,6 @@
 #include "../gameEngine.h"
 #include "../main.h"
 #include "../monopolyGameEngine.h"
-#include "../AiAdapter.h"
 #include "catch2/src/catch2/catch_all.hpp"
 
 using namespace std;

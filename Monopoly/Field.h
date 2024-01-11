@@ -107,13 +107,6 @@ class PropertyField : public Field {
 };
 
 class StreetField : public PropertyField {
-	/*
-		TODO Dodać pola ceny domku, ceny hotelu,
-		poprawić konstruktor by odbierał te dane,
-		gettery tych pól,
-		uzupełnić testy,
-		uzupełnić board.json i test_board.json
-	*/
 	std::map<StreetTiers, unsigned int> rent_values_;
 	unsigned int house_price_;
 	unsigned int hotel_price_;

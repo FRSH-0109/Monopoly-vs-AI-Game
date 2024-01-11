@@ -64,8 +64,8 @@ class Player {
 class AiPlayer : public Player {
 	unsigned int test_ = 3;
 
-	public:
-	AiPlayer(): Player() {};
-	AiPlayer(unsigned int money) : Player(money) {};
+   public:
+	AiPlayer() : Player(){};
+	AiPlayer(unsigned int money) : Player(money){};
 	const unsigned int getTest() { return test_; };
 };

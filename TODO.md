@@ -7,3 +7,5 @@
 -Uzupełnienie więzienia w oparciu o karty Szans/Kas Społecznych
 -Przystosowanie gry do AI
 -AI
+
+- add jail cards counter to display
