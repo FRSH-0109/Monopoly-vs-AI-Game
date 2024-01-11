@@ -87,6 +87,15 @@ void Player::reduceJailStatus() {
 	}
 }
 
+void Player::setJailCards(unsigned int newJailCards)
+{
+	jailCards_ = newJailCards;
+}
+
+unsigned int Player::getJailCards() const{
+	return jailCards_;
+}
+
 void Player::setId(unsigned int newId) {
 	// TODO: catch exception and tests to do
 	if (newId <= 3) {

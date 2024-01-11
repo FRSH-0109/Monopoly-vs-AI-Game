@@ -20,6 +20,7 @@ class Player {
 	sf::Sprite player_sprite_;
 	float sprite_offset_x_;
 	float sprite_offset_y_;
+	unsigned int jailCards_;
 
    public:
 	Player();
@@ -37,6 +38,8 @@ class Player {
 	bool substractMoney(unsigned int value);
 	void setJailStatus(unsigned int newJailStatus);
 	unsigned int getJailStatus() const;
+	void setJailCards(unsigned int newJailCards);
+	unsigned int getJailCards() const;
 	void reduceJailStatus();
 	void setId(unsigned int newId);
 	unsigned int getId() const;
