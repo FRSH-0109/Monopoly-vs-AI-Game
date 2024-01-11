@@ -142,10 +142,10 @@ class monopolyGameEngine {
 	sf::Vector2f WITHDRAW_BUTTON_POSITION = sf::Vector2f(400, 900);
 
 	// Mortaging mechanic buttons
-	std::shared_ptr<Button> mortageButton_;
-	std::shared_ptr<Button> unmortageButton_;
-	sf::Vector2f MORTAGE_BUTTON_POSITION = sf::Vector2f(1445, 760);
-	sf::Vector2f UNMORTAGE_BUTTON_POSITION = sf::Vector2f(1595, 760);
+	std::shared_ptr<Button> MortgageButton_;
+	std::shared_ptr<Button> unMortgageButton_;
+	sf::Vector2f Mortgage_BUTTON_POSITION = sf::Vector2f(1445, 760);
+	sf::Vector2f UNMortgage_BUTTON_POSITION = sf::Vector2f(1595, 760);
 
 	//chance cards
 	std::vector<ChanceCard> chanceCards_;

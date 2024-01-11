@@ -65,9 +65,9 @@ class Field {
 class PropertyField : public Field {
 	unsigned int price_;
 	std::vector<unsigned int> group_members_;
-	unsigned int mortage_;
-	bool is_mortaged_;
-	unsigned int unmortage_value_;
+	unsigned int Mortgage_;
+	bool is_Mortgaged_;
+	unsigned int unMortgage_value_;
 	std::shared_ptr<Player> owner_;
 	sf::RectangleShape owner_flag_;
 
@@ -82,24 +82,24 @@ class PropertyField : public Field {
 		const sf::Vector2i position,
 		const unsigned int price,
 		const std::vector<unsigned int> group_members,
-		const unsigned int mortage)
+		const unsigned int Mortgage)
 		: Field(id, type, name, graphic_path, width, height, rotation, position),
 		  price_(price),
 		  group_members_(group_members),
-		  mortage_(mortage),
-		  is_mortaged_(false),
+		  Mortgage_(Mortgage),
+		  is_Mortgaged_(false),
 		  owner_(nullptr){
 			  //   std::cout << "PropertyField constructor" << std::endl;
 		  };
 	const unsigned int getPrice();
 	const std::vector<unsigned int> getGroupMembers();
-	const unsigned int getMortage();
-	const bool getIsMortaged();
-	const unsigned int getUnmortageValue();
+	const unsigned int getMortgage();
+	const bool getIsMortgaged();
+	const unsigned int getUnMortgageValue();
 	std::shared_ptr<Player> getOwner();
 	sf::RectangleShape& getOwnerFlag();
 
-	void setIsMortaged(bool new_state);
+	void setIsMortgaged(bool new_state);
 	void setOwner(std::shared_ptr<Player> new_owner);
 	void resetDefault();
 
@@ -134,8 +134,8 @@ class StreetField : public PropertyField {
 		const unsigned int hotel_price,
 		const std::map<StreetTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
-		const unsigned int mortage)
-		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
+		const unsigned int Mortgage)
+		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, Mortgage),
 		  rent_values_(rent_values),
 		  house_price_(house_price),
 		  hotel_price_(hotel_price),
@@ -172,8 +172,8 @@ class StationField : public PropertyField {
 		const unsigned int price,
 		const std::map<StationTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
-		const unsigned int mortage)
-		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
+		const unsigned int Mortgage)
+		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, Mortgage),
 		  rent_values_(rent_values){
 			  //   std::cout << "StationField constructor" << std::endl;
 		  };
@@ -198,8 +198,8 @@ class UtilityField : public PropertyField {
 		const unsigned int price,
 		const std::map<UtilityTiers, unsigned int> rent_multipliers,
 		const std::vector<unsigned int> group_members,
-		const unsigned int mortage)
-		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, mortage),
+		const unsigned int Mortgage)
+		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, Mortgage),
 		  rent_multipliers_(rent_multipliers){
 			  //   std::cout << "UtilityField constructor" << std::endl;
 		  };

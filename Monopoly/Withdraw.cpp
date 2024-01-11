@@ -739,7 +739,7 @@ void Withdraw::showProperty(int column) {
 	if (!isEmpty) {
 		FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, gameboard_->getFieldById(pos));
 		unsigned int price;
-		unsigned int mortage;
+		unsigned int Mortgage;
 		unsigned int housePrice;
 		unsigned int hotelPrice;
 		unsigned int rents[7];
@@ -754,7 +754,7 @@ void Withdraw::showProperty(int column) {
 			rents[4] = rentsMap[THREE_HOUSES];
 			rents[5] = rentsMap[FOUR_HOUSES];
 			rents[6] = rentsMap[HOTEL];
-			mortage = field.getMortage();
+			Mortgage = field.getMortgage();
 			housePrice = field.getHousePrice();
 			hotelPrice = field.getHotelPrice();
 		} else if (fieldType == STATION) {
@@ -765,7 +765,7 @@ void Withdraw::showProperty(int column) {
 			rents[1] = rentsMap[TWO_STATIONS];
 			rents[2] = rentsMap[THREE_STATIONS];
 			rents[3] = rentsMap[FOUR_STATIONS];
-			mortage = field.getMortage();
+			Mortgage = field.getMortgage();
 		} else	// fieldType == UTILITY
 		{
 			UtilityField field = std::get<UtilityField>(gameboard_->getFieldById(pos));
@@ -773,7 +773,7 @@ void Withdraw::showProperty(int column) {
 			std::map<UtilityTiers, unsigned int> rentsMap = field.getRentMultipliers();
 			rents[0] = rentsMap[ONE_UTILITY];
 			rents[1] = rentsMap[TWO_UTILITIES];
-			mortage = field.getMortage();
+			Mortgage = field.getMortgage();
 		}
 
 		unsigned int width = std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(pos));
@@ -814,20 +814,20 @@ void Withdraw::showProperty(int column) {
 		propertyPrice->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset));
 		propertyPrice->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyMortage(new sf::Text("Mortage:", getFont(), getFontSize() - 2));
-		propertyMortage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
-		propertyMortage->setFillColor(sf::Color::Black);
+		std::shared_ptr<sf::Text> propertyMortgage(new sf::Text("Mortgage:", getFont(), getFontSize() - 2));
+		propertyMortgage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
+		propertyMortgage->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyMortagePrice(
-			new sf::Text(std::to_string(mortage), getFont(), getFontSize() - 2));
-		propertyMortagePrice->setPosition(
+		std::shared_ptr<sf::Text> propertyMortgagePrice(
+			new sf::Text(std::to_string(Mortgage), getFont(), getFontSize() - 2));
+		propertyMortgagePrice->setPosition(
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 8));
-		propertyMortagePrice->setFillColor(sf::Color::Black);
+		propertyMortgagePrice->setFillColor(sf::Color::Black);
 
 		propertyPlayerTexts.push_back(propertyName);
-		propertyPlayerTexts.push_back(propertyMortagePrice);
+		propertyPlayerTexts.push_back(propertyMortgagePrice);
 		propertyPlayerTexts.push_back(propertyPrice);
-		propertyPlayerTexts.push_back(propertyMortage);
+		propertyPlayerTexts.push_back(propertyMortgage);
 
 		if (fieldType == STREET) {
 			std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));

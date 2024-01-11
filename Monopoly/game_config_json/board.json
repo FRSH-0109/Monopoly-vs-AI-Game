@@ -19,7 +19,7 @@
         "house_price": 50,
         "hotel_price": 50,
         "group_members": [3],
-        "mortage": 30
+        "Mortgage": 30
     },
     {
         "id": 2,
@@ -41,7 +41,7 @@
         "house_price": 50,
         "hotel_price": 50,
         "group_members": [1],
-        "mortage": 30
+        "Mortgage": 30
     },
     {
         "id": 4,
@@ -62,7 +62,7 @@
         "price": 200,
         "rent_values": [25, 50, 100, 200],
         "group_members": [15, 25, 35],
-        "mortage": 100
+        "Mortgage": 100
     },
     {
         "id": 6,
@@ -76,7 +76,7 @@
         "house_price": 50,
         "hotel_price": 50,
         "group_members": [8, 9],
-        "mortage": 50
+        "Mortgage": 50
     },
     {
         "id": 7,
@@ -98,7 +98,7 @@
         "house_price": 50,
         "hotel_price": 50,
         "group_members": [6, 9],
-        "mortage": 50
+        "Mortgage": 50
     },
     {
         "id": 9,
@@ -112,7 +112,7 @@
         "house_price": 50,
         "hotel_price": 50,
         "group_members": [6, 8],
-        "mortage": 60
+        "Mortgage": 60
     },
     {
         "id": 10,
@@ -134,7 +134,7 @@
         "house_price": 100,
         "hotel_price": 100,
         "group_members": [13, 14],
-        "mortage": 70
+        "Mortgage": 70
     },
     {
         "id": 12,
@@ -146,7 +146,7 @@
         "price": 150,
         "rent_multipliers": [4, 10],
         "group_members": [28],
-        "mortage": 75
+        "Mortgage": 75
     },
     {
         "id": 13,
@@ -160,7 +160,7 @@
         "house_price": 100,
         "hotel_price": 100,
         "group_members": [11, 14],
-        "mortage": 70
+        "Mortgage": 70
     },
     {
         "id": 14,
@@ -174,7 +174,7 @@
         "house_price": 100,
         "hotel_price": 100,
         "group_members": [11, 13],
-        "mortage": 80
+        "Mortgage": 80
     },
     {
         "id": 15,
@@ -186,7 +186,7 @@
         "price": 200,
         "rent_values": [25, 50, 100, 200],
         "group_members": [5, 25, 35],
-        "mortage": 100
+        "Mortgage": 100
     },
     {
         "id": 16,
@@ -200,7 +200,7 @@
         "house_price": 100,
         "hotel_price": 100,
         "group_members": [18, 19],
-        "mortage": 90
+        "Mortgage": 90
     },
     {
         "id": 17,
@@ -222,7 +222,7 @@
         "house_price": 100,
         "hotel_price": 100,
         "group_members": [16, 19],
-        "mortage": 90
+        "Mortgage": 90
     },
     {
         "id": 19,
@@ -236,7 +236,7 @@
         "house_price": 100,
         "hotel_price": 100,
         "group_members": [16, 18],
-        "mortage": 100
+        "Mortgage": 100
     },
     {
         "id": 20,
@@ -258,7 +258,7 @@
         "house_price": 150,
         "hotel_price": 150,
         "group_members": [23, 24],
-        "mortage": 110
+        "Mortgage": 110
     },
     {
         "id": 22,
@@ -280,7 +280,7 @@
         "house_price": 150,
         "hotel_price": 150,
         "group_members": [21, 24],
-        "mortage": 110
+        "Mortgage": 110
     },
     {
         "id": 24,
@@ -294,7 +294,7 @@
         "house_price": 150,
         "hotel_price": 150,
         "group_members": [21, 23],
-        "mortage": 120
+        "Mortgage": 120
     },
     {
         "id": 25,
@@ -306,7 +306,7 @@
         "price": 200,
         "rent_values": [25, 50, 100, 200],
         "group_members": [5, 15, 35],
-        "mortage": 100
+        "Mortgage": 100
     },
     {
         "id": 26,
@@ -320,7 +320,7 @@
         "house_price": 150,
         "hotel_price": 150,
         "group_members": [27, 29],
-        "mortage": 130
+        "Mortgage": 130
     },
     {
         "id": 27,
@@ -334,7 +334,7 @@
         "house_price": 150,
         "hotel_price": 150,
         "group_members": [26, 29],
-        "mortage": 130
+        "Mortgage": 130
     },
     {
         "id": 28,
@@ -346,7 +346,7 @@
         "price": 150,
         "rent_multipliers": [4, 10],
         "group_members": [12],
-        "mortage": 75
+        "Mortgage": 75
     },
     {
         "id": 29,
@@ -360,7 +360,7 @@
         "house_price": 150,
         "hotel_price": 150,
         "group_members": [26, 27],
-        "mortage": 140
+        "Mortgage": 140
     },
     {
         "id": 30,
@@ -382,7 +382,7 @@
         "house_price": 200,
         "hotel_price": 200,
         "group_members": [32, 33],
-        "mortage": 150
+        "Mortgage": 150
     },
     {
         "id": 32,
@@ -396,7 +396,7 @@
         "house_price": 200,
         "hotel_price": 200,
         "group_members": [31, 33],
-        "mortage": 150
+        "Mortgage": 150
     },
     {
         "id": 33,
@@ -418,7 +418,7 @@
         "house_price": 200,
         "hotel_price": 200,
         "group_members": [31, 32],
-        "mortage": 160
+        "Mortgage": 160
     },
     {
         "id": 35,
@@ -430,7 +430,7 @@
         "price": 200,
         "rent_values": [25, 50, 100, 200],
         "group_members": [5, 15, 25],
-        "mortage": 100
+        "Mortgage": 100
     },
     {
         "id": 36,
@@ -452,7 +452,7 @@
         "house_price": 200,
         "hotel_price": 200,
         "group_members": [39],
-        "mortage": 175
+        "Mortgage": 175
     },
     {
         "id": 38,
@@ -475,6 +475,6 @@
         "house_price": 200,
         "hotel_price": 200,
         "group_members": [37],
-        "mortage": 200
+        "Mortgage": 200
     }
 ]

@@ -126,7 +126,7 @@ void GameScreen::draw() {
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
 								sf::Color player_color = owner_ptr->getColor();
-								if (field_specified.getIsMortaged()) {
+								if (field_specified.getIsMortgaged()) {
 									player_color.a = 100;
 									if (player_color.b == 255) {
 										player_color.b = 180;
@@ -159,7 +159,7 @@ void GameScreen::draw() {
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
 								sf::Color player_color = owner_ptr->getColor();
-								if (field_specified.getIsMortaged()) {
+								if (field_specified.getIsMortgaged()) {
 									player_color.a = 100;
 									if (player_color.b == 255) {
 										player_color.b = 180;
@@ -177,7 +177,7 @@ void GameScreen::draw() {
 							std::shared_ptr<Player> owner_ptr = field_specified.getOwner();
 							if (owner_ptr != nullptr) {
 								sf::Color player_color = owner_ptr->getColor();
-								if (field_specified.getIsMortaged()) {
+								if (field_specified.getIsMortgaged()) {
 									player_color.a = 100;
 									if (player_color.b == 255) {
 										player_color.b = 180;

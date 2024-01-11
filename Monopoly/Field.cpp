@@ -127,16 +127,16 @@ const std::vector<unsigned int> PropertyField::getGroupMembers() {
 	return group_members_;
 };
 
-const unsigned int PropertyField::getMortage() {
-	return mortage_;
+const unsigned int PropertyField::getMortgage() {
+	return Mortgage_;
 };
 
-const bool PropertyField::getIsMortaged() {
-	return is_mortaged_;
+const bool PropertyField::getIsMortgaged() {
+	return is_Mortgaged_;
 };
 
-const unsigned int PropertyField::getUnmortageValue() {
-	return static_cast<int>(round(1.1 * mortage_));
+const unsigned int PropertyField::getUnMortgageValue() {
+	return static_cast<int>(round(1.1 * Mortgage_));
 };
 
 std::shared_ptr<Player> PropertyField::getOwner() {
@@ -147,8 +147,8 @@ sf::RectangleShape& PropertyField::getOwnerFlag() {
 	return owner_flag_;
 }
 
-void PropertyField::setIsMortaged(bool new_state) {
-	is_mortaged_ = new_state;
+void PropertyField::setIsMortgaged(bool new_state) {
+	is_Mortgaged_ = new_state;
 };
 
 void PropertyField::setOwner(std::shared_ptr<Player> new_owner_ptr) {
@@ -156,7 +156,7 @@ void PropertyField::setOwner(std::shared_ptr<Player> new_owner_ptr) {
 };
 
 void PropertyField::resetDefault() {
-	PropertyField::setIsMortaged(false);
+	PropertyField::setIsMortgaged(false);
 	PropertyField::setOwner(nullptr);
 };
 
@@ -229,7 +229,7 @@ void StreetField::setIsHotel(bool new_state) {
 void StreetField::resetDefault() {
 	StreetField::setHouseNumber(0);
 	StreetField::setIsHotel(false);
-	StreetField::setIsMortaged(false);
+	StreetField::setIsMortgaged(false);
 	StreetField::setOwner(nullptr);
 };
 

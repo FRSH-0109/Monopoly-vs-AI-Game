@@ -165,8 +165,8 @@ TEST_CASE("monopolyGameEngine") {
 	}
 
 	SECTION("calculateRent() method") {
-		SECTION("Street is mortaged") {
-			std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3)).setIsMortaged(true);
+		SECTION("Street is Mortgaged") {
+			std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3)).setIsMortgaged(true);
 			unsigned int expected_rent = 0;
 			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 3);
 			CHECK(calculated_rent == expected_rent);
@@ -213,8 +213,8 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(calculated_rent == expected_rent);
 		}
 
-		SECTION("Station is mortaged") {
-			std::get<StationField>(monopoly_engine.getBoard()->getFieldById(15)).setIsMortaged(true);
+		SECTION("Station is Mortgaged") {
+			std::get<StationField>(monopoly_engine.getBoard()->getFieldById(15)).setIsMortgaged(true);
 			unsigned int expected_rent = 0;
 			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 15);
 			CHECK(calculated_rent == expected_rent);
@@ -245,8 +245,8 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(calculated_rent == expected_rent);
 		}
 
-		SECTION("Utility is mortaged") {
-			std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(12)).setIsMortaged(true);
+		SECTION("Utility is Mortgaged") {
+			std::get<UtilityField>(monopoly_engine.getBoard()->getFieldById(12)).setIsMortgaged(true);
 			unsigned int expected_rent = 0;
 			unsigned int calculated_rent = monopoly_engine.calculateRent(7, 12);
 			CHECK(calculated_rent == expected_rent);
@@ -302,10 +302,10 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(monopoly_engine.isBuildingLegal(other_player, test_field_9) == false);
 		}
 
-		SECTION("Property is mortaged") {
+		SECTION("Property is Mortgaged") {
 			test_field_6.setOwner(builder);
 			builder->addFieldOwnedId(6);
-			test_field_6.setIsMortaged(true);
+			test_field_6.setIsMortgaged(true);
 
 			test_field_8.setOwner(builder);
 			builder->addFieldOwnedId(8);
@@ -428,10 +428,10 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(monopoly_engine.isDestroyingLegal(other_player, test_field_9) == false);
 		}
 
-		SECTION("Building is mortaged") {
+		SECTION("Building is Mortgaged") {
 			test_field_6.setOwner(builder);
 			builder->addFieldOwnedId(6);
-			test_field_6.setIsMortaged(true);
+			test_field_6.setIsMortgaged(true);
 
 			test_field_8.setOwner(builder);
 			builder->addFieldOwnedId(8);
@@ -529,7 +529,7 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(monopoly_engine.isHotelBuildingLegal(other_player, test_field_9) == false);
 		}
 
-		SECTION("Property is Mortaged") {
+		SECTION("Property is Mortgaged") {
 			test_field_6.setOwner(builder);
 			builder->addFieldOwnedId(6);
 
@@ -616,7 +616,7 @@ TEST_CASE("monopolyGameEngine") {
 			CHECK(monopoly_engine.isHotelDestroyingLegal(other_player, test_field_9) == false);
 		}
 
-		SECTION("Street is mortaged") {
+		SECTION("Street is Mortgaged") {
 			test_field_6.setOwner(builder);
 			builder->addFieldOwnedId(6);
 
@@ -721,10 +721,10 @@ TEST_CASE("PropertyField class") {
 	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 400;
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
-	const unsigned int TEST_MORTAGE = 200;
+	const unsigned int TEST_Mortgage = 200;
 
 	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_GROUP_MEMBERS, TEST_Mortgage);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -735,20 +735,20 @@ TEST_CASE("PropertyField class") {
 	REQUIRE(test_field.getRotation() == TEST_ROTATION);
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
-	REQUIRE(test_field.getIsMortaged() == false);
-	REQUIRE(test_field.getUnmortageValue() == 220);
+	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getIsMortgaged() == false);
+	REQUIRE(test_field.getUnMortgageValue() == 220);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	SECTION("PropertyField setters") {
 		Player NEW_OWNER = Player();
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
-		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		REQUIRE(test_field.getOwner() == OWNER_PTR);
 
 		test_field.setOwner(nullptr);
@@ -758,18 +758,18 @@ TEST_CASE("PropertyField class") {
 
 	SECTION("PropertyField::resetDefault() method") {
 		Player NEW_OWNER = Player();
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
-		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		CHECK(test_field.getOwner() == OWNER_PTR);
 
 		test_field.resetDefault();
 
-		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getIsMortgaged() == false);
 		REQUIRE(test_field.getOwner() == nullptr);
 	}
 }
@@ -794,10 +794,10 @@ TEST_CASE("StreetField class") {
 	const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
-	const unsigned int TEST_MORTAGE = 200;
+	const unsigned int TEST_Mortgage = 200;
 
 	StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -811,11 +811,11 @@ TEST_CASE("StreetField class") {
 	REQUIRE(test_field.getHotelPrice() == TEST_HOTEL_PRICE);
 	REQUIRE(test_field.getRentValues() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
+	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
 	REQUIRE(test_field.getHouseNumber() == 0);
 	REQUIRE(test_field.getIsHotel() == false);
-	REQUIRE(test_field.getIsMortaged() == false);
-	REQUIRE(test_field.getUnmortageValue() == 220);
+	REQUIRE(test_field.getIsMortgaged() == false);
+	REQUIRE(test_field.getUnMortgageValue() == 220);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	test_field.getContextWindow();
@@ -848,17 +848,17 @@ TEST_CASE("StreetField class") {
 		Player NEW_OWNER = Player();
 		const unsigned int NEW_HOSUE_NUMBER = 3;
 		const bool NEW_HOTEL_STATE = true;
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
 		test_field.setIsHotel(NEW_HOTEL_STATE);
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
 		REQUIRE(test_field.getHouseNumber() == NEW_HOSUE_NUMBER);
 		REQUIRE(test_field.getIsHotel() == NEW_HOTEL_STATE);
-		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		REQUIRE(test_field.getOwner() == OWNER_PTR);
 
 		test_field.setOwner(nullptr);
@@ -876,24 +876,24 @@ TEST_CASE("StreetField class") {
 		Player NEW_OWNER = Player();
 		const unsigned int NEW_HOSUE_NUMBER = 3;
 		const bool NEW_HOTEL_STATE = true;
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
 		test_field.setHouseNumber(NEW_HOSUE_NUMBER);
 		test_field.setIsHotel(NEW_HOTEL_STATE);
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
 		CHECK(test_field.getHouseNumber() == NEW_HOSUE_NUMBER);
 		CHECK(test_field.getIsHotel() == NEW_HOTEL_STATE);
-		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		CHECK(test_field.getOwner() == OWNER_PTR);
 
 		test_field.resetDefault();
 
 		REQUIRE(test_field.getHouseNumber() == 0);
 		REQUIRE(test_field.getIsHotel() == false);
-		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getIsMortgaged() == false);
 		REQUIRE(test_field.getOwner() == nullptr);
 	}
 }
@@ -916,10 +916,10 @@ TEST_CASE("StationField class") {
 	const std::map<StationTiers, unsigned int> TEST_RENT = {
 		{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100}, {FOUR_STATIONS, 200}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {15, 25, 35};
-	const unsigned int TEST_MORTAGE = 100;
+	const unsigned int TEST_Mortgage = 100;
 
 	StationField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -931,20 +931,20 @@ TEST_CASE("StationField class") {
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
 	REQUIRE(test_field.getRentValues() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
-	REQUIRE(test_field.getIsMortaged() == false);
-	REQUIRE(test_field.getUnmortageValue() == 110);
+	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getIsMortgaged() == false);
+	REQUIRE(test_field.getUnMortgageValue() == 110);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	SECTION("StationField setters") {
 		Player NEW_OWNER = Player();
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
-		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		REQUIRE(test_field.getOwner() == OWNER_PTR);
 
 		test_field.setOwner(nullptr);
@@ -954,18 +954,18 @@ TEST_CASE("StationField class") {
 
 	SECTION("StationField::resetDefault() method") {
 		Player NEW_OWNER = Player();
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
-		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		CHECK(test_field.getOwner() == OWNER_PTR);
 
 		test_field.resetDefault();
 
-		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getIsMortgaged() == false);
 		REQUIRE(test_field.getOwner() == nullptr);
 	}
 }
@@ -987,10 +987,10 @@ TEST_CASE("Utility class") {
 	const unsigned int TEST_PRICE = 150;
 	const std::map<UtilityTiers, unsigned int> TEST_RENT = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {28};
-	const unsigned int TEST_MORTAGE = 75;
+	const unsigned int TEST_Mortgage = 75;
 
 	UtilityField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTAGE);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -1002,20 +1002,20 @@ TEST_CASE("Utility class") {
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
 	REQUIRE(test_field.getRentMultipliers() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortage() == TEST_MORTAGE);
-	REQUIRE(test_field.getIsMortaged() == false);
-	REQUIRE(test_field.getUnmortageValue() == 83);
+	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getIsMortgaged() == false);
+	REQUIRE(test_field.getUnMortgageValue() == 83);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	SECTION("UtilityField class setters") {
 		Player NEW_OWNER = Player();
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
-		REQUIRE(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		REQUIRE(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		REQUIRE(test_field.getOwner() == OWNER_PTR);
 
 		test_field.setOwner(nullptr);
@@ -1025,18 +1025,18 @@ TEST_CASE("Utility class") {
 
 	SECTION("UtilityField::resetDefault() method") {
 		Player NEW_OWNER = Player();
-		const bool NEW_MORTAGE_STATE = true;
+		const bool NEW_Mortgage_STATE = true;
 		std::shared_ptr<Player> OWNER_PTR = std::make_shared<Player>(NEW_OWNER);
 
-		test_field.setIsMortaged(NEW_MORTAGE_STATE);
+		test_field.setIsMortgaged(NEW_Mortgage_STATE);
 		test_field.setOwner(OWNER_PTR);
 
-		CHECK(test_field.getIsMortaged() == NEW_MORTAGE_STATE);
+		CHECK(test_field.getIsMortgaged() == NEW_Mortgage_STATE);
 		CHECK(test_field.getOwner() == OWNER_PTR);
 
 		test_field.resetDefault();
 
-		REQUIRE(test_field.getIsMortaged() == false);
+		REQUIRE(test_field.getIsMortgaged() == false);
 		REQUIRE(test_field.getOwner() == nullptr);
 	}
 }
@@ -1100,20 +1100,196 @@ TEST_CASE("AiAdapter class") {
 		REQUIRE(adapter.convertPosition(50) == 1.0f);
 	}
 
-	// SECTION("setTurn() method") {
-	// 	adapter.setTurn(0);
-	// 	std::cout << "Completed setTurn" << std::endl;
-	// 	REQUIRE(adapter.getInputs()[0] == 1.0f);
+	SECTION("convertCard() method") {
+		REQUIRE(adapter.convertCard(1) == 1.0f);
+		REQUIRE(adapter.convertCard(0) == 0.0f);
+		REQUIRE(adapter.convertCard(2) == 1.0f);
+	}
 
-	// 	adapter.setTurn(1);
-	// 	REQUIRE(adapter.getInputs()[1] == 1.0f);
+	SECTION("convertHouse() method") {
+		const unsigned int TEST_ID = 1;
+		const FieldType TEST_TYPE = STREET;
+		const std::string TEST_NAME = "Białystok";
+		const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+		const unsigned int TEST_WIDTH = 200;
+		const unsigned int TEST_HEIGHT = 1000;
+		const float TEST_ROTATION = 0.0;
+		const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
+		const unsigned int TEST_PRICE = 400;
+		const unsigned int TEST_HOUSE_PRICE = 200;
+		const unsigned int TEST_HOTEL_PRICE = 250;
+		const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
+			{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
+		const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
+		const unsigned int TEST_Mortgage = 200;
 
-	// 	adapter.setTurn(2);
-	// 	REQUIRE(adapter.getInputs()[2] == 1.0f);
+		StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
 
-	// 	adapter.setTurn(3);
-	// 	REQUIRE(adapter.getInputs()[3] == 1.0f);
-	// }
+		REQUIRE(adapter.convertHouse(test_field) == 0.0f);
+
+		test_field.setHouseNumber(3);
+		REQUIRE(adapter.convertHouse(test_field) == 0.6f);
+
+		test_field.setHouseNumber(4);
+		test_field.setIsHotel(true);
+		REQUIRE(adapter.convertHouse(test_field) == 1.0f);
+	}
+
+	SECTION("setTurn() method") {
+		adapter.setTurn(0);
+		CHECK(adapter.getInputs()[0] == 1.0f);
+
+		adapter.setTurn(1);
+		CHECK(adapter.getInputs()[1] == 1.0f);
+
+		adapter.setTurn(2);
+		CHECK(adapter.getInputs()[2] == 1.0f);
+
+		adapter.setTurn(3);
+		CHECK(adapter.getInputs()[3] == 1.0f);
+	}
+
+	SECTION("setSelection() method") {
+		adapter.setSelection(1);
+		CHECK(adapter.getInputs()[98] == 1.0f);
+
+		adapter.setSelection(4);
+		CHECK(adapter.getInputs()[98] == 0.0f);
+		CHECK(adapter.getInputs()[97] == 1.0f);
+
+		adapter.setSelection(15);
+		CHECK(adapter.getInputs()[97] == 0.0f);
+		CHECK(adapter.getInputs()[98 + 10] == 1.0f);
+	}
+
+	SECTION("setSelectionState() method") {
+		adapter.setSelectionState(5, 1);
+		CHECK(adapter.getInputs()[100] == 1.0f);
+
+		adapter.setSelectionState(2, 1);
+		CHECK(adapter.getInputs()[97] == 1.0f);
+
+		adapter.setSelectionState(15, 0);
+		CHECK(adapter.getInputs()[98 + 10] == 0.0f);
+	}
+
+	SECTION("setMoneyContext() method") {
+		adapter.setMoneyContext(0);
+		CHECK(adapter.getInputs()[126] == 0.0f);
+
+		adapter.setMoneyContext(1);
+		CHECK(adapter.getInputs()[126] == 1.0f);
+	}
+
+	SECTION("clearSelectionState() method") {
+		adapter.setSelectionState(5, 1);
+		adapter.setSelectionState(6, 1);
+		adapter.setSelectionState(15, 1);
+		CHECK(adapter.getInputs()[100] == 1.0f);
+		CHECK(adapter.getInputs()[101] == 1.0f);
+		CHECK(adapter.getInputs()[108] == 1.0f);
+
+		adapter.clearSelectionState();
+		for (int i = 98; i < 98 + 29; ++i) {
+			CHECK(adapter.getInputs()[i] == 0.0f);
+		}
+	}
+
+	SECTION("setPosition() method") {
+		adapter.setPosition(0, 5);
+		adapter.setPosition(1, 12);
+		adapter.setPosition(2, 25);
+		adapter.setPosition(3, 39);
+		CHECK(adapter.getInputs()[4] == adapter.convertPosition(5));
+		CHECK(adapter.getInputs()[5] == adapter.convertPosition(12));
+		CHECK(adapter.getInputs()[6] == adapter.convertPosition(25));
+		CHECK(adapter.getInputs()[7] == adapter.convertPosition(39));
+	}
+
+	SECTION("setMoney() method") {
+		adapter.setMoney(0, 1000);
+		adapter.setMoney(1, 800);
+		adapter.setMoney(2, 2000);
+		adapter.setMoney(3, 100);
+		CHECK(adapter.getInputs()[8] == adapter.convertMoney(1000));
+		CHECK(adapter.getInputs()[9] == adapter.convertMoney(800));
+		CHECK(adapter.getInputs()[10] == adapter.convertMoney(2000));
+		CHECK(adapter.getInputs()[11] == adapter.convertMoney(100));
+	}
+
+	SECTION("setCard() method") {
+		adapter.setCard(0, 2);
+		adapter.setCard(1, 0);
+		adapter.setCard(2, 1);
+		adapter.setCard(3, 0);
+		CHECK(adapter.getInputs()[12] == adapter.convertCard(2));
+		CHECK(adapter.getInputs()[13] == adapter.convertCard(0));
+		CHECK(adapter.getInputs()[14] == adapter.convertCard(1));
+		CHECK(adapter.getInputs()[15] == adapter.convertCard(0));
+	}
+
+	SECTION("setJail() method") {
+		adapter.setJail(0, 1);
+		adapter.setJail(1, 0);
+		adapter.setJail(2, 0);
+		adapter.setJail(3, 1);
+		CHECK(adapter.getInputs()[16] == 1.0f);
+		CHECK(adapter.getInputs()[17] == 0.0f);
+		CHECK(adapter.getInputs()[18] == 0.0f);
+		CHECK(adapter.getInputs()[19] == 1.0f);
+	}
+
+	SECTION("setOwner() method") {
+		adapter.setOwner(1, 0);
+		adapter.setOwner(6, 1);
+		adapter.setOwner(11, 2);
+		adapter.setOwner(39, 3);
+		CHECK(adapter.getInputs()[20] == 1.0f / 4.0f);
+		CHECK(adapter.getInputs()[23] == 2.0f / 4.0f);
+		CHECK(adapter.getInputs()[26] == 3.0f / 4.0f);
+		CHECK(adapter.getInputs()[47] == 4.0f / 4.0f);
+	}
+
+	SECTION("setMortgage() method") {
+		adapter.setMortgage(1, 0);
+		adapter.setMortgage(3, 1);
+		adapter.setMortgage(5, 0);
+		adapter.setMortgage(8, 1);
+		CHECK(adapter.getInputs()[48] == 0.0f);
+		CHECK(adapter.getInputs()[49] == 1.0f);
+		CHECK(adapter.getInputs()[50] == 0.0f);
+		CHECK(adapter.getInputs()[52] == 1.0f);
+	}
+
+	SECTION("setHouse() method") {
+		const unsigned int TEST_ID = 1;
+		const FieldType TEST_TYPE = STREET;
+		const std::string TEST_NAME = "Białystok";
+		const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+		const unsigned int TEST_WIDTH = 200;
+		const unsigned int TEST_HEIGHT = 1000;
+		const float TEST_ROTATION = 0.0;
+		const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
+		const unsigned int TEST_PRICE = 400;
+		const unsigned int TEST_HOUSE_PRICE = 200;
+		const unsigned int TEST_HOTEL_PRICE = 250;
+		const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
+			{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
+		const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
+		const unsigned int TEST_Mortgage = 200;
+
+		StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
+
+		adapter.setHouse(test_field);
+		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field));
+
+		test_field.setHouseNumber(4);
+		test_field.setIsHotel(true);
+		adapter.setHouse(test_field);
+		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field));
+	}
 }
 
 TEST_CASE("Player class") {
@@ -1230,11 +1406,11 @@ TEST_CASE("Board class") {
 	std::map<StreetTiers, unsigned int> test_rent = {
 		{NO_HOUSES, 2}, {ONE_HOUSE, 10}, {TWO_HOUESES, 30}, {THREE_HOUSES, 90}, {FOUR_HOUSES, 160}, {HOTEL, 250}};
 	std::vector<unsigned int> test_group_members = {3};
-	unsigned int test_mortage = 30;
+	unsigned int test_Mortgage = 30;
 
 	const StreetField test_field_1 =
 		StreetField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position,
-			test_price, test_house_price, test_hotel_price, test_rent, test_group_members, test_mortage);
+			test_price, test_house_price, test_hotel_price, test_rent, test_group_members, test_Mortgage);
 
 	test_board.push_back(test_field_1);
 
@@ -1264,12 +1440,12 @@ TEST_CASE("Board class") {
 	test_rent = {
 		{NO_HOUSES, 4}, {ONE_HOUSE, 20}, {TWO_HOUESES, 60}, {THREE_HOUSES, 180}, {FOUR_HOUSES, 320}, {HOTEL, 450}};
 	test_group_members = {1};
-	test_mortage = 30;
+	test_Mortgage = 30;
 	test_position = sf::Vector2i(80, 80);
 
 	StreetField test_field_3 =
 		StreetField(test_id, test_type, test_name, test_path, test_width, test_height, test_rotation, test_position,
-			test_price, test_house_price, test_hotel_price, test_rent, test_group_members, test_mortage);
+			test_price, test_house_price, test_hotel_price, test_rent, test_group_members, test_Mortgage);
 
 	test_board.push_back(test_field_3);
 
@@ -1299,10 +1475,10 @@ TEST_CASE("Board class") {
 	std::map<StationTiers, unsigned int> test_rent_station = {
 		{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100}, {FOUR_STATIONS, 200}};
 	test_group_members = {15, 25, 35};
-	test_mortage = 100;
+	test_Mortgage = 100;
 
 	const StationField test_field_5 = StationField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_position, test_price, test_rent_station, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_rent_station, test_group_members, test_Mortgage);
 
 	test_board.push_back(test_field_5);
 
@@ -1345,10 +1521,10 @@ TEST_CASE("Board class") {
 	test_price = 150;
 	std::map<UtilityTiers, unsigned int> test_rent_multipliers = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
 	test_group_members = {28};
-	test_mortage = 75;
+	test_Mortgage = 75;
 
 	const UtilityField test_field_8 = UtilityField(test_id, test_type, test_name, test_path, test_width, test_height,
-		test_rotation, test_position, test_price, test_rent_multipliers, test_group_members, test_mortage);
+		test_rotation, test_position, test_price, test_rent_multipliers, test_group_members, test_Mortgage);
 
 	test_board.push_back(test_field_8);
 
@@ -1408,7 +1584,7 @@ TEST_CASE("Board class") {
 					CHECK(field_from_created.getHotelPrice() == field_from_test.getHotelPrice());
 					CHECK(field_from_created.getRentValues() == field_from_test.getRentValues());
 					CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
-					CHECK(field_from_created.getMortage() == field_from_test.getMortage());
+					CHECK(field_from_created.getMortgage() == field_from_test.getMortgage());
 					break;
 				}
 
@@ -1425,7 +1601,7 @@ TEST_CASE("Board class") {
 					CHECK(field_from_created.getPrice() == field_from_test.getPrice());
 					CHECK(field_from_created.getRentValues() == field_from_test.getRentValues());
 					CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
-					CHECK(field_from_created.getMortage() == field_from_test.getMortage());
+					CHECK(field_from_created.getMortgage() == field_from_test.getMortgage());
 					break;
 				}
 
@@ -1442,7 +1618,7 @@ TEST_CASE("Board class") {
 					CHECK(field_from_created.getPrice() == field_from_test.getPrice());
 					CHECK(field_from_created.getRentMultipliers() == field_from_test.getRentMultipliers());
 					CHECK(field_from_created.getGroupMembers() == field_from_test.getGroupMembers());
-					CHECK(field_from_created.getMortage() == field_from_test.getMortage());
+					CHECK(field_from_created.getMortgage() == field_from_test.getMortgage());
 					break;
 				}
 
@@ -1560,6 +1736,6 @@ TEST_CASE("Board class") {
 		CHECK(given_field.getHotelPrice() == test_field_3.getHotelPrice());
 		CHECK(given_field.getRentValues() == test_field_3.getRentValues());
 		CHECK(given_field.getGroupMembers() == test_field_3.getGroupMembers());
-		CHECK(given_field.getMortage() == test_field_3.getMortage());
+		CHECK(given_field.getMortgage() == test_field_3.getMortgage());
 	}
 }

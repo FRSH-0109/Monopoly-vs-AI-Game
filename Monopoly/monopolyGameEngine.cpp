@@ -346,11 +346,11 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHousePrice() &&
+	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHousePrice() &&
 		field_houses < 4 && getHouseCount() > 0) {	// W tym if trzeba będzie dodać kontrolę budynków w puli
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortaged()) {
+			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortgaged()) {
 				return false;
 			}
 		}
@@ -363,10 +363,10 @@ bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, Street
 bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && field_houses > 0) {
+	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && field_houses > 0) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if (field_houses < group_member.getHouseNumber() || group_member.getIsMortaged()) {
+			if (field_houses < group_member.getHouseNumber() || group_member.getIsMortgaged()) {
 				return false;
 			}
 		}
@@ -380,12 +380,12 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) &&
+	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) &&
 		builder->getMoney() >= field.getHotelPrice() && field_houses == 4 && getHotelCount() > 0 &&
 		!field.getIsHotel()) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if ((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortaged()) {
+			if ((group_member.getHouseNumber() < 4 && !group_member.getIsHotel()) || group_member.getIsMortgaged()) {
 				return false;
 			}
 		}
@@ -398,10 +398,10 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 bool monopolyGameEngine::isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if (!field.getIsMortaged() && groupCompleted(builder_ownes, field) && field.getIsHotel() && getHouseCount() >= 4) {
+	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && field.getIsHotel() && getHouseCount() >= 4) {
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
-			if (group_member.getIsMortaged()) {
+			if (group_member.getIsMortgaged()) {
 				return false;
 			}
 		}
@@ -438,7 +438,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 		StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
 		unsigned int house_number = field.getHouseNumber();
 		std::map<StreetTiers, unsigned int> rent_values = field.getRentValues();
-		if (field.getIsMortaged()) {
+		if (field.getIsMortgaged()) {
 			rent_to_pay = 0;
 		} else if (field.getIsHotel()) {
 			rent_to_pay = rent_values[HOTEL];
@@ -454,7 +454,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 		}
 	} else if (field_type == STATION) {
 		StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
-		if (field.getIsMortaged()) {
+		if (field.getIsMortgaged()) {
 			rent_to_pay = 0;
 		} else {
 			std::map<StationTiers, unsigned int> rent_values = field.getRentValues();
@@ -467,7 +467,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 		}
 	} else if (field_type == UTILITY) {
 		UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
-		if (field.getIsMortaged()) {
+		if (field.getIsMortgaged()) {
 			rent_to_pay = 0;
 		} else {
 			std::map<UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
@@ -616,72 +616,72 @@ void monopolyGameEngine::buildingsManagingWorker() {
 			std::cout << "Can't sell hotel on a non street field" << std::endl;
 		}
 	}
-	if (isButtonClicked(mortageButton_)) {
+	if (isButtonClicked(MortgageButton_)) {
 		std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
 		FieldType field_type =
 			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && !field.getIsMortaged() && colorGroupEmpty(curr_player, field)) {
-				curr_player->addMoney(field.getMortage());
-				field.setIsMortaged(true);
-				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());
+			if (field.getOwner() == curr_player && !field.getIsMortgaged() && colorGroupEmpty(curr_player, field)) {
+				curr_player->addMoney(field.getMortgage());
+				field.setIsMortgaged(true);
+				notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
 			} else {
-				notificationAdd(playerIndexturn_, "Unable to mortage field " + field.getName());
+				notificationAdd(playerIndexturn_, "Unable to Mortgage field " + field.getName());
 			}
 		} else if (field_type == STATION) {
 			StationField& field = std::get<StationField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && !field.getIsMortaged()) {
-				curr_player->addMoney(field.getMortage());
-				field.setIsMortaged(true);
-				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());
+			if (field.getOwner() == curr_player && !field.getIsMortgaged()) {
+				curr_player->addMoney(field.getMortgage());
+				field.setIsMortgaged(true);
+				notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
 			} else {
-				notificationAdd(playerIndexturn_, "Unable to mortage field " + field.getName());
+				notificationAdd(playerIndexturn_, "Unable to Mortgage field " + field.getName());
 			}
 		} else if (field_type == UTILITY) {
 			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && !field.getIsMortaged()) {
-				curr_player->addMoney(field.getMortage());
-				field.setIsMortaged(true);
-				notificationAdd(playerIndexturn_, "Mortaged field " + field.getName());
+			if (field.getOwner() == curr_player && !field.getIsMortgaged()) {
+				curr_player->addMoney(field.getMortgage());
+				field.setIsMortgaged(true);
+				notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
 			} else {
-				notificationAdd(playerIndexturn_, "Unable to mortage field " + field.getName());
+				notificationAdd(playerIndexturn_, "Unable to Mortgage field " + field.getName());
 			}
 		}
 	}
-	if (isButtonClicked(unmortageButton_)) {
+	if (isButtonClicked(unMortgageButton_)) {
 		std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
 		FieldType field_type =
 			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(currentPropertyShowed_));
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && field.getIsMortaged() &&
-				curr_player->getMoney() >= field.getUnmortageValue()) {
-				curr_player->substractMoney(field.getUnmortageValue());
-				field.setIsMortaged(false);
-				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
+			if (field.getOwner() == curr_player && field.getIsMortgaged() &&
+				curr_player->getMoney() >= field.getUnMortgageValue()) {
+				curr_player->substractMoney(field.getUnMortgageValue());
+				field.setIsMortgaged(false);
+				notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 			} else {
-				notificationAdd(playerIndexturn_, "Unable to unmortage field " + field.getName());
+				notificationAdd(playerIndexturn_, "Unable to unMortgage field " + field.getName());
 			}
 		} else if (field_type == STATION) {
 			StationField& field = std::get<StationField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && field.getIsMortaged() &&
-				curr_player->getMoney() >= field.getUnmortageValue()) {
-				curr_player->substractMoney(field.getUnmortageValue());
-				field.setIsMortaged(false);
-				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
+			if (field.getOwner() == curr_player && field.getIsMortgaged() &&
+				curr_player->getMoney() >= field.getUnMortgageValue()) {
+				curr_player->substractMoney(field.getUnMortgageValue());
+				field.setIsMortgaged(false);
+				notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 			} else {
-				notificationAdd(playerIndexturn_, "Unable to unmortage field " + field.getName());
+				notificationAdd(playerIndexturn_, "Unable to unMortgage field " + field.getName());
 			}
 		} else if (field_type == UTILITY) {
 			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(currentPropertyShowed_));
-			if (field.getOwner() == curr_player && field.getIsMortaged() &&
-				curr_player->getMoney() >= field.getUnmortageValue()) {
-				curr_player->substractMoney(field.getUnmortageValue());
-				field.setIsMortaged(false);
-				notificationAdd(playerIndexturn_, "Unmortaged field " + field.getName());
+			if (field.getOwner() == curr_player && field.getIsMortgaged() &&
+				curr_player->getMoney() >= field.getUnMortgageValue()) {
+				curr_player->substractMoney(field.getUnMortgageValue());
+				field.setIsMortgaged(false);
+				notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 			} else {
-				notificationAdd(playerIndexturn_, "Unable to unmortage field " + field.getName());
+				notificationAdd(playerIndexturn_, "Unable to unMortgage field " + field.getName());
 			}
 		}
 	}
@@ -953,7 +953,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 				updateChanceCard();
 				std::string notification_msg = "Chance Card: ";
 				notificationAdd(playerIndexturn_, notification_msg + chance_card.getText());
-				
+
 				switch(chance_card.getType())
 				{
 					case MovementToProperty:
@@ -969,18 +969,18 @@ void monopolyGameEngine::monopolyGameWorker() {
 
 					case BankPaysYou:
 						players_[playerIndexturn_]->addMoney(chance_card.getValue());
-						setTurnState(TurnEnd);		
+						setTurnState(TurnEnd);
 					break;
 
 					case GetOutOfJailCard:
 						players_[playerIndexturn_]->setJailCards(players_[playerIndexturn_]->getJailCards() + 1);
-						setTurnState(TurnEnd);		
+						setTurnState(TurnEnd);
 					break;
 
 					case GoToJail:
 							sendToJail(playerIndexturn_);
 							players_[playerIndexturn_]->setJailStatus(3);
-							setTurnState(TurnEnd);				
+							setTurnState(TurnEnd);
 					break;
 
 					case PayForHouseHotel:
@@ -1001,12 +1001,12 @@ void monopolyGameEngine::monopolyGameWorker() {
 									}
 								}
 							}
-		
+
 							if(sum == 0)
-							{	
+							{
 								std::string notification_msg = "Amount to pay: " + std::to_string(sum);
 								notificationAdd(playerIndexturn_, notification_msg);
-								setTurnState(TurnEnd);	
+								setTurnState(TurnEnd);
 							}
 							else
 							{
@@ -1015,7 +1015,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 									players_[playerIndexturn_]->substractMoney(sum);
 									std::string notification_msg = "Paid to bank: " + std::to_string(sum);
 									notificationAdd(playerIndexturn_, notification_msg);
-									setTurnState(TurnEnd);	
+									setTurnState(TurnEnd);
 								}
 								else
 								{
@@ -1037,7 +1037,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 								players_[playerIndexturn_]->substractMoney(chance_card.getValue());
 								std::string notification_msg = "Paid to bank: " + std::to_string(chance_card.getValue());
 								notificationAdd(playerIndexturn_, notification_msg);
-								setTurnState(TurnEnd);	
+								setTurnState(TurnEnd);
 							}
 							else
 							{
@@ -1048,12 +1048,12 @@ void monopolyGameEngine::monopolyGameWorker() {
 								std::string notification_msg = "Not enough money. Needed: " + std::to_string(chance_card.getValue());
 								notificationAdd(playerIndexturn_, notification_msg);
 							}
-							
+
 						}
 					break;
 
 					case MovementWithBuyOrPay:
-						{	
+						{
 							// int moneyToPay = 0;
 							// FieldType fieldType;
 							// if(chance_card.getValue() == 0)
@@ -1066,7 +1066,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 							// }
 							// else
 							// {
-							// 	setTurnState(TurnEnd);	
+							// 	setTurnState(TurnEnd);
 							// }
 							// int id = findNearestField(fieldType, players_[playerIndexturn_]->getPosition());
 							// if(chance_card.getValue() == 0)
@@ -1078,7 +1078,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 							// {
 							// 	FieldType fieldType = STATION;
 							// }
-							setTurnState(TurnEnd);	
+							setTurnState(TurnEnd);
 						}
 					break;
 
@@ -1091,15 +1091,15 @@ void monopolyGameEngine::monopolyGameWorker() {
 							handlePassingStart(oldPos, newPos);
 							FieldType fieldType =
 								std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(newPos));
-							
+
 							setTurnState(FieldAction);
 						}
 					break;
 
 					case PayPlayers:
-						{	
+						{
 							int toPay = chance_card.getValue() * (players_.size() - 1);
-							
+
 							if(players_[playerIndexturn_]->getMoney() >= toPay)
 							{
 								for(auto player_ptr : players_)
@@ -1121,10 +1121,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 								{
 									if(player_ptr != players_[playerIndexturn_])
 									{
-										players_to_pay_rent.push_back(player_ptr);	
+										players_to_pay_rent.push_back(player_ptr);
 									}
 								}
-								setTurnState(PayRent);	
+								setTurnState(PayRent);
 							}
 						}
 					break;
@@ -1211,7 +1211,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 				if(bank_pay_rent){++payment_counter;}
 				for(auto player_ptr : players_to_pay_rent)
 				{
-					player_ptr->addMoney(money_to_find / payment_counter); 
+					player_ptr->addMoney(money_to_find / payment_counter);
 				}
 				std::string textPlayerrent("Paid rent of " + std::to_string((money_to_find)));
 					notificationAdd(playerIndexturn_, textPlayerrent);
@@ -2110,37 +2110,37 @@ void monopolyGameEngine::createMortagingButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonMortage(new Button(Idle, "Mortage", buttonSize, getFontSize()));
-	buttonMortage->setFont(getFont());
-	buttonMortage->setPosition(MORTAGE_BUTTON_POSITION);
-	buttonMortage->setActiveBackColor(activeButtonBackColor);
-	buttonMortage->setActiveTextColor(activeButtonTextColor);
-	buttonMortage->setInactiveBackColor(inActiveButtonBackColor);
-	buttonMortage->setInactiveTextColor(inActiveButtonTextColor);
-	buttonMortage->setFocusBackColor(FocusButtonBackColor);
-	buttonMortage->setFocusTextColor(FocusButtonTextColor);
-	buttonMortage->setIsClicked(false);
-	buttonMortage->setIsVisible(true);
-	buttonMortage->setIsActive(false);
-	buttonMortage->setIsFocus(false);
-	mortageButton_ = buttonMortage;
-	addButton(buttonMortage);
+	std::shared_ptr<Button> buttonMortgage(new Button(Idle, "Mortgage", buttonSize, getFontSize()));
+	buttonMortgage->setFont(getFont());
+	buttonMortgage->setPosition(Mortgage_BUTTON_POSITION);
+	buttonMortgage->setActiveBackColor(activeButtonBackColor);
+	buttonMortgage->setActiveTextColor(activeButtonTextColor);
+	buttonMortgage->setInactiveBackColor(inActiveButtonBackColor);
+	buttonMortgage->setInactiveTextColor(inActiveButtonTextColor);
+	buttonMortgage->setFocusBackColor(FocusButtonBackColor);
+	buttonMortgage->setFocusTextColor(FocusButtonTextColor);
+	buttonMortgage->setIsClicked(false);
+	buttonMortgage->setIsVisible(true);
+	buttonMortgage->setIsActive(false);
+	buttonMortgage->setIsFocus(false);
+	MortgageButton_ = buttonMortgage;
+	addButton(buttonMortgage);
 
-	std::shared_ptr<Button> buttonUnmortage(new Button(Idle, "Unmortage", buttonSize, getFontSize()));
-	buttonUnmortage->setFont(getFont());
-	buttonUnmortage->setPosition(UNMORTAGE_BUTTON_POSITION);
-	buttonUnmortage->setActiveBackColor(activeButtonBackColor);
-	buttonUnmortage->setActiveTextColor(activeButtonTextColor);
-	buttonUnmortage->setInactiveBackColor(inActiveButtonBackColor);
-	buttonUnmortage->setInactiveTextColor(inActiveButtonTextColor);
-	buttonUnmortage->setFocusBackColor(FocusButtonBackColor);
-	buttonUnmortage->setFocusTextColor(FocusButtonTextColor);
-	buttonUnmortage->setIsClicked(false);
-	buttonUnmortage->setIsVisible(true);
-	buttonUnmortage->setIsActive(false);
-	buttonUnmortage->setIsFocus(false);
-	unmortageButton_ = buttonUnmortage;
-	addButton(buttonUnmortage);
+	std::shared_ptr<Button> buttonUnMortgage(new Button(Idle, "UnMortgage", buttonSize, getFontSize()));
+	buttonUnMortgage->setFont(getFont());
+	buttonUnMortgage->setPosition(UNMortgage_BUTTON_POSITION);
+	buttonUnMortgage->setActiveBackColor(activeButtonBackColor);
+	buttonUnMortgage->setActiveTextColor(activeButtonTextColor);
+	buttonUnMortgage->setInactiveBackColor(inActiveButtonBackColor);
+	buttonUnMortgage->setInactiveTextColor(inActiveButtonTextColor);
+	buttonUnMortgage->setFocusBackColor(FocusButtonBackColor);
+	buttonUnMortgage->setFocusTextColor(FocusButtonTextColor);
+	buttonUnMortgage->setIsClicked(false);
+	buttonUnMortgage->setIsVisible(true);
+	buttonUnMortgage->setIsActive(false);
+	buttonUnMortgage->setIsFocus(false);
+	unMortgageButton_ = buttonUnMortgage;
+	addButton(buttonUnMortgage);
 }
 
 void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {
@@ -2154,7 +2154,7 @@ void monopolyGameEngine::clearPropertyData(bool isPropertyShownToBuy) {
 void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShownToBuy) {
 	FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 	unsigned int price;
-	unsigned int mortage;
+	unsigned int Mortgage;
 	unsigned int housePrice;
 	unsigned int hotelPrice;
 	unsigned int rents[7];
@@ -2169,7 +2169,7 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 		rents[4] = rentsMap[THREE_HOUSES];
 		rents[5] = rentsMap[FOUR_HOUSES];
 		rents[6] = rentsMap[HOTEL];
-		mortage = field.getMortage();
+		Mortgage = field.getMortgage();
 		housePrice = field.getHousePrice();
 		hotelPrice = field.getHotelPrice();
 	} else if (fieldType == STATION) {
@@ -2180,7 +2180,7 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 		rents[1] = rentsMap[TWO_STATIONS];
 		rents[2] = rentsMap[THREE_STATIONS];
 		rents[3] = rentsMap[FOUR_STATIONS];
-		mortage = field.getMortage();
+		Mortgage = field.getMortgage();
 	} else	// fieldType == UTILITY
 	{
 		UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
@@ -2188,7 +2188,7 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 		std::map<UtilityTiers, unsigned int> rentsMap = field.getRentMultipliers();
 		rents[0] = rentsMap[ONE_UTILITY];
 		rents[1] = rentsMap[TWO_UTILITIES];
-		mortage = field.getMortage();
+		Mortgage = field.getMortgage();
 	}
 
 	unsigned int width = std::visit([](Field& field) { return field.getWidth(); }, getBoard()->getFieldById(pos));
@@ -2250,25 +2250,25 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	propertyPrice->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset));
 	propertyPrice->setFillColor(sf::Color::Black);
 
-	std::shared_ptr<sf::Text> propertyMortage(new sf::Text("Mortage:", getFont(), getFontSize() - 2));
-	propertyMortage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
-	propertyMortage->setFillColor(sf::Color::Black);
+	std::shared_ptr<sf::Text> propertyMortgage(new sf::Text("Mortgage:", getFont(), getFontSize() - 2));
+	propertyMortgage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
+	propertyMortgage->setFillColor(sf::Color::Black);
 
-	std::shared_ptr<sf::Text> propertyMortagePrice(new sf::Text(std::to_string(mortage), getFont(), getFontSize() - 2));
-	propertyMortagePrice->setPosition(
+	std::shared_ptr<sf::Text> propertyMortgagePrice(new sf::Text(std::to_string(Mortgage), getFont(), getFontSize() - 2));
+	propertyMortgagePrice->setPosition(
 		sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 8));
-	propertyMortagePrice->setFillColor(sf::Color::Black);
+	propertyMortgagePrice->setFillColor(sf::Color::Black);
 
 	if (isPropertyShownToBuy) {
 		propertyDataTexts_.push_back(propertyName);
-		propertyDataTexts_.push_back(propertyMortagePrice);
+		propertyDataTexts_.push_back(propertyMortgagePrice);
 		propertyDataTexts_.push_back(propertyPrice);
-		propertyDataTexts_.push_back(propertyMortage);
+		propertyDataTexts_.push_back(propertyMortgage);
 	} else {
 		allPropertyDataTexts_.push_back(propertyName);
-		allPropertyDataTexts_.push_back(propertyMortagePrice);
+		allPropertyDataTexts_.push_back(propertyMortgagePrice);
 		allPropertyDataTexts_.push_back(propertyPrice);
-		allPropertyDataTexts_.push_back(propertyMortage);
+		allPropertyDataTexts_.push_back(propertyMortgage);
 	}
 
 	if (fieldType == STREET) {

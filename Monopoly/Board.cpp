@@ -31,33 +31,33 @@ Board::Board(const std::string file_path) {
 				unsigned int price = element["price"];
 				unsigned int house_price = element["house_price"];
 				unsigned int hotel_price = element["hotel_price"];
-				unsigned int mortage = element["mortage"];
+				unsigned int Mortgage = element["Mortgage"];
 				std::map<StreetTiers, unsigned int> rent_values = jsonToStreetRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				StreetField new_field = StreetField(id, type, name, graphic_path, width, height, rotation, position,
-					price, house_price, hotel_price, rent_values, group_members, mortage);
+					price, house_price, hotel_price, rent_values, group_members, Mortgage);
 				board_.push_back(new_field);
 				break;
 			}
 
 			case STATION: {
 				unsigned int price = element["price"];
-				unsigned int mortage = element["mortage"];
+				unsigned int Mortgage = element["Mortgage"];
 				std::map<StationTiers, unsigned int> rent_values = jsonToStationRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				StationField new_field = StationField(id, type, name, graphic_path, width, height, rotation, position,
-					price, rent_values, group_members, mortage);
+					price, rent_values, group_members, Mortgage);
 				board_.push_back(new_field);
 				break;
 			}
 
 			case UTILITY: {
 				unsigned int price = element["price"];
-				unsigned int mortage = element["mortage"];
+				unsigned int Mortgage = element["Mortgage"];
 				std::map<UtilityTiers, unsigned int> rent_multipliers = jsonToUtilityRent(element);
 				std::vector<unsigned int> group_members = element["group_members"];
 				UtilityField new_field = UtilityField(id, type, name, graphic_path, width, height, rotation, position,
-					price, rent_multipliers, group_members, mortage);
+					price, rent_multipliers, group_members, Mortgage);
 				board_.push_back(new_field);
 				break;
 			}
