@@ -17,6 +17,7 @@
 #include "../gameEngine.h"
 #include "../main.h"
 #include "../monopolyGameEngine.h"
+#include "../AiAdapter.h"
 #include "catch2/src/catch2/catch_all.hpp"
 
 using namespace std;
@@ -1067,6 +1068,52 @@ TEST_CASE("TaxField class") {
 	REQUIRE(test_tax_field.getHeight() == TEST_HEIGHT);
 	REQUIRE(test_tax_field.getRotation() == TEST_ROTATION);
 	REQUIRE(test_tax_field.getTaxValue() == TEST_TAX_VALUE);
+}
+
+TEST_CASE("AiAdapter class") {
+	AiAdapter adapter;
+
+	SECTION("convertMoney() method") {
+		REQUIRE(adapter.convertMoney(3000) == 0.5f);
+		REQUIRE(adapter.convertMoney(0) == 0);
+		REQUIRE(adapter.convertMoney(8000) == 1.0f);
+	}
+
+	SECTION("convertMoneyValue() method") {
+		REQUIRE(adapter.convertMoneyValue(0.5f) == 3000.0f);
+		REQUIRE(adapter.convertMoneyValue(1.0f) == 6000.0f);
+	}
+
+	SECTION("convertHouseValue() method") {
+		REQUIRE(adapter.convertHouseValue(0.0f) == 0.0f);
+		REQUIRE(adapter.convertHouseValue(0.4f) == 0.0f);
+		REQUIRE(adapter.convertHouseValue(0.5f) == 0.0f);
+		REQUIRE(adapter.convertHouseValue(0.75f) == 11.25f);
+		REQUIRE(adapter.convertHouseValue(1.0f) == 15.0f);
+	}
+
+	SECTION("convertPosition() method") {
+		REQUIRE(adapter.convertPosition(0) == 0.0f);
+		REQUIRE(adapter.convertPosition(25) >= 0.64f);
+		REQUIRE(adapter.convertPosition(25) <= 0.642f);
+		REQUIRE(adapter.convertPosition(39) == 1.0f);
+		REQUIRE(adapter.convertPosition(50) == 1.0f);
+	}
+
+	// SECTION("setTurn() method") {
+	// 	adapter.setTurn(0);
+	// 	std::cout << "Completed setTurn" << std::endl;
+	// 	REQUIRE(adapter.getInputs()[0] == 1.0f);
+
+	// 	adapter.setTurn(1);
+	// 	REQUIRE(adapter.getInputs()[1] == 1.0f);
+
+	// 	adapter.setTurn(2);
+	// 	REQUIRE(adapter.getInputs()[2] == 1.0f);
+
+	// 	adapter.setTurn(3);
+	// 	REQUIRE(adapter.getInputs()[3] == 1.0f);
+	// }
 }
 
 TEST_CASE("Player class") {
