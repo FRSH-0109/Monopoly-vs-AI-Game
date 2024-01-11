@@ -57,4 +57,15 @@ class Player {
 	void setSpriteOffsetX(const float offset_x);
 	void setSpriteOffsetY(const float offset_y);
 	void setSpritePosition(sf::Vector2f newPos);
+
+	virtual const unsigned int getTest() { return 0; };
+};
+
+class AiPlayer : public Player {
+	unsigned int test_ = 3;
+
+	public:
+	AiPlayer(): Player() {};
+	AiPlayer(unsigned int money) : Player(money) {};
+	const unsigned int getTest() { return test_; };
 };

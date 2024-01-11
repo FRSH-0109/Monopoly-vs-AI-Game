@@ -4,6 +4,7 @@
 #include <SFML/System/Clock.hpp>
 
 #include <memory>
+#include <vector>
 #include "GameScreen.h"
 #include "activeScreen.h"
 #include "contextWindow.h"
@@ -27,7 +28,7 @@ class GameEngine {
 	void clear();
 	void display();
 	void pollForEvents(sf::Event& event);
-	void worker();
+	void worker(bool AIonly);
 
 	unsigned int getWindowWidth() const;
 	unsigned int getWindowHeight() const;

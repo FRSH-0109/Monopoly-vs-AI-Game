@@ -10,6 +10,8 @@
 #include "SFML/Graphics.hpp"
 #include "gameEngine.h"
 
+bool AIonly = false;
+
 int main() {
 	unsigned int WIDTH_MAX = 1920;
 	unsigned int HEIGHT_MAX = 1080;
@@ -23,8 +25,13 @@ int main() {
 		height = HEIGHT_MAX;
 	}
 	GameEngine gameEngine(30, width, height);
+	gameEngine.worker(AIonly);
 
-	gameEngine.worker();
+	// gameEngine = GameEngine(30, width, height);
+	// gameEngine.worker(AIonly);
+
+	// gameEngine = GameEngine(30, width, height);
+	// gameEngine.worker(AIonly);
 
 	return 0;
 }

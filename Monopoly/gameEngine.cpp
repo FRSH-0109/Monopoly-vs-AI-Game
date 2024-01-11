@@ -60,7 +60,39 @@ void GameEngine::display() {
 	}
 }
 
-void GameEngine::worker() {
+void GameEngine::worker(bool AIonly) {
+	if(AIonly)
+	{
+		std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
+
+		std::shared_ptr<playerSettings> player1Settings = std::make_shared<playerSettings>();
+		player1Settings->isNone = false;
+		player1Settings->isHuman = false;
+		player1Settings->level = 1;
+		playerSettingsList_.push_back(player1Settings);
+
+		std::shared_ptr<playerSettings> player2Settings = std::make_shared<playerSettings>();
+		player2Settings->isNone = false;
+		player2Settings->isHuman = false;
+		player2Settings->level = 1;
+		playerSettingsList_.push_back(player2Settings);
+
+		std::shared_ptr<playerSettings> player3Settings = std::make_shared<playerSettings>();
+		player3Settings->isNone = false;
+		player3Settings->isHuman = false;
+		player3Settings->level = 1;
+		playerSettingsList_.push_back(player3Settings);
+
+		std::shared_ptr<playerSettings> player4Settings = std::make_shared<playerSettings>();
+		player4Settings->isNone = false;
+		player4Settings->isHuman = false;
+		player4Settings->level = 1;
+		playerSettingsList_.push_back(player4Settings);
+
+		activeScreen_.reset();
+		activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
+	}
+
 	while (getContextWindow()->isOpen()) {
 		clear();
 
