@@ -24,22 +24,6 @@
         "height": 100
     },
     {
-        "id": 3,
-        "type": "MovementWithBuyOrPay",
-        "value": 0,
-        "text": "Advance token to the nearest Utility. Buy it or throw dice and pay owner a ten times the amount thrown.",
-        "width": 60,
-        "height": 100
-    },
-    {
-        "id": 4,
-        "type": "MovementWithBuyOrPay",
-        "value": 1,
-        "text": "Advance to the nearest Railroad.  Buy it or pay owner twice the rent.",
-        "width": 60,
-        "height": 100
-    },
-    {
         "id": 5,
         "type": "BankPaysYou",
         "value": 50,
