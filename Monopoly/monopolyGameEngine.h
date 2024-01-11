@@ -15,7 +15,7 @@ enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending 
 
 class monopolyGameEngine {
 	GameScreenType screenType_ = Boardgame;
-	const unsigned int PLAYER_MONEY_DEFAULT_ = 1500;
+	const unsigned int PLAYER_MONEY_DEFAULT_ = 300;
 	const unsigned int START_PASSING_MONEY_ = 200;
 
 	const std::string CHANCE_FILE_PATH_ = "Monopoly/game_config_json/chance.json";
@@ -94,7 +94,7 @@ class monopolyGameEngine {
 
 	std::shared_ptr<Button> bankruptButton_;
 	std::shared_ptr<Button> nextTurnButton_;
-	sf::Vector2f BANKRUPT_BUTTON_POSITION = sf::Vector2f(1270, 120);
+	sf::Vector2f BANKRUPT_BUTTON_POSITION = sf::Vector2f(1270, 50);
 	sf::Vector2f NEXT_TURN_BUTTON_POSITION = sf::Vector2f(1270, 180);
 
 	// housese and hotels
@@ -149,6 +149,7 @@ class monopolyGameEngine {
 
 	//chance cards
 	std::vector<ChanceCard> chanceCards_;
+	unsigned int chanceCardCurrent_ = 0;
 
 	NotificationWall notificationsWall_;
 
@@ -186,6 +187,10 @@ class monopolyGameEngine {
 
 	// withdraw
 	void withdrawWorker();
+
+	// chance
+	ChanceCard& getChanceCard();
+	void updateChanceCard();
 
    public:
 	monopolyGameEngine();

@@ -34,7 +34,7 @@
     {
         "id": 4,
         "type": "MovementWithBuyOrPay",
-        "value": 0,
+        "value": 1,
         "text": "Advance to the nearest Railroad.  Buy it or pay owner twice the rent.",
         "width": 60,
         "height": 100
@@ -83,7 +83,7 @@
         "id": 10,
         "type": "MovementToProperty",
         "value": 5,
-        "text": "Take a trip to Dworzec Centralny. If you pass Start, collect $200",
+        "text": "Take a trip to Dworzec Centralny. If you pass Start, collect $200.",
         "width": 60,
         "height": 100
     },

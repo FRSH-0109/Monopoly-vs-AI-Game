@@ -24,6 +24,10 @@ const unsigned int ChanceCard::getId() {
 	return id_;
 };
 
+const unsigned int ChanceCard::getValue() {
+	return value_;
+};
+
 const ChanceType ChanceCard::getType() {
 	return type_;
 };
