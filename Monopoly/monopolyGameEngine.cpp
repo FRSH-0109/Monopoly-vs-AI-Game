@@ -22,8 +22,11 @@ void monopolyGameEngine::createBoard() {
 }
 
 void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list) {
+	gameTurnByPlayerDone_ = {false, false, false, false};
+	gameTurnsGloballyDone_ = 0;
 	playersStartingAmount_ = 0;
 	int playerId = 0;
+	isAiGameOnly_ = false;
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
 			++playersStartingAmount_;
@@ -34,6 +37,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 				new_player.setId(playerId);
 				players_.push_back(std::make_shared<Player>(new_player));
 			} else {
+				isAiGameOnly_ = true;
 				AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
 				new_player.setIsAi(!(it->isHuman));
 				new_player.setAiLevel(it->level);
@@ -62,6 +66,10 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
+
+	for (int j = 0; j < players_.size(); ++j) {	 // save id of starting pplayers to future usage of data display
+		playersStartingIds_[j] = players_[j]->getId();
+	}
 
 	for (std::shared_ptr<Player> player : players_) {
 		player->createSprite();
@@ -158,7 +166,7 @@ unsigned int monopolyGameEngine::getFontSize() const {
 	return FONT_SIZE;
 }
 
-void monopolyGameEngine::turnInfoTextWorker() {
+void monopolyGameEngine::turnInfoTextShow() {
 	turnInfoText_->setString("Turn: Player " + std::to_string(players_[getPlayerIndexTurn()]->getId() + 1));
 }
 
@@ -750,7 +758,6 @@ void monopolyGameEngine::withdrawWorker() {
 }
 
 void monopolyGameEngine::monopolyGameWorker() {
-	turnInfoTextWorker();
 	updateTextPlayersInfo();
 	updateAvailableHousesHotelText();
 	showAllPropertiesWorker();
@@ -763,16 +770,20 @@ void monopolyGameEngine::monopolyGameWorker() {
 	static unsigned int double_turns = 0;
 	static bool isDouble;
 	static bool playerChanged = true;
+	static bool playerBankrutedNow = false;
 
 	if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
-		if (makePlayerBankrupt(playerIndexturn_)) {
-			notificationAdd(playerIndexturn_, "decided to go bankrupt!");
-			setTurnState(TurnEnd);
-		}
+		playerBankrutedNow = true;
+		notificationAdd(playerIndexturn_, "decided to go bankrupt!");
+		rollDiceButton_->setIsVisible(false);
+		buyFieldButton_->setIsVisible(false);
+		resignBuyFieldButton_->setIsVisible(false);
+		setTurnState(TurnEnd);	// for next player
 	}
 
 	switch (getTurnState()) {
 		case RollDice: {
+			playerBankrutedNow = false;
 			unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
 			buildingsManagingWorker();
 			if (player_jail_status != 0) {
@@ -806,7 +817,6 @@ void monopolyGameEngine::monopolyGameWorker() {
 				std::string rol = "Rolled value: ";
 				std::string val = std::to_string(rolled_val);
 				rolledValueText_->setString(rol + val);
-
 				notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
 
 				if (player_jail_status == 0) {
@@ -1174,10 +1184,42 @@ void monopolyGameEngine::monopolyGameWorker() {
 				rolledValueText_->setString("");
 				resignBuyFieldButton_->setIsVisible(false);
 				buyFieldButton_->setIsVisible(false);
-				if (!isDouble || players_[playerIndexturn_]->getJailStatus() != 0) {
+				if (!playerBankrutedNow || !isDouble || players_[playerIndexturn_]->getJailStatus() != 0) {
 					double_turns = 0;
-					incPlayerIndexTurn();
+
+					if (!playerBankrutedNow) {	// check if current player bankruted, if not inc turn
+						gameTurnsCounterHandle();
+						incPlayerIndexTurn();
+					} else {
+						if (makePlayerBankrupt(playerIndexturn_)) {
+							if (playerIndexturn_ >=
+								players_.size()) {	// check if current player bankruted, if yes verify turn index
+								playerIndexturn_ = 0;
+								gameTurnByPlayerDone_ = {false, false, false, false};
+								++gameTurnsGloballyDone_;
+							}
+						}
+					}
+
+					if (gameFinishedCheck()) {
+						int i = 0;
+						// end this game
+					}
+					turnInfoTextShow();
 				}
+
+				if(playerBankrutedNow)
+				{
+					if (makePlayerBankrupt(playerIndexturn_)) {
+						if (playerIndexturn_ >=
+							players_.size()) {	// check if current player bankruted, if yes verify turn index
+							playerIndexturn_ = 0;
+							gameTurnByPlayerDone_ = {false, false, false, false};
+							++gameTurnsGloballyDone_;
+						}
+					}
+				}
+
 				setTurnState(RollDice);
 				nextTurnButton_->setIsVisible(false);
 				playerChanged = true;
@@ -1522,6 +1564,7 @@ void monopolyGameEngine::createTextPlayersInfo() {
 
 void monopolyGameEngine::updateTextPlayersInfo() {
 	bool isPlayerinGame[4] = {false, false, false, false};
+	int i = 0;
 	for (auto player : players_) {
 		const std::string streetName =
 			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPosition()));
@@ -1530,14 +1573,14 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 		playerInfoText_[id][2]->setString("Position: " + std::to_string(player->getPosition() + 1));
 		playerInfoText_[id][3]->setString(streetName);
 		isPlayerinGame[id] = true;
+		++i;
 	}
 
 	for (int i = 0; i < playersStartingAmount_; ++i) {
 		if (!isPlayerinGame[i]) {
-			int id = players_[i]->getId();
-			playerInfoText_[id][1]->setString("Bankrupt");
-			playerInfoText_[id][2]->setString("");
-			playerInfoText_[id][3]->setString("");
+			playerInfoText_[i][1]->setString("Bankrupt");
+			playerInfoText_[i][2]->setString("");
+			playerInfoText_[i][3]->setString("");
 		}
 	}
 }
@@ -2480,12 +2523,12 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 	return notificationsWall_;
 }
 
-void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {  // -4
-	if (std::string("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text).size() <= 58) {
-		notificationsWall_.addToWall("Player " + std::to_string(players_[index]->getId() + 1) + ": " + text);
+void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
+	int id = players_[index]->getId();
+	if (std::string("Player " + std::to_string(id + 1) + ": " + text).size() <= 58) {
+		notificationsWall_.addToWall("Player " + std::to_string(id + 1) + ": " + text);
 	} else {
-		notificationsWall_.addToWall(
-			"Player " + std::to_string(players_[index]->getId() + 1) + ": " + text.substr(0, 48) + "-");
+		notificationsWall_.addToWall("Player " + std::to_string(id + 1) + ": " + text.substr(0, 48) + "-");
 		for (int i = 48; i < text.size(); i += 50) {
 			notificationsWall_.addToWall("            " + text.substr(i, 50));
 		}
@@ -2517,6 +2560,7 @@ sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sp
 }
 
 bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
+	// TODO
 	// remove ownerships from fields
 	for (int pos = 0; pos < gameboard_->getFieldNumber(); ++pos) {
 		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, gameboard_->getFieldById(pos));
@@ -2537,7 +2581,12 @@ bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 			}
 		}
 	}
-	players_.erase(players_.begin() + playerIndexTurn);
+	// add player to bankrupted players vector and set his result place
+	players_[playerIndexturn_]->setResultPlace(players_.size());
+	playersBankrupted_.push_back(players_[playerIndexturn_]);
+
+	// remove certain player from vector
+	players_.erase(std::remove(players_.begin(), players_.end(), players_[playerIndexturn_]), players_.end());
 	return true;
 }
 
@@ -2676,4 +2725,27 @@ void monopolyGameEngine::updateChanceCard() {
 		chanceCardCurrent_ = 0;
 		shuffleChanceCards();
 	}
+}
+
+bool monopolyGameEngine::gameFinishedCheck() {
+	if (gameTurnsGloballyDone_ >= GAME_TURNS_MAX) {	 // check turns global treshold
+		return true;
+	}
+
+	if (players_.size() <= 1) {	 // check if one (or less???) player only is in game
+		return true;
+	}
+}
+
+void monopolyGameEngine::gameTurnsCounterHandle() {
+	gameTurnByPlayerDone_[players_[playerIndexturn_]->getId()] = true;
+
+	for (auto player_ptr : players_) {
+		if (gameTurnByPlayerDone_[player_ptr->getId()] == false) {
+			return;	 // not all players done move in this turn (active players)
+		}
+	}
+
+	gameTurnByPlayerDone_ = {false, false, false, false};
+	++gameTurnsGloballyDone_;
 }
