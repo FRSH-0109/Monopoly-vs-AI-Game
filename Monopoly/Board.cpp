@@ -27,7 +27,6 @@ Board::Board(const std::string file_path) {
 		float rotation = getFieldRotation(id);
 		switch (type) {
 			case STREET: {
-				// TODO dodać parsowanie ceny domku i hotelu
 				unsigned int price = element["price"];
 				unsigned int house_price = element["house_price"];
 				unsigned int hotel_price = element["hotel_price"];

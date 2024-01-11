@@ -5,11 +5,11 @@
 #include <random>
 #include <vector>
 #include "Board.h"
+#include "Chance.h"
 #include "NotificationWall.h"
 #include "Withdraw.h"
 #include "activeScreen.h"
 #include "main.h"
-#include "Chance.h"
 
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
 
@@ -147,7 +147,7 @@ class monopolyGameEngine {
 	sf::Vector2f MORTAGE_BUTTON_POSITION = sf::Vector2f(1445, 760);
 	sf::Vector2f UNMORTAGE_BUTTON_POSITION = sf::Vector2f(1595, 760);
 
-	//chance cards
+	// chance cards
 	std::vector<ChanceCard> chanceCards_;
 	unsigned int chanceCardCurrent_ = 0;
 
@@ -286,7 +286,7 @@ class monopolyGameEngine {
 	// withdraw
 	Withdraw& getWithdraw();
 
-	//chance
+	// chance
 	void createChanceCards();
 	void shuffleChanceCards();
 };

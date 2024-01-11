@@ -61,8 +61,7 @@ void GameEngine::display() {
 }
 
 void GameEngine::worker(bool AIonly) {
-	if(AIonly)
-	{
+	if (AIonly) {
 		std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 
 		std::shared_ptr<playerSettings> player1Settings = std::make_shared<playerSettings>();

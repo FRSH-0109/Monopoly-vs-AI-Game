@@ -2,15 +2,15 @@
 
 ChanceCard::ChanceCard(const unsigned int id,
 	const ChanceType type,
-    unsigned int value,
-    const std::string text,
-    const std::string graphic_path,
-    const unsigned int width,
-    const unsigned int height,
-    const sf::Vector2f position)
+	unsigned int value,
+	const std::string text,
+	const std::string graphic_path,
+	const unsigned int width,
+	const unsigned int height,
+	const sf::Vector2f position)
 	: id_(id),
 	  type_(type),
-      value_(value),
+	  value_(value),
 	  text_(text),
 	  graphic_path_(graphic_path),
 	  width_(width),
@@ -18,7 +18,6 @@ ChanceCard::ChanceCard(const unsigned int id,
 	  position_(position) {
 	rotation_ = 0;
 }
-
 
 const unsigned int ChanceCard::getId() {
 	return id_;

@@ -87,12 +87,11 @@ void Player::reduceJailStatus() {
 	}
 }
 
-void Player::setJailCards(unsigned int newJailCards)
-{
+void Player::setJailCards(unsigned int newJailCards) {
 	jailCards_ = newJailCards;
 }
 
-unsigned int Player::getJailCards() const{
+unsigned int Player::getJailCards() const {
 	return jailCards_;
 }
 
