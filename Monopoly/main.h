@@ -76,6 +76,7 @@ enum ScreenEventType {
 	Player3SetAILevel3,
 	Player4SetAILevel3,
 	StartGame,
+	GameEnded
 };
 
 enum FieldType { STREET, STATION, UTILITY, GO, CHANCE, COMMUNITY_CHEST, TAX, JAIL, FREE_PARKING, GO_TO_JAIL };

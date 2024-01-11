@@ -151,8 +151,7 @@ void Player::setResultPlace(unsigned int place) {
 	resultPlace_ = place;
 }
 
-unsigned int Player::getResultPlace() const
-{
+unsigned int Player::getResultPlace() const {
 	return resultPlace_;
 }
 

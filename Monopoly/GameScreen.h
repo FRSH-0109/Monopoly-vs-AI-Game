@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Player.h"
 #include "activeScreen.h"
 #include "monopolyGameEngine.h"
 
@@ -12,4 +13,5 @@ class GameScreen : public ActiveScreen {
 	ScreenEventType worker();
 	void pollForEvents(sf::Event& event);
 	void draw();
+	std::vector<std::shared_ptr<Player>> getPlayersResult();
 };

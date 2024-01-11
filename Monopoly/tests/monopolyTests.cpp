@@ -1124,7 +1124,8 @@ TEST_CASE("AiAdapter class") {
 		const unsigned int TEST_Mortgage = 200;
 
 		StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
+			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
+			TEST_Mortgage);
 
 		REQUIRE(adapter.convertHouse(test_field) == 0.0f);
 
@@ -1280,7 +1281,8 @@ TEST_CASE("AiAdapter class") {
 		const unsigned int TEST_Mortgage = 200;
 
 		StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
+			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
+			TEST_Mortgage);
 
 		adapter.setHouse(test_field);
 		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field));

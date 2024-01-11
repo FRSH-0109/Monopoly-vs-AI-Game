@@ -128,7 +128,17 @@ class StreetField : public PropertyField {
 		const std::map<StreetTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int Mortgage)
-		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, Mortgage),
+		: PropertyField(id,
+			  type,
+			  name,
+			  graphic_path,
+			  width,
+			  height,
+			  rotation,
+			  position,
+			  price,
+			  group_members,
+			  Mortgage),
 		  rent_values_(rent_values),
 		  house_price_(house_price),
 		  hotel_price_(hotel_price),
@@ -166,7 +176,17 @@ class StationField : public PropertyField {
 		const std::map<StationTiers, unsigned int> rent_values,
 		const std::vector<unsigned int> group_members,
 		const unsigned int Mortgage)
-		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, Mortgage),
+		: PropertyField(id,
+			  type,
+			  name,
+			  graphic_path,
+			  width,
+			  height,
+			  rotation,
+			  position,
+			  price,
+			  group_members,
+			  Mortgage),
 		  rent_values_(rent_values){
 			  //   std::cout << "StationField constructor" << std::endl;
 		  };
@@ -192,7 +212,17 @@ class UtilityField : public PropertyField {
 		const std::map<UtilityTiers, unsigned int> rent_multipliers,
 		const std::vector<unsigned int> group_members,
 		const unsigned int Mortgage)
-		: PropertyField(id, type, name, graphic_path, width, height, rotation, position, price, group_members, Mortgage),
+		: PropertyField(id,
+			  type,
+			  name,
+			  graphic_path,
+			  width,
+			  height,
+			  rotation,
+			  position,
+			  price,
+			  group_members,
+			  Mortgage),
 		  rent_multipliers_(rent_multipliers){
 			  //   std::cout << "UtilityField constructor" << std::endl;
 		  };

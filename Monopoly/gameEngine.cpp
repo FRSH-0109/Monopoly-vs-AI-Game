@@ -60,7 +60,7 @@ void GameEngine::display() {
 	}
 }
 
-void GameEngine::worker(bool AIonly) {
+std::vector<std::shared_ptr<Player>> GameEngine::worker(bool AIonly) {
 	if (AIonly) {
 		std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 
@@ -116,11 +116,16 @@ void GameEngine::worker(bool AIonly) {
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
-			case StartGame:
+			case StartGame: {
 				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 				playerSettingsList_ = activeScreen_->getPlayersSettings();
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
+			} break;
+			case GameEnded:
+				return activeScreen_->getPlayersResult();
+				break;
+			default:
 				break;
 		}
 

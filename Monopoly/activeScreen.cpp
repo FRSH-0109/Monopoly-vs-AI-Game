@@ -675,3 +675,8 @@ std::vector<std::shared_ptr<playerSettings>> ActiveScreen::getPlayersSettings() 
 	std::vector<std::shared_ptr<playerSettings>> empty;
 	return empty;
 }
+
+std::vector<std::shared_ptr<Player>> ActiveScreen::getPlayersResult() {
+	std::vector<std::shared_ptr<Player>> empty;
+	return empty;
+}

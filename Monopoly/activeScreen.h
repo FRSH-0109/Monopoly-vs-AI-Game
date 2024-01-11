@@ -6,6 +6,7 @@
 #include <list>
 #include <memory>
 #include <string>
+#include "Player.h"
 #include "button.h"
 #include "contextWindow.h"
 #include "main.h"
@@ -37,6 +38,7 @@ class ActiveScreen {
 	void setScreenType(ActiveScreenType type);
 	void buttonSetColors(std::shared_ptr<Button> buttonPtr);
 	virtual std::vector<std::shared_ptr<playerSettings>> getPlayersSettings() const;
+	virtual std::vector<std::shared_ptr<Player>> getPlayersResult();
 };
 
 class GameMenuScreen : public ActiveScreen {

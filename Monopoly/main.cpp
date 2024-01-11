@@ -25,7 +25,7 @@ int main() {
 		height = HEIGHT_MAX;
 	}
 	GameEngine gameEngine(30, width, height);
-	gameEngine.worker(AIonly);
+	std::vector<std::shared_ptr<Player>> playerResults = gameEngine.worker(AIonly);
 
 	// gameEngine = GameEngine(30, width, height);
 	// gameEngine.worker(AIonly);

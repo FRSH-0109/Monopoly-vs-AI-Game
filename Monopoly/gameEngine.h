@@ -28,7 +28,7 @@ class GameEngine {
 	void clear();
 	void display();
 	void pollForEvents(sf::Event& event);
-	void worker(bool AIonly);
+	std::vector<std::shared_ptr<Player>> worker(bool AIonly);
 
 	unsigned int getWindowWidth() const;
 	unsigned int getWindowHeight() const;

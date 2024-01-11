@@ -113,6 +113,10 @@ std::vector<std::shared_ptr<Player>>& monopolyGameEngine::getPlayers() {
 	return players_;
 }
 
+std::vector<std::shared_ptr<Player>> monopolyGameEngine::getPlayersResult() {
+	return playersBankrupted_;
+}
+
 void monopolyGameEngine::setPlayerIndexTurn(unsigned int indx) {
 	if (indx < PLAYERS_MAX_) {
 		playerIndexturn_ = indx;
@@ -354,8 +358,9 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
-	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && builder->getMoney() > field.getHousePrice() &&
-		field_houses < 4 && getHouseCount() > 0) {	// W tym if trzeba będzie dodać kontrolę budynków w puli
+	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) &&
+		builder->getMoney() > field.getHousePrice() && field_houses < 4 &&
+		getHouseCount() > 0) {	// W tym if trzeba będzie dodać kontrolę budynków w puli
 		for (int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
 			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortgaged()) {
@@ -757,7 +762,7 @@ void monopolyGameEngine::withdrawWorker() {
 	}
 }
 
-void monopolyGameEngine::monopolyGameWorker() {
+bool monopolyGameEngine::monopolyGameWorker() {
 	updateTextPlayersInfo();
 	updateAvailableHousesHotelText();
 	showAllPropertiesWorker();
@@ -982,13 +987,13 @@ void monopolyGameEngine::monopolyGameWorker() {
 					case GetOutOfJailCard:
 						players_[playerIndexturn_]->setJailCards(players_[playerIndexturn_]->getJailCards() + 1);
 						setTurnState(TurnEnd);
-					break;
+						break;
 
 					case GoToJail:
-							sendToJail(playerIndexturn_);
-							players_[playerIndexturn_]->setJailStatus(3);
-							setTurnState(TurnEnd);
-					break;
+						sendToJail(playerIndexturn_);
+						players_[playerIndexturn_]->setJailStatus(3);
+						setTurnState(TurnEnd);
+						break;
 
 					case PayForHouseHotel: {
 						int sum = 0;
@@ -1027,35 +1032,31 @@ void monopolyGameEngine::monopolyGameWorker() {
 						}
 					} break;
 
-					case Tax:
-						{
-							if(players_[playerIndexturn_]->getMoney() >= chance_card.getValue())
-							{
-								players_[playerIndexturn_]->substractMoney(chance_card.getValue());
-								std::string notification_msg = "Paid to bank: " + std::to_string(chance_card.getValue());
-								notificationAdd(playerIndexturn_, notification_msg);
-								setTurnState(TurnEnd);
-							}
-							else
-							{
-								money_to_find = chance_card.getValue();;
-								bank_pay_rent = true;
-								players_to_pay_rent.clear();
-								setTurnState(PayRent);
-								std::string notification_msg = "Not enough money. Needed: " + std::to_string(chance_card.getValue());
-								notificationAdd(playerIndexturn_, notification_msg);
-							}
-
+					case Tax: {
+						if (players_[playerIndexturn_]->getMoney() >= chance_card.getValue()) {
+							players_[playerIndexturn_]->substractMoney(chance_card.getValue());
+							std::string notification_msg = "Paid to bank: " + std::to_string(chance_card.getValue());
+							notificationAdd(playerIndexturn_, notification_msg);
+							setTurnState(TurnEnd);
+						} else {
+							money_to_find = chance_card.getValue();
+							;
+							bank_pay_rent = true;
+							players_to_pay_rent.clear();
+							setTurnState(PayRent);
+							std::string notification_msg =
+								"Not enough money. Needed: " + std::to_string(chance_card.getValue());
+							notificationAdd(playerIndexturn_, notification_msg);
 						}
-					break;
+
+					} break;
 
 					case MovementSpaces: {
 						int oldPos = players_[playerIndexturn_]->getPosition();
 						int posIncrement = chance_card.getValue();
 						movePlayer(playerIndexturn_, posIncrement);
 						int newPos = players_[playerIndexturn_]->getPosition();
-						if(posIncrement >= 0)
-						{
+						if (posIncrement >= 0) {
 							handlePassingStart(oldPos, newPos);
 						}
 						FieldType fieldType =
@@ -1194,32 +1195,29 @@ void monopolyGameEngine::monopolyGameWorker() {
 						gameTurnsCounterHandle();
 						incPlayerIndexTurn();
 					} else {
-						if (makePlayerBankrupt(playerIndexturn_)) {
-							if (playerIndexturn_ >=
-								players_.size()) {	// check if current player bankruted, if yes verify turn index
-								playerIndexturn_ = 0;
-								gameTurnByPlayerDone_ = {false, false, false, false};
-								++gameTurnsGloballyDone_;
-							}
-						}
-					}
-
-					if (gameFinishedCheck()) {
-						int i = 0;
-						// end this game
-					}
-					turnInfoTextShow();
-				}
-
-				if(playerBankrutedNow)
-				{
-					if (makePlayerBankrupt(playerIndexturn_)) {
+						makePlayerBankrupt(playerIndexturn_);
 						if (playerIndexturn_ >=
 							players_.size()) {	// check if current player bankruted, if yes verify turn index
 							playerIndexturn_ = 0;
 							gameTurnByPlayerDone_ = {false, false, false, false};
 							++gameTurnsGloballyDone_;
 						}
+					}
+
+					if (gameFinishedCheck()) {
+						removePlayerFromGame(playerIndexturn_);
+						return false;
+					}
+					turnInfoTextShow();
+				}
+
+				if (playerBankrutedNow) {
+					makePlayerBankrupt(playerIndexturn_);
+					if (playerIndexturn_ >=
+						players_.size()) {	// check if current player bankruted, if yes verify turn index
+						playerIndexturn_ = 0;
+						gameTurnByPlayerDone_ = {false, false, false, false};
+						++gameTurnsGloballyDone_;
 					}
 				}
 
@@ -1366,6 +1364,7 @@ void monopolyGameEngine::monopolyGameWorker() {
 		default:
 			break;
 	}
+	return true;
 }
 
 void monopolyGameEngine::updateAvailableHousesHotelText() {
@@ -2247,7 +2246,8 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	propertyMortgage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
 	propertyMortgage->setFillColor(sf::Color::Black);
 
-	std::shared_ptr<sf::Text> propertyMortgagePrice(new sf::Text(std::to_string(Mortgage), getFont(), getFontSize() - 2));
+	std::shared_ptr<sf::Text> propertyMortgagePrice(
+		new sf::Text(std::to_string(Mortgage), getFont(), getFontSize() - 2));
 	propertyMortgagePrice->setPosition(
 		sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 8));
 	propertyMortgagePrice->setFillColor(sf::Color::Black);
@@ -2562,7 +2562,16 @@ sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sp
 	return text;
 }
 
-bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
+void monopolyGameEngine::removePlayerFromGame(unsigned int playerIndexTurn) {
+	// add player to bankrupted players vector and set his result place
+	players_[playerIndexturn_]->setResultPlace(players_.size());
+	playersBankrupted_.push_back(players_[playerIndexturn_]);
+
+	// remove certain player from vector
+	players_.erase(std::remove(players_.begin(), players_.end(), players_[playerIndexturn_]), players_.end());
+}
+
+void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	// TODO
 	// remove ownerships from fields
 	for (int pos = 0; pos < gameboard_->getFieldNumber(); ++pos) {
@@ -2584,13 +2593,7 @@ bool monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 			}
 		}
 	}
-	// add player to bankrupted players vector and set his result place
-	players_[playerIndexturn_]->setResultPlace(players_.size());
-	playersBankrupted_.push_back(players_[playerIndexturn_]);
-
-	// remove certain player from vector
-	players_.erase(std::remove(players_.begin(), players_.end(), players_[playerIndexturn_]), players_.end());
-	return true;
+	removePlayerFromGame(playerIndexTurn);
 }
 
 sf::Texture& monopolyGameEngine::getHouseTexture() {

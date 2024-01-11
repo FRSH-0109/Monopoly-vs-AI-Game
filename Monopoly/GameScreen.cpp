@@ -80,7 +80,10 @@ ScreenEventType GameScreen::worker() {
 		buttonSetColors(element);
 	}
 
-	monopoly_game_engine_.monopolyGameWorker();
+	if (monopoly_game_engine_.monopolyGameWorker() == false)  // game endeds
+	{
+		return GameEnded;
+	}
 
 	return eventType;
 }
@@ -279,4 +282,8 @@ void GameScreen::draw() {
 		default:
 			break;
 	}
+}
+
+std::vector<std::shared_ptr<Player>> GameScreen::getPlayersResult() {
+	return monopoly_game_engine_.getPlayersResult();
 }

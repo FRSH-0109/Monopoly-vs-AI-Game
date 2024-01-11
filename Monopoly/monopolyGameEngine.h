@@ -184,7 +184,7 @@ class monopolyGameEngine {
 	void sendToJail(unsigned int turnIndex);
 	void notificationAdd(unsigned int index, std::string text);
 	void handlePassingStart(unsigned int oldPos, unsigned int newPos);
-	bool makePlayerBankrupt(unsigned int playerIndexTurn);
+	void makePlayerBankrupt(unsigned int playerIndexTurn);
 	void showAllPropertiesWorker();
 
 	// Switching game window to auction mode
@@ -200,6 +200,7 @@ class monopolyGameEngine {
 	// game result
 	bool gameFinishedCheck();
 	void gameTurnsCounterHandle();
+	void removePlayerFromGame(unsigned int playerIndexTurn);
 
    public:
 	monopolyGameEngine();
@@ -260,6 +261,7 @@ class monopolyGameEngine {
 	void clearBoard();
 	std::shared_ptr<Board> getBoard();
 	std::vector<std::shared_ptr<Player>>& getPlayers();
+	std::vector<std::shared_ptr<Player>> getPlayersResult();
 	void setPlayerIndexTurn(unsigned int indx);
 	TurnState getTurnState() const;
 	void setAuctionState(AuctionState newState);
@@ -291,7 +293,7 @@ class monopolyGameEngine {
 
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
 	void buildingsManagingWorker();
-	void monopolyGameWorker();
+	bool monopolyGameWorker();
 
 	// withdraw
 	Withdraw& getWithdraw();
