@@ -1054,7 +1054,10 @@ void monopolyGameEngine::monopolyGameWorker() {
 						int posIncrement = chance_card.getValue();
 						movePlayer(playerIndexturn_, posIncrement);
 						int newPos = players_[playerIndexturn_]->getPosition();
-						handlePassingStart(oldPos, newPos);
+						if(posIncrement >= 0)
+						{
+							handlePassingStart(oldPos, newPos);
+						}
 						FieldType fieldType =
 							std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(newPos));
 

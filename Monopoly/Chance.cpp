@@ -23,7 +23,7 @@ const unsigned int ChanceCard::getId() {
 	return id_;
 };
 
-const unsigned int ChanceCard::getValue() {
+const int ChanceCard::getValue() {
 	return value_;
 };
 

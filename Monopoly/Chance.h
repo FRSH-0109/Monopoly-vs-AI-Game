@@ -21,7 +21,7 @@ class ChanceCard {
    private:
 	unsigned int id_;
 	ChanceType type_;
-	unsigned int value_;
+	int value_;
 	std::string text_;
 	std::string graphic_path_;
 	unsigned int width_;
@@ -43,7 +43,7 @@ class ChanceCard {
 
 	const unsigned int getId();
 	const ChanceType getType();
-	const unsigned int getValue();
+	const int getValue();
 	const std::string getText();
 	const unsigned int getWidth();
 	const unsigned int getHeight();

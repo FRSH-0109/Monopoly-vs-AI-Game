@@ -42,7 +42,7 @@
     {
         "id": 7,
         "type": "MovementSpaces",
-        "value": 3,
+        "value": -3,
         "text": "Go Back Three 3 Spaces.",
         "width": 60,
         "height": 100
