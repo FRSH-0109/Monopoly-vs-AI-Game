@@ -21,6 +21,7 @@ class Player {
 	float sprite_offset_x_;
 	float sprite_offset_y_;
 	unsigned int jailCards_;
+	unsigned int resultPlace_;
 
    public:
 	Player();
@@ -49,6 +50,8 @@ class Player {
 	bool getIsAi();
 	void setAiLevel(unsigned int aiLevel);
 	unsigned int getAiLevel();
+	void setResultPlace(unsigned int place);
+	unsigned int getResultPlace() const;
 	void createSprite();
 	sf::Texture& getTexture();
 	sf::Sprite& getSprite();

@@ -147,6 +147,15 @@ unsigned int Player::getAiLevel() {
 	return aiLevel_;
 }
 
+void Player::setResultPlace(unsigned int place) {
+	resultPlace_ = place;
+}
+
+unsigned int Player::getResultPlace() const
+{
+	return resultPlace_;
+}
+
 void Player::createSprite() {
 	const float WIDTH = 20.0;
 	const float HEIGHT = 20.0;

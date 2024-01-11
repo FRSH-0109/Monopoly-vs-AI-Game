@@ -50,6 +50,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 		monopoly_game_engine_.addButton(button_ptr);
 	}
 	monopoly_game_engine_.createChanceCards();
+	monopoly_game_engine_.turnInfoTextShow();
 }
 
 GameScreen::~GameScreen() {

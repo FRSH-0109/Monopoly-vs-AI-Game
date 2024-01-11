@@ -14,14 +14,19 @@
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
 
 class monopolyGameEngine {
+	bool isAiGameOnly_;
 	GameScreenType screenType_ = Boardgame;
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 300;
 	const unsigned int START_PASSING_MONEY_ = 200;
+	const unsigned int GAME_TURNS_MAX = 35;
+	unsigned int gameTurnsGloballyDone_;
+	std::array<bool, 4> gameTurnByPlayerDone_;
 
 	const std::string CHANCE_FILE_PATH_ = "Monopoly/game_config_json/chance.json";
 	const std::string GAMEBOARD_FILE_PATH_ = "Monopoly/game_config_json/board.json";
 	std::shared_ptr<Board> gameboard_;
 	std::vector<std::shared_ptr<Player>> players_;
+	std::vector<std::shared_ptr<Player>> playersBankrupted_;
 
 	// gui
 	const unsigned int FONT_SIZE = 30;
@@ -159,6 +164,7 @@ class monopolyGameEngine {
 	const unsigned int PLAYERS_MAX_ = 4;
 	const unsigned int PLAYERS_MIN_ = 2;
 	unsigned int playersStartingAmount_ = 0;
+	std::array<unsigned int, 4> playersStartingIds_;
 	unsigned int house_count_ = 32;
 	unsigned int hotel_count_ = 12;
 	unsigned int playerIndexturn_;
@@ -166,7 +172,6 @@ class monopolyGameEngine {
 	void incPlayerIndexTurn();
 	void setTurnState(TurnState newState);
 	void buttonsWorker();
-	void turnInfoTextWorker();
 	sf::Vector2f getUpdatePlayerSpritePosition();
 	void clearPropertyData(bool isPropertyShownToBuy);
 	unsigned int getFieldPriceByPosition(unsigned int pos);
@@ -191,6 +196,10 @@ class monopolyGameEngine {
 	// chance
 	ChanceCard& getChanceCard();
 	void updateChanceCard();
+
+	// game result
+	bool gameFinishedCheck();
+	void gameTurnsCounterHandle();
 
    public:
 	monopolyGameEngine();
@@ -222,6 +231,7 @@ class monopolyGameEngine {
 	void createButtonWithdraw();
 	void createMortagingButton();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
+	void turnInfoTextShow();
 	sf::Font& getFont();
 	unsigned int getFontSize() const;
 	void setFont(sf::Font font);
