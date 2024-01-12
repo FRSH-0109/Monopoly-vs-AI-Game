@@ -1,30 +1,13 @@
 #pragma once
 
-// #include <tinyai/src/tinyneat.hpp>
-// #include <tinyai/src/tinyann.hpp>
+#include <tinyai/src/tinyneat.hpp>
+#include <tinyai/src/tinyann.hpp>
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "contextWindow.h"
-#include "Field.h"
-// #include "AiAdapter.h"
+#include "AiAdapter.h"
 #include "main.h"
-
-enum Decision {
-	YES,
-	NO
-};
-
-enum JailDecision {
-	ROLL,
-	PAY,
-	CARD
-};
-
-enum BuyDecision {
-	BUY,
-	AUCTION
-};
 
 class Player {
 	ContextWindow* contextWindow_;

@@ -5,6 +5,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include "Player.h"
 #include "contextWindow.h"
 #include "main.h"
 

@@ -37,12 +37,11 @@ float AiAdapter::convertCard(unsigned int cards) {
 	return cards_clamped;
 }
 
-float AiAdapter::convertHouse(StreetField& field) {
-	if (field.getIsHotel()) {
+float AiAdapter::convertHouse(bool isHotel, unsigned int houseNumber) {
+	if (isHotel) {
 		return 1.0f;
 	} else {
-		unsigned int houses = field.getHouseNumber();
-		float houses_normalized = (float)houses / 5.0f;
+		float houses_normalized = (float)houseNumber / 5.0f;
 		float houses_clamped = std::clamp(houses_normalized, 0.0f, 1.0f);
 		return houses_clamped;
 	}
@@ -110,6 +109,6 @@ void AiAdapter::setMortgage(unsigned int property, unsigned int state) {
 	networkInputs_[MORT + PROPERTIES[property]] = state;
 }
 
-void AiAdapter::setHouse(StreetField& field) {
-	networkInputs_[HOUSE + HOUSES[field.getId()]] = convertHouse(field);
+void AiAdapter::setHouse(bool isHotel, unsigned int houseNumber, unsigned int id) {
+	networkInputs_[HOUSE + HOUSES[id]] = convertHouse(isHotel, houseNumber);
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <algorithm>
-#include "Field.h"
 
 class AiAdapter {
 	std::vector<float> networkInputs_;
@@ -29,7 +28,7 @@ class AiAdapter {
 	float convertHouseValue(float value);
 	float convertPosition(unsigned int position);
 	float convertCard(unsigned int cards);
-	float convertHouse(StreetField& field);
+	float convertHouse(bool isHotel, unsigned int houseNumber);
 	void setTurn(unsigned int index);
 	void setSelection(unsigned int index);
 	void setSelectionState(unsigned int index, int state);
@@ -41,5 +40,5 @@ class AiAdapter {
 	void setJail(unsigned int index, unsigned int state);
 	void setOwner(unsigned int property, unsigned int state);
 	void setMortgage(unsigned int property, unsigned int state);
-	void setHouse(StreetField& field);
+	void setHouse(bool isHotel, unsigned int houseNumber, unsigned int id);
 };
