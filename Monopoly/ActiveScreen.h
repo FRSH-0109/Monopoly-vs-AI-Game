@@ -1,4 +1,16 @@
-#pragma once
+/**
+ * @file ActiveScreen.h
+ *
+ * @brief Header file handling displayed screens of  project
+ * Base claass is ActiveScreen, then derived class are used to
+ * work with specific screen shown.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef ACTIVE_SCREEN_H
+#define ACTIVE_SCREEN_H
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
@@ -6,9 +18,9 @@
 #include <list>
 #include <memory>
 #include <string>
-#include "Player.h"
 #include "Button.h"
 #include "ContextWindow.h"
+#include "Player.h"
 #include "main.h"
 // #include "monopolyGameEngine.h"
 
@@ -21,7 +33,6 @@ class ActiveScreen {
 
    public:
 	ActiveScreen();
-	virtual ~ActiveScreen();
 	virtual ScreenEventType worker() = 0;
 	virtual void draw() = 0;
 
@@ -46,7 +57,6 @@ class GameMenuScreen : public ActiveScreen {
 
    public:
 	GameMenuScreen();
-	~GameMenuScreen();
 	void gameMenuCreate();
 	ScreenEventType worker();
 
@@ -66,8 +76,9 @@ class GameMenuScreen : public ActiveScreen {
 class MainMenuScreen : public ActiveScreen {
    public:
 	MainMenuScreen();
-	~MainMenuScreen();
 	void mainMenuCreate();
 	ScreenEventType worker();
 	void draw();
 };
+
+#endif

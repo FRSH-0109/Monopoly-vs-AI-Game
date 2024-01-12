@@ -1,3 +1,13 @@
+/**
+ * @file Withdraw.cc
+ *
+ * @brief Source file for trade/withdraw mehanism 
+ * in monopoly game between players
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "Withdraw.h"
 
 Withdraw::Withdraw() {

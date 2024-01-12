@@ -1,4 +1,15 @@
-#pragma once
+/**
+ * @file Button.h
+ *
+ * @brief Header file for handling button objects actions
+ * used to communicate with user.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef BUTTON_H
+#define BUTTON_H
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -62,3 +73,5 @@ class Button {
 	sf::Color focusBackColor_;
 	sf::Color focusTextColor_;
 };
+
+#endif

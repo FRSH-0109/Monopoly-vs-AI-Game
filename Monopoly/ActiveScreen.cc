@@ -1,7 +1,17 @@
+/**
+ * @file ActiveScreen.cc
+ *
+ * @brief Source file handling displayed screens of  project
+ * Base claass is ActiveScreen, then derived class are used to
+ * work with specific screen shown.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "ActiveScreen.h"
 
 ActiveScreen::ActiveScreen() {}
-ActiveScreen::~ActiveScreen() {}
 
 void ActiveScreen::setFont(sf::Font font) {
 	font_ = font;
@@ -58,13 +68,8 @@ void ActiveScreen::setScreenType(ActiveScreenType type) {
 }
 
 MainMenuScreen::MainMenuScreen() {
-	std::cout << "MMS constructor" << std::endl;
 	setScreenType(MainMenu);
 	mainMenuCreate();
-}
-
-MainMenuScreen::~MainMenuScreen() {
-	std::cout << "MMS destructor" << std::endl;
 }
 
 void MainMenuScreen::mainMenuCreate() {
@@ -152,7 +157,6 @@ ScreenEventType GameMenuScreen::worker() {
 }
 
 GameMenuScreen::GameMenuScreen() {
-	std::cout << "GMS constructor" << std::endl;
 	setScreenType(GameMenu);
 	gameMenuCreate();
 
@@ -179,10 +183,6 @@ GameMenuScreen::GameMenuScreen() {
 	player4Settings->isHuman = false;
 	player4Settings->level = 1;
 	playerSettingsList_.push_back(player4Settings);
-}
-
-GameMenuScreen::~GameMenuScreen() {
-	std::cout << "GMS destructor" << std::endl;
 }
 
 void GameMenuScreen::gameMenuCreate() {

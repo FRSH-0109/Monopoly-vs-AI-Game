@@ -1,4 +1,16 @@
-#pragma once
+/**
+ * @file Board.h
+ *
+ * @brief Header file for monopoly game board, creation is
+ * based on json file 'board.json'. Mainly handles all types of
+ * fields and their usage.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef BOARD_H
+#define BOARD_H
 
 #include <fstream>
 #include <iostream>
@@ -35,3 +47,5 @@ class Board {
 std::map<StreetTiers, unsigned int> jsonToStreetRent(const json& element);
 std::map<StationTiers, unsigned int> jsonToStationRent(const json& element);
 std::map<UtilityTiers, unsigned int> jsonToUtilityRent(const json& element);
+
+#endif

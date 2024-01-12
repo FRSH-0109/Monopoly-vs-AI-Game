@@ -1,14 +1,26 @@
-#pragma once
+/**
+ * @file MonopolyGameEngine.h
+ *
+ * @brief Header file of class used to handle whole
+ * monopoly game process, turns, actions with players,
+ * board etc.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef MONOPOLY_GAME_ENGINE_H
+#define MONOPOLY_GAME_ENGINE_H
 
 #include <algorithm>
 #include <memory>
 #include <random>
 #include <vector>
+#include "ActiveScreen.h"
 #include "Board.h"
 #include "Chance.h"
 #include "NotificationWall.h"
 #include "Withdraw.h"
-#include "ActiveScreen.h"
 #include "main.h"
 
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
@@ -303,3 +315,5 @@ class monopolyGameEngine {
 	void createChanceCards();
 	void shuffleChanceCards();
 };
+
+#endif

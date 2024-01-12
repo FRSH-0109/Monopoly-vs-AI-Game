@@ -1,3 +1,13 @@
+/**
+ * @file Tinyneat.cc
+ *
+ * @brief Source file for AI implementation of tiny library
+ * from github user hav4ik, repository: https://github.com/hav4ik/tinyai
+ *
+ * @author hav4ik
+ *
+ */
+
 #include "Tinyneat.h"
 
 neat::genome::genome(){};

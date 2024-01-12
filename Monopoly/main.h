@@ -1,4 +1,14 @@
-#pragma once
+/**
+ * @file main.h
+ *
+ * @brief Header file containing structures shared between project files
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef MAIN_H
+#define MAIN_H
 
 class DimensionException : public std::exception {
 	unsigned int bad_dimension_;
@@ -92,3 +102,5 @@ enum Decision { YES, NO };
 enum JailDecision { ROLL, PAY, CARD };
 
 enum BuyDecision { BUY, AUCTION };
+
+#endif

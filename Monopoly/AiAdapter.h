@@ -1,4 +1,14 @@
-#pragma once
+/**
+ * @file AiAdapter.h
+ *
+ * @brief TODO
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef AI_ADAPTER_H
+#define AI_ADAPTER_H
 
 #include <algorithm>
 
@@ -42,3 +52,5 @@ class AiAdapter {
 	void setMortgage(unsigned int property, unsigned int state);
 	void setHouse(bool isHotel, unsigned int houseNumber, unsigned int id);
 };
+
+#endif

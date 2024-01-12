@@ -1,3 +1,14 @@
+/**
+ * @file GameScreen.cc
+ *
+ * @brief Source file for game screen class deriving from
+ * ActiveScreen class. Used to handle monopoly game activities
+ * and drawing.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include <cmath>
 #include <numbers>
 #include "GameScreen.h"
@@ -51,10 +62,6 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	}
 	monopoly_game_engine_.createChanceCards();
 	monopoly_game_engine_.turnInfoTextShow();
-}
-
-GameScreen::~GameScreen() {
-	std::cout << "GS destructor" << std::endl;
 }
 
 ScreenEventType GameScreen::worker() {

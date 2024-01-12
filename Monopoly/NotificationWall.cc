@@ -1,3 +1,14 @@
+/**
+ * @file NotificationWall.cc
+ *
+ * @brief Source file of class used to display list
+ * of messages/notifications as finite list with certain length.
+ * It automatically rolls over when gets next message.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "NotificationWall.h"
 
 NotificationWall::NotificationWall() {

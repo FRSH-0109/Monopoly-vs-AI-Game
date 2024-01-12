@@ -1,4 +1,15 @@
-#pragma once
+/**
+ * @file Chance.h
+ *
+ * @brief Header file for monopoly game chance cards,
+ * their types, actions...
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef CHANCE_H
+#define CHANCE_H
 
 #include <SFML/Graphics.hpp>
 
@@ -57,3 +68,5 @@ class ChanceCard {
 
 	void createSprite();
 };
+
+#endif

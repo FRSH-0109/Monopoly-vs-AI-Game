@@ -1,7 +1,9 @@
 /**
- * @file gameEngine.cpp
+ * @file GameEngine.cc
  *
- * @brief Source file for GameEngine class
+ * @brief Source file for GameEngine class,
+ * used to handle lowes level program operations as
+ * input interactions (mouse, keyboard) or display window
  *
  * @author Kamil Kosnik, Kacper Radzikowski
  *

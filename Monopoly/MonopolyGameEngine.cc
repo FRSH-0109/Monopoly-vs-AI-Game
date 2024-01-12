@@ -1,3 +1,14 @@
+/**
+ * @file MonopolyGameEngine.cc
+ *
+ * @brief Source file of class used to handle whole 
+ * monopoly game process, turns, actions with players, 
+ * board etc.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "MonopolyGameEngine.h"
 
 monopolyGameEngine::monopolyGameEngine() {
