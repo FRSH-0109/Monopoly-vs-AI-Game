@@ -91,4 +91,4 @@ enum Decision { YES, NO };
 
 enum JailDecision { ROLL, PAY, CARD };
 
-enum BuyDecision { BUY, AUCTION };
+enum BuyDecision { BUY, RESIGN };
