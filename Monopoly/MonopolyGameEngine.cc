@@ -12,7 +12,7 @@
 #include "MonopolyGameEngine.h"
 
 monopolyGameEngine::monopolyGameEngine() {
-	turnState_ = RollDice;
+	turnState_ = ROLL_DICE;
 	if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
 		// TODO: exception
 	}
@@ -749,10 +749,10 @@ void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
 
 void monopolyGameEngine::withdrawWorker() {
 	if (isButtonClicked(withdrawButton_)) {	 // player decied to go bankrupt
-		if (getTurnState() == RollDice || getTurnState() == TurnEnd || getTurnState() == PayRent) {
+		if (getTurnState() == ROLL_DICE || getTurnState() == TURN_END || getTurnState() == PAY_RENT) {
 			getWithdraw().setTurnState(getTurnState());
-			setTurnState(WithdrawOngoing);
-			setScreenType(WithdrawChoosePlayer);
+			setTurnState(WITHDRAW_ONGOING);
+			setScreenType(WITHDRAW_CHOOSE_PLAYER);
 			getWithdraw().setChooseScreenVisible(true);
 			getWithdraw().setPlayer1ToWithdraw(players_[playerIndexturn_]);
 			getWithdraw().getPlayer1Button()->setIsVisible(false);
@@ -797,11 +797,11 @@ bool monopolyGameEngine::monopolyGameWorker() {
 		rollDiceButton_->setIsVisible(false);
 		buyFieldButton_->setIsVisible(false);
 		resignBuyFieldButton_->setIsVisible(false);
-		setTurnState(TurnEnd);	// for next player
+		setTurnState(TURN_END);	// for next player
 	}
 
 	switch (getTurnState()) {
-		case RollDice: {
+		case ROLL_DICE: {
 			playerBankrutedNow = false;
 			unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
 			buildingsManagingWorker();
@@ -853,7 +853,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						notificationAdd(playerIndexturn_, notification_msg);
 
 						rollDiceButton_->setIsVisible(false);
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 					} else {
 						int oldPos = players_[playerIndexturn_]->getPosition();
 						movePlayer(playerIndexturn_, rolled_val);
@@ -861,7 +861,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						handlePassingStart(oldPos, newPos);
 
 						rollDiceButton_->setIsVisible(false);
-						setTurnState(FieldAction);
+						setTurnState(FIELD_ACTION);
 					}
 				} else {
 					if (roll1 == roll2) {
@@ -877,13 +877,13 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 						rollDiceButton_->setIsVisible(false);
 						jailPayButton_->setIsVisible(false);
-						setTurnState(FieldAction);
+						setTurnState(FIELD_ACTION);
 					} else if (player_jail_status == 1) {
 						if (players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
 							money_to_find = JAIL_PAY_MONEY;
 							bank_pay_rent = true;
 							players_to_pay_rent.clear();
-							setTurnState(PayRent);
+							setTurnState(PAY_RENT);
 							std::string notification_msg = "Not enough money to leave jail";
 							notificationAdd(playerIndexturn_, notification_msg);
 						}
@@ -898,7 +898,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 						rollDiceButton_->setIsVisible(false);
 						jailPayButton_->setIsVisible(false);
-						setTurnState(FieldAction);
+						setTurnState(FIELD_ACTION);
 
 						std::string notification_msg = "Player left jail on forced bailout";
 						notificationAdd(playerIndexturn_, notification_msg);
@@ -909,12 +909,12 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						rollDiceButton_->setIsVisible(false);
 						jailPayButton_->setIsVisible(false);
 
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 					}
 				}
 			}
 		} break;
-		case FieldAction: {
+		case FIELD_ACTION: {
 			int pos = players_[playerIndexturn_]->getPosition();
 			FieldType field_type =
 				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
@@ -937,7 +937,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 				}
 
 				if (owner == nullptr) {
-					setTurnState(BuyAction);
+					setTurnState(BUY_ACTION);
 					clearPropertyData(true);
 					showPropertyData(pos, true);
 				} else if (owner->getId() != players_[playerIndexturn_]->getId()) {
@@ -947,36 +947,36 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					if (players_[playerIndexturn_]->getMoney() >= rent_to_pay) {
 						players_[playerIndexturn_]->substractMoney(rent_to_pay);
 						owner->addMoney(rent_to_pay);
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 					} else {
 						money_to_find = rent_to_pay;
 						bank_pay_rent = false;
 						players_to_pay_rent.clear();
 						players_to_pay_rent.push_back(owner);
-						setTurnState(PayRent);
+						setTurnState(PAY_RENT);
 					}
 				} else {
 					std::cout << "No action - player owns this field" << field_type << std::endl;
-					setTurnState(TurnEnd);
+					setTurnState(TURN_END);
 				}
 			} else if (field_type == TAX) {
 				TaxField field = std::get<TaxField>(getBoard()->getFieldById(pos));
 				unsigned int tax_to_pay = field.getTaxValue();
 				if (players_[playerIndexturn_]->getMoney() >= tax_to_pay) {
 					players_[playerIndexturn_]->substractMoney(tax_to_pay);
-					setTurnState(TurnEnd);
+					setTurnState(TURN_END);
 				} else {
 					money_to_find = tax_to_pay;
 					bank_pay_rent = true;
 					players_to_pay_rent.clear();
-					setTurnState(PayRent);
+					setTurnState(PAY_RENT);
 				}
 			} else if (field_type == GO_TO_JAIL) {
 				std::string notification_msg = "Goes to jail via GO TO JAIL";
 				notificationAdd(playerIndexturn_, notification_msg);
 				sendToJail(playerIndexturn_);
 				players_[playerIndexturn_]->setJailStatus(3);
-				setTurnState(TurnEnd);
+				setTurnState(TURN_END);
 			} else if (field_type == CHANCE) {
 				ChanceCard chance_card = getChanceCard();
 				updateChanceCard();
@@ -990,23 +990,23 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						movePlayer(playerIndexturn_, posIncrement);
 						int newPos = chance_card.getValue();
 						handlePassingStart(oldPos, newPos);
-						setTurnState(FieldAction);
+						setTurnState(FIELD_ACTION);
 					} break;
 
 					case BankPaysYou:
 						players_[playerIndexturn_]->addMoney(chance_card.getValue());
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 						break;
 
 					case GetOutOfJailCard:
 						players_[playerIndexturn_]->setJailCards(players_[playerIndexturn_]->getJailCards() + 1);
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 						break;
 
 					case GoToJail:
 						sendToJail(playerIndexturn_);
 						players_[playerIndexturn_]->setJailStatus(3);
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 						break;
 
 					case PayForHouseHotel: {
@@ -1028,18 +1028,18 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						if (sum == 0) {
 							std::string notification_msg = "Amount to pay: " + std::to_string(sum);
 							notificationAdd(playerIndexturn_, notification_msg);
-							setTurnState(TurnEnd);
+							setTurnState(TURN_END);
 						} else {
 							if (players_[playerIndexturn_]->getMoney() >= sum) {
 								players_[playerIndexturn_]->substractMoney(sum);
 								std::string notification_msg = "Paid to bank: " + std::to_string(sum);
 								notificationAdd(playerIndexturn_, notification_msg);
-								setTurnState(TurnEnd);
+								setTurnState(TURN_END);
 							} else {
 								money_to_find = sum;
 								bank_pay_rent = true;
 								players_to_pay_rent.clear();
-								setTurnState(PayRent);
+								setTurnState(PAY_RENT);
 								std::string notification_msg = "Not enough money. Needed: " + std::to_string(sum);
 								notificationAdd(playerIndexturn_, notification_msg);
 							}
@@ -1051,13 +1051,13 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							players_[playerIndexturn_]->substractMoney(chance_card.getValue());
 							std::string notification_msg = "Paid to bank: " + std::to_string(chance_card.getValue());
 							notificationAdd(playerIndexturn_, notification_msg);
-							setTurnState(TurnEnd);
+							setTurnState(TURN_END);
 						} else {
 							money_to_find = chance_card.getValue();
 							;
 							bank_pay_rent = true;
 							players_to_pay_rent.clear();
-							setTurnState(PayRent);
+							setTurnState(PAY_RENT);
 							std::string notification_msg =
 								"Not enough money. Needed: " + std::to_string(chance_card.getValue());
 							notificationAdd(playerIndexturn_, notification_msg);
@@ -1073,7 +1073,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						if (posIncrement >= 0) {
 							handlePassingStart(oldPos, newPos);
 						}
-						setTurnState(FieldAction);
+						setTurnState(FIELD_ACTION);
 					} break;
 
 					case PayPlayers: {
@@ -1086,7 +1086,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 									players_[playerIndexturn_]->addMoney(chance_card.getValue());
 								}
 							}
-							setTurnState(TurnEnd);
+							setTurnState(TURN_END);
 						} else {
 							players_to_pay_rent.clear();
 							money_to_find = toPay;
@@ -1096,22 +1096,22 @@ bool monopolyGameEngine::monopolyGameWorker() {
 									players_to_pay_rent.push_back(player_ptr);
 								}
 							}
-							setTurnState(PayRent);
+							setTurnState(PAY_RENT);
 						}
 					} break;
 
 					default:
-						setTurnState(TurnEnd);
+						setTurnState(TURN_END);
 						break;
 				}
 
 			} else {
 				std::cout << "No action" << field_type << std::endl;
-				setTurnState(TurnEnd);
+				setTurnState(TURN_END);
 			}
 		} break;
 
-		case BuyAction: {
+		case BUY_ACTION: {
 			int pos = players_[playerIndexturn_]->getPosition();
 			unsigned int price = getFieldPriceByPosition(pos);
 			resignBuyFieldButton_->setIsVisible(true);
@@ -1131,7 +1131,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 					resignBuyFieldButton_->setIsVisible(false);
 					buyFieldButton_->setIsVisible(false);
-					setTurnState(TurnEnd);
+					setTurnState(TURN_END);
 				} else	// NOT possible to buy property
 				{
 					std::string textPlayerBoughtProperty(
@@ -1150,7 +1150,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					resignBuyFieldButton_->setIsVisible(false);
 					buyFieldButton_->setIsVisible(false);
 					boardToAuctionSwitchHandler(true);
-					setScreenType(Auction);
+					setScreenType(AUCTION);
 					setAuctionState(Initialization);
 				}
 				performAuction();
@@ -1159,13 +1159,13 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					resignBuyFieldButton_->setIsVisible(false);
 					buyFieldButton_->setIsVisible(false);
 					rollDiceButton_->setIsVisible(false);
-					setScreenType(Boardgame);
-					setTurnState(TurnEnd);
+					setScreenType(BOARDGAME);
+					setTurnState(TURN_END);
 				}
 			}
 		} break;
 
-		case PayRent: {
+		case PAY_RENT: {
 			if (playerChanged) {
 				std::string textPlayerrent(
 					"Must make money to paid rent of " + std::to_string(money_to_find) + " or go bankrupt");
@@ -1185,11 +1185,11 @@ bool monopolyGameEngine::monopolyGameWorker() {
 				}
 				std::string textPlayerrent("Paid rent of " + std::to_string((money_to_find)));
 				notificationAdd(playerIndexturn_, textPlayerrent);
-				setTurnState(TurnEnd);
+				setTurnState(TURN_END);
 			}
 		} break;
 
-		case TurnEnd:
+		case TURN_END:
 			buildingsManagingWorker();
 			nextTurnButton_->setIsVisible(true);
 			if (isButtonClicked(nextTurnButton_)) {
@@ -1216,10 +1216,24 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 					if (gameFinishedCheckWinner()) {
 						removePlayerFromGame(playerIndexturn_, false);
-						return false;
+						if(isAiGameOnly_)
+						{
+							return false;	//leave game engine to return result to AI training
+						}
+						else
+						{
+							setScreenType(RESULT);
+						}
 					} else if (gameFinishedCheckDraw()) {
 						removePlayerFromGame(playerIndexturn_, true);
-						return false;
+						if(isAiGameOnly_)
+						{
+							return false;	//leave game engine to return result to AI training
+						}
+						else
+						{
+							setScreenType(RESULT);
+						}
 					}
 					turnInfoTextShow();
 				}
@@ -1235,23 +1249,23 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					}
 				}
 
-				setTurnState(RollDice);
+				setTurnState(ROLL_DICE);
 				nextTurnButton_->setIsVisible(false);
 				playerChanged = true;
 			}
 			break;
-		case WithdrawOngoing:
+		case WITHDRAW_ONGOING:
 			if (isButtonClicked(getWithdraw().getResignButton()) ||
 				isButtonClicked(getWithdraw().getResignValueButton()) ||
 				isButtonClicked(getWithdraw().getResignDecisionButton())) {
 				getWithdraw().setChooseScreenVisible(false);
 				getWithdraw().setValueScreenVisible(false);
 				getWithdraw().setDecisionScreenVisible(false);
-				setScreenType(Boardgame);
+				setScreenType(BOARDGAME);
 				setTurnState(getWithdraw().getTurnState());
 				getWithdraw().setPlayer2ToWithdraw(nullptr);
 			} else {
-				if (getScreenType() == WithdrawChoosePlayer) {
+				if (getScreenType() == WITHDRAW_CHOOSE_PLAYER) {
 					if (isButtonClicked(getWithdraw().getPlayer1Button())) {
 						for (auto player_ptr : getPlayers()) {
 							if (player_ptr->getId() == 0) {
@@ -1278,12 +1292,12 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						}
 					}
 
-					if (getScreenType() == WithdrawChoosePlayer && getWithdraw().getPlayer2ToWithdraw() != nullptr) {
-						setScreenType(WithdrawAddValue);
+					if (getScreenType() == WITHDRAW_CHOOSE_PLAYER && getWithdraw().getPlayer2ToWithdraw() != nullptr) {
+						setScreenType(WITHDRAW_ADD_VALUE);
 						getWithdraw().setChooseScreenVisible(false);
 						getWithdraw().setValueScreenVisible(true);
 					}
-				} else if (getScreenType() == WithdrawAddValue) {
+				} else if (getScreenType() == WITHDRAW_ADD_VALUE) {
 					getWithdraw().moneyTextUpdate();
 					if (isButtonClicked(getWithdraw().getPlayer1minus1())) {
 						getWithdraw().moneyTransferIndex(1, -1);
@@ -1358,17 +1372,17 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						getWithdraw().showProperty(4);
 					} else if (isButtonClicked(getWithdraw().getSubmitValueButton()) &&
 							   getWithdraw().isNonZeroValue()) {
-						setScreenType(WithdrawDecision);
+						setScreenType(WITHDRAW_DECISION);
 						getWithdraw().setDecisionScreenVisible(true);
 						getWithdraw().setValueScreenVisible(false);
 					}
-				} else if (getScreenType() == WithdrawDecision) {
+				} else if (getScreenType() == WITHDRAW_DECISION) {
 					if (isButtonClicked(getWithdraw().getAcceptDecisionButton())) {
 						getWithdraw().makeWithdraw();
 						getWithdraw().setChooseScreenVisible(false);
 						getWithdraw().setValueScreenVisible(false);
 						getWithdraw().setDecisionScreenVisible(false);
-						setScreenType(Boardgame);
+						setScreenType(BOARDGAME);
 						setTurnState(getWithdraw().getTurnState());
 						getWithdraw().setPlayer2ToWithdraw(nullptr);
 					}
@@ -1496,7 +1510,7 @@ void monopolyGameEngine::createButtonRollDice() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonRollDice(new Button(Idle, "Roll Dice", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonRollDice(new Button(IDLE, "Roll Dice", buttonSize, getFontSize()));
 	buttonRollDice->setFont(getFont());
 	buttonRollDice->setPosition(ROLL_DICE_BUTTON_POSITION);
 	buttonRollDice->setActiveBackColor(activeButtonBackColor);
@@ -1649,7 +1663,7 @@ void monopolyGameEngine::createButtonBuyResign() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBuy(new Button(Idle, "Buy", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuy(new Button(IDLE, "Buy", buttonSize, getFontSize()));
 	buttonBuy->setFont(getFont());
 	buttonBuy->setPosition(BUY_BUTTON_POSITION);
 	buttonBuy->setActiveBackColor(activeButtonBackColor);
@@ -1665,7 +1679,7 @@ void monopolyGameEngine::createButtonBuyResign() {
 	buyFieldButton_ = buttonBuy;
 	addButton(buttonBuy);
 
-	std::shared_ptr<Button> buttonResign(new Button(Idle, "Resign", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonResign(new Button(IDLE, "Resign", buttonSize, getFontSize()));
 	buttonResign->setFont(getFont());
 	buttonResign->setPosition(sf::Vector2f(BUY_BUTTON_POSITION.x + 140, BUY_BUTTON_POSITION.y));
 	buttonResign->setActiveBackColor(activeButtonBackColor);
@@ -1690,7 +1704,7 @@ void monopolyGameEngine::createButtonNextProperty() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonNext(new Button(Idle, "Next", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonNext(new Button(IDLE, "Next", buttonSize, getFontSize()));
 	buttonNext->setFont(getFont());
 	buttonNext->setPosition(NEXT_PROPERTY_BUTTON_POSITION);
 	buttonNext->setActiveBackColor(activeButtonBackColor);
@@ -1715,7 +1729,7 @@ void monopolyGameEngine::createButtonPerviousProperty() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonPrev(new Button(Idle, "Previous", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonPrev(new Button(IDLE, "Previous", buttonSize, getFontSize()));
 	buttonPrev->setFont(getFont());
 	buttonPrev->setPosition(PREVIOUS_PROPERTY_BUTTON_POSITION);
 	buttonPrev->setActiveBackColor(activeButtonBackColor);
@@ -1750,7 +1764,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBuyHouse(new Button(Idle, "Buy", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuyHouse(new Button(IDLE, "Buy", buttonSize, getFontSize()));
 	buttonBuyHouse->setFont(getFont());
 	buttonBuyHouse->setPosition(BUY_HOUSE_BUTTON_POSITION);
 	buttonBuyHouse->setActiveBackColor(activeButtonBackColor);
@@ -1766,7 +1780,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buyHouseButton_ = buttonBuyHouse;
 	addButton(buttonBuyHouse);
 
-	std::shared_ptr<Button> buttonSellHouse(new Button(Idle, "Sell", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonSellHouse(new Button(IDLE, "Sell", buttonSize, getFontSize()));
 	buttonSellHouse->setFont(getFont());
 	buttonSellHouse->setPosition(SELL_HOUSE_BUTTON_POSITION);
 	buttonSellHouse->setActiveBackColor(activeButtonBackColor);
@@ -1782,7 +1796,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	sellHouseButton_ = buttonSellHouse;
 	addButton(buttonSellHouse);
 
-	std::shared_ptr<Button> buttonBuyHotel(new Button(Idle, "Buy", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuyHotel(new Button(IDLE, "Buy", buttonSize, getFontSize()));
 	buttonBuyHotel->setFont(getFont());
 	buttonBuyHotel->setPosition(BUY_HOTEL_BUTTON_POSITION);
 	buttonBuyHotel->setActiveBackColor(activeButtonBackColor);
@@ -1798,7 +1812,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buyHotelButton_ = buttonBuyHotel;
 	addButton(buttonBuyHotel);
 
-	std::shared_ptr<Button> buttonSellHotel(new Button(Idle, "Sell", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonSellHotel(new Button(IDLE, "Sell", buttonSize, getFontSize()));
 	buttonSellHotel->setFont(getFont());
 	buttonSellHotel->setPosition(SELL_HOTEL_BUTTON_POSITION);
 	buttonSellHotel->setActiveBackColor(activeButtonBackColor);
@@ -1823,7 +1837,7 @@ void monopolyGameEngine::createButtonsBankrupt() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBankrupt(new Button(Idle, "Go Bankrupt", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBankrupt(new Button(IDLE, "Go Bankrupt", buttonSize, getFontSize()));
 	buttonBankrupt->setFont(getFont());
 	buttonBankrupt->setPosition(BANKRUPT_BUTTON_POSITION);
 	buttonBankrupt->setActiveBackColor(activeButtonBackColor);
@@ -1848,7 +1862,7 @@ void monopolyGameEngine::createButtonsNextTurn() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonNextTurn(new Button(Idle, "Next turn", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonNextTurn(new Button(IDLE, "Next turn", buttonSize, getFontSize()));
 	buttonNextTurn->setFont(getFont());
 	buttonNextTurn->setPosition(NEXT_TURN_BUTTON_POSITION);
 	buttonNextTurn->setActiveBackColor(activeButtonBackColor);
@@ -1874,7 +1888,7 @@ void monopolyGameEngine::createButtonsJailPay() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 	std::shared_ptr<Button> buttonJailPay(
-		new Button(Idle, "Pay " + std::to_string(JAIL_PAY_MONEY) + " to leave jail", buttonSize, getFontSize()));
+		new Button(IDLE, "Pay " + std::to_string(JAIL_PAY_MONEY) + " to leave jail", buttonSize, getFontSize()));
 	buttonJailPay->setFont(getFont());
 	buttonJailPay->setPosition(JAIL_PAY_BUTTON_POSITION);
 	buttonJailPay->setActiveBackColor(activeButtonBackColor);
@@ -1918,7 +1932,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonAdd100(new Button(Idle, "+", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonAdd100(new Button(IDLE, "+", buttonSize, getFontSize() + 10));
 	buttonAdd100->setFont(getFont());
 	buttonAdd100->setPosition(ADD_100_BUTTON_POSITION);
 	buttonAdd100->getText().setPosition(ADD_100_BUTTON_POSITION.x - 12, ADD_100_BUTTON_POSITION.y - 28);
@@ -1936,7 +1950,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonAdd100);
 	addAuctionButton(buttonAdd100);
 
-	std::shared_ptr<Button> buttonAdd10(new Button(Idle, "+", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonAdd10(new Button(IDLE, "+", buttonSize, getFontSize() + 10));
 	buttonAdd10->setFont(getFont());
 	buttonAdd10->setPosition(ADD_10_BUTTON_POSITION);
 	buttonAdd10->getText().setPosition(ADD_10_BUTTON_POSITION.x - 12, ADD_10_BUTTON_POSITION.y - 28);
@@ -1954,7 +1968,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonAdd10);
 	addAuctionButton(buttonAdd10);
 
-	std::shared_ptr<Button> buttonAdd1(new Button(Idle, "+", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonAdd1(new Button(IDLE, "+", buttonSize, getFontSize() + 10));
 	buttonAdd1->setFont(getFont());
 	buttonAdd1->setPosition(ADD_1_BUTTON_POSITION);
 	buttonAdd1->getText().setPosition(ADD_1_BUTTON_POSITION.x - 12, ADD_1_BUTTON_POSITION.y - 28);
@@ -1972,7 +1986,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonAdd1);
 	addAuctionButton(buttonAdd1);
 
-	std::shared_ptr<Button> buttonSubstract100(new Button(Idle, "-", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonSubstract100(new Button(IDLE, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract100->setFont(getFont());
 	buttonSubstract100->setPosition(SUBSTRACT_100_BUTTON_POSITION);
 	buttonSubstract100->getText().setPosition(
@@ -1991,7 +2005,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonSubstract100);
 	addAuctionButton(buttonSubstract100);
 
-	std::shared_ptr<Button> buttonSubstract10(new Button(Idle, "-", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonSubstract10(new Button(IDLE, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract10->setFont(getFont());
 	buttonSubstract10->setPosition(SUBSTRACT_10_BUTTON_POSITION);
 	buttonSubstract10->getText().setPosition(SUBSTRACT_10_BUTTON_POSITION.x - 6, SUBSTRACT_10_BUTTON_POSITION.y - 28);
@@ -2009,7 +2023,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonSubstract10);
 	addAuctionButton(buttonSubstract10);
 
-	std::shared_ptr<Button> buttonSubstract1(new Button(Idle, "-", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonSubstract1(new Button(IDLE, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract1->setFont(getFont());
 	buttonSubstract1->setPosition(SUBSTRACT_1_BUTTON_POSITION);
 	buttonSubstract1->getText().setPosition(SUBSTRACT_1_BUTTON_POSITION.x - 6, SUBSTRACT_1_BUTTON_POSITION.y - 28);
@@ -2037,7 +2051,7 @@ void monopolyGameEngine::createAuctionBidButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonBidAuction(new Button(Idle, "Bid", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBidAuction(new Button(IDLE, "Bid", buttonSize, getFontSize()));
 	buttonBidAuction->setFont(getFont());
 	buttonBidAuction->setPosition(AUCTION_BID_BUTTON_POSITION);
 	buttonBidAuction->setActiveBackColor(activeButtonBackColor);
@@ -2064,7 +2078,7 @@ void monopolyGameEngine::createAuctionResignButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonResignAuction(new Button(Idle, "Resign", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonResignAuction(new Button(IDLE, "Resign", buttonSize, getFontSize()));
 	buttonResignAuction->setFont(getFont());
 	buttonResignAuction->setPosition(AUCTION_RESIGN_BUTTON_POSITION);
 	buttonResignAuction->setActiveBackColor(activeButtonBackColor);
@@ -2090,7 +2104,7 @@ void monopolyGameEngine::createButtonWithdraw() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonWithdraw(new Button(Idle, "Withdraw", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonWithdraw(new Button(IDLE, "Withdraw", buttonSize, getFontSize()));
 	buttonWithdraw->setFont(getFont());
 	buttonWithdraw->setPosition(WITHDRAW_BUTTON_POSITION);
 	buttonWithdraw->setActiveBackColor(activeButtonBackColor);
@@ -2116,7 +2130,7 @@ void monopolyGameEngine::createMortagingButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonMortgage(new Button(Idle, "Mortgage", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonMortgage(new Button(IDLE, "Mortgage", buttonSize, getFontSize()));
 	buttonMortgage->setFont(getFont());
 	buttonMortgage->setPosition(Mortgage_BUTTON_POSITION);
 	buttonMortgage->setActiveBackColor(activeButtonBackColor);
@@ -2132,7 +2146,7 @@ void monopolyGameEngine::createMortagingButton() {
 	MortgageButton_ = buttonMortgage;
 	addButton(buttonMortgage);
 
-	std::shared_ptr<Button> buttonUnMortgage(new Button(Idle, "UnMortgage", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonUnMortgage(new Button(IDLE, "UnMortgage", buttonSize, getFontSize()));
 	buttonUnMortgage->setFont(getFont());
 	buttonUnMortgage->setPosition(UNMortgage_BUTTON_POSITION);
 	buttonUnMortgage->setActiveBackColor(activeButtonBackColor);

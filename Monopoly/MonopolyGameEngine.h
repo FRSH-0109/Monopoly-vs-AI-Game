@@ -26,13 +26,23 @@
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
 
 class monopolyGameEngine {
+	// game staff
+	TurnState turnState_;
+	const unsigned int PLAYERS_MAX_ = 4;
+	const unsigned int PLAYERS_MIN_ = 2;
+	unsigned int playersStartingAmount_ = 0;
+	std::array<unsigned int, 4> playersStartingIds_;
+	unsigned int house_count_ = 32;
+	unsigned int hotel_count_ = 12;
+	unsigned int playerIndexturn_;
 	bool isAiGameOnly_;
-	GameScreenType screenType_ = Boardgame;
+	GameScreenType screenType_ = BOARDGAME;
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 300;
 	const unsigned int START_PASSING_MONEY_ = 200;
 	const unsigned int GAME_TURNS_MAX = 2;
 	unsigned int gameTurnsGloballyDone_;
 	std::array<bool, 4> gameTurnByPlayerDone_;
+	AuctionState auctionState_ = NoAuction;
 
 	const std::string CHANCE_FILE_PATH_ = "Monopoly/game_config_json/chance.json";
 	const std::string GAMEBOARD_FILE_PATH_ = "Monopoly/game_config_json/board.json";
@@ -170,16 +180,8 @@ class monopolyGameEngine {
 
 	NotificationWall notificationsWall_;
 
-	// game staff
-	TurnState turnState_;
-	AuctionState auctionState_ = NoAuction;
-	const unsigned int PLAYERS_MAX_ = 4;
-	const unsigned int PLAYERS_MIN_ = 2;
-	unsigned int playersStartingAmount_ = 0;
-	std::array<unsigned int, 4> playersStartingIds_;
-	unsigned int house_count_ = 32;
-	unsigned int hotel_count_ = 12;
-	unsigned int playerIndexturn_;
+	// result screen
+
 	unsigned int getPlayerIndexTurn() const;
 	void incPlayerIndexTurn();
 	void setTurnState(TurnState newState);

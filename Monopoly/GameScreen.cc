@@ -16,7 +16,7 @@
 GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettingsList_) {
 	setContextWindow(ContextWindow::GetInstance());
 	std::cout << "GS constructor" << std::endl;
-	setScreenType(MonopolyGame);
+	setScreenType(MONOPOLY_GAME);
 
 	// TODO: exception handling
 	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.ttf"))
@@ -65,7 +65,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 }
 
 ScreenEventType GameScreen::worker() {
-	ScreenEventType eventType = Idle;
+	ScreenEventType eventType = IDLE;
 	for (auto element : monopoly_game_engine_.getButtons()) {
 		element->setIsClicked(false);
 		element->setIsActive(false);
@@ -89,7 +89,7 @@ ScreenEventType GameScreen::worker() {
 
 	if (monopoly_game_engine_.monopolyGameWorker() == false)  // game endeds
 	{
-		return GameEnded;
+		return GAME_ENDED;
 	}
 
 	return eventType;
@@ -99,7 +99,7 @@ void GameScreen::draw() {
 	std::shared_ptr<Board> game_board_ptr = monopoly_game_engine_.getBoard();
 
 	switch (monopoly_game_engine_.getScreenType()) {
-		case Boardgame: {
+		case BOARDGAME: {
 			// draw buttons and texts
 			for (auto element : monopoly_game_engine_.getButtons()) {
 				if (element->getIsVisible()) {
@@ -211,7 +211,7 @@ void GameScreen::draw() {
 			}
 
 			// draw property data for buy/sell
-			if (monopoly_game_engine_.getTurnState() == BuyAction) {
+			if (monopoly_game_engine_.getTurnState() == BUY_ACTION) {
 				getContextWindow()->getWindow().draw(monopoly_game_engine_.getPropertyDataSprite());
 				for (auto text_ptr : monopoly_game_engine_.getPropertyDataTexts()) {
 					getContextWindow()->getWindow().draw(*text_ptr);
@@ -230,7 +230,7 @@ void GameScreen::draw() {
 			}
 		} break;
 
-		case WithdrawAddValue:
+		case WITHDRAW_ADD_VALUE:
 			monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer1().setTexture(
 				*monopoly_game_engine_.getWithdraw().getTexturePropertyPlayer1(), true);
 			getContextWindow()->getWindow().draw(monopoly_game_engine_.getWithdraw().getSpritePropertyPlayer1());
@@ -255,8 +255,8 @@ void GameScreen::draw() {
 			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer2Index()) {
 				getContextWindow()->getWindow().draw(*text_ptr);
 			}
-		case WithdrawChoosePlayer:	// Intentional fall through
-		case WithdrawDecision:
+		case WITHDRAW_CHOOSE_PLAYER:	// Intentional fall through
+		case WITHDRAW_DECISION:
 			for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
 				if (button_ptr->getIsVisible()) {
 					button_ptr->draw(getContextWindow()->getWindow());
@@ -268,7 +268,7 @@ void GameScreen::draw() {
 			}
 			break;
 
-		case Auction:
+		case AUCTION:
 			// draw buttons and texts
 			for (auto element : monopoly_game_engine_.getAuctionButtons()) {
 				if (element->getIsVisible()) {
@@ -285,6 +285,10 @@ void GameScreen::draw() {
 				getContextWindow()->getWindow().draw(*text_ptr);
 			}
 			break;
+
+		case RESULT:
+
+		break;
 
 		default:
 			break;

@@ -44,49 +44,49 @@ struct playerSettings {
 };
 
 enum TurnState {
-	RollDice,
-	FieldAction,
-	BuyAction,
-	PayRent,
-	TurnEnd,
-	WithdrawOngoing,
+	ROLL_DICE,
+	FIELD_ACTION,
+	BUY_ACTION,
+	PAY_RENT,
+	TURN_END,
+	WITHDRAW_ONGOING,
 };
 
-enum GameScreenType { Boardgame, WithdrawChoosePlayer, WithdrawAddValue, WithdrawDecision, Auction };
+enum GameScreenType { BOARDGAME, WITHDRAW_CHOOSE_PLAYER, WITHDRAW_ADD_VALUE, WITHDRAW_DECISION, AUCTION, RESULT };
 
-enum ActiveScreenType { None, MainMenu, GameMenu, MonopolyGame };
+enum ActiveScreenType { NONE, MAIN_MENU, GAME_MENU, MONOPOLY_GAME };
 
 enum ScreenEventType {
-	Idle,
-	Exit,
-	Play,
-	ReturnToMainMenu,
-	Player1SetNone,
-	Player2SetNone,
-	Player3SetNone,
-	Player4SetNone,
-	Player1SetHuman,
-	Player2SetHuman,
-	Player3SetHuman,
-	Player4SetHuman,
-	Player1SetAI,
-	Player2SetAI,
-	Player3SetAI,
-	Player4SetAI,
-	Player1SetAILevel1,
-	Player2SetAILevel1,
-	Player3SetAILevel1,
-	Player4SetAILevel1,
-	Player1SetAILevel2,
-	Player2SetAILevel2,
-	Player3SetAILevel2,
-	Player4SetAILevel2,
-	Player1SetAILevel3,
-	Player2SetAILevel3,
-	Player3SetAILevel3,
-	Player4SetAILevel3,
-	StartGame,
-	GameEnded
+	IDLE,
+	EXIT,
+	PLAY,
+	RETURN_TO_MAIN_MENU,
+	PLAYER_1_SET_NONE,
+	PLAYER_2_SET_NONE,
+	PLAYER_3_SET_NONE,
+	PLAYER_4_SET_NONE,
+	PLAYER_1_SET_HUMAN,
+	PLAYER_2_SET_HUMAN,
+	PLAYER_3_SET_HUMAN,
+	PLAYER_4_SET_HUMAN,
+	PLAYER_1_SET_AI,
+	PLAYER_2_SET_AI,
+	PLAYER_3_SET_AI,
+	PLAYER_4_SET_AI,
+	PLAYER_1_SET_AI_LEVEL_1,
+	PLAYER_2_SET_AI_LEVEL_1,
+	PLAYER_3_SET_AI_LEVEL_1,
+	PLAYER_4_SET_AI_LEVEL_1,
+	PLAYER_1_SET_AI_LEVEL_2,
+	PLAYER_2_SET_AI_LEVEL_2,
+	PLAYER_3_SET_AI_LEVEL_2,
+	PLAYER_4_SET_AI_LEVEL_2,
+	PLAYER_1_SET_AI_LEVEL_3,
+	PLAYER_2_SET_AI_LEVEL_3,
+	PLAYER_3_SET_AI_LEVEL_3,
+	PLAYER_4_SET_AI_LEVEL_3,
+	START_GAME,
+	GAME_ENDED
 };
 
 enum FieldType { STREET, STATION, UTILITY, GO, CHANCE, COMMUNITY_CHEST, TAX, JAIL, FREE_PARKING, GO_TO_JAIL };
@@ -101,6 +101,6 @@ enum Decision { YES, NO };
 
 enum JailDecision { ROLL, PAY, CARD };
 
-enum BuyDecision { BUY, AUCTION };
+enum BuyDecision { BUY, RESIGN };
 
 #endif

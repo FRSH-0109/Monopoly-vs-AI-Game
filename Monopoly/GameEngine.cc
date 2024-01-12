@@ -104,29 +104,29 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(bool AIonly) {
 			pollForEvents(event);
 		}
 
-		ScreenEventType eventType = Idle;
+		ScreenEventType eventType = IDLE;
 		activeScreen_->draw();
 		eventType = activeScreen_->worker();
 
 		switch (eventType) {
-			case Play:
+			case PLAY:
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameMenuScreen>();
 				break;
-			case Exit:
+			case EXIT:
 				getContextWindow()->window_.close();
 				break;
-			case ReturnToMainMenu:
+			case RETURN_TO_MAIN_MENU:
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
 				break;
-			case StartGame: {
+			case START_GAME: {
 				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 				playerSettingsList_ = activeScreen_->getPlayersSettings();
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
 			} break;
-			case GameEnded:
+			case GAME_ENDED:
 				return activeScreen_->getPlayersResult();
 				break;
 			default:
