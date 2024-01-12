@@ -721,10 +721,10 @@ TEST_CASE("PropertyField class") {
 	const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
 	const unsigned int TEST_PRICE = 400;
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
-	const unsigned int TEST_Mortgage = 200;
+	const unsigned int TEST_MORTGAGE = 200;
 
 	PropertyField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_GROUP_MEMBERS, TEST_Mortgage);
+		TEST_POSITION, TEST_PRICE, TEST_GROUP_MEMBERS, TEST_MORTGAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -735,7 +735,7 @@ TEST_CASE("PropertyField class") {
 	REQUIRE(test_field.getRotation() == TEST_ROTATION);
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getIsMortgaged() == false);
 	REQUIRE(test_field.getUnMortgageValue() == 220);
 	REQUIRE(test_field.getOwner() == nullptr);
@@ -794,10 +794,10 @@ TEST_CASE("StreetField class") {
 	const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 		{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
-	const unsigned int TEST_Mortgage = 200;
+	const unsigned int TEST_MORTGAGE = 200;
 
 	StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
+		TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTGAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -811,7 +811,7 @@ TEST_CASE("StreetField class") {
 	REQUIRE(test_field.getHotelPrice() == TEST_HOTEL_PRICE);
 	REQUIRE(test_field.getRentValues() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getHouseNumber() == 0);
 	REQUIRE(test_field.getIsHotel() == false);
 	REQUIRE(test_field.getIsMortgaged() == false);
@@ -916,10 +916,10 @@ TEST_CASE("StationField class") {
 	const std::map<StationTiers, unsigned int> TEST_RENT = {
 		{ONE_STATION, 25}, {TWO_STATIONS, 50}, {THREE_STATIONS, 100}, {FOUR_STATIONS, 200}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {15, 25, 35};
-	const unsigned int TEST_Mortgage = 100;
+	const unsigned int TEST_MORTGAGE = 100;
 
 	StationField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTGAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -931,7 +931,7 @@ TEST_CASE("StationField class") {
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
 	REQUIRE(test_field.getRentValues() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getIsMortgaged() == false);
 	REQUIRE(test_field.getUnMortgageValue() == 110);
 	REQUIRE(test_field.getOwner() == nullptr);
@@ -987,10 +987,10 @@ TEST_CASE("Utility class") {
 	const unsigned int TEST_PRICE = 150;
 	const std::map<UtilityTiers, unsigned int> TEST_RENT = {{ONE_UTILITY, 4}, {TWO_UTILITIES, 10}};
 	const std::vector<unsigned int> TEST_GROUP_MEMBERS = {28};
-	const unsigned int TEST_Mortgage = 75;
+	const unsigned int TEST_MORTGAGE = 75;
 
 	UtilityField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
-		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_Mortgage);
+		TEST_POSITION, TEST_PRICE, TEST_RENT, TEST_GROUP_MEMBERS, TEST_MORTGAGE);
 
 	REQUIRE(test_field.getId() == TEST_ID);
 	REQUIRE(test_field.getType() == TEST_TYPE);
@@ -1002,7 +1002,7 @@ TEST_CASE("Utility class") {
 	REQUIRE(test_field.getPrice() == TEST_PRICE);
 	REQUIRE(test_field.getRentMultipliers() == TEST_RENT);
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
-	REQUIRE(test_field.getMortgage() == TEST_Mortgage);
+	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getIsMortgaged() == false);
 	REQUIRE(test_field.getUnMortgageValue() == 83);
 	REQUIRE(test_field.getOwner() == nullptr);
@@ -1121,11 +1121,11 @@ TEST_CASE("AiAdapter class") {
 		const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 			{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 		const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
-		const unsigned int TEST_Mortgage = 200;
+		const unsigned int TEST_MORTGAGE = 200;
 
 		StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
 			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
-			TEST_Mortgage);
+			TEST_MORTGAGE);
 
 		REQUIRE(adapter.convertHouse(test_field) == 0.0f);
 
@@ -1278,11 +1278,11 @@ TEST_CASE("AiAdapter class") {
 		const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
 			{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
 		const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
-		const unsigned int TEST_Mortgage = 200;
+		const unsigned int TEST_MORTGAGE = 200;
 
 		StreetField test_field(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
 			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
-			TEST_Mortgage);
+			TEST_MORTGAGE);
 
 		adapter.setHouse(test_field);
 		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field));
@@ -1371,6 +1371,45 @@ TEST_CASE("Player class") {
 		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetX(25.1), SpriteOffsetException);
 		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetY(1.2), SpriteOffsetException);
 		REQUIRE_THROWS_AS(PLAYER1.setSpriteOffsetY(-0.5), SpriteOffsetException);
+	}
+
+	SECTION("virtual methods for AiPlayer") {
+		REQUIRE(PLAYER1.decideBuy(3) == BUY);
+		REQUIRE(PLAYER1.decideJail() == ROLL);
+		REQUIRE(PLAYER1.decideMortgage(6) == NO);
+		PLAYER1.setMoney(0);
+		REQUIRE(PLAYER1.decideMortgage(6) == YES);
+		PLAYER1.setMoney(1500);
+		REQUIRE(PLAYER1.decideUnmortgage(6) == YES);
+
+		const unsigned int TEST_ID = 1;
+		const FieldType TEST_TYPE = STREET;
+		const std::string TEST_NAME = "Białystok";
+		const std::string TEST_PATH = "./textures_and_fonts/textures/monopoly_single_square_purple.png";
+		const unsigned int TEST_WIDTH = 200;
+		const unsigned int TEST_HEIGHT = 1000;
+		const float TEST_ROTATION = 0.0;
+		const sf::Vector2i TEST_POSITION = sf::Vector2i(20, 20);
+		const unsigned int TEST_PRICE = 400;
+		const unsigned int TEST_HOUSE_PRICE = 200;
+		const unsigned int TEST_HOTEL_PRICE = 250;
+		const std::map<StreetTiers, unsigned int> TEST_RENT = {{NO_HOUSES, 50}, {ONE_HOUSE, 200}, {TWO_HOUESES, 600},
+			{THREE_HOUSES, 1400}, {FOUR_HOUSES, 1700}, {HOTEL, 2000}};
+		const std::vector<unsigned int> TEST_GROUP_MEMBERS = {1};
+		const unsigned int TEST_MORTGAGE = 200;
+
+		StreetField TEST_FIELD(TEST_ID, TEST_TYPE, TEST_NAME, TEST_PATH, TEST_WIDTH, TEST_HEIGHT, TEST_ROTATION,
+			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
+			TEST_MORTGAGE);
+
+		REQUIRE(PLAYER1.decideAuctionBid(TEST_FIELD) == TEST_FIELD.getPrice());
+		REQUIRE(PLAYER1.decideBuildHouse(TEST_FIELD) == 15);
+		REQUIRE(PLAYER1.decideSellHouse(TEST_FIELD) == 0);
+		PLAYER1.setMoney(0);
+		REQUIRE(PLAYER1.decideSellHouse(TEST_FIELD) == 15);
+		PLAYER1.setMoney(1500);
+		REQUIRE(PLAYER1.decideOfferTrade() == NO);
+		REQUIRE(PLAYER1.decideAcceptTrade() == NO);
 	}
 }
 

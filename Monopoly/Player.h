@@ -1,10 +1,30 @@
 #pragma once
 
+// #include <tinyai/src/tinyneat.hpp>
+// #include <tinyai/src/tinyann.hpp>
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "contextWindow.h"
+#include "Field.h"
+// #include "AiAdapter.h"
 #include "main.h"
+
+enum Decision {
+	YES,
+	NO
+};
+
+enum JailDecision {
+	ROLL,
+	PAY,
+	CARD
+};
+
+enum BuyDecision {
+	BUY,
+	AUCTION
+};
 
 class Player {
 	ContextWindow* contextWindow_;
@@ -62,13 +82,37 @@ class Player {
 	void setSpritePosition(sf::Vector2f newPos);
 
 	virtual const unsigned int getTest() { return 0; };
+	virtual BuyDecision decideBuy(unsigned int index);
+	virtual JailDecision decideJail();
+	virtual Decision decideMortgage(unsigned int index);
+	virtual Decision decideUnmortgage(unsigned int index);
+	virtual unsigned int decideAuctionBid(PropertyField& field);
+	virtual unsigned int decideBuildHouse(StreetField& field);
+	virtual unsigned int decideSellHouse(StreetField& field);
+	virtual Decision decideOfferTrade();
+	virtual Decision decideAcceptTrade();
 };
 
 class AiPlayer : public Player {
+	AiAdapter adapter_;
+	ann::neuralnet neural_network_;
 	unsigned int test_ = 3;
 
    public:
 	AiPlayer() : Player(){};
-	AiPlayer(unsigned int money) : Player(money){};
+	AiPlayer(unsigned int money, ann::neuralnet& neural_network)
+		: Player(money),
+		neural_network_(neural_network)
+		{};
+	AiAdapter& getAdapter();
 	const unsigned int getTest() { return test_; };
+	BuyDecision decideBuy(unsigned int index);
+	JailDecision decideJail();
+	Decision decideMortgage(unsigned int index);
+	Decision decideUnmortgage(unsigned int index);
+	unsigned int decideAuctionBid(PropertyField& field);
+	unsigned int decideBuildHouse(StreetField& field);
+	unsigned int decideSellHouse(StreetField& field);
+	Decision decideOfferTrade();
+	Decision decideAcceptTrade();
 };

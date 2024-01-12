@@ -36,14 +36,15 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 				new_player.setAiLevel(it->level);
 				new_player.setId(playerId);
 				players_.push_back(std::make_shared<Player>(new_player));
-			} else {
-				isAiGameOnly_ = true;
-				AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
-				new_player.setIsAi(!(it->isHuman));
-				new_player.setAiLevel(it->level);
-				new_player.setId(playerId);
-				players_.push_back(std::make_shared<AiPlayer>(new_player));
-			}
+			 }
+			//  else {
+			// 	isAiGameOnly_ = true;
+			// 	AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
+			// 	new_player.setIsAi(!(it->isHuman));
+			// 	new_player.setAiLevel(it->level);
+			// 	new_player.setId(playerId);
+			// 	players_.push_back(std::make_shared<AiPlayer>(new_player));
+			// }
 			// if (new_player.getId() == 1) {
 			// 	players_[1]->addFieldOwnedId(16);
 			// 	players_[1]->addFieldOwnedId(18);
@@ -669,8 +670,8 @@ void monopolyGameEngine::buildingsManagingWorker() {
 		if (field_type == STREET) {
 			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(currentPropertyShowed_));
 			if (field.getOwner() == curr_player && field.getIsMortgaged() &&
-				curr_player->getMoney() >= field.getUnMortgageValue()) {
-				curr_player->substractMoney(field.getUnMortgageValue());
+				curr_player->getMoney() >= field.getUnmortgageValue()) {
+				curr_player->substractMoney(field.getUnmortgageValue());
 				field.setIsMortgaged(false);
 				notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 			} else {
@@ -679,8 +680,8 @@ void monopolyGameEngine::buildingsManagingWorker() {
 		} else if (field_type == STATION) {
 			StationField& field = std::get<StationField>(getBoard()->getFieldById(currentPropertyShowed_));
 			if (field.getOwner() == curr_player && field.getIsMortgaged() &&
-				curr_player->getMoney() >= field.getUnMortgageValue()) {
-				curr_player->substractMoney(field.getUnMortgageValue());
+				curr_player->getMoney() >= field.getUnmortgageValue()) {
+				curr_player->substractMoney(field.getUnmortgageValue());
 				field.setIsMortgaged(false);
 				notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 			} else {
@@ -689,8 +690,8 @@ void monopolyGameEngine::buildingsManagingWorker() {
 		} else if (field_type == UTILITY) {
 			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(currentPropertyShowed_));
 			if (field.getOwner() == curr_player && field.getIsMortgaged() &&
-				curr_player->getMoney() >= field.getUnMortgageValue()) {
-				curr_player->substractMoney(field.getUnMortgageValue());
+				curr_player->getMoney() >= field.getUnmortgageValue()) {
+				curr_player->substractMoney(field.getUnmortgageValue());
 				field.setIsMortgaged(false);
 				notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 			} else {

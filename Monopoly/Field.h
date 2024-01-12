@@ -2,9 +2,9 @@
 #include <cmath>
 #include <iostream>
 #include <map>
+#include <memory>
 #include <string>
 #include <vector>
-#include "Player.h"
 #include "contextWindow.h"
 #include "main.h"
 
@@ -65,9 +65,9 @@ class Field {
 class PropertyField : public Field {
 	unsigned int price_;
 	std::vector<unsigned int> group_members_;
-	unsigned int Mortgage_;
-	bool is_Mortgaged_;
-	unsigned int unMortgage_value_;
+	unsigned int mortgage_;
+	bool is_mortgaged_;
+	unsigned int unmortgage_value_;
 	std::shared_ptr<Player> owner_;
 	sf::RectangleShape owner_flag_;
 
@@ -82,12 +82,12 @@ class PropertyField : public Field {
 		const sf::Vector2i position,
 		const unsigned int price,
 		const std::vector<unsigned int> group_members,
-		const unsigned int Mortgage)
+		const unsigned int mortgage)
 		: Field(id, type, name, graphic_path, width, height, rotation, position),
 		  price_(price),
 		  group_members_(group_members),
-		  Mortgage_(Mortgage),
-		  is_Mortgaged_(false),
+		  mortgage_(mortgage),
+		  is_mortgaged_(false),
 		  owner_(nullptr){
 			  //   std::cout << "PropertyField constructor" << std::endl;
 		  };
@@ -95,12 +95,13 @@ class PropertyField : public Field {
 	const std::vector<unsigned int> getGroupMembers();
 	const unsigned int getMortgage();
 	const bool getIsMortgaged();
-	const unsigned int getUnMortgageValue();
+	const unsigned int getUnmortgageValue();
 	std::shared_ptr<Player> getOwner();
 	sf::RectangleShape& getOwnerFlag();
 
 	void setIsMortgaged(bool new_state);
 	void setOwner(std::shared_ptr<Player> new_owner);
+	void resetOwner();
 	void resetDefault();
 
 	void createFlagSprite();

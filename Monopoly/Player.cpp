@@ -209,3 +209,47 @@ void Player::setSpriteOffsetY(const float offset_y) {
 void Player::setSpritePosition(sf::Vector2f newPos) {
 	player_sprite_.setPosition(newPos);
 }
+
+BuyDecision Player::decideBuy(unsigned int index) {
+	return BuyDecision.BUY;
+}
+
+JailDecision Player::decideJail() {
+	return JailDecision.ROLL;
+}
+
+Decision Player::decideMortgage(unsigned int index) {
+	if(getMoney() <= 0) {
+		return Decision.YES;
+	} else {
+		return Decision.NO;
+	}
+}
+
+Decision Player::decideUnmortgage(unsigned int index) {
+	return Decision.YES;
+}
+
+unsigned int Player::decideAuctionBid(PropertyField& field) {
+	return field.getPrice();
+}
+
+unsigned int Player::decideBuildHouse(StreetField& field) {
+	return 15;
+}
+
+unsigned int Player::decideSellHouse(StreetField& field) {
+	if (getMoney() <= 0) {
+		return 15;
+	} else {
+		return 0;
+	}
+}
+
+Decision Player::decideOfferTrade() {
+	return Decision.NO;
+}
+
+Decision Player::decideAcceptTrade() {
+	return Decision.NO;
+}
