@@ -37,7 +37,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 				new_player.setAiLevel(it->level);
 				new_player.setId(playerId);
 				players_.push_back(std::make_shared<Player>(new_player));
-			 }
+			}
 			//  else {
 			// 	isAiGameOnly_ = true;
 			// 	AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
