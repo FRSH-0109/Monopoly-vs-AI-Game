@@ -1,13 +1,13 @@
 OPT ?= -O3
 LIBS :=-L SFML_Monopoly/lib/ -l sfml-graphics -l sfml-window -l sfml-system
 CXX := g++ -std=c++17 -Wextra -Wall -Wpedantic
-INC := -I Monopoly/ -I Monopoly/tinyai/src/
+INC := -I Monopoly/
 SRC := Monopoly/*.o
-OBJ := Monopoly/Player.o Monopoly/main.o Monopoly/gameEngine.o Monopoly/button.o Monopoly/activeScreen.o Monopoly/contextWindow.o Monopoly/monopolyGameEngine.o Monopoly/Field.o Monopoly/Board.o Monopoly/GameScreen.o Monopoly/NotificationWall.o Monopoly/Withdraw.o Monopoly/Chance.o
+OBJ := Monopoly/Player.o Monopoly/main.o Monopoly/GameEngine.o Monopoly/Button.o Monopoly/ActiveScreen.o Monopoly/ContextWindow.o Monopoly/MonopolyGameEngine.o Monopoly/Field.o Monopoly/Board.o Monopoly/GameScreen.o Monopoly/NotificationWall.o Monopoly/Withdraw.o Monopoly/Chance.o
 all: monopolyVsAI clean
 tests: monopolyTests
 
-Monopoly/%.o: Monopoly/%.cpp
+Monopoly/%.o: Monopoly/%.cc
 	$(CXX) -c $< -o $@ -I SFML_Monopoly/include $(INC) $(OPT)
 
 monopolyVsAI: $(OBJ)

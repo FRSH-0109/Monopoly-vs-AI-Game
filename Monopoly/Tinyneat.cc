@@ -1,4 +1,4 @@
-#include "tinyneat.h"
+#include "Tinyneat.h"
 
 neat::genome::genome(){};
 

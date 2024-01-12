@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Player.h"
-#include "activeScreen.h"
-#include "monopolyGameEngine.h"
+#include "ActiveScreen.h"
+#include "MonopolyGameEngine.h"
 
 class GameScreen : public ActiveScreen {
 	monopolyGameEngine monopoly_game_engine_;

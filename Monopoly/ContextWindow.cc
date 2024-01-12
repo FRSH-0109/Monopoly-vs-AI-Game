@@ -9,7 +9,7 @@
  *
  */
 
-#include "contextWindow.h"
+#include "ContextWindow.h"
 
 ContextWindow* ContextWindow::contextWindow_ = nullptr;
 

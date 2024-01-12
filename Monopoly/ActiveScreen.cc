@@ -1,4 +1,4 @@
-#include "activeScreen.h"
+#include "ActiveScreen.h"
 
 ActiveScreen::ActiveScreen() {}
 ActiveScreen::~ActiveScreen() {}

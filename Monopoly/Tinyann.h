@@ -10,7 +10,7 @@
 #include <algorithm>
 #include <vector>
 
-#include "tinyneat.h"
+#include "Tinyneat.h"
 
 namespace ann {
 

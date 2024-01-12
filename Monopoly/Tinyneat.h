@@ -10,7 +10,6 @@
  *                                      names in a file "specie_names.dict"
  */
 
-
 #include <iostream>
 #include <fstream>
 #include <vector>

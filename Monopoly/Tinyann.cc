@@ -1,4 +1,4 @@
-#include "tinyann.h"
+#include "Tinyann.h"
 
 double ann::neuralnet::sigmoid(double x) {
 	return 2.0 / (1.0 + std::exp(-4.9 * x)) - 1;

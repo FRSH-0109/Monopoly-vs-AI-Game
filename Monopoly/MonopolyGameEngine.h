@@ -8,7 +8,7 @@
 #include "Chance.h"
 #include "NotificationWall.h"
 #include "Withdraw.h"
-#include "activeScreen.h"
+#include "ActiveScreen.h"
 #include "main.h"
 
 enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };

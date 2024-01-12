@@ -5,12 +5,12 @@
 
 #include <memory>
 #include <vector>
+#include <typeinfo>
+#include <variant>
 #include "GameScreen.h"
-#include "activeScreen.h"
-#include "contextWindow.h"
+#include "ActiveScreen.h"
+#include "ContextWindow.h"
 #include "main.h"
-#include "typeinfo"
-#include "variant"
 
 class GameEngine {
    private:

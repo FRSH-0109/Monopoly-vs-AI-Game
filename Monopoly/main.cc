@@ -8,7 +8,7 @@
  */
 
 #include "SFML/Graphics.hpp"
-#include "gameEngine.h"
+#include "GameEngine.h"
 
 bool AIonly = false;
 

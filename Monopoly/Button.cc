@@ -7,7 +7,7 @@
  *
  */
 
-#include "button.h"
+#include "Button.h"
 
 Button::Button(ScreenEventType type, std::string btnText, sf::Vector2f buttonSize, int charSize) {
 	buttonShape_.setSize(buttonSize);

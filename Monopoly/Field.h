@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include "Player.h"
-#include "contextWindow.h"
+#include "ContextWindow.h"
 #include "main.h"
 
 class HouseException : public std::exception {

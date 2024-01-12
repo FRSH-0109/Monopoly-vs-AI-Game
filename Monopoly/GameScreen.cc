@@ -1,6 +1,6 @@
-#include "GameScreen.h"
 #include <cmath>
 #include <numbers>
+#include "GameScreen.h"
 
 GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettingsList_) {
 	setContextWindow(ContextWindow::GetInstance());

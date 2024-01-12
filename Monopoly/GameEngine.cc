@@ -7,7 +7,7 @@
  *
  */
 
-#include "gameEngine.h"
+#include "GameEngine.h"
 
 GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) {
 	windowWidth_ = WindowWidth;

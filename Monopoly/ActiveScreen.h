@@ -7,8 +7,8 @@
 #include <memory>
 #include <string>
 #include "Player.h"
-#include "button.h"
-#include "contextWindow.h"
+#include "Button.h"
+#include "ContextWindow.h"
 #include "main.h"
 // #include "monopolyGameEngine.h"
 

@@ -1,11 +1,11 @@
 #pragma once
 
 #include <bits/stdc++.h>
-#include <tinyai/src/tinyann.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "Tinyann.h"
 #include "AiAdapter.h"
-#include "contextWindow.h"
+#include "ContextWindow.h"
 #include "main.h"
 
 class Player {

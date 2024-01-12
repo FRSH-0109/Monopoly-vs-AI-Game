@@ -6,9 +6,9 @@
 #include <vector>
 #include "Board.h"
 #include "Field.h"
-#include "Player.h"
-#include "button.h"
+#include "Button.h"
 #include "main.h"
+#include "Player.h"
 
 class Withdraw {
    private:
