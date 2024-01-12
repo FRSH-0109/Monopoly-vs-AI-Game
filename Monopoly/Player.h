@@ -61,7 +61,16 @@ class Player {
 	void setSpriteOffsetY(const float offset_y);
 	void setSpritePosition(sf::Vector2f newPos);
 
-	virtual const unsigned int getTest() { return 0; };
+	virtual unsigned int getTest() { return 0; };
+	virtual BuyDecision decideBuy(unsigned int index);
+	virtual JailDecision decideJail();
+	virtual Decision decideMortgage(unsigned int index);
+	virtual Decision decideUnmortgage(unsigned int index);
+	virtual unsigned int decideAuctionBid(unsigned int price);
+	virtual unsigned int decideBuildHouse();
+	virtual unsigned int decideSellHouse();
+	virtual Decision decideOfferTrade();
+	virtual Decision decideAcceptTrade();
 };
 
 class AiPlayer : public Player {
@@ -70,5 +79,14 @@ class AiPlayer : public Player {
    public:
 	AiPlayer() : Player(){};
 	AiPlayer(unsigned int money) : Player(money){};
-	const unsigned int getTest() { return test_; };
+	unsigned int getTest() { return test_; };
+	BuyDecision decideBuy(unsigned int index);
+	JailDecision decideJail();
+	Decision decideMortgage(unsigned int index);
+	Decision decideUnmortgage(unsigned int index);
+	unsigned int decideAuctionBid(unsigned int price);
+	unsigned int decideBuildHouse();
+	unsigned int decideSellHouse();
+	Decision decideOfferTrade();
+	Decision decideAcceptTrade();
 };

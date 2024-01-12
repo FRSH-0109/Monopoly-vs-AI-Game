@@ -10,7 +10,6 @@ Board::Board(const std::string file_path) {
 	std::ifstream f(file_path);
 	json data = json::parse(f);
 
-	sf::Vector2i position = BOARD_POSITION_;
 	for (auto& element : data) {
 		unsigned int id = element["id"];
 		std::string name = element["name"];
@@ -79,6 +78,8 @@ Board::Board(const std::string file_path) {
 				board_.push_back(new_field);
 				break;
 			}
+			default:
+				break;
 		}
 	}
 	field_number_ = board_.size();
@@ -103,10 +104,9 @@ Board::Board(const std::string file_path) {
 				visited_field.createFlagSprite();
 				break;
 			}
+			default:
+				break;
 		}
-		// if (field_type == STREET || field_type == UTILITY || field_type == STATION) {
-		// 	std::visit([] (PropertyField& visited_field) { visited_field.createFlagSprite(); }, field);
-		// }
 	}
 };
 
@@ -154,7 +154,7 @@ const std::vector<PossibleFields>& Board::getBoard() {
 	return board_;
 };
 
-const unsigned int Board::getFieldNumber() {
+unsigned int Board::getFieldNumber() {
 	return field_number_;
 };
 

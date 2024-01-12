@@ -29,15 +29,15 @@ ContextWindow* Field::getContextWindow() {
 	return contextWindow_;
 }
 
-const unsigned int HouseException::getInvalidNumber() {
+unsigned int HouseException::getInvalidNumber() {
 	return invalid_number_;
 };
 
-const unsigned int Field::getId() {
+unsigned int Field::getId() {
 	return id_;
 };
 
-const FieldType Field::getType() {
+FieldType Field::getType() {
 	return type_;
 };
 
@@ -49,15 +49,15 @@ const std::string Field::getGraphicPath() {
 	return graphic_path_;
 };
 
-const unsigned int Field::getWidth() {
+unsigned int Field::getWidth() {
 	return width_;
 };
 
-const unsigned int Field::getHeight() {
+unsigned int Field::getHeight() {
 	return height_;
 };
 
-const float Field::getRotation() {
+float Field::getRotation() {
 	return rotation_;
 };
 
@@ -119,7 +119,7 @@ void Field::setPosition(sf::Vector2i pos) {
 	position_ = pos;
 }
 
-const unsigned int PropertyField::getPrice() {
+unsigned int PropertyField::getPrice() {
 	return price_;
 };
 
@@ -127,15 +127,15 @@ const std::vector<unsigned int> PropertyField::getGroupMembers() {
 	return group_members_;
 };
 
-const unsigned int PropertyField::getMortgage() {
+unsigned int PropertyField::getMortgage() {
 	return Mortgage_;
 };
 
-const bool PropertyField::getIsMortgaged() {
+bool PropertyField::getIsMortgaged() {
 	return is_Mortgaged_;
 };
 
-const unsigned int PropertyField::getUnMortgageValue() {
+unsigned int PropertyField::getUnMortgageValue() {
 	return static_cast<int>(round(1.1 * Mortgage_));
 };
 
@@ -161,8 +161,8 @@ void PropertyField::resetDefault() {
 };
 
 void PropertyField::createFlagSprite() {
-	float flag_x_pos;
-	float flag_y_pos;
+	float flag_x_pos = 0;
+	float flag_y_pos = 0;
 	unsigned int field_id = this->getId();
 	float field_width = (float)this->getWidth();
 	float field_height = (float)this->getHeight();
@@ -170,7 +170,7 @@ void PropertyField::createFlagSprite() {
 	const sf::Vector2i& field_pos = this->getPosition();
 	owner_flag_ = sf::RectangleShape(sf::Vector2f(field_width - 20.0f, field_height * 0.1f));
 
-	if (field_id >= 0 && field_id <= 10) {
+	if (field_id <= 10) {
 		flag_x_pos = (float)field_pos.x + 10.0f;
 		flag_y_pos = (float)field_pos.y + field_height + 8.0f;
 	} else if (field_id > 10 && field_id <= 20) {
@@ -198,19 +198,19 @@ const std::map<StreetTiers, unsigned int> StreetField::getRentValues() {
 	return rent_values_;
 };
 
-const unsigned int StreetField::getHousePrice() {
+unsigned int StreetField::getHousePrice() {
 	return house_price_;
 };
 
-const unsigned int StreetField::getHotelPrice() {
+unsigned int StreetField::getHotelPrice() {
 	return hotel_price_;
 };
 
-const unsigned int StreetField::getHouseNumber() {
+unsigned int StreetField::getHouseNumber() {
 	return house_number_;
 };
 
-const bool StreetField::getIsHotel() {
+bool StreetField::getIsHotel() {
 	return is_hotel_;
 }
 
@@ -241,6 +241,6 @@ const std::map<UtilityTiers, unsigned int> UtilityField::getRentMultipliers() {
 	return rent_multipliers_;
 };
 
-const unsigned int TaxField::getTaxValue() {
+unsigned int TaxField::getTaxValue() {
 	return tax_value_;
 };

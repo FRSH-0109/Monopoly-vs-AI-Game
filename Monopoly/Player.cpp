@@ -209,3 +209,91 @@ void Player::setSpriteOffsetY(const float offset_y) {
 void Player::setSpritePosition(sf::Vector2f newPos) {
 	player_sprite_.setPosition(newPos);
 }
+
+BuyDecision Player::decideBuy(unsigned int index) {
+	return BUY;
+}
+
+JailDecision Player::decideJail() {
+	return ROLL;
+}
+
+Decision Player::decideMortgage(unsigned int index) {
+	if (getMoney() <= 0) {
+		return YES;
+	} else {
+		return NO;
+	}
+}
+
+Decision Player::decideUnmortgage(unsigned int index) {
+	return YES;
+}
+
+unsigned int Player::decideAuctionBid(unsigned int price) {
+	return price;
+}
+
+unsigned int Player::decideBuildHouse() {
+	return 15;
+}
+
+unsigned int Player::decideSellHouse() {
+	if (getMoney() <= 0) {
+		return 15;
+	} else {
+		return 0;
+	}
+}
+
+Decision Player::decideOfferTrade() {
+	return NO;
+}
+
+Decision Player::decideAcceptTrade() {
+	return NO;
+}
+
+BuyDecision AiPlayer::decideBuy(unsigned int index) {
+	return BUY;
+}
+
+JailDecision AiPlayer::decideJail() {
+	return ROLL;
+}
+
+Decision AiPlayer::decideMortgage(unsigned int index) {
+	if (getMoney() <= 0) {
+		return YES;
+	} else {
+		return NO;
+	}
+}
+
+Decision AiPlayer::decideUnmortgage(unsigned int index) {
+	return YES;
+}
+
+unsigned int AiPlayer::decideAuctionBid(unsigned int price) {
+	return price;
+}
+
+unsigned int AiPlayer::decideBuildHouse() {
+	return 15;
+}
+
+unsigned int AiPlayer::decideSellHouse() {
+	if (getMoney() <= 0) {
+		return 15;
+	} else {
+		return 0;
+	}
+}
+
+Decision AiPlayer::decideOfferTrade() {
+	return NO;
+}
+
+Decision AiPlayer::decideAcceptTrade() {
+	return NO;
+}

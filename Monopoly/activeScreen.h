@@ -23,7 +23,6 @@ class ActiveScreen {
 	ActiveScreen();
 	virtual ~ActiveScreen();
 	virtual ScreenEventType worker() = 0;
-	virtual void pollForEvents(sf::Event& event) = 0;
 	virtual void draw() = 0;
 
 	sf::Font& getFont();
@@ -50,9 +49,8 @@ class GameMenuScreen : public ActiveScreen {
 	~GameMenuScreen();
 	void gameMenuCreate();
 	ScreenEventType worker();
-	void pollForEvents(sf::Event& event);
 
-	void setPlayerSettings(int index, bool isNone, bool isHuman, int level);
+	void setPlayerSettings(unsigned int index, bool isNone, bool isHuman, int level);
 
 	void buttonClickHandle(std::shared_ptr<Button> buttonPtr);
 	void setOtherButtonsInactive(std::shared_ptr<Button> buttonPtr);
@@ -71,6 +69,5 @@ class MainMenuScreen : public ActiveScreen {
 	~MainMenuScreen();
 	void mainMenuCreate();
 	ScreenEventType worker();
-	void pollForEvents(sf::Event& event);
 	void draw();
 };

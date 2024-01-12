@@ -46,6 +46,8 @@ void GameEngine::pollForEvents(sf::Event& event) {
 			getContextWindow()->getWindow().setView(this->getContextWindow()->getView());
 			// and align shape
 			break;
+		default:
+			break;
 	}
 }
 

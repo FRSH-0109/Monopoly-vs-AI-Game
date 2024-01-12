@@ -6,7 +6,7 @@ class DimensionException : public std::exception {
    public:
 	DimensionException(unsigned int dimension) : bad_dimension_(dimension){};
 	DimensionException(const DimensionException& e) throw() : bad_dimension_(e.bad_dimension_){};
-	const unsigned int getBadDimension() { return bad_dimension_; };
+	unsigned int getBadDimension() { return bad_dimension_; };
 };
 
 class RotationException : public std::exception {
@@ -15,7 +15,7 @@ class RotationException : public std::exception {
    public:
 	RotationException(float rotation) : bad_rotation_(rotation){};
 	RotationException(const RotationException& e) throw() : bad_rotation_(e.bad_rotation_){};
-	const float getBadRotation() { return bad_rotation_; };
+	float getBadRotation() { return bad_rotation_; };
 };
 
 class SpriteOffsetException : public std::exception {
@@ -24,7 +24,7 @@ class SpriteOffsetException : public std::exception {
    public:
 	SpriteOffsetException(float offset) : bad_offset_(offset){};
 	SpriteOffsetException(const SpriteOffsetException& e) throw() : bad_offset_(e.bad_offset_){};
-	const float getBadOffset() { return bad_offset_; };
+	float getBadOffset() { return bad_offset_; };
 };
 
 struct playerSettings {
@@ -86,3 +86,9 @@ enum StreetTiers { NO_HOUSES, ONE_HOUSE, TWO_HOUESES, THREE_HOUSES, FOUR_HOUSES,
 enum StationTiers { ONE_STATION, TWO_STATIONS, THREE_STATIONS, FOUR_STATIONS };
 
 enum UtilityTiers { ONE_UTILITY, TWO_UTILITIES };
+
+enum Decision { YES, NO };
+
+enum JailDecision { ROLL, PAY, CARD };
+
+enum BuyDecision { BUY, AUCTION };
