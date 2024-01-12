@@ -14,9 +14,10 @@
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "Tinyann.h"
+#include "Tinyneat.h"
 #include "AiAdapter.h"
 #include "ContextWindow.h"
-#include "Tinyann.h"
 #include "main.h"
 
 class Player {
@@ -92,10 +93,12 @@ class AiPlayer : public Player {
 	unsigned int test_ = 3;
 
    public:
-	AiPlayer() : Player(){};
-	AiPlayer(unsigned int money) : Player(money){};
+	AiPlayer() : Player() {};
+	AiPlayer(unsigned int money) : Player(money) {};
+	AiAdapter& getAdapter();
+	ann::neuralnet& getNeuralNetwork();
 	unsigned int getTest() { return test_; };
-	BuyDecision decideBuy(unsigned int index);
+	BuyDecision decideBuy(unsigned int index) override;
 	JailDecision decideJail();
 	Decision decideMortgage(unsigned int index);
 	Decision decideUnmortgage(unsigned int index);

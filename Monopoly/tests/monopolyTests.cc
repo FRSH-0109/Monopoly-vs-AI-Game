@@ -13,11 +13,11 @@
 #include "../AiAdapter.h"
 #include "../Board.h"
 #include "../Field.h"
-#include "../activeScreen.h"
-#include "../contextWindow.h"
-#include "../gameEngine.h"
+#include "../ActiveScreen.h"
+#include "../ContextWindow.h"
+#include "../GameEngine.h"
 #include "../main.h"
-#include "../monopolyGameEngine.h"
+#include "../MonopolyGameEngine.h"
 #include "catch2/src/catch2/catch_all.hpp"
 
 using namespace std;
@@ -44,8 +44,8 @@ TEST_CASE("ActiveScreen classes") {
 	MainMenuScreen mainMenu = MainMenuScreen();
 	GameMenuScreen gameMenu = GameMenuScreen();
 
-	REQUIRE(mainMenu.getScreenType() == MainMenu);
-	REQUIRE(gameMenu.getScreenType() == GameMenu);
+	REQUIRE(mainMenu.getScreenType() == MAIN_MENU);
+	REQUIRE(gameMenu.getScreenType() == GAME_MENU);
 
 	SECTION("ActiveScreen getContextWindow") {
 		ContextWindow* contextWindow = ContextWindow::GetInstance();
@@ -70,7 +70,7 @@ TEST_CASE("monopolyGameEngine") {
 
 	playerSettings player_2_settings;
 	player_2_settings.isNone = false;
-	player_2_settings.isHuman = false;
+	player_2_settings.isHuman = true;
 	player_2_settings.level = 2;
 	std::shared_ptr<playerSettings> player_2_settings_ptr = std::make_shared<playerSettings>(player_2_settings);
 
@@ -205,6 +205,7 @@ TEST_CASE("monopolyGameEngine") {
 			StreetField& test_field_1 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(1));
 			test_field_1.setOwner(monopoly_engine.getPlayers()[2]);
 			monopoly_engine.getPlayers()[2]->addFieldOwnedId(1);
+			std::cout << "I'm alive" << std::endl;
 			StreetField& test_field_3 = std::get<StreetField>(monopoly_engine.getBoard()->getFieldById(3));
 			test_field_3.setOwner(monopoly_engine.getPlayers()[0]);
 			monopoly_engine.getPlayers()[0]->addFieldOwnedId(3);
@@ -737,7 +738,7 @@ TEST_CASE("PropertyField class") {
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
 	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getIsMortgaged() == false);
-	REQUIRE(test_field.getUnMortgageValue() == 220);
+	REQUIRE(test_field.getUnmortgageValue() == 220);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	SECTION("PropertyField setters") {
@@ -815,7 +816,7 @@ TEST_CASE("StreetField class") {
 	REQUIRE(test_field.getHouseNumber() == 0);
 	REQUIRE(test_field.getIsHotel() == false);
 	REQUIRE(test_field.getIsMortgaged() == false);
-	REQUIRE(test_field.getUnMortgageValue() == 220);
+	REQUIRE(test_field.getUnmortgageValue() == 220);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	test_field.getContextWindow();
@@ -933,7 +934,7 @@ TEST_CASE("StationField class") {
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
 	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getIsMortgaged() == false);
-	REQUIRE(test_field.getUnMortgageValue() == 110);
+	REQUIRE(test_field.getUnmortgageValue() == 110);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	SECTION("StationField setters") {
@@ -1004,7 +1005,7 @@ TEST_CASE("Utility class") {
 	REQUIRE(test_field.getGroupMembers() == TEST_GROUP_MEMBERS);
 	REQUIRE(test_field.getMortgage() == TEST_MORTGAGE);
 	REQUIRE(test_field.getIsMortgaged() == false);
-	REQUIRE(test_field.getUnMortgageValue() == 83);
+	REQUIRE(test_field.getUnmortgageValue() == 83);
 	REQUIRE(test_field.getOwner() == nullptr);
 
 	SECTION("UtilityField class setters") {
@@ -1080,30 +1081,30 @@ TEST_CASE("AiAdapter class") {
 	}
 
 	SECTION("convertMoneyValue() method") {
-		REQUIRE(adapter.convertMoneyValue(0.5f) == 3000.0f);
-		REQUIRE(adapter.convertMoneyValue(1.0f) == 6000.0f);
+		REQUIRE(adapter.convertMoneyValue(0.5) == 3000.0);
+		REQUIRE(adapter.convertMoneyValue(1.0) == 6000.0);
 	}
 
 	SECTION("convertHouseValue() method") {
-		REQUIRE(adapter.convertHouseValue(0.0f) == 0.0f);
-		REQUIRE(adapter.convertHouseValue(0.4f) == 0.0f);
-		REQUIRE(adapter.convertHouseValue(0.5f) == 0.0f);
-		REQUIRE(adapter.convertHouseValue(0.75f) == 11.25f);
-		REQUIRE(adapter.convertHouseValue(1.0f) == 15.0f);
+		REQUIRE(adapter.convertHouseValue(0.0) == 0.0);
+		REQUIRE(adapter.convertHouseValue(0.4) == 0.0);
+		REQUIRE(adapter.convertHouseValue(0.5) == 0.0);
+		REQUIRE(adapter.convertHouseValue(0.75) == 11.25);
+		REQUIRE(adapter.convertHouseValue(1.0) == 15.0);
 	}
 
 	SECTION("convertPosition() method") {
-		REQUIRE(adapter.convertPosition(0) == 0.0f);
-		REQUIRE(adapter.convertPosition(25) >= 0.64f);
-		REQUIRE(adapter.convertPosition(25) <= 0.642f);
-		REQUIRE(adapter.convertPosition(39) == 1.0f);
-		REQUIRE(adapter.convertPosition(50) == 1.0f);
+		REQUIRE(adapter.convertPosition(0) == 0.0);
+		REQUIRE(adapter.convertPosition(25) >= 0.64);
+		REQUIRE(adapter.convertPosition(25) <= 0.642);
+		REQUIRE(adapter.convertPosition(39) == 1.0);
+		REQUIRE(adapter.convertPosition(50) == 1.0);
 	}
 
 	SECTION("convertCard() method") {
-		REQUIRE(adapter.convertCard(1) == 1.0f);
-		REQUIRE(adapter.convertCard(0) == 0.0f);
-		REQUIRE(adapter.convertCard(2) == 1.0f);
+		REQUIRE(adapter.convertCard(1) == 1.0);
+		REQUIRE(adapter.convertCard(0) == 0.0);
+		REQUIRE(adapter.convertCard(2) == 1.0);
 	}
 
 	SECTION("convertHouse() method") {
@@ -1127,14 +1128,14 @@ TEST_CASE("AiAdapter class") {
 			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
 			TEST_MORTGAGE);
 
-		REQUIRE(adapter.convertHouse(test_field) == 0.0f);
+		REQUIRE(adapter.convertHouse(test_field.getIsHotel(), test_field.getHouseNumber()) == 0.0);
 
 		test_field.setHouseNumber(3);
-		REQUIRE(adapter.convertHouse(test_field) == 0.6f);
+		REQUIRE(adapter.convertHouse(test_field.getIsHotel(), test_field.getHouseNumber()) == 0.6);
 
 		test_field.setHouseNumber(4);
 		test_field.setIsHotel(true);
-		REQUIRE(adapter.convertHouse(test_field) == 1.0f);
+		REQUIRE(adapter.convertHouse(test_field.getIsHotel(), test_field.getHouseNumber()) == 1.0);
 	}
 
 	SECTION("setTurn() method") {
@@ -1284,13 +1285,13 @@ TEST_CASE("AiAdapter class") {
 			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
 			TEST_MORTGAGE);
 
-		adapter.setHouse(test_field);
-		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field));
+		adapter.setHouse(test_field.getIsHotel(), test_field.getHouseNumber(), test_field.getId());
+		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field.getIsHotel(), test_field.getHouseNumber()));
 
 		test_field.setHouseNumber(4);
 		test_field.setIsHotel(true);
-		adapter.setHouse(test_field);
-		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field));
+		adapter.setHouse(test_field.getIsHotel(), test_field.getHouseNumber(), test_field.getId());
+		CHECK(adapter.getInputs()[76] == adapter.convertHouse(test_field.getIsHotel(), test_field.getHouseNumber()));
 	}
 }
 
@@ -1376,6 +1377,7 @@ TEST_CASE("Player class") {
 	SECTION("virtual methods for AiPlayer") {
 		REQUIRE(PLAYER1.decideBuy(3) == BUY);
 		REQUIRE(PLAYER1.decideJail() == ROLL);
+		PLAYER1.setMoney(1000);
 		REQUIRE(PLAYER1.decideMortgage(6) == NO);
 		PLAYER1.setMoney(0);
 		REQUIRE(PLAYER1.decideMortgage(6) == YES);
@@ -1402,11 +1404,11 @@ TEST_CASE("Player class") {
 			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
 			TEST_MORTGAGE);
 
-		REQUIRE(PLAYER1.decideAuctionBid(TEST_FIELD) == TEST_FIELD.getPrice());
-		REQUIRE(PLAYER1.decideBuildHouse(TEST_FIELD) == 15);
-		REQUIRE(PLAYER1.decideSellHouse(TEST_FIELD) == 0);
+		REQUIRE(PLAYER1.decideAuctionBid(TEST_FIELD.getPrice()) == TEST_FIELD.getPrice());
+		REQUIRE(PLAYER1.decideBuildHouse() == 15);
+		REQUIRE(PLAYER1.decideSellHouse() == 0);
 		PLAYER1.setMoney(0);
-		REQUIRE(PLAYER1.decideSellHouse(TEST_FIELD) == 15);
+		REQUIRE(PLAYER1.decideSellHouse() == 15);
 		PLAYER1.setMoney(1500);
 		REQUIRE(PLAYER1.decideOfferTrade() == NO);
 		REQUIRE(PLAYER1.decideAcceptTrade() == NO);

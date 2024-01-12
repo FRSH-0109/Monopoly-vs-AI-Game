@@ -264,8 +264,24 @@ Decision Player::decideAcceptTrade() {
 	return NO;
 }
 
+AiAdapter& AiPlayer::getAdapter() {
+	return adapter_;
+}
+
+ann::neuralnet& AiPlayer::getNeuralNetwork() {
+	return neural_network_;
+}
+
 BuyDecision AiPlayer::decideBuy(unsigned int index) {
-	return BUY;
+	std::vector<double> Y;
+	std::vector<double> inputs = adapter_.getInputs();
+	neural_network_.evaluate(inputs, Y);
+
+	if (Y[0] > 0.5f) {
+		return BUY;
+	} else {
+		return RESIGN;
+	}
 }
 
 JailDecision AiPlayer::decideJail() {

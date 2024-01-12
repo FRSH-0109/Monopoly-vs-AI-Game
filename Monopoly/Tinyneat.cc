@@ -18,11 +18,11 @@ neat::genome::genome(network_info_container& info, mutation_rate_container& rate
 	max_neuron = network_info.functional_nodes;
 }
 
-double pool::disjoint(const genome& g1, const genome& g2) {
+double neat::pool::disjoint(const genome& g1, const genome& g2) {
 	auto it1 = g1.genes.begin();
 	auto it2 = g2.genes.begin();
 
-	unsigned int neat::pool::disjoint_count = 0;
+	unsigned int disjoint_count = 0;
 	for (; it1 != g1.genes.end(); it1++)
 		if (g2.genes.find((*it1).second.innovation_num) == g2.genes.end())
 			disjoint_count++;
@@ -34,7 +34,7 @@ double pool::disjoint(const genome& g1, const genome& g2) {
 	return (1. * disjoint_count) / (1. * std::max(g1.genes.size(), g2.genes.size()));
 }
 
-genome neat::pool::crossover(const genome& g1, const genome& g2) {
+neat::genome neat::pool::crossover(const genome& g1, const genome& g2) {
 	// Make sure g1 has the higher fitness, so we will include only disjoint/excess
 	// genes from the first genome.
 	if (g2.fitness > g1.fitness)
@@ -351,7 +351,7 @@ void neat::pool::cull_species(bool cut_to_one) {
 	}
 }
 
-genome neat::pool::breed_child(specie& s) {
+neat::genome neat::pool::breed_child(specie& s) {
 	genome child(this->network_info, this->mutation_rates);
 	std::uniform_real_distribution<double> distributor(0.0, 1.0);
 	std::uniform_int_distribution<unsigned int> choose_genome(0, s.genomes.size() - 1);

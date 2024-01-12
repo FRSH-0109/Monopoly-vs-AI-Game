@@ -3,13 +3,13 @@ project(MonopolyVsAI LANGUAGES CXX)
 
 find_package(Catch2 REQUIRED)
 # These tests can use the Catch2-provided main
-set(SOURCES monopolyTests.cpp ../gameEngine.cpp ../gameEngine.h ../monopolyGameEngine.cpp ../monopolyGameEngine.h ../activeScreen.cpp
-../activeScreen.h ../button.cpp ../button.h ../contextWindow.cpp ../contextWindow.h ../Field.h ../Field.cpp ../Board.h ../Board.cpp
-../Player.h ../Player.cpp ../GameScreen.h ../GameScreen.cpp ../NotificationWall.cpp ../NotificationWall.h ../Withdraw.h ../Withdraw.cpp
-../AiAdapter.h ../AiAdapter.cpp ../Chance.h ../Chance.cpp)
+set(SOURCES monopolyTests.cc ../GameEngine.cc ../GameEngine.h ../MonopolyGameEngine.cc ../MonopolyGameEngine.h ../ActiveScreen.cc
+../ActiveScreen.h ../Button.cc ../Button.h ../ContextWindow.cc ../ContextWindow.h ../Field.h ../Field.cc ../Board.h ../Board.cc
+../Player.h ../Player.cc ../GameScreen.h ../GameScreen.cc ../NotificationWall.cc ../NotificationWall.h ../Withdraw.h ../Withdraw.cc
+../AiAdapter.h ../AiAdapter.cc ../Chance.h ../Chance.cc)
 #set(HEADER_FILES ../gameEngine.h)
 
-#add_library(gameEngineLib ./gameEngine.cpp ../gameEngine.h)
+#add_library(gameEngineLib ./gameEngine.cc ../gameEngine.h)
 #target_include_directories(gameEngineLib PRIVATE .)
 add_executable(tests ${SOURCES})
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
@@ -25,5 +25,5 @@ target_link_directories(tests PRIVATE ../../SFML_Monopoly/lib)
 target_link_directories(tests PRIVATE ../../SFML_Monopoly/bin)
 
 # # These tests need their own main
-# add_executable(custom-main-tests test.cpp test-main.cpp)
+# add_executable(custom-main-tests test.cc test-main.cc)
 # target_link_libraries(custom-main-tests PRIVATE Catch2::Catch2)
