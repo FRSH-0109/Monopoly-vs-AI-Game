@@ -254,16 +254,43 @@ Decision Player::decideAcceptTrade() {
 	return NO;
 }
 
+AiAdapter& AiPlayer::getAdapter() {
+	return adapter_;
+}
+
+ann::neuralnet& AiPlayer::getNeuralNetwork() {
+	return neural_network_;
+}
+
 BuyDecision AiPlayer::decideBuy(unsigned int index) {
-	return BUY;
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	if (Y[0] > 0.5f) {
+		return BUY;
+	} else {
+		return RESIGN;
+	}
 }
 
 JailDecision AiPlayer::decideJail() {
-	return ROLL;
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	if (Y[1] < 0.333f) {
+		return CARD;
+	} else if (Y[1] < 0.666f) {
+		return ROLL;
+	} else {
+		return PAY;
+	}
 }
 
 Decision AiPlayer::decideMortgage(unsigned int index) {
-	if (getMoney() <= 0) {
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	if (Y[2] > 0.5f) {
 		return YES;
 	} else {
 		return NO;
@@ -271,29 +298,64 @@ Decision AiPlayer::decideMortgage(unsigned int index) {
 }
 
 Decision AiPlayer::decideUnmortgage(unsigned int index) {
-	return YES;
-}
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
 
-unsigned int AiPlayer::decideAuctionBid(unsigned int price) {
-	return price;
-}
-
-unsigned int AiPlayer::decideBuildHouse() {
-	return 15;
-}
-
-unsigned int AiPlayer::decideSellHouse() {
-	if (getMoney() <= 0) {
-		return 15;
+	if (Y[3] > 0.5f) {
+		return YES;
 	} else {
-		return 0;
+		return NO;
 	}
 }
 
+unsigned int AiPlayer::decideAuctionBid(unsigned int price) {
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	double result = Y[4];
+	double money = adapter_.convertMoneyValue(result);
+
+	return (unsigned int)money;
+}
+
+unsigned int AiPlayer::decideBuildHouse() {
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	double result = Y[5];
+	double money = adapter_.convertHouseValue(result);
+
+	return (unsigned int)money;
+}
+
+unsigned int AiPlayer::decideSellHouse() {
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	double result = Y[6];
+	double money = adapter_.convertHouseValue(result);
+
+	return (unsigned int)money;
+}
+
 Decision AiPlayer::decideOfferTrade() {
-	return NO;
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	if (Y[7] > 0.5f) {
+		return YES;
+	} else {
+		return NO;
+	}
 }
 
 Decision AiPlayer::decideAcceptTrade() {
-	return NO;
+	std::vector<double> Y;
+	neural_network_.evaluate(adapter_.getInputs(), Y);
+
+	if (Y[8] > 0.5f) {
+		return YES;
+	} else {
+		return NO;
+	}
 }

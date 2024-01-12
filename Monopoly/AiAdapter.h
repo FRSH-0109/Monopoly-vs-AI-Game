@@ -3,7 +3,7 @@
 #include <algorithm>
 
 class AiAdapter {
-	std::vector<float> networkInputs_;
+	std::vector<double> networkInputs_;
 	const unsigned int TURN = 0;
 	const unsigned int POS = 4;
 	const unsigned int MONEY = 8;
@@ -22,13 +22,13 @@ class AiAdapter {
 
    public:
 	AiAdapter();
-	std::vector<float>& getInputs();
-	float convertMoney(unsigned int money);
-	float convertMoneyValue(float value);
-	float convertHouseValue(float value);
-	float convertPosition(unsigned int position);
-	float convertCard(unsigned int cards);
-	float convertHouse(bool isHotel, unsigned int houseNumber);
+	std::vector<double>& getInputs();
+	double convertMoney(unsigned int money);
+	double convertMoneyValue(float value);
+	double convertHouseValue(float value);
+	double convertPosition(unsigned int position);
+	double convertCard(unsigned int cards);
+	double convertHouse(bool isHotel, unsigned int houseNumber);
 	void setTurn(unsigned int index);
 	void setSelection(unsigned int index);
 	void setSelectionState(unsigned int index, int state);

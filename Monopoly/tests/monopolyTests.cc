@@ -1074,36 +1074,36 @@ TEST_CASE("AiAdapter class") {
 	AiAdapter adapter;
 
 	SECTION("convertMoney() method") {
-		REQUIRE(adapter.convertMoney(3000) == 0.5f);
+		REQUIRE(adapter.convertMoney(3000) == 0.5);
 		REQUIRE(adapter.convertMoney(0) == 0);
-		REQUIRE(adapter.convertMoney(8000) == 1.0f);
+		REQUIRE(adapter.convertMoney(8000) == 1.0);
 	}
 
 	SECTION("convertMoneyValue() method") {
-		REQUIRE(adapter.convertMoneyValue(0.5f) == 3000.0f);
-		REQUIRE(adapter.convertMoneyValue(1.0f) == 6000.0f);
+		REQUIRE(adapter.convertMoneyValue(0.5) == 3000.0);
+		REQUIRE(adapter.convertMoneyValue(1.0) == 6000.0);
 	}
 
 	SECTION("convertHouseValue() method") {
-		REQUIRE(adapter.convertHouseValue(0.0f) == 0.0f);
-		REQUIRE(adapter.convertHouseValue(0.4f) == 0.0f);
-		REQUIRE(adapter.convertHouseValue(0.5f) == 0.0f);
-		REQUIRE(adapter.convertHouseValue(0.75f) == 11.25f);
-		REQUIRE(adapter.convertHouseValue(1.0f) == 15.0f);
+		REQUIRE(adapter.convertHouseValue(0.0) == 0.0);
+		REQUIRE(adapter.convertHouseValue(0.4) == 0.0);
+		REQUIRE(adapter.convertHouseValue(0.5) == 0.0);
+		REQUIRE(adapter.convertHouseValue(0.75) == 11.25);
+		REQUIRE(adapter.convertHouseValue(1.0) == 15.0);
 	}
 
 	SECTION("convertPosition() method") {
-		REQUIRE(adapter.convertPosition(0) == 0.0f);
-		REQUIRE(adapter.convertPosition(25) >= 0.64f);
-		REQUIRE(adapter.convertPosition(25) <= 0.642f);
-		REQUIRE(adapter.convertPosition(39) == 1.0f);
-		REQUIRE(adapter.convertPosition(50) == 1.0f);
+		REQUIRE(adapter.convertPosition(0) == 0.0);
+		REQUIRE(adapter.convertPosition(25) >= 0.64);
+		REQUIRE(adapter.convertPosition(25) <= 0.642);
+		REQUIRE(adapter.convertPosition(39) == 1.0);
+		REQUIRE(adapter.convertPosition(50) == 1.0);
 	}
 
 	SECTION("convertCard() method") {
-		REQUIRE(adapter.convertCard(1) == 1.0f);
-		REQUIRE(adapter.convertCard(0) == 0.0f);
-		REQUIRE(adapter.convertCard(2) == 1.0f);
+		REQUIRE(adapter.convertCard(1) == 1.0);
+		REQUIRE(adapter.convertCard(0) == 0.0);
+		REQUIRE(adapter.convertCard(2) == 1.0);
 	}
 
 	SECTION("convertHouse() method") {
@@ -1127,73 +1127,73 @@ TEST_CASE("AiAdapter class") {
 			TEST_POSITION, TEST_PRICE, TEST_HOUSE_PRICE, TEST_HOTEL_PRICE, TEST_RENT, TEST_GROUP_MEMBERS,
 			TEST_MORTGAGE);
 
-		REQUIRE(adapter.convertHouse(test_field) == 0.0f);
+		REQUIRE(adapter.convertHouse(test_field) == 0.0);
 
 		test_field.setHouseNumber(3);
-		REQUIRE(adapter.convertHouse(test_field) == 0.6f);
+		REQUIRE(adapter.convertHouse(test_field) == 0.6);
 
 		test_field.setHouseNumber(4);
 		test_field.setIsHotel(true);
-		REQUIRE(adapter.convertHouse(test_field) == 1.0f);
+		REQUIRE(adapter.convertHouse(test_field) == 1.0);
 	}
 
 	SECTION("setTurn() method") {
 		adapter.setTurn(0);
-		CHECK(adapter.getInputs()[0] == 1.0f);
+		CHECK(adapter.getInputs()[0] == 1.0);
 
 		adapter.setTurn(1);
-		CHECK(adapter.getInputs()[1] == 1.0f);
+		CHECK(adapter.getInputs()[1] == 1.0);
 
 		adapter.setTurn(2);
-		CHECK(adapter.getInputs()[2] == 1.0f);
+		CHECK(adapter.getInputs()[2] == 1.0);
 
 		adapter.setTurn(3);
-		CHECK(adapter.getInputs()[3] == 1.0f);
+		CHECK(adapter.getInputs()[3] == 1.0);
 	}
 
 	SECTION("setSelection() method") {
 		adapter.setSelection(1);
-		CHECK(adapter.getInputs()[98] == 1.0f);
+		CHECK(adapter.getInputs()[98] == 1.0);
 
 		adapter.setSelection(4);
-		CHECK(adapter.getInputs()[98] == 0.0f);
-		CHECK(adapter.getInputs()[97] == 1.0f);
+		CHECK(adapter.getInputs()[98] == 0.0);
+		CHECK(adapter.getInputs()[97] == 1.0);
 
 		adapter.setSelection(15);
-		CHECK(adapter.getInputs()[97] == 0.0f);
-		CHECK(adapter.getInputs()[98 + 10] == 1.0f);
+		CHECK(adapter.getInputs()[97] == 0.0);
+		CHECK(adapter.getInputs()[98 + 10] == 1.0);
 	}
 
 	SECTION("setSelectionState() method") {
 		adapter.setSelectionState(5, 1);
-		CHECK(adapter.getInputs()[100] == 1.0f);
+		CHECK(adapter.getInputs()[100] == 1.0);
 
 		adapter.setSelectionState(2, 1);
-		CHECK(adapter.getInputs()[97] == 1.0f);
+		CHECK(adapter.getInputs()[97] == 1.0);
 
 		adapter.setSelectionState(15, 0);
-		CHECK(adapter.getInputs()[98 + 10] == 0.0f);
+		CHECK(adapter.getInputs()[98 + 10] == 0.0);
 	}
 
 	SECTION("setMoneyContext() method") {
 		adapter.setMoneyContext(0);
-		CHECK(adapter.getInputs()[126] == 0.0f);
+		CHECK(adapter.getInputs()[126] == 0.0);
 
 		adapter.setMoneyContext(1);
-		CHECK(adapter.getInputs()[126] == 1.0f);
+		CHECK(adapter.getInputs()[126] == 1.0);
 	}
 
 	SECTION("clearSelectionState() method") {
 		adapter.setSelectionState(5, 1);
 		adapter.setSelectionState(6, 1);
 		adapter.setSelectionState(15, 1);
-		CHECK(adapter.getInputs()[100] == 1.0f);
-		CHECK(adapter.getInputs()[101] == 1.0f);
-		CHECK(adapter.getInputs()[108] == 1.0f);
+		CHECK(adapter.getInputs()[100] == 1.0);
+		CHECK(adapter.getInputs()[101] == 1.0);
+		CHECK(adapter.getInputs()[108] == 1.0);
 
 		adapter.clearSelectionState();
 		for (int i = 98; i < 98 + 29; ++i) {
-			CHECK(adapter.getInputs()[i] == 0.0f);
+			CHECK(adapter.getInputs()[i] == 0.0);
 		}
 	}
 
@@ -1235,10 +1235,10 @@ TEST_CASE("AiAdapter class") {
 		adapter.setJail(1, 0);
 		adapter.setJail(2, 0);
 		adapter.setJail(3, 1);
-		CHECK(adapter.getInputs()[16] == 1.0f);
-		CHECK(adapter.getInputs()[17] == 0.0f);
-		CHECK(adapter.getInputs()[18] == 0.0f);
-		CHECK(adapter.getInputs()[19] == 1.0f);
+		CHECK(adapter.getInputs()[16] == 1.0);
+		CHECK(adapter.getInputs()[17] == 0.0);
+		CHECK(adapter.getInputs()[18] == 0.0);
+		CHECK(adapter.getInputs()[19] == 1.0);
 	}
 
 	SECTION("setOwner() method") {
@@ -1246,10 +1246,10 @@ TEST_CASE("AiAdapter class") {
 		adapter.setOwner(6, 1);
 		adapter.setOwner(11, 2);
 		adapter.setOwner(39, 3);
-		CHECK(adapter.getInputs()[20] == 1.0f / 4.0f);
-		CHECK(adapter.getInputs()[23] == 2.0f / 4.0f);
-		CHECK(adapter.getInputs()[26] == 3.0f / 4.0f);
-		CHECK(adapter.getInputs()[47] == 4.0f / 4.0f);
+		CHECK(adapter.getInputs()[20] == 1.0 / 4.0);
+		CHECK(adapter.getInputs()[23] == 2.0 / 4.0);
+		CHECK(adapter.getInputs()[26] == 3.0 / 4.0);
+		CHECK(adapter.getInputs()[47] == 4.0 / 4.0);
 	}
 
 	SECTION("setMortgage() method") {
@@ -1257,10 +1257,10 @@ TEST_CASE("AiAdapter class") {
 		adapter.setMortgage(3, 1);
 		adapter.setMortgage(5, 0);
 		adapter.setMortgage(8, 1);
-		CHECK(adapter.getInputs()[48] == 0.0f);
-		CHECK(adapter.getInputs()[49] == 1.0f);
-		CHECK(adapter.getInputs()[50] == 0.0f);
-		CHECK(adapter.getInputs()[52] == 1.0f);
+		CHECK(adapter.getInputs()[48] == 0.0);
+		CHECK(adapter.getInputs()[49] == 1.0);
+		CHECK(adapter.getInputs()[50] == 0.0);
+		CHECK(adapter.getInputs()[52] == 1.0);
 	}
 
 	SECTION("setHouse() method") {

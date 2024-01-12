@@ -83,6 +83,8 @@ class AiPlayer : public Player {
    public:
 	AiPlayer() : Player(){};
 	AiPlayer(unsigned int money) : Player(money){};
+	AiAdapter& getAdapter();
+	ann::neuralnet& getNeuralNetwork();
 	unsigned int getTest() { return test_; };
 	BuyDecision decideBuy(unsigned int index);
 	JailDecision decideJail();

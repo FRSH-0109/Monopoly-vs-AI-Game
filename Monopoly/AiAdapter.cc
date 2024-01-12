@@ -4,45 +4,45 @@ AiAdapter::AiAdapter() {
 	networkInputs_.assign(127, 0);
 }
 
-std::vector<float>& AiAdapter::getInputs() {
+std::vector<double>& AiAdapter::getInputs() {
 	return networkInputs_;
 }
 
-float AiAdapter::convertMoney(unsigned int money) {
-	float money_normalized = (float)money / 6000.0f;
-	float money_clamped = std::clamp(money_normalized, 0.0f, 1.0f);
+double AiAdapter::convertMoney(unsigned int money) {
+	double money_normalized = (double)money / 6000.0;
+	double money_clamped = std::clamp(money_normalized, 0.0, 1.0);
 	return money_clamped;
 }
 
-float AiAdapter::convertMoneyValue(float value) {
-	return value * 6000.0f;
+double AiAdapter::convertMoneyValue(float value) {
+	return value * 6000.0;
 }
 
-float AiAdapter::convertHouseValue(float value) {
-	if (value <= 0.5f) {
-		return 0.0f;
+double AiAdapter::convertHouseValue(float value) {
+	if (value <= 0.5) {
+		return 0.0;
 	} else {
-		return value * 15.0f;
+		return value * 15.0;
 	}
 }
 
-float AiAdapter::convertPosition(unsigned int position) {
-	float position_normalized = (float)position / 39.0f;
-	float position_clamped = std::clamp(position_normalized, 0.0f, 1.0f);
+double AiAdapter::convertPosition(unsigned int position) {
+	double position_normalized = (double)position / 39.0;
+	double position_clamped = std::clamp(position_normalized, 0.0, 1.0);
 	return position_clamped;
 }
 
-float AiAdapter::convertCard(unsigned int cards) {
-	float cards_clamped = std::clamp((float)cards, 0.0f, 1.0f);
+double AiAdapter::convertCard(unsigned int cards) {
+	double cards_clamped = std::clamp((double)cards, 0.0, 1.0);
 	return cards_clamped;
 }
 
-float AiAdapter::convertHouse(bool isHotel, unsigned int houseNumber) {
+double AiAdapter::convertHouse(bool isHotel, unsigned int house_number) {
 	if (isHotel) {
-		return 1.0f;
+		return 1.0;
 	} else {
-		float houses_normalized = (float)houseNumber / 5.0f;
-		float houses_clamped = std::clamp(houses_normalized, 0.0f, 1.0f);
+		double houses_normalized = (double)house_number / 5.0;
+		double houses_clamped = std::clamp(houses_normalized, 0.0, 1.0);
 		return houses_clamped;
 	}
 }
@@ -51,9 +51,9 @@ void AiAdapter::setTurn(unsigned int index) {
 	for (int i = 0; i < networkInputs_.size(); ++i) {
 		if (i < 4) {
 			if (i == index) {
-				networkInputs_[i] = 1.0f;
+				networkInputs_[i] = 1.0;
 			} else {
-				networkInputs_[i] = 0.0f;
+				networkInputs_[i] = 0.0;
 			}
 		}
 	}
@@ -62,9 +62,9 @@ void AiAdapter::setTurn(unsigned int index) {
 void AiAdapter::setSelection(unsigned int index) {
 	for (int i = SELECT - 1; i < SELECT + 29; ++i) {
 		if (i == SELECT + PROPERTIES[index]) {
-			networkInputs_[i] = 1.0f;
+			networkInputs_[i] = 1.0;
 		} else {
-			networkInputs_[i] = 0.0f;
+			networkInputs_[i] = 0.0;
 		}
 	}
 }
@@ -79,7 +79,7 @@ void AiAdapter::setMoneyContext(unsigned int state) {
 
 void AiAdapter::clearSelectionState() {
 	for (int i = SELECT; i < SELECT + 29; ++i) {
-		networkInputs_[i] = 0.0f;
+		networkInputs_[i] = 0.0;
 	}
 }
 
@@ -100,7 +100,7 @@ void AiAdapter::setJail(unsigned int index, unsigned int state) {
 }
 
 void AiAdapter::setOwner(unsigned int property, unsigned int state) {
-	float convert = (state + 1) / 4.0f;
+	float convert = (state + 1) / 4.0;
 
 	networkInputs_[OWNER + PROPERTIES[property]] = convert;
 }
