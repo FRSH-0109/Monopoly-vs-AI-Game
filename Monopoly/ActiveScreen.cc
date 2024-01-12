@@ -1,7 +1,17 @@
+/**
+ * @file ActiveScreen.cc
+ *
+ * @brief Source file handling displayed screens of  project
+ * Base claass is ActiveScreen, then derived class are used to
+ * work with specific screen shown.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "ActiveScreen.h"
 
 ActiveScreen::ActiveScreen() {}
-ActiveScreen::~ActiveScreen() {}
 
 void ActiveScreen::setFont(sf::Font font) {
 	font_ = font;
@@ -58,13 +68,8 @@ void ActiveScreen::setScreenType(ActiveScreenType type) {
 }
 
 MainMenuScreen::MainMenuScreen() {
-	std::cout << "MMS constructor" << std::endl;
-	setScreenType(MainMenu);
+	setScreenType(MAIN_MENU);
 	mainMenuCreate();
-}
-
-MainMenuScreen::~MainMenuScreen() {
-	std::cout << "MMS destructor" << std::endl;
 }
 
 void MainMenuScreen::mainMenuCreate() {
@@ -76,7 +81,7 @@ void MainMenuScreen::mainMenuCreate() {
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonExit(new Button(Exit, "Exit", {200, 100}, 30));
+	std::shared_ptr<Button> buttonExit(new Button(EXIT, "Exit", {200, 100}, 30));
 	buttonExit->setFont(getFont());
 	buttonExit->setPosition({getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 	buttonExit->setInactiveBackColor(sf::Color::Red);
@@ -84,7 +89,7 @@ void MainMenuScreen::mainMenuCreate() {
 	buttonExit->setFocusBackColor(sf::Color::Black);
 	buttonExit->setFocusTextColor(sf::Color::Red);
 
-	std::shared_ptr<Button> buttonPlay(new Button(Play, "Play", {200, 100}, 30));
+	std::shared_ptr<Button> buttonPlay(new Button(PLAY, "Play", {200, 100}, 30));
 	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition({getContextWindow()->getWindow().getSize().x / 2.0f, 100});
 	buttonPlay->setInactiveBackColor(sf::Color::Red);
@@ -104,7 +109,7 @@ void MainMenuScreen::mainMenuCreate() {
 }
 
 ScreenEventType MainMenuScreen::worker() {
-	ScreenEventType eventType = Idle;
+	ScreenEventType eventType = IDLE;
 	for (auto element : getButtons()) {
 		if (element->isMouseOver(getContextWindow()->getWindow())) {
 			element->mouseIsOver();
@@ -125,7 +130,7 @@ ScreenEventType MainMenuScreen::worker() {
 }
 
 ScreenEventType GameMenuScreen::worker() {
-	ScreenEventType eventType = Idle;
+	ScreenEventType eventType = IDLE;
 	for (auto element : getButtons()) {
 		if (element->getIsVisible()) {
 			if (element->isMouseOver(getContextWindow()->getWindow())) {
@@ -152,8 +157,7 @@ ScreenEventType GameMenuScreen::worker() {
 }
 
 GameMenuScreen::GameMenuScreen() {
-	std::cout << "GMS constructor" << std::endl;
-	setScreenType(GameMenu);
+	setScreenType(GAME_MENU);
 	gameMenuCreate();
 
 	std::shared_ptr<playerSettings> player1Settings = std::make_shared<playerSettings>();
@@ -181,10 +185,6 @@ GameMenuScreen::GameMenuScreen() {
 	playerSettingsList_.push_back(player4Settings);
 }
 
-GameMenuScreen::~GameMenuScreen() {
-	std::cout << "GMS destructor" << std::endl;
-}
-
 void GameMenuScreen::gameMenuCreate() {
 	setContextWindow(ContextWindow::GetInstance());
 
@@ -194,7 +194,7 @@ void GameMenuScreen::gameMenuCreate() {
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonPlay(new Button(StartGame, "Start game", {200, 100}, 30));
+	std::shared_ptr<Button> buttonPlay(new Button(START_GAME, "Start game", {200, 100}, 30));
 	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f) - 200, 700});
 	buttonPlay->setInactiveBackColor(sf::Color::Red);
@@ -202,7 +202,7 @@ void GameMenuScreen::gameMenuCreate() {
 	buttonPlay->setFocusBackColor(sf::Color::Black);
 	buttonPlay->setFocusTextColor(sf::Color::Red);
 
-	std::shared_ptr<Button> buttonReturn(new Button(ReturnToMainMenu, "Return", {200, 100}, 30));
+	std::shared_ptr<Button> buttonReturn(new Button(RETURN_TO_MAIN_MENU, "Return", {200, 100}, 30));
 	buttonReturn->setFont(getFont());
 	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f) + 200, 700});
 	buttonReturn->setInactiveBackColor(sf::Color::Red);
@@ -249,55 +249,55 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	sf::Color playerTextColor = sf::Color::Black;
 	;
 
-	ScreenEventType buttonNoneEvent = Idle;
-	ScreenEventType buttonHumanEvent = Idle;
-	ScreenEventType buttonAIEvent = Idle;
-	ScreenEventType buttonAILevel1Event = Idle;
-	ScreenEventType buttonAILevel2Event = Idle;
-	ScreenEventType buttonAILevel3Event = Idle;
+	ScreenEventType buttonNoneEvent = IDLE;
+	ScreenEventType buttonHumanEvent = IDLE;
+	ScreenEventType buttonAIEvent = IDLE;
+	ScreenEventType buttonAILevel1Event = IDLE;
+	ScreenEventType buttonAILevel2Event = IDLE;
+	ScreenEventType buttonAILevel3Event = IDLE;
 	switch (colNum) {
 		case 1:
 			playerTextColor = sf::Color::Green;
 			playerTextString = "Player 1";
-			buttonNoneEvent = Player1SetNone;
-			buttonHumanEvent = Player1SetHuman;
-			buttonAIEvent = Player1SetAI;
-			buttonAILevel1Event = Player1SetAILevel1;
-			buttonAILevel2Event = Player1SetAILevel2;
-			buttonAILevel3Event = Player1SetAILevel3;
+			buttonNoneEvent = PLAYER_1_SET_NONE;
+			buttonHumanEvent = PLAYER_1_SET_HUMAN;
+			buttonAIEvent = PLAYER_1_SET_AI;
+			buttonAILevel1Event = PLAYER_1_SET_AI_LEVEL_1;
+			buttonAILevel2Event = PLAYER_1_SET_AI_LEVEL_2;
+			buttonAILevel3Event = PLAYER_1_SET_AI_LEVEL_3;
 			break;
 
 		case 2:
 			playerTextColor = sf::Color::Red;
 			playerTextString = "Player 2";
-			buttonNoneEvent = Player2SetNone;
-			buttonHumanEvent = Player2SetHuman;
-			buttonAIEvent = Player2SetAI;
-			buttonAILevel1Event = Player2SetAILevel1;
-			buttonAILevel2Event = Player2SetAILevel2;
-			buttonAILevel3Event = Player2SetAILevel3;
+			buttonNoneEvent = PLAYER_2_SET_NONE;
+			buttonHumanEvent = PLAYER_2_SET_HUMAN;
+			buttonAIEvent = PLAYER_2_SET_AI;
+			buttonAILevel1Event = PLAYER_2_SET_AI_LEVEL_1;
+			buttonAILevel2Event = PLAYER_2_SET_AI_LEVEL_2;
+			buttonAILevel3Event = PLAYER_2_SET_AI_LEVEL_3;
 			break;
 
 		case 3:
 			playerTextColor = sf::Color::Blue;
 			playerTextString = "Player 3";
-			buttonNoneEvent = Player3SetNone;
-			buttonHumanEvent = Player3SetHuman;
-			buttonAIEvent = Player3SetAI;
-			buttonAILevel1Event = Player3SetAILevel1;
-			buttonAILevel2Event = Player3SetAILevel2;
-			buttonAILevel3Event = Player3SetAILevel3;
+			buttonNoneEvent = PLAYER_3_SET_NONE;
+			buttonHumanEvent = PLAYER_3_SET_HUMAN;
+			buttonAIEvent = PLAYER_3_SET_AI;
+			buttonAILevel1Event = PLAYER_3_SET_AI_LEVEL_1;
+			buttonAILevel2Event = PLAYER_3_SET_AI_LEVEL_2;
+			buttonAILevel3Event = PLAYER_3_SET_AI_LEVEL_3;
 			break;
 
 		case 4:
 			playerTextColor = sf::Color::Yellow;
 			playerTextString = "Player 4";
-			buttonNoneEvent = Player4SetNone;
-			buttonHumanEvent = Player4SetHuman;
-			buttonAIEvent = Player4SetAI;
-			buttonAILevel1Event = Player4SetAILevel1;
-			buttonAILevel2Event = Player4SetAILevel2;
-			buttonAILevel3Event = Player4SetAILevel3;
+			buttonNoneEvent = PLAYER_4_SET_NONE;
+			buttonHumanEvent = PLAYER_4_SET_HUMAN;
+			buttonAIEvent = PLAYER_4_SET_AI;
+			buttonAILevel1Event = PLAYER_4_SET_AI_LEVEL_1;
+			buttonAILevel2Event = PLAYER_4_SET_AI_LEVEL_2;
+			buttonAILevel3Event = PLAYER_4_SET_AI_LEVEL_3;
 			break;
 
 		default:
@@ -428,97 +428,97 @@ std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts() {
 
 void GameMenuScreen::buttonClickHandle(std::shared_ptr<Button> buttonPtr) {
 	switch (buttonPtr->getEventType()) {
-		case Player1SetNone:
+		case PLAYER_1_SET_NONE:
 			setPlayerSettings(0, true, false, 1);
 			setAILevelColumnVisibility(1, false);
 			break;
-		case Player2SetNone:
+		case PLAYER_2_SET_NONE:
 			setPlayerSettings(1, true, false, 1);
 			setAILevelColumnVisibility(2, false);
 			break;
-		case Player3SetNone:
+		case PLAYER_3_SET_NONE:
 			setPlayerSettings(2, true, false, 1);
 			setAILevelColumnVisibility(3, false);
 			break;
-		case Player4SetNone:
+		case PLAYER_4_SET_NONE:
 			setPlayerSettings(3, true, false, 1);
 			setAILevelColumnVisibility(4, false);
 			break;
 
-		case Player1SetHuman:
+		case PLAYER_1_SET_HUMAN:
 			setPlayerSettings(0, false, true, 1);
 			setAILevelColumnVisibility(1, false);
 			break;
-		case Player2SetHuman:
+		case PLAYER_2_SET_HUMAN:
 			setPlayerSettings(1, false, true, 1);
 			setAILevelColumnVisibility(2, false);
 			break;
-		case Player3SetHuman:
+		case PLAYER_3_SET_HUMAN:
 			setPlayerSettings(2, false, true, 1);
 			setAILevelColumnVisibility(3, false);
 			break;
-		case Player4SetHuman:
+		case PLAYER_4_SET_HUMAN:
 			setPlayerSettings(3, false, true, 1);
 			setAILevelColumnVisibility(4, false);
 			break;
 
-		case Player1SetAI:
+		case PLAYER_1_SET_AI:
 			setPlayerSettings(0, false, false, 1);
 			setAILevelColumnVisibility(1, true);
 			setDefaultAILevelButtonsFocus(1);
 			break;
-		case Player2SetAI:
+		case PLAYER_2_SET_AI:
 			setPlayerSettings(1, false, false, 1);
 			setAILevelColumnVisibility(2, true);
 			setDefaultAILevelButtonsFocus(2);
 			break;
-		case Player3SetAI:
+		case PLAYER_3_SET_AI:
 			setPlayerSettings(2, false, false, 1);
 			setAILevelColumnVisibility(3, true);
 			setDefaultAILevelButtonsFocus(3);
 			break;
-		case Player4SetAI:
+		case PLAYER_4_SET_AI:
 			setPlayerSettings(3, false, false, 1);
 			setAILevelColumnVisibility(4, true);
 			setDefaultAILevelButtonsFocus(4);
 			break;
 
-		case Player1SetAILevel1:
+		case PLAYER_1_SET_AI_LEVEL_1:
 			setPlayerSettings(0, false, false, 1);
 			break;
-		case Player2SetAILevel1:
+		case PLAYER_2_SET_AI_LEVEL_1:
 			setPlayerSettings(1, false, false, 1);
 			break;
-		case Player3SetAILevel1:
+		case PLAYER_3_SET_AI_LEVEL_1:
 			setPlayerSettings(2, false, false, 1);
 			break;
-		case Player4SetAILevel1:
+		case PLAYER_4_SET_AI_LEVEL_1:
 			setPlayerSettings(3, false, false, 1);
 			break;
 
-		case Player1SetAILevel2:
+		case PLAYER_1_SET_AI_LEVEL_2:
 			setPlayerSettings(0, false, false, 2);
 			break;
-		case Player2SetAILevel2:
+		case PLAYER_2_SET_AI_LEVEL_2:
 			setPlayerSettings(1, false, false, 2);
 			break;
-		case Player3SetAILevel2:
+		case PLAYER_3_SET_AI_LEVEL_2:
 			setPlayerSettings(2, false, false, 2);
 			break;
-		case Player4SetAILevel2:
+		case PLAYER_4_SET_AI_LEVEL_2:
 			setPlayerSettings(3, false, false, 2);
 			break;
 
-		case Player1SetAILevel3:
+		case PLAYER_1_SET_AI_LEVEL_3:
 			setPlayerSettings(0, false, false, 3);
 			break;
-		case Player2SetAILevel3:
+		case PLAYER_2_SET_AI_LEVEL_3:
 			setPlayerSettings(1, false, false, 3);
 			break;
-		case Player3SetAILevel3:
+		case PLAYER_3_SET_AI_LEVEL_3:
 			setPlayerSettings(2, false, false, 3);
 			break;
-		case Player4SetAILevel3:
+		case PLAYER_4_SET_AI_LEVEL_3:
 			setPlayerSettings(3, false, false, 3);
 			break;
 		default:
@@ -551,22 +551,22 @@ void GameMenuScreen::setOtherButtonsInactive(std::shared_ptr<Button> buttonPtr) 
 bool GameMenuScreen::isEventTypeSetAI(int playerNum, ScreenEventType event) {
 	switch (playerNum) {
 		case 1:
-			if (event == Player1SetAI) {
+			if (event == PLAYER_1_SET_AI) {
 				return true;
 			}
 			break;
 		case 2:
-			if (event == Player2SetAI) {
+			if (event == PLAYER_2_SET_AI) {
 				return true;
 			}
 			break;
 		case 3:
-			if (event == Player3SetAI) {
+			if (event == PLAYER_3_SET_AI) {
 				return true;
 			}
 			break;
 		case 4:
-			if (event == Player4SetAI) {
+			if (event == PLAYER_4_SET_AI) {
 				return true;
 			}
 			break;
@@ -580,22 +580,22 @@ bool GameMenuScreen::isEventTypeSetAI(int playerNum, ScreenEventType event) {
 bool GameMenuScreen::isEventTypeAILevel(int playerNum, ScreenEventType event) {
 	switch (playerNum) {
 		case 1:
-			if ((event == Player1SetAILevel1 || event == Player1SetAILevel2 || event == Player1SetAILevel3)) {
+			if ((event == PLAYER_1_SET_AI_LEVEL_1 || event == PLAYER_1_SET_AI_LEVEL_2 || event == PLAYER_1_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
 		case 2:
-			if ((event == Player2SetAILevel1 || event == Player2SetAILevel2 || event == Player2SetAILevel3)) {
+			if ((event == PLAYER_2_SET_AI_LEVEL_1 || event == PLAYER_2_SET_AI_LEVEL_2 || event == PLAYER_2_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
 		case 3:
-			if ((event == Player3SetAILevel1 || event == Player3SetAILevel2 || event == Player3SetAILevel3)) {
+			if ((event == PLAYER_3_SET_AI_LEVEL_1 || event == PLAYER_3_SET_AI_LEVEL_2 || event == PLAYER_3_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
 		case 4:
-			if ((event == Player4SetAILevel1 || event == Player4SetAILevel2 || event == Player4SetAILevel3)) {
+			if ((event == PLAYER_4_SET_AI_LEVEL_1 || event == PLAYER_4_SET_AI_LEVEL_2 || event == PLAYER_4_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
@@ -607,17 +607,17 @@ bool GameMenuScreen::isEventTypeAILevel(int playerNum, ScreenEventType event) {
 }
 
 int GameMenuScreen::getPlayerNumFromEventType(ScreenEventType event) {
-	if (event == Player1SetAI || event == Player1SetAILevel1 || event == Player1SetAILevel2 ||
-		event == Player1SetAILevel3 || event == Player1SetHuman || event == Player1SetNone) {
+	if (event == PLAYER_1_SET_AI || event == PLAYER_1_SET_AI_LEVEL_1 || event == PLAYER_1_SET_AI_LEVEL_2 ||
+		event == PLAYER_1_SET_AI_LEVEL_3 || event == PLAYER_1_SET_HUMAN || event == PLAYER_1_SET_NONE) {
 		return 1;
-	} else if (event == Player2SetAI || event == Player2SetAILevel1 || event == Player2SetAILevel2 ||
-			   event == Player2SetAILevel3 || event == Player2SetHuman || event == Player2SetNone) {
+	} else if (event == PLAYER_2_SET_AI || event == PLAYER_2_SET_AI_LEVEL_1 || event == PLAYER_2_SET_AI_LEVEL_2 ||
+			   event == PLAYER_2_SET_AI_LEVEL_3 || event == PLAYER_2_SET_HUMAN || event == PLAYER_2_SET_NONE) {
 		return 2;
-	} else if (event == Player3SetAI || event == Player3SetAILevel1 || event == Player3SetAILevel2 ||
-			   event == Player3SetAILevel3 || event == Player3SetHuman || event == Player3SetNone) {
+	} else if (event == PLAYER_3_SET_AI || event == PLAYER_3_SET_AI_LEVEL_1 || event == PLAYER_3_SET_AI_LEVEL_2 ||
+			   event == PLAYER_3_SET_AI_LEVEL_3 || event == PLAYER_3_SET_HUMAN || event == PLAYER_3_SET_NONE) {
 		return 3;
-	} else if (event == Player4SetAI || event == Player4SetAILevel1 || event == Player4SetAILevel2 ||
-			   event == Player4SetAILevel3 || event == Player4SetHuman || event == Player4SetNone) {
+	} else if (event == PLAYER_4_SET_AI || event == PLAYER_4_SET_AI_LEVEL_1 || event == PLAYER_4_SET_AI_LEVEL_2 ||
+			   event == PLAYER_4_SET_AI_LEVEL_3 || event == PLAYER_4_SET_HUMAN || event == PLAYER_4_SET_NONE) {
 		return 4;
 	}
 
@@ -630,24 +630,24 @@ void GameMenuScreen::setDefaultAILevelButtonsFocus(int playerNum) {
 	ScreenEventType level3Event;
 	switch (playerNum) {
 		case 1:
-			level1Event = Player1SetAILevel1;
-			level2Event = Player1SetAILevel2;
-			level3Event = Player1SetAILevel3;
+			level1Event = PLAYER_1_SET_AI_LEVEL_1;
+			level2Event = PLAYER_1_SET_AI_LEVEL_2;
+			level3Event = PLAYER_1_SET_AI_LEVEL_3;
 			break;
 		case 2:
-			level1Event = Player2SetAILevel1;
-			level2Event = Player2SetAILevel2;
-			level3Event = Player2SetAILevel3;
+			level1Event = PLAYER_2_SET_AI_LEVEL_1;
+			level2Event = PLAYER_2_SET_AI_LEVEL_2;
+			level3Event = PLAYER_2_SET_AI_LEVEL_3;
 			break;
 		case 3:
-			level1Event = Player3SetAILevel1;
-			level2Event = Player3SetAILevel2;
-			level3Event = Player3SetAILevel3;
+			level1Event = PLAYER_3_SET_AI_LEVEL_1;
+			level2Event = PLAYER_3_SET_AI_LEVEL_2;
+			level3Event = PLAYER_3_SET_AI_LEVEL_3;
 			break;
 		case 4:
-			level1Event = Player4SetAILevel1;
-			level2Event = Player4SetAILevel2;
-			level3Event = Player4SetAILevel3;
+			level1Event = PLAYER_4_SET_AI_LEVEL_1;
+			level2Event = PLAYER_4_SET_AI_LEVEL_2;
+			level3Event = PLAYER_4_SET_AI_LEVEL_3;
 			break;
 		default:
 			return;

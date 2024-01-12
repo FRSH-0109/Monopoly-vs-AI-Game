@@ -1,3 +1,13 @@
+/**
+ * @file Tinyann.h
+ *
+ * @brief Header file for AI implementation of tiny library
+ * from github user hav4ik, repository: https://github.com/hav4ik/tinyai
+ *
+ * @author hav4ik
+ *
+ */
+
 #include "Tinyann.h"
 
 double ann::neuralnet::sigmoid(double x) {

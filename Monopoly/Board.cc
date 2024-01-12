@@ -1,3 +1,14 @@
+/**
+ * @file Board.cc
+ *
+ * @brief Source file for monopoly game board, creation is
+ * based on json file 'board.json'. Mainly handles all types of
+ * fields and their usage. 
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "Board.h"
 
 using json = nlohmann::json;

@@ -1,3 +1,13 @@
+/**
+ * @file Chance.cc
+ *
+ * @brief Source file for monopoly game chance cards,
+ * their types, actions...
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "Chance.h"
 
 ChanceCard::ChanceCard(const unsigned int id,

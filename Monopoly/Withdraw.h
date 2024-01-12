@@ -1,14 +1,25 @@
-#pragma once
+/**
+ * @file Withdraw.h
+ *
+ * @brief Header file for trade/withdraw mehanism
+ * in monopoly game between players
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef WITHDRAW_H
+#define WITHDRAW_H
 
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include <variant>
 #include <vector>
 #include "Board.h"
-#include "Field.h"
 #include "Button.h"
-#include "main.h"
+#include "Field.h"
 #include "Player.h"
+#include "main.h"
 
 class Withdraw {
    private:
@@ -213,3 +224,5 @@ class Withdraw {
 	void propertyPlayerMoveIndex(int dir, unsigned int plrNum);
 	bool isNonZeroValue();
 };
+
+#endif

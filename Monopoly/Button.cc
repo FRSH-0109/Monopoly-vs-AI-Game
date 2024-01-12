@@ -1,7 +1,8 @@
 /**
- * @file main.cpp
+ * @file Button.h
  *
- * @brief Source file for button class used in menu
+ * @brief Source file for handling button objects actions
+ * used to communicate with user.
  *
  * @author Kamil Kosnik, Kacper Radzikowski
  *

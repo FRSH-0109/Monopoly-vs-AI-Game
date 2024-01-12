@@ -1,3 +1,13 @@
+/**
+ * @file Player.cc
+ *
+ * @brief Source file for Player class, has got all
+ * data needed by player to be part of monopoly game.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "Player.h"
 
 Player::Player() {

@@ -1,11 +1,22 @@
-#pragma once
+/**
+ * @file Player.h
+ *
+ * @brief Header file for Player class, has got all
+ * data needed by player to be part of monopoly game.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include "Tinyann.h"
 #include "AiAdapter.h"
 #include "ContextWindow.h"
+#include "Tinyann.h"
 #include "main.h"
 
 class Player {
@@ -94,3 +105,5 @@ class AiPlayer : public Player {
 	Decision decideOfferTrade();
 	Decision decideAcceptTrade();
 };
+
+#endif

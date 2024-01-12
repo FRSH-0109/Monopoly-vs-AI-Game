@@ -1,5 +1,5 @@
 /**
- * @file main.cpp
+ * @file main.cc
  *
  * @brief Source file launching monopoly game vs AI project
  *

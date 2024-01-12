@@ -1,7 +1,15 @@
-#include "Field.h"
+/**
+ * @file Field.cc
+ *
+ * @brief Source file containing staff for single monopoly
+ * board game field. Separated to many deriving classes types
+ * each for specific field type.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
 
-// HouseException(unsigned int houses) : invalid_number_(houses){};
-// HouseException(const HouseException& e) throw() : invalid_number_(e.invalid_number_){};
+#include "Field.h"
 
 Field::Field(const unsigned int id,
 	const FieldType type,

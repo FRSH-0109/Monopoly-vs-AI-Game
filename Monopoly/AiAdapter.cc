@@ -1,3 +1,12 @@
+/**
+ * @file AiAdapter.cc
+ *
+ * @brief TODO
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "AiAdapter.h"
 
 AiAdapter::AiAdapter() {

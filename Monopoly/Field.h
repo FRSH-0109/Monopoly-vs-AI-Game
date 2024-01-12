@@ -1,12 +1,25 @@
-#pragma once
+/**
+ * @file Field.h
+ *
+ * @brief Header file containing staff for single monopoly
+ * board game field. Separated to many deriving classes types
+ * each for specific field type.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef FIELD_H
+#define FIELD_H
+
 #include <cmath>
 #include <iostream>
 #include <map>
 #include <memory>
 #include <string>
 #include <vector>
-#include "Player.h"
 #include "ContextWindow.h"
+#include "Player.h"
 #include "main.h"
 
 class HouseException : public std::exception {
@@ -254,3 +267,5 @@ class TaxField : public Field {
 
 	unsigned int getTaxValue();
 };
+
+#endif

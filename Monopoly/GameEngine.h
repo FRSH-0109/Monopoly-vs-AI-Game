@@ -1,15 +1,27 @@
-#pragma once
+/**
+ * @file GameEngine.h
+ *
+ * @brief Header file for GameEngine class,
+ * used to handle lowes level program operations as
+ * input interactions (mouse, keyboard) or display window
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef GAME_ENGINE_H
+#define GAME_ENGINE_H
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
 
 #include <memory>
-#include <vector>
 #include <typeinfo>
 #include <variant>
-#include "GameScreen.h"
+#include <vector>
 #include "ActiveScreen.h"
 #include "ContextWindow.h"
+#include "GameScreen.h"
 #include "main.h"
 
 class GameEngine {
@@ -35,3 +47,5 @@ class GameEngine {
 
 	ContextWindow* getContextWindow();
 };
+
+#endif

@@ -1,4 +1,16 @@
-#pragma once
+/**
+ * @file NotificationWall.h
+ *
+ * @brief Header file of class used to display list
+ * of messages/notifications as finite list with certain length.
+ * It automatically rolls over when gets next message.
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
+#ifndef NOTIFICATION_WALL_H
+#define NOTIFICATION_WALL_H
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -23,3 +35,5 @@ class NotificationWall {
 	void setFont(sf::Font font);
 	sf::Font& getFont();
 };
+
+#endif

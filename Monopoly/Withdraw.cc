@@ -1,3 +1,13 @@
+/**
+ * @file Withdraw.cc
+ *
+ * @brief Source file for trade/withdraw mehanism 
+ * in monopoly game between players
+ *
+ * @author Kamil Kosnik, Kacper Radzikowski
+ *
+ */
+
 #include "Withdraw.h"
 
 Withdraw::Withdraw() {
@@ -434,7 +444,7 @@ std::shared_ptr<Button> Withdraw::createDefaultButton(std::string text, unsigned
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonDefault(new Button(Idle, text, buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonDefault(new Button(IDLE, text, buttonSize, getFontSize()));
 	buttonDefault->setFont(getFont());
 	buttonDefault->setActiveBackColor(activeButtonBackColor);
 	buttonDefault->setActiveTextColor(activeButtonTextColor);

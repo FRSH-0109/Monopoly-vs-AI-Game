@@ -1,5 +1,5 @@
 /**
- * @file main.cpp
+ * @file ContextWindow.cc
  *
  * @brief Source file for context Window class
  * It is Singleton class type used mainly for handling SFML window operations
