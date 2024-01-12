@@ -18,7 +18,7 @@ class monopolyGameEngine {
 	GameScreenType screenType_ = Boardgame;
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 300;
 	const unsigned int START_PASSING_MONEY_ = 200;
-	const unsigned int GAME_TURNS_MAX = 35;
+	const unsigned int GAME_TURNS_MAX = 2;
 	unsigned int gameTurnsGloballyDone_;
 	std::array<bool, 4> gameTurnByPlayerDone_;
 
@@ -198,9 +198,10 @@ class monopolyGameEngine {
 	void updateChanceCard();
 
 	// game result
-	bool gameFinishedCheck();
+	bool gameFinishedCheckWinner();
+	bool gameFinishedCheckDraw();
 	void gameTurnsCounterHandle();
-	void removePlayerFromGame(unsigned int playerIndexTurn);
+	void removePlayerFromGame(unsigned int playerIndexTurn, bool isDraw);
 
    public:
 	monopolyGameEngine();

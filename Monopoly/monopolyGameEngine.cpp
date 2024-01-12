@@ -1196,6 +1196,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						incPlayerIndexTurn();
 					} else {
 						makePlayerBankrupt(playerIndexturn_);
+						playerBankrutedNow = false;
 						if (playerIndexturn_ >=
 							players_.size()) {	// check if current player bankruted, if yes verify turn index
 							playerIndexturn_ = 0;
@@ -1204,8 +1205,12 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						}
 					}
 
-					if (gameFinishedCheck()) {
-						removePlayerFromGame(playerIndexturn_);
+					if (gameFinishedCheckWinner()) {
+						removePlayerFromGame(playerIndexturn_, false);
+						return false;
+					} else if(gameFinishedCheckDraw())
+					{
+						removePlayerFromGame(playerIndexturn_, true);
 						return false;
 					}
 					turnInfoTextShow();
@@ -1213,6 +1218,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 				if (playerBankrutedNow) {
 					makePlayerBankrupt(playerIndexturn_);
+					playerBankrutedNow = false;
 					if (playerIndexturn_ >=
 						players_.size()) {	// check if current player bankruted, if yes verify turn index
 						playerIndexturn_ = 0;
@@ -2562,13 +2568,27 @@ sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sp
 	return text;
 }
 
-void monopolyGameEngine::removePlayerFromGame(unsigned int playerIndexTurn) {
-	// add player to bankrupted players vector and set his result place
-	players_[playerIndexturn_]->setResultPlace(players_.size());
-	playersBankrupted_.push_back(players_[playerIndexturn_]);
+void monopolyGameEngine::removePlayerFromGame(unsigned int playerIndexTurn, bool isDraw) {
+	if(!isDraw)
+	{
+		// add player to bankrupted players vector and set his result place
+		players_[playerIndexturn_]->setResultPlace(players_.size());
+		playersBankrupted_.push_back(players_[playerIndexturn_]);
 
-	// remove certain player from vector
-	players_.erase(std::remove(players_.begin(), players_.end(), players_[playerIndexturn_]), players_.end());
+		// remove certain player from vector
+		players_.erase(std::remove(players_.begin(), players_.end(), players_[playerIndexturn_]), players_.end());
+	}
+	else
+	{
+		int size = players_.size();
+		for (auto player_ptr : players_) {
+			// add all players to bankrupted players vector and set the same place for them
+			player_ptr->setResultPlace(size);
+			playersBankrupted_.push_back(player_ptr);
+		}
+
+		players_.clear();
+	}
 }
 
 void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
@@ -2593,7 +2613,7 @@ void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 			}
 		}
 	}
-	removePlayerFromGame(playerIndexTurn);
+	removePlayerFromGame(playerIndexTurn, false);
 }
 
 sf::Texture& monopolyGameEngine::getHouseTexture() {
@@ -2733,14 +2753,12 @@ void monopolyGameEngine::updateChanceCard() {
 	}
 }
 
-bool monopolyGameEngine::gameFinishedCheck() {
-	if (gameTurnsGloballyDone_ >= GAME_TURNS_MAX) {	 // check turns global treshold
-		return true;
-	}
+bool monopolyGameEngine::gameFinishedCheckWinner() {
+	return (players_.size() <= 1);	 	// check if one (or less???) player only is in game
+}
 
-	if (players_.size() <= 1) {	 // check if one (or less???) player only is in game
-		return true;
-	}
+bool monopolyGameEngine::gameFinishedCheckDraw() {
+	return (gameTurnsGloballyDone_ >= GAME_TURNS_MAX);	 // check turns global treshold
 }
 
 void monopolyGameEngine::gameTurnsCounterHandle() {
