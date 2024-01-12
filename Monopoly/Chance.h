@@ -41,15 +41,14 @@ class ChanceCard {
 		const unsigned int height,
 		const sf::Vector2f position);
 
-	const unsigned int getId();
-	const ChanceType getType();
-	const int getValue();
+	unsigned int getId();
+	ChanceType getType();
+	int getValue();
 	const std::string getText();
-	const unsigned int getWidth();
-	const unsigned int getHeight();
-
+	unsigned int getWidth();
+	unsigned int getHeight();
 	const std::string getGraphicPath();
-	const float getRotation();
+	float getRotation();
 	const sf::Sprite& getSprite();
 	const sf::Texture& getTexture();
 	const sf::Vector2f& getPosition();

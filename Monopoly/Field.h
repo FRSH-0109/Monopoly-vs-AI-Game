@@ -14,7 +14,7 @@ class HouseException : public std::exception {
    public:
 	HouseException(unsigned int houses) : invalid_number_(houses){};
 	HouseException(const HouseException& e) throw() : invalid_number_(e.invalid_number_){};
-	const unsigned int getInvalidNumber();
+	unsigned int getInvalidNumber();
 };
 
 class Field {
@@ -42,13 +42,13 @@ class Field {
 		const sf::Vector2i position);
 
 	ContextWindow* getContextWindow();
-	const unsigned int getId();
-	const FieldType getType();
+	unsigned int getId();
+	FieldType getType();
 	const std::string getName();
 	const std::string getGraphicPath();
-	const unsigned int getWidth();
-	const unsigned int getHeight();
-	const float getRotation();
+	unsigned int getWidth();
+	unsigned int getHeight();
+	float getRotation();
 	const sf::Sprite& getSprite();
 	const sf::Texture& getTexture();
 	const sf::Vector2i& getPosition();
@@ -91,7 +91,7 @@ class PropertyField : public Field {
 		  owner_(nullptr){
 			  //   std::cout << "PropertyField constructor" << std::endl;
 		  };
-	const unsigned int getPrice();
+	unsigned int getPrice();
 	const std::vector<unsigned int> getGroupMembers();
 	const unsigned int getMortgage();
 	const bool getIsMortgaged();
@@ -149,16 +149,16 @@ class StreetField : public PropertyField {
 		  };
 
 	const std::map<StreetTiers, unsigned int> getRentValues();
-	const unsigned int getHousePrice();
-	const unsigned int getHotelPrice();
-	const unsigned int getHouseNumber();
-	const bool getIsHotel();
+	unsigned int getHousePrice();
+	unsigned int getHotelPrice();
+	unsigned int getHouseNumber();
+	bool getIsHotel();
 
 	void setHouseNumber(unsigned int new_house_number);
 	void setIsHotel(bool new_state);
 	void resetDefault();
 
-	const unsigned int calculateRent();
+	unsigned int calculateRent();
 };
 
 class StationField : public PropertyField {
@@ -194,7 +194,7 @@ class StationField : public PropertyField {
 
 	const std::map<StationTiers, unsigned int> getRentValues();
 
-	const unsigned int calculateRent();
+	unsigned int calculateRent();
 };
 
 class UtilityField : public PropertyField {
@@ -230,7 +230,7 @@ class UtilityField : public PropertyField {
 
 	const std::map<UtilityTiers, unsigned int> getRentMultipliers();
 
-	const unsigned int calculateRent(unsigned int dice_roll);
+	unsigned int calculateRent(unsigned int dice_roll);
 };
 
 class TaxField : public Field {
@@ -251,5 +251,5 @@ class TaxField : public Field {
 			  //   std::cout << "TaxField constructor" << std::endl;
 		  };
 
-	const unsigned int getTaxValue();
+	unsigned int getTaxValue();
 };

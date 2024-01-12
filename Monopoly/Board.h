@@ -24,7 +24,7 @@ class Board {
    public:
 	Board(const std::string file_path);
 	const std::vector<PossibleFields>& getBoard();
-	const unsigned int getFieldNumber();
+	unsigned int getFieldNumber();
 	const sf::Vector2i getBoardPosition();
 	void clearBoard();
 	sf::Vector2i getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y);

@@ -658,17 +658,17 @@ std::shared_ptr<Button> Withdraw::getPlayer2RemoveButton() {
 
 void Withdraw::moneyTransferIndex(unsigned int playerNum, int money) {
 	if (playerNum == 1) {
-		if (money > 0 && money > player1MoneyBuffer_) {
+		if (money > 0 && money > (int)player1MoneyBuffer_) {
 			return;
-		} else if (money < 0 && (money * -1) > player1MoneyIndexBuffer_) {
+		} else if (money < 0 && (money * -1) > (int)player1MoneyIndexBuffer_) {
 			return;
 		}
 		player1MoneyBuffer_ -= money;
 		player1MoneyIndexBuffer_ += money;
 	} else if (playerNum == 2) {
-		if (money > 0 && money > player2MoneyBuffer_) {
+		if (money > 0 && money > (int)player2MoneyBuffer_) {
 			return;
-		} else if (money < 0 && (money * -1) > player2MoneyIndexBuffer_) {
+		} else if (money < 0 && (money * -1) > (int)player2MoneyIndexBuffer_) {
 			return;
 		}
 		player2MoneyBuffer_ -= money;
@@ -738,11 +738,11 @@ void Withdraw::showProperty(int column) {
 
 	if (!isEmpty) {
 		FieldType fieldType = std::visit([](Field& field) { return field.getType(); }, gameboard_->getFieldById(pos));
-		unsigned int price;
-		unsigned int Mortgage;
-		unsigned int housePrice;
-		unsigned int hotelPrice;
-		unsigned int rents[7];
+		unsigned int price = 0;
+		unsigned int Mortgage = 0;
+		unsigned int housePrice = 0;
+		unsigned int hotelPrice = 0;
+		unsigned int rents[7] = {0};
 		if (fieldType == STREET) {
 			StreetField field = std::get<StreetField>(gameboard_->getFieldById(pos));
 			price = field.getPrice();
@@ -1152,7 +1152,7 @@ void Withdraw::addPropertyPlayerShowed(int i, unsigned int col) {
 	}
 
 	auto it = find(properties.begin(), properties.end(), currentProperty);
-	int index = it - properties.begin();
+	unsigned int index = it - properties.begin();
 
 	if (properties.size() != 0) {
 		if (i > 0) {
@@ -1227,7 +1227,6 @@ void Withdraw::propertyPlayerMoveIndex(int dir, unsigned int plrNum) {
 				propertiesIndex.erase(propertiesIndex.begin() + index);
 			}
 			break;
-
 		case 1:
 			if (properties.size() > 0) {
 				it = find(properties.begin(), properties.end(), currentProperty);
@@ -1236,8 +1235,9 @@ void Withdraw::propertyPlayerMoveIndex(int dir, unsigned int plrNum) {
 				properties.erase(properties.begin() + index);
 			}
 			break;
-		defualt:
+		default:
 			return;
+			break;
 	}
 
 	switch (plrNum) {
@@ -1310,12 +1310,10 @@ void Withdraw::makeWithdraw() {
 
 	// properties flow
 	auto it = find(player1IndexProperties_.begin(), player1IndexProperties_.end(), 0);
-	int index;
 
 	// 1 -> 2
 	for (auto property : player1IndexProperties_) {
 		it = find(player1IndexProperties_.begin(), player1IndexProperties_.end(), property);
-		index = it - player1IndexProperties_.begin();
 		player2ToWithDraw_->addFieldOwnedId(property);
 		player1ToWithDraw_->removeFiledOwnedId(property);
 		FieldType type = std::visit(
@@ -1324,26 +1322,25 @@ void Withdraw::makeWithdraw() {
 			case STREET: {
 				StreetField& visited_field = std::get<StreetField>(gameboard_->getFieldById(property));
 				visited_field.setOwner(player2ToWithDraw_);
-				break;
-			}
+			} break;
 
 			case UTILITY: {
 				UtilityField& visited_field = std::get<UtilityField>(gameboard_->getFieldById(property));
 				visited_field.setOwner(player2ToWithDraw_);
-				break;
-			}
+			} break;
 
 			case STATION: {
 				StationField& visited_field = std::get<StationField>(gameboard_->getFieldById(property));
 				visited_field.setOwner(player2ToWithDraw_);
+			} break;
+
+			default:
 				break;
-			}
 		}
 	}
 	// 2 -> 1
 	for (auto property : player2IndexProperties_) {
 		it = find(player2IndexProperties_.begin(), player2IndexProperties_.end(), property);
-		index = it - player2IndexProperties_.begin();
 		player1ToWithDraw_->addFieldOwnedId(property);
 		player2ToWithDraw_->removeFiledOwnedId(property);
 		FieldType type = std::visit(
@@ -1352,20 +1349,19 @@ void Withdraw::makeWithdraw() {
 			case STREET: {
 				StreetField& visited_field = std::get<StreetField>(gameboard_->getFieldById(property));
 				visited_field.setOwner(player1ToWithDraw_);
-				break;
-			}
+			} break;
 
 			case UTILITY: {
 				UtilityField& visited_field = std::get<UtilityField>(gameboard_->getFieldById(property));
 				visited_field.setOwner(player1ToWithDraw_);
-				break;
-			}
+			} break;
 
 			case STATION: {
 				StationField& visited_field = std::get<StationField>(gameboard_->getFieldById(property));
 				visited_field.setOwner(player1ToWithDraw_);
+			} break;
+			default:
 				break;
-			}
 		}
 	}
 }

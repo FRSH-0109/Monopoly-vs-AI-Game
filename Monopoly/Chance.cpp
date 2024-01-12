@@ -19,15 +19,15 @@ ChanceCard::ChanceCard(const unsigned int id,
 	rotation_ = 0;
 }
 
-const unsigned int ChanceCard::getId() {
+unsigned int ChanceCard::getId() {
 	return id_;
 };
 
-const int ChanceCard::getValue() {
+int ChanceCard::getValue() {
 	return value_;
 };
 
-const ChanceType ChanceCard::getType() {
+ChanceType ChanceCard::getType() {
 	return type_;
 };
 
@@ -39,15 +39,15 @@ const std::string ChanceCard::getGraphicPath() {
 	return graphic_path_;
 };
 
-const unsigned int ChanceCard::getWidth() {
+unsigned int ChanceCard::getWidth() {
 	return width_;
 };
 
-const unsigned int ChanceCard::getHeight() {
+unsigned int ChanceCard::getHeight() {
 	return height_;
 };
 
-const float ChanceCard::getRotation() {
+float ChanceCard::getRotation() {
 	return rotation_;
 };
 

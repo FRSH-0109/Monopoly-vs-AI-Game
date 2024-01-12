@@ -207,7 +207,7 @@ class monopolyGameEngine {
 	monopolyGameEngine();
 
 	void setScreenType(GameScreenType newScreenType);
-	const GameScreenType getScreenType() const;
+	GameScreenType getScreenType() const;
 
 	// gui
 	void createButtonRollDice();

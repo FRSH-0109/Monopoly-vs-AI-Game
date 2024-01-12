@@ -88,8 +88,6 @@ ScreenEventType GameScreen::worker() {
 	return eventType;
 }
 
-void GameScreen::pollForEvents(sf::Event& event) {}
-
 void GameScreen::draw() {
 	std::shared_ptr<Board> game_board_ptr = monopoly_game_engine_.getBoard();
 
@@ -192,6 +190,8 @@ void GameScreen::draw() {
 								owner_flag.setFillColor(player_color);
 							}
 						} break;
+						default:
+							break;
 					}
 
 					getContextWindow()->getWindow().draw(owner_flag);
@@ -248,7 +248,7 @@ void GameScreen::draw() {
 			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer2Index()) {
 				getContextWindow()->getWindow().draw(*text_ptr);
 			}
-		case WithdrawChoosePlayer:
+		case WithdrawChoosePlayer:	// Intentional fall through
 		case WithdrawDecision:
 			for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
 				if (button_ptr->getIsVisible()) {

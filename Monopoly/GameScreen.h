@@ -11,7 +11,6 @@ class GameScreen : public ActiveScreen {
 	GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettingsList_);
 	~GameScreen();
 	ScreenEventType worker();
-	void pollForEvents(sf::Event& event);
 	void draw();
 	std::vector<std::shared_ptr<Player>> getPlayersResult();
 };
