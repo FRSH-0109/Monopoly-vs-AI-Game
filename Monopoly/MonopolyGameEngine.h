@@ -171,8 +171,8 @@ class monopolyGameEngine {
 	// Mortaging mechanic buttons
 	std::shared_ptr<Button> MortgageButton_;
 	std::shared_ptr<Button> unMortgageButton_;
-	sf::Vector2f Mortgage_BUTTON_POSITION = sf::Vector2f(1445, 760);
-	sf::Vector2f UNMortgage_BUTTON_POSITION = sf::Vector2f(1595, 760);
+	sf::Vector2f MORTGAGE_BUTTON_POSITION = sf::Vector2f(1445, 760);
+	sf::Vector2f UNMORTGAGE_BUTTON_POSITION = sf::Vector2f(1595, 760);
 
 	// chance cards
 	std::vector<ChanceCard> chanceCards_;
@@ -181,6 +181,9 @@ class monopolyGameEngine {
 	NotificationWall notificationsWall_;
 
 	// result screen
+	float RESULT_DATA_Y = 200;
+	std::vector<std::shared_ptr<sf::Text>> resultPlayersPlaces_;
+	std::shared_ptr<Button> returnToMainMenuButton_;
 
 	unsigned int getPlayerIndexTurn() const;
 	void incPlayerIndexTurn();
@@ -216,6 +219,7 @@ class monopolyGameEngine {
 	bool gameFinishedCheckDraw();
 	void gameTurnsCounterHandle();
 	void removePlayerFromGame(unsigned int playerIndexTurn, bool isDraw);
+	std::shared_ptr<Button> createDefaultButton(std::string text, unsigned int width, unsigned int height);
 
    public:
 	monopolyGameEngine();
@@ -246,6 +250,8 @@ class monopolyGameEngine {
 	void createAuctionResignButton();
 	void createButtonWithdraw();
 	void createMortagingButton();
+	void createResultScreenStuff();
+	void updateResultScreenStuff();
 	void showPropertyData(unsigned int pos, bool isPropertyShownToBuy);
 	void turnInfoTextShow();
 	sf::Font& getFont();
@@ -259,6 +265,7 @@ class monopolyGameEngine {
 	std::vector<std::shared_ptr<sf::Text>>& getTexts();
 	std::vector<std::shared_ptr<Button>>& getAuctionButtons();
 	std::vector<std::shared_ptr<sf::Text>>& getAuctionTexts();
+	std::vector<std::shared_ptr<sf::Text>>& getResultTexts();
 	sf::Sprite& getPropertyDataSprite();
 	std::vector<std::shared_ptr<sf::Text>>& getPropertyDataTexts();
 	sf::Sprite& getAllPropertyDataSprite();

@@ -1222,6 +1222,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						}
 						else
 						{
+							updateResultScreenStuff();
 							setScreenType(RESULT);
 						}
 					} else if (gameFinishedCheckDraw()) {
@@ -1232,6 +1233,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						}
 						else
 						{
+							updateResultScreenStuff();
 							setScreenType(RESULT);
 						}
 					}
@@ -1484,6 +1486,10 @@ std::vector<std::shared_ptr<Button>>& monopolyGameEngine::getAuctionButtons() {
 
 std::vector<std::shared_ptr<sf::Text>>& monopolyGameEngine::getAuctionTexts() {
 	return auctionTexts_;
+}
+
+std::vector<std::shared_ptr<sf::Text>>& monopolyGameEngine::getResultTexts() {
+	return resultPlayersPlaces_;
 }
 
 sf::Sprite& monopolyGameEngine::getPropertyDataSprite() {
@@ -2121,6 +2127,48 @@ void monopolyGameEngine::createButtonWithdraw() {
 	addButton(buttonWithdraw);
 }
 
+void monopolyGameEngine::createResultScreenStuff()
+{
+	float x_coord = 980;
+	std::shared_ptr<sf::Text> resultGameText = std::make_shared<sf::Text>("Game Results", getFont(), getFontSize());
+	resultGameText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y));
+	resultGameText->setFillColor(sf::Color::Black);
+	resultGameText->setOrigin(resultGameText->getGlobalBounds().getSize() / 2.f +
+										  resultGameText->getLocalBounds().getPosition());
+	resultPlayersPlaces_.push_back(resultGameText);
+
+	std::shared_ptr<Button> buttonReturn = createDefaultButton("Return", 120, 50);
+	buttonReturn->setEventType(RETURN_TO_MAIN_MENU);
+	returnToMainMenuButton_ = buttonReturn;
+	addButton(buttonReturn);
+}
+
+void monopolyGameEngine::updateResultScreenStuff()
+{
+	int y_step = 40;
+	float x_coord = 980;
+	int y_offset = 0;
+	for(std::vector<std::shared_ptr<Player>>::reverse_iterator iter = playersBankrupted_.rbegin(); iter != playersBankrupted_.rend(); ++iter)
+	{
+		y_offset += y_step;
+		std::string text = std::to_string(iter->get()->getResultPlace()) + ": Player " + std::to_string(iter->get()->getId()+1);
+		std::shared_ptr<sf::Text> playerResultText = std::make_shared<sf::Text>(text , getFont(), getFontSize());
+		playerResultText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
+		playerResultText->setFillColor(sf::Color::Black);
+		playerResultText->setOrigin(playerResultText->getGlobalBounds().getSize() / 2.f +
+											playerResultText->getLocalBounds().getPosition());
+		resultPlayersPlaces_.push_back(playerResultText);
+	}
+	
+	y_offset += y_step;
+	returnToMainMenuButton_->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
+	for(auto button_ptr : getButtons())
+	{
+		button_ptr->setIsVisible(false);
+	}
+	returnToMainMenuButton_->setIsVisible(true);
+}
+
 void monopolyGameEngine::createMortagingButton() {
 	sf::Vector2f buttonSize = sf::Vector2f(120, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
@@ -2132,7 +2180,7 @@ void monopolyGameEngine::createMortagingButton() {
 
 	std::shared_ptr<Button> buttonMortgage(new Button(IDLE, "Mortgage", buttonSize, getFontSize()));
 	buttonMortgage->setFont(getFont());
-	buttonMortgage->setPosition(Mortgage_BUTTON_POSITION);
+	buttonMortgage->setPosition(MORTGAGE_BUTTON_POSITION);
 	buttonMortgage->setActiveBackColor(activeButtonBackColor);
 	buttonMortgage->setActiveTextColor(activeButtonTextColor);
 	buttonMortgage->setInactiveBackColor(inActiveButtonBackColor);
@@ -2148,7 +2196,7 @@ void monopolyGameEngine::createMortagingButton() {
 
 	std::shared_ptr<Button> buttonUnMortgage(new Button(IDLE, "UnMortgage", buttonSize, getFontSize()));
 	buttonUnMortgage->setFont(getFont());
-	buttonUnMortgage->setPosition(UNMortgage_BUTTON_POSITION);
+	buttonUnMortgage->setPosition(UNMORTGAGE_BUTTON_POSITION);
 	buttonUnMortgage->setActiveBackColor(activeButtonBackColor);
 	buttonUnMortgage->setActiveTextColor(activeButtonTextColor);
 	buttonUnMortgage->setInactiveBackColor(inActiveButtonBackColor);
@@ -2636,6 +2684,30 @@ void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 		}
 	}
 	removePlayerFromGame(playerIndexTurn, false);
+}
+
+std::shared_ptr<Button> monopolyGameEngine::createDefaultButton(std::string text, unsigned int width, unsigned int height) {
+	sf::Vector2f buttonSize = sf::Vector2f(width, height);
+	sf::Color activeButtonBackColor = sf::Color::Green;
+	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
+	sf::Color FocusButtonBackColor = sf::Color::Black;
+	sf::Color activeButtonTextColor = sf::Color::Black;
+	sf::Color inActiveButtonTextColor = sf::Color::Black;
+	sf::Color FocusButtonTextColor = sf::Color::Green;
+	std::shared_ptr<Button> buttonDefault(new Button(IDLE, text, buttonSize, getFontSize()));
+	buttonDefault->setFont(getFont());
+	buttonDefault->setActiveBackColor(activeButtonBackColor);
+	buttonDefault->setActiveTextColor(activeButtonTextColor);
+	buttonDefault->setInactiveBackColor(inActiveButtonBackColor);
+	buttonDefault->setInactiveTextColor(inActiveButtonTextColor);
+	buttonDefault->setFocusBackColor(FocusButtonBackColor);
+	buttonDefault->setFocusTextColor(FocusButtonTextColor);
+	buttonDefault->setIsClicked(false);
+	buttonDefault->setIsVisible(false);
+	buttonDefault->setIsActive(false);
+	buttonDefault->setIsFocus(false);
+
+	return buttonDefault;
 }
 
 sf::Texture& monopolyGameEngine::getHouseTexture() {
