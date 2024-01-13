@@ -123,6 +123,16 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(bool AIonly) {
 			case START_GAME: {
 				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 				playerSettingsList_ = activeScreen_->getPlayersSettings();
+				int counterOfNones = 0;
+				for (auto playerSetting : playerSettingsList_)
+				{
+					if(playerSetting->isNone)
+					{
+						++counterOfNones;
+					}
+				}
+				if(counterOfNones >= 3)
+				{ break;}
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
 			} break;

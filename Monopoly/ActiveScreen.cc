@@ -144,7 +144,14 @@ ScreenEventType GameMenuScreen::worker() {
 			if (element->getIsClicked()) {
 				setOtherButtonsInactive(element);
 				buttonClickHandle(element);
-				element->setIsActive(true);
+				if(element->getEventType() == START_GAME)
+				{
+					element->setIsActive(false);	// in case of not starting game
+				}
+				else
+				{
+					element->setIsActive(true);
+				}
 				element->setIsClicked(false);
 				return element->getEventType();
 			}
