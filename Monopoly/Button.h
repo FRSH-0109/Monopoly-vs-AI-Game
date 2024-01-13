@@ -26,6 +26,7 @@ class Button {
 	virtual void mouseIsOver();
 	virtual void mouseIsNotOver();
 	ScreenEventType getEventType();
+	void setEventType(ScreenEventType event);
 
 	void setFont(sf::Font& fonts);
 	void setPosition(sf::Vector2f point);

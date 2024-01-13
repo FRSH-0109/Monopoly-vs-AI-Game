@@ -51,6 +51,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.createAuctionResignButton();
 	monopoly_game_engine_.createAvailableHousesHotelText();
 	monopoly_game_engine_.createButtonWithdraw();
+	monopoly_game_engine_.createResultScreenStuff();
 	monopoly_game_engine_.getWithdraw().setFont(getFont());
 	monopoly_game_engine_.getWithdraw().createChoosePlayerScreen();
 	monopoly_game_engine_.getWithdraw().createValuePlayerScreen();
@@ -75,6 +76,7 @@ ScreenEventType GameScreen::worker() {
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 					element->setIsClicked(true);
 					element->setIsActive(true);
+					eventType = element->getEventType();
 				} else {
 					element->setWasReleased(true);
 				}
@@ -287,7 +289,14 @@ void GameScreen::draw() {
 			break;
 
 		case RESULT:
-
+			for (auto element : monopoly_game_engine_.getResultTexts()) {
+				getContextWindow()->getWindow().draw(*element);
+			}
+			for (auto element : monopoly_game_engine_.getButtons()) {
+				if (element->getIsVisible()) {
+					element->draw(getContextWindow()->getWindow());
+				}
+			}
 		break;
 
 		default:

@@ -26,6 +26,11 @@ ScreenEventType Button::getEventType() {
 	return type_;
 }
 
+void Button::setEventType(ScreenEventType event)
+{
+	type_ = event;
+}
+
 void Button::setFont(sf::Font& fonts) {
 	text_.setFont(fonts);
 }
