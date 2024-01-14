@@ -24,7 +24,7 @@
     {
         "id": 2,
         "type": "COMUNITY_CHEST",
-        "name": "Kasa Spoleczna",
+        "name": "Wolne",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chest.png",
         "width": 60,
         "height": 100
@@ -55,7 +55,7 @@
     {
         "id": 5,
         "type": "STATION",
-        "name": "Dworzec Centralny",
+        "name": "Bar Polny",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_station.png",
         "width": 60,
         "height": 100,
@@ -139,7 +139,7 @@
     {
         "id": 12,
         "type": "UTILITY",
-        "name": "Elektrownia",
+        "name": "Coffix",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_electricity.png",
         "width": 60,
         "height": 100,
@@ -179,7 +179,7 @@
     {
         "id": 15,
         "type": "STATION",
-        "name": "Lotnisko",
+        "name": "Kebab",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_station.png",
         "width": 60,
         "height": 100,
@@ -205,7 +205,7 @@
     {
         "id": 17,
         "type": "COMUNITY_CHEST",
-        "name": "Kasa Spoleczna",
+        "name": "Wolne",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chest.png",
         "width": 60,
         "height": 100
@@ -299,7 +299,7 @@
     {
         "id": 25,
         "type": "STATION",
-        "name": "Dworzec metra",
+        "name": "Pizza",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_station.png",
         "width": 60,
         "height": 100,
@@ -339,7 +339,7 @@
     {
         "id": 28,
         "type": "UTILITY",
-        "name": "Wodociagi",
+        "name": "Cafe Nero",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_water.png",
         "width": 60,
         "height": 100,
@@ -401,7 +401,7 @@
     {
         "id": 33,
         "type": "COMUNITY_CHEST",
-        "name": "Kasa Spoleczna",
+        "name": "Wolne",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_chest.png",
         "width": 60,
         "height": 100
@@ -423,7 +423,7 @@
     {
         "id": 35,
         "type": "STATION",
-        "name": "Port Morski",
+        "name": "Chinczyk",
         "graphic_path": "textures_and_fonts/textures/monopoly_single_square_station.png",
         "width": 60,
         "height": 100,
