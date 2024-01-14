@@ -80,8 +80,14 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
 
+	for(int j = 0 ; j < PLAYERS_MAX_ ; ++j)
+	{
+		playersStartingIds_[j] = 255;	//mark no player in game with this ID
+	}
+
 	for (unsigned int j = 0; j < players_.size();
-		 ++j) {	 // save id of starting pplayers to future usage of data display
+		 ++j) {	 
+		// save id of starting pplayers to future usage of data display
 		playersStartingIds_[j] = players_[j]->getId();
 	}
 
@@ -1593,14 +1599,12 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		playerInfoText_[id].push_back(playerMoneyText);
 		playerInfoText_[id].push_back(playerPositionText);
 		playerInfoText_[id].push_back(playerPositionNameText);
-
 		++i;
 	}
 }
 
 void monopolyGameEngine::updateTextPlayersInfo() {
-	bool isPlayerinGame[4] = {false, false, false, false};
-	int i = 0;
+	bool isPlayerinGame[4] = {false};
 	for (auto player : players_) {
 		const std::string streetName =
 			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPosition()));
@@ -1609,14 +1613,18 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 		playerInfoText_[id][2]->setString("Position: " + std::to_string(player->getPosition() + 1));
 		playerInfoText_[id][3]->setString(streetName);
 		isPlayerinGame[id] = true;
-		++i;
 	}
 
-	for (unsigned int i = 0; i < playersStartingAmount_; ++i) {
-		if (!isPlayerinGame[i]) {
-			playerInfoText_[i][1]->setString("Bankrupt");
-			playerInfoText_[i][2]->setString("");
-			playerInfoText_[i][3]->setString("");
+	for(unsigned int i = 0 ; i < PLAYERS_MAX_ ; ++i)
+	{
+		unsigned int id = playersStartingIds_[i];
+		if (id != 255 && !isPlayerinGame[id]) {
+			if(playerInfoText_[id].size() > 0)	//check if player id was even in game from begining
+			{
+				playerInfoText_[id][1]->setString("Bankrupt");
+				playerInfoText_[id][2]->setString("");
+				playerInfoText_[id][3]->setString("");
+			}
 		}
 	}
 }
