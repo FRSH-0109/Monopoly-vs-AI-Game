@@ -138,7 +138,7 @@ class Withdraw {
 	std::shared_ptr<Button> resignDecisionButton_;
 	std::shared_ptr<Button> acceptDecisionButton_;
 
-	std::shared_ptr<Button> createDefaultButton(std::string text, unsigned int width, unsigned int height);
+	std::shared_ptr<Button> createDefaultButton(sf::String text, unsigned int width, unsigned int height);
 	void addButton(std::shared_ptr<Button> buttonTmp);
 	void addText(std::shared_ptr<sf::Text> textTmp);
 

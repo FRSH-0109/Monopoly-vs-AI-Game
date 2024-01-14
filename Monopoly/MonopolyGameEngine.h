@@ -219,7 +219,7 @@ class monopolyGameEngine {
 	bool gameFinishedCheckDraw();
 	void gameTurnsCounterHandle();
 	void removePlayerFromGame(unsigned int playerIndexTurn, bool isDraw);
-	std::shared_ptr<Button> createDefaultButton(std::string text, unsigned int width, unsigned int height);
+	std::shared_ptr<Button> createDefaultButton(sf::String text, unsigned int width, unsigned int height);
 
    public:
 	monopolyGameEngine();

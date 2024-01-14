@@ -19,7 +19,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	setScreenType(MONOPOLY_GAME);
 
 	// TODO: exception handling
-	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.ttf"))
+	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
 		std::cout << "Font not found!\n";
 
 	setFont(getFont());

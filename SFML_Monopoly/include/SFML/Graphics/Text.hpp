@@ -496,7 +496,7 @@ private:
 /// \code
 /// // Declare and load a font
 /// sf::Font font;
-/// font.loadFromFile("arial.ttf");
+/// font.loadFromFile("arial.otf");
 ///
 /// // Create a text
 /// sf::Text text("hello", font);
