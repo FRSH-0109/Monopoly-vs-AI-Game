@@ -84,16 +84,16 @@ bool Player::substractMoney(unsigned int value) {
 }
 
 void Player::setJailStatus(unsigned int newJailStatus) {
-	jailStatus_ = newJailStatus;
+	jail_status_ = newJailStatus;
 }
 
 unsigned int Player::getJailStatus() const {
-	return jailStatus_;
+	return jail_status_;
 }
 
 void Player::reduceJailStatus() {
-	if (jailStatus_ != 0) {
-		jailStatus_ -= 1;
+	if (jail_status_ != 0) {
+		jail_status_ -= 1;
 	}
 }
 
@@ -273,11 +273,16 @@ ann::neuralnet& AiPlayer::getNeuralNetwork() {
 }
 
 BuyDecision AiPlayer::decideBuy(unsigned int index) {
-	std::vector<double> Y;
-	std::vector<double> inputs = adapter_.getInputs();
-	neural_network_.evaluate(inputs, Y);
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
 
-	if (Y[0] > 0.5f) {
+	// if (Y[0] > 0.5f) {
+	// 	return BUY;
+	// } else {
+	// 	return RESIGN;
+	// }
+	if (index % 2 == 0) {
 		return BUY;
 	} else {
 		return RESIGN;
@@ -285,10 +290,35 @@ BuyDecision AiPlayer::decideBuy(unsigned int index) {
 }
 
 JailDecision AiPlayer::decideJail() {
-	return ROLL;
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// if (Y[1] < 0.333f) {
+	// 	return CARD;
+	// } else if (Y[1] < 0.666f) {
+	// 	return ROLL;
+	// } else {
+	// 	return PAY;
+	// }
+	if (getJailStatus() != 1) {
+		return ROLL;
+	} else {
+		return PAY;
+	}
 }
 
 Decision AiPlayer::decideMortgage(unsigned int index) {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// if (Y[2] < 0.5f) {
+	// 	return YES;
+	// } else {
+	// 	return NO;
+	// }
+
 	if (getMoney() <= 0) {
 		return YES;
 	} else {
@@ -297,18 +327,55 @@ Decision AiPlayer::decideMortgage(unsigned int index) {
 }
 
 Decision AiPlayer::decideUnmortgage(unsigned int index) {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// if (Y[3] < 0.5f) {
+	// 	return YES;
+	// } else {
+	// 	return NO;
+	// }
+
 	return YES;
 }
 
 unsigned int AiPlayer::decideAuctionBid(unsigned int price) {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// double result = Y[4];
+	// double money = adapter_.convertMoneyValue(result);
+
+	// return (int)money;
+
 	return price;
 }
 
 unsigned int AiPlayer::decideBuildHouse() {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// double result = Y[5];
+	// double money = adapter_.convertHouseValue(result);
+
+	// return (int)money;
+
 	return 15;
 }
 
 unsigned int AiPlayer::decideSellHouse() {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// double result = Y[6];
+	// double money = adapter_.convertHouseValue(result);
+
+	// return (int)money;
+
 	if (getMoney() <= 0) {
 		return 15;
 	} else {
@@ -317,9 +384,29 @@ unsigned int AiPlayer::decideSellHouse() {
 }
 
 Decision AiPlayer::decideOfferTrade() {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// if (Y[7] > 0.5f) {
+		// return YES;
+	// } else {
+		// return NO;
+	// }
+
 	return NO;
 }
 
 Decision AiPlayer::decideAcceptTrade() {
+	// std::vector<double> Y;
+	// std::vector<double> inputs = adapter_.getInputs();
+	// neural_network_.evaluate(inputs, Y);
+
+	// if (Y[8] > 0.5f) {
+		// return YES;
+	// } else {
+		// return NO;
+	// }
+
 	return NO;
 }

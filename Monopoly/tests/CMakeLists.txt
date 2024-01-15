@@ -6,7 +6,7 @@ find_package(Catch2 REQUIRED)
 set(SOURCES monopolyTests.cc ../GameEngine.cc ../GameEngine.h ../MonopolyGameEngine.cc ../MonopolyGameEngine.h ../ActiveScreen.cc
 ../ActiveScreen.h ../Button.cc ../Button.h ../ContextWindow.cc ../ContextWindow.h ../Field.h ../Field.cc ../Board.h ../Board.cc
 ../Player.h ../Player.cc ../GameScreen.h ../GameScreen.cc ../NotificationWall.cc ../NotificationWall.h ../Withdraw.h ../Withdraw.cc
-../AiAdapter.h ../AiAdapter.cc ../Chance.h ../Chance.cc)
+../AiAdapter.h ../AiAdapter.cc ../Chance.h ../Chance.cc ../Tinyann.h ../Tinyann.cc ../Tinyneat.h ../Tinyneat.cc)
 #set(HEADER_FILES ../gameEngine.h)
 
 #add_library(gameEngineLib ./gameEngine.cc ../gameEngine.h)

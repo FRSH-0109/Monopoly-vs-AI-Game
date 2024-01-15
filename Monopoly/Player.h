@@ -29,7 +29,7 @@ class Player {
 	unsigned int position_;
 	std::vector<unsigned int> fieldsOwnedId_;
 	unsigned int money_;
-	unsigned int jailStatus_;
+	unsigned int jail_status_;
 	sf::Texture player_texture_;
 	sf::Sprite player_sprite_;
 	float sprite_offset_x_;

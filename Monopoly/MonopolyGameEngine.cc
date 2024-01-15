@@ -1,8 +1,8 @@
 /**
  * @file MonopolyGameEngine.cc
  *
- * @brief Source file of class used to handle whole 
- * monopoly game process, turns, actions with players, 
+ * @brief Source file of class used to handle whole
+ * monopoly game process, turns, actions with players,
  * board etc.
  *
  * @author Kamil Kosnik, Kacper Radzikowski
@@ -49,14 +49,14 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 				new_player.setId(playerId);
 				players_.push_back(std::make_shared<Player>(new_player));
 			}
-			//  else {
-			// 	isAiGameOnly_ = true;
-			// 	AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
-			// 	new_player.setIsAi(!(it->isHuman));
-			// 	new_player.setAiLevel(it->level);
-			// 	new_player.setId(playerId);
-			// 	players_.push_back(std::make_shared<AiPlayer>(new_player));
-			// }
+			 else {
+				isAiGameOnly_ = true;
+				AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
+				new_player.setIsAi(!(it->isHuman));
+				new_player.setAiLevel(it->level);
+				new_player.setId(playerId);
+				players_.push_back(std::make_shared<AiPlayer>(new_player));
+			}
 			// if (new_player.getId() == 1) {
 			// 	players_[1]->addFieldOwnedId(16);
 			// 	players_[1]->addFieldOwnedId(18);
@@ -777,433 +777,478 @@ void monopolyGameEngine::withdrawWorker() {
 }
 
 bool monopolyGameEngine::monopolyGameWorker() {
-	updateTextPlayersInfo();
-	updateAvailableHousesHotelText();
-	showAllPropertiesWorker();
-	withdrawWorker();
-	unsigned int JAIL_BAILOUT = 50;
-	static int rolled_val;
-	static unsigned int money_to_find;
-	static std::vector<std::shared_ptr<Player>> players_to_pay_rent;
-	static bool bank_pay_rent = false;
-	static unsigned int double_turns = 0;
-	static bool isDouble;
-	static bool playerChanged = true;
-	static bool playerBankrutedNow = false;
+	try {
+		updateTextPlayersInfo();
+		updateAvailableHousesHotelText();
+		showAllPropertiesWorker();
+		withdrawWorker();
+		unsigned int JAIL_BAILOUT = 50;
+		static int rolled_val;
+		static unsigned int money_to_find;
+		static std::vector<std::shared_ptr<Player>> players_to_pay_rent;
+		static bool bank_pay_rent = false;
+		static unsigned int double_turns = 0;
+		static bool isDouble;
+		static bool playerChanged = true;
+		static bool playerBankrutedNow = false;
 
-	if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
-		playerBankrutedNow = true;
-		notificationAdd(playerIndexturn_, "decided to go bankrupt!");
-		rollDiceButton_->setIsVisible(false);
-		buyFieldButton_->setIsVisible(false);
-		resignBuyFieldButton_->setIsVisible(false);
-		setTurnState(TURN_END);	// for next player
-	}
+		if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
+			playerBankrutedNow = true;
+			notificationAdd(playerIndexturn_, "decided to go bankrupt!");
+			rollDiceButton_->setIsVisible(false);
+			buyFieldButton_->setIsVisible(false);
+			resignBuyFieldButton_->setIsVisible(false);
+			setTurnState(TURN_END);	// for next player
+		}
 
-	switch (getTurnState()) {
-		case ROLL_DICE: {
-			playerBankrutedNow = false;
-			unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
-			buildingsManagingWorker();
-			if (player_jail_status != 0) {
-				jailPayButton_->setIsVisible(true);
-			} else {
-				jailPayButton_->setIsVisible(false);
-			}
-
-			if (player_jail_status != 0 && isButtonClicked(jailPayButton_)) {
-				if (players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
-					std::string notification_msg = "Not enough money for bail out";
-					notificationAdd(playerIndexturn_, notification_msg);
+		switch (getTurnState()) {
+			case ROLL_DICE: {
+				playerBankrutedNow = false;
+				unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
+				buildingsManagingWorker();
+				if (player_jail_status != 0) {
+					jailPayButton_->setIsVisible(true);
 				} else {
-					players_[playerIndexturn_]->setJailStatus(0);
-					players_[playerIndexturn_]->substractMoney(JAIL_BAILOUT);
-					std::string notification_msg = "Leaves jail on bailout.";
-					notificationAdd(playerIndexturn_, notification_msg);
 					jailPayButton_->setIsVisible(false);
 				}
-			}
 
-			if (isButtonClicked(rollDiceButton_)) {
-				if (players_[playerIndexturn_]->getIsAi()) {
-					std::cout << players_[playerIndexturn_]->getTest() << std::endl;
-				}
-				unsigned int roll1 = rollDice();
-				unsigned int roll2 = rollDice();
-				std::string val1 = std::to_string(roll1);
-				std::string val2 = std::to_string(roll2);
-				rolled_val = roll1 + roll2;
-				std::string rol = "Rolled value: ";
-				std::string val = std::to_string(rolled_val);
-				rolledValueText_->setString(rol + val);
-				notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
-
-				if (player_jail_status == 0) {
-					if (roll1 == roll2) {
-						isDouble = true;
-						double_turns += 1;
-					} else {
-						isDouble = false;
+				if (player_jail_status != 0) {
+					JailDecision decision;
+					if (players_[playerIndexturn_]->getIsAi()) {
+						decision = players_[playerIndexturn_]->decideJail();
 					}
-
-					if (double_turns == 3) {
-						std::string notification_msg = "Went to Jail on doubles";
-						sendToJail(playerIndexturn_);
-						players_[playerIndexturn_]->setJailStatus(3);
-						notificationAdd(playerIndexturn_, notification_msg);
-
-						rollDiceButton_->setIsVisible(false);
-						setTurnState(TURN_END);
-					} else {
-						int oldPos = players_[playerIndexturn_]->getPosition();
-						movePlayer(playerIndexturn_, rolled_val);
-						int newPos = players_[playerIndexturn_]->getPosition();
-						handlePassingStart(oldPos, newPos);
-
-						rollDiceButton_->setIsVisible(false);
-						setTurnState(FIELD_ACTION);
-					}
-				} else {
-					if (roll1 == roll2) {
-						players_[playerIndexturn_]->setJailStatus(0);
-
-						int oldPos = players_[playerIndexturn_]->getPosition();
-						movePlayer(playerIndexturn_, rolled_val);
-						int newPos = players_[playerIndexturn_]->getPosition();
-						handlePassingStart(oldPos, newPos);
-
-						std::string notification_msg = "Leaving jail on doubles";
-						notificationAdd(playerIndexturn_, notification_msg);
-
-						rollDiceButton_->setIsVisible(false);
-						jailPayButton_->setIsVisible(false);
-						setTurnState(FIELD_ACTION);
-					} else if (player_jail_status == 1) {
+					if (isButtonClicked(jailPayButton_) || (players_[playerIndexturn_]->getIsAi() && decision == PAY))
 						if (players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
-							money_to_find = JAIL_PAY_MONEY;
-							bank_pay_rent = true;
-							players_to_pay_rent.clear();
-							setTurnState(PAY_RENT);
-							std::string notification_msg = "Not enough money to leave jail";
+							std::string notification_msg = "Not enough money for bail out";
 							notificationAdd(playerIndexturn_, notification_msg);
+						} else {
+							players_[playerIndexturn_]->setJailStatus(0);
+							players_[playerIndexturn_]->substractMoney(JAIL_BAILOUT);
+							std::string notification_msg = "Leaves jail on bailout.";
+							notificationAdd(playerIndexturn_, notification_msg);
+							jailPayButton_->setIsVisible(false);
+						}
+				}
+
+				if (isButtonClicked(rollDiceButton_) || players_[playerIndexturn_]->getIsAi()) {
+					if (players_[playerIndexturn_]->getIsAi()) {
+						std::cout << players_[playerIndexturn_]->getTest() << std::endl;
+					}
+					unsigned int roll1 = rollDice();
+					unsigned int roll2 = rollDice();
+					std::string val1 = std::to_string(roll1);
+					std::string val2 = std::to_string(roll2);
+					rolled_val = roll1 + roll2;
+					std::string rol = "Rolled value: ";
+					std::string val = std::to_string(rolled_val);
+					rolledValueText_->setString(rol + val);
+					notificationAdd(playerIndexturn_, rol + val + " -> (" + val1 + ", " + val2 + ")");
+					std::cout << rol + val + " -> (" + val1 + ", " + val2 + ")" << std::endl;
+
+					if (player_jail_status == 0) {
+						if (roll1 == roll2) {
+							isDouble = true;
+							double_turns += 1;
+						} else {
+							isDouble = false;
 						}
 
-						players_[playerIndexturn_]->setJailStatus(0);
-						players_[playerIndexturn_]->substractMoney(JAIL_BAILOUT);
-
-						int oldPos = players_[playerIndexturn_]->getPosition();
-						movePlayer(playerIndexturn_, rolled_val);
-						int newPos = players_[playerIndexturn_]->getPosition();
-						handlePassingStart(oldPos, newPos);
-
-						rollDiceButton_->setIsVisible(false);
-						jailPayButton_->setIsVisible(false);
-						setTurnState(FIELD_ACTION);
-
-						std::string notification_msg = "Player left jail on forced bailout";
-						notificationAdd(playerIndexturn_, notification_msg);
-
-					} else {
-						players_[playerIndexturn_]->reduceJailStatus();
-
-						rollDiceButton_->setIsVisible(false);
-						jailPayButton_->setIsVisible(false);
-
-						setTurnState(TURN_END);
-					}
-				}
-			}
-		} break;
-		case FIELD_ACTION: {
-			int pos = players_[playerIndexturn_]->getPosition();
-			FieldType field_type =
-				std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
-
-			std::string textWhereIsPlayer("is on field " + std::visit([](Field& field) { return field.getName(); },
-															   getBoard()->getFieldById(pos)));
-			notificationAdd(playerIndexturn_, textWhereIsPlayer);
-
-			if (field_type == STREET || field_type == STATION || field_type == UTILITY) {
-				std::shared_ptr<Player> owner = nullptr;
-				if (field_type == STREET) {
-					StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
-					owner = field.getOwner();
-				} else if (field_type == STATION) {
-					StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
-					owner = field.getOwner();
-				} else {
-					UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
-					owner = field.getOwner();
-				}
-
-				if (owner == nullptr) {
-					setTurnState(BUY_ACTION);
-					clearPropertyData(true);
-					showPropertyData(pos, true);
-				} else if (owner->getId() != players_[playerIndexturn_]->getId()) {
-					unsigned int rent_to_pay = calculateRent(rolled_val, pos);
-					std::string notification("Rent to pay: " + std::to_string(rent_to_pay));
-					notificationAdd(playerIndexturn_, notification);
-					if (players_[playerIndexturn_]->getMoney() >= rent_to_pay) {
-						players_[playerIndexturn_]->substractMoney(rent_to_pay);
-						owner->addMoney(rent_to_pay);
-						setTurnState(TURN_END);
-					} else {
-						money_to_find = rent_to_pay;
-						bank_pay_rent = false;
-						players_to_pay_rent.clear();
-						players_to_pay_rent.push_back(owner);
-						setTurnState(PAY_RENT);
-					}
-				} else {
-					std::cout << "No action - player owns this field" << field_type << std::endl;
-					setTurnState(TURN_END);
-				}
-			} else if (field_type == TAX) {
-				TaxField field = std::get<TaxField>(getBoard()->getFieldById(pos));
-				unsigned int tax_to_pay = field.getTaxValue();
-				if (players_[playerIndexturn_]->getMoney() >= tax_to_pay) {
-					players_[playerIndexturn_]->substractMoney(tax_to_pay);
-					setTurnState(TURN_END);
-				} else {
-					money_to_find = tax_to_pay;
-					bank_pay_rent = true;
-					players_to_pay_rent.clear();
-					setTurnState(PAY_RENT);
-				}
-			} else if (field_type == GO_TO_JAIL) {
-				std::string notification_msg = "Goes to jail via GO TO JAIL";
-				notificationAdd(playerIndexturn_, notification_msg);
-				sendToJail(playerIndexturn_);
-				players_[playerIndexturn_]->setJailStatus(3);
-				setTurnState(TURN_END);
-			} else if (field_type == CHANCE) {
-				ChanceCard chance_card = getChanceCard();
-				updateChanceCard();
-				std::string notification_msg = "Chance Card: ";
-				notificationAdd(playerIndexturn_, notification_msg + chance_card.getText());
-
-				switch (chance_card.getType()) {
-					case MovementToProperty: {
-						int oldPos = players_[playerIndexturn_]->getPosition();
-						int posIncrement = (40 + chance_card.getValue()) - oldPos;
-						movePlayer(playerIndexturn_, posIncrement);
-						int newPos = chance_card.getValue();
-						handlePassingStart(oldPos, newPos);
-						setTurnState(FIELD_ACTION);
-					} break;
-
-					case BankPaysYou:
-						players_[playerIndexturn_]->addMoney(chance_card.getValue());
-						setTurnState(TURN_END);
-						break;
-
-					case GetOutOfJailCard:
-						players_[playerIndexturn_]->setJailCards(players_[playerIndexturn_]->getJailCards() + 1);
-						setTurnState(TURN_END);
-						break;
-
-					case GoToJail:
-						sendToJail(playerIndexturn_);
-						players_[playerIndexturn_]->setJailStatus(3);
-						setTurnState(TURN_END);
-						break;
-
-					case PayForHouseHotel: {
-						unsigned int sum = 0;
-						for (auto field_id : players_[playerIndexturn_]->getFiledOwnedId()) {
-							FieldType fieldType = std::visit(
-								[](Field& field) { return field.getType(); }, getBoard()->getFieldById(field_id));
-							if (fieldType == STREET) {
-								StreetField field = std::get<StreetField>(getBoard()->getFieldById(field_id));
-								int hotelCost = field.getIsHotel() * 100;
-								sum += hotelCost;
-								if (hotelCost == 0) {
-									int housesCost = field.getHouseNumber() * 25;
-									sum += housesCost;
-								}
-							}
-						}
-
-						if (sum == 0) {
-							std::string notification_msg = "Amount to pay: " + std::to_string(sum);
+						if (double_turns == 3) {
+							std::string notification_msg = "Went to Jail on doubles";
+							sendToJail(playerIndexturn_);
+							players_[playerIndexturn_]->setJailStatus(3);
 							notificationAdd(playerIndexturn_, notification_msg);
+
+							rollDiceButton_->setIsVisible(false);
 							setTurnState(TURN_END);
 						} else {
-							if (players_[playerIndexturn_]->getMoney() >= sum) {
-								players_[playerIndexturn_]->substractMoney(sum);
-								std::string notification_msg = "Paid to bank: " + std::to_string(sum);
-								notificationAdd(playerIndexturn_, notification_msg);
-								setTurnState(TURN_END);
-							} else {
-								money_to_find = sum;
+							int oldPos = players_[playerIndexturn_]->getPosition();
+							movePlayer(playerIndexturn_, rolled_val);
+							int newPos = players_[playerIndexturn_]->getPosition();
+							handlePassingStart(oldPos, newPos);
+
+							rollDiceButton_->setIsVisible(false);
+							setTurnState(FIELD_ACTION);
+						}
+					} else {
+						if (roll1 == roll2) {
+							players_[playerIndexturn_]->setJailStatus(0);
+
+							int oldPos = players_[playerIndexturn_]->getPosition();
+							movePlayer(playerIndexturn_, rolled_val);
+							int newPos = players_[playerIndexturn_]->getPosition();
+							handlePassingStart(oldPos, newPos);
+
+							std::string notification_msg = "Leaving jail on doubles";
+							notificationAdd(playerIndexturn_, notification_msg);
+
+							rollDiceButton_->setIsVisible(false);
+							jailPayButton_->setIsVisible(false);
+							setTurnState(FIELD_ACTION);
+						} else if (player_jail_status == 1) {
+							if (players_[playerIndexturn_]->getMoney() < JAIL_PAY_MONEY) {
+								money_to_find = JAIL_PAY_MONEY;
 								bank_pay_rent = true;
 								players_to_pay_rent.clear();
 								setTurnState(PAY_RENT);
-								std::string notification_msg = "Not enough money. Needed: " + std::to_string(sum);
+								std::string notification_msg = "Not enough money to leave jail";
 								notificationAdd(playerIndexturn_, notification_msg);
 							}
-						}
-					} break;
 
-					case Tax: {
-						if ((int)players_[playerIndexturn_]->getMoney() >= chance_card.getValue()) {
-							players_[playerIndexturn_]->substractMoney(chance_card.getValue());
-							std::string notification_msg = "Paid to bank: " + std::to_string(chance_card.getValue());
-							notificationAdd(playerIndexturn_, notification_msg);
-							setTurnState(TURN_END);
-						} else {
-							money_to_find = chance_card.getValue();
-							;
-							bank_pay_rent = true;
-							players_to_pay_rent.clear();
-							setTurnState(PAY_RENT);
-							std::string notification_msg =
-								"Not enough money. Needed: " + std::to_string(chance_card.getValue());
-							notificationAdd(playerIndexturn_, notification_msg);
-						}
+							players_[playerIndexturn_]->setJailStatus(0);
+							players_[playerIndexturn_]->substractMoney(JAIL_BAILOUT);
 
-					} break;
-
-					case MovementSpaces: {
-						int oldPos = players_[playerIndexturn_]->getPosition();
-						int posIncrement = chance_card.getValue();
-						movePlayer(playerIndexturn_, posIncrement);
-						int newPos = players_[playerIndexturn_]->getPosition();
-						if (posIncrement >= 0) {
+							int oldPos = players_[playerIndexturn_]->getPosition();
+							movePlayer(playerIndexturn_, rolled_val);
+							int newPos = players_[playerIndexturn_]->getPosition();
 							handlePassingStart(oldPos, newPos);
+
+							rollDiceButton_->setIsVisible(false);
+							jailPayButton_->setIsVisible(false);
+							setTurnState(FIELD_ACTION);
+
+							std::string notification_msg = "Player left jail on forced bailout";
+							notificationAdd(playerIndexturn_, notification_msg);
+
+						} else {
+							players_[playerIndexturn_]->reduceJailStatus();
+
+							rollDiceButton_->setIsVisible(false);
+							jailPayButton_->setIsVisible(false);
+
+							setTurnState(TURN_END);
 						}
-						setTurnState(FIELD_ACTION);
-					} break;
+					}
+				}
+			} break;
+			case FIELD_ACTION: {
+				int pos = players_[playerIndexturn_]->getPosition();
+				FieldType field_type =
+					std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 
-					case PayPlayers: {
-						unsigned int toPay = chance_card.getValue() * (players_.size() - 1);
+				std::string textWhereIsPlayer("is on field " + std::visit([](Field& field) { return field.getName(); },
+																getBoard()->getFieldById(pos)));
+				notificationAdd(playerIndexturn_, textWhereIsPlayer);
 
-						if (players_[playerIndexturn_]->getMoney() >= toPay) {
-							for (auto player_ptr : players_) {
-								if (player_ptr != players_[playerIndexturn_]) {
-									player_ptr->substractMoney(chance_card.getValue());
-									players_[playerIndexturn_]->addMoney(chance_card.getValue());
-								}
-							}
+				if (field_type == STREET || field_type == STATION || field_type == UTILITY) {
+					std::shared_ptr<Player> owner = nullptr;
+					if (field_type == STREET) {
+						StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
+						owner = field.getOwner();
+					} else if (field_type == STATION) {
+						StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
+						owner = field.getOwner();
+					} else {
+						UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
+						owner = field.getOwner();
+					}
+
+					if (owner == nullptr) {
+						setTurnState(BUY_ACTION);
+						clearPropertyData(true);
+						showPropertyData(pos, true);
+					} else if (owner->getId() != players_[playerIndexturn_]->getId()) {
+						unsigned int rent_to_pay = calculateRent(rolled_val, pos);
+						std::string notification("Rent to pay: " + std::to_string(rent_to_pay));
+						notificationAdd(playerIndexturn_, notification);
+						if (players_[playerIndexturn_]->getMoney() >= rent_to_pay) {
+							players_[playerIndexturn_]->substractMoney(rent_to_pay);
+							owner->addMoney(rent_to_pay);
 							setTurnState(TURN_END);
 						} else {
-							players_to_pay_rent.clear();
-							money_to_find = toPay;
+							money_to_find = rent_to_pay;
 							bank_pay_rent = false;
-							for (auto player_ptr : players_) {
-								if (player_ptr != players_[playerIndexturn_]) {
-									players_to_pay_rent.push_back(player_ptr);
-								}
-							}
+							players_to_pay_rent.clear();
+							players_to_pay_rent.push_back(owner);
 							setTurnState(PAY_RENT);
 						}
-					} break;
-
-					default:
-						setTurnState(TURN_END);
-						break;
-				}
-
-			} else {
-				std::cout << "No action" << field_type << std::endl;
-				setTurnState(TURN_END);
-			}
-		} break;
-
-		case BUY_ACTION: {
-			int pos = players_[playerIndexturn_]->getPosition();
-			unsigned int price = getFieldPriceByPosition(pos);
-			resignBuyFieldButton_->setIsVisible(true);
-			buyFieldButton_->setIsVisible(true);
-			if (isButtonClicked(buyFieldButton_)) {
-				if (players_[playerIndexturn_]->getMoney() >= price) {	// possible to buy property
-
-					std::string textPlayerBoughtProperty(
-						"bought field " +
-						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
-					notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
-
-					players_[playerIndexturn_]->substractMoney(price);
-					players_[playerIndexturn_]->addFieldOwnedId(pos);
-					std::shared_ptr<Player> player_ptr = players_[playerIndexturn_];
-					addOwnerToPropertyField(player_ptr, pos);
-
-					resignBuyFieldButton_->setIsVisible(false);
-					buyFieldButton_->setIsVisible(false);
-					setTurnState(TURN_END);
-				} else	// NOT possible to buy property
-				{
-					std::string textPlayerBoughtProperty(
-						"Can not buy field: " +
-						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
-					notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
-				}
-			}
-
-			if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction) {
-				if (getAuctionState() == NoAuction) {
-					std::string textPlayerResginedProperty(
-						"resigned to buy field " +
-						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
-					notificationAdd(playerIndexturn_, textPlayerResginedProperty);
-					resignBuyFieldButton_->setIsVisible(false);
-					buyFieldButton_->setIsVisible(false);
-					boardToAuctionSwitchHandler(true);
-					setScreenType(AUCTION);
-					setAuctionState(Initialization);
-				}
-				performAuction();
-				if (getAuctionState() == NoAuction) {
-					boardToAuctionSwitchHandler(false);
-					resignBuyFieldButton_->setIsVisible(false);
-					buyFieldButton_->setIsVisible(false);
-					rollDiceButton_->setIsVisible(false);
-					setScreenType(BOARDGAME);
-					setTurnState(TURN_END);
-				}
-			}
-		} break;
-
-		case PAY_RENT: {
-			if (playerChanged) {
-				std::string textPlayerrent(
-					"Must make money to paid rent of " + std::to_string(money_to_find) + " or go bankrupt");
-				notificationAdd(playerIndexturn_, textPlayerrent);
-				playerChanged = false;
-			}
-			if (players_[playerIndexturn_]->getMoney() < money_to_find) {  // player trying to get money to pay rent
-				buildingsManagingWorker();
-			} else {  // player has got money to pay rent
-				players_[playerIndexturn_]->substractMoney(money_to_find);
-				unsigned int payment_counter = players_to_pay_rent.size();
-				if (bank_pay_rent) {
-					++payment_counter;
-				}
-				for (auto player_ptr : players_to_pay_rent) {
-					player_ptr->addMoney(money_to_find / payment_counter);
-				}
-				std::string textPlayerrent("Paid rent of " + std::to_string((money_to_find)));
-				notificationAdd(playerIndexturn_, textPlayerrent);
-				setTurnState(TURN_END);
-			}
-		} break;
-
-		case TURN_END:
-			buildingsManagingWorker();
-			nextTurnButton_->setIsVisible(true);
-			if (isButtonClicked(nextTurnButton_)) {
-				rollDiceButton_->setIsVisible(true);
-				rolledValueText_->setString("");
-				resignBuyFieldButton_->setIsVisible(false);
-				buyFieldButton_->setIsVisible(false);
-				if (!playerBankrutedNow || !isDouble || players_[playerIndexturn_]->getJailStatus() != 0) {
-					double_turns = 0;
-
-					if (!playerBankrutedNow) {	// check if current player bankruted, if not inc turn
-						gameTurnsCounterHandle();
-						incPlayerIndexTurn();
 					} else {
+						std::cout << "No action - player owns this field" << field_type << std::endl;
+						setTurnState(TURN_END);
+					}
+				} else if (field_type == TAX) {
+					TaxField field = std::get<TaxField>(getBoard()->getFieldById(pos));
+					unsigned int tax_to_pay = field.getTaxValue();
+					if (players_[playerIndexturn_]->getMoney() >= tax_to_pay) {
+						players_[playerIndexturn_]->substractMoney(tax_to_pay);
+						setTurnState(TURN_END);
+					} else {
+						money_to_find = tax_to_pay;
+						bank_pay_rent = true;
+						players_to_pay_rent.clear();
+						setTurnState(PAY_RENT);
+					}
+				} else if (field_type == GO_TO_JAIL) {
+					std::string notification_msg = "Goes to jail via GO TO JAIL";
+					notificationAdd(playerIndexturn_, notification_msg);
+					sendToJail(playerIndexturn_);
+					players_[playerIndexturn_]->setJailStatus(3);
+					setTurnState(TURN_END);
+				} else if (field_type == CHANCE) {
+					ChanceCard chance_card = getChanceCard();
+					updateChanceCard();
+					std::string notification_msg = "Chance Card: ";
+					notificationAdd(playerIndexturn_, notification_msg + chance_card.getText());
+
+					switch (chance_card.getType()) {
+						case MovementToProperty: {
+							int oldPos = players_[playerIndexturn_]->getPosition();
+							int posIncrement = (40 + chance_card.getValue()) - oldPos;
+							movePlayer(playerIndexturn_, posIncrement);
+							int newPos = chance_card.getValue();
+							handlePassingStart(oldPos, newPos);
+							setTurnState(FIELD_ACTION);
+						} break;
+
+						case BankPaysYou:
+							players_[playerIndexturn_]->addMoney(chance_card.getValue());
+							setTurnState(TURN_END);
+							break;
+
+						case GetOutOfJailCard:
+							players_[playerIndexturn_]->setJailCards(players_[playerIndexturn_]->getJailCards() + 1);
+							setTurnState(TURN_END);
+							break;
+
+						case GoToJail:
+							sendToJail(playerIndexturn_);
+							players_[playerIndexturn_]->setJailStatus(3);
+							setTurnState(TURN_END);
+							break;
+
+						case PayForHouseHotel: {
+							unsigned int sum = 0;
+							for (auto field_id : players_[playerIndexturn_]->getFiledOwnedId()) {
+								FieldType fieldType = std::visit(
+									[](Field& field) { return field.getType(); }, getBoard()->getFieldById(field_id));
+								if (fieldType == STREET) {
+									StreetField field = std::get<StreetField>(getBoard()->getFieldById(field_id));
+									int hotelCost = field.getIsHotel() * 100;
+									sum += hotelCost;
+									if (hotelCost == 0) {
+										int housesCost = field.getHouseNumber() * 25;
+										sum += housesCost;
+									}
+								}
+							}
+
+							if (sum == 0) {
+								std::string notification_msg = "Amount to pay: " + std::to_string(sum);
+								notificationAdd(playerIndexturn_, notification_msg);
+								setTurnState(TURN_END);
+							} else {
+								if (players_[playerIndexturn_]->getMoney() >= sum) {
+									players_[playerIndexturn_]->substractMoney(sum);
+									std::string notification_msg = "Paid to bank: " + std::to_string(sum);
+									notificationAdd(playerIndexturn_, notification_msg);
+									setTurnState(TURN_END);
+								} else {
+									money_to_find = sum;
+									bank_pay_rent = true;
+									players_to_pay_rent.clear();
+									setTurnState(PAY_RENT);
+									std::string notification_msg = "Not enough money. Needed: " + std::to_string(sum);
+									notificationAdd(playerIndexturn_, notification_msg);
+								}
+							}
+						} break;
+
+						case Tax: {
+							if ((int)players_[playerIndexturn_]->getMoney() >= chance_card.getValue()) {
+								players_[playerIndexturn_]->substractMoney(chance_card.getValue());
+								std::string notification_msg = "Paid to bank: " + std::to_string(chance_card.getValue());
+								notificationAdd(playerIndexturn_, notification_msg);
+								setTurnState(TURN_END);
+							} else {
+								money_to_find = chance_card.getValue();
+								;
+								bank_pay_rent = true;
+								players_to_pay_rent.clear();
+								setTurnState(PAY_RENT);
+								std::string notification_msg =
+									"Not enough money. Needed: " + std::to_string(chance_card.getValue());
+								notificationAdd(playerIndexturn_, notification_msg);
+							}
+
+						} break;
+
+						case MovementSpaces: {
+							int oldPos = players_[playerIndexturn_]->getPosition();
+							int posIncrement = chance_card.getValue();
+							movePlayer(playerIndexturn_, posIncrement);
+							int newPos = players_[playerIndexturn_]->getPosition();
+							if (posIncrement >= 0) {
+								handlePassingStart(oldPos, newPos);
+							}
+							setTurnState(FIELD_ACTION);
+						} break;
+
+						case PayPlayers: {
+							unsigned int toPay = chance_card.getValue() * (players_.size() - 1);
+
+							if (players_[playerIndexturn_]->getMoney() >= toPay) {
+								for (auto player_ptr : players_) {
+									if (player_ptr != players_[playerIndexturn_]) {
+										player_ptr->substractMoney(chance_card.getValue());
+										players_[playerIndexturn_]->addMoney(chance_card.getValue());
+									}
+								}
+								setTurnState(TURN_END);
+							} else {
+								players_to_pay_rent.clear();
+								money_to_find = toPay;
+								bank_pay_rent = false;
+								for (auto player_ptr : players_) {
+									if (player_ptr != players_[playerIndexturn_]) {
+										players_to_pay_rent.push_back(player_ptr);
+									}
+								}
+								setTurnState(PAY_RENT);
+							}
+						} break;
+
+						default:
+							setTurnState(TURN_END);
+							break;
+					}
+
+				} else {
+					std::cout << "No action" << field_type << std::endl;
+					setTurnState(TURN_END);
+				}
+			} break;
+
+			case BUY_ACTION: {
+				int pos = players_[playerIndexturn_]->getPosition();
+				unsigned int price = getFieldPriceByPosition(pos);
+				resignBuyFieldButton_->setIsVisible(true);
+				buyFieldButton_->setIsVisible(true);
+				BuyDecision buy_decision = players_[playerIndexturn_]->decideBuy(pos);
+				if (isButtonClicked(buyFieldButton_) || (players_[playerIndexturn_]->getIsAi() && buy_decision == BUY)) { //  && players_[playerIndexturn_]->getMoney() >= price
+					if (players_[playerIndexturn_]->getMoney() >= price) {	// possible to buy property
+
+						std::string textPlayerBoughtProperty(
+							"bought field " +
+							std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+						notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
+
+						players_[playerIndexturn_]->substractMoney(price);
+						players_[playerIndexturn_]->addFieldOwnedId(pos);
+						std::shared_ptr<Player> player_ptr = players_[playerIndexturn_];
+						addOwnerToPropertyField(player_ptr, pos);
+
+						resignBuyFieldButton_->setIsVisible(false);
+						buyFieldButton_->setIsVisible(false);
+						setTurnState(TURN_END);
+					} else	// NOT possible to buy property
+					{
+						std::string textPlayerBoughtProperty(
+							"Can not buy field: " +
+							std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+						notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
+					}
+				}
+
+				if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction || (players_[playerIndexturn_]->getIsAi() && buy_decision == RESIGN)) {
+					if (getAuctionState() == NoAuction) {
+						std::string textPlayerResginedProperty(
+							"resigned to buy field " +
+							std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+						notificationAdd(playerIndexturn_, textPlayerResginedProperty);
+						resignBuyFieldButton_->setIsVisible(false);
+						buyFieldButton_->setIsVisible(false);
+						boardToAuctionSwitchHandler(true);
+						setScreenType(AUCTION);
+						setAuctionState(Initialization);
+					}
+					performAuction();
+					if (getAuctionState() == NoAuction) {
+						boardToAuctionSwitchHandler(false);
+						resignBuyFieldButton_->setIsVisible(false);
+						buyFieldButton_->setIsVisible(false);
+						rollDiceButton_->setIsVisible(false);
+						setScreenType(BOARDGAME);
+						setTurnState(TURN_END);
+					}
+				}
+			} break;
+
+			case PAY_RENT: {
+				if (playerChanged) {
+					std::string textPlayerrent(
+						"Must make money to paid rent of " + std::to_string(money_to_find) + " or go bankrupt");
+					notificationAdd(playerIndexturn_, textPlayerrent);
+					playerChanged = false;
+				}
+				if (players_[playerIndexturn_]->getMoney() < money_to_find) {  // player trying to get money to pay rent
+					buildingsManagingWorker();
+				} else {  // player has got money to pay rent
+					players_[playerIndexturn_]->substractMoney(money_to_find);
+					unsigned int payment_counter = players_to_pay_rent.size();
+					if (bank_pay_rent) {
+						++payment_counter;
+					}
+					for (auto player_ptr : players_to_pay_rent) {
+						player_ptr->addMoney(money_to_find / payment_counter);
+					}
+					std::string textPlayerrent("Paid rent of " + std::to_string((money_to_find)));
+					notificationAdd(playerIndexturn_, textPlayerrent);
+					setTurnState(TURN_END);
+				}
+			} break;
+
+			case TURN_END:
+				buildingsManagingWorker();
+				nextTurnButton_->setIsVisible(true);
+				if (isButtonClicked(nextTurnButton_)) {
+					rollDiceButton_->setIsVisible(true);
+					rolledValueText_->setString("");
+					resignBuyFieldButton_->setIsVisible(false);
+					buyFieldButton_->setIsVisible(false);
+					if (!playerBankrutedNow || !isDouble || players_[playerIndexturn_]->getJailStatus() != 0) {
+						double_turns = 0;
+
+						if (!playerBankrutedNow) {	// check if current player bankruted, if not inc turn
+							gameTurnsCounterHandle();
+							incPlayerIndexTurn();
+						} else {
+							makePlayerBankrupt(playerIndexturn_);
+							playerBankrutedNow = false;
+							if (playerIndexturn_ >=
+								players_.size()) {	// check if current player bankruted, if yes verify turn index
+								playerIndexturn_ = 0;
+								gameTurnByPlayerDone_ = {false, false, false, false};
+								++gameTurnsGloballyDone_;
+							}
+						}
+
+						if (gameFinishedCheckWinner()) {
+							removePlayerFromGame(playerIndexturn_, false);
+							if(isAiGameOnly_)
+							{
+								return false;	//leave game engine to return result to AI training
+							}
+							else
+							{
+								updateResultScreenStuff();
+								setScreenType(RESULT);
+							}
+						} else if (gameFinishedCheckDraw()) {
+							removePlayerFromGame(playerIndexturn_, true);
+							if(isAiGameOnly_)
+							{
+								return false;	//leave game engine to return result to AI training
+							}
+							else
+							{
+								updateResultScreenStuff();
+								setScreenType(RESULT);
+							}
+						}
+						turnInfoTextShow();
+					}
+
+					if (playerBankrutedNow) {
 						makePlayerBankrupt(playerIndexturn_);
 						playerBankrutedNow = false;
 						if (playerIndexturn_ >=
@@ -1214,48 +1259,11 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						}
 					}
 
-					if (gameFinishedCheckWinner()) {
-						removePlayerFromGame(playerIndexturn_, false);
-						if(isAiGameOnly_)
-						{
-							return false;	//leave game engine to return result to AI training
-						}
-						else
-						{
-							updateResultScreenStuff();
-							setScreenType(RESULT);
-						}
-					} else if (gameFinishedCheckDraw()) {
-						removePlayerFromGame(playerIndexturn_, true);
-						if(isAiGameOnly_)
-						{
-							return false;	//leave game engine to return result to AI training
-						}
-						else
-						{
-							updateResultScreenStuff();
-							setScreenType(RESULT);
-						}
-					}
-					turnInfoTextShow();
+					setTurnState(ROLL_DICE);
+					nextTurnButton_->setIsVisible(false);
+					playerChanged = true;
 				}
-
-				if (playerBankrutedNow) {
-					makePlayerBankrupt(playerIndexturn_);
-					playerBankrutedNow = false;
-					if (playerIndexturn_ >=
-						players_.size()) {	// check if current player bankruted, if yes verify turn index
-						playerIndexturn_ = 0;
-						gameTurnByPlayerDone_ = {false, false, false, false};
-						++gameTurnsGloballyDone_;
-					}
-				}
-
-				setTurnState(ROLL_DICE);
-				nextTurnButton_->setIsVisible(false);
-				playerChanged = true;
-			}
-			break;
+				break;
 		case WITHDRAW_ONGOING:
 			if (isButtonClicked(getWithdraw().getResignButton()) ||
 				isButtonClicked(getWithdraw().getResignValueButton()) ||
@@ -1393,6 +1401,10 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			break;
 		default:
 			break;
+		}
+	} catch (std::exception& e){
+		std::cout << e.what() << std::endl;
+		std::cout << "Crash. Player: " << players_[playerIndexturn_]->getId() << "Position: " << players_[playerIndexturn_]->getPosition() << " Money: " << players_[playerIndexturn_]->getMoney() << std::endl;
 	}
 	return true;
 }
@@ -2159,7 +2171,7 @@ void monopolyGameEngine::updateResultScreenStuff()
 											playerResultText->getLocalBounds().getPosition());
 		resultPlayersPlaces_.push_back(playerResultText);
 	}
-	
+
 	y_offset += y_step;
 	returnToMainMenuButton_->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
 	for(auto button_ptr : getButtons())
