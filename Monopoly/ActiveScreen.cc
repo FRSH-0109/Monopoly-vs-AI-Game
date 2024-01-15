@@ -76,12 +76,12 @@ void MainMenuScreen::mainMenuCreate() {
 	setContextWindow(ContextWindow::GetInstance());
 
 	// TODO: exception handling
-	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.ttf"))
+	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
 		std::cout << "Font not found!\n";
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonExit(new Button(EXIT, "Exit", {200, 100}, 30));
+	std::shared_ptr<Button> buttonExit(new Button(EXIT, L"Wyjdź", {200, 100}, 30));
 	buttonExit->setFont(getFont());
 	buttonExit->setPosition({getContextWindow()->getWindow().getSize().x / 2.0f, 300});
 	buttonExit->setInactiveBackColor(sf::Color::Red);
@@ -89,7 +89,7 @@ void MainMenuScreen::mainMenuCreate() {
 	buttonExit->setFocusBackColor(sf::Color::Black);
 	buttonExit->setFocusTextColor(sf::Color::Red);
 
-	std::shared_ptr<Button> buttonPlay(new Button(PLAY, "Play", {200, 100}, 30));
+	std::shared_ptr<Button> buttonPlay(new Button(PLAY, L"Graj", {200, 100}, 30));
 	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition({getContextWindow()->getWindow().getSize().x / 2.0f, 100});
 	buttonPlay->setInactiveBackColor(sf::Color::Red);
@@ -196,12 +196,12 @@ void GameMenuScreen::gameMenuCreate() {
 	setContextWindow(ContextWindow::GetInstance());
 
 	// TODO: exception handling
-	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.ttf"))
+	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
 		std::cout << "Font not found!\n";
 
 	setFont(getFont());
 
-	std::shared_ptr<Button> buttonPlay(new Button(START_GAME, "Start game", {200, 100}, 30));
+	std::shared_ptr<Button> buttonPlay(new Button(START_GAME, L"Graj", {200, 100}, 30));
 	buttonPlay->setFont(getFont());
 	buttonPlay->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f) - 200, 700});
 	buttonPlay->setInactiveBackColor(sf::Color::Red);
@@ -209,7 +209,7 @@ void GameMenuScreen::gameMenuCreate() {
 	buttonPlay->setFocusBackColor(sf::Color::Black);
 	buttonPlay->setFocusTextColor(sf::Color::Red);
 
-	std::shared_ptr<Button> buttonReturn(new Button(RETURN_TO_MAIN_MENU, "Return", {200, 100}, 30));
+	std::shared_ptr<Button> buttonReturn(new Button(RETURN_TO_MAIN_MENU, L"Powrót", {200, 100}, 30));
 	buttonReturn->setFont(getFont());
 	buttonReturn->setPosition({(getContextWindow()->getWindow().getSize().x / 2.0f) + 200, 700});
 	buttonReturn->setInactiveBackColor(sf::Color::Red);
@@ -242,7 +242,7 @@ void GameMenuScreen::gameMenuCreate() {
 void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep) {
 	int fontSize = 30;
 	int fontSizeSmall = 25;
-	std::string playerTextString = "Player X";
+	std::string playerTextString = "Gracz X";
 	sf::Color grey(192, 192, 192);
 	sf::Vector2f buttonSize = sf::Vector2f(150, 100);
 	sf::Vector2f buttonSizeSmall = sf::Vector2f(50, 100);
@@ -265,7 +265,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	switch (colNum) {
 		case 1:
 			playerTextColor = sf::Color::Green;
-			playerTextString = "Player 1";
+			playerTextString = "Gracz 1";
 			buttonNoneEvent = PLAYER_1_SET_NONE;
 			buttonHumanEvent = PLAYER_1_SET_HUMAN;
 			buttonAIEvent = PLAYER_1_SET_AI;
@@ -276,7 +276,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 
 		case 2:
 			playerTextColor = sf::Color::Red;
-			playerTextString = "Player 2";
+			playerTextString = "Gracz 2";
 			buttonNoneEvent = PLAYER_2_SET_NONE;
 			buttonHumanEvent = PLAYER_2_SET_HUMAN;
 			buttonAIEvent = PLAYER_2_SET_AI;
@@ -287,7 +287,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 
 		case 3:
 			playerTextColor = sf::Color::Blue;
-			playerTextString = "Player 3";
+			playerTextString = "Gracz 3";
 			buttonNoneEvent = PLAYER_3_SET_NONE;
 			buttonHumanEvent = PLAYER_3_SET_HUMAN;
 			buttonAIEvent = PLAYER_3_SET_AI;
@@ -298,7 +298,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 
 		case 4:
 			playerTextColor = sf::Color::Yellow;
-			playerTextString = "Player 4";
+			playerTextString = "Gracz 4";
 			buttonNoneEvent = PLAYER_4_SET_NONE;
 			buttonHumanEvent = PLAYER_4_SET_HUMAN;
 			buttonAIEvent = PLAYER_4_SET_AI;
@@ -318,7 +318,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	PlayerText->setOutlineThickness(3);
 	addText(PlayerText);
 
-	std::shared_ptr<Button> buttonPlayerSetNone(new Button(buttonNoneEvent, "None", buttonSize, fontSize));
+	std::shared_ptr<Button> buttonPlayerSetNone(new Button(buttonNoneEvent, "Brak", buttonSize, fontSize));
 	buttonPlayerSetNone->setFont(getFont());
 	buttonPlayerSetNone->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep));
 	buttonPlayerSetNone->setActiveBackColor(activeButtonBackColor);
@@ -333,7 +333,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	buttonPlayerSetNone->setIsFocus(false);
 	addButton(buttonPlayerSetNone);
 
-	std::shared_ptr<Button> buttonPlayerSetHuman(new Button(buttonHumanEvent, "Human", buttonSize, fontSize));
+	std::shared_ptr<Button> buttonPlayerSetHuman(new Button(buttonHumanEvent, L"Człowiek", buttonSize, fontSize));
 	buttonPlayerSetHuman->setFont(getFont());
 	buttonPlayerSetHuman->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 2));
 	buttonPlayerSetHuman->setActiveBackColor(activeButtonBackColor);
@@ -363,7 +363,7 @@ void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStar
 	buttonPlayerSetAI->setIsFocus(false);
 	addButton(buttonPlayerSetAI);
 
-	std::shared_ptr<sf::Text> PlayerTextAILevel(new sf::Text("AI level", getFont(), fontSizeSmall));
+	std::shared_ptr<sf::Text> PlayerTextAILevel(new sf::Text("Poziom AI", getFont(), fontSizeSmall));
 	PlayerTextAILevel->setOrigin(PlayerTextAILevel->getGlobalBounds().getSize() / 2.f +
 								 PlayerTextAILevel->getLocalBounds().getPosition());  // text origin at center
 	PlayerTextAILevel->setPosition(sf::Vector2f(posStart.x, posStart.y + yStep * 3.8));

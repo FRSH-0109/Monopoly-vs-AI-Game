@@ -13,12 +13,13 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
 
 #include "main.h"
 
 class Button {
    public:
-	Button(ScreenEventType type, std::string btnText, sf::Vector2f buttonSize, int charSize);
+	Button(ScreenEventType type, sf::String btnText, sf::Vector2f buttonSize, int charSize);
 
 	void draw(sf::RenderWindow& window);
 

@@ -80,8 +80,14 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
 
+	for(int j = 0 ; j < PLAYERS_MAX_ ; ++j)
+	{
+		playersStartingIds_[j] = 255;	//mark no player in game with this ID
+	}
+
 	for (unsigned int j = 0; j < players_.size();
-		 ++j) {	 // save id of starting pplayers to future usage of data display
+		 ++j) {	 
+		// save id of starting pplayers to future usage of data display
 		playersStartingIds_[j] = players_[j]->getId();
 	}
 
@@ -185,7 +191,7 @@ unsigned int monopolyGameEngine::getFontSize() const {
 }
 
 void monopolyGameEngine::turnInfoTextShow() {
-	turnInfoText_->setString("Turn: Player " + std::to_string(players_[getPlayerIndexTurn()]->getId() + 1));
+	turnInfoText_->setString("Tura: Gracz " + std::to_string(players_[getPlayerIndexTurn()]->getId() + 1));
 }
 
 unsigned int monopolyGameEngine::getHouseCount() {
@@ -1528,7 +1534,7 @@ void monopolyGameEngine::createButtonRollDice() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonRollDice(new Button(IDLE, "Roll Dice", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonRollDice(new Button(IDLE, L"Rzut kośćmi", buttonSize, getFontSize()));
 	buttonRollDice->setFont(getFont());
 	buttonRollDice->setPosition(ROLL_DICE_BUTTON_POSITION);
 	buttonRollDice->setActiveBackColor(activeButtonBackColor);
@@ -1546,7 +1552,7 @@ void monopolyGameEngine::createButtonRollDice() {
 }
 
 void monopolyGameEngine::createTextTurnInfo() {
-	std::shared_ptr<sf::Text> turnInfoText(new sf::Text("Turn: ", getFont(), getFontSize()));
+	std::shared_ptr<sf::Text> turnInfoText(new sf::Text("Tura: ", getFont(), getFontSize()));
 	turnInfoText->setPosition(TURN_INFO_TEXT_POSITION);
 	turnInfoText->setFillColor(sf::Color::Black);
 	turnInfoText_ = turnInfoText;
@@ -1570,7 +1576,7 @@ void monopolyGameEngine::createTextPlayersInfo() {
 			defPos.x += 180;
 		}
 		std::shared_ptr<sf::Text> playerText(
-			new sf::Text("Player " + std::to_string(id + 1), getFont(), getFontSize()));
+			new sf::Text("Gracz " + std::to_string(id + 1), getFont(), getFontSize()));
 		playerText->setPosition(defPos);
 		playerText->setFillColor(player->getColor());
 		playerText->setOutlineColor(sf::Color::Black);
@@ -1578,13 +1584,13 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		addText(playerText);
 
 		std::shared_ptr<sf::Text> playerMoneyText(
-			new sf::Text("Money: " + std::to_string(player->getMoney()), getFont(), getFontSize() - 7));
+			new sf::Text("Kasa: " + std::to_string(player->getMoney()), getFont(), getFontSize() - 7));
 		playerMoneyText->setPosition(sf::Vector2f(defPos.x, defPos.y + 50));
 		playerMoneyText->setFillColor(sf::Color::Black);
 		addText(playerMoneyText);
 
 		std::shared_ptr<sf::Text> playerPositionText(
-			new sf::Text("Position: " + std::to_string(player->getPosition() + 1), getFont(), getFontSize() - 7));
+			new sf::Text("Pozycja: " + std::to_string(player->getPosition() + 1), getFont(), getFontSize() - 7));
 		playerPositionText->setPosition(sf::Vector2f(defPos.x, defPos.y + 80));
 		playerPositionText->setFillColor(sf::Color::Black);
 		addText(playerPositionText);
@@ -1605,30 +1611,32 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		playerInfoText_[id].push_back(playerMoneyText);
 		playerInfoText_[id].push_back(playerPositionText);
 		playerInfoText_[id].push_back(playerPositionNameText);
-
 		++i;
 	}
 }
 
 void monopolyGameEngine::updateTextPlayersInfo() {
-	bool isPlayerinGame[4] = {false, false, false, false};
-	int i = 0;
+	bool isPlayerinGame[4] = {false};
 	for (auto player : players_) {
 		const std::string streetName =
 			std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(player->getPosition()));
 		int id = player->getId();
-		playerInfoText_[id][1]->setString("Money: " + std::to_string(player->getMoney()));
-		playerInfoText_[id][2]->setString("Position: " + std::to_string(player->getPosition() + 1));
+		playerInfoText_[id][1]->setString("Kasa: " + std::to_string(player->getMoney()));
+		playerInfoText_[id][2]->setString("Pozycja: " + std::to_string(player->getPosition() + 1));
 		playerInfoText_[id][3]->setString(streetName);
 		isPlayerinGame[id] = true;
-		++i;
 	}
 
-	for (unsigned int i = 0; i < playersStartingAmount_; ++i) {
-		if (!isPlayerinGame[i]) {
-			playerInfoText_[i][1]->setString("Bankrupt");
-			playerInfoText_[i][2]->setString("");
-			playerInfoText_[i][3]->setString("");
+	for(unsigned int i = 0 ; i < PLAYERS_MAX_ ; ++i)
+	{
+		unsigned int id = playersStartingIds_[i];
+		if (id != 255 && !isPlayerinGame[id]) {
+			if(playerInfoText_[id].size() > 0)	//check if player id was even in game from begining
+			{
+				playerInfoText_[id][1]->setString("Bankrupt");
+				playerInfoText_[id][2]->setString("");
+				playerInfoText_[id][3]->setString("");
+			}
 		}
 	}
 }
@@ -1681,7 +1689,7 @@ void monopolyGameEngine::createButtonBuyResign() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBuy(new Button(IDLE, "Buy", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuy(new Button(IDLE, "Kup", buttonSize, getFontSize()));
 	buttonBuy->setFont(getFont());
 	buttonBuy->setPosition(BUY_BUTTON_POSITION);
 	buttonBuy->setActiveBackColor(activeButtonBackColor);
@@ -1722,7 +1730,7 @@ void monopolyGameEngine::createButtonNextProperty() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonNext(new Button(IDLE, "Next", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonNext(new Button(IDLE, L"Następny", buttonSize, getFontSize()));
 	buttonNext->setFont(getFont());
 	buttonNext->setPosition(NEXT_PROPERTY_BUTTON_POSITION);
 	buttonNext->setActiveBackColor(activeButtonBackColor);
@@ -1747,7 +1755,7 @@ void monopolyGameEngine::createButtonPerviousProperty() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonPrev(new Button(IDLE, "Previous", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonPrev(new Button(IDLE, "Poprzedni", buttonSize, getFontSize()));
 	buttonPrev->setFont(getFont());
 	buttonPrev->setPosition(PREVIOUS_PROPERTY_BUTTON_POSITION);
 	buttonPrev->setActiveBackColor(activeButtonBackColor);
@@ -1765,7 +1773,7 @@ void monopolyGameEngine::createButtonPerviousProperty() {
 }
 
 void monopolyGameEngine::createButtonsBuySellHouseHotel() {
-	houseText_ = std::make_shared<sf::Text>("House", getFont(), getFontSize() - 2);
+	houseText_ = std::make_shared<sf::Text>("Dom", getFont(), getFontSize() - 2);
 	houseText_->setPosition(HOUSE_TEXT_POSITION);
 	houseText_->setFillColor(sf::Color::Black);
 	houseText_->setOrigin(houseText_->getGlobalBounds().getSize() / 2.f + houseText_->getLocalBounds().getPosition());
@@ -1782,7 +1790,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBuyHouse(new Button(IDLE, "Buy", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuyHouse(new Button(IDLE, "Kup", buttonSize, getFontSize()));
 	buttonBuyHouse->setFont(getFont());
 	buttonBuyHouse->setPosition(BUY_HOUSE_BUTTON_POSITION);
 	buttonBuyHouse->setActiveBackColor(activeButtonBackColor);
@@ -1798,7 +1806,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buyHouseButton_ = buttonBuyHouse;
 	addButton(buttonBuyHouse);
 
-	std::shared_ptr<Button> buttonSellHouse(new Button(IDLE, "Sell", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonSellHouse(new Button(IDLE, "Sprzedaj", buttonSize, getFontSize()));
 	buttonSellHouse->setFont(getFont());
 	buttonSellHouse->setPosition(SELL_HOUSE_BUTTON_POSITION);
 	buttonSellHouse->setActiveBackColor(activeButtonBackColor);
@@ -1814,7 +1822,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	sellHouseButton_ = buttonSellHouse;
 	addButton(buttonSellHouse);
 
-	std::shared_ptr<Button> buttonBuyHotel(new Button(IDLE, "Buy", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuyHotel(new Button(IDLE, "Kup", buttonSize, getFontSize()));
 	buttonBuyHotel->setFont(getFont());
 	buttonBuyHotel->setPosition(BUY_HOTEL_BUTTON_POSITION);
 	buttonBuyHotel->setActiveBackColor(activeButtonBackColor);
@@ -1830,7 +1838,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buyHotelButton_ = buttonBuyHotel;
 	addButton(buttonBuyHotel);
 
-	std::shared_ptr<Button> buttonSellHotel(new Button(IDLE, "Sell", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonSellHotel(new Button(IDLE, "Sprzedaj", buttonSize, getFontSize()));
 	buttonSellHotel->setFont(getFont());
 	buttonSellHotel->setPosition(SELL_HOTEL_BUTTON_POSITION);
 	buttonSellHotel->setActiveBackColor(activeButtonBackColor);
@@ -1855,7 +1863,7 @@ void monopolyGameEngine::createButtonsBankrupt() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBankrupt(new Button(IDLE, "Go Bankrupt", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBankrupt(new Button(IDLE, "Bankrutuj", buttonSize, getFontSize()));
 	buttonBankrupt->setFont(getFont());
 	buttonBankrupt->setPosition(BANKRUPT_BUTTON_POSITION);
 	buttonBankrupt->setActiveBackColor(activeButtonBackColor);
@@ -1880,7 +1888,7 @@ void monopolyGameEngine::createButtonsNextTurn() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonNextTurn(new Button(IDLE, "Next turn", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonNextTurn(new Button(IDLE, "Kolejna tura", buttonSize, getFontSize()));
 	buttonNextTurn->setFont(getFont());
 	buttonNextTurn->setPosition(NEXT_TURN_BUTTON_POSITION);
 	buttonNextTurn->setActiveBackColor(activeButtonBackColor);
@@ -2122,7 +2130,7 @@ void monopolyGameEngine::createButtonWithdraw() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonWithdraw(new Button(IDLE, "Withdraw", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonWithdraw(new Button(IDLE, "Wymiana", buttonSize, getFontSize()));
 	buttonWithdraw->setFont(getFont());
 	buttonWithdraw->setPosition(WITHDRAW_BUTTON_POSITION);
 	buttonWithdraw->setActiveBackColor(activeButtonBackColor);
@@ -2190,7 +2198,7 @@ void monopolyGameEngine::createMortagingButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonMortgage(new Button(IDLE, "Mortgage", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonMortgage(new Button(IDLE, "Zastaw", buttonSize, getFontSize()));
 	buttonMortgage->setFont(getFont());
 	buttonMortgage->setPosition(MORTGAGE_BUTTON_POSITION);
 	buttonMortgage->setActiveBackColor(activeButtonBackColor);
@@ -2206,7 +2214,7 @@ void monopolyGameEngine::createMortagingButton() {
 	MortgageButton_ = buttonMortgage;
 	addButton(buttonMortgage);
 
-	std::shared_ptr<Button> buttonUnMortgage(new Button(IDLE, "UnMortgage", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonUnMortgage(new Button(IDLE, "Wykup", buttonSize, getFontSize()));
 	buttonUnMortgage->setFont(getFont());
 	buttonUnMortgage->setPosition(UNMORTGAGE_BUTTON_POSITION);
 	buttonUnMortgage->setActiveBackColor(activeButtonBackColor);
@@ -2326,11 +2334,11 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	const float rentPricesOffsetX = 180;
 
 	std::shared_ptr<sf::Text> propertyPrice(
-		new sf::Text("Price: " + std::to_string(price), getFont(), getFontSize() - 2));
+		new sf::Text("Cena: " + std::to_string(price), getFont(), getFontSize() - 2));
 	propertyPrice->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset));
 	propertyPrice->setFillColor(sf::Color::Black);
 
-	std::shared_ptr<sf::Text> propertyMortgage(new sf::Text("Mortgage:", getFont(), getFontSize() - 2));
+	std::shared_ptr<sf::Text> propertyMortgage(new sf::Text("Zastaw:", getFont(), getFontSize() - 2));
 	propertyMortgage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
 	propertyMortgage->setFillColor(sf::Color::Black);
 
@@ -2353,39 +2361,39 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	}
 
 	if (fieldType == STREET) {
-		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Czynsz: ", getFont(), getFontSize() - 2));
 		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRent1->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  with color set:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  kompletny kolor:", getFont(), getFontSize() - 2));
 		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
 		propertyRent2->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  with 1 house:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  z 1 domem:", getFont(), getFontSize() - 2));
 		propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRent3->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  with 2 houses:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  z 2 domami:", getFont(), getFontSize() - 2));
 		propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRent4->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  with 3 houses:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  z 3 domami:", getFont(), getFontSize() - 2));
 		propertyRent5->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 5));
 		propertyRent5->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  with 4 houses:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  z 4 domami:", getFont(), getFontSize() - 2));
 		propertyRent6->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
 		propertyRent6->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  with hotel:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  z hotelem:", getFont(), getFontSize() - 2));
 		propertyRent7->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 7));
 		propertyRent7->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Houses cost:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Cena domu:", getFont(), getFontSize() - 2));
 		propertyHouseCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 9));
 		propertyHouseCost->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Hotel cost:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Cena hotelu:", getFont(), getFontSize() - 2));
 		propertyHotelCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 10));
 		propertyHotelCost->setFillColor(sf::Color::Black);
 
@@ -2482,19 +2490,19 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 			allPropertyDataTexts_.push_back(propertyHotelPrice);
 		}
 	} else if (fieldType == STATION) {
-		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Czynsz: ", getFont(), getFontSize() - 2));
 		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRent1->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent2(new sf::Text(" if 2 are owned:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent2(new sf::Text(" posiadane 2:", getFont(), getFontSize() - 2));
 		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
 		propertyRent2->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent3(new sf::Text(" if 3 are owned:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent3(new sf::Text(" posaidane 3:", getFont(), getFontSize() - 2));
 		propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRent3->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent4(new sf::Text(" if 4 are owned:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent4(new sf::Text(" posiadane 4:", getFont(), getFontSize() - 2));
 		propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRent4->setFillColor(sf::Color::Black);
 
@@ -2542,11 +2550,11 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 			allPropertyDataTexts_.push_back(propertyRentCost4);
 		}
 	} else {
-		std::shared_ptr<sf::Text> propertyRent(new sf::Text("Rent:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent(new sf::Text("Czynsz:", getFont(), getFontSize() - 2));
 		propertyRent->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 		propertyRent->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("1 utility is owned: ", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent1(new sf::Text("posiadane 1: ", getFont(), getFontSize() - 2));
 		propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 		propertyRent1->setFillColor(sf::Color::Black);
 
@@ -2556,7 +2564,7 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 			sf::Vector2f(dataPos.x + rentPricesOffsetX, dataPos.y + yOffset + yOffset_step * 4));
 		propertyRentCost1->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("2 utilities are owned: ", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyRent2(new sf::Text("posiadane 2: ", getFont(), getFontSize() - 2));
 		propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
 		propertyRent2->setFillColor(sf::Color::Black);
 
@@ -2616,13 +2624,13 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 
 void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
 	const unsigned int LINE_LEN = 58;
-	const unsigned int LINE_LEN_WITHOUT_PLAYER = LINE_LEN - std::string("Player X: ").length();
+	const unsigned int LINE_LEN_WITHOUT_PLAYER = LINE_LEN - std::string("Gracz X: ").length();
 	unsigned int id = players_[index]->getId();
-	if (std::string("Player " + std::to_string(id + 1) + ": " + text).size() <= LINE_LEN_WITHOUT_PLAYER) {
-		notificationsWall_.addToWall("Player " + std::to_string(id + 1) + ": " + text);
+	if (std::string("Gracz " + std::to_string(id + 1) + ": " + text).size() <= LINE_LEN_WITHOUT_PLAYER) {
+		notificationsWall_.addToWall("Gracz " + std::to_string(id + 1) + ": " + text);
 	} else {
 		notificationsWall_.addToWall(
-			"Player " + std::to_string(id + 1) + ": " + text.substr(0, LINE_LEN_WITHOUT_PLAYER) + "-");
+			"Gracz " + std::to_string(id + 1) + ": " + text.substr(0, LINE_LEN_WITHOUT_PLAYER) + "-");
 		for (unsigned int i = LINE_LEN_WITHOUT_PLAYER; i < text.size(); i += LINE_LEN_WITHOUT_PLAYER + 2) {
 			notificationsWall_.addToWall("            " + text.substr(i, LINE_LEN_WITHOUT_PLAYER + 2));
 		}
@@ -2698,7 +2706,7 @@ void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	removePlayerFromGame(playerIndexTurn, false);
 }
 
-std::shared_ptr<Button> monopolyGameEngine::createDefaultButton(std::string text, unsigned int width, unsigned int height) {
+std::shared_ptr<Button> monopolyGameEngine::createDefaultButton(sf::String text, unsigned int width, unsigned int height) {
 	sf::Vector2f buttonSize = sf::Vector2f(width, height);
 	sf::Color activeButtonBackColor = sf::Color::Green;
 	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY

@@ -82,8 +82,8 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 	}
 
 	if (isVisible) {
-		player1Text_->setString("Player " + std::to_string(player1ToWithDraw_->getId() + 1));
-		player1Money_->setString("Money: " + std::to_string(player1MoneyBuffer_));
+		player1Text_->setString("Gracz " + std::to_string(player1ToWithDraw_->getId() + 1));
+		player1Money_->setString("Kasa: " + std::to_string(player1MoneyBuffer_));
 
 		for (auto prop : player1ToWithDraw_->getFiledOwnedId()) {
 			player1Properties_.push_back(prop);
@@ -93,8 +93,8 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 			currentPropertyPlayer1Showed_ = player1Properties_[0];
 		}
 
-		player2Text_->setString("Player " + std::to_string(player2ToWithDraw_->getId() + 1));
-		player2Money_->setString("Money: " + std::to_string(player2MoneyBuffer_));
+		player2Text_->setString("Gracz " + std::to_string(player2ToWithDraw_->getId() + 1));
+		player2Money_->setString("Kasa: " + std::to_string(player2MoneyBuffer_));
 
 		for (auto prop : player2ToWithDraw_->getFiledOwnedId()) {
 			player2Properties_.push_back(prop);
@@ -105,11 +105,11 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 		}
 
 		player1IndexText_->setString(player1Text_->getString() + " Index");
-		player1IndexMoney_->setString("Money: " + std::to_string(player1MoneyIndexBuffer_));
+		player1IndexMoney_->setString("Kasa: " + std::to_string(player1MoneyIndexBuffer_));
 		currentPropertyPlayer1IndexShowed_ = 0;
 
 		player2IndexText_->setString(player2Text_->getString() + " Index");
-		player2IndexMoney_->setString("Money: " + std::to_string(player2MoneyIndexBuffer_));
+		player2IndexMoney_->setString("Kasa: " + std::to_string(player2MoneyIndexBuffer_));
 		currentPropertyPlayer2IndexShowed_ = 0;
 
 		showProperty(1);
@@ -134,7 +134,7 @@ void Withdraw::setDecisionScreenVisible(bool isVisible) {
 	playerInfoLoseProperties_->setFillColor(color);
 
 	if (isVisible) {
-		playerInfoText_->setString("Player " + std::to_string(player2ToWithDraw_->getId() + 1) + " decision:");
+		playerInfoText_->setString("Gracz " + std::to_string(player2ToWithDraw_->getId() + 1) + " decision:");
 		playerInfoMoney_->setString(
 			"Money transaction: " + std::to_string((int)player1MoneyIndexBuffer_ - (int)player2MoneyIndexBuffer_));
 	}
@@ -375,42 +375,42 @@ void Withdraw::createValuePlayerScreen() {
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	std::shared_ptr<Button> buttonNext = createDefaultButton("Next", 120, 50);
+	std::shared_ptr<Button> buttonNext = createDefaultButton(L"Następny", 120, 50);
 	buttonNext->setPosition(NEXT_PROPERTY_PLAYER1_BUTTON_POSITION);
 	nextPropertyPlayer1Button_ = buttonNext;
 	addButton(buttonNext);
 
-	std::shared_ptr<Button> buttonPrev = createDefaultButton("Previous", 120, 50);
+	std::shared_ptr<Button> buttonPrev = createDefaultButton("Poprzedni", 120, 50);
 	buttonPrev->setPosition(PREVIOUS_PROPERTY_PLAYER1_BUTTON_POSITION);
 	previousPropertyPlayer1Button_ = buttonPrev;
 	addButton(buttonPrev);
 
-	std::shared_ptr<Button> buttonNext2 = createDefaultButton("Next", 120, 50);
+	std::shared_ptr<Button> buttonNext2 = createDefaultButton(L"Następny", 120, 50);
 	buttonNext2->setPosition(NEXT_PROPERTY_PLAYER2_BUTTON_POSITION);
 	nextPropertyPlayer2Button_ = buttonNext2;
 	addButton(buttonNext2);
 
-	std::shared_ptr<Button> buttonPrev2 = createDefaultButton("Previous", 120, 50);
+	std::shared_ptr<Button> buttonPrev2 = createDefaultButton("Poprzedni", 120, 50);
 	buttonPrev2->setPosition(PREVIOUS_PROPERTY_PLAYER2_BUTTON_POSITION);
 	previousPropertyPlayer2Button_ = buttonPrev2;
 	addButton(buttonPrev2);
 
-	std::shared_ptr<Button> buttonNextIndex = createDefaultButton("Next", 120, 50);
+	std::shared_ptr<Button> buttonNextIndex = createDefaultButton(L"Następny", 120, 50);
 	buttonNextIndex->setPosition(NEXT_PROPERTY_PLAYER1_INDEX_BUTTON_POSITION);
 	nextPropertyPlayer1IndexButton_ = buttonNextIndex;
 	addButton(buttonNextIndex);
 
-	std::shared_ptr<Button> buttonPrevIndex = createDefaultButton("Previous", 120, 50);
+	std::shared_ptr<Button> buttonPrevIndex = createDefaultButton("Poprzedni", 120, 50);
 	buttonPrevIndex->setPosition(PREVIOUS_PROPERTY_PLAYER1_INDEX_BUTTON_POSITION);
 	previousPropertyPlayer1IndexButton_ = buttonPrevIndex;
 	addButton(buttonPrevIndex);
 
-	std::shared_ptr<Button> buttonNextIndex2 = createDefaultButton("Next", 120, 50);
+	std::shared_ptr<Button> buttonNextIndex2 = createDefaultButton(L"Następny", 120, 50);
 	buttonNextIndex2->setPosition(NEXT_PROPERTY_PLAYER2_INDEX_BUTTON_POSITION);
 	nextPropertyPlayer2IndexButton_ = buttonNextIndex2;
 	addButton(buttonNextIndex2);
 
-	std::shared_ptr<Button> buttonPrevIndex2 = createDefaultButton("Previous", 120, 50);
+	std::shared_ptr<Button> buttonPrevIndex2 = createDefaultButton("Poprzedni", 120, 50);
 	buttonPrevIndex2->setPosition(PREVIOUS_PROPERTY_PLAYER2_INDEX_BUTTON_POSITION);
 	previousPropertyPlayer2IndexButton_ = buttonPrevIndex2;
 	addButton(buttonPrevIndex2);
@@ -436,7 +436,7 @@ void Withdraw::createValuePlayerScreen() {
 	addButton(buttonRemove2);
 }
 
-std::shared_ptr<Button> Withdraw::createDefaultButton(std::string text, unsigned int width, unsigned int height) {
+std::shared_ptr<Button> Withdraw::createDefaultButton(sf::String text, unsigned int width, unsigned int height) {
 	sf::Vector2f buttonSize = sf::Vector2f(width, height);
 	sf::Color activeButtonBackColor = sf::Color::Green;
 	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
@@ -687,10 +687,10 @@ void Withdraw::moneyTransferIndex(unsigned int playerNum, int money) {
 }
 
 void Withdraw::moneyTextUpdate() {
-	player1Money_->setString("Money: " + std::to_string(player1MoneyBuffer_));
-	player2Money_->setString("Money: " + std::to_string(player2MoneyBuffer_));
-	player1IndexMoney_->setString("Money: " + std::to_string(player1MoneyIndexBuffer_));
-	player2IndexMoney_->setString("Money: " + std::to_string(player2MoneyIndexBuffer_));
+	player1Money_->setString("Kasa: " + std::to_string(player1MoneyBuffer_));
+	player2Money_->setString("Kasa: " + std::to_string(player2MoneyBuffer_));
+	player1IndexMoney_->setString("Kasa: " + std::to_string(player1MoneyIndexBuffer_));
+	player2IndexMoney_->setString("Kasa: " + std::to_string(player2MoneyIndexBuffer_));
 }
 
 void Withdraw::showProperty(int column) {
@@ -820,11 +820,11 @@ void Withdraw::showProperty(int column) {
 		const float rentPricesOffsetX = 180;
 
 		std::shared_ptr<sf::Text> propertyPrice(
-			new sf::Text("Price: " + std::to_string(price), getFont(), getFontSize() - 2));
+			new sf::Text("Cena: " + std::to_string(price), getFont(), getFontSize() - 2));
 		propertyPrice->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset));
 		propertyPrice->setFillColor(sf::Color::Black);
 
-		std::shared_ptr<sf::Text> propertyMortgage(new sf::Text("Mortgage:", getFont(), getFontSize() - 2));
+		std::shared_ptr<sf::Text> propertyMortgage(new sf::Text("Zastaw:", getFont(), getFontSize() - 2));
 		propertyMortgage->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 8));
 		propertyMortgage->setFillColor(sf::Color::Black);
 
@@ -840,39 +840,39 @@ void Withdraw::showProperty(int column) {
 		propertyPlayerTexts.push_back(propertyMortgage);
 
 		if (fieldType == STREET) {
-			std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Czynsz: ", getFont(), getFontSize() - 2));
 			propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 			propertyRent1->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  with color set:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent2(new sf::Text("  kompletny kolor:", getFont(), getFontSize() - 2));
 			propertyRent2->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 2));
 			propertyRent2->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  with 1 house:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent3(new sf::Text("  z 1 domem:", getFont(), getFontSize() - 2));
 			propertyRent3->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 3));
 			propertyRent3->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  with 2 houses:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent4(new sf::Text("  z 2 domami:", getFont(), getFontSize() - 2));
 			propertyRent4->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 4));
 			propertyRent4->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  with 3 houses:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent5(new sf::Text("  z 3 domami:", getFont(), getFontSize() - 2));
 			propertyRent5->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 5));
 			propertyRent5->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  with 4 houses:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent6(new sf::Text("  z 4 domami:", getFont(), getFontSize() - 2));
 			propertyRent6->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 6));
 			propertyRent6->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  with hotel:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent7(new sf::Text("  z hotelem:", getFont(), getFontSize() - 2));
 			propertyRent7->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 7));
 			propertyRent7->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Houses cost:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyHouseCost(new sf::Text("Cena domu:", getFont(), getFontSize() - 2));
 			propertyHouseCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 9));
 			propertyHouseCost->setFillColor(sf::Color::Black);
 
-			std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Hotel cost:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyHotelCost(new sf::Text("Cena hotelu:", getFont(), getFontSize() - 2));
 			propertyHotelCost->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 10));
 			propertyHotelCost->setFillColor(sf::Color::Black);
 
@@ -950,7 +950,7 @@ void Withdraw::showProperty(int column) {
 			propertyPlayerTexts.push_back(propertyHotelPrice);
 
 		} else if (fieldType == STATION) {
-			std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Rent: ", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent1(new sf::Text("Czynsz: ", getFont(), getFontSize() - 2));
 			propertyRent1->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 			propertyRent1->setFillColor(sf::Color::Black);
 
@@ -1000,7 +1000,7 @@ void Withdraw::showProperty(int column) {
 			propertyPlayerTexts.push_back(propertyRentCost3);
 			propertyPlayerTexts.push_back(propertyRentCost4);
 		} else {
-			std::shared_ptr<sf::Text> propertyRent(new sf::Text("Rent:", getFont(), getFontSize() - 2));
+			std::shared_ptr<sf::Text> propertyRent(new sf::Text("Czynsz:", getFont(), getFontSize() - 2));
 			propertyRent->setPosition(sf::Vector2f(dataPos.x + 20, dataPos.y + yOffset + yOffset_step * 1));
 			propertyRent->setFillColor(sf::Color::Black);
 
