@@ -85,8 +85,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 		playersStartingIds_[j] = 255;	//mark no player in game with this ID
 	}
 
-	for (unsigned int j = 0; j < players_.size();
-		 ++j) {	 
+	for (unsigned int j = 0; j < players_.size(); ++j) {
 		// save id of starting pplayers to future usage of data display
 		playersStartingIds_[j] = players_[j]->getId();
 	}
@@ -257,7 +256,32 @@ void monopolyGameEngine::performAuction() {
 		}
 		case Bidding: {
 			// Główna logika aukcji
-			if (isButtonClicked(auctionBidButton_)) {
+			if (players_bidding[player_bidding]->getIsAi()) {
+				FieldType field_type = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(bidded_property_id));
+				unsigned int field_price;
+				if (field_type == STREET) {
+					StreetField field = std::get<StreetField>(getBoard()->getFieldById(bidded_property_id));
+					field_price = field.getPrice();
+				} else if (field_type == STATION) {
+					StationField field = std::get<StationField>(getBoard()->getFieldById(bidded_property_id));
+					field_price = field.getPrice();
+				} else if (field_type == UTILITY) {
+					UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(bidded_property_id));
+					field_price = field.getPrice();
+				}
+
+				players_bidding[player_bidding]->getAdapter().setTurn(player_bidding);
+				players_bidding[player_bidding]->getAdapter().setSelectionState(bidded_property_id, 1);
+
+				current_offer = players_bidding[player_bidding]->decideAuctionBid(field_price);
+
+				if(current_offer > players_bidding[player_bidding]->getMoney()) {
+					current_offer = players_bidding[player_bidding]->getMoney();
+				}
+
+				players_bidding[player_bidding]->getAdapter().setSelectionState(bidded_property_id, 1);
+			}
+			if ((isButtonClicked(auctionBidButton_) || players_bidding[player_bidding]->getIsAi()) && current_offer > current_bid) {
 				highest_bidder = players_bidding[player_bidding];
 				current_bid = current_offer;
 				if (player_bidding == players_bidding.size() - 1) {
@@ -274,7 +298,7 @@ void monopolyGameEngine::performAuction() {
 				}
 				setAuctionState(PassBiddingTurn);
 			}
-			if (isButtonClicked(auctionResignButton_)) {
+			if (isButtonClicked(auctionResignButton_) || players_bidding[player_bidding]->getMoney() < current_bid || (players_bidding[player_bidding]->getIsAi() && current_offer <= current_bid)) {
 				unsigned int i = 0;
 				for (auto it = players_bidding.begin(); it != players_bidding.end(); ++it) {
 					if (i == player_bidding) {
@@ -347,6 +371,9 @@ void monopolyGameEngine::performAuction() {
 			} else {
 				notificationAdd(playerIndexturn_, "Started auction - no winner!");
 			}
+			current_bid = 10;
+			highest_bidder = nullptr;
+			player_bidding = playerIndexturn_;
 			setAuctionState(NoAuction);
 		} break;
 		default:
@@ -720,6 +747,107 @@ void monopolyGameEngine::buildingsManagingWorker() {
 	}
 }
 
+void monopolyGameEngine::aiBuildingsMangingWorker() {
+	std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
+	std::vector<unsigned int> fields_owned = curr_player->getFiledOwnedId();
+	unsigned int buildings_onwed = fields_owned.size();
+	for (int i = 0; i < buildings_onwed; ++i) {
+		FieldType field_type =
+			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(fields_owned[i]));
+		if (field_type == STREET) {
+			StreetField field = std::get<StreetField>(getBoard()->getFieldById(fields_owned[i]));
+			if (field.getIsMortgaged()) {
+				unsigned int unmortgage_value = field.getUnmortgageValue();
+				if (unmortgage_value <= curr_player->getMoney()) {
+					unsigned int player_id = curr_player->getId();
+					curr_player->getAdapter().setTurn(player_id);
+					curr_player->getAdapter().setSelectionState(field.getId(), 1);
+					Decision unmortgage_decision = curr_player->decideUnmortgage(field.getId());
+					curr_player->getAdapter().setSelectionState(field.getId(), 0);
+
+					if (unmortgage_decision == YES) {
+						curr_player->substractMoney(field.getUnmortgageValue());
+						field.setIsMortgaged(false);
+						notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
+					}
+				}
+			} else {
+				unsigned int player_id = curr_player->getId();
+				curr_player->getAdapter().setTurn(player_id);
+				curr_player->getAdapter().setSelectionState(field.getId(), 1);
+				Decision mortgage_decision = curr_player->decideMortgage(field.getId());
+				curr_player->getAdapter().setSelectionState(field.getId(), 0);
+
+				if (mortgage_decision == YES) {
+					curr_player->addMoney(field.getMortgage());
+					field.setIsMortgaged(true);
+					notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
+				}
+			}
+		} else if (field_type == STATION) {
+			StationField field = std::get<StationField>(getBoard()->getFieldById(fields_owned[i]));
+			if (field.getIsMortgaged()) {
+				unsigned int unmortgage_value = field.getUnmortgageValue();
+				if (unmortgage_value <= curr_player->getMoney()) {
+					unsigned int player_id = curr_player->getId();
+					curr_player->getAdapter().setTurn(player_id);
+					curr_player->getAdapter().setSelectionState(field.getId(), 1);
+					Decision unmortgage_decision = curr_player->decideUnmortgage(field.getId());
+					curr_player->getAdapter().setSelectionState(field.getId(), 0);
+
+					if (unmortgage_decision == YES) {
+						curr_player->substractMoney(field.getUnmortgageValue());
+						field.setIsMortgaged(false);
+						notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
+					}
+				}
+			} else {
+				unsigned int player_id = curr_player->getId();
+				curr_player->getAdapter().setTurn(player_id);
+				curr_player->getAdapter().setSelectionState(field.getId(), 1);
+				Decision mortgage_decision = curr_player->decideMortgage(field.getId());
+				curr_player->getAdapter().setSelectionState(field.getId(), 0);
+
+				if (mortgage_decision == YES) {
+					curr_player->addMoney(field.getMortgage());
+					field.setIsMortgaged(true);
+					notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
+				}
+			}
+		} else if (field_type == UTILITY) {
+			UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(fields_owned[i]));
+			if (field.getIsMortgaged()) {
+				unsigned int unmortgage_value = field.getUnmortgageValue();
+				if (unmortgage_value <= curr_player->getMoney()) {
+					unsigned int player_id = curr_player->getId();
+					curr_player->getAdapter().setTurn(player_id);
+					curr_player->getAdapter().setSelectionState(field.getId(), 1);
+					Decision unmortgage_decision = curr_player->decideUnmortgage(field.getId());
+					curr_player->getAdapter().setSelectionState(field.getId(), 0);
+
+					if (unmortgage_decision == YES) {
+						curr_player->substractMoney(field.getUnmortgageValue());
+						field.setIsMortgaged(false);
+						notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
+					}
+				}
+			} else {
+				unsigned int player_id = curr_player->getId();
+				curr_player->getAdapter().setTurn(player_id);
+				curr_player->getAdapter().setSelectionState(field.getId(), 1);
+				Decision mortgage_decision = curr_player->decideMortgage(field.getId());
+				curr_player->getAdapter().setSelectionState(field.getId(), 0);
+
+				if (mortgage_decision == YES) {
+					curr_player->addMoney(field.getMortgage());
+					field.setIsMortgaged(true);
+					notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
+				}
+			}
+		}
+	}
+}
+
 void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
 	rollDiceButton_->setIsVisible(!is_auction);
 	buyFieldButton_->setIsVisible(!is_auction);
@@ -811,7 +939,11 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			case ROLL_DICE: {
 				playerBankrutedNow = false;
 				unsigned int player_jail_status = players_[playerIndexturn_]->getJailStatus();
-				buildingsManagingWorker();
+				if (!players_[playerIndexturn_]->getIsAi()) {
+					buildingsManagingWorker();
+				} else {
+					aiBuildingsMangingWorker();
+				}
 				if (player_jail_status != 0) {
 					jailPayButton_->setIsVisible(true);
 				} else {
@@ -1155,7 +1287,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					}
 				}
 
-				if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction || (players_[playerIndexturn_]->getIsAi() && buy_decision == RESIGN)) {
+				if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction || (players_[playerIndexturn_]->getIsAi() && (buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
 					if (getAuctionState() == NoAuction) {
 						std::string textPlayerResginedProperty(
 							"resigned to buy field " +
@@ -1206,7 +1338,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			case TURN_END:
 				buildingsManagingWorker();
 				nextTurnButton_->setIsVisible(true);
-				if (isButtonClicked(nextTurnButton_)) {
+				if (isButtonClicked(nextTurnButton_) || players_[playerIndexturn_]->getIsAi()) { // || players_[playerIndexturn_]->getIsAi()
 					rollDiceButton_->setIsVisible(true);
 					rolledValueText_->setString("");
 					resignBuyFieldButton_->setIsVisible(false);

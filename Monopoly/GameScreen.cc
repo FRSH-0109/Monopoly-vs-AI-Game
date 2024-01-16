@@ -138,7 +138,7 @@ void GameScreen::draw() {
 							if (owner_ptr != nullptr) {
 								sf::Color player_color = owner_ptr->getColor();
 								if (field_specified.getIsMortgaged()) {
-									player_color.a = 100;
+									player_color.a = 70;
 									if (player_color.b == 255) {
 										player_color.b = 180;
 									} else if (player_color.r == 255 && player_color.g == 0) {
@@ -171,7 +171,7 @@ void GameScreen::draw() {
 							if (owner_ptr != nullptr) {
 								sf::Color player_color = owner_ptr->getColor();
 								if (field_specified.getIsMortgaged()) {
-									player_color.a = 100;
+									player_color.a = 70;
 									if (player_color.b == 255) {
 										player_color.b = 180;
 									} else if (player_color.r == 255 && player_color.g == 0) {
@@ -189,7 +189,7 @@ void GameScreen::draw() {
 							if (owner_ptr != nullptr) {
 								sf::Color player_color = owner_ptr->getColor();
 								if (field_specified.getIsMortgaged()) {
-									player_color.a = 100;
+									player_color.a = 70;
 									if (player_color.b == 255) {
 										player_color.b = 180;
 									} else if (player_color.r == 255 && player_color.g == 0) {

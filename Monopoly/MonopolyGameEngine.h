@@ -39,7 +39,7 @@ class monopolyGameEngine {
 	GameScreenType screenType_ = BOARDGAME;
 	const unsigned int PLAYER_MONEY_DEFAULT_ = 300;
 	const unsigned int START_PASSING_MONEY_ = 200;
-	const unsigned int GAME_TURNS_MAX = 10;
+	const unsigned int GAME_TURNS_MAX = 50;
 	unsigned int gameTurnsGloballyDone_;
 	std::array<bool, 4> gameTurnByPlayerDone_;
 	AuctionState auctionState_ = NoAuction;
@@ -315,6 +315,7 @@ class monopolyGameEngine {
 
 	unsigned int calculateRent(unsigned int rolledVal, int pos);
 	void buildingsManagingWorker();
+	void aiBuildingsMangingWorker();
 	bool monopolyGameWorker();
 
 	// withdraw

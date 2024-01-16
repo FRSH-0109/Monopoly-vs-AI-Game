@@ -27,6 +27,10 @@ int main() {
 	GameEngine gameEngine(30, width, height);
 	std::vector<std::shared_ptr<Player>> playerResults = gameEngine.worker(AIonly);
 
+	for (int i = playerResults.size() - 1; i >= 0; --i) {
+		std::cout << "Player " << playerResults[i]->getId() + 1 << ": miejsce " << playerResults[i]->getResultPlace() << std::endl;
+	}
+
 	// gameEngine = GameEngine(30, width, height);
 	// gameEngine.worker(AIonly);
 
