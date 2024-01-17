@@ -27,7 +27,7 @@
         "id": 5,
         "type": "BankPaysYou",
         "value": 50,
-        "text": "Bank placi Ci dywidendę $50.",
+        "text": "Bank placi Ci dywidende $50.",
         "width": 60,
         "height": 100
     },
@@ -35,7 +35,7 @@
         "id": 6,
         "type": "GetOutOfJailCard",
         "value": 0,
-        "text": "Wyjdz z więzienia. Tak karta moze byc uzyta pozniej.",
+        "text": "Wyjdz z wiezienia. Tak karta moze byc uzyta pozniej.",
         "width": 60,
         "height": 100
     },
@@ -43,7 +43,7 @@
         "id": 7,
         "type": "MovementSpaces",
         "value": -3,
-        "text": "Cofnij się o 3 pola",
+        "text": "Cofnij sie o 3 pola",
         "width": 60,
         "height": 100
     },
@@ -51,7 +51,7 @@
         "id": 8,
         "type": "GoToJail",
         "value": 0,
-        "text": "Idz do więzienia, nie mijasz START'u",
+        "text": "Idz do wiezienia, nie mijasz START'u",
         "width": 60,
         "height": 100
     },

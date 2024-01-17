@@ -19,6 +19,8 @@ monopolyGameEngine::monopolyGameEngine() {
 	if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
 		// TODO: exception
 	}
+
+	fileLoggerOpen();
 }
 
 void monopolyGameEngine::setScreenType(GameScreenType newScreenType) {
@@ -1376,6 +1378,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							removePlayerFromGame(playerIndexturn_, false);
 							if(isAiGameOnly_)
 							{
+								fileLoggerClose();
 								return false;	//leave game engine to return result to AI training
 							}
 							else
@@ -1383,11 +1386,13 @@ bool monopolyGameEngine::monopolyGameWorker() {
 								updateResultScreenStuff();
 								setScreenType(RESULT);
 								setTurnState(NO_TURN);
+								fileLoggerClose();
 							}
 						} else if (gameFinishedCheckDraw()) {
 							removePlayerFromGame(playerIndexturn_, true);
 							if(isAiGameOnly_)
 							{
+								fileLoggerClose();
 								return false;	//leave game engine to return result to AI training
 							}
 							else
@@ -1395,6 +1400,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 								updateResultScreenStuff();
 								setScreenType(RESULT);
 								setTurnState(NO_TURN);
+								fileLoggerClose();
 							}
 						}
 						turnInfoTextShow();
@@ -2780,6 +2786,7 @@ void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
 			notificationsWall_.addToWall("            " + text.substr(i, LINE_LEN_WITHOUT_PLAYER + 2));
 		}
 	}
+	fileLoggerWrite("Gracz " + std::to_string(id + 1) + ": " + text);
 }
 
 sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sprite, float rotation) {
@@ -3035,4 +3042,22 @@ void monopolyGameEngine::gameTurnsCounterHandle() {
 
 	gameTurnByPlayerDone_ = {false, false, false, false};
 	++gameTurnsGloballyDone_;
+}
+
+void monopolyGameEngine::fileLoggerOpen()
+{
+	fileLogger =  std::ofstream(FILE_LOGGER_PATH, std::ofstream::out);
+}
+
+void monopolyGameEngine::fileLoggerWrite(std::string text)
+{
+	if(fileLogger.is_open())
+	{
+		fileLogger << text << std::endl;
+	}
+}
+
+void monopolyGameEngine::fileLoggerClose()
+{
+	fileLogger.close();
 }
