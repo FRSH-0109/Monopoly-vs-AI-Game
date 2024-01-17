@@ -38,11 +38,12 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 	gameTurnsGloballyDone_ = 0;
 	playersStartingAmount_ = 0;
 	int playerId = 0;
-	isAiGameOnly_ = false;
+	isAiGameOnly_ = true;
 	for (auto it : player_settings_list) {
 		if (!(it->isNone)) {
 			++playersStartingAmount_;
 			if (it->isHuman) {
+				isAiGameOnly_ = false;
 				Player new_player = Player(PLAYER_MONEY_DEFAULT_);
 				new_player.setIsAi(!(it->isHuman));
 				new_player.setAiLevel(it->level);
@@ -50,7 +51,6 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSetting
 				players_.push_back(std::make_shared<Player>(new_player));
 			}
 			 else {
-				isAiGameOnly_ = true;
 				AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
 				new_player.setIsAi(!(it->isHuman));
 				new_player.setAiLevel(it->level);

@@ -75,7 +75,7 @@ class Player {
 	void setSpriteOffsetY(const float offset_y);
 	void setSpritePosition(sf::Vector2f newPos);
 
-	virtual AiAdapter& getAdapter() {}; // Nieoptymalne
+	virtual AiAdapter& getAdapter(){};	// Nieoptymalne
 	virtual unsigned int getTest() { return 0; };
 	virtual BuyDecision decideBuy(unsigned int index);
 	virtual JailDecision decideJail();
