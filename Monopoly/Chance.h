@@ -33,7 +33,7 @@ class ChanceCard {
 	unsigned int id_;
 	ChanceType type_;
 	int value_;
-	std::string text_;
+	sf::String text_;
 	std::string graphic_path_;
 	unsigned int width_;
 	unsigned int height_;
@@ -46,7 +46,7 @@ class ChanceCard {
 	ChanceCard(const unsigned int id,
 		const ChanceType type,
 		unsigned int value,
-		const std::string text,
+		const sf::String text,
 		const std::string graphic_path,
 		const unsigned int width,
 		const unsigned int height,
@@ -55,7 +55,7 @@ class ChanceCard {
 	unsigned int getId();
 	ChanceType getType();
 	int getValue();
-	const std::string getText();
+	const sf::String getText();
 	unsigned int getWidth();
 	unsigned int getHeight();
 	const std::string getGraphicPath();

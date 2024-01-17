@@ -13,7 +13,7 @@
 ChanceCard::ChanceCard(const unsigned int id,
 	const ChanceType type,
 	unsigned int value,
-	const std::string text,
+	const sf::String text,
 	const std::string graphic_path,
 	const unsigned int width,
 	const unsigned int height,
@@ -41,7 +41,7 @@ ChanceType ChanceCard::getType() {
 	return type_;
 };
 
-const std::string ChanceCard::getText() {
+const sf::String ChanceCard::getText() {
 	return text_;
 };
 

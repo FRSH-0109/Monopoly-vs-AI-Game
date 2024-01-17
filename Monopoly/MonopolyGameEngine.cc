@@ -2058,7 +2058,7 @@ void monopolyGameEngine::createButtonsJailPay() {
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 	sf::String jail_cost = (std::to_string(JAIL_PAY_MONEY));
 	std::shared_ptr<Button> buttonJailPay(
-		new Button(IDLE, "Zaplać " + jail_cost + L" aby wyjść z więzienia", buttonSize, getFontSize()));
+		new Button(IDLE, L"Zaplać " + jail_cost + L" aby wyjść z więzienia", buttonSize, getFontSize()));
 	buttonJailPay->setFont(getFont());
 	buttonJailPay->setPosition(JAIL_PAY_BUTTON_POSITION);
 	buttonJailPay->setActiveBackColor(activeButtonBackColor);
@@ -2985,6 +2985,7 @@ void monopolyGameEngine::createChanceCards() {
 		std::string type_in_str = element["type"];
 		unsigned int value = element["value"];
 		std::string text = element["text"];
+		// sf::String text = (text_str); TODO
 		unsigned int width_from_file = element["width"];
 		unsigned int height_from_file = element["height"];
 		ChanceType type = str_to_type[type_in_str];

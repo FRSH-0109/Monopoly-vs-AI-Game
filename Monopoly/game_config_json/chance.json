@@ -3,7 +3,7 @@
         "id": 0,
         "type": "MovementToProperty",
         "value": 0,
-        "text": "Advance to 'Start'. (Collect $200)",
+        "text": "Idź na 'Start'. (Otrzymujesz $200)",
         "width": 60,
         "height": 100
     },
@@ -11,7 +11,7 @@
         "id": 1,
         "type": "MovementToProperty",
         "value": 24,
-        "text": "Advance to Property 402. If you pass Start, collect $200.",
+        "text": "Idź do nieruchomości 402. Jeśli mijasz Start, otrzymujesz $200.",
         "width": 60,
         "height": 100
     },
@@ -19,7 +19,7 @@
         "id": 2,
         "type": "MovementToProperty",
         "value": 11,
-        "text": "Advance to Property P211. If you pass Start, collect $200",
+        "text": "Idź do nieruchomości P211. Jeśli mijasz Start, otrzymujesz $200.",
         "width": 60,
         "height": 100
     },
@@ -27,7 +27,7 @@
         "id": 5,
         "type": "BankPaysYou",
         "value": 50,
-        "text": "Bank pays you dividend of $50.",
+        "text": "Bank płaci Ci dywidendę $50.",
         "width": 60,
         "height": 100
     },
@@ -35,7 +35,7 @@
         "id": 6,
         "type": "GetOutOfJailCard",
         "value": 0,
-        "text": "Get out of Jail Free. This card may be kept until needed.",
+        "text": "Wyjdź z więzienia. Tak karta może być użyta później.",
         "width": 60,
         "height": 100
     },
@@ -43,7 +43,7 @@
         "id": 7,
         "type": "MovementSpaces",
         "value": -3,
-        "text": "Go Back Three 3 Spaces.",
+        "text": "Cofnij się o 3 pola",
         "width": 60,
         "height": 100
     },
@@ -51,7 +51,7 @@
         "id": 8,
         "type": "GoToJail",
         "value": 0,
-        "text": "Go directly to Jail. Do not pass GO, do not collect $200.",
+        "text": "Idź do więzienia, nie mijasz START'u",
         "width": 60,
         "height": 100
     },
@@ -59,7 +59,7 @@
         "id": 9,
         "type": "PayForHouseHotel",
         "value": 0,
-        "text": "Make repairs on all your property: For each house pay $25, For each hotel $100.",
+        "text": "Naprawiasz swoje nieruchomości: zapłać za każdy dom $25, za hotel $100.",
         "width": 60,
         "height": 100
     },
@@ -67,7 +67,7 @@
         "id": 10,
         "type": "MovementToProperty",
         "value": 5,
-        "text": "Take a trip to Dworzec Centralny. If you pass Start, collect $200.",
+        "text": "Idź do Baru Polnego. Jeśli mijasz Start, otrzymujesz $200.",
         "width": 60,
         "height": 100
     },
@@ -75,7 +75,7 @@
         "id": 11,
         "type": "Tax",
         "value": 15,
-        "text": "Pay Poor Tax of $15",
+        "text": "Zapłać niski podatek: $15",
         "width": 60,
         "height": 100
     },
@@ -83,7 +83,7 @@
         "id": 12,
         "type": "MovementToProperty",
         "value": 39,
-        "text": "Take a walk on the Property 506",
+        "text": "Idź do nieruchomości 506",
         "width": 60,
         "height": 100
     },
@@ -91,7 +91,7 @@
         "id": 13,
         "type": "PayPlayers",
         "value": 50,
-        "text": "You have been elected Chairman of the Board. Pay each player $50.",
+        "text": "Zostałeś wybrany przewodniczącym. Zapłać każdemu po $50.",
         "width": 60,
         "height": 100
     },
@@ -99,7 +99,7 @@
         "id": 14,
         "type": "BankPaysYou",
         "value": 150,
-        "text": "Your building loan matures. Receive $150.",
+        "text": "Wynajmujesz innym nieruchomości. Otrzymujesz $150.",
         "width": 60,
         "height": 100
     }
