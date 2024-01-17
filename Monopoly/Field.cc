@@ -204,6 +204,9 @@ void PropertyField::createFlagSprite() {
 	if (owner_ != nullptr) {
 		owner_flag_.setFillColor(owner_->getColor());
 	}
+	else{
+		owner_flag_.setFillColor(sf::Color::White);
+	}
 };
 
 const std::map<StreetTiers, unsigned int> StreetField::getRentValues() {

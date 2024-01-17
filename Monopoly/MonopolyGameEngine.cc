@@ -2830,19 +2830,22 @@ void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	for (unsigned int pos = 0; pos < gameboard_->getFieldNumber(); ++pos) {
 		FieldType field_type = std::visit([](Field& field) { return field.getType(); }, gameboard_->getFieldById(pos));
 		if (field_type == STREET) {
-			StreetField field = std::get<StreetField>(getBoard()->getFieldById(pos));
+			StreetField& field = std::get<StreetField>(getBoard()->getFieldById(pos));
 			if (field.getOwner() == players_[playerIndexTurn]) {
 				field.setOwner(nullptr);
+				field.createFlagSprite();
 			}
 		} else if (field_type == STATION) {
-			StationField field = std::get<StationField>(getBoard()->getFieldById(pos));
+			StationField& field = std::get<StationField>(getBoard()->getFieldById(pos));
 			if (field.getOwner() == players_[playerIndexTurn]) {
 				field.setOwner(nullptr);
+				field.createFlagSprite();
 			}
 		} else if (field_type == UTILITY) {
-			UtilityField field = std::get<UtilityField>(getBoard()->getFieldById(pos));
+			UtilityField& field = std::get<UtilityField>(getBoard()->getFieldById(pos));
 			if (field.getOwner() == players_[playerIndexTurn]) {
 				field.setOwner(nullptr);
+				field.createFlagSprite();
 			}
 		}
 	}
