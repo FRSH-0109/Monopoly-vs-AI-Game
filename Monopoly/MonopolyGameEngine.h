@@ -24,7 +24,7 @@
 #include "Withdraw.h"
 #include "main.h"
 
-enum AuctionState { NoAuction, Initialization, PassBiddingTurn, Bidding, Ending };
+enum AuctionState { NO_AUCTION, INITIALIZATION, PASS_BIDDING_TURN, BIDDING, ENDING };
 
 class monopolyGameEngine {
 	// game staff
@@ -43,7 +43,7 @@ class monopolyGameEngine {
 	const unsigned int GAME_TURNS_MAX = 50;
 	unsigned int gameTurnsGloballyDone_;
 	std::array<bool, 4> gameTurnByPlayerDone_;
-	AuctionState auctionState_ = NoAuction;
+	AuctionState auctionState_ = NO_AUCTION;
 
 	const std::string CHANCE_FILE_PATH_ = "Monopoly/game_config_json/chance.json";
 	const std::string GAMEBOARD_FILE_PATH_ = "Monopoly/game_config_json/board.json";
