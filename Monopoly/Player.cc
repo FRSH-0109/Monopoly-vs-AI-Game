@@ -48,6 +48,7 @@ std::vector<unsigned int> Player::getFiledOwnedId() const {
 void Player::addFieldOwnedId(unsigned int id) {
 	if (hasFiledOwnedId(id) == false) {
 		fieldsOwnedId_.push_back(id);
+		std::sort(fieldsOwnedId_.begin(), fieldsOwnedId_.end());
 	}
 }
 

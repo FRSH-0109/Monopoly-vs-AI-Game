@@ -748,6 +748,16 @@ void monopolyGameEngine::buildingsManagingWorker() {
 }
 
 void monopolyGameEngine::aiBuildingsMangingWorker() {
+	std::vector<std::vector<unsigned int>> SETS = {
+		{1, 3},
+		{6, 8, 9},
+		{11, 13, 14},
+		{16, 18, 19},
+		{21, 23, 24},
+		{26, 27, 29},
+		{31, 32, 34},
+		{37, 39}
+	};
 	std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
 	std::vector<unsigned int> fields_owned = curr_player->getFiledOwnedId();
 	unsigned int buildings_onwed = fields_owned.size();
@@ -844,6 +854,21 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 					notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
 				}
 			}
+		}
+	}
+
+	for (int set = 0; set < SETS.size(); ++set) {
+		if(std::includes(fields_owned.begin(), fields_owned.end(), SETS[set].begin(), SETS[set].end())) {
+			unsigned int houses_builded = 0;
+			for (int i = 0; i < SETS[set].size(); ++i) {
+				StreetField field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][i]));
+				houses_builded += field.getHouseNumber();
+			}
+
+			unsigned int max_sell = houses_builded;
+			unsigned int player_id = curr_player->getId();
+			curr_player->getAdapter().setTurn(player_id);
+			curr_player->getAdapter().setSelectionState(SETS[set][0], 1);
 		}
 	}
 }
@@ -2320,7 +2345,7 @@ void monopolyGameEngine::updateResultScreenStuff()
 		playerResultText->setFillColor(sf::Color::Black);
 		playerResultText->setOrigin(playerResultText->getGlobalBounds().getSize() / 2.f +
 											playerResultText->getLocalBounds().getPosition());
-		playerResultText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));												
+		playerResultText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
 		resultPlayersPlaces_.push_back(playerResultText);
 	}
 

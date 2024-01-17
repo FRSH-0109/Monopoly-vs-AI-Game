@@ -14,6 +14,7 @@
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <algorithm>
 #include "AiAdapter.h"
 #include "ContextWindow.h"
 #include "Tinyann.h"
