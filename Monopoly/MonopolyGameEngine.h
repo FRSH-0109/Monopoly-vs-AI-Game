@@ -13,6 +13,7 @@
 #define MONOPOLY_GAME_ENGINE_H
 
 #include <algorithm>
+#include <fstream>
 #include <memory>
 #include <random>
 #include <vector>
@@ -220,6 +221,13 @@ class monopolyGameEngine {
 	void gameTurnsCounterHandle();
 	void removePlayerFromGame(unsigned int playerIndexTurn, bool isDraw);
 	std::shared_ptr<Button> createDefaultButton(sf::String text, unsigned int width, unsigned int height);
+
+	// file loger
+	std::ofstream fileLogger;
+	const std::string FILE_LOGGER_PATH = "game_logs.txt";
+	void fileLoggerOpen();
+	void fileLoggerWrite(std::string text);
+	void fileLoggerClose();
 
    public:
 	monopolyGameEngine();

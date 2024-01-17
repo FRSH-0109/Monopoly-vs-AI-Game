@@ -19,6 +19,8 @@ monopolyGameEngine::monopolyGameEngine() {
 	if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
 		// TODO: exception
 	}
+
+	fileLoggerOpen();
 }
 
 void monopolyGameEngine::setScreenType(GameScreenType newScreenType) {
@@ -1375,6 +1377,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 				buildingsManagingWorker();
 				nextTurnButton_->setIsVisible(true);
 				if (isButtonClicked(nextTurnButton_) || players_[playerIndexturn_]->getIsAi()) { // || players_[playerIndexturn_]->getIsAi()
+					setTurnState(ROLL_DICE);
 					rollDiceButton_->setIsVisible(true);
 					rolledValueText_->setString("");
 					resignBuyFieldButton_->setIsVisible(false);
@@ -1400,23 +1403,29 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							removePlayerFromGame(playerIndexturn_, false);
 							if(isAiGameOnly_)
 							{
+								fileLoggerClose();
 								return false;	//leave game engine to return result to AI training
 							}
 							else
 							{
 								updateResultScreenStuff();
 								setScreenType(RESULT);
+								setTurnState(NO_TURN);
+								fileLoggerClose();
 							}
 						} else if (gameFinishedCheckDraw()) {
 							removePlayerFromGame(playerIndexturn_, true);
 							if(isAiGameOnly_)
 							{
+								fileLoggerClose();
 								return false;	//leave game engine to return result to AI training
 							}
 							else
 							{
 								updateResultScreenStuff();
 								setScreenType(RESULT);
+								setTurnState(NO_TURN);
+								fileLoggerClose();
 							}
 						}
 						turnInfoTextShow();
@@ -1432,8 +1441,6 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							++gameTurnsGloballyDone_;
 						}
 					}
-
-					setTurnState(ROLL_DICE);
 					nextTurnButton_->setIsVisible(false);
 					playerChanged = true;
 				}
@@ -2792,7 +2799,7 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 }
 
 void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
-	const unsigned int LINE_LEN = 58;
+	const unsigned int LINE_LEN = 59;
 	const unsigned int LINE_LEN_WITHOUT_PLAYER = LINE_LEN - std::string("Gracz X: ").length();
 	unsigned int id = players_[index]->getId();
 	if (std::string("Gracz " + std::to_string(id + 1) + ": " + text).size() <= LINE_LEN_WITHOUT_PLAYER) {
@@ -2804,6 +2811,7 @@ void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
 			notificationsWall_.addToWall("            " + text.substr(i, LINE_LEN_WITHOUT_PLAYER + 2));
 		}
 	}
+	fileLoggerWrite("Gracz " + std::to_string(id + 1) + ": " + text);
 }
 
 sf::Text monopolyGameEngine::getPropertyNameToDraw(sf::Text text, sf::Sprite& sprite, float rotation) {
@@ -3009,8 +3017,8 @@ void monopolyGameEngine::createChanceCards() {
 		unsigned int id = element["id"];
 		std::string type_in_str = element["type"];
 		unsigned int value = element["value"];
-		std::string text = element["text"];
-		// sf::String text = (text_str); TODO
+		std::string text_str = element["text"];
+		sf::String text = (text_str);
 		unsigned int width_from_file = element["width"];
 		unsigned int height_from_file = element["height"];
 		ChanceType type = str_to_type[type_in_str];
@@ -3059,4 +3067,22 @@ void monopolyGameEngine::gameTurnsCounterHandle() {
 
 	gameTurnByPlayerDone_ = {false, false, false, false};
 	++gameTurnsGloballyDone_;
+}
+
+void monopolyGameEngine::fileLoggerOpen()
+{
+	fileLogger =  std::ofstream(FILE_LOGGER_PATH, std::ofstream::out);
+}
+
+void monopolyGameEngine::fileLoggerWrite(std::string text)
+{
+	if(fileLogger.is_open())
+	{
+		fileLogger << text << std::endl;
+	}
+}
+
+void monopolyGameEngine::fileLoggerClose()
+{
+	fileLogger.close();
 }
