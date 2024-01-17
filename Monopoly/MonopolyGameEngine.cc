@@ -925,13 +925,17 @@ bool monopolyGameEngine::monopolyGameWorker() {
 		static bool isDouble;
 		static bool playerChanged = true;
 		static bool playerBankrutedNow = false;
+		static bool ai_bankrupted = false;
 
-		if (isButtonClicked(bankruptButton_)) {	 // player decied to go bankrupt
+		if (isButtonClicked(bankruptButton_) || (players_[playerIndexturn_]->getIsAi() && ai_bankrupted)) {	 // player decied to go bankrupt
 			playerBankrutedNow = true;
 			notificationAdd(playerIndexturn_, "decided to go bankrupt!");
 			rollDiceButton_->setIsVisible(false);
 			buyFieldButton_->setIsVisible(false);
 			resignBuyFieldButton_->setIsVisible(false);
+			if (players_[playerIndexturn_]->getIsAi()) {
+				ai_bankrupted = false;
+			}
 			setTurnState(TURN_END);	// for next player
 		}
 
@@ -1319,7 +1323,14 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					playerChanged = false;
 				}
 				if (players_[playerIndexturn_]->getMoney() < money_to_find) {  // player trying to get money to pay rent
-					buildingsManagingWorker();
+					if (!players_[playerIndexturn_]->getIsAi()) {
+						buildingsManagingWorker();
+					} else {
+						aiBuildingsMangingWorker();
+						if (players_[playerIndexturn_]->getMoney() < money_to_find) {
+							ai_bankrupted = true;
+						}
+					}
 				} else {  // player has got money to pay rent
 					players_[playerIndexturn_]->substractMoney(money_to_find);
 					unsigned int payment_counter = players_to_pay_rent.size();
