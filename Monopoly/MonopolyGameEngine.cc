@@ -2768,7 +2768,7 @@ NotificationWall& monopolyGameEngine::getNotificationsWall() {
 }
 
 void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
-	const unsigned int LINE_LEN = 58;
+	const unsigned int LINE_LEN = 59;
 	const unsigned int LINE_LEN_WITHOUT_PLAYER = LINE_LEN - std::string("Gracz X: ").length();
 	unsigned int id = players_[index]->getId();
 	if (std::string("Gracz " + std::to_string(id + 1) + ": " + text).size() <= LINE_LEN_WITHOUT_PLAYER) {
@@ -2985,8 +2985,8 @@ void monopolyGameEngine::createChanceCards() {
 		unsigned int id = element["id"];
 		std::string type_in_str = element["type"];
 		unsigned int value = element["value"];
-		std::string text = element["text"];
-		// sf::String text = (text_str); TODO
+		std::string text_str = element["text"];
+		sf::String text = (text_str);
 		unsigned int width_from_file = element["width"];
 		unsigned int height_from_file = element["height"];
 		ChanceType type = str_to_type[type_in_str];
