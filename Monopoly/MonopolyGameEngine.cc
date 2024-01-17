@@ -240,11 +240,11 @@ void monopolyGameEngine::performAuction() {
 			player_bidding = playerIndexturn_;
 			players_bidding = players_;
 			bidderInfoText_->setString(
-				"Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
-			highestBidInfoText_->setString("Highest bid: " + std::to_string(current_bid));
+				"Tura: Gracz " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+			highestBidInfoText_->setString("Najwyzsza oferta: " + std::to_string(current_bid));
 			if (highest_bidder != nullptr) {
 				leadingBidderInfoText_->setString(
-					"Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
+					"Prowadzacy: Gracz " + std::to_string(highest_bidder->getId() + 1));
 			}
 			setAuctionState(PassBiddingTurn);
 			break;
@@ -290,11 +290,11 @@ void monopolyGameEngine::performAuction() {
 					++player_bidding;
 				}
 				bidderInfoText_->setString(
-					"Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
-				highestBidInfoText_->setString("Highest bid: " + std::to_string(current_bid));
+					"Tura: Gracz " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+				highestBidInfoText_->setString("Najwyzsza oferta: " + std::to_string(current_bid));
 				if (highest_bidder != nullptr) {
 					leadingBidderInfoText_->setString(
-						"Leading bidder: Player " + std::to_string(highest_bidder->getId() + 1));
+						"Prowadzacy: Gracz " + std::to_string(highest_bidder->getId() + 1));
 				}
 				setAuctionState(PassBiddingTurn);
 			}
@@ -311,7 +311,7 @@ void monopolyGameEngine::performAuction() {
 					++i;
 				}
 				bidderInfoText_->setString(
-					"Current bidder: Player " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+					"Tura: Gracz " + std::to_string(players_bidding[player_bidding]->getId() + 1));
 			}
 			if (isButtonClicked(add1ToOfferButton_)) {
 				if (current_offer + 1 <= players_bidding[player_bidding]->getMoney()) {
@@ -355,7 +355,7 @@ void monopolyGameEngine::performAuction() {
 					current_offer = current_bid + 1;
 				}
 			}
-			currentOfferInfoText_->setString("Current offer: " + std::to_string(current_offer));
+			currentOfferInfoText_->setString("Aktualna oferta: " + std::to_string(current_offer));
 
 			if ((players_bidding.size() == 1 && highest_bidder != nullptr) || players_bidding.size() == 0) {
 				setAuctionState(Ending);
@@ -369,7 +369,7 @@ void monopolyGameEngine::performAuction() {
 				winner->addFieldOwnedId(bidded_property_id);
 				winner->substractMoney(current_bid);
 			} else {
-				notificationAdd(playerIndexturn_, "Started auction - no winner!");
+				notificationAdd(playerIndexturn_, "Aukcja - brak zwyciezcy!");
 			}
 			current_bid = 10;
 			highest_bidder = nullptr;
@@ -1776,7 +1776,7 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 		if (id != 255 && !isPlayerinGame[id]) {
 			if(playerInfoText_[id].size() > 0)	//check if player id was even in game from begining
 			{
-				playerInfoText_[id][1]->setString("Bankrupt");
+				playerInfoText_[id][1]->setString("Bankrut");
 				playerInfoText_[id][2]->setString("");
 				playerInfoText_[id][3]->setString("");
 			}
@@ -1785,7 +1785,7 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 }
 
 void monopolyGameEngine::createTextBiddedProperty() {
-	std::shared_ptr<sf::Text> biddedPropertyText(new sf::Text("Bid for: ", getFont(), getFontSize()));
+	std::shared_ptr<sf::Text> biddedPropertyText(new sf::Text("Cel: ", getFont(), getFontSize()));
 	biddedPropertyText->setPosition(BIDDED_PROPERTY_TEXT_POSITION);
 	biddedPropertyText->setFillColor(sf::Color::Black);
 	biddedPropertyText_ = biddedPropertyText;
@@ -1793,7 +1793,7 @@ void monopolyGameEngine::createTextBiddedProperty() {
 }
 
 void monopolyGameEngine::createTextBidderInfo() {
-	std::shared_ptr<sf::Text> bidderInfoText(new sf::Text("Current bidder: ", getFont(), getFontSize()));
+	std::shared_ptr<sf::Text> bidderInfoText(new sf::Text("Tura gracza: ", getFont(), getFontSize()));
 	bidderInfoText->setPosition(BIDDER_INFO_TEXT_POSITION);
 	bidderInfoText->setFillColor(sf::Color::Black);
 	bidderInfoText_ = bidderInfoText;
@@ -1801,7 +1801,7 @@ void monopolyGameEngine::createTextBidderInfo() {
 }
 
 void monopolyGameEngine::createTextHighestBidInfo() {
-	std::shared_ptr<sf::Text> highestBidText(new sf::Text("Highest bid: ", getFont(), getFontSize()));
+	std::shared_ptr<sf::Text> highestBidText(new sf::Text(L"Najwyższa oferta: ", getFont(), getFontSize()));
 	highestBidText->setPosition(HIGHEST_BID_TEXT_POSITION);
 	highestBidText->setFillColor(sf::Color::Black);
 	highestBidInfoText_ = highestBidText;
@@ -1809,7 +1809,7 @@ void monopolyGameEngine::createTextHighestBidInfo() {
 }
 
 void monopolyGameEngine::createTextLeadingBidderInfo() {
-	std::shared_ptr<sf::Text> leadingBidderText(new sf::Text("Leading bidder: ", getFont(), getFontSize()));
+	std::shared_ptr<sf::Text> leadingBidderText(new sf::Text(L"Prowadząca oferta: ", getFont(), getFontSize()));
 	leadingBidderText->setPosition(LEADING_BIDDER_TEXT_POSITION);
 	leadingBidderText->setFillColor(sf::Color::Black);
 	leadingBidderInfoText_ = leadingBidderText;
@@ -1817,7 +1817,7 @@ void monopolyGameEngine::createTextLeadingBidderInfo() {
 }
 
 void monopolyGameEngine::createCurrentOfferBidderInfo() {
-	std::shared_ptr<sf::Text> currentOfferText(new sf::Text("Current offer: ", getFont(), getFontSize()));
+	std::shared_ptr<sf::Text> currentOfferText(new sf::Text("Aktualna oferta: ", getFont(), getFontSize()));
 	currentOfferText->setPosition(CURRENT_OFFER_TEXT_POSITION);
 	currentOfferText->setFillColor(sf::Color::Black);
 	currentOfferInfoText_ = currentOfferText;
@@ -1848,7 +1848,7 @@ void monopolyGameEngine::createButtonBuyResign() {
 	buyFieldButton_ = buttonBuy;
 	addButton(buttonBuy);
 
-	std::shared_ptr<Button> buttonResign(new Button(IDLE, "Resign", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonResign(new Button(IDLE, "Rezygnuj", buttonSize, getFontSize()));
 	buttonResign->setFont(getFont());
 	buttonResign->setPosition(sf::Vector2f(BUY_BUTTON_POSITION.x + 140, BUY_BUTTON_POSITION.y));
 	buttonResign->setActiveBackColor(activeButtonBackColor);
@@ -2056,8 +2056,9 @@ void monopolyGameEngine::createButtonsJailPay() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
+	sf::String jail_cost = (std::to_string(JAIL_PAY_MONEY));
 	std::shared_ptr<Button> buttonJailPay(
-		new Button(IDLE, "Pay " + std::to_string(JAIL_PAY_MONEY) + " to leave jail", buttonSize, getFontSize()));
+		new Button(IDLE, "Zaplać " + jail_cost + L" aby wyjść z więzienia", buttonSize, getFontSize()));
 	buttonJailPay->setFont(getFont());
 	buttonJailPay->setPosition(JAIL_PAY_BUTTON_POSITION);
 	buttonJailPay->setActiveBackColor(activeButtonBackColor);
@@ -2220,7 +2221,7 @@ void monopolyGameEngine::createAuctionBidButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonBidAuction(new Button(IDLE, "Bid", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBidAuction(new Button(IDLE, "Przebij", buttonSize, getFontSize()));
 	buttonBidAuction->setFont(getFont());
 	buttonBidAuction->setPosition(AUCTION_BID_BUTTON_POSITION);
 	buttonBidAuction->setActiveBackColor(activeButtonBackColor);
@@ -2247,7 +2248,7 @@ void monopolyGameEngine::createAuctionResignButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonResignAuction(new Button(IDLE, "Resign", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonResignAuction(new Button(IDLE, "Rezygnuj", buttonSize, getFontSize()));
 	buttonResignAuction->setFont(getFont());
 	buttonResignAuction->setPosition(AUCTION_RESIGN_BUTTON_POSITION);
 	buttonResignAuction->setActiveBackColor(activeButtonBackColor);
