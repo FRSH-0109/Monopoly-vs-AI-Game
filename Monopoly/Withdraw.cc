@@ -104,11 +104,11 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 			currentPropertyPlayer2Showed_ = player2Properties_[0];
 		}
 
-		player1IndexText_->setString(player1Text_->getString() + " Index");
+		player1IndexText_->setString(player1Text_->getString() + ": Oferta");
 		player1IndexMoney_->setString("Kasa: " + std::to_string(player1MoneyIndexBuffer_));
 		currentPropertyPlayer1IndexShowed_ = 0;
 
-		player2IndexText_->setString(player2Text_->getString() + " Index");
+		player2IndexText_->setString(player2Text_->getString() + ": Oferta");
 		player2IndexMoney_->setString("Kasa: " + std::to_string(player2MoneyIndexBuffer_));
 		currentPropertyPlayer2IndexShowed_ = 0;
 
@@ -134,11 +134,11 @@ void Withdraw::setDecisionScreenVisible(bool isVisible) {
 	playerInfoLoseProperties_->setFillColor(color);
 
 	if (isVisible) {
-		playerInfoText_->setString("Gracz " + std::to_string(player2ToWithDraw_->getId() + 1) + " decision:");
+		playerInfoText_->setString("Decyzja Gracza " + std::to_string(player2ToWithDraw_->getId() + 1) + ": ");
 		playerInfoMoney_->setString(
-			"Money transaction: " + std::to_string((int)player1MoneyIndexBuffer_ - (int)player2MoneyIndexBuffer_));
+			"Transakcja kasy: " + std::to_string((int)player1MoneyIndexBuffer_ - (int)player2MoneyIndexBuffer_));
 	}
-	playerInfoGetProperties_->setString("Get properties: ");
+	playerInfoGetProperties_->setString(L"Zdobyte nieruchomości: ");
 	bool addComa = false;
 	if (player1IndexProperties_.size() != 0) {
 		for (auto property : player1IndexProperties_) {
@@ -151,10 +151,10 @@ void Withdraw::setDecisionScreenVisible(bool isVisible) {
 			addComa = true;
 		}
 	} else {
-		playerInfoGetProperties_->setString(playerInfoGetProperties_->getString() + "None");
+		playerInfoGetProperties_->setString(playerInfoGetProperties_->getString() + "Brak");
 	}
 
-	playerInfoLoseProperties_->setString("Lose properties: ");
+	playerInfoLoseProperties_->setString(L"Stracone nieruchomości: ");
 	addComa = false;
 	if (player2IndexProperties_.size() != 0) {
 		for (auto property : player2IndexProperties_) {
@@ -167,7 +167,7 @@ void Withdraw::setDecisionScreenVisible(bool isVisible) {
 			addComa = true;
 		}
 	} else {
-		playerInfoLoseProperties_->setString(playerInfoLoseProperties_->getString() + "None");
+		playerInfoLoseProperties_->setString(playerInfoLoseProperties_->getString() + "Brak");
 	}
 
 	playerInfoText_->setOrigin(
@@ -184,12 +184,12 @@ void Withdraw::setDecisionScreenVisible(bool isVisible) {
 }
 
 void Withdraw::createDecisionPlayerScreen() {
-	std::shared_ptr<Button> buttonResign = createDefaultButton("Resign", 120, 50);
+	std::shared_ptr<Button> buttonResign = createDefaultButton("Rezygnuj", 120, 50);
 	buttonResign->setPosition(RESIGN_DECISION_BUTTON_POSITION);
 	resignDecisionButton_ = buttonResign;
 	addButton(buttonResign);
 
-	std::shared_ptr<Button> buttonAccpet = createDefaultButton("Accept", 120, 50);
+	std::shared_ptr<Button> buttonAccpet = createDefaultButton("Akceptuj", 120, 50);
 	buttonAccpet->setPosition(ACCEPT_DECISION_BUTTON_POSITION);
 	acceptDecisionButton_ = buttonAccpet;
 	addButton(buttonAccpet);
@@ -224,12 +224,12 @@ void Withdraw::createDecisionPlayerScreen() {
 }
 
 void Withdraw::createValuePlayerScreen() {
-	std::shared_ptr<Button> buttonResign = createDefaultButton("Resign", 120, 50);
+	std::shared_ptr<Button> buttonResign = createDefaultButton("Rezygnuj", 120, 50);
 	buttonResign->setPosition(RESIGN_VALUE_BUTTON_POSITION);
 	resignValueButton_ = buttonResign;
 	addButton(buttonResign);
 
-	std::shared_ptr<Button> buttonSubmit = createDefaultButton("Submit", 120, 50);
+	std::shared_ptr<Button> buttonSubmit = createDefaultButton(L"Zakończ", 120, 50);
 	buttonSubmit->setPosition(sf::Vector2f(RESIGN_VALUE_BUTTON_POSITION.x + 200, RESIGN_VALUE_BUTTON_POSITION.y));
 	submitValueButton_ = buttonSubmit;
 	addButton(buttonSubmit);
@@ -462,7 +462,7 @@ std::shared_ptr<Button> Withdraw::createDefaultButton(sf::String text, unsigned 
 
 void Withdraw::createChoosePlayerScreen() {
 	std::shared_ptr<sf::Text> choosePlayerText(
-		new sf::Text("Choose Player to withdraw with", getFont(), getFontSize() - 2));
+		new sf::Text("Wybierz gracza do wymiany", getFont(), getFontSize() - 2));
 	choosePlayerText->setPosition(CHOOSE_PLAYER_TEXT_POSITION);
 	choosePlayerText->setFillColor(sf::Color::Transparent);
 	choosePlayerText->setOrigin(
@@ -470,27 +470,27 @@ void Withdraw::createChoosePlayerScreen() {
 	choosePlayerText_ = choosePlayerText;
 	addText(choosePlayerText);
 
-	std::shared_ptr<Button> buttonChoosePlayer1 = createDefaultButton("Player 1", 120, 50);
+	std::shared_ptr<Button> buttonChoosePlayer1 = createDefaultButton("Gracz 1", 120, 50);
 	buttonChoosePlayer1->setPosition(sf::Vector2f(CHOOSE_PLAYER_TEXT_POSITION.x, CHOOSE_PLAYER_TEXT_POSITION.y + 100));
 	choosePlayer1Button_ = buttonChoosePlayer1;
 	addButton(buttonChoosePlayer1);
 
-	std::shared_ptr<Button> buttonChoosePlayer2 = createDefaultButton("Player 2", 120, 50);
+	std::shared_ptr<Button> buttonChoosePlayer2 = createDefaultButton("Gracz 2", 120, 50);
 	buttonChoosePlayer2->setPosition(sf::Vector2f(CHOOSE_PLAYER_TEXT_POSITION.x, CHOOSE_PLAYER_TEXT_POSITION.y + 200));
 	choosePlayer2Button_ = buttonChoosePlayer2;
 	addButton(buttonChoosePlayer2);
 
-	std::shared_ptr<Button> buttonChoosePlayer3 = createDefaultButton("Player 3", 120, 50);
+	std::shared_ptr<Button> buttonChoosePlayer3 = createDefaultButton("Gracz 3", 120, 50);
 	buttonChoosePlayer3->setPosition(sf::Vector2f(CHOOSE_PLAYER_TEXT_POSITION.x, CHOOSE_PLAYER_TEXT_POSITION.y + 300));
 	choosePlayer3Button_ = buttonChoosePlayer3;
 	addButton(buttonChoosePlayer3);
 
-	std::shared_ptr<Button> buttonChoosePlayer4 = createDefaultButton("Player 4", 120, 50);
+	std::shared_ptr<Button> buttonChoosePlayer4 = createDefaultButton("Gracz 4", 120, 50);
 	buttonChoosePlayer4->setPosition(sf::Vector2f(CHOOSE_PLAYER_TEXT_POSITION.x, CHOOSE_PLAYER_TEXT_POSITION.y + 400));
 	choosePlayer4Button_ = buttonChoosePlayer4;
 	addButton(buttonChoosePlayer4);
 
-	std::shared_ptr<Button> buttonResign = createDefaultButton("Resign", 120, 50);
+	std::shared_ptr<Button> buttonResign = createDefaultButton("Rezygnuj", 120, 50);
 	buttonResign->setPosition(RESIGN_BUTTON_POSITION);
 	resignButton_ = buttonResign;
 	addButton(buttonResign);
@@ -1047,7 +1047,7 @@ void Withdraw::showProperty(int column) {
 		propertySprite.setPosition(PROPERTY_POSITION.x, PROPERTY_POSITION.y);
 		propertySprite.setRotation(0);
 
-		const std::string streetName = "No property";
+		const std::string streetName = "Brak";
 		std::shared_ptr<sf::Text> propertyName(new sf::Text(streetName, getFont(), getFontSize() - 2));
 		propertyName->setOrigin(
 			propertyName->getGlobalBounds().getSize() / 2.f + propertyName->getLocalBounds().getPosition());

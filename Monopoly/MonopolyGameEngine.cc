@@ -2292,15 +2292,15 @@ void monopolyGameEngine::createButtonWithdraw() {
 
 void monopolyGameEngine::createResultScreenStuff()
 {
-	float x_coord = 980;
-	std::shared_ptr<sf::Text> resultGameText = std::make_shared<sf::Text>("Game Results", getFont(), getFontSize());
-	resultGameText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y));
+	float x_coord = 960;
+	std::shared_ptr<sf::Text> resultGameText = std::make_shared<sf::Text>("Wyniki rozgrywki", getFont(), getFontSize());
 	resultGameText->setFillColor(sf::Color::Black);
 	resultGameText->setOrigin(resultGameText->getGlobalBounds().getSize() / 2.f +
 										  resultGameText->getLocalBounds().getPosition());
+	resultGameText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y));
 	resultPlayersPlaces_.push_back(resultGameText);
 
-	std::shared_ptr<Button> buttonReturn = createDefaultButton("Return", 120, 50);
+	std::shared_ptr<Button> buttonReturn = createDefaultButton(L"Wróc", 120, 50);
 	buttonReturn->setEventType(RETURN_TO_MAIN_MENU);
 	returnToMainMenuButton_ = buttonReturn;
 	addButton(buttonReturn);
@@ -2309,17 +2309,17 @@ void monopolyGameEngine::createResultScreenStuff()
 void monopolyGameEngine::updateResultScreenStuff()
 {
 	int y_step = 40;
-	float x_coord = 980;
+	float x_coord = 960;
 	int y_offset = 0;
 	for(std::vector<std::shared_ptr<Player>>::reverse_iterator iter = playersBankrupted_.rbegin(); iter != playersBankrupted_.rend(); ++iter)
 	{
 		y_offset += y_step;
-		std::string text = std::to_string(iter->get()->getResultPlace()) + ": Player " + std::to_string(iter->get()->getId()+1);
+		std::string text = std::to_string(iter->get()->getResultPlace()) + ": Gracz " + std::to_string(iter->get()->getId()+1);
 		std::shared_ptr<sf::Text> playerResultText = std::make_shared<sf::Text>(text , getFont(), getFontSize());
-		playerResultText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
 		playerResultText->setFillColor(sf::Color::Black);
 		playerResultText->setOrigin(playerResultText->getGlobalBounds().getSize() / 2.f +
 											playerResultText->getLocalBounds().getPosition());
+		playerResultText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));												
 		resultPlayersPlaces_.push_back(playerResultText);
 	}
 
