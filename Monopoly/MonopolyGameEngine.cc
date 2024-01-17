@@ -235,7 +235,7 @@ void monopolyGameEngine::performAuction() {
 	static unsigned int player_bidding;
 	static std::vector<std::shared_ptr<Player>> players_bidding;
 	switch (getAuctionState()) {
-		case Initialization: {
+		case INITIALIZATION: {
 			current_bid = 10;
 			bidded_property_id = players_[playerIndexturn_]->getPosition();
 			highest_bidder = nullptr;
@@ -248,15 +248,15 @@ void monopolyGameEngine::performAuction() {
 				leadingBidderInfoText_->setString(
 					"Prowadzacy: Gracz " + std::to_string(highest_bidder->getId() + 1));
 			}
-			setAuctionState(PassBiddingTurn);
+			setAuctionState(PASS_BIDDING_TURN);
 			break;
 		}
-		case PassBiddingTurn: {
+		case PASS_BIDDING_TURN: {
 			current_offer = current_bid + 1;
-			setAuctionState(Bidding);
+			setAuctionState(BIDDING);
 			break;
 		}
-		case Bidding: {
+		case BIDDING: {
 			// Główna logika aukcji
 			if (players_bidding[player_bidding]->getIsAi()) {
 				FieldType field_type = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(bidded_property_id));
@@ -298,7 +298,7 @@ void monopolyGameEngine::performAuction() {
 					leadingBidderInfoText_->setString(
 						"Prowadzacy: Gracz " + std::to_string(highest_bidder->getId() + 1));
 				}
-				setAuctionState(PassBiddingTurn);
+				setAuctionState(PASS_BIDDING_TURN);
 			}
 			if (isButtonClicked(auctionResignButton_) || players_bidding[player_bidding]->getMoney() < current_bid || (players_bidding[player_bidding]->getIsAi() && current_offer <= current_bid)) {
 				unsigned int i = 0;
@@ -360,11 +360,11 @@ void monopolyGameEngine::performAuction() {
 			currentOfferInfoText_->setString("Aktualna oferta: " + std::to_string(current_offer));
 
 			if ((players_bidding.size() == 1 && highest_bidder != nullptr) || players_bidding.size() == 0) {
-				setAuctionState(Ending);
+				setAuctionState(ENDING);
 			}
 			break;
 		}
-		case Ending: {
+		case ENDING: {
 			if (highest_bidder != nullptr) {
 				std::shared_ptr<Player> winner = players_bidding[0];
 				addOwnerToPropertyField(winner, bidded_property_id);
@@ -376,7 +376,7 @@ void monopolyGameEngine::performAuction() {
 			current_bid = 10;
 			highest_bidder = nullptr;
 			player_bidding = playerIndexturn_;
-			setAuctionState(NoAuction);
+			setAuctionState(NO_AUCTION);
 		} break;
 		default:
 			break;
@@ -1314,8 +1314,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					}
 				}
 
-				if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NoAuction || (players_[playerIndexturn_]->getIsAi() && (buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
-					if (getAuctionState() == NoAuction) {
+				if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NO_AUCTION || (players_[playerIndexturn_]->getIsAi() && (buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
+					if (getAuctionState() == NO_AUCTION) {
 						std::string textPlayerResginedProperty(
 							"rezygnuje z kupna nieruchomosci " +
 							std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
@@ -1324,10 +1324,10 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						buyFieldButton_->setIsVisible(false);
 						boardToAuctionSwitchHandler(true);
 						setScreenType(AUCTION);
-						setAuctionState(Initialization);
+						setAuctionState(INITIALIZATION);
 					}
 					performAuction();
-					if (getAuctionState() == NoAuction) {
+					if (getAuctionState() == NO_AUCTION) {
 						boardToAuctionSwitchHandler(false);
 						resignBuyFieldButton_->setIsVisible(false);
 						buyFieldButton_->setIsVisible(false);
@@ -1341,7 +1341,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			case PAY_RENT: {
 				if (playerChanged) {
 					std::string textPlayerrent(
-						"Musi zdobyc kase aby zaplacic czynsz" + std::to_string(money_to_find) + " lub oglsic bankructwo");
+						"Musi zdobyc kase aby zaplacic czynsz " + std::to_string(money_to_find) + " lub oglsic bankructwo");
 					notificationAdd(playerIndexturn_, textPlayerrent);
 					playerChanged = false;
 				}
@@ -2800,7 +2800,7 @@ void monopolyGameEngine::notificationAdd(unsigned int index, std::string text) {
 	const unsigned int LINE_LEN = 59;
 	const unsigned int LINE_LEN_WITHOUT_PLAYER = LINE_LEN - std::string("Gracz X: ").length();
 	unsigned int id = players_[index]->getId();
-	if (std::string("Gracz " + std::to_string(id + 1) + ": " + text).size() <= LINE_LEN_WITHOUT_PLAYER) {
+	if (text.size() <= LINE_LEN_WITHOUT_PLAYER) {
 		notificationsWall_.addToWall("Gracz " + std::to_string(id + 1) + ": " + text);
 	} else {
 		notificationsWall_.addToWall(
