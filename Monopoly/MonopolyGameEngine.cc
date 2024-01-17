@@ -1350,6 +1350,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 				buildingsManagingWorker();
 				nextTurnButton_->setIsVisible(true);
 				if (isButtonClicked(nextTurnButton_) || players_[playerIndexturn_]->getIsAi()) { // || players_[playerIndexturn_]->getIsAi()
+					setTurnState(ROLL_DICE);
 					rollDiceButton_->setIsVisible(true);
 					rolledValueText_->setString("");
 					resignBuyFieldButton_->setIsVisible(false);
@@ -1381,6 +1382,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							{
 								updateResultScreenStuff();
 								setScreenType(RESULT);
+								setTurnState(NO_TURN);
 							}
 						} else if (gameFinishedCheckDraw()) {
 							removePlayerFromGame(playerIndexturn_, true);
@@ -1392,6 +1394,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							{
 								updateResultScreenStuff();
 								setScreenType(RESULT);
+								setTurnState(NO_TURN);
 							}
 						}
 						turnInfoTextShow();
@@ -1407,8 +1410,6 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							++gameTurnsGloballyDone_;
 						}
 					}
-
-					setTurnState(ROLL_DICE);
 					nextTurnButton_->setIsVisible(false);
 					playerChanged = true;
 				}
