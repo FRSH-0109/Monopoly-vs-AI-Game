@@ -13,11 +13,11 @@
 #define MONOPOLY_GAME_ENGINE_H
 
 #include <algorithm>
+#include <cmath>
 #include <fstream>
 #include <memory>
 #include <random>
 #include <vector>
-#include <cmath>
 #include "ActiveScreen.h"
 #include "Board.h"
 #include "Chance.h"
@@ -287,7 +287,7 @@ class monopolyGameEngine {
 	sf::Vector2f& getHouseSize();
 
 	// game staff
-	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
+	void createPlayers(std::vector<std::shared_ptr<Player>>& playersFromGameEngine);
 	void clearPlayers();
 	void createBoard();
 	void clearBoard();

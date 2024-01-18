@@ -27,6 +27,8 @@ GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) 
 	getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
 
 	activeScreen_ = std::make_unique<MainMenuScreen>();
+
+	players_.clear();
 }
 
 ContextWindow* GameEngine::getContextWindow() {
@@ -64,36 +66,12 @@ void GameEngine::display() {
 	}
 }
 
-std::vector<std::shared_ptr<Player>> GameEngine::worker(bool AIonly) {
-	if (AIonly) {
-		std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
-
-		std::shared_ptr<playerSettings> player1Settings = std::make_shared<playerSettings>();
-		player1Settings->isNone = false;
-		player1Settings->isHuman = false;
-		player1Settings->level = 1;
-		playerSettingsList_.push_back(player1Settings);
-
-		std::shared_ptr<playerSettings> player2Settings = std::make_shared<playerSettings>();
-		player2Settings->isNone = false;
-		player2Settings->isHuman = false;
-		player2Settings->level = 1;
-		playerSettingsList_.push_back(player2Settings);
-
-		std::shared_ptr<playerSettings> player3Settings = std::make_shared<playerSettings>();
-		player3Settings->isNone = false;
-		player3Settings->isHuman = false;
-		player3Settings->level = 1;
-		playerSettingsList_.push_back(player3Settings);
-
-		std::shared_ptr<playerSettings> player4Settings = std::make_shared<playerSettings>();
-		player4Settings->isNone = false;
-		player4Settings->isHuman = false;
-		player4Settings->level = 1;
-		playerSettingsList_.push_back(player4Settings);
-
+std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_ptr<Player>>& playersVec) {
+	players_.clear();
+	if (playersVec.size() > 1) {  // if passed more than 1 player to worker
+		players_ = playersVec;
 		activeScreen_.reset();
-		activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
+		activeScreen_ = std::make_unique<GameScreen>(players_);
 	}
 
 	while (getContextWindow()->isOpen()) {
@@ -113,9 +91,10 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(bool AIonly) {
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameMenuScreen>();
 				break;
-			case EXIT:
-				getContextWindow()->window_.close();
-				break;
+			case EXIT: {
+				players_.clear();
+				return players_;  // return empty vector
+			} break;
 			case RETURN_TO_MAIN_MENU:
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
@@ -123,18 +102,37 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(bool AIonly) {
 			case START_GAME: {
 				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 				playerSettingsList_ = activeScreen_->getPlayersSettings();
-				int counterOfNones = 0;
-				for (auto playerSetting : playerSettingsList_)
+				players_.clear();
+				for (auto playerSettings :
+					activeScreen_->getPlayersSettings())  // crete temporary players vector to pass to gameScreen and
+														  // then monopoly engine
 				{
-					if(playerSetting->isNone)
-					{
+					if (!(playerSettings->isNone)) {
+						if (playerSettings->isHuman) {
+							Player new_player = Player(0);
+							new_player.setIsAi(!(playerSettings->isHuman));
+							new_player.setAiLevel(playerSettings->level);
+							players_.push_back(std::make_shared<Player>(new_player));
+						} else {
+							AiPlayer new_player = AiPlayer(0);
+							new_player.setIsAi(!(playerSettings->isHuman));
+							new_player.setAiLevel(playerSettings->level);
+							players_.push_back(std::make_shared<AiPlayer>(new_player));
+						}
+					}
+				}
+				int counterOfNones = 0;
+				for (auto playerSetting : playerSettingsList_)	// block game with 1 player
+				{
+					if (playerSetting->isNone) {
 						++counterOfNones;
 					}
 				}
-				if(counterOfNones >= 3)
-				{ break;}
+				if (counterOfNones >= 3) {
+					break;
+				}
 				activeScreen_.reset();
-				activeScreen_ = std::make_unique<GameScreen>(playerSettingsList_);
+				activeScreen_ = std::make_unique<GameScreen>(players_);
 			} break;
 			case GAME_ENDED:
 				return activeScreen_->getPlayersResult();

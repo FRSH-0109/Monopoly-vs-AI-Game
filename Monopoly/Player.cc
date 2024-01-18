@@ -1,39 +1,52 @@
 /**
  * @file Player.cc
  *
- * @brief Source file for Player class, has got all
- * data needed by player to be part of monopoly game.
+ * @brief Implementation file for Player class and AI Player class,
+ * containing data and methods for a player in a Monopoly game.
  *
  * @author Kamil Kosnik, Kacper Radzikowski
- *
  */
 
 #include "Player.h"
 
+// =============================================================================
+// Player Class Implementation
+// =============================================================================
+
 Player::Player() {
+	setAiLevel(0);
+	setId(0);
 	setPosition(0);
-	clearFiledOwnedId();
+	clearFieldOwnedId();
 	setMoney(0);
 	setJailStatus(0);
+	setJailCards(0);
+	setResultPlace(0);
+	setIsAi(false);
 }
 
 Player::Player(unsigned int money) {
+	setAiLevel(0);
+	setId(0);
 	setPosition(0);
-	clearFiledOwnedId();
+	clearFieldOwnedId();
 	setMoney(money);
 	setJailStatus(0);
+	setJailCards(0);
+	setResultPlace(0);
+	setIsAi(false);
 }
 
 unsigned int Player::getPosition() const {
 	return position_;
 }
 
-void Player::setPosition(unsigned int newPosition) {
-	position_ = newPosition;
+void Player::setPosition(unsigned int new_position) {
+	position_ = new_position;
 }
 
-bool Player::hasFiledOwnedId(unsigned int id) const {
-	for (auto filedId : fieldsOwnedId_) {
+bool Player::hasFieldOwnedId(unsigned int id) const {
+	for (auto filedId : fields_owned_id_) {
 		if (filedId == id) {
 			return true;
 		}
@@ -41,24 +54,23 @@ bool Player::hasFiledOwnedId(unsigned int id) const {
 	return false;
 }
 
-std::vector<unsigned int> Player::getFiledOwnedId() const {
-	return fieldsOwnedId_;
+std::vector<unsigned int> Player::getFieldOwnedId() const {
+	return fields_owned_id_;
 }
 
 void Player::addFieldOwnedId(unsigned int id) {
-	if (hasFiledOwnedId(id) == false) {
-		fieldsOwnedId_.push_back(id);
-		std::sort(fieldsOwnedId_.begin(), fieldsOwnedId_.end());
+	if (hasFieldOwnedId(id) == false) {
+		fields_owned_id_.push_back(id);
+		std::sort(fields_owned_id_.begin(), fields_owned_id_.end());
 	}
 }
 
-void Player::removeFiledOwnedId(unsigned int id) {
-	// std::remove(fieldsOwnedId_.begin(), fieldsOwnedId_.end(), id);
-	fieldsOwnedId_.erase(std::remove(fieldsOwnedId_.begin(), fieldsOwnedId_.end(), id), fieldsOwnedId_.end());
+void Player::removeFieldOwnedId(unsigned int id) {
+	fields_owned_id_.erase(std::remove(fields_owned_id_.begin(), fields_owned_id_.end(), id), fields_owned_id_.end());
 }
 
-void Player::clearFiledOwnedId() {
-	fieldsOwnedId_.clear();
+void Player::clearFieldOwnedId() {
+	fields_owned_id_.clear();
 }
 
 void Player::setMoney(unsigned int value) {
@@ -84,8 +96,8 @@ bool Player::substractMoney(unsigned int value) {
 	}
 }
 
-void Player::setJailStatus(unsigned int newJailStatus) {
-	jail_status_ = newJailStatus;
+void Player::setJailStatus(unsigned int new_jail_status) {
+	jail_status_ = new_jail_status;
 }
 
 unsigned int Player::getJailStatus() const {
@@ -98,18 +110,17 @@ void Player::reduceJailStatus() {
 	}
 }
 
-void Player::setJailCards(unsigned int newJailCards) {
-	jailCards_ = newJailCards;
+void Player::setJailCards(unsigned int new_jail_cards) {
+	jail_cards_ = new_jail_cards;
 }
 
 unsigned int Player::getJailCards() const {
-	return jailCards_;
+	return jail_cards_;
 }
 
-void Player::setId(unsigned int newId) {
-	// TODO: catch exception and tests to do
-	if (newId <= 3) {
-		id_ = newId;
+void Player::setId(unsigned int new_id) {
+	if (new_id <= 3) {
+		id_ = new_id;
 		switch (id_) {
 			case 0:
 				setColor(sf::Color::Green);
@@ -133,44 +144,42 @@ unsigned int Player::getId() const {
 	return id_;
 }
 
-void Player::setColor(sf::Color newColor) {
-	color_ = newColor;
+void Player::setColor(sf::Color new_color) {
+	color_ = new_color;
 }
 
 sf::Color Player::getColor() const {
 	return color_;
 }
 
-void Player::setIsAi(bool isAiState) {
-	isAi_ = isAiState;
+void Player::setIsAi(bool new_is_ai) {
+	is_ai_ = new_is_ai;
 }
 
-bool Player::getIsAi() {
-	return isAi_;
+bool Player::getIsAi() const {
+	return is_ai_;
 }
 
-void Player::setAiLevel(unsigned int aiLevel) {
-	// TODO excetpion
-	aiLevel_ = aiLevel;
+void Player::setAiLevel(unsigned int ai_level) {
+	ai_level_ = ai_level;
 }
 
-unsigned int Player::getAiLevel() {
-	return aiLevel_;
+unsigned int Player::getAiLevel() const {
+	return ai_level_;
 }
 
 void Player::setResultPlace(unsigned int place) {
-	resultPlace_ = place;
+	result_place_ = place;
 }
 
 unsigned int Player::getResultPlace() const {
-	return resultPlace_;
+	return result_place_;
 }
 
 void Player::createSprite() {
 	const float WIDTH = 20.0;
 	const float HEIGHT = 20.0;
 	const std::string TEXTURE_PATH = "textures_and_fonts/textures/Pionek_monopoly.png";
-	contextWindow_ = ContextWindow::GetInstance();
 	if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
 		player_sprite_.setColor(sf::Color::Black);
 	}
@@ -217,8 +226,8 @@ void Player::setSpriteOffsetY(const float offset_y) {
 	}
 }
 
-void Player::setSpritePosition(sf::Vector2f newPos) {
-	player_sprite_.setPosition(newPos);
+void Player::setSpritePosition(sf::Vector2f new_pos) {
+	player_sprite_.setPosition(new_pos);
 }
 
 BuyDecision Player::decideBuy(unsigned int index) {
@@ -264,6 +273,18 @@ Decision Player::decideOfferTrade() {
 Decision Player::decideAcceptTrade() {
 	return NO;
 }
+
+// =============================================================================
+// AiPlayer Class Implementation
+// =============================================================================
+
+AiPlayer::AiPlayer() : Player() {
+	setIsAi(true);
+}
+
+AiPlayer::AiPlayer(unsigned int money) : Player(money) {
+	setIsAi(true);
+};
 
 AiAdapter& AiPlayer::getAdapter() {
 	return adapter_;
@@ -390,9 +411,9 @@ Decision AiPlayer::decideOfferTrade() {
 	// neural_network_.evaluate(inputs, Y);
 
 	// if (Y[7] > 0.5f) {
-		// return YES;
+	// return YES;
 	// } else {
-		// return NO;
+	// return NO;
 	// }
 
 	return YES;
@@ -404,9 +425,9 @@ Decision AiPlayer::decideAcceptTrade() {
 	// neural_network_.evaluate(inputs, Y);
 
 	// if (Y[8] > 0.5f) {
-		// return YES;
+	// return YES;
 	// } else {
-		// return NO;
+	// return NO;
 	// }
 
 	return YES;

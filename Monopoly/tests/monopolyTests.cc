@@ -10,14 +10,14 @@
 #include <fstream>
 #include <map>
 #include <string>
+#include "../ActiveScreen.h"
 #include "../AiAdapter.h"
 #include "../Board.h"
-#include "../Field.h"
-#include "../ActiveScreen.h"
 #include "../ContextWindow.h"
+#include "../Field.h"
 #include "../GameEngine.h"
-#include "../main.h"
 #include "../MonopolyGameEngine.h"
+#include "../main.h"
 #include "catch2/src/catch2/catch_all.hpp"
 
 using namespace std;
@@ -295,8 +295,8 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(other_player);
 			other_player->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
-			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
@@ -314,7 +314,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(builder);
 			builder->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
@@ -334,7 +334,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(2);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == true);
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
@@ -354,7 +354,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(2);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == true);
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == true);
@@ -374,7 +374,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(4);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
@@ -396,7 +396,7 @@ TEST_CASE("monopolyGameEngine") {
 
 			monopoly_engine.setHouseCount(0);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isBuildingLegal(builder, test_field_8) == false);
@@ -421,8 +421,8 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(other_player);
 			other_player->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
-			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == false);
@@ -442,7 +442,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(1);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == false);
@@ -459,7 +459,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(builder);
 			builder->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == false);
@@ -479,7 +479,7 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(1);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_6) == true);
 			CHECK(monopoly_engine.isDestroyingLegal(builder, test_field_8) == true);
@@ -522,8 +522,8 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(other_player);
 			other_player->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
-			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == false);
@@ -540,7 +540,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(builder);
 			builder->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == false);
@@ -562,8 +562,8 @@ TEST_CASE("monopolyGameEngine") {
 
 			monopoly_engine.setHouseCount(0);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
-			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == true);
@@ -583,8 +583,8 @@ TEST_CASE("monopolyGameEngine") {
 			builder->addFieldOwnedId(9);
 			test_field_9.setHouseNumber(4);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
-			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isHotelBuildingLegal(builder, test_field_8) == true);
@@ -609,8 +609,8 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(other_player);
 			other_player->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
-			std::vector<unsigned int> other_ownes = other_player->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
+			std::vector<unsigned int> other_ownes = other_player->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
@@ -627,7 +627,7 @@ TEST_CASE("monopolyGameEngine") {
 			test_field_9.setOwner(builder);
 			builder->addFieldOwnedId(9);
 
-			std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+			std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 
 			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_6) == false);
 			CHECK(monopoly_engine.isHotelDestroyingLegal(builder, test_field_8) == false);
@@ -1337,27 +1337,27 @@ TEST_CASE("Player class") {
 	REQUIRE(PLAYER1.getJailStatus() == JAILSTATUS_2);
 
 	// FILED OWNED TESTS
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_1) == false);
 	PLAYER1.addFieldOwnedId(FIELD_ID_1);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == true);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_1) == true);
 	PLAYER1.addFieldOwnedId(FIELD_ID_2);
 	PLAYER1.addFieldOwnedId(FIELD_ID_3);
 	PLAYER1.addFieldOwnedId(FIELD_ID_4);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == true);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == true);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == true);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == true);
-	PLAYER1.removeFiledOwnedId(FIELD_ID_1);
-	PLAYER1.removeFiledOwnedId(FIELD_ID_3);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == true);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == false);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == true);
-	PLAYER1.clearFiledOwnedId();
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_1) == false);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_2) == false);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_3) == false);
-	REQUIRE(PLAYER1.hasFiledOwnedId(FIELD_ID_4) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_1) == true);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_2) == true);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_3) == true);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_4) == true);
+	PLAYER1.removeFieldOwnedId(FIELD_ID_1);
+	PLAYER1.removeFieldOwnedId(FIELD_ID_3);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_1) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_2) == true);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_3) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_4) == true);
+	PLAYER1.clearFieldOwnedId();
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_1) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_2) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_3) == false);
+	REQUIRE(PLAYER1.hasFieldOwnedId(FIELD_ID_4) == false);
 
 	SECTION("setSpritePositionX() and setSpritePositionY() - correct data") {
 		PLAYER1.setSpriteOffsetX(0.5);

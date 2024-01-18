@@ -26,8 +26,7 @@ ScreenEventType Button::getEventType() {
 	return type_;
 }
 
-void Button::setEventType(ScreenEventType event)
-{
+void Button::setEventType(ScreenEventType event) {
 	type_ = event;
 }
 

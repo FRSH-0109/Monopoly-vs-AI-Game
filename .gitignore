@@ -19,3 +19,4 @@ Monopoly/tests/CMakeCache.txt
 Monopoly/tests/cmake_install.cmake
 .vscode/
 *.txt
+docs/*
