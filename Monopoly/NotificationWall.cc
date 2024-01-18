@@ -1,12 +1,13 @@
 /**
  * @file NotificationWall.cc
  *
- * @brief Source file of class used to display list
- * of messages/notifications as finite list with certain length.
- * It automatically rolls over when gets next message.
+ * @brief Source file for the NotificationWall class.
+ *
+ * The NotificationWall class is used to display a list of messages/notifications
+ * as a finite list with a certain length. It automatically rolls over when it
+ * receives the next message.
  *
  * @author Kamil Kosnik, Kacper Radzikowski
- *
  */
 
 #include "NotificationWall.h"
@@ -20,24 +21,24 @@ NotificationWall::NotificationWall() {
 }
 
 void NotificationWall::clearWall() {
-	wallTexts_.clear();
+	wall_texts_.clear();
 }
 
 std::vector<std::shared_ptr<sf::Text>>& NotificationWall::getWall() {
-	return wallTexts_;
+	return wall_texts_;
 }
 
 void NotificationWall::addToWall(std::string text) {
-	std::shared_ptr<sf::Text> newNoti(new sf::Text(text, getFont(), getFontSize() - 2));
-	newNoti->setFillColor(sf::Color::Black);
-	wallTexts_.push_back(newNoti);
-	if (wallTexts_.size() > MAX_NOTIFICATIONS_) {
-		wallTexts_.erase(wallTexts_.begin());
+	std::shared_ptr<sf::Text> new_noti(new sf::Text(text, getFont(), getFontSize() - 2));
+	new_noti->setFillColor(sf::Color::Black);
+	wall_texts_.push_back(new_noti);
+	if (wall_texts_.size() > MAX_NOTIFICATIONS_) {
+		wall_texts_.erase(wall_texts_.begin());
 	}
 
 	unsigned int i = 0;
-	for (auto notiTextPtr : wallTexts_) {
-		notiTextPtr->setPosition(sf::Vector2f(DRAW_OFFSET_.x, DRAW_OFFSET_.y + Y_STEP_OFFSET_ * i));
+	for (auto noti_text_ptr : wall_texts_) {
+		noti_text_ptr->setPosition(sf::Vector2f(DRAW_OFFSET_.x, DRAW_OFFSET_.y + Y_STEP_OFFSET_ * i));
 		++i;
 	}
 }
