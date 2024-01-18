@@ -11,9 +11,10 @@
 
 #include <cmath>
 #include <numbers>
+#include "Player.h"
 #include "GameScreen.h"
 
-GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettingsList_) {
+GameScreen::GameScreen(std::vector<std::shared_ptr<Player>>& players_) {
 	setContextWindow(ContextWindow::GetInstance());
 	std::cout << "GS constructor" << std::endl;
 	setScreenType(MONOPOLY_GAME);
@@ -27,7 +28,7 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettin
 	monopoly_game_engine_.setFont(getFont());
 	monopoly_game_engine_.createBoard();
 	monopoly_game_engine_.clearPlayers();
-	monopoly_game_engine_.createPlayers(playerSettingsList_);
+	monopoly_game_engine_.createPlayers(players_);
 	monopoly_game_engine_.setPlayerIndexTurn(0);
 	monopoly_game_engine_.createButtonRollDice();
 	monopoly_game_engine_.createTextTurnInfo();

@@ -22,6 +22,7 @@
 #include "ActiveScreen.h"
 #include "ContextWindow.h"
 #include "GameScreen.h"
+#include "Player.h"
 #include "main.h"
 
 class GameEngine {
@@ -35,12 +36,14 @@ class GameEngine {
 	unsigned int windowWidth_;
 	unsigned int windowHeight_;
 
+	std::vector<std::shared_ptr<Player>> players_;
+
    public:
 	GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight);
 	void clear();
 	void display();
 	void pollForEvents(sf::Event& event);
-	std::vector<std::shared_ptr<Player>> worker(bool AIonly);
+	std::vector<std::shared_ptr<Player>> worker(std::vector<std::shared_ptr<Player>>& playersVec);
 
 	unsigned int getWindowWidth() const;
 	unsigned int getWindowHeight() const;

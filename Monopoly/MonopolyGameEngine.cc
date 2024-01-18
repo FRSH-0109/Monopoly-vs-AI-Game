@@ -35,44 +35,29 @@ void monopolyGameEngine::createBoard() {
 	gameboard_ = std::make_shared<Board>(GAMEBOARD_FILE_PATH_);
 }
 
-void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list) {
+void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<Player>>& playersFromGameEngine) {
+	players_.clear();
 	gameTurnByPlayerDone_ = {false, false, false, false};
 	gameTurnsGloballyDone_ = 0;
 	playersStartingAmount_ = 0;
 	int playerId = 0;
 	isAiGameOnly_ = true;
-	for (auto it : player_settings_list) {
-		if (!(it->isNone)) {
-			++playersStartingAmount_;
-			if (it->isHuman) {
-				isAiGameOnly_ = false;
-				Player new_player = Player(PLAYER_MONEY_DEFAULT_);
-				new_player.setIsAi(!(it->isHuman));
-				new_player.setAiLevel(it->level);
-				new_player.setId(playerId);
-				players_.push_back(std::make_shared<Player>(new_player));
-			}
-			 else {
-				AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
-				new_player.setIsAi(!(it->isHuman));
-				new_player.setAiLevel(it->level);
-				new_player.setId(playerId);
-				players_.push_back(std::make_shared<AiPlayer>(new_player));
-			}
-			// if (new_player.getId() == 1) {
-			// 	players_[1]->addFieldOwnedId(16);
-			// 	players_[1]->addFieldOwnedId(18);
-			// 	players_[1]->addFieldOwnedId(19);
-			// 	std::get<StreetField>(gameboard_->getFieldById(16)).setOwner(players_[1]);
-			// 	std::get<StreetField>(gameboard_->getFieldById(18)).setOwner(players_[1]);
-			// 	std::get<StreetField>(gameboard_->getFieldById(19)).setOwner(players_[1]);
-			// }
-			// if (new_player.getId() == 2) {
-			// 	players_[2]->addFieldOwnedId(1);
-			// 	players_[2]->addFieldOwnedId(3);
-			// 	std::get<StreetField>(gameboard_->getFieldById(1)).setOwner(players_[2]);
-			// 	std::get<StreetField>(gameboard_->getFieldById(3)).setOwner(players_[2]);
-			// }
+	for (auto player_ptr : playersFromGameEngine) {
+		++playersStartingAmount_;
+		if (player_ptr->getIsAi() == false) {
+			isAiGameOnly_ = false;
+			Player new_player = Player(PLAYER_MONEY_DEFAULT_);
+			new_player.setIsAi(false);
+			new_player.setAiLevel(0);
+			new_player.setId(playerId);
+			players_.push_back(std::make_shared<Player>(new_player));
+		}
+			else {
+			AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
+			new_player.setIsAi(true);
+			new_player.setAiLevel(player_ptr->getAiLevel());
+			new_player.setId(playerId);
+			players_.push_back(std::make_shared<AiPlayer>(new_player));
 		}
 		++playerId;
 	};
@@ -1284,6 +1269,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			} break;
 
 			case BUY_ACTION: {
+				bool boughtProp = false;
 				int pos = players_[playerIndexturn_]->getPosition();
 				unsigned int price = getFieldPriceByPosition(pos);
 				resignBuyFieldButton_->setIsVisible(true);
@@ -1305,6 +1291,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						resignBuyFieldButton_->setIsVisible(false);
 						buyFieldButton_->setIsVisible(false);
 						setTurnState(TURN_END);
+
+						boughtProp = true;
 					} else	// NOT possible to buy property
 					{
 						std::string textPlayerBoughtProperty(
@@ -1313,27 +1301,29 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
 					}
 				}
-
-				if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NO_AUCTION || (players_[playerIndexturn_]->getIsAi() && (buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
-					if (getAuctionState() == NO_AUCTION) {
-						std::string textPlayerResginedProperty(
-							"rezygnuje z kupna nieruchomosci " +
-							std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
-						notificationAdd(playerIndexturn_, textPlayerResginedProperty);
-						resignBuyFieldButton_->setIsVisible(false);
-						buyFieldButton_->setIsVisible(false);
-						boardToAuctionSwitchHandler(true);
-						setScreenType(AUCTION);
-						setAuctionState(INITIALIZATION);
-					}
-					performAuction();
-					if (getAuctionState() == NO_AUCTION) {
-						boardToAuctionSwitchHandler(false);
-						resignBuyFieldButton_->setIsVisible(false);
-						buyFieldButton_->setIsVisible(false);
-						rollDiceButton_->setIsVisible(false);
-						setScreenType(BOARDGAME);
-						setTurnState(TURN_END);
+				if(boughtProp == false)
+				{
+					if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NO_AUCTION || (players_[playerIndexturn_]->getIsAi() && (buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
+						if (getAuctionState() == NO_AUCTION) {
+							std::string textPlayerResginedProperty(
+								"rezygnuje z kupna nieruchomosci " +
+								std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+							notificationAdd(playerIndexturn_, textPlayerResginedProperty);
+							resignBuyFieldButton_->setIsVisible(false);
+							buyFieldButton_->setIsVisible(false);
+							boardToAuctionSwitchHandler(true);
+							setScreenType(AUCTION);
+							setAuctionState(INITIALIZATION);
+						}
+						performAuction();
+						if (getAuctionState() == NO_AUCTION) {
+							boardToAuctionSwitchHandler(false);
+							resignBuyFieldButton_->setIsVisible(false);
+							buyFieldButton_->setIsVisible(false);
+							rollDiceButton_->setIsVisible(false);
+							setScreenType(BOARDGAME);
+							setTurnState(TURN_END);
+						}
 					}
 				}
 			} break;
@@ -2079,7 +2069,7 @@ void monopolyGameEngine::createButtonsNextTurn() {
 }
 
 void monopolyGameEngine::createButtonsJailPay() {
-	sf::Vector2f buttonSize = sf::Vector2f(210, 50);
+	sf::Vector2f buttonSize = sf::Vector2f(260, 50);
 	sf::Color activeButtonBackColor = sf::Color::Green;
 	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
 	sf::Color FocusButtonBackColor = sf::Color::Black;

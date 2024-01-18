@@ -15,6 +15,7 @@ Player::Player() {
 	clearFiledOwnedId();
 	setMoney(0);
 	setJailStatus(0);
+	setIsAi(false);
 }
 
 Player::Player(unsigned int money) {
@@ -22,6 +23,7 @@ Player::Player(unsigned int money) {
 	clearFiledOwnedId();
 	setMoney(money);
 	setJailStatus(0);
+	setIsAi(false);
 }
 
 unsigned int Player::getPosition() const {

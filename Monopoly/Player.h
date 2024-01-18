@@ -13,8 +13,8 @@
 
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
-#include <vector>
 #include <algorithm>
+#include <vector>
 #include "AiAdapter.h"
 #include "ContextWindow.h"
 #include "Tinyann.h"
@@ -95,8 +95,8 @@ class AiPlayer : public Player {
 	unsigned int test_ = 3;
 
    public:
-	AiPlayer() : Player(){};
-	AiPlayer(unsigned int money) : Player(money){};
+	AiPlayer() : Player() { setIsAi(true); };
+	AiPlayer(unsigned int money) : Player(money) { setIsAi(true); };
 	AiAdapter& getAdapter();
 	ann::neuralnet& getNeuralNetwork();
 	unsigned int getTest() { return test_; };

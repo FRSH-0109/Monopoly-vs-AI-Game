@@ -285,7 +285,7 @@ class monopolyGameEngine {
 	sf::Vector2f& getHouseSize();
 
 	// game staff
-	void createPlayers(std::vector<std::shared_ptr<playerSettings>> player_settings_list);
+	void createPlayers(std::vector<std::shared_ptr<Player>>& playersFromGameEngine);
 	void clearPlayers();
 	void createBoard();
 	void clearBoard();

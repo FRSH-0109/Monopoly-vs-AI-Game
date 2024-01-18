@@ -20,7 +20,7 @@ class GameScreen : public ActiveScreen {
 	monopolyGameEngine monopoly_game_engine_;
 
    public:
-	GameScreen(std::vector<std::shared_ptr<playerSettings>> playerSettingsList_);
+	GameScreen(std::vector<std::shared_ptr<Player>>& players_);
 	ScreenEventType worker();
 	void draw();
 	std::vector<std::shared_ptr<Player>> getPlayersResult();
