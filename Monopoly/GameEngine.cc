@@ -83,7 +83,7 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 		}
 
 		ScreenEventType eventType = IDLE;
-		activeScreen_->draw();
+		// activeScreen_->draw();
 		eventType = activeScreen_->worker();
 
 		switch (eventType) {
