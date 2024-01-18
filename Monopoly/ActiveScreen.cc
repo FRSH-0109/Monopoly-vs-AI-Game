@@ -144,12 +144,9 @@ ScreenEventType GameMenuScreen::worker() {
 			if (element->getIsClicked()) {
 				setOtherButtonsInactive(element);
 				buttonClickHandle(element);
-				if(element->getEventType() == START_GAME)
-				{
-					element->setIsActive(false);	// in case of not starting game
-				}
-				else
-				{
+				if (element->getEventType() == START_GAME) {
+					element->setIsActive(false);  // in case of not starting game
+				} else {
 					element->setIsActive(true);
 				}
 				element->setIsClicked(false);
@@ -587,22 +584,26 @@ bool GameMenuScreen::isEventTypeSetAI(int playerNum, ScreenEventType event) {
 bool GameMenuScreen::isEventTypeAILevel(int playerNum, ScreenEventType event) {
 	switch (playerNum) {
 		case 1:
-			if ((event == PLAYER_1_SET_AI_LEVEL_1 || event == PLAYER_1_SET_AI_LEVEL_2 || event == PLAYER_1_SET_AI_LEVEL_3)) {
+			if ((event == PLAYER_1_SET_AI_LEVEL_1 || event == PLAYER_1_SET_AI_LEVEL_2 ||
+					event == PLAYER_1_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
 		case 2:
-			if ((event == PLAYER_2_SET_AI_LEVEL_1 || event == PLAYER_2_SET_AI_LEVEL_2 || event == PLAYER_2_SET_AI_LEVEL_3)) {
+			if ((event == PLAYER_2_SET_AI_LEVEL_1 || event == PLAYER_2_SET_AI_LEVEL_2 ||
+					event == PLAYER_2_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
 		case 3:
-			if ((event == PLAYER_3_SET_AI_LEVEL_1 || event == PLAYER_3_SET_AI_LEVEL_2 || event == PLAYER_3_SET_AI_LEVEL_3)) {
+			if ((event == PLAYER_3_SET_AI_LEVEL_1 || event == PLAYER_3_SET_AI_LEVEL_2 ||
+					event == PLAYER_3_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;
 		case 4:
-			if ((event == PLAYER_4_SET_AI_LEVEL_1 || event == PLAYER_4_SET_AI_LEVEL_2 || event == PLAYER_4_SET_AI_LEVEL_3)) {
+			if ((event == PLAYER_4_SET_AI_LEVEL_1 || event == PLAYER_4_SET_AI_LEVEL_2 ||
+					event == PLAYER_4_SET_AI_LEVEL_3)) {
 				return true;
 			}
 			break;

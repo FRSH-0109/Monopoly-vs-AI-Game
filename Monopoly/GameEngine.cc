@@ -68,7 +68,7 @@ void GameEngine::display() {
 
 std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_ptr<Player>>& playersVec) {
 	players_.clear();
-	if (playersVec.size() > 1) {	//if passed more than 1 player to worker
+	if (playersVec.size() > 1) {  // if passed more than 1 player to worker
 		players_ = playersVec;
 		activeScreen_.reset();
 		activeScreen_ = std::make_unique<GameScreen>(players_);
@@ -91,12 +91,10 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameMenuScreen>();
 				break;
-			case EXIT:
-				{
-					players_.clear();
-					return players_;	//return empty vector
-				}
-				break;
+			case EXIT: {
+				players_.clear();
+				return players_;  // return empty vector
+			} break;
 			case RETURN_TO_MAIN_MENU:
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<MainMenuScreen>();
@@ -105,7 +103,9 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
 				playerSettingsList_ = activeScreen_->getPlayersSettings();
 				players_.clear();
-				for(auto playerSettings :activeScreen_->getPlayersSettings())	//crete temporary players vector to pass to gameScreen and then monopoly engine
+				for (auto playerSettings :
+					activeScreen_->getPlayersSettings())  // crete temporary players vector to pass to gameScreen and
+														  // then monopoly engine
 				{
 					if (!(playerSettings->isNone)) {
 						if (playerSettings->isHuman) {
@@ -113,8 +113,7 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 							new_player.setIsAi(!(playerSettings->isHuman));
 							new_player.setAiLevel(playerSettings->level);
 							players_.push_back(std::make_shared<Player>(new_player));
-						}
-							else {
+						} else {
 							AiPlayer new_player = AiPlayer(0);
 							new_player.setIsAi(!(playerSettings->isHuman));
 							new_player.setAiLevel(playerSettings->level);
@@ -123,15 +122,15 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 					}
 				}
 				int counterOfNones = 0;
-				for (auto playerSetting : playerSettingsList_)	//block game with 1 player
+				for (auto playerSetting : playerSettingsList_)	// block game with 1 player
 				{
-					if(playerSetting->isNone)
-					{
+					if (playerSetting->isNone) {
 						++counterOfNones;
 					}
 				}
-				if(counterOfNones >= 3)
-				{ break;}
+				if (counterOfNones >= 3) {
+					break;
+				}
 				activeScreen_.reset();
 				activeScreen_ = std::make_unique<GameScreen>(players_);
 			} break;

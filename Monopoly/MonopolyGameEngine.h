@@ -13,11 +13,11 @@
 #define MONOPOLY_GAME_ENGINE_H
 
 #include <algorithm>
+#include <cmath>
 #include <fstream>
 #include <memory>
 #include <random>
 #include <vector>
-#include <cmath>
 #include "ActiveScreen.h"
 #include "Board.h"
 #include "Chance.h"

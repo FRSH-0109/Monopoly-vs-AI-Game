@@ -9,10 +9,10 @@
  *
  */
 
+#include "GameScreen.h"
 #include <cmath>
 #include <numbers>
 #include "Player.h"
-#include "GameScreen.h"
 
 GameScreen::GameScreen(std::vector<std::shared_ptr<Player>>& players_) {
 	setContextWindow(ContextWindow::GetInstance());
@@ -258,7 +258,7 @@ void GameScreen::draw() {
 			for (auto text_ptr : monopoly_game_engine_.getWithdraw().getTextsPropertyPlayer2Index()) {
 				getContextWindow()->getWindow().draw(*text_ptr);
 			}
-		case WITHDRAW_CHOOSE_PLAYER:	// Intentional fall through
+		case WITHDRAW_CHOOSE_PLAYER:  // Intentional fall through
 		case WITHDRAW_DECISION:
 			for (auto button_ptr : monopoly_game_engine_.getWithdraw().getButtons()) {
 				if (button_ptr->getIsVisible()) {
@@ -298,7 +298,7 @@ void GameScreen::draw() {
 					element->draw(getContextWindow()->getWindow());
 				}
 			}
-		break;
+			break;
 
 		default:
 			break;

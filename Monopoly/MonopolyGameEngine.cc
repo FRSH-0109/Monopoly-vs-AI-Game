@@ -51,8 +51,7 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<Player>>& pla
 			new_player.setAiLevel(0);
 			new_player.setId(playerId);
 			players_.push_back(std::make_shared<Player>(new_player));
-		}
-			else {
+		} else {
 			AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
 			new_player.setIsAi(true);
 			new_player.setAiLevel(player_ptr->getAiLevel());
@@ -67,9 +66,8 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<Player>>& pla
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
 
-	for(int j = 0 ; j < PLAYERS_MAX_ ; ++j)
-	{
-		playersStartingIds_[j] = 255;	//mark no player in game with this ID
+	for (int j = 0; j < PLAYERS_MAX_; ++j) {
+		playersStartingIds_[j] = 255;  // mark no player in game with this ID
 	}
 
 	for (unsigned int j = 0; j < players_.size(); ++j) {
@@ -226,12 +224,10 @@ void monopolyGameEngine::performAuction() {
 			highest_bidder = nullptr;
 			player_bidding = playerIndexturn_;
 			players_bidding = players_;
-			bidderInfoText_->setString(
-				"Tura: Gracz " + std::to_string(players_bidding[player_bidding]->getId() + 1));
+			bidderInfoText_->setString("Tura: Gracz " + std::to_string(players_bidding[player_bidding]->getId() + 1));
 			highestBidInfoText_->setString("Najwyzsza oferta: " + std::to_string(current_bid));
 			if (highest_bidder != nullptr) {
-				leadingBidderInfoText_->setString(
-					"Prowadzacy: Gracz " + std::to_string(highest_bidder->getId() + 1));
+				leadingBidderInfoText_->setString("Prowadzacy: Gracz " + std::to_string(highest_bidder->getId() + 1));
 			}
 			setAuctionState(PASS_BIDDING_TURN);
 			break;
@@ -244,7 +240,8 @@ void monopolyGameEngine::performAuction() {
 		case BIDDING: {
 			// Główna logika aukcji
 			if (players_bidding[player_bidding]->getIsAi()) {
-				FieldType field_type = std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(bidded_property_id));
+				FieldType field_type = std::visit(
+					[](Field& field) { return field.getType(); }, getBoard()->getFieldById(bidded_property_id));
 				unsigned int field_price;
 				if (field_type == STREET) {
 					StreetField field = std::get<StreetField>(getBoard()->getFieldById(bidded_property_id));
@@ -262,13 +259,14 @@ void monopolyGameEngine::performAuction() {
 
 				current_offer = players_bidding[player_bidding]->decideAuctionBid(field_price);
 
-				if(current_offer > players_bidding[player_bidding]->getMoney()) {
+				if (current_offer > players_bidding[player_bidding]->getMoney()) {
 					current_offer = players_bidding[player_bidding]->getMoney();
 				}
 
 				players_bidding[player_bidding]->getAdapter().setSelectionState(bidded_property_id, 1);
 			}
-			if ((isButtonClicked(auctionBidButton_) || players_bidding[player_bidding]->getIsAi()) && current_offer > current_bid) {
+			if ((isButtonClicked(auctionBidButton_) || players_bidding[player_bidding]->getIsAi()) &&
+				current_offer > current_bid) {
 				highest_bidder = players_bidding[player_bidding];
 				current_bid = current_offer;
 				if (player_bidding == players_bidding.size() - 1) {
@@ -285,7 +283,8 @@ void monopolyGameEngine::performAuction() {
 				}
 				setAuctionState(PASS_BIDDING_TURN);
 			}
-			if (isButtonClicked(auctionResignButton_) || players_bidding[player_bidding]->getMoney() < current_bid || (players_bidding[player_bidding]->getIsAi() && current_offer <= current_bid)) {
+			if (isButtonClicked(auctionResignButton_) || players_bidding[player_bidding]->getMoney() < current_bid ||
+				(players_bidding[player_bidding]->getIsAi() && current_offer <= current_bid)) {
 				unsigned int i = 0;
 				for (auto it = players_bidding.begin(); it != players_bidding.end(); ++it) {
 					if (i == player_bidding) {
@@ -391,7 +390,7 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 }
 
 bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, StreetField field) {
-	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+	std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) &&
 		builder->getMoney() > field.getHousePrice() && field_houses < 4 &&
@@ -411,7 +410,7 @@ bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, Street
 }
 
 bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, StreetField field) {
-	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+	std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && field_houses > 0) {
 		for (unsigned int i = 0; i < field.getGroupMembers().size(); ++i) {
@@ -427,7 +426,7 @@ bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, Stre
 }
 
 bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
-	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+	std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 
 	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) &&
@@ -446,7 +445,7 @@ bool monopolyGameEngine::isHotelBuildingLegal(std::shared_ptr<Player> builder, S
 }
 
 bool monopolyGameEngine::isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field) {
-	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
+	std::vector<unsigned int> builder_ownes = builder->getFieldOwnedId();
 	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && field.getIsHotel() && getHouseCount() >= 4) {
 		for (unsigned int i = 0; i < field.getGroupMembers().size(); ++i) {
 			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
@@ -461,7 +460,7 @@ bool monopolyGameEngine::isHotelDestroyingLegal(std::shared_ptr<Player> builder,
 }
 
 bool monopolyGameEngine::colorGroupEmpty(std::shared_ptr<Player> mortaging, StreetField& field) {
-	std::vector<unsigned int> mortaging_ownes = mortaging->getFiledOwnedId();
+	std::vector<unsigned int> mortaging_ownes = mortaging->getFieldOwnedId();
 	if (groupCompleted(mortaging_ownes, field)) {
 		unsigned int field_houses = field.getHouseNumber();
 		if (field_houses == 0) {
@@ -496,7 +495,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 				{1, ONE_HOUSE}, {2, TWO_HOUESES}, {3, THREE_HOUSES}, {4, FOUR_HOUSES}};
 			StreetTiers rent_tier = house_number_map[house_number];
 			rent_to_pay = rent_values[rent_tier];
-		} else if (groupCompleted(field.getOwner()->getFiledOwnedId(), field)) {
+		} else if (groupCompleted(field.getOwner()->getFieldOwnedId(), field)) {
 			rent_to_pay = 2 * rent_values[NO_HOUSES];
 		} else {
 			rent_to_pay = rent_values[NO_HOUSES];
@@ -507,7 +506,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 			rent_to_pay = 0;
 		} else {
 			std::map<StationTiers, unsigned int> rent_values = field.getRentValues();
-			std::vector<unsigned int> player_owns = field.getOwner()->getFiledOwnedId();
+			std::vector<unsigned int> player_owns = field.getOwner()->getFieldOwnedId();
 			const unsigned int stations_owned = calculateGroupFieldsOwned(player_owns, field);
 			std::map<unsigned int, StationTiers> stations_number_map = {
 				{1, ONE_STATION}, {2, TWO_STATIONS}, {3, THREE_STATIONS}, {4, FOUR_STATIONS}};
@@ -520,7 +519,7 @@ unsigned int monopolyGameEngine::calculateRent(unsigned int rolled_val, int pos)
 			rent_to_pay = 0;
 		} else {
 			std::map<UtilityTiers, unsigned int> rent_multipliers = field.getRentMultipliers();
-			std::vector<unsigned int> player_owns = field.getOwner()->getFiledOwnedId();
+			std::vector<unsigned int> player_owns = field.getOwner()->getFieldOwnedId();
 			const unsigned int utility_owned = calculateGroupFieldsOwned(player_owns, field);
 			std::map<unsigned int, UtilityTiers> utility_number_map = {{1, ONE_UTILITY}, {2, TWO_UTILITIES}};
 			UtilityTiers utility_tier = utility_number_map[utility_owned];
@@ -738,21 +737,13 @@ void monopolyGameEngine::buildingsManagingWorker() {
 
 void monopolyGameEngine::aiBuildingsMangingWorker() {
 	std::vector<std::vector<unsigned int>> SETS = {
-		{1, 3},
-		{6, 8, 9},
-		{11, 13, 14},
-		{16, 18, 19},
-		{21, 23, 24},
-		{26, 27, 29},
-		{31, 32, 34},
-		{37, 39}
-	};
+		{1, 3}, {6, 8, 9}, {11, 13, 14}, {16, 18, 19}, {21, 23, 24}, {26, 27, 29}, {31, 32, 34}, {37, 39}};
 	std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
-	std::vector<unsigned int> fields_owned = curr_player->getFiledOwnedId();
+	std::vector<unsigned int> fields_owned = curr_player->getFieldOwnedId();
 	unsigned int owned_amount = fields_owned.size();
 
 	for (unsigned int set = 0; set < SETS.size(); ++set) {
-		if(std::includes(fields_owned.begin(), fields_owned.end(), SETS[set].begin(), SETS[set].end())) {
+		if (std::includes(fields_owned.begin(), fields_owned.end(), SETS[set].begin(), SETS[set].end())) {
 			unsigned int houses_builded = 0;
 			for (unsigned int i = 0; i < SETS[set].size(); ++i) {
 				StreetField field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][i]));
@@ -775,14 +766,15 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 
 			unsigned int last = 2;
 
-			if(set == 0 || set == 7) {
+			if (set == 0 || set == 7) {
 				last = 1;
 			}
 
 			for (unsigned int house = 0; house < decision; ++house) {
 				// find field with highest amount of houses
 				unsigned int highest_field_id = 0;
-				StreetField highest_field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][highest_field_id]));
+				StreetField highest_field =
+					std::get<StreetField>(gameboard_->getFieldById(SETS[set][highest_field_id]));
 
 				for (unsigned int j = 0; j <= last; ++j) {
 					StreetField field_checked = std::get<StreetField>(gameboard_->getFieldById(SETS[set][j]));
@@ -795,9 +787,10 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 					}
 				}
 
-				StreetField& field_to_build = std::get<StreetField>(gameboard_->getFieldById(SETS[set][highest_field_id]));
+				StreetField& field_to_build =
+					std::get<StreetField>(gameboard_->getFieldById(SETS[set][highest_field_id]));
 
-				if(isHotelDestroyingLegal(curr_player, field_to_build)) {
+				if (isHotelDestroyingLegal(curr_player, field_to_build)) {
 					curr_player->addMoney(field_to_build.getHotelPrice() / 2);
 					field_to_build.setIsHotel(false);
 					addHotels(1);
@@ -835,7 +828,7 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 			unsigned int house_price = std::get<StreetField>(gameboard_->getFieldById(SETS[set][0])).getHousePrice();
 
 			unsigned int max_build = max_houses - houses_builded;
-			unsigned int afford_max = (unsigned int) floor(curr_player->getMoney() / (float)house_price);
+			unsigned int afford_max = (unsigned int)floor(curr_player->getMoney() / (float)house_price);
 
 			max_build = std::min(max_build, afford_max);
 
@@ -850,7 +843,7 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 
 			unsigned int last = 2;
 
-			if(set == 0 || set == 7) {
+			if (set == 0 || set == 7) {
 				last = 1;
 			}
 
@@ -870,7 +863,8 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 					}
 				}
 
-				StreetField& field_to_build = std::get<StreetField>(gameboard_->getFieldById(SETS[set][lowest_field_id]));
+				StreetField& field_to_build =
+					std::get<StreetField>(gameboard_->getFieldById(SETS[set][lowest_field_id]));
 
 				if (isHotelBuildingLegal(curr_player, field_to_build)) {
 					players_[playerIndexturn_]->substractMoney(field_to_build.getHotelPrice());
@@ -910,7 +904,7 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 						notificationAdd(playerIndexturn_, "Wykupiono nieruchomosc " + field.getName());
 					}
 				}
-			} else if (colorGroupEmpty(curr_player, field)){
+			} else if (colorGroupEmpty(curr_player, field)) {
 				unsigned int player_id = curr_player->getId();
 				curr_player->getAdapter().setTurn(player_id);
 				curr_player->getAdapter().setSelectionState(field.getId(), 1);
@@ -1066,7 +1060,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 		static bool playerBankrutedNow = false;
 		static bool ai_bankrupted = false;
 
-		if (isButtonClicked(bankruptButton_) || (players_[playerIndexturn_]->getIsAi() && ai_bankrupted)) {	 // player decied to go bankrupt
+		if (isButtonClicked(bankruptButton_) ||
+			(players_[playerIndexturn_]->getIsAi() && ai_bankrupted)) {	 // player decied to go bankrupt
 			playerBankrutedNow = true;
 			notificationAdd(playerIndexturn_, "Oglosil bankructwo!");
 			rollDiceButton_->setIsVisible(false);
@@ -1075,7 +1070,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			if (players_[playerIndexturn_]->getIsAi()) {
 				ai_bankrupted = false;
 			}
-			setTurnState(TURN_END);	// for next player
+			setTurnState(TURN_END);	 // for next player
 		}
 
 		switch (getTurnState()) {
@@ -1204,7 +1199,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(pos));
 
 				std::string textWhereIsPlayer("jest na polu " + std::visit([](Field& field) { return field.getName(); },
-																getBoard()->getFieldById(pos)));
+																	getBoard()->getFieldById(pos)));
 				notificationAdd(playerIndexturn_, textWhereIsPlayer);
 
 				if (field_type == STREET || field_type == STATION || field_type == UTILITY) {
@@ -1295,7 +1290,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 						case PayForHouseHotel: {
 							unsigned int sum = 0;
-							for (auto field_id : players_[playerIndexturn_]->getFiledOwnedId()) {
+							for (auto field_id : players_[playerIndexturn_]->getFieldOwnedId()) {
 								FieldType fieldType = std::visit(
 									[](Field& field) { return field.getType(); }, getBoard()->getFieldById(field_id));
 								if (fieldType == STREET) {
@@ -1333,7 +1328,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						case Tax: {
 							if ((int)players_[playerIndexturn_]->getMoney() >= chance_card.getValue()) {
 								players_[playerIndexturn_]->substractMoney(chance_card.getValue());
-								std::string notification_msg = "Zaplacil bankowi: " + std::to_string(chance_card.getValue());
+								std::string notification_msg =
+									"Zaplacil bankowi: " + std::to_string(chance_card.getValue());
 								notificationAdd(playerIndexturn_, notification_msg);
 								setTurnState(TURN_END);
 							} else {
@@ -1402,7 +1398,9 @@ bool monopolyGameEngine::monopolyGameWorker() {
 				resignBuyFieldButton_->setIsVisible(true);
 				buyFieldButton_->setIsVisible(true);
 				BuyDecision buy_decision = players_[playerIndexturn_]->decideBuy(pos);
-				if (isButtonClicked(buyFieldButton_) || (players_[playerIndexturn_]->getIsAi() && buy_decision == BUY)) { //  && players_[playerIndexturn_]->getMoney() >= price
+				if (isButtonClicked(buyFieldButton_) ||
+					(players_[playerIndexturn_]->getIsAi() &&
+						buy_decision == BUY)) {	 //  && players_[playerIndexturn_]->getMoney() >= price
 					if (players_[playerIndexturn_]->getMoney() >= price) {	// possible to buy property
 
 						std::string textPlayerBoughtProperty(
@@ -1428,13 +1426,15 @@ bool monopolyGameEngine::monopolyGameWorker() {
 						notificationAdd(playerIndexturn_, textPlayerBoughtProperty);
 					}
 				}
-				if(boughtProp == false)
-				{
-					if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NO_AUCTION || (players_[playerIndexturn_]->getIsAi() && (buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
+				if (boughtProp == false) {
+					if (isButtonClicked(resignBuyFieldButton_) || getAuctionState() != NO_AUCTION ||
+						(players_[playerIndexturn_]->getIsAi() &&
+							(buy_decision == RESIGN || players_[playerIndexturn_]->getMoney() < price))) {
 						if (getAuctionState() == NO_AUCTION) {
 							std::string textPlayerResginedProperty(
 								"rezygnuje z kupna nieruchomosci " +
-								std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
+								std::visit(
+									[](Field& field) { return field.getName(); }, getBoard()->getFieldById(pos)));
 							notificationAdd(playerIndexturn_, textPlayerResginedProperty);
 							resignBuyFieldButton_->setIsVisible(false);
 							buyFieldButton_->setIsVisible(false);
@@ -1457,8 +1457,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 			case PAY_RENT: {
 				if (playerChanged) {
-					std::string textPlayerrent(
-						"Musi zdobyc kase aby zaplacic czynsz " + std::to_string(money_to_find) + " lub oglsic bankructwo");
+					std::string textPlayerrent("Musi zdobyc kase aby zaplacic czynsz " + std::to_string(money_to_find) +
+											   " lub oglsic bankructwo");
 					notificationAdd(playerIndexturn_, textPlayerrent);
 					playerChanged = false;
 				}
@@ -1489,7 +1489,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			case TURN_END:
 				buildingsManagingWorker();
 				nextTurnButton_->setIsVisible(true);
-				if (isButtonClicked(nextTurnButton_) || players_[playerIndexturn_]->getIsAi()) { // || players_[playerIndexturn_]->getIsAi()
+				if (isButtonClicked(nextTurnButton_) ||
+					players_[playerIndexturn_]->getIsAi()) {  // || players_[playerIndexturn_]->getIsAi()
 					setTurnState(ROLL_DICE);
 					rollDiceButton_->setIsVisible(true);
 					rolledValueText_->setString("");
@@ -1514,13 +1515,10 @@ bool monopolyGameEngine::monopolyGameWorker() {
 
 						if (gameFinishedCheckWinner()) {
 							removePlayerFromGame(playerIndexturn_, false);
-							if(isAiGameOnly_)
-							{
+							if (isAiGameOnly_) {
 								fileLoggerClose();
-								return false;	//leave game engine to return result to AI training
-							}
-							else
-							{
+								return false;  // leave game engine to return result to AI training
+							} else {
 								updateResultScreenStuff();
 								setScreenType(RESULT);
 								setTurnState(NO_TURN);
@@ -1528,13 +1526,10 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							}
 						} else if (gameFinishedCheckDraw()) {
 							removePlayerFromGame(playerIndexturn_, true);
-							if(isAiGameOnly_)
-							{
+							if (isAiGameOnly_) {
 								fileLoggerClose();
-								return false;	//leave game engine to return result to AI training
-							}
-							else
-							{
+								return false;  // leave game engine to return result to AI training
+							} else {
 								updateResultScreenStuff();
 								setScreenType(RESULT);
 								setTurnState(NO_TURN);
@@ -1558,146 +1553,149 @@ bool monopolyGameEngine::monopolyGameWorker() {
 					playerChanged = true;
 				}
 				break;
-		case WITHDRAW_ONGOING:
-			if (isButtonClicked(getWithdraw().getResignButton()) ||
-				isButtonClicked(getWithdraw().getResignValueButton()) ||
-				isButtonClicked(getWithdraw().getResignDecisionButton())) {
-				getWithdraw().setChooseScreenVisible(false);
-				getWithdraw().setValueScreenVisible(false);
-				getWithdraw().setDecisionScreenVisible(false);
-				setScreenType(BOARDGAME);
-				setTurnState(getWithdraw().getTurnState());
-				getWithdraw().setPlayer2ToWithdraw(nullptr);
-			} else {
-				if (getScreenType() == WITHDRAW_CHOOSE_PLAYER) {
-					if (isButtonClicked(getWithdraw().getPlayer1Button())) {
-						for (auto player_ptr : getPlayers()) {
-							if (player_ptr->getId() == 0) {
-								getWithdraw().setPlayer2ToWithdraw(player_ptr);
+			case WITHDRAW_ONGOING:
+				if (isButtonClicked(getWithdraw().getResignButton()) ||
+					isButtonClicked(getWithdraw().getResignValueButton()) ||
+					isButtonClicked(getWithdraw().getResignDecisionButton())) {
+					getWithdraw().setChooseScreenVisible(false);
+					getWithdraw().setValueScreenVisible(false);
+					getWithdraw().setDecisionScreenVisible(false);
+					setScreenType(BOARDGAME);
+					setTurnState(getWithdraw().getTurnState());
+					getWithdraw().setPlayer2ToWithdraw(nullptr);
+				} else {
+					if (getScreenType() == WITHDRAW_CHOOSE_PLAYER) {
+						if (isButtonClicked(getWithdraw().getPlayer1Button())) {
+							for (auto player_ptr : getPlayers()) {
+								if (player_ptr->getId() == 0) {
+									getWithdraw().setPlayer2ToWithdraw(player_ptr);
+								}
+							}
+						} else if (isButtonClicked(getWithdraw().getPlayer2Button())) {
+							for (auto player_ptr : getPlayers()) {
+								if (player_ptr->getId() == 1) {
+									getWithdraw().setPlayer2ToWithdraw(player_ptr);
+								}
+							}
+						} else if (isButtonClicked(getWithdraw().getPlayer3Button())) {
+							for (auto player_ptr : getPlayers()) {
+								if (player_ptr->getId() == 2) {
+									getWithdraw().setPlayer2ToWithdraw(player_ptr);
+								}
+							}
+						} else if (isButtonClicked(getWithdraw().getPlayer4Button())) {
+							for (auto player_ptr : getPlayers()) {
+								if (player_ptr->getId() == 3) {
+									getWithdraw().setPlayer2ToWithdraw(player_ptr);
+								}
 							}
 						}
-					} else if (isButtonClicked(getWithdraw().getPlayer2Button())) {
-						for (auto player_ptr : getPlayers()) {
-							if (player_ptr->getId() == 1) {
-								getWithdraw().setPlayer2ToWithdraw(player_ptr);
-							}
+
+						if (getScreenType() == WITHDRAW_CHOOSE_PLAYER &&
+							getWithdraw().getPlayer2ToWithdraw() != nullptr) {
+							setScreenType(WITHDRAW_ADD_VALUE);
+							getWithdraw().setChooseScreenVisible(false);
+							getWithdraw().setValueScreenVisible(true);
 						}
-					} else if (isButtonClicked(getWithdraw().getPlayer3Button())) {
-						for (auto player_ptr : getPlayers()) {
-							if (player_ptr->getId() == 2) {
-								getWithdraw().setPlayer2ToWithdraw(player_ptr);
-							}
+					} else if (getScreenType() == WITHDRAW_ADD_VALUE) {
+						getWithdraw().moneyTextUpdate();
+						if (isButtonClicked(getWithdraw().getPlayer1minus1())) {
+							getWithdraw().moneyTransferIndex(1, -1);
+						} else if (isButtonClicked(getWithdraw().getPlayer1minus10())) {
+							getWithdraw().moneyTransferIndex(1, -10);
+						} else if (isButtonClicked(getWithdraw().getPlayer1minus100())) {
+							getWithdraw().moneyTransferIndex(1, -100);
+						} else if (isButtonClicked(getWithdraw().getPlayer1plus1())) {
+							getWithdraw().moneyTransferIndex(1, 1);
+						} else if (isButtonClicked(getWithdraw().getPlayer1plus10())) {
+							getWithdraw().moneyTransferIndex(1, 10);
+						} else if (isButtonClicked(getWithdraw().getPlayer1plus100())) {
+							getWithdraw().moneyTransferIndex(1, 100);
+						} else if (isButtonClicked(getWithdraw().getPlayer2minus1())) {
+							getWithdraw().moneyTransferIndex(2, -1);
+						} else if (isButtonClicked(getWithdraw().getPlayer2minus10())) {
+							getWithdraw().moneyTransferIndex(2, -10);
+						} else if (isButtonClicked(getWithdraw().getPlayer2minus100())) {
+							getWithdraw().moneyTransferIndex(2, -100);
+						} else if (isButtonClicked(getWithdraw().getPlayer2plus1())) {
+							getWithdraw().moneyTransferIndex(2, 1);
+						} else if (isButtonClicked(getWithdraw().getPlayer2plus10())) {
+							getWithdraw().moneyTransferIndex(2, 10);
+						} else if (isButtonClicked(getWithdraw().getPlayer2plus100())) {
+							getWithdraw().moneyTransferIndex(2, 100);
+						} else if (isButtonClicked(getWithdraw().getPlayer1NextButton())) {
+							getWithdraw().addPropertyPlayerShowed(1, 1);
+							getWithdraw().showProperty(1);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer1PreviousButton())) {
+							getWithdraw().addPropertyPlayerShowed(-1, 1);
+							getWithdraw().showProperty(1);
+						} else if (isButtonClicked(getWithdraw().getPlayer2NextButton())) {
+							getWithdraw().addPropertyPlayerShowed(1, 4);
+							getWithdraw().showProperty(4);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer2PreviousButton())) {
+							getWithdraw().addPropertyPlayerShowed(-1, 4);
+							getWithdraw().showProperty(4);
+						} else if (isButtonClicked(getWithdraw().getPlayer1IndexNextButton())) {
+							getWithdraw().addPropertyPlayerShowed(1, 2);
+							getWithdraw().showProperty(2);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer1IndexPreviousButton())) {
+							getWithdraw().addPropertyPlayerShowed(-1, 2);
+							getWithdraw().showProperty(2);
+						} else if (isButtonClicked(getWithdraw().getPlayer2IndexNextButton())) {
+							getWithdraw().addPropertyPlayerShowed(1, 3);
+							getWithdraw().showProperty(3);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer2IndexPreviousButton())) {
+							getWithdraw().addPropertyPlayerShowed(-1, 3);
+							getWithdraw().showProperty(3);
+						} else if (isButtonClicked(getWithdraw().getPlayer1AddButton())) {
+							getWithdraw().propertyPlayerMoveIndex(1, 1);
+							getWithdraw().showProperty(2);
+							getWithdraw().showProperty(1);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer1RemoveButton())) {
+							getWithdraw().propertyPlayerMoveIndex(-1, 1);
+							getWithdraw().showProperty(1);
+							getWithdraw().showProperty(2);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer2AddButton())) {
+							getWithdraw().propertyPlayerMoveIndex(1, 2);
+							getWithdraw().showProperty(3);
+							getWithdraw().showProperty(4);
+
+						} else if (isButtonClicked(getWithdraw().getPlayer2RemoveButton())) {
+							getWithdraw().propertyPlayerMoveIndex(-1, 2);
+							getWithdraw().showProperty(3);
+							getWithdraw().showProperty(4);
+						} else if (isButtonClicked(getWithdraw().getSubmitValueButton()) &&
+								   getWithdraw().isNonZeroValue()) {
+							setScreenType(WITHDRAW_DECISION);
+							getWithdraw().setDecisionScreenVisible(true);
+							getWithdraw().setValueScreenVisible(false);
 						}
-					} else if (isButtonClicked(getWithdraw().getPlayer4Button())) {
-						for (auto player_ptr : getPlayers()) {
-							if (player_ptr->getId() == 3) {
-								getWithdraw().setPlayer2ToWithdraw(player_ptr);
-							}
+					} else if (getScreenType() == WITHDRAW_DECISION) {
+						if (isButtonClicked(getWithdraw().getAcceptDecisionButton())) {
+							getWithdraw().makeWithdraw();
+							getWithdraw().setChooseScreenVisible(false);
+							getWithdraw().setValueScreenVisible(false);
+							getWithdraw().setDecisionScreenVisible(false);
+							setScreenType(BOARDGAME);
+							setTurnState(getWithdraw().getTurnState());
+							getWithdraw().setPlayer2ToWithdraw(nullptr);
 						}
-					}
-
-					if (getScreenType() == WITHDRAW_CHOOSE_PLAYER && getWithdraw().getPlayer2ToWithdraw() != nullptr) {
-						setScreenType(WITHDRAW_ADD_VALUE);
-						getWithdraw().setChooseScreenVisible(false);
-						getWithdraw().setValueScreenVisible(true);
-					}
-				} else if (getScreenType() == WITHDRAW_ADD_VALUE) {
-					getWithdraw().moneyTextUpdate();
-					if (isButtonClicked(getWithdraw().getPlayer1minus1())) {
-						getWithdraw().moneyTransferIndex(1, -1);
-					} else if (isButtonClicked(getWithdraw().getPlayer1minus10())) {
-						getWithdraw().moneyTransferIndex(1, -10);
-					} else if (isButtonClicked(getWithdraw().getPlayer1minus100())) {
-						getWithdraw().moneyTransferIndex(1, -100);
-					} else if (isButtonClicked(getWithdraw().getPlayer1plus1())) {
-						getWithdraw().moneyTransferIndex(1, 1);
-					} else if (isButtonClicked(getWithdraw().getPlayer1plus10())) {
-						getWithdraw().moneyTransferIndex(1, 10);
-					} else if (isButtonClicked(getWithdraw().getPlayer1plus100())) {
-						getWithdraw().moneyTransferIndex(1, 100);
-					} else if (isButtonClicked(getWithdraw().getPlayer2minus1())) {
-						getWithdraw().moneyTransferIndex(2, -1);
-					} else if (isButtonClicked(getWithdraw().getPlayer2minus10())) {
-						getWithdraw().moneyTransferIndex(2, -10);
-					} else if (isButtonClicked(getWithdraw().getPlayer2minus100())) {
-						getWithdraw().moneyTransferIndex(2, -100);
-					} else if (isButtonClicked(getWithdraw().getPlayer2plus1())) {
-						getWithdraw().moneyTransferIndex(2, 1);
-					} else if (isButtonClicked(getWithdraw().getPlayer2plus10())) {
-						getWithdraw().moneyTransferIndex(2, 10);
-					} else if (isButtonClicked(getWithdraw().getPlayer2plus100())) {
-						getWithdraw().moneyTransferIndex(2, 100);
-					} else if (isButtonClicked(getWithdraw().getPlayer1NextButton())) {
-						getWithdraw().addPropertyPlayerShowed(1, 1);
-						getWithdraw().showProperty(1);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer1PreviousButton())) {
-						getWithdraw().addPropertyPlayerShowed(-1, 1);
-						getWithdraw().showProperty(1);
-					} else if (isButtonClicked(getWithdraw().getPlayer2NextButton())) {
-						getWithdraw().addPropertyPlayerShowed(1, 4);
-						getWithdraw().showProperty(4);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer2PreviousButton())) {
-						getWithdraw().addPropertyPlayerShowed(-1, 4);
-						getWithdraw().showProperty(4);
-					} else if (isButtonClicked(getWithdraw().getPlayer1IndexNextButton())) {
-						getWithdraw().addPropertyPlayerShowed(1, 2);
-						getWithdraw().showProperty(2);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer1IndexPreviousButton())) {
-						getWithdraw().addPropertyPlayerShowed(-1, 2);
-						getWithdraw().showProperty(2);
-					} else if (isButtonClicked(getWithdraw().getPlayer2IndexNextButton())) {
-						getWithdraw().addPropertyPlayerShowed(1, 3);
-						getWithdraw().showProperty(3);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer2IndexPreviousButton())) {
-						getWithdraw().addPropertyPlayerShowed(-1, 3);
-						getWithdraw().showProperty(3);
-					} else if (isButtonClicked(getWithdraw().getPlayer1AddButton())) {
-						getWithdraw().propertyPlayerMoveIndex(1, 1);
-						getWithdraw().showProperty(2);
-						getWithdraw().showProperty(1);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer1RemoveButton())) {
-						getWithdraw().propertyPlayerMoveIndex(-1, 1);
-						getWithdraw().showProperty(1);
-						getWithdraw().showProperty(2);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer2AddButton())) {
-						getWithdraw().propertyPlayerMoveIndex(1, 2);
-						getWithdraw().showProperty(3);
-						getWithdraw().showProperty(4);
-
-					} else if (isButtonClicked(getWithdraw().getPlayer2RemoveButton())) {
-						getWithdraw().propertyPlayerMoveIndex(-1, 2);
-						getWithdraw().showProperty(3);
-						getWithdraw().showProperty(4);
-					} else if (isButtonClicked(getWithdraw().getSubmitValueButton()) &&
-							   getWithdraw().isNonZeroValue()) {
-						setScreenType(WITHDRAW_DECISION);
-						getWithdraw().setDecisionScreenVisible(true);
-						getWithdraw().setValueScreenVisible(false);
-					}
-				} else if (getScreenType() == WITHDRAW_DECISION) {
-					if (isButtonClicked(getWithdraw().getAcceptDecisionButton())) {
-						getWithdraw().makeWithdraw();
-						getWithdraw().setChooseScreenVisible(false);
-						getWithdraw().setValueScreenVisible(false);
-						getWithdraw().setDecisionScreenVisible(false);
-						setScreenType(BOARDGAME);
-						setTurnState(getWithdraw().getTurnState());
-						getWithdraw().setPlayer2ToWithdraw(nullptr);
 					}
 				}
-			}
-			break;
-		default:
-			break;
+				break;
+			default:
+				break;
 		}
-	} catch (std::exception& e){
-		std::string text = ("Blad! Gracz: " + std::to_string(players_[playerIndexturn_]->getId()) + "Pozycja: " + std::to_string(players_[playerIndexturn_]->getPosition()) + " Kasa: " + std::to_string(players_[playerIndexturn_]->getMoney()));
+	} catch (std::exception& e) {
+		std::string text = ("Blad! Gracz: " + std::to_string(players_[playerIndexturn_]->getId()) +
+							"Pozycja: " + std::to_string(players_[playerIndexturn_]->getPosition()) +
+							" Kasa: " + std::to_string(players_[playerIndexturn_]->getMoney()));
 		std::cout << e.what() << std::endl;
 		std::cout << text << std::endl;
 		notificationAdd(playerIndexturn_, text);
@@ -1865,8 +1863,7 @@ void monopolyGameEngine::createTextPlayersInfo() {
 		if (i > 0) {
 			defPos.x += 180;
 		}
-		std::shared_ptr<sf::Text> playerText(
-			new sf::Text("Gracz " + std::to_string(id + 1), getFont(), getFontSize()));
+		std::shared_ptr<sf::Text> playerText(new sf::Text("Gracz " + std::to_string(id + 1), getFont(), getFontSize()));
 		playerText->setPosition(defPos);
 		playerText->setFillColor(player->getColor());
 		playerText->setOutlineColor(sf::Color::Black);
@@ -1917,11 +1914,10 @@ void monopolyGameEngine::updateTextPlayersInfo() {
 		isPlayerinGame[id] = true;
 	}
 
-	for(unsigned int i = 0 ; i < PLAYERS_MAX_ ; ++i)
-	{
+	for (unsigned int i = 0; i < PLAYERS_MAX_; ++i) {
 		unsigned int id = playersStartingIds_[i];
 		if (id != 255 && !isPlayerinGame[id]) {
-			if(playerInfoText_[id].size() > 0)	//check if player id was even in game from begining
+			if (playerInfoText_[id].size() > 0)	 // check if player id was even in game from begining
 			{
 				playerInfoText_[id][1]->setString("Bankrut");
 				playerInfoText_[id][2]->setString("");
@@ -2438,13 +2434,12 @@ void monopolyGameEngine::createButtonWithdraw() {
 	addButton(buttonWithdraw);
 }
 
-void monopolyGameEngine::createResultScreenStuff()
-{
+void monopolyGameEngine::createResultScreenStuff() {
 	float x_coord = 960;
 	std::shared_ptr<sf::Text> resultGameText = std::make_shared<sf::Text>("Wyniki rozgrywki", getFont(), getFontSize());
 	resultGameText->setFillColor(sf::Color::Black);
-	resultGameText->setOrigin(resultGameText->getGlobalBounds().getSize() / 2.f +
-										  resultGameText->getLocalBounds().getPosition());
+	resultGameText->setOrigin(
+		resultGameText->getGlobalBounds().getSize() / 2.f + resultGameText->getLocalBounds().getPosition());
 	resultGameText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y));
 	resultPlayersPlaces_.push_back(resultGameText);
 
@@ -2454,27 +2449,26 @@ void monopolyGameEngine::createResultScreenStuff()
 	addButton(buttonReturn);
 }
 
-void monopolyGameEngine::updateResultScreenStuff()
-{
+void monopolyGameEngine::updateResultScreenStuff() {
 	int y_step = 40;
 	float x_coord = 960;
 	int y_offset = 0;
-	for(std::vector<std::shared_ptr<Player>>::reverse_iterator iter = playersBankrupted_.rbegin(); iter != playersBankrupted_.rend(); ++iter)
-	{
+	for (std::vector<std::shared_ptr<Player>>::reverse_iterator iter = playersBankrupted_.rbegin();
+		 iter != playersBankrupted_.rend(); ++iter) {
 		y_offset += y_step;
-		std::string text = std::to_string(iter->get()->getResultPlace()) + ": Gracz " + std::to_string(iter->get()->getId()+1);
-		std::shared_ptr<sf::Text> playerResultText = std::make_shared<sf::Text>(text , getFont(), getFontSize());
+		std::string text =
+			std::to_string(iter->get()->getResultPlace()) + ": Gracz " + std::to_string(iter->get()->getId() + 1);
+		std::shared_ptr<sf::Text> playerResultText = std::make_shared<sf::Text>(text, getFont(), getFontSize());
 		playerResultText->setFillColor(sf::Color::Black);
-		playerResultText->setOrigin(playerResultText->getGlobalBounds().getSize() / 2.f +
-											playerResultText->getLocalBounds().getPosition());
+		playerResultText->setOrigin(
+			playerResultText->getGlobalBounds().getSize() / 2.f + playerResultText->getLocalBounds().getPosition());
 		playerResultText->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
 		resultPlayersPlaces_.push_back(playerResultText);
 	}
 
 	y_offset += y_step;
 	returnToMainMenuButton_->setPosition(sf::Vector2f(x_coord, RESULT_DATA_Y + y_offset));
-	for(auto button_ptr : getButtons())
-	{
+	for (auto button_ptr : getButtons()) {
 		button_ptr->setIsVisible(false);
 	}
 	returnToMainMenuButton_->setIsVisible(true);
@@ -3001,7 +2995,9 @@ void monopolyGameEngine::makePlayerBankrupt(unsigned int playerIndexTurn) {
 	removePlayerFromGame(playerIndexTurn, false);
 }
 
-std::shared_ptr<Button> monopolyGameEngine::createDefaultButton(sf::String text, unsigned int width, unsigned int height) {
+std::shared_ptr<Button> monopolyGameEngine::createDefaultButton(sf::String text,
+	unsigned int width,
+	unsigned int height) {
 	sf::Vector2f buttonSize = sf::Vector2f(width, height);
 	sf::Color activeButtonBackColor = sf::Color::Green;
 	sf::Color inActiveButtonBackColor = sf::Color(192, 192, 192);  // GREY
@@ -3184,20 +3180,16 @@ void monopolyGameEngine::gameTurnsCounterHandle() {
 	++gameTurnsGloballyDone_;
 }
 
-void monopolyGameEngine::fileLoggerOpen()
-{
-	fileLogger =  std::ofstream(FILE_LOGGER_PATH, std::ofstream::out);
+void monopolyGameEngine::fileLoggerOpen() {
+	fileLogger = std::ofstream(FILE_LOGGER_PATH, std::ofstream::out);
 }
 
-void monopolyGameEngine::fileLoggerWrite(std::string text)
-{
-	if(fileLogger.is_open())
-	{
+void monopolyGameEngine::fileLoggerWrite(std::string text) {
+	if (fileLogger.is_open()) {
 		fileLogger << text << std::endl;
 	}
 }
 
-void monopolyGameEngine::fileLoggerClose()
-{
+void monopolyGameEngine::fileLoggerClose() {
 	fileLogger.close();
 }

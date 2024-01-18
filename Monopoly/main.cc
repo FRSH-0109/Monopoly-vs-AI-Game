@@ -7,10 +7,10 @@
  *
  */
 
-#include "SFML/Graphics.hpp"
 #include <memory>
-#include "Player.h"
 #include "GameEngine.h"
+#include "Player.h"
+#include "SFML/Graphics.hpp"
 
 unsigned int WIDTH_MAX = 1920;
 unsigned int HEIGHT_MAX = 1080;
@@ -18,15 +18,14 @@ unsigned int width;
 unsigned int height;
 unsigned int FRAMES_PER_SEC_MAX = 30;
 
-static void printResults(std::vector<std::shared_ptr<Player>>& playerResults)
-{
+static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 	for (int i = playerResults.size() - 1; i >= 0; --i) {
-		std::cout << "Player " << playerResults[i]->getId() + 1 << ": miejsce " << playerResults[i]->getResultPlace() << std::endl;
+		std::cout << "Player " << playerResults[i]->getId() + 1 << ": miejsce " << playerResults[i]->getResultPlace()
+				  << std::endl;
 	}
 }
 
-static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>>& players)
-{
+static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>>& players) {
 	GameEngine gameEngine(FRAMES_PER_SEC_MAX, width, height);
 	return gameEngine.worker(players);
 }
@@ -42,7 +41,7 @@ int main() {
 	}
 
 	std::vector<std::shared_ptr<Player>> playerResults;
-	std::vector<std::shared_ptr<Player>> players;	//create empty players vector to start game
+	std::vector<std::shared_ptr<Player>> players;  // create empty players vector to start game
 
 	// {	//play game iwth all AI players
 	// 	players.clear();
@@ -72,7 +71,7 @@ int main() {
 	// 	printResults(playerResults);
 	// }
 
-	//play game with all custom players, passed vector is empty
+	// play game with all custom players, passed vector is empty
 	players.clear();
 	playerResults = runMonopolyGame(players);
 	printResults(playerResults);

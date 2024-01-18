@@ -1,7 +1,7 @@
 /**
  * @file Withdraw.cc
  *
- * @brief Source file for trade/withdraw mehanism 
+ * @brief Source file for trade/withdraw mehanism
  * in monopoly game between players
  *
  * @author Kamil Kosnik, Kacper Radzikowski
@@ -85,7 +85,7 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 		player1Text_->setString("Gracz " + std::to_string(player1ToWithDraw_->getId() + 1));
 		player1Money_->setString("Kasa: " + std::to_string(player1MoneyBuffer_));
 
-		for (auto prop : player1ToWithDraw_->getFiledOwnedId()) {
+		for (auto prop : player1ToWithDraw_->getFieldOwnedId()) {
 			player1Properties_.push_back(prop);
 		}
 
@@ -96,7 +96,7 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 		player2Text_->setString("Gracz " + std::to_string(player2ToWithDraw_->getId() + 1));
 		player2Money_->setString("Kasa: " + std::to_string(player2MoneyBuffer_));
 
-		for (auto prop : player2ToWithDraw_->getFiledOwnedId()) {
+		for (auto prop : player2ToWithDraw_->getFieldOwnedId()) {
 			player2Properties_.push_back(prop);
 		}
 
@@ -461,8 +461,7 @@ std::shared_ptr<Button> Withdraw::createDefaultButton(sf::String text, unsigned 
 }
 
 void Withdraw::createChoosePlayerScreen() {
-	std::shared_ptr<sf::Text> choosePlayerText(
-		new sf::Text("Wybierz gracza do wymiany", getFont(), getFontSize() - 2));
+	std::shared_ptr<sf::Text> choosePlayerText(new sf::Text("Wybierz gracza do wymiany", getFont(), getFontSize() - 2));
 	choosePlayerText->setPosition(CHOOSE_PLAYER_TEXT_POSITION);
 	choosePlayerText->setFillColor(sf::Color::Transparent);
 	choosePlayerText->setOrigin(
@@ -1325,7 +1324,7 @@ void Withdraw::makeWithdraw() {
 	for (auto property : player1IndexProperties_) {
 		it = find(player1IndexProperties_.begin(), player1IndexProperties_.end(), property);
 		player2ToWithDraw_->addFieldOwnedId(property);
-		player1ToWithDraw_->removeFiledOwnedId(property);
+		player1ToWithDraw_->removeFieldOwnedId(property);
 		FieldType type = std::visit(
 			[](Field& visited_field) { return visited_field.getType(); }, gameboard_->getFieldById(property));
 		switch (type) {
@@ -1352,7 +1351,7 @@ void Withdraw::makeWithdraw() {
 	for (auto property : player2IndexProperties_) {
 		it = find(player2IndexProperties_.begin(), player2IndexProperties_.end(), property);
 		player1ToWithDraw_->addFieldOwnedId(property);
-		player2ToWithDraw_->removeFiledOwnedId(property);
+		player2ToWithDraw_->removeFieldOwnedId(property);
 		FieldType type = std::visit(
 			[](Field& visited_field) { return visited_field.getType(); }, gameboard_->getFieldById(property));
 		switch (type) {

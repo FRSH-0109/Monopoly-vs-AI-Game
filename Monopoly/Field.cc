@@ -203,8 +203,7 @@ void PropertyField::createFlagSprite() {
 
 	if (owner_ != nullptr) {
 		owner_flag_.setFillColor(owner_->getColor());
-	}
-	else{
+	} else {
 		owner_flag_.setFillColor(sf::Color::White);
 	}
 };
