@@ -395,7 +395,7 @@ Decision AiPlayer::decideOfferTrade() {
 		// return NO;
 	// }
 
-	return NO;
+	return YES;
 }
 
 Decision AiPlayer::decideAcceptTrade() {
@@ -409,5 +409,5 @@ Decision AiPlayer::decideAcceptTrade() {
 		// return NO;
 	// }
 
-	return NO;
+	return YES;
 }

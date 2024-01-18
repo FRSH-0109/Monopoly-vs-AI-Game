@@ -148,6 +148,10 @@ class Withdraw {
 
    public:
 	Withdraw();
+	std::vector<unsigned int> getPlayer1IndexProperties();
+	std::vector<unsigned int> getPlayer2IndexProperties();
+	void setPlayer1IndexProperties(std::vector<unsigned int> new_index_properties);
+	void setPlayer2IndexProperties(std::vector<unsigned int> new_index_properties);
 	void setBoard(std::shared_ptr<Board> board_ptr);
 	void setTurnState(TurnState state);
 	TurnState getTurnState();

@@ -211,6 +211,7 @@ class monopolyGameEngine {
 
 	// withdraw
 	void withdrawWorker();
+	void aiWithdrawWorker();
 
 	// chance
 	ChanceCard& getChanceCard();

@@ -82,8 +82,8 @@ void AiAdapter::setSelectionState(unsigned int index, int state) {
 	networkInputs_[SELECT + PROPERTIES[index]] = state;
 }
 
-void AiAdapter::setMoneyContext(unsigned int state) {
-	networkInputs_[SELECT_MONEY] = state;
+void AiAdapter::setMoneyContext(int state) {
+	networkInputs_[SELECT_MONEY] = (double)state;
 }
 
 void AiAdapter::clearSelectionState() {

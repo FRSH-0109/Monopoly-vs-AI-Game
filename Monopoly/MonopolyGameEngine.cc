@@ -1036,7 +1036,7 @@ void monopolyGameEngine::boardToAuctionSwitchHandler(bool is_auction) {
 }
 
 void monopolyGameEngine::withdrawWorker() {
-	if (isButtonClicked(withdrawButton_)) {	 // player decied to go bankrupt
+	if (isButtonClicked(withdrawButton_)) {	 // player decided to trade
 		if (getTurnState() == ROLL_DICE || getTurnState() == TURN_END || getTurnState() == PAY_RENT) {
 			getWithdraw().setTurnState(getTurnState());
 			setTurnState(WITHDRAW_ONGOING);
@@ -1064,12 +1064,171 @@ void monopolyGameEngine::withdrawWorker() {
 	}
 }
 
+void monopolyGameEngine::aiWithdrawWorker() {
+	const unsigned int TRADE_ATTEMPTS = 4;
+	const unsigned int TRADE_ITEM_MAX = 6;
+	const unsigned int TRADE_MONEY_MAX = 500;
+
+	std::vector<std::shared_ptr<Player>> candidates;
+	for (auto player: players_) {
+		if (player != players_[playerIndexturn_]) {
+			candidates.push_back(player);
+		}
+	}
+
+	if ((getTurnState() == TURN_END || getTurnState() == PAY_RENT) && players_[playerIndexturn_]->getIsAi()) {
+		getWithdraw().setTurnState(getTurnState());
+		for (unsigned int t = 0; t < TRADE_ATTEMPTS; ++t) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<> dist_offer(0, std::min((unsigned int)players_[playerIndexturn_]->getFiledOwnedId().size(), TRADE_ITEM_MAX));
+			unsigned int offer = dist_offer(gen);
+
+			std::uniform_int_distribution<> dist_select(0, candidates.size() - 1);
+			unsigned int selected_player_index = dist_select(gen);
+			std::shared_ptr<Player> selected_player = candidates[selected_player_index];
+			bool trade_with_ai = selected_player->getIsAi();
+
+			std::uniform_int_distribution<> dist_rec(0, std::min((unsigned int)selected_player->getFiledOwnedId().size(), TRADE_ITEM_MAX));
+			unsigned int receive = dist_rec(gen);
+
+			std::uniform_int_distribution<> dist_money_given(0, std::min((unsigned int)players_[playerIndexturn_]->getMoney(), TRADE_MONEY_MAX));
+			unsigned int money_given = dist_money_given(gen);
+
+			std::uniform_int_distribution<> dist_money_receiven(0, std::min((unsigned int)players_[playerIndexturn_]->getMoney(), TRADE_MONEY_MAX));
+			unsigned int money_receiven = dist_money_receiven(gen);
+
+			int money_balance = money_given - money_receiven;
+
+			if ((offer == 0 && money_given == 0) || (receive == 0 && money_receiven == 0)) {
+				continue;
+			}
+
+			std::vector<unsigned int> properties_offered;
+			std::vector<unsigned int> possible_to_offer = players_[playerIndexturn_]->getFiledOwnedId();
+
+			for (unsigned int i = 0; i < offer; ++i) {
+				std::uniform_int_distribution<> dist_possible(0, (unsigned int)possible_to_offer.size() - 1);
+				unsigned int selection = dist_possible(gen);
+
+				properties_offered.push_back(possible_to_offer[selection]);
+				possible_to_offer.erase(std::find(possible_to_offer.begin(), possible_to_offer.end(), possible_to_offer[selection]));
+			}
+
+			std::vector<unsigned int> properties_receiven;
+			std::vector<unsigned int> possible_to_receive = selected_player->getFiledOwnedId();
+
+			for (unsigned int i = 0; i < receive; ++i) {
+				std::uniform_int_distribution<> dist_possible(0, (unsigned int)possible_to_receive.size() - 1);
+				unsigned int selection = dist_possible(gen);
+
+				properties_receiven.push_back(possible_to_receive[selection]);
+				possible_to_receive.erase(std::find(possible_to_receive.begin(), possible_to_receive.end(), possible_to_receive[selection]));
+			}
+
+			// neurons setup for trade
+			for (int i = 0; i < properties_offered.size(); ++i) {
+				players_[playerIndexturn_]->getAdapter().setSelectionState(properties_offered[i], 1);
+				if (trade_with_ai) {
+					selected_player->getAdapter().setSelectionState(properties_offered[i], 1);
+				}
+			}
+
+			for (int i = 0; i < properties_receiven.size(); ++i) {
+				players_[playerIndexturn_]->getAdapter().setSelectionState(properties_receiven[i], 1);
+				if (trade_with_ai) {
+					selected_player->getAdapter().setSelectionState(properties_receiven[i], 1);
+				}
+			}
+
+			players_[playerIndexturn_]->getAdapter().setMoneyContext(money_balance);
+			if (trade_with_ai) {
+				selected_player->getAdapter().setMoneyContext(money_balance);
+			}
+
+			Decision player_1_decision = players_[playerIndexturn_]->decideOfferTrade();
+
+			if (player_1_decision == NO) {
+				players_[playerIndexturn_]->getAdapter().clearSelectionState();
+				if (trade_with_ai) {
+					selected_player->getAdapter().clearSelectionState();
+				}
+				continue;
+			}
+
+			// Perform trade
+			getWithdraw().setPlayer1ToWithdraw(players_[playerIndexturn_]);
+			getWithdraw().setPlayer2ToWithdraw(selected_player);
+
+			setTurnState(WITHDRAW_ONGOING);
+			setScreenType(WITHDRAW_ADD_VALUE);
+			getWithdraw().setChooseScreenVisible(false);
+			getWithdraw().setValueScreenVisible(true);
+
+			getWithdraw().moneyTransferIndex(1, money_given);
+			getWithdraw().moneyTransferIndex(2, money_receiven);
+
+			getWithdraw().setPlayer1IndexProperties(properties_offered);
+			getWithdraw().setPlayer2IndexProperties(properties_receiven);
+
+			if (trade_with_ai) {
+				Decision player_2_decision = selected_player->decideAcceptTrade();
+
+				if (player_2_decision == NO) {
+					players_[playerIndexturn_]->getAdapter().clearSelectionState();
+					selected_player->getAdapter().clearSelectionState();
+
+					getWithdraw().setChooseScreenVisible(false);
+					getWithdraw().setValueScreenVisible(false);
+					getWithdraw().setDecisionScreenVisible(false);
+					setScreenType(BOARDGAME);
+					setTurnState(getWithdraw().getTurnState());
+					getWithdraw().setPlayer2ToWithdraw(nullptr);
+					continue;
+				}
+
+				std::string trade_raport = "Przeprowadzil wymiane z graczem " + std::to_string(selected_player->getId())
+				+ " Oddal: " + std::to_string(money_given) + " i pola: ";
+				for (auto field_id: properties_offered) {
+					trade_raport += std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(field_id));
+					trade_raport += ", ";
+				}
+				trade_raport += "Otrzymal: " + std::to_string(money_receiven) + " i pola: ";
+				for (auto field_id: properties_receiven) {
+					trade_raport += std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(field_id));
+					trade_raport += ", ";
+				}
+				trade_raport += ".";
+				notificationAdd(playerIndexturn_, trade_raport);
+
+				getWithdraw().makeWithdraw();
+				getWithdraw().setChooseScreenVisible(false);
+				getWithdraw().setValueScreenVisible(false);
+				getWithdraw().setDecisionScreenVisible(false);
+				setScreenType(BOARDGAME);
+				setTurnState(getWithdraw().getTurnState());
+				getWithdraw().setPlayer2ToWithdraw(nullptr);
+
+			} else {
+
+				setScreenType(WITHDRAW_DECISION);
+				getWithdraw().setDecisionScreenVisible(true);
+				getWithdraw().setValueScreenVisible(false);
+			}
+		}
+	}
+}
+
 bool monopolyGameEngine::monopolyGameWorker() {
 	try {
 		updateTextPlayersInfo();
 		updateAvailableHousesHotelText();
 		showAllPropertiesWorker();
-		withdrawWorker();
+		if (players_[playerIndexturn_]->getIsAi()) {
+			aiWithdrawWorker();
+		} else {
+			withdrawWorker();
+		}
 		unsigned int JAIL_BAILOUT = 50;
 		static int rolled_val;
 		static unsigned int money_to_find;

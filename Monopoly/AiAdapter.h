@@ -42,7 +42,7 @@ class AiAdapter {
 	void setTurn(unsigned int index);
 	void setSelection(unsigned int index);
 	void setSelectionState(unsigned int index, int state);
-	void setMoneyContext(unsigned int state);
+	void setMoneyContext(int state);
 	void clearSelectionState();
 	void setPosition(unsigned int index, unsigned int position);
 	void setMoney(unsigned int index, unsigned int money);

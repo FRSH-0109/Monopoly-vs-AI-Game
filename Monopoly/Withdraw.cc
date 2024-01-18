@@ -1,7 +1,7 @@
 /**
  * @file Withdraw.cc
  *
- * @brief Source file for trade/withdraw mehanism 
+ * @brief Source file for trade/withdraw mehanism
  * in monopoly game between players
  *
  * @author Kamil Kosnik, Kacper Radzikowski
@@ -26,6 +26,22 @@ void Withdraw::setChooseScreenVisible(bool isVisible) {
 	choosePlayer3Button_->setIsVisible(isVisible);
 	choosePlayer4Button_->setIsVisible(isVisible);
 	resignButton_->setIsVisible(isVisible);
+}
+
+std::vector<unsigned int> Withdraw::getPlayer1IndexProperties() {
+	return player1IndexProperties_;
+}
+
+std::vector<unsigned int> Withdraw::getPlayer2IndexProperties() {
+	return player2IndexProperties_;
+}
+
+void Withdraw::setPlayer1IndexProperties(std::vector<unsigned int> new_index_properties) {
+	player1IndexProperties_ = new_index_properties;
+}
+
+void Withdraw::setPlayer2IndexProperties(std::vector<unsigned int> new_index_properties) {
+	player2IndexProperties_ = new_index_properties;
 }
 
 void Withdraw::setValueScreenVisible(bool isVisible) {
