@@ -17,6 +17,7 @@
 #include <memory>
 #include <random>
 #include <vector>
+#include <cmath>
 #include "ActiveScreen.h"
 #include "Board.h"
 #include "Chance.h"
@@ -38,7 +39,7 @@ class monopolyGameEngine {
 	unsigned int playerIndexturn_;
 	bool isAiGameOnly_;
 	GameScreenType screenType_ = BOARDGAME;
-	const unsigned int PLAYER_MONEY_DEFAULT_ = 300;
+	const unsigned int PLAYER_MONEY_DEFAULT_ = 1500;
 	const unsigned int START_PASSING_MONEY_ = 200;
 	const unsigned int GAME_TURNS_MAX = 50;
 	unsigned int gameTurnsGloballyDone_;
@@ -311,8 +312,8 @@ class monopolyGameEngine {
 	unsigned int calculateGroupFieldsOwned(std::vector<unsigned int> player_fields, PropertyField& field) const;
 	bool groupCompleted(std::vector<unsigned int> player_fields, PropertyField& field) const;
 
-	bool isBuildingLegal(std::shared_ptr<Player> builder, StreetField& field);
-	bool isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
+	bool isBuildingLegal(std::shared_ptr<Player> builder, StreetField field);
+	bool isDestroyingLegal(std::shared_ptr<Player> builder, StreetField field);
 	bool isHotelBuildingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	bool isHotelDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field);
 	bool colorGroupEmpty(std::shared_ptr<Player> mortaging, StreetField& field);

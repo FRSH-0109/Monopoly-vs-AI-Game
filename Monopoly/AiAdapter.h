@@ -22,7 +22,7 @@ class AiAdapter {
 	const unsigned int OWNER = 20;
 	const unsigned int MORT = 48;
 	const unsigned int HOUSE = 76;
-	int SELECT = 98;
+	unsigned int SELECT = 98;
 	const unsigned int SELECT_MONEY = 126;
 
 	const std::vector<int> PROPERTIES = {-1, 0, -1, 1, -1, 2, 3, -1, 4, 5, -1, 6, 7, 8, 9, 10, 11, -1, 12, 13, -1, 14,
