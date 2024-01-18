@@ -57,7 +57,7 @@ double AiAdapter::convertHouse(bool isHotel, unsigned int houseNumber) {
 }
 
 void AiAdapter::setTurn(unsigned int index) {
-	for (int i = 0; i < networkInputs_.size(); ++i) {
+	for (unsigned int i = 0; i < networkInputs_.size(); ++i) {
 		if (i < 4) {
 			if (i == index) {
 				networkInputs_[i] = 1.0;
@@ -69,7 +69,7 @@ void AiAdapter::setTurn(unsigned int index) {
 }
 
 void AiAdapter::setSelection(unsigned int index) {
-	for (int i = SELECT - 1; i < SELECT + 29; ++i) {
+	for (unsigned int i = SELECT - 1; i < SELECT + 29; ++i) {
 		if (i == SELECT + PROPERTIES[index]) {
 			networkInputs_[i] = 1.0;
 		} else {
@@ -87,7 +87,7 @@ void AiAdapter::setMoneyContext(unsigned int state) {
 }
 
 void AiAdapter::clearSelectionState() {
-	for (int i = SELECT; i < SELECT + 29; ++i) {
+	for (unsigned int i = SELECT; i < SELECT + 29; ++i) {
 		networkInputs_[i] = 0.0;
 	}
 }

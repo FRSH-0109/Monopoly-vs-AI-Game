@@ -405,14 +405,16 @@ unsigned int monopolyGameEngine::calculateGroupFieldsOwned(std::vector<unsigned 
 	return fields_owned;
 }
 
-bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, StreetField& field) {
+bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, StreetField field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) &&
 		builder->getMoney() > field.getHousePrice() && field_houses < 4 &&
 		getHouseCount() > 0) {	// W tym if trzeba będzie dodać kontrolę budynków w puli
 		for (unsigned int i = 0; i < field.getGroupMembers().size(); ++i) {
-			StreetField& group_member = std::get<StreetField>(getBoard()->getFieldById(field.getGroupMembers()[i]));
+			unsigned int group_member_id = field.getGroupMembers()[i];
+			PossibleFields& group_member_variant = getBoard()->getFieldById(field.getGroupMembers()[i]);
+			StreetField& group_member = std::get<StreetField>(group_member_variant);
 			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortgaged()) {
 				return false;
 			}
@@ -423,7 +425,7 @@ bool monopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, Street
 	return true;
 }
 
-bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, StreetField& field) {
+bool monopolyGameEngine::isDestroyingLegal(std::shared_ptr<Player> builder, StreetField field) {
 	std::vector<unsigned int> builder_ownes = builder->getFiledOwnedId();
 	unsigned int field_houses = field.getHouseNumber();
 	if (!field.getIsMortgaged() && groupCompleted(builder_ownes, field) && field_houses > 0) {
@@ -762,8 +764,148 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 	};
 	std::shared_ptr<Player> curr_player = players_[playerIndexturn_];
 	std::vector<unsigned int> fields_owned = curr_player->getFiledOwnedId();
-	unsigned int buildings_onwed = fields_owned.size();
-	for (int i = 0; i < buildings_onwed; ++i) {
+	unsigned int owned_amount = fields_owned.size();
+
+	for (unsigned int set = 0; set < SETS.size(); ++set) {
+		if(std::includes(fields_owned.begin(), fields_owned.end(), SETS[set].begin(), SETS[set].end())) {
+			unsigned int houses_builded = 0;
+			for (unsigned int i = 0; i < SETS[set].size(); ++i) {
+				StreetField field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][i]));
+				if (field.getIsHotel()) {
+					houses_builded += 5;
+				} else {
+					houses_builded += field.getHouseNumber();
+				}
+			}
+
+			unsigned int max_sell = houses_builded;
+			unsigned int player_id = curr_player->getId();
+			curr_player->getAdapter().setTurn(player_id);
+			curr_player->getAdapter().setSelectionState(SETS[set][0], 1);
+
+			unsigned int decision = curr_player->decideSellHouse();
+			decision = std::min(decision, max_sell);
+
+			curr_player->getAdapter().setSelectionState(SETS[set][0], 0);
+
+			unsigned int last = 2;
+
+			if(set == 0 || set == 7) {
+				last = 1;
+			}
+
+			for (unsigned int house = 0; house < decision; ++house) {
+				// find field with highest amount of houses
+				unsigned int highest_field_id = 0;
+				StreetField highest_field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][highest_field_id]));
+
+				for (unsigned int j = 0; j <= last; ++j) {
+					StreetField field_checked = std::get<StreetField>(gameboard_->getFieldById(SETS[set][j]));
+					if (!highest_field.getIsHotel() && field_checked.getIsHotel()) {
+						highest_field = field_checked;
+						highest_field_id = j;
+					} else if (highest_field.getHouseNumber() < field_checked.getHouseNumber()) {
+						highest_field = field_checked;
+						highest_field_id = j;
+					}
+				}
+
+				StreetField& field_to_build = std::get<StreetField>(gameboard_->getFieldById(SETS[set][highest_field_id]));
+
+				if(isHotelDestroyingLegal(curr_player, field_to_build)) {
+					curr_player->addMoney(field_to_build.getHotelPrice() / 2);
+					field_to_build.setIsHotel(false);
+					addHotels(1);
+					substractHouses(4);
+					notificationAdd(playerIndexturn_, "Hotel zburzony na polu " + field_to_build.getName());
+				} else if (isDestroyingLegal(curr_player, field_to_build)) {
+					curr_player->addMoney(field_to_build.getHousePrice() / 2);
+					field_to_build.setHouseNumber(field_to_build.getHouseNumber() - 1);
+					addHouses(1);
+					notificationAdd(playerIndexturn_, "Dom zburzony na polu " + field_to_build.getName());
+				} else {
+					house = decision;
+				}
+			}
+		}
+	}
+
+	for (unsigned int set = 0; set < SETS.size(); ++set) {
+		if (std::includes(fields_owned.begin(), fields_owned.end(), SETS[set].begin(), SETS[set].end())) {
+			unsigned int max_houses = 10;
+			unsigned int houses_builded = 0;
+			for (unsigned int i = 0; i < SETS[set].size(); ++i) {
+				StreetField field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][i]));
+				if (field.getIsHotel()) {
+					houses_builded += 5;
+				} else {
+					houses_builded += field.getHouseNumber();
+				}
+			}
+
+			if (set != 0 && set != 7) {
+				max_houses = 15;
+			}
+
+			unsigned int house_price = std::get<StreetField>(gameboard_->getFieldById(SETS[set][0])).getHousePrice();
+
+			unsigned int max_build = max_houses - houses_builded;
+			unsigned int afford_max = (unsigned int) floor(curr_player->getMoney() / (float)house_price);
+
+			max_build = std::min(max_build, afford_max);
+
+			unsigned int player_id = curr_player->getId();
+			curr_player->getAdapter().setTurn(player_id);
+			curr_player->getAdapter().setSelectionState(SETS[set][0], 1);
+
+			unsigned int decision = curr_player->decideBuildHouse();
+			decision = std::min(decision, max_build);
+
+			curr_player->getAdapter().setSelectionState(SETS[set][0], 0);
+
+			unsigned int last = 2;
+
+			if(set == 0 || set == 7) {
+				last = 1;
+			}
+
+			for (unsigned int house = 0; house < decision; ++house) {
+				// find field with smallest amount of houses
+				unsigned int lowest_field_id = last;
+				StreetField lowest_field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][lowest_field_id]));
+
+				for (int j = last - 1; j >= 0; --j) {
+					StreetField field_checked = std::get<StreetField>(gameboard_->getFieldById(SETS[set][j]));
+					if (lowest_field.getIsHotel() && !field_checked.getIsHotel()) {
+						lowest_field = field_checked;
+						lowest_field_id = j;
+					} else if (lowest_field.getHouseNumber() > field_checked.getHouseNumber()) {
+						lowest_field = field_checked;
+						lowest_field_id = j;
+					}
+				}
+
+				StreetField& field_to_build = std::get<StreetField>(gameboard_->getFieldById(SETS[set][lowest_field_id]));
+
+				if (isHotelBuildingLegal(curr_player, field_to_build)) {
+					players_[playerIndexturn_]->substractMoney(field_to_build.getHotelPrice());
+					field_to_build.setIsHotel(true);
+					substractHotels(1);
+					addHouses(4);
+					notificationAdd(playerIndexturn_, "Hotel zbudowany na polu " + field_to_build.getName());
+				} else if (isBuildingLegal(curr_player, lowest_field)) {
+					players_[playerIndexturn_]->substractMoney(field_to_build.getHousePrice());
+					field_to_build.setHouseNumber(field_to_build.getHouseNumber() + 1);
+					substractHouses(1);
+					notificationAdd(playerIndexturn_, "Dom zbudowany na polu " + field_to_build.getName());
+				} else {
+					house = decision;
+				}
+			}
+		}
+	}
+
+	for (unsigned int i = 0; i < owned_amount; ++i) {
 		FieldType field_type =
 			std::visit([](Field& field) { return field.getType(); }, getBoard()->getFieldById(fields_owned[i]));
 		if (field_type == STREET) {
@@ -783,7 +925,7 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 						notificationAdd(playerIndexturn_, "UnMortgaged field " + field.getName());
 					}
 				}
-			} else {
+			} else if (colorGroupEmpty(curr_player, field)){
 				unsigned int player_id = curr_player->getId();
 				curr_player->getAdapter().setTurn(player_id);
 				curr_player->getAdapter().setSelectionState(field.getId(), 1);
@@ -856,21 +998,6 @@ void monopolyGameEngine::aiBuildingsMangingWorker() {
 					notificationAdd(playerIndexturn_, "Mortgaged field " + field.getName());
 				}
 			}
-		}
-	}
-
-	for (int set = 0; set < SETS.size(); ++set) {
-		if(std::includes(fields_owned.begin(), fields_owned.end(), SETS[set].begin(), SETS[set].end())) {
-			unsigned int houses_builded = 0;
-			for (int i = 0; i < SETS[set].size(); ++i) {
-				StreetField field = std::get<StreetField>(gameboard_->getFieldById(SETS[set][i]));
-				houses_builded += field.getHouseNumber();
-			}
-
-			unsigned int max_sell = houses_builded;
-			unsigned int player_id = curr_player->getId();
-			curr_player->getAdapter().setTurn(player_id);
-			curr_player->getAdapter().setSelectionState(SETS[set][0], 1);
 		}
 	}
 }
