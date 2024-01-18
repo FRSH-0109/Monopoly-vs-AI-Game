@@ -16,11 +16,9 @@ unsigned int WIDTH_MAX = 1920;
 unsigned int HEIGHT_MAX = 1080;
 unsigned int width;
 unsigned int height;
-<<<<<<< HEAD
-unsigned int FRAMES_PER_SEC_MAX = 0.1;
-=======
+
 unsigned int FRAMES_PER_SEC_MAX = 1;
->>>>>>> eb97ecb71df3576db9d35034aee05bcd3c95d1cb
+
 bool TRAIN = true;
 int GAMES_IN_ROUND = 5;
 
