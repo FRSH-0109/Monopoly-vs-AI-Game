@@ -12,6 +12,10 @@
 
 #include "NotificationWall.h"
 
+// =============================================================================
+// NotificationWall Class Implementation
+// =============================================================================
+
 NotificationWall::NotificationWall() {
 	clearWall();
 	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
