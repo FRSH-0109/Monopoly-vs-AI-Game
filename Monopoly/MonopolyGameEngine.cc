@@ -1049,7 +1049,7 @@ void monopolyGameEngine::aiWithdrawWorker() {
 	const unsigned int TRADE_MONEY_MAX = 500;
 
 	std::vector<std::shared_ptr<Player>> candidates;
-	for (auto player: players_) {
+	for (auto player : players_) {
 		if (player != players_[playerIndexturn_]) {
 			candidates.push_back(player);
 		}
@@ -1060,7 +1060,8 @@ void monopolyGameEngine::aiWithdrawWorker() {
 		for (unsigned int t = 0; t < TRADE_ATTEMPTS; ++t) {
 			std::random_device rd;
 			std::mt19937 gen(rd());
-			std::uniform_int_distribution<> dist_offer(0, std::min((unsigned int)players_[playerIndexturn_]->getFiledOwnedId().size(), TRADE_ITEM_MAX));
+			std::uniform_int_distribution<> dist_offer(
+				0, std::min((unsigned int)players_[playerIndexturn_]->getFiledOwnedId().size(), TRADE_ITEM_MAX));
 			unsigned int offer = dist_offer(gen);
 
 			std::uniform_int_distribution<> dist_select(0, candidates.size() - 1);
@@ -1068,13 +1069,16 @@ void monopolyGameEngine::aiWithdrawWorker() {
 			std::shared_ptr<Player> selected_player = candidates[selected_player_index];
 			bool trade_with_ai = selected_player->getIsAi();
 
-			std::uniform_int_distribution<> dist_rec(0, std::min((unsigned int)selected_player->getFiledOwnedId().size(), TRADE_ITEM_MAX));
+			std::uniform_int_distribution<> dist_rec(
+				0, std::min((unsigned int)selected_player->getFiledOwnedId().size(), TRADE_ITEM_MAX));
 			unsigned int receive = dist_rec(gen);
 
-			std::uniform_int_distribution<> dist_money_given(0, std::min((unsigned int)players_[playerIndexturn_]->getMoney(), TRADE_MONEY_MAX));
+			std::uniform_int_distribution<> dist_money_given(
+				0, std::min((unsigned int)players_[playerIndexturn_]->getMoney(), TRADE_MONEY_MAX));
 			unsigned int money_given = dist_money_given(gen);
 
-			std::uniform_int_distribution<> dist_money_receiven(0, std::min((unsigned int)players_[playerIndexturn_]->getMoney(), TRADE_MONEY_MAX));
+			std::uniform_int_distribution<> dist_money_receiven(
+				0, std::min((unsigned int)players_[playerIndexturn_]->getMoney(), TRADE_MONEY_MAX));
 			unsigned int money_receiven = dist_money_receiven(gen);
 
 			int money_balance = money_given - money_receiven;
@@ -1091,7 +1095,8 @@ void monopolyGameEngine::aiWithdrawWorker() {
 				unsigned int selection = dist_possible(gen);
 
 				properties_offered.push_back(possible_to_offer[selection]);
-				possible_to_offer.erase(std::find(possible_to_offer.begin(), possible_to_offer.end(), possible_to_offer[selection]));
+				possible_to_offer.erase(
+					std::find(possible_to_offer.begin(), possible_to_offer.end(), possible_to_offer[selection]));
 			}
 
 			std::vector<unsigned int> properties_receiven;
@@ -1102,7 +1107,8 @@ void monopolyGameEngine::aiWithdrawWorker() {
 				unsigned int selection = dist_possible(gen);
 
 				properties_receiven.push_back(possible_to_receive[selection]);
-				possible_to_receive.erase(std::find(possible_to_receive.begin(), possible_to_receive.end(), possible_to_receive[selection]));
+				possible_to_receive.erase(
+					std::find(possible_to_receive.begin(), possible_to_receive.end(), possible_to_receive[selection]));
 			}
 
 			// neurons setup for trade
@@ -1166,15 +1172,18 @@ void monopolyGameEngine::aiWithdrawWorker() {
 					continue;
 				}
 
-				std::string trade_raport = "Przeprowadzil wymiane z graczem " + std::to_string(selected_player->getId())
-				+ " Oddal: " + std::to_string(money_given) + " i pola: ";
-				for (auto field_id: properties_offered) {
-					trade_raport += std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(field_id));
+				std::string trade_raport = "Przeprowadzil wymiane z graczem " +
+										   std::to_string(selected_player->getId()) +
+										   " Oddal: " + std::to_string(money_given) + " i pola: ";
+				for (auto field_id : properties_offered) {
+					trade_raport +=
+						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(field_id));
 					trade_raport += ", ";
 				}
 				trade_raport += "Otrzymal: " + std::to_string(money_receiven) + " i pola: ";
-				for (auto field_id: properties_receiven) {
-					trade_raport += std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(field_id));
+				for (auto field_id : properties_receiven) {
+					trade_raport +=
+						std::visit([](Field& field) { return field.getName(); }, getBoard()->getFieldById(field_id));
 					trade_raport += ", ";
 				}
 				trade_raport += ".";
@@ -1189,7 +1198,6 @@ void monopolyGameEngine::aiWithdrawWorker() {
 				getWithdraw().setPlayer2ToWithdraw(nullptr);
 
 			} else {
-
 				setScreenType(WITHDRAW_DECISION);
 				getWithdraw().setDecisionScreenVisible(true);
 				getWithdraw().setValueScreenVisible(false);
