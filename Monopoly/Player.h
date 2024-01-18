@@ -316,11 +316,22 @@ class AiPlayer : public Player {
 	 */
 	AiPlayer(unsigned int money);
 
+	/**
+	 * Constructor for AiPlayer class with initial money and neural_network.
+	 *
+	 * @param money Initial amount of money for the AI player.
+	 * @param n Neural network used by a Player.
+	 */
+	AiPlayer(unsigned int money, ann::neuralnet nn);
+
 	/** Get the AI adapter associated with the AI player. */
 	AiAdapter& getAdapter();
 
 	/** Get the neural network associated with the AI player. */
 	ann::neuralnet& getNeuralNetwork();
+
+	/** Set the neura network used by the AI player. */
+	void setNeuralNetwork(ann::neuralnet new_nn);
 
 	/**
 	 * Make a buying decision for the AI player (override from base class).

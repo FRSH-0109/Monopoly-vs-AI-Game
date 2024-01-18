@@ -1061,7 +1061,7 @@ void monopolyGameEngine::aiWithdrawWorker() {
 			std::random_device rd;
 			std::mt19937 gen(rd());
 			std::uniform_int_distribution<> dist_offer(
-				0, std::min((unsigned int)players_[playerIndexturn_]->getFiledOwnedId().size(), TRADE_ITEM_MAX));
+				0, std::min((unsigned int)players_[playerIndexturn_]->getFieldOwnedId().size(), TRADE_ITEM_MAX));
 			unsigned int offer = dist_offer(gen);
 
 			std::uniform_int_distribution<> dist_select(0, candidates.size() - 1);
@@ -1070,7 +1070,7 @@ void monopolyGameEngine::aiWithdrawWorker() {
 			bool trade_with_ai = selected_player->getIsAi();
 
 			std::uniform_int_distribution<> dist_rec(
-				0, std::min((unsigned int)selected_player->getFiledOwnedId().size(), TRADE_ITEM_MAX));
+				0, std::min((unsigned int)selected_player->getFieldOwnedId().size(), TRADE_ITEM_MAX));
 			unsigned int receive = dist_rec(gen);
 
 			std::uniform_int_distribution<> dist_money_given(
@@ -1088,7 +1088,7 @@ void monopolyGameEngine::aiWithdrawWorker() {
 			}
 
 			std::vector<unsigned int> properties_offered;
-			std::vector<unsigned int> possible_to_offer = players_[playerIndexturn_]->getFiledOwnedId();
+			std::vector<unsigned int> possible_to_offer = players_[playerIndexturn_]->getFieldOwnedId();
 
 			for (unsigned int i = 0; i < offer; ++i) {
 				std::uniform_int_distribution<> dist_possible(0, (unsigned int)possible_to_offer.size() - 1);
@@ -1100,7 +1100,7 @@ void monopolyGameEngine::aiWithdrawWorker() {
 			}
 
 			std::vector<unsigned int> properties_receiven;
-			std::vector<unsigned int> possible_to_receive = selected_player->getFiledOwnedId();
+			std::vector<unsigned int> possible_to_receive = selected_player->getFieldOwnedId();
 
 			for (unsigned int i = 0; i < receive; ++i) {
 				std::uniform_int_distribution<> dist_possible(0, (unsigned int)possible_to_receive.size() - 1);
