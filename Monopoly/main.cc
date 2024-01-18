@@ -44,33 +44,33 @@ int main() {
 	std::vector<std::shared_ptr<Player>> playerResults;
 	std::vector<std::shared_ptr<Player>> players;	//create empty players vector to start game
 
-	{	//play game iwth all AI players
-		players.clear();
-		std::shared_ptr<AiPlayer> player1 = std::make_shared<AiPlayer>(0);
-		std::shared_ptr<AiPlayer> player2 = std::make_shared<AiPlayer>(0);
-		std::shared_ptr<AiPlayer> player3 = std::make_shared<AiPlayer>(0);
-		std::shared_ptr<AiPlayer> player4 = std::make_shared<AiPlayer>(0);
-		players.push_back(player1);
-		players.push_back(player2);
-		players.push_back(player3);
-		players.push_back(player4);
-		playerResults = runMonopolyGame(players);
-		printResults(playerResults);
-	}
+	// {	//play game iwth all AI players
+	// 	players.clear();
+	// 	std::shared_ptr<AiPlayer> player1 = std::make_shared<AiPlayer>(0);
+	// 	std::shared_ptr<AiPlayer> player2 = std::make_shared<AiPlayer>(0);
+	// 	std::shared_ptr<AiPlayer> player3 = std::make_shared<AiPlayer>(0);
+	// 	std::shared_ptr<AiPlayer> player4 = std::make_shared<AiPlayer>(0);
+	// 	players.push_back(player1);
+	// 	players.push_back(player2);
+	// 	players.push_back(player3);
+	// 	players.push_back(player4);
+	// 	playerResults = runMonopolyGame(players);
+	// 	printResults(playerResults);
+	// }
 
-	{	//play game with 1 Human player and 3 AI
-		players.clear();
-		std::shared_ptr<Player> player1 = std::make_shared<Player>(0);
-		std::shared_ptr<AiPlayer> player2 = std::make_shared<AiPlayer>(0);
-		std::shared_ptr<AiPlayer> player3 = std::make_shared<AiPlayer>(0);
-		std::shared_ptr<AiPlayer> player4 = std::make_shared<AiPlayer>(0);
-		players.push_back(player1);
-		players.push_back(player2);
-		players.push_back(player3);
-		players.push_back(player4);
-		playerResults = runMonopolyGame(players);
-		printResults(playerResults);
-	}
+	// {	//play game with 1 Human player and 3 AI
+	// 	players.clear();
+	// 	std::shared_ptr<Player> player1 = std::make_shared<Player>(0);
+	// 	std::shared_ptr<AiPlayer> player2 = std::make_shared<AiPlayer>(0);
+	// 	std::shared_ptr<AiPlayer> player3 = std::make_shared<AiPlayer>(0);
+	// 	std::shared_ptr<AiPlayer> player4 = std::make_shared<AiPlayer>(0);
+	// 	players.push_back(player1);
+	// 	players.push_back(player2);
+	// 	players.push_back(player3);
+	// 	players.push_back(player4);
+	// 	playerResults = runMonopolyGame(players);
+	// 	printResults(playerResults);
+	// }
 
 	//play game with all custom players, passed vector is empty
 	players.clear();
