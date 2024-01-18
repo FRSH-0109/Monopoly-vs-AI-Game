@@ -31,6 +31,23 @@ GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) 
 	players_.clear();
 }
 
+GameEngine::GameEngine(double frameRateHz) {
+	frameRateHz_ = frameRateHz;
+	frameRateDelayMs_ = sf::milliseconds(1000.0 / frameRateHz_);
+
+	contextWindow_ = ContextWindow::GetInstance();
+	// getContextWindow()->getWindow().create(
+	// 	sf::VideoMode(WindowWidth, WindowHeight), "MonopolyVsAI", sf::Style::Default);
+
+	// const sf::Vector2i pos(0, 0);
+	// getContextWindow()->getWindow().setPosition(pos);
+	// getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
+
+	// activeScreen_ = std::make_unique<MainMenuScreen>();
+
+	players_.clear();
+}
+
 ContextWindow* GameEngine::getContextWindow() {
 	return contextWindow_;
 }
@@ -75,7 +92,7 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 	}
 
 	while (getContextWindow()->isOpen()) {
-		clear();
+		// clear();
 
 		sf::Event event;
 		while (getContextWindow()->getWindow().pollEvent(event)) {
@@ -83,7 +100,7 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 		}
 
 		ScreenEventType eventType = IDLE;
-		activeScreen_->draw();
+		// activeScreen_->draw();
 		eventType = activeScreen_->worker();
 
 		switch (eventType) {
@@ -135,13 +152,14 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 				activeScreen_ = std::make_unique<GameScreen>(players_);
 			} break;
 			case GAME_ENDED:
+				getContextWindow()->getWindow().close();
 				return activeScreen_->getPlayersResult();
 				break;
 			default:
 				break;
 		}
 
-		display();
+		// display();
 	}
 }
 

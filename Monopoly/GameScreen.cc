@@ -16,7 +16,6 @@
 
 GameScreen::GameScreen(std::vector<std::shared_ptr<Player>>& players_) {
 	setContextWindow(ContextWindow::GetInstance());
-	std::cout << "GS constructor" << std::endl;
 	setScreenType(MONOPOLY_GAME);
 
 	// TODO: exception handling

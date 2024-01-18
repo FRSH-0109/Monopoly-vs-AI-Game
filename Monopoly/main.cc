@@ -16,7 +16,7 @@ unsigned int WIDTH_MAX = 1920;
 unsigned int HEIGHT_MAX = 1080;
 unsigned int width;
 unsigned int height;
-unsigned int FRAMES_PER_SEC_MAX = 30;
+unsigned int FRAMES_PER_SEC_MAX = 0.1;
 bool TRAIN = true;
 int GAMES_IN_ROUND = 10;
 
@@ -27,9 +27,12 @@ static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 	}
 }
 
-static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>>& players) {
-	GameEngine gameEngine(FRAMES_PER_SEC_MAX, width, height);
-	return gameEngine.worker(players);
+static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>> players) {
+	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX);
+	std::vector<std::shared_ptr<Player>> players_ret = gameEngine->worker(players);
+	gameEngine->getContextWindow()->getWindow().close();
+	gameEngine.reset();
+	return players_ret;
 }
 
 bool genomeComp(neat::genome g1, neat::genome g2) {
@@ -49,33 +52,7 @@ int main() {
 	std::vector<std::shared_ptr<Player>> playerResults;
 	std::vector<std::shared_ptr<Player>> players;  // create empty players vector to start game
 
-	// {	//play game iwth all AI players
-	// 	players.clear();
-	// 	std::shared_ptr<AiPlayer> player1 = std::make_shared<AiPlayer>(0);
-	// 	std::shared_ptr<AiPlayer> player2 = std::make_shared<AiPlayer>(0);
-	// 	std::shared_ptr<AiPlayer> player3 = std::make_shared<AiPlayer>(0);
-	// 	std::shared_ptr<AiPlayer> player4 = std::make_shared<AiPlayer>(0);
-	// 	players.push_back(player1);
-	// 	players.push_back(player2);
-	// 	players.push_back(player3);
-	// 	players.push_back(player4);
-	// 	playerResults = runMonopolyGame(players);
-	// 	printResults(playerResults);
-	// }
-
-	// {	//play game with 1 Human player and 3 AI
-	// 	players.clear();
-	// 	std::shared_ptr<Player> player1 = std::make_shared<Player>(0);
-	// 	std::shared_ptr<AiPlayer> player2 = std::make_shared<AiPlayer>(0);
-	// 	std::shared_ptr<AiPlayer> player3 = std::make_shared<AiPlayer>(0);
-	// 	std::shared_ptr<AiPlayer> player4 = std::make_shared<AiPlayer>(0);
-	// 	players.push_back(player1);
-	// 	players.push_back(player2);
-	// 	players.push_back(player3);
-	// 	players.push_back(player4);
-	// 	playerResults = runMonopolyGame(players);
-	// 	printResults(playerResults);
-	// }
+	int games_counter = 0;
 
 	if (TRAIN) {
 		neat::pool p(127, 9);
@@ -96,9 +73,9 @@ int main() {
 						int first_genome_pos = 4 * i;
 
 						neat::genome& g1 = (*s).genomes[first_genome_pos];
-						neat::genome& g2 = (*s).genomes[first_genome_pos+1];
-						neat::genome& g3 = (*s).genomes[first_genome_pos+2];
-						neat::genome& g4 = (*s).genomes[first_genome_pos+3];
+						neat::genome& g2 = (*s).genomes[first_genome_pos + 1];
+						neat::genome& g3 = (*s).genomes[first_genome_pos + 2];
+						neat::genome& g4 = (*s).genomes[first_genome_pos + 3];
 
 						player_1_nn.from_genome(g1);
 						player_2_nn.from_genome(g2);
@@ -115,10 +92,17 @@ int main() {
 							players.push_back(player2);
 							players.push_back(player3);
 							players.push_back(player4);
-							playerResults = runMonopolyGame(players);
-							printResults(playerResults);
 
-							for (auto player: playerResults) {
+							players[0]->setResultPlace(4);
+							players[1]->setResultPlace(4);
+							players[2]->setResultPlace(4);
+							players[3]->setResultPlace(4);
+							playerResults = runMonopolyGame(players);
+							// printResults(playerResults);
+							++games_counter;
+							std::cout << "game counter: " << games_counter << std::endl;
+
+							for (auto player : playerResults) {
 								int reward = 5 - player->getResultPlace();
 								if (player->getId() == 0) {
 									g1.fitness += reward;
@@ -141,6 +125,7 @@ int main() {
 			} else if (gen == 49) {
 				p.export_tofile("monopoly_level2_ai.res");
 			}
+			std::cout << "gen: " << gen << std::endl;
 		}
 		p.export_tofile("monopoly_level3_ai.res");
 	}

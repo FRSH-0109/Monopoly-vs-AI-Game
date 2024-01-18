@@ -40,6 +40,7 @@ class GameEngine {
 
    public:
 	GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight);
+	GameEngine(double frameRateHz);
 	void clear();
 	void display();
 	void pollForEvents(sf::Event& event);

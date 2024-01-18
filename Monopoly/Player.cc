@@ -422,9 +422,9 @@ Decision AiPlayer::decideOfferTrade() {
 	neural_network_.evaluate(inputs, Y);
 
 	if (Y[7] > 0.5f) {
-	return YES;
+		return YES;
 	} else {
-	return NO;
+		return NO;
 	}
 
 	// return NO;
@@ -436,9 +436,9 @@ Decision AiPlayer::decideAcceptTrade() {
 	neural_network_.evaluate(inputs, Y);
 
 	if (Y[8] > 0.5f) {
-	return YES;
+		return YES;
 	} else {
-	return NO;
+		return NO;
 	}
 
 	// return NO;
