@@ -812,10 +812,10 @@ void Withdraw::showProperty(int column) {
 
 		sf::Vector2f dataPos;
 
-		dataPos = PROPERTY_POSITION;  ////////////////////////////
-		// if (!propertyTexture->loadFromFile(graphic_path)) {	 ////////////////////////
-		// 	propertySprite.setColor(sf::Color::Green);
-		// }
+		dataPos = PROPERTY_POSITION;						 ////////////////////////////
+		if (!propertyTexture->loadFromFile(graphic_path)) {	 ////////////////////////
+			propertySprite.setColor(sf::Color::Green);
+		}
 		propertySprite.setTexture(*propertyTexture, true);
 		sf::Vector2u texture_dim = propertyTexture->getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
@@ -1054,9 +1054,9 @@ void Withdraw::showProperty(int column) {
 	} else {
 		unsigned int width = std::visit([](Field& field) { return field.getWidth(); }, gameboard_->getFieldById(1));
 		unsigned int height = std::visit([](Field& field) { return field.getHeight(); }, gameboard_->getFieldById(1));
-		// if (!propertyTexture->loadFromFile("textures_and_fonts/textures/monopoly_single_square_empty.png")) {
-		// 	propertySprite.setColor(sf::Color::Black);
-		// }
+		if (!propertyTexture->loadFromFile("textures_and_fonts/textures/monopoly_single_square_empty.png")) {
+			propertySprite.setColor(sf::Color::Black);
+		}
 		propertySprite.setTexture(*propertyTexture, true);
 		sf::Vector2u texture_dim = propertyTexture->getSize();
 		float scale_x = (float)width / (float)texture_dim.x;

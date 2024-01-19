@@ -17,10 +17,10 @@ unsigned int HEIGHT_MAX = 1080;
 unsigned int width;
 unsigned int height;
 
-unsigned int FRAMES_PER_SEC_MAX = 1;
+unsigned int FRAMES_PER_SEC_MAX = 30;
 
-bool TRAIN = true;
-int GAMES_IN_ROUND = 10;
+bool TRAIN = false;
+int GAMES_IN_ROUND = 5;
 
 static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 	for (int i = playerResults.size() - 1; i >= 0; --i) {
@@ -30,7 +30,7 @@ static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 }
 
 static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>> players) {
-	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX);
+	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX, width, height); // , width, height
 	std::vector<std::shared_ptr<Player>> players_ret = gameEngine->worker(players);
 	gameEngine->getContextWindow()->getWindow().close();
 	gameEngine.reset();
@@ -66,13 +66,20 @@ int main() {
 		unsigned int generations = 100;
 		// unsigned int swiss_rounds = 10;
 		auto spiece = p.species.begin();
-		neat::genome former_best_performer = (*spiece).genomes[0];
-		neat::genome former_second_performer = (*spiece).genomes[1];
-		neat::genome former_third_performer = (*spiece).genomes[2];
 
-		neat::genome best_performer = (*spiece).genomes[0];
-		neat::genome second_performer = (*spiece).genomes[1];
-		neat::genome third_performer = (*spiece).genomes[2];
+		neat::genome former_best_performer = (*spiece).genomes[0];
+		neat::genome best_performer = former_best_performer;
+
+		spiece++;
+
+		neat::genome former_second_performer = (*spiece).genomes[0];
+		neat::genome second_performer = former_second_performer;
+
+		spiece++;
+
+		neat::genome former_third_performer = (*spiece).genomes[0];
+		neat::genome third_performer = former_third_performer;
+
 		for (int gen = 0; gen < generations; ++gen) {
 			max_fitness = 0;
 			second_fitness = 0;
@@ -108,7 +115,7 @@ int main() {
 						players.push_back(player4);
 						playerResults = runMonopolyGame(players);
 						++games_counter;
-						std::cout << "//////////////////////////////////////////game counter: " << games_counter
+						std::cout << "game counter: " << games_counter
 								  << std::endl;
 						// printResults(playerResults);
 
@@ -147,24 +154,34 @@ int main() {
 				// std::sort((*s).genomes.begin(), (*s).genomes.end(), genomeComp);
 				// }
 			}
+
 			former_best_performer = best_performer;
 			former_second_performer = second_performer;
 			former_third_performer = third_performer;
 			p.new_generation();
 			if (gen == 15) {
+			if (gen == 15) {
 				p.export_tofile("monopoly_level1_ai.res");
-			} else if (gen == 59) {
+				ann::neuralnet n;
+				n.from_genome(best_performer);
+				n.export_tofile("level_1_ai");
+			} else if (gen == 29) {
 				p.export_tofile("monopoly_level2_ai.res");
+				ann::neuralnet n;
+				n.from_genome(best_performer);
+				n.export_tofile("level_2_ai");
 			}
 			std::cout << "gen: " << gen << std::endl;
 			p.export_tofile("monopoly_level3_ai.res");
+			ann::neuralnet n;
+			n.from_genome(best_performer);
+			n.export_tofile("level_3_ai");
 		}
+	} else { // play game with all custom players, passed vector is empty
+		players.clear();
+		playerResults = runMonopolyGame(players);
+		printResults(playerResults);
 	}
-
-	// play game with all custom players, passed vector is empty
-	// players.clear();
-	// playerResults = runMonopolyGame(players);
-	// printResults(playerResults);
 
 	return 0;
 }

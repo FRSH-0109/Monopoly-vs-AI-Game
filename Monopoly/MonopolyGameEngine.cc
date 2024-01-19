@@ -17,12 +17,12 @@
 
 MonopolyGameEngine::MonopolyGameEngine() {
 	turn_state_ = ROLL_DICE;
-	// if (!house_texture_.loadFromFile("textures_and_fonts/textures/house.png")) {
-	// 	// TODO: exception
-	// }
-	// if (!hotel_texture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
-	// 	// TODO: exception
-	// }
+	if (!house_texture_.loadFromFile("textures_and_fonts/textures/house.png")) {
+		// TODO: exception
+	}
+	if (!hotel_texture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
+		// TODO: exception
+	}
 
 	fileLoggerOpen();
 }
@@ -57,9 +57,11 @@ void MonopolyGameEngine::createPlayers(std::vector<std::shared_ptr<Player>>& pla
 			players_.push_back(std::make_shared<Player>(new_player));
 		} else {
 			AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
+			unsigned int ai_level = player_ptr->getAiLevel();
 			new_player.setIsAi(true);
 			new_player.setAiLevel(player_ptr->getAiLevel());
 			new_player.setId(playerId);
+			new_player.setNeuralNetwork(player_ptr->getNeuralNetwork());
 			players_.push_back(std::make_shared<AiPlayer>(new_player));
 		}
 		++playerId;
@@ -1229,6 +1231,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 		static bool playerChanged = true;
 		static bool playerBankrutedNow = false;
 		static bool ai_bankrupted = false;
+		bool decision_made = false;
 
 		if (isButtonClicked(bankrupt_button_) ||
 			(players_[player_index_turn_]->getIsAi() && ai_bankrupted)) {	 // player decied to go bankrupt
@@ -1728,7 +1731,8 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 			case WITHDRAW_ONGOING:
 				if (isButtonClicked(getWithdraw().getResignButton()) ||
 					isButtonClicked(getWithdraw().getResignValueButton()) ||
-					isButtonClicked(getWithdraw().getResignDecisionButton())) {
+					isButtonClicked(getWithdraw().getResignDecisionButton()) ||
+					getScreenType() == WITHDRAW_DECISION && getWithdraw().getPlayer2ToWithdraw()->getIsAi() && getWithdraw().getPlayer2ToWithdraw()->decideAcceptTrade() == NO) {
 					getWithdraw().setChooseScreenVisible(false);
 					getWithdraw().setValueScreenVisible(false);
 					getWithdraw().setDecisionScreenVisible(false);
@@ -1849,7 +1853,15 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 							getWithdraw().setValueScreenVisible(false);
 						}
 					} else if (getScreenType() == WITHDRAW_DECISION) {
-						if (isButtonClicked(getWithdraw().getAcceptDecisionButton())) {
+						if (getWithdraw().getPlayer2ToWithdraw()->getIsAi() && getWithdraw().getPlayer2ToWithdraw()->decideAcceptTrade() == YES) {
+							getWithdraw().makeWithdraw();
+							getWithdraw().setChooseScreenVisible(false);
+							getWithdraw().setValueScreenVisible(false);
+							getWithdraw().setDecisionScreenVisible(false);
+							setScreenType(BOARDGAME);
+							setTurnState(getWithdraw().getTurnState());
+							getWithdraw().setPlayer2ToWithdraw(nullptr);
+						} else if (isButtonClicked(getWithdraw().getAcceptDecisionButton()) && !getWithdraw().getPlayer2ToWithdraw()->getIsAi()) {
 							getWithdraw().makeWithdraw();
 							getWithdraw().setChooseScreenVisible(false);
 							getWithdraw().setValueScreenVisible(false);
@@ -2747,11 +2759,11 @@ void MonopolyGameEngine::showPropertyData(unsigned int pos, bool is_property_sho
 	sf::Vector2f dataPos;
 	if (is_property_shown_to_buy) {
 		dataPos = PROPERTY_DATA_POSITION;
-		// if (!property_data_texture_.loadFromFile(graphic_path)) {
-		// 	property_data_sprite_.setColor(sf::Color::Green);
-		// }
-		property_data_sprite_.setTexture(property_data_texture_, true);
-		sf::Vector2u texture_dim = property_data_texture_.getSize();
+		if (!propertyDataTexture_.loadFromFile(graphic_path)) {
+			propertyDataSprite_.setColor(sf::Color::Green);
+		}
+		propertyDataSprite_.setTexture(propertyDataTexture_, true);
+		sf::Vector2u texture_dim = propertyDataTexture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
 		float scale_y = (float)height / (float)texture_dim.y;
 		const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
@@ -2761,11 +2773,11 @@ void MonopolyGameEngine::showPropertyData(unsigned int pos, bool is_property_sho
 
 	} else {
 		dataPos = ALL_PROPERTY_DATA_POSITION;
-		// if (!all_property_data_texture_.loadFromFile(graphic_path)) {
-		// 	all_property_data_sprite_.setColor(sf::Color::Green);
-		// }
-		all_property_data_sprite_.setTexture(all_property_data_texture_, true);
-		sf::Vector2u texture_dim = all_property_data_texture_.getSize();
+		if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
+			allPropertyDataSprite_.setColor(sf::Color::Green);
+		}
+		allPropertyDataSprite_.setTexture(allPropertyDataTexture_, true);
+		sf::Vector2u texture_dim = allPropertyDataTexture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
 		float scale_y = (float)height / (float)texture_dim.y;
 		const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);

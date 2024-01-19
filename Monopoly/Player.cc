@@ -180,9 +180,9 @@ void Player::createSprite() {
 	const float WIDTH = 20.0;
 	const float HEIGHT = 20.0;
 	const std::string TEXTURE_PATH = "textures_and_fonts/textures/Pionek_monopoly.png";
-	// if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
-	// 	player_sprite_.setColor(sf::Color::Black);
-	// }
+	if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
+		player_sprite_.setColor(sf::Color::Black);
+	}
 	player_sprite_.setTexture(player_texture_, true);
 	player_sprite_.setColor(color_);
 	player_sprite_.setOrigin(
@@ -313,6 +313,42 @@ BuyDecision AiPlayer::decideBuy(unsigned int index) {
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
 
+	if (getAiLevel() == 1) {
+		return BUY;
+	} else if (getAiLevel() == 2) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision >= 0.5) {
+			return BUY;
+		} else if (decision < 0.5) {
+			return RESIGN;
+		}
+
+	} else if (getAiLevel() == 3) {
+		if (getMoney() > 500) {
+			return BUY;
+		} else if (getMoney() > 400 && getMoney() <= 500) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_real_distribution<double> dist(0.0, 1.0);
+			double decision = dist(gen);
+
+			if (decision >= 0.5) {
+				return BUY;
+			} else if (decision < 0.5) {
+				return RESIGN;
+			}
+		} else if (getMoney() < 400) {
+			return RESIGN;
+		}
+	}
+
+	/*
+	Logic prepared for NEAT AI
+	*/
 	if (Y[0] > 0.5f) {
 		return BUY;
 	} else {
@@ -331,6 +367,35 @@ JailDecision AiPlayer::decideJail() {
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
 
+	if (getAiLevel() == 1) {
+		if (getMoney() > 50) {
+			return PAY;
+		} else {
+			return ROLL;
+		}
+	} else if (getAiLevel() == 2) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (getMoney() > 50 && decision < 0.1) {
+			return PAY;
+		} else {
+			return ROLL;
+		}
+
+	} else if (getAiLevel() == 3) {
+		if (getFieldOwnedId().size() < 3 && getMoney() > 50) {
+			return PAY;
+		} else {
+			return ROLL;
+		}
+	}
+
+	/*
+	Logic prepared for NEAT AI
+	*/
 	if (Y[1] < 0.333f) {
 		return CARD;
 	} else if (Y[1] < 0.666f) {
@@ -347,28 +412,68 @@ JailDecision AiPlayer::decideJail() {
 }
 
 Decision AiPlayer::decideMortgage(unsigned int index) {
+	std::vector<std::vector<unsigned int>> SETS = {
+		{1, 3}, {6, 8, 9}, {11, 13, 14}, {16, 18, 19}, {21, 23, 24}, {26, 27, 29}, {31, 32, 34}, {37, 39}};
+
 	std::vector<double> Y(9, 0.0);
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
 
+	std::vector<unsigned int> group;
+
+	for (auto set: SETS) {
+		if (std::find(set.begin(), set.end(), index) != set.end()) {
+			group = set;
+			break;
+		}
+	}
+
+	if (getMoney() < 50) {
+		return YES;
+	} else if (std::includes(getFieldOwnedId().begin(), getFieldOwnedId().end(), group.begin(), group.end())) {
+		return NO;
+	} else {
+		return YES;
+	}
+
+	/*
+	Logic prepared for NEAT AI
+	*/
 	if (Y[2] < 0.5f) {
 		return YES;
 	} else {
 		return NO;
 	}
-
-	// if (getMoney() <= 0) {
-	// 	return YES;
-	// } else {
-	// 	return NO;
-	// }
 }
 
 Decision AiPlayer::decideUnmortgage(unsigned int index) {
+	std::vector<std::vector<unsigned int>> SETS = {
+		{1, 3}, {6, 8, 9}, {11, 13, 14}, {16, 18, 19}, {21, 23, 24}, {26, 27, 29}, {31, 32, 34}, {37, 39}};
+
 	std::vector<double> Y(9, 0.0);
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
 
+	std::vector<unsigned int> group;
+
+	for (auto set: SETS) {
+		if (std::find(set.begin(), set.end(), index) != set.end()) {
+			group = set;
+			break;
+		}
+	}
+
+	if (getMoney() > 900) {
+		return YES;
+	} else if (std::includes(getFieldOwnedId().begin(), getFieldOwnedId().end(), group.begin(), group.end()) && getMoney() > 440) {
+		return YES;
+	} else {
+		return NO;
+	}
+
+	/*
+	Logic prepared for NEAT AI
+	*/
 	if (Y[3] < 0.5f) {
 		return YES;
 	} else {
@@ -382,6 +487,29 @@ unsigned int AiPlayer::decideAuctionBid(unsigned int price) {
 	std::vector<double> Y(9, 0.0);
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
+
+	if (getAiLevel() == 1) {
+		return price;
+	} else if (getAiLevel() == 2) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		double lower_bound = (double)price * 0.8;
+		double upper_bound = (double)price * 2.0;
+		std::uniform_real_distribution<double> dist(lower_bound, upper_bound);
+		double decision = dist(gen);
+
+		return (unsigned int)decision;
+
+	} else if (getAiLevel() == 3) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		double lower_bound = (double)price * 0.5;
+		double upper_bound = (double)price * 1.2;
+		std::uniform_real_distribution<double> dist(lower_bound, upper_bound);
+		double decision = dist(gen);
+
+		return (unsigned int)decision;
+	}
 
 	double result = Y[4];
 	double money = adapter_.convertMoneyValue(result);
@@ -399,6 +527,70 @@ unsigned int AiPlayer::decideBuildHouse() {
 	double result = Y[5];
 	double money = adapter_.convertHouseValue(result);
 
+	if (getAiLevel() == 1) {
+		if (getMoney() > 1000) {
+			return 15;
+		} else if (getMoney() > 500) {
+			return 6;
+		} else if (getMoney() > 300) {
+			return 1;
+		} else if (getMoney() <= 300) {
+			return 0;
+		}
+	} else if (getAiLevel() == 2) {
+		if (getMoney() > 1000) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(11, 15);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() > 500) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(6, 10);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() > 300) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(1, 5);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() <= 300) {
+			return 0;
+		}
+	} else if (getAiLevel() == 3) {
+		if (getMoney() > 1300) {
+			return 15;
+		} else if (getMoney() > 1000) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(11, 15);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() > 500) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(6, 10);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() > 300) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(1, 5);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() <= 300) {
+			return 0;
+		}
+	}
+
 	return (int)money;
 
 	// return 15;
@@ -411,6 +603,75 @@ unsigned int AiPlayer::decideSellHouse() {
 
 	double result = Y[6];
 	double money = adapter_.convertHouseValue(result);
+
+	if (getAiLevel() == 1) {
+		if (getMoney() > 1000) {
+			return 0;
+		} else if (getMoney() > 500) {
+			return 1;
+		} else if (getMoney() > 100) {
+			return 8;
+		} else if (getMoney() <= 100) {
+			return 15;
+		}
+	} else if (getAiLevel() == 2) {
+		if (getMoney() > 1000) {
+			return 0;
+		} else if (getMoney() > 300) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(1, 3);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() > 100) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(4, 6);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() <= 100) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(7, 15);
+			double decision = dist(gen);
+
+			return decision;
+		}
+	} else if (getAiLevel() == 3) {
+		if (getMoney() > 1300) {
+			return 0;
+		} else if (getMoney() > 1000) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_real_distribution<double> dist(0.0, 1.0);
+			double decision = dist(gen);
+
+			if (decision > 0.9) {
+				return 1;
+			} else if (decision <= 0.9) {
+				return 0;
+			}
+
+		} else if (getMoney() > 300) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(4, 6);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() > 100) {
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<unsigned int> dist(7, 15);
+			double decision = dist(gen);
+
+			return decision;
+		} else if (getMoney() <= 100) {
+			return 15;
+		}
+	}
 
 	return (int)money;
 
@@ -426,6 +687,42 @@ Decision AiPlayer::decideOfferTrade() {
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
 
+	if (getAiLevel() == 1) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision > 0.98) {
+			return YES;
+		} else if (decision <= 0.98) {
+			return NO;
+		}
+	} else if (getAiLevel() == 2) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision > 0.93) {
+			return YES;
+		} else if (decision <= 0.93) {
+			return NO;
+		}
+
+	} else if (getAiLevel() == 3) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision > 0.9) {
+			return YES;
+		} else if (decision <= 0.9) {
+			return NO;
+		}
+	}
+
 	if (Y[7] > 0.5f) {
 		return YES;
 	} else {
@@ -439,6 +736,42 @@ Decision AiPlayer::decideAcceptTrade() {
 	std::vector<double> Y(9, 0.0);
 	std::vector<double> inputs = adapter_.getInputs();
 	neural_network_.evaluate(inputs, Y);
+
+	if (getAiLevel() == 1) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision > 0.2) {
+			return YES;
+		} else if (decision <= 0.2) {
+			return NO;
+		}
+	} else if (getAiLevel() == 2) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision > 0.5) {
+			return YES;
+		} else if (decision <= 0.5) {
+			return NO;
+		}
+
+	} else if (getAiLevel() == 3) {
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_real_distribution<double> dist(0.0, 1.0);
+		double decision = dist(gen);
+
+		if (decision > 0.7) {
+			return YES;
+		} else if (decision <= 0.7) {
+			return NO;
+		}
+	}
 
 	if (Y[8] > 0.5f) {
 		return YES;
