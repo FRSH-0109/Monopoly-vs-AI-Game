@@ -17,7 +17,7 @@
 #include "Player.h"
 
 class GameScreen : public ActiveScreen {
-	monopolyGameEngine monopoly_game_engine_;
+	MonopolyGameEngine monopoly_game_engine_;
 
    public:
 	GameScreen(std::vector<std::shared_ptr<Player>>& players_);

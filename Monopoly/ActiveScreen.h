@@ -25,7 +25,7 @@
 // #include "monopolyGameEngine.h"
 
 class ActiveScreen {
-	ContextWindow* contextWindow_;
+	ContextWindow* context_window_;
 	sf::Font font_;
 	std::vector<std::shared_ptr<Button>> buttons_;
 	std::vector<std::shared_ptr<sf::Text>> texts_;
@@ -38,8 +38,8 @@ class ActiveScreen {
 
 	sf::Font& getFont();
 	void setFont(sf::Font font);
-	void addButton(std::shared_ptr<Button> buttonTmp);
-	void addText(std::shared_ptr<sf::Text> textTmp);
+	void addButton(std::shared_ptr<Button> button_tmp);
+	void addText(std::shared_ptr<sf::Text> text_tmp);
 	std::vector<std::shared_ptr<Button>>& getButtons();
 	std::vector<std::shared_ptr<sf::Text>>& getTexts();
 	ContextWindow* getContextWindow();

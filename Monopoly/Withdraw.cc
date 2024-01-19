@@ -10,22 +10,26 @@
 
 #include "Withdraw.h"
 
+// =============================================================================
+// Withdraw Class Implementation
+// =============================================================================
+
 Withdraw::Withdraw() {
-	player1ToWithDraw_ = nullptr;
-	player2ToWithDraw_ = nullptr;
+	player_1_to_with_draw_ = nullptr;
+	player_2_to_with_draw_ = nullptr;
 }
 
-void Withdraw::setChooseScreenVisible(bool isVisible) {
-	if (isVisible) {
+void Withdraw::setChooseScreenVisible(bool is_visible) {
+	if (is_visible) {
 		choose_player_text_->setFillColor(sf::Color::Black);
 	} else {
 		choose_player_text_->setFillColor(sf::Color::Transparent);
 	}
-	choose_player_1_button_->setIsVisible(isVisible);
-	choose_player_2_button_->setIsVisible(isVisible);
-	choose_player_3_button_->setIsVisible(isVisible);
-	choose_player_4_button_->setIsVisible(isVisible);
-	resign_button_->setIsVisible(isVisible);
+	choose_player_1_button_->setIsVisible(is_visible);
+	choose_player_2_button_->setIsVisible(is_visible);
+	choose_player_3_button_->setIsVisible(is_visible);
+	choose_player_4_button_->setIsVisible(is_visible);
+	resign_button_->setIsVisible(is_visible);
 }
 
 std::vector<unsigned int> Withdraw::getPlayer1IndexProperties() {
@@ -44,9 +48,9 @@ void Withdraw::setPlayer2IndexProperties(std::vector<unsigned int> new_index_pro
 	player_2_index_properties_ = new_index_properties;
 }
 
-void Withdraw::setValueScreenVisible(bool isVisible) {
+void Withdraw::setValueScreenVisible(bool is_visible) {
 	sf::Color color = sf::Color::Black;
-	if (!isVisible) {
+	if (!is_visible) {
 		color = sf::Color::Transparent;
 	}
 
@@ -59,49 +63,49 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 	player_2_index_text_->setFillColor(color);
 	player_2_index_money_->setFillColor(color);
 
-	resign_value_button_->setIsVisible(isVisible);
-	submit_value_button_->setIsVisible(isVisible);
-	minus_1_player_1_button_->setIsVisible(isVisible);
-	minus_10_player_1_button_->setIsVisible(isVisible);
-	minus_100_player_1_button_->setIsVisible(isVisible);
-	plus_1_player_1_button_->setIsVisible(isVisible);
-	plus_10_player_1_button_->setIsVisible(isVisible);
-	plus_100_player_1_button_->setIsVisible(isVisible);
-	minus_1_player_2_button_->setIsVisible(isVisible);
-	minus_10_player_2_button_->setIsVisible(isVisible);
-	minus_100_player_2_button_->setIsVisible(isVisible);
-	plus_1_player_2_button_->setIsVisible(isVisible);
-	plus_10_player_2_button_->setIsVisible(isVisible);
-	plus_100_player_2_button_->setIsVisible(isVisible);
-	next_property_player_1_button_->setIsVisible(isVisible);
-	previous_propertyplayer_1_button_->setIsVisible(isVisible);
-	next_property_player_2_button_->setIsVisible(isVisible);
-	previous_propertyplayer_2_button_->setIsVisible(isVisible);
-	next_property_player_1_index_button_->setIsVisible(isVisible);
-	previous_property_player_1_index_button_->setIsVisible(isVisible);
-	next_property_player_2_index_button_->setIsVisible(isVisible);
-	previousPropertyPlayer2IndexButton_->setIsVisible(isVisible);
-	addPropertyPlayer1Button_->setIsVisible(isVisible);
-	removePropertyPlayer1Button_->setIsVisible(isVisible);
-	addPropertyPlayer2Button_->setIsVisible(isVisible);
-	removePropertyPlayer2Button_->setIsVisible(isVisible);
+	resign_value_button_->setIsVisible(is_visible);
+	submit_value_button_->setIsVisible(is_visible);
+	minus_1_player_1_button_->setIsVisible(is_visible);
+	minus_10_player_1_button_->setIsVisible(is_visible);
+	minus_100_player_1_button_->setIsVisible(is_visible);
+	plus_1_player_1_button_->setIsVisible(is_visible);
+	plus_10_player_1_button_->setIsVisible(is_visible);
+	plus_100_player_1_button_->setIsVisible(is_visible);
+	minus_1_player_2_button_->setIsVisible(is_visible);
+	minus_10_player_2_button_->setIsVisible(is_visible);
+	minus_100_player_2_button_->setIsVisible(is_visible);
+	plus_1_player_2_button_->setIsVisible(is_visible);
+	plus_10_player_2_button_->setIsVisible(is_visible);
+	plus_100_player_2_button_->setIsVisible(is_visible);
+	next_property_player_1_button_->setIsVisible(is_visible);
+	previous_propertyplayer_1_button_->setIsVisible(is_visible);
+	next_property_player_2_button_->setIsVisible(is_visible);
+	previous_propertyplayer_2_button_->setIsVisible(is_visible);
+	next_property_player_1_index_button_->setIsVisible(is_visible);
+	previous_property_player_1_index_button_->setIsVisible(is_visible);
+	next_property_player_2_index_button_->setIsVisible(is_visible);
+	previousPropertyPlayer2IndexButton_->setIsVisible(is_visible);
+	add_property_player_1_button_->setIsVisible(is_visible);
+	remove_property_player_1_button_->setIsVisible(is_visible);
+	add_property_player_2_button_->setIsVisible(is_visible);
+	remove_property_player_2_button_->setIsVisible(is_visible);
 
-	if (isVisible) {
-		player1MoneyBuffer_ = player1ToWithDraw_->getMoney();
-		player2MoneyBuffer_ = player2ToWithDraw_->getMoney();
-		player1MoneyIndexBuffer_ = 0;
-		player2MoneyIndexBuffer_ = 0;
+	if (is_visible) {
+		player_1_money_buffer_ = player_1_to_with_draw_->getMoney();
+		player_2_money_buffer_ = player_2_to_with_draw_->getMoney();
+		player_1_money_index_buffer_ = 0;
+		player_2_money_index_buffer_ = 0;
 		player1Properties_.clear();
 		player_2_properties_.clear();
 		player_1_index_properties_.clear();
 		player_2_index_properties_.clear();
 	}
 
-	if (isVisible) {
-		player_1_text_->setString("Gracz " + std::to_string(player1ToWithDraw_->getId() + 1));
-		player_1_money_->setString("Kasa: " + std::to_string(player1MoneyBuffer_));
+	if (is_visible) {
+		player_1_text_->setString("Gracz " + std::to_string(player_1_to_with_draw_->getId() + 1));
+		player_1_money_->setString("Kasa: " + std::to_string(player_1_money_buffer_));
 
-		for (auto prop : player1ToWithDraw_->getFieldOwnedId()) {
+		for (auto prop : player_1_to_with_draw_->getFieldOwnedId()) {
 			player1Properties_.push_back(prop);
 		}
 
@@ -109,10 +113,10 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 			current_property_player_1_showed_ = player1Properties_[0];
 		}
 
-		player_2_text_->setString("Gracz " + std::to_string(player2ToWithDraw_->getId() + 1));
-		player_2_money_->setString("Kasa: " + std::to_string(player2MoneyBuffer_));
+		player_2_text_->setString("Gracz " + std::to_string(player_2_to_with_draw_->getId() + 1));
+		player_2_money_->setString("Kasa: " + std::to_string(player_2_money_buffer_));
 
-		for (auto prop : player2ToWithDraw_->getFieldOwnedId()) {
+		for (auto prop : player_2_to_with_draw_->getFieldOwnedId()) {
 			player_2_properties_.push_back(prop);
 		}
 
@@ -121,11 +125,11 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 		}
 
 		player_1_index_text_->setString(player_1_text_->getString() + ": Oferta");
-		player_1_index_money_->setString("Kasa: " + std::to_string(player1MoneyIndexBuffer_));
+		player_1_index_money_->setString("Kasa: " + std::to_string(player_1_money_index_buffer_));
 		current_property_player_1_index_showed_ = 0;
 
 		player_2_index_text_->setString(player_2_text_->getString() + ": Oferta");
-		player_2_index_money_->setString("Kasa: " + std::to_string(player2MoneyIndexBuffer_));
+		player_2_index_money_->setString("Kasa: " + std::to_string(player_2_money_index_buffer_));
 		current_property_player_2_index_showed_ = 0;
 
 		showProperty(1);
@@ -135,79 +139,79 @@ void Withdraw::setValueScreenVisible(bool isVisible) {
 	}
 }
 
-void Withdraw::setDecisionScreenVisible(bool isVisible) {
-	resignDecisionButton_->setIsVisible(isVisible);
-	acceptDecisionButton_->setIsVisible(isVisible);
+void Withdraw::setDecisionScreenVisible(bool is_visible) {
+	resign_decision_button_->setIsVisible(is_visible);
+	accpet_decision_button_->setIsVisible(is_visible);
 
 	sf::Color color = sf::Color::Black;
-	if (!isVisible) {
+	if (!is_visible) {
 		color = sf::Color::Transparent;
 	}
 
-	playerInfoText_->setFillColor(color);
-	playerInfoMoney_->setFillColor(color);
-	playerInfoGetProperties_->setFillColor(color);
-	playerInfoLoseProperties_->setFillColor(color);
+	player_info_text_->setFillColor(color);
+	player_info_money_->setFillColor(color);
+	player_info_get_properties_->setFillColor(color);
+	player_info_lose_properties_->setFillColor(color);
 
-	if (isVisible) {
-		playerInfoText_->setString("Decyzja Gracza " + std::to_string(player2ToWithDraw_->getId() + 1) + ": ");
-		playerInfoMoney_->setString(
-			"Transakcja kasy: " + std::to_string((int)player1MoneyIndexBuffer_ - (int)player2MoneyIndexBuffer_));
+	if (is_visible) {
+		player_info_text_->setString("Decyzja Gracza " + std::to_string(player_2_to_with_draw_->getId() + 1) + ": ");
+		player_info_money_->setString("Transakcja kasy: " + std::to_string((int)player_1_money_index_buffer_ -
+																		   (int)player_2_money_index_buffer_));
 	}
-	playerInfoGetProperties_->setString(L"Zdobyte nieruchomości: ");
+	player_info_get_properties_->setString(L"Zdobyte nieruchomości: ");
 	bool addComa = false;
 	if (player_1_index_properties_.size() != 0) {
 		for (auto property : player_1_index_properties_) {
 			std::string name =
 				std::visit([](Field& field) { return field.getName(); }, gameboard_->getFieldById(property));
 			if (addComa) {
-				playerInfoGetProperties_->setString(playerInfoGetProperties_->getString() + ", ");
+				player_info_get_properties_->setString(player_info_get_properties_->getString() + ", ");
 			}
-			playerInfoGetProperties_->setString(playerInfoGetProperties_->getString() + name);
+			player_info_get_properties_->setString(player_info_get_properties_->getString() + name);
 			addComa = true;
 		}
 	} else {
-		playerInfoGetProperties_->setString(playerInfoGetProperties_->getString() + "Brak");
+		player_info_get_properties_->setString(player_info_get_properties_->getString() + "Brak");
 	}
 
-	playerInfoLoseProperties_->setString(L"Stracone nieruchomości: ");
+	player_info_lose_properties_->setString(L"Stracone nieruchomości: ");
 	addComa = false;
 	if (player_2_index_properties_.size() != 0) {
 		for (auto property : player_2_index_properties_) {
 			std::string name =
 				std::visit([](Field& field) { return field.getName(); }, gameboard_->getFieldById(property));
 			if (addComa) {
-				playerInfoLoseProperties_->setString(playerInfoLoseProperties_->getString() + ", ");
+				player_info_lose_properties_->setString(player_info_lose_properties_->getString() + ", ");
 			}
-			playerInfoLoseProperties_->setString(playerInfoLoseProperties_->getString() + name);
+			player_info_lose_properties_->setString(player_info_lose_properties_->getString() + name);
 			addComa = true;
 		}
 	} else {
-		playerInfoLoseProperties_->setString(playerInfoLoseProperties_->getString() + "Brak");
+		player_info_lose_properties_->setString(player_info_lose_properties_->getString() + "Brak");
 	}
 
-	playerInfoText_->setOrigin(
-		playerInfoText_->getGlobalBounds().getSize() / 2.f + playerInfoText_->getLocalBounds().getPosition());
+	player_info_text_->setOrigin(
+		player_info_text_->getGlobalBounds().getSize() / 2.f + player_info_text_->getLocalBounds().getPosition());
 
-	playerInfoMoney_->setOrigin(
-		playerInfoMoney_->getGlobalBounds().getSize() / 2.f + playerInfoMoney_->getLocalBounds().getPosition());
+	player_info_money_->setOrigin(
+		player_info_money_->getGlobalBounds().getSize() / 2.f + player_info_money_->getLocalBounds().getPosition());
 
-	playerInfoGetProperties_->setOrigin(playerInfoGetProperties_->getGlobalBounds().getSize() / 2.f +
-										playerInfoGetProperties_->getLocalBounds().getPosition());
+	player_info_get_properties_->setOrigin(player_info_get_properties_->getGlobalBounds().getSize() / 2.f +
+										   player_info_get_properties_->getLocalBounds().getPosition());
 
-	playerInfoLoseProperties_->setOrigin(playerInfoLoseProperties_->getGlobalBounds().getSize() / 2.f +
-										 playerInfoLoseProperties_->getLocalBounds().getPosition());
+	player_info_lose_properties_->setOrigin(player_info_lose_properties_->getGlobalBounds().getSize() / 2.f +
+											player_info_lose_properties_->getLocalBounds().getPosition());
 }
 
 void Withdraw::createDecisionPlayerScreen() {
 	std::shared_ptr<Button> buttonResign = createDefaultButton("Rezygnuj", 120, 50);
 	buttonResign->setPosition(RESIGN_DECISION_BUTTON_POSITION);
-	resignDecisionButton_ = buttonResign;
+	resign_decision_button_ = buttonResign;
 	addButton(buttonResign);
 
 	std::shared_ptr<Button> buttonAccpet = createDefaultButton("Akceptuj", 120, 50);
 	buttonAccpet->setPosition(ACCEPT_DECISION_BUTTON_POSITION);
-	acceptDecisionButton_ = buttonAccpet;
+	accpet_decision_button_ = buttonAccpet;
 	addButton(buttonAccpet);
 
 	int ystep = 50;
@@ -215,7 +219,7 @@ void Withdraw::createDecisionPlayerScreen() {
 	std::shared_ptr<sf::Text> playerInfoText(new sf::Text("", getFont(), getFontSize() - 2));
 	playerInfoText->setPosition(sf::Vector2f(DECISION_TEXT_POSITION.x, DECISION_TEXT_POSITION.y + ystep * 0));
 	playerInfoText->setFillColor(sf::Color::Transparent);
-	playerInfoText_ = playerInfoText;
+	player_info_text_ = playerInfoText;
 	addText(playerInfoText);
 
 	std::shared_ptr<sf::Text> playerInfoMoney(new sf::Text("", getFont(), getFontSize() - 2));
@@ -223,19 +227,19 @@ void Withdraw::createDecisionPlayerScreen() {
 	playerInfoMoney->setFillColor(sf::Color::Transparent);
 	playerInfoMoney->setOrigin(
 		playerInfoMoney->getGlobalBounds().getSize() / 2.f + playerInfoMoney->getLocalBounds().getPosition());
-	playerInfoMoney_ = playerInfoMoney;
+	player_info_money_ = playerInfoMoney;
 	addText(playerInfoMoney);
 
 	std::shared_ptr<sf::Text> playerInfoGetProperties(new sf::Text("", getFont(), getFontSize() - 2));
 	playerInfoGetProperties->setPosition(sf::Vector2f(DECISION_TEXT_POSITION.x, DECISION_TEXT_POSITION.y + ystep * 2));
 	playerInfoGetProperties->setFillColor(sf::Color::Transparent);
-	playerInfoGetProperties_ = playerInfoGetProperties;
+	player_info_get_properties_ = playerInfoGetProperties;
 	addText(playerInfoGetProperties);
 
 	std::shared_ptr<sf::Text> playerInfoLoseProperties(new sf::Text("", getFont(), getFontSize() - 2));
 	playerInfoLoseProperties->setPosition(sf::Vector2f(DECISION_TEXT_POSITION.x, DECISION_TEXT_POSITION.y + ystep * 3));
 	playerInfoLoseProperties->setFillColor(sf::Color::Transparent);
-	playerInfoLoseProperties_ = playerInfoLoseProperties;
+	player_info_lose_properties_ = playerInfoLoseProperties;
 	addText(playerInfoLoseProperties);
 }
 
@@ -433,22 +437,22 @@ void Withdraw::createValuePlayerScreen() {
 
 	std::shared_ptr<Button> buttoAdd1 = createDefaultButton(">>>", 120, 50);
 	buttoAdd1->setPosition(ADD_PROPERTY_PLAYER1_BUTTON_POSITION);
-	addPropertyPlayer1Button_ = buttoAdd1;
+	add_property_player_1_button_ = buttoAdd1;
 	addButton(buttoAdd1);
 
 	std::shared_ptr<Button> buttonRemove1 = createDefaultButton("<<<", 120, 50);
 	buttonRemove1->setPosition(REMOVE_PROPERTY_PLAYER1_BUTTON_POSITION);
-	removePropertyPlayer1Button_ = buttonRemove1;
+	remove_property_player_1_button_ = buttonRemove1;
 	addButton(buttonRemove1);
 
 	std::shared_ptr<Button> buttoAdd2 = createDefaultButton("<<<", 120, 50);
 	buttoAdd2->setPosition(ADD_PROPERTY_PLAYER2_BUTTON_POSITION);
-	addPropertyPlayer2Button_ = buttoAdd2;
+	add_property_player_2_button_ = buttoAdd2;
 	addButton(buttoAdd2);
 
 	std::shared_ptr<Button> buttonRemove2 = createDefaultButton(">>>", 120, 50);
 	buttonRemove2->setPosition(REMOVE_PROPERTY_PLAYER2_BUTTON_POSITION);
-	removePropertyPlayer2Button_ = buttonRemove2;
+	remove_property_player_2_button_ = buttonRemove2;
 	addButton(buttonRemove2);
 }
 
@@ -516,11 +520,11 @@ void Withdraw::setBoard(std::shared_ptr<Board> board_ptr) {
 }
 
 void Withdraw::setTurnState(TurnState state) {
-	turnStatePrev_ = state;
+	turn_state_prev_ = state;
 }
 
 TurnState Withdraw::getTurnState() {
-	return turnStatePrev_;
+	return turn_state_prev_;
 }
 
 void Withdraw::setFont(sf::Font font) {
@@ -535,13 +539,13 @@ unsigned int Withdraw::getFontSize() const {
 	return FONT_SIZE;
 }
 
-void Withdraw::addButton(std::shared_ptr<Button> buttonTmp) {
-	std::shared_ptr<Button> button = buttonTmp;
+void Withdraw::addButton(std::shared_ptr<Button> button_tmp) {
+	std::shared_ptr<Button> button = button_tmp;
 	buttons_.push_back(button);
 }
 
-void Withdraw::addText(std::shared_ptr<sf::Text> textTmp) {
-	std::shared_ptr<sf::Text> text = textTmp;
+void Withdraw::addText(std::shared_ptr<sf::Text> text_tmp) {
+	std::shared_ptr<sf::Text> text = text_tmp;
 	texts_.push_back(text);
 }
 
@@ -574,11 +578,11 @@ std::shared_ptr<Button> Withdraw::getResignButton() {
 }
 
 void Withdraw::setPlayer1ToWithdraw(std::shared_ptr<Player> player_ptr) {
-	player1ToWithDraw_ = player_ptr;
+	player_1_to_with_draw_ = player_ptr;
 }
 
 void Withdraw::setPlayer2ToWithdraw(std::shared_ptr<Player> player_ptr) {
-	player2ToWithDraw_ = player_ptr;
+	player_2_to_with_draw_ = player_ptr;
 }
 
 std::shared_ptr<Button> Withdraw::getResignValueButton() {
@@ -590,11 +594,11 @@ std::shared_ptr<Button> Withdraw::getSubmitValueButton() {
 }
 
 std::shared_ptr<Player> Withdraw::getPlayer1ToWithdraw() {
-	return player1ToWithDraw_;
+	return player_1_to_with_draw_;
 }
 
 std::shared_ptr<Player> Withdraw::getPlayer2ToWithdraw() {
-	return player2ToWithDraw_;
+	return player_2_to_with_draw_;
 }
 
 std::shared_ptr<Button> Withdraw::getPlayer1minus1() {
@@ -669,43 +673,43 @@ std::shared_ptr<Button> Withdraw::getPlayer2IndexPreviousButton() {
 }
 
 std::shared_ptr<Button> Withdraw::getPlayer1AddButton() {
-	return addPropertyPlayer1Button_;
+	return add_property_player_1_button_;
 }
 std::shared_ptr<Button> Withdraw::getPlayer1RemoveButton() {
-	return removePropertyPlayer1Button_;
+	return remove_property_player_1_button_;
 }
 std::shared_ptr<Button> Withdraw::getPlayer2AddButton() {
-	return addPropertyPlayer2Button_;
+	return add_property_player_2_button_;
 }
 std::shared_ptr<Button> Withdraw::getPlayer2RemoveButton() {
-	return removePropertyPlayer2Button_;
+	return remove_property_player_2_button_;
 }
 
-void Withdraw::moneyTransferIndex(unsigned int playerNum, int money) {
-	if (playerNum == 1) {
-		if (money > 0 && money > (int)player1MoneyBuffer_) {
+void Withdraw::moneyTransferIndex(unsigned int player_num, int money) {
+	if (player_num == 1) {
+		if (money > 0 && money > (int)player_1_money_buffer_) {
 			return;
-		} else if (money < 0 && (money * -1) > (int)player1MoneyIndexBuffer_) {
-			return;
-		}
-		player1MoneyBuffer_ -= money;
-		player1MoneyIndexBuffer_ += money;
-	} else if (playerNum == 2) {
-		if (money > 0 && money > (int)player2MoneyBuffer_) {
-			return;
-		} else if (money < 0 && (money * -1) > (int)player2MoneyIndexBuffer_) {
+		} else if (money < 0 && (money * -1) > (int)player_1_money_index_buffer_) {
 			return;
 		}
-		player2MoneyBuffer_ -= money;
-		player2MoneyIndexBuffer_ += money;
+		player_1_money_buffer_ -= money;
+		player_1_money_index_buffer_ += money;
+	} else if (player_num == 2) {
+		if (money > 0 && money > (int)player_2_money_buffer_) {
+			return;
+		} else if (money < 0 && (money * -1) > (int)player_2_money_index_buffer_) {
+			return;
+		}
+		player_2_money_buffer_ -= money;
+		player_2_money_index_buffer_ += money;
 	}
 }
 
 void Withdraw::moneyTextUpdate() {
-	player_1_money_->setString("Kasa: " + std::to_string(player1MoneyBuffer_));
-	player_2_money_->setString("Kasa: " + std::to_string(player2MoneyBuffer_));
-	player_1_index_money_->setString("Kasa: " + std::to_string(player1MoneyIndexBuffer_));
-	player_2_index_money_->setString("Kasa: " + std::to_string(player2MoneyIndexBuffer_));
+	player_1_money_->setString("Kasa: " + std::to_string(player_1_money_buffer_));
+	player_2_money_->setString("Kasa: " + std::to_string(player_2_money_buffer_));
+	player_1_index_money_->setString("Kasa: " + std::to_string(player_1_money_index_buffer_));
+	player_2_index_money_->setString("Kasa: " + std::to_string(player_2_money_index_buffer_));
 }
 
 void Withdraw::showProperty(int column) {
@@ -729,8 +733,8 @@ void Withdraw::showProperty(int column) {
 			break;
 
 		case 2:
-			it = find(
-				player_1_index_properties_.begin(), player_1_index_properties_.end(), current_property_player_1_index_showed_);
+			it = find(player_1_index_properties_.begin(), player_1_index_properties_.end(),
+				current_property_player_1_index_showed_);
 			index = it - player_1_index_properties_.begin();
 			isEmpty = player_1_index_properties_.size() == 0;
 			pos = (isEmpty) ? 0 : player_1_index_properties_[index];
@@ -739,8 +743,8 @@ void Withdraw::showProperty(int column) {
 			break;
 
 		case 3:
-			it = find(
-				player_2_index_properties_.begin(), player_2_index_properties_.end(), current_property_player_2_index_showed_);
+			it = find(player_2_index_properties_.begin(), player_2_index_properties_.end(),
+				current_property_player_2_index_showed_);
 			index = it - player_2_index_properties_.begin();
 			isEmpty = player_2_index_properties_.size() == 0;
 			pos = (isEmpty) ? 0 : player_2_index_properties_[index];
@@ -808,7 +812,7 @@ void Withdraw::showProperty(int column) {
 
 		sf::Vector2f dataPos;
 
-		dataPos = PROPERTY_POSITION;						 ////////////////////////////
+		dataPos = PROPERTY_POSITION;  ////////////////////////////
 		// if (!propertyTexture->loadFromFile(graphic_path)) {	 ////////////////////////
 		// 	propertySprite.setColor(sf::Color::Green);
 		// }
@@ -1215,14 +1219,14 @@ void Withdraw::addPropertyPlayerShowed(int i, unsigned int col) {
 	}
 }
 
-void Withdraw::propertyPlayerMoveIndex(int dir, unsigned int plrNum) {
+void Withdraw::propertyPlayerMoveIndex(int dir, unsigned int plr_num) {
 	std::vector<unsigned int> properties;
 	unsigned int currentProperty;
 
 	std::vector<unsigned int> propertiesIndex;
 	unsigned int currentPropertyIndex;
 
-	switch (plrNum) {
+	switch (plr_num) {
 		case 1:
 			properties = player1Properties_;
 			currentProperty = current_property_player_1_showed_;
@@ -1265,7 +1269,7 @@ void Withdraw::propertyPlayerMoveIndex(int dir, unsigned int plrNum) {
 			break;
 	}
 
-	switch (plrNum) {
+	switch (plr_num) {
 		case 1:
 			player1Properties_ = properties;
 			player_1_index_properties_ = propertiesIndex;
@@ -1319,19 +1323,19 @@ void Withdraw::propertyPlayerMoveIndex(int dir, unsigned int plrNum) {
 }
 
 std::shared_ptr<Button> Withdraw::getResignDecisionButton() {
-	return resignDecisionButton_;
+	return resign_decision_button_;
 }
 
 std::shared_ptr<Button> Withdraw::getAcceptDecisionButton() {
-	return acceptDecisionButton_;
+	return accpet_decision_button_;
 }
 
 void Withdraw::makeWithdraw() {
 	// money flow
-	player1ToWithDraw_->addMoney(player2MoneyIndexBuffer_);
-	player2ToWithDraw_->addMoney(player1MoneyIndexBuffer_);
-	player1ToWithDraw_->substractMoney(player1MoneyIndexBuffer_);
-	player2ToWithDraw_->substractMoney(player2MoneyIndexBuffer_);
+	player_1_to_with_draw_->addMoney(player_2_money_index_buffer_);
+	player_2_to_with_draw_->addMoney(player_1_money_index_buffer_);
+	player_1_to_with_draw_->substractMoney(player_1_money_index_buffer_);
+	player_2_to_with_draw_->substractMoney(player_2_money_index_buffer_);
 
 	// properties flow
 	auto it = find(player_1_index_properties_.begin(), player_1_index_properties_.end(), 0);
@@ -1339,24 +1343,24 @@ void Withdraw::makeWithdraw() {
 	// 1 -> 2
 	for (auto property : player_1_index_properties_) {
 		it = find(player_1_index_properties_.begin(), player_1_index_properties_.end(), property);
-		player2ToWithDraw_->addFieldOwnedId(property);
-		player1ToWithDraw_->removeFieldOwnedId(property);
+		player_2_to_with_draw_->addFieldOwnedId(property);
+		player_1_to_with_draw_->removeFieldOwnedId(property);
 		FieldType type = std::visit(
 			[](Field& visited_field) { return visited_field.getType(); }, gameboard_->getFieldById(property));
 		switch (type) {
 			case STREET: {
 				StreetField& visited_field = std::get<StreetField>(gameboard_->getFieldById(property));
-				visited_field.setOwner(player2ToWithDraw_);
+				visited_field.setOwner(player_2_to_with_draw_);
 			} break;
 
 			case UTILITY: {
 				UtilityField& visited_field = std::get<UtilityField>(gameboard_->getFieldById(property));
-				visited_field.setOwner(player2ToWithDraw_);
+				visited_field.setOwner(player_2_to_with_draw_);
 			} break;
 
 			case STATION: {
 				StationField& visited_field = std::get<StationField>(gameboard_->getFieldById(property));
-				visited_field.setOwner(player2ToWithDraw_);
+				visited_field.setOwner(player_2_to_with_draw_);
 			} break;
 
 			default:
@@ -1366,24 +1370,24 @@ void Withdraw::makeWithdraw() {
 	// 2 -> 1
 	for (auto property : player_2_index_properties_) {
 		it = find(player_2_index_properties_.begin(), player_2_index_properties_.end(), property);
-		player1ToWithDraw_->addFieldOwnedId(property);
-		player2ToWithDraw_->removeFieldOwnedId(property);
+		player_1_to_with_draw_->addFieldOwnedId(property);
+		player_2_to_with_draw_->removeFieldOwnedId(property);
 		FieldType type = std::visit(
 			[](Field& visited_field) { return visited_field.getType(); }, gameboard_->getFieldById(property));
 		switch (type) {
 			case STREET: {
 				StreetField& visited_field = std::get<StreetField>(gameboard_->getFieldById(property));
-				visited_field.setOwner(player1ToWithDraw_);
+				visited_field.setOwner(player_1_to_with_draw_);
 			} break;
 
 			case UTILITY: {
 				UtilityField& visited_field = std::get<UtilityField>(gameboard_->getFieldById(property));
-				visited_field.setOwner(player1ToWithDraw_);
+				visited_field.setOwner(player_1_to_with_draw_);
 			} break;
 
 			case STATION: {
 				StationField& visited_field = std::get<StationField>(gameboard_->getFieldById(property));
-				visited_field.setOwner(player1ToWithDraw_);
+				visited_field.setOwner(player_1_to_with_draw_);
 			} break;
 			default:
 				break;
@@ -1393,9 +1397,9 @@ void Withdraw::makeWithdraw() {
 
 bool Withdraw::isNonZeroValue() {
 	if (ALLOW_ONE_SIDE_BENEFIT_WITHDRAW) {
-		if (player1MoneyIndexBuffer_ != 0) {
+		if (player_1_money_index_buffer_ != 0) {
 			return true;
-		} else if (player2MoneyIndexBuffer_ != 0) {
+		} else if (player_2_money_index_buffer_ != 0) {
 			return true;
 		} else if (player_1_index_properties_.size() != 0) {
 			return true;
@@ -1403,8 +1407,8 @@ bool Withdraw::isNonZeroValue() {
 			return true;
 		}
 	} else {
-		if ((player1MoneyIndexBuffer_ != 0 || player_1_index_properties_.size() != 0) &&
-			(player2MoneyIndexBuffer_ != 0 || player_2_index_properties_.size() != 0)) {
+		if ((player_1_money_index_buffer_ != 0 || player_1_index_properties_.size() != 0) &&
+			(player_2_money_index_buffer_ != 0 || player_2_index_properties_.size() != 0)) {
 			return true;
 		}
 	}

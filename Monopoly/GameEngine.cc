@@ -11,44 +11,48 @@
 
 #include "GameEngine.h"
 
-GameEngine::GameEngine(double frameRateHz, uint WindowWidth, uint WindowHeight) {
-	windowWidth_ = WindowWidth;
-	windowHeight_ = WindowHeight;
+// =============================================================================
+// GameEngine Class Implementation
+// =============================================================================
 
-	frameRateHz_ = frameRateHz;
-	frameRateDelayMs_ = sf::milliseconds(1000.0 / frameRateHz_);
+GameEngine::GameEngine(double frame_rate_hz, uint window_width, uint window_height) {
+	window_width_ = window_width;
+	window_height_ = window_height;
 
-	contextWindow_ = ContextWindow::GetInstance();
+	frame_rate_hz_ = frame_rate_hz;
+	frame_rate_delay_ms_ = sf::milliseconds(1000.0 / frame_rate_hz_);
+
+	context_window_ = ContextWindow::GetInstance();
 	getContextWindow()->getWindow().create(
-		sf::VideoMode(WindowWidth, WindowHeight), "MonopolyVsAI", sf::Style::Default);
+		sf::VideoMode(window_width, window_height), "MonopolyVsAI", sf::Style::Default);
 
 	const sf::Vector2i pos(0, 0);
 	getContextWindow()->getWindow().setPosition(pos);
 	getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
 
-	activeScreen_ = std::make_unique<MainMenuScreen>();
+	active_screen_ = std::make_unique<MainMenuScreen>();
 
 	players_.clear();
 }
 
-GameEngine::GameEngine(double frameRateHz) {
-	frameRateHz_ = frameRateHz;
-	frameRateDelayMs_ = sf::milliseconds(1000.0 / frameRateHz_);
+GameEngine::GameEngine(double frame_rate_hz) {
+	frame_rate_hz_ = frame_rate_hz;
+	frame_rate_delay_ms_ = sf::milliseconds(1000.0 / frame_rate_hz_);
 
-	contextWindow_ = ContextWindow::GetInstance();
+	context_window_ = ContextWindow::GetInstance();
 	getContextWindow()->getWindow().create(sf::VideoMode(1, 1), "MonopolyVsAI", sf::Style::Default);
 
 	const sf::Vector2i pos(0, 0);
 	getContextWindow()->getWindow().setPosition(pos);
 	getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
 
-	// activeScreen_ = std::make_unique<MainMenuScreen>();
+	// active_screen_ = std::make_unique<MainMenuScreen>();
 
 	players_.clear();
 }
 
 ContextWindow* GameEngine::getContextWindow() {
-	return contextWindow_;
+	return context_window_;
 }
 
 void GameEngine::clear() {
@@ -76,18 +80,18 @@ void GameEngine::display() {
 	static sf::Time timeElapsedFromLastFrame_ms = sf::milliseconds(0);
 
 	timeElapsedFromLastFrame_ms = clock_frames.getElapsedTime();
-	if (timeElapsedFromLastFrame_ms >= frameRateDelayMs_) {
+	if (timeElapsedFromLastFrame_ms >= frame_rate_delay_ms_) {
 		clock_frames.restart();
 		getContextWindow()->display();
 	}
 }
 
-std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_ptr<Player>>& playersVec) {
+std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_ptr<Player>>& players_vec) {
 	players_.clear();
-	if (playersVec.size() > 1) {  // if passed more than 1 player to worker
-		players_ = playersVec;
-		activeScreen_.reset();
-		activeScreen_ = std::make_unique<GameScreen>(players_);
+	if (players_vec.size() > 1) {  // if passed more than 1 player to worker
+		players_ = players_vec;
+		active_screen_.reset();
+		active_screen_ = std::make_unique<GameScreen>(players_);
 	}
 
 	while (getContextWindow()->isOpen()) {
@@ -98,29 +102,29 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 			pollForEvents(event);
 		}
 
-		ScreenEventType eventType = IDLE;
-		// activeScreen_->draw();
-		eventType = activeScreen_->worker();
+		ScreenEventType event_type = IDLE;
+		// active_screen_->draw();
+		event_type = active_screen_->worker();
 
-		switch (eventType) {
+		switch (event_type) {
 			case PLAY:
-				activeScreen_.reset();
-				activeScreen_ = std::make_unique<GameMenuScreen>();
+				active_screen_.reset();
+				active_screen_ = std::make_unique<GameMenuScreen>();
 				break;
 			case EXIT: {
 				players_.clear();
 				return players_;  // return empty vector
 			} break;
 			case RETURN_TO_MAIN_MENU:
-				activeScreen_.reset();
-				activeScreen_ = std::make_unique<MainMenuScreen>();
+				active_screen_.reset();
+				active_screen_ = std::make_unique<MainMenuScreen>();
 				break;
 			case START_GAME: {
 				std::vector<std::shared_ptr<playerSettings>> playerSettingsList_;
-				playerSettingsList_ = activeScreen_->getPlayersSettings();
+				playerSettingsList_ = active_screen_->getPlayersSettings();
 				players_.clear();
 				for (auto playerSettings :
-					activeScreen_->getPlayersSettings())  // crete temporary players vector to pass to gameScreen and
+					active_screen_->getPlayersSettings())  // crete temporary players vector to pass to gameScreen and
 														  // then monopoly engine
 				{
 					if (!(playerSettings->isNone)) {
@@ -147,11 +151,11 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 				if (counterOfNones >= 3) {
 					break;
 				}
-				activeScreen_.reset();
-				activeScreen_ = std::make_unique<GameScreen>(players_);
+				active_screen_.reset();
+				active_screen_ = std::make_unique<GameScreen>(players_);
 			} break;
 			case GAME_ENDED:
-				return activeScreen_->getPlayersResult();
+				return active_screen_->getPlayersResult();
 				break;
 			default:
 				break;
@@ -161,10 +165,10 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 	}
 }
 
-unsigned int GameEngine::getWindowWidth() const {
-	return windowWidth_;
+unsigned int GameEngine::getwindow_width() const {
+	return window_width_;
 }
 
-unsigned int GameEngine::getWindowHeight() const {
-	return windowHeight_;
+unsigned int GameEngine::getwindow_height() const {
+	return window_height_;
 }

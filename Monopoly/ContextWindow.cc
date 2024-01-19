@@ -11,15 +11,19 @@
 
 #include "ContextWindow.h"
 
-ContextWindow* ContextWindow::contextWindow_ = nullptr;
+// =============================================================================
+// ContextWindow Class Implementation
+// =============================================================================
+
+ContextWindow* ContextWindow::context_window_ = nullptr;
 
 ContextWindow::ContextWindow(){};
 
 ContextWindow* ContextWindow::GetInstance() {
-	if (contextWindow_ == nullptr) {
-		contextWindow_ = new ContextWindow();
+	if (context_window_ == nullptr) {
+		context_window_ = new ContextWindow();
 	}
-	return contextWindow_;
+	return context_window_;
 }
 
 void ContextWindow::display() {

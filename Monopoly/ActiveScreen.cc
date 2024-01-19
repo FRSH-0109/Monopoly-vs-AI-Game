@@ -21,13 +21,13 @@ sf::Font& ActiveScreen::getFont() {
 	return font_;
 }
 
-void ActiveScreen::addButton(std::shared_ptr<Button> buttonTmp) {
-	std::shared_ptr<Button> button = buttonTmp;
+void ActiveScreen::addButton(std::shared_ptr<Button> button_tmp) {
+	std::shared_ptr<Button> button = button_tmp;
 	buttons_.push_back(button);
 }
 
-void ActiveScreen::addText(std::shared_ptr<sf::Text> textTmp) {
-	std::shared_ptr<sf::Text> text = textTmp;
+void ActiveScreen::addText(std::shared_ptr<sf::Text> text_tmp) {
+	std::shared_ptr<sf::Text> text = text_tmp;
 	texts_.push_back(text);
 }
 
@@ -52,11 +52,11 @@ void GameMenuScreen::draw() {
 }
 
 void ActiveScreen::setContextWindow(ContextWindow* cw) {
-	contextWindow_ = cw;
+	context_window_ = cw;
 }
 
 ContextWindow* ActiveScreen::getContextWindow() {
-	return contextWindow_;
+	return context_window_;
 }
 
 ActiveScreenType ActiveScreen::getScreenType() {
@@ -77,7 +77,7 @@ void MainMenuScreen::mainMenuCreate() {
 
 	// TODO: exception handling
 	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
-		// std::cout << "Font not found!\n";
+	// std::cout << "Font not found!\n";
 
 	setFont(getFont());
 
@@ -194,7 +194,7 @@ void GameMenuScreen::gameMenuCreate() {
 
 	// TODO: exception handling
 	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
-		// std::cout << "Font not found!\n";
+	// std::cout << "Font not found!\n";
 
 	setFont(getFont());
 

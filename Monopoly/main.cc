@@ -128,21 +128,21 @@ int main() {
 					}
 
 					if (g.fitness > max_fitness) {
-							third_fitness = second_performer.fitness;
-							third_performer = second_performer;
-							second_fitness = best_performer.fitness;
-							second_performer = best_performer;
-							max_fitness = g.fitness;
-							best_performer = g;
-						} else if (g.fitness > second_fitness) {
-							third_fitness = second_performer.fitness;
-							third_performer = second_performer;
-							second_fitness = g.fitness;
-							second_performer = g;
-						} else if (g.fitness > third_fitness) {
-							third_fitness = g.fitness;
-							third_performer = g;
-						}
+						third_fitness = second_performer.fitness;
+						third_performer = second_performer;
+						second_fitness = best_performer.fitness;
+						second_performer = best_performer;
+						max_fitness = g.fitness;
+						best_performer = g;
+					} else if (g.fitness > second_fitness) {
+						third_fitness = second_performer.fitness;
+						third_performer = second_performer;
+						second_fitness = g.fitness;
+						second_performer = g;
+					} else if (g.fitness > third_fitness) {
+						third_fitness = g.fitness;
+						third_performer = g;
+					}
 				}
 				// std::sort((*s).genomes.begin(), (*s).genomes.end(), genomeComp);
 				// }
