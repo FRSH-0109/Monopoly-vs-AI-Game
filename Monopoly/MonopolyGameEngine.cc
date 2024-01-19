@@ -1732,7 +1732,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 				if (isButtonClicked(getWithdraw().getResignButton()) ||
 					isButtonClicked(getWithdraw().getResignValueButton()) ||
 					isButtonClicked(getWithdraw().getResignDecisionButton()) ||
-					getScreenType() == WITHDRAW_DECISION && getWithdraw().getPlayer2ToWithdraw()->getIsAi() && getWithdraw().getPlayer2ToWithdraw()->decideAcceptTrade() == NO) {
+					(getScreenType() == WITHDRAW_DECISION && getWithdraw().getPlayer2ToWithdraw()->getIsAi() && getWithdraw().getPlayer2ToWithdraw()->decideAcceptTrade() == NO)) {
 					getWithdraw().setChooseScreenVisible(false);
 					getWithdraw().setValueScreenVisible(false);
 					getWithdraw().setDecisionScreenVisible(false);
@@ -2759,11 +2759,11 @@ void MonopolyGameEngine::showPropertyData(unsigned int pos, bool is_property_sho
 	sf::Vector2f dataPos;
 	if (is_property_shown_to_buy) {
 		dataPos = PROPERTY_DATA_POSITION;
-		if (!propertyDataTexture_.loadFromFile(graphic_path)) {
-			propertyDataSprite_.setColor(sf::Color::Green);
+		if (!property_data_texture_.loadFromFile(graphic_path)) {
+			property_data_sprite_.setColor(sf::Color::Green);
 		}
-		propertyDataSprite_.setTexture(propertyDataTexture_, true);
-		sf::Vector2u texture_dim = propertyDataTexture_.getSize();
+		property_data_sprite_.setTexture(property_data_texture_, true);
+		sf::Vector2u texture_dim = property_data_texture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
 		float scale_y = (float)height / (float)texture_dim.y;
 		const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);
@@ -2773,11 +2773,11 @@ void MonopolyGameEngine::showPropertyData(unsigned int pos, bool is_property_sho
 
 	} else {
 		dataPos = ALL_PROPERTY_DATA_POSITION;
-		if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
-			allPropertyDataSprite_.setColor(sf::Color::Green);
+		if (!all_property_data_texture_.loadFromFile(graphic_path)) {
+			all_property_data_sprite_.setColor(sf::Color::Green);
 		}
-		allPropertyDataSprite_.setTexture(allPropertyDataTexture_, true);
-		sf::Vector2u texture_dim = allPropertyDataTexture_.getSize();
+		all_property_data_sprite_.setTexture(all_property_data_texture_, true);
+		sf::Vector2u texture_dim = all_property_data_texture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
 		float scale_y = (float)height / (float)texture_dim.y;
 		const sf::Vector2f SCALE_VECT = sf::Vector2f(scale_x, scale_y);

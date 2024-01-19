@@ -102,9 +102,9 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 			pollForEvents(event);
 		}
 
-		ScreenEventType eventType = IDLE;
-		activeScreen_->draw();
-		eventType = activeScreen_->worker();
+		ScreenEventType event_type = IDLE;
+		active_screen_->draw();
+		event_type = active_screen_->worker();
 
 		switch (event_type) {
 			case PLAY:
