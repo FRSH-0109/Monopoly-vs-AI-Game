@@ -180,9 +180,9 @@ void Player::createSprite() {
 	const float WIDTH = 20.0;
 	const float HEIGHT = 20.0;
 	const std::string TEXTURE_PATH = "textures_and_fonts/textures/Pionek_monopoly.png";
-	if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
-		player_sprite_.setColor(sf::Color::Black);
-	}
+	// if (!player_texture_.loadFromFile(TEXTURE_PATH)) {
+	// 	player_sprite_.setColor(sf::Color::Black);
+	// }
 	player_sprite_.setTexture(player_texture_, true);
 	player_sprite_.setColor(color_);
 	player_sprite_.setOrigin(
