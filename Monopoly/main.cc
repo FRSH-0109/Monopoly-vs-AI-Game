@@ -58,7 +58,7 @@ int main() {
 
 	if (TRAIN) {
 		neat::pool p(127, 9);
-		p.import_fromfile("monopoly_level1_ai.res");
+		p.import_fromfile("monopoly_level3_ai.res");
 		srand(time(NULL));
 		unsigned int max_fitness = 0;
 		unsigned int second_fitness = 0;
