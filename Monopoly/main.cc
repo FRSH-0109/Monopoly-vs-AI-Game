@@ -17,9 +17,9 @@ unsigned int HEIGHT_MAX = 1080;
 unsigned int width;
 unsigned int height;
 
-unsigned int FRAMES_PER_SEC_MAX = 1;
+unsigned int FRAMES_PER_SEC_MAX = 30;
 
-bool TRAIN = true;
+bool TRAIN = false;
 int GAMES_IN_ROUND = 5;
 
 static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
@@ -30,7 +30,7 @@ static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 }
 
 static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>> players) {
-	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX); // , width, height
+	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX, width, height); // , width, height
 	std::vector<std::shared_ptr<Player>> players_ret = gameEngine->worker(players);
 	gameEngine->getContextWindow()->getWindow().close();
 	gameEngine.reset();
@@ -66,13 +66,20 @@ int main() {
 		unsigned int generations = 100;
 		unsigned int swiss_rounds = 10;
 		auto spiece = p.species.begin();
-		neat::genome former_best_performer = (*spiece).genomes[0];
-		neat::genome former_second_performer = (*spiece).genomes[1];
-		neat::genome former_third_performer = (*spiece).genomes[2];
 
-		neat::genome best_performer = (*spiece).genomes[0];
-		neat::genome second_performer = (*spiece).genomes[1];
-		neat::genome third_performer = (*spiece).genomes[2];
+		neat::genome former_best_performer = (*spiece).genomes[0];
+		neat::genome best_performer = former_best_performer;
+
+		spiece++;
+
+		neat::genome former_second_performer = (*spiece).genomes[0];
+		neat::genome second_performer = former_second_performer;
+
+		spiece++;
+
+		neat::genome former_third_performer = (*spiece).genomes[0];
+		neat::genome third_performer = former_third_performer;
+
 		for (int gen = 0; gen < generations; ++gen) {
 			max_fitness = 0;
 			second_fitness = 0;
@@ -125,8 +132,6 @@ int main() {
 							// 	g4.fitness += reward;
 							// }
 						}
-
-						player_1_nn.export_tofile("level_3_ai");
 
 						if (g.fitness > max_fitness) {
 							third_fitness = second_performer.fitness;

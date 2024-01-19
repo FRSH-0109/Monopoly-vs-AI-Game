@@ -13,12 +13,12 @@
 
 monopolyGameEngine::monopolyGameEngine() {
 	turnState_ = ROLL_DICE;
-	// if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
-	// 	// TODO: exception
-	// }
-	// if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
-	// 	// TODO: exception
-	// }
+	if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
+		// TODO: exception
+	}
+	if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
+		// TODO: exception
+	}
 
 	fileLoggerOpen();
 }
@@ -1228,6 +1228,7 @@ bool monopolyGameEngine::monopolyGameWorker() {
 		static bool playerChanged = true;
 		static bool playerBankrutedNow = false;
 		static bool ai_bankrupted = false;
+		bool decision_made = false;
 
 		if (isButtonClicked(bankruptButton_) ||
 			(players_[playerIndexturn_]->getIsAi() && ai_bankrupted)) {	 // player decied to go bankrupt
@@ -1725,7 +1726,8 @@ bool monopolyGameEngine::monopolyGameWorker() {
 			case WITHDRAW_ONGOING:
 				if (isButtonClicked(getWithdraw().getResignButton()) ||
 					isButtonClicked(getWithdraw().getResignValueButton()) ||
-					isButtonClicked(getWithdraw().getResignDecisionButton())) {
+					isButtonClicked(getWithdraw().getResignDecisionButton()) ||
+					getScreenType() == WITHDRAW_DECISION && getWithdraw().getPlayer2ToWithdraw()->getIsAi() && getWithdraw().getPlayer2ToWithdraw()->decideAcceptTrade() == NO) {
 					getWithdraw().setChooseScreenVisible(false);
 					getWithdraw().setValueScreenVisible(false);
 					getWithdraw().setDecisionScreenVisible(false);
@@ -1846,7 +1848,15 @@ bool monopolyGameEngine::monopolyGameWorker() {
 							getWithdraw().setValueScreenVisible(false);
 						}
 					} else if (getScreenType() == WITHDRAW_DECISION) {
-						if (isButtonClicked(getWithdraw().getAcceptDecisionButton())) {
+						if (getWithdraw().getPlayer2ToWithdraw()->getIsAi() && getWithdraw().getPlayer2ToWithdraw()->decideAcceptTrade() == YES) {
+							getWithdraw().makeWithdraw();
+							getWithdraw().setChooseScreenVisible(false);
+							getWithdraw().setValueScreenVisible(false);
+							getWithdraw().setDecisionScreenVisible(false);
+							setScreenType(BOARDGAME);
+							setTurnState(getWithdraw().getTurnState());
+							getWithdraw().setPlayer2ToWithdraw(nullptr);
+						} else if (isButtonClicked(getWithdraw().getAcceptDecisionButton()) && !getWithdraw().getPlayer2ToWithdraw()->getIsAi()) {
 							getWithdraw().makeWithdraw();
 							getWithdraw().setChooseScreenVisible(false);
 							getWithdraw().setValueScreenVisible(false);
@@ -2744,9 +2754,9 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	sf::Vector2f dataPos;
 	if (isPropertyShownToBuy) {
 		dataPos = PROPERTY_DATA_POSITION;
-		// if (!propertyDataTexture_.loadFromFile(graphic_path)) {
-		// 	propertyDataSprite_.setColor(sf::Color::Green);
-		// }
+		if (!propertyDataTexture_.loadFromFile(graphic_path)) {
+			propertyDataSprite_.setColor(sf::Color::Green);
+		}
 		propertyDataSprite_.setTexture(propertyDataTexture_, true);
 		sf::Vector2u texture_dim = propertyDataTexture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
@@ -2758,9 +2768,9 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 
 	} else {
 		dataPos = ALL_PROPERTY_DATA_POSITION;
-		// if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
-		// 	allPropertyDataSprite_.setColor(sf::Color::Green);
-		// }
+		if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
+			allPropertyDataSprite_.setColor(sf::Color::Green);
+		}
 		allPropertyDataSprite_.setTexture(allPropertyDataTexture_, true);
 		sf::Vector2u texture_dim = allPropertyDataTexture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;

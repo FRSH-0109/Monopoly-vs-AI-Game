@@ -74,9 +74,9 @@ const sf::Vector2f& ChanceCard::getPosition() {
 }
 
 void ChanceCard::createSprite() {
-	// if (!texture_.loadFromFile(graphic_path_)) {
-	// 	sprite_.setColor(sf::Color::Green);
-	// }
+	if (!texture_.loadFromFile(graphic_path_)) {
+		sprite_.setColor(sf::Color::Green);
+	}
 	sprite_.setTexture(texture_, true);
 	sf::Vector2u texture_dim = texture_.getSize();
 	float scale_x = (float)this->width_ / (float)texture_dim.x;
