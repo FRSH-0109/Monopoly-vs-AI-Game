@@ -10,6 +10,10 @@
 
 #include "Chance.h"
 
+// =============================================================================
+// ChanceCard Class Implementation
+// =============================================================================
+
 ChanceCard::ChanceCard(const unsigned int id,
 	const ChanceType type,
 	unsigned int value,
