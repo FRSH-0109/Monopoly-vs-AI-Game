@@ -1,0 +1,6 @@
+<map id="AiPlayer::decideAcceptTrade" name="AiPlayer::decideAcceptTrade">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,212,83"/>
+<area shape="rect" id="node2" href="$classann_1_1neuralnet.html#af6ea7c4bc68dbd966cc80a63a6a3519d" title=" " alt="" coords="260,5,441,32"/>
+<area shape="rect" id="node3" href="$class_player.html#a9ba3a7b625d50ad49f73eca39aff8248" title=" " alt="" coords="281,56,421,83"/>
+<area shape="rect" id="node4" href="$class_ai_adapter.html#ac76618fcec497abb9b30456c39bb824a" title="Gets the AI network inputs." alt="" coords="273,107,428,133"/>
+</map>

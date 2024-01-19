@@ -1,0 +1,1845 @@
+\begin{theindex}
+
+  \item {/home/kamil/zpr/Monopoly/ActiveScreen.cc}, \hyperpage{271}
+  \item {/home/kamil/zpr/Monopoly/ActiveScreen.h}, \hyperpage{272}
+  \item {/home/kamil/zpr/Monopoly/AiAdapter.cc}, \hyperpage{273}
+  \item {/home/kamil/zpr/Monopoly/AiAdapter.h}, \hyperpage{274}
+  \item {/home/kamil/zpr/Monopoly/Board.cc}, \hyperpage{275}
+  \item {/home/kamil/zpr/Monopoly/Board.h}, \hyperpage{277}
+  \item {/home/kamil/zpr/Monopoly/Button.cc}, \hyperpage{281}
+  \item {/home/kamil/zpr/Monopoly/Button.h}, \hyperpage{282}
+  \item {/home/kamil/zpr/Monopoly/Chance.cc}, \hyperpage{283}
+  \item {/home/kamil/zpr/Monopoly/Chance.h}, \hyperpage{284}
+  \item {/home/kamil/zpr/Monopoly/ContextWindow.cc}, \hyperpage{285}
+  \item {/home/kamil/zpr/Monopoly/ContextWindow.h}, \hyperpage{286}
+  \item {/home/kamil/zpr/Monopoly/Field.cc}, \hyperpage{287}
+  \item {/home/kamil/zpr/Monopoly/Field.h}, \hyperpage{288}
+  \item {/home/kamil/zpr/Monopoly/GameEngine.cc}, \hyperpage{290}
+  \item {/home/kamil/zpr/Monopoly/GameEngine.h}, \hyperpage{290}
+  \item {/home/kamil/zpr/Monopoly/GameScreen.cc}, \hyperpage{291}
+  \item {/home/kamil/zpr/Monopoly/GameScreen.h}, \hyperpage{292}
+  \item {/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc}, 
+		\hyperpage{302}
+  \item {/home/kamil/zpr/Monopoly/MonopolyGameEngine.h}, 
+		\hyperpage{302}
+  \item {/home/kamil/zpr/Monopoly/NotificationWall.cc}, \hyperpage{304}
+  \item {/home/kamil/zpr/Monopoly/NotificationWall.h}, \hyperpage{305}
+  \item {/home/kamil/zpr/Monopoly/Player.cc}, \hyperpage{306}
+  \item {/home/kamil/zpr/Monopoly/Player.h}, \hyperpage{306}
+  \item {/home/kamil/zpr/Monopoly/Tinyann.cc}, \hyperpage{308}
+  \item {/home/kamil/zpr/Monopoly/Tinyann.h}, \hyperpage{308}
+  \item {/home/kamil/zpr/Monopoly/Tinyneat.cc}, \hyperpage{310}
+  \item {/home/kamil/zpr/Monopoly/Tinyneat.h}, \hyperpage{310}
+  \item {/home/kamil/zpr/Monopoly/Withdraw.cc}, \hyperpage{312}
+  \item {/home/kamil/zpr/Monopoly/Withdraw.h}, \hyperpage{312}
+  \item {/home/kamil/zpr/Monopoly/main.cc}, \hyperpage{293}
+  \item {/home/kamil/zpr/Monopoly/main.h}, \hyperpage{295}
+  \item {$\sim$neuron}
+    \subitem {ann::neuron}, \hyperpage{182}
+
+  \indexspace
+
+  \item {ActiveScreen}, \hyperpage{11}
+    \subitem {ActiveScreen}, \hyperpage{12}
+    \subitem {addButton}, \hyperpage{12}
+    \subitem {addText}, \hyperpage{13}
+    \subitem {buttonSetColors}, \hyperpage{13}
+    \subitem {draw}, \hyperpage{14}
+    \subitem {getButtons}, \hyperpage{14}
+    \subitem {getContextWindow}, \hyperpage{14}
+    \subitem {getFont}, \hyperpage{15}
+    \subitem {getPlayersResult}, \hyperpage{15}
+    \subitem {getPlayersSettings}, \hyperpage{16}
+    \subitem {getScreenType}, \hyperpage{16}
+    \subitem {getTexts}, \hyperpage{16}
+    \subitem {setContextWindow}, \hyperpage{17}
+    \subitem {setFont}, \hyperpage{17}
+    \subitem {setScreenType}, \hyperpage{18}
+    \subitem {worker}, \hyperpage{19}
+  \item {ActiveScreenType}
+    \subitem {main.h}, \hyperpage{297}
+  \item {add\_gene}
+    \subitem {neat::innovation\_container}, \hyperpage{104}
+  \item {addAuctionButton}
+    \subitem {MonopolyGameEngine}, \hyperpage{112}
+  \item {addAuctionText}
+    \subitem {MonopolyGameEngine}, \hyperpage{113}
+  \item {addButton}
+    \subitem {ActiveScreen}, \hyperpage{12}
+    \subitem {MonopolyGameEngine}, \hyperpage{114}
+  \item {addFieldOwnedId}
+    \subitem {Player}, \hyperpage{190}
+  \item {addHotels}
+    \subitem {MonopolyGameEngine}, \hyperpage{115}
+  \item {addHouses}
+    \subitem {MonopolyGameEngine}, \hyperpage{115}
+  \item {addMoney}
+    \subitem {Player}, \hyperpage{191}
+  \item {addPropertyPlayerShowed}
+    \subitem {Withdraw}, \hyperpage{242}
+  \item {addText}
+    \subitem {ActiveScreen}, \hyperpage{13}
+    \subitem {MonopolyGameEngine}, \hyperpage{116}
+  \item {addToWall}
+    \subitem {NotificationWall}, \hyperpage{184}
+  \item {adjusted\_fitness}
+    \subitem {neat::genome}, \hyperpage{101}
+  \item {AiAdapter}, \hyperpage{19}
+    \subitem {AiAdapter}, \hyperpage{20}
+    \subitem {clearSelectionState}, \hyperpage{21}
+    \subitem {convertCard}, \hyperpage{21}
+    \subitem {convertHouse}, \hyperpage{21}
+    \subitem {convertHouseValue}, \hyperpage{22}
+    \subitem {convertMoney}, \hyperpage{23}
+    \subitem {convertMoneyValue}, \hyperpage{23}
+    \subitem {convertPosition}, \hyperpage{24}
+    \subitem {getInputs}, \hyperpage{24}
+    \subitem {setCard}, \hyperpage{25}
+    \subitem {setHouse}, \hyperpage{26}
+    \subitem {setJail}, \hyperpage{26}
+    \subitem {setMoney}, \hyperpage{27}
+    \subitem {setMoneyContext}, \hyperpage{27}
+    \subitem {setMortgage}, \hyperpage{28}
+    \subitem {setOwner}, \hyperpage{28}
+    \subitem {setPosition}, \hyperpage{28}
+    \subitem {setSelection}, \hyperpage{29}
+    \subitem {setSelectionState}, \hyperpage{29}
+    \subitem {setTurn}, \hyperpage{29}
+  \item {aiBuildingsMangingWorker}
+    \subitem {MonopolyGameEngine}, \hyperpage{117}
+  \item {AiPlayer}, \hyperpage{30}
+    \subitem {AiPlayer}, \hyperpage{31, 32}
+    \subitem {decideAcceptTrade}, \hyperpage{32}
+    \subitem {decideAuctionBid}, \hyperpage{33}
+    \subitem {decideBuildHouse}, \hyperpage{34}
+    \subitem {decideBuy}, \hyperpage{34}
+    \subitem {decideJail}, \hyperpage{35}
+    \subitem {decideMortgage}, \hyperpage{36}
+    \subitem {decideOfferTrade}, \hyperpage{37}
+    \subitem {decideSellHouse}, \hyperpage{37}
+    \subitem {decideUnmortgage}, \hyperpage{38}
+    \subitem {getAdapter}, \hyperpage{39}
+    \subitem {getNeuralNetwork}, \hyperpage{39}
+    \subitem {setNeuralNetwork}, \hyperpage{39}
+  \item {ann}, \hyperpage{9}
+    \subitem {NON\_RECURRENT}, \hyperpage{9}
+    \subitem {RECURRENT}, \hyperpage{9}
+    \subitem {type}, \hyperpage{9}
+  \item {ann::neuralnet}, \hyperpage{180}
+    \subitem {evaluate}, \hyperpage{180}
+    \subitem {export\_tofile}, \hyperpage{181}
+    \subitem {from\_genome}, \hyperpage{181}
+    \subitem {import\_fromfile}, \hyperpage{181}
+    \subitem {neuralnet}, \hyperpage{180}
+  \item {ann::neuron}, \hyperpage{182}
+    \subitem {$\sim$neuron}, \hyperpage{182}
+    \subitem {in\_nodes}, \hyperpage{183}
+    \subitem {neuron}, \hyperpage{182}
+    \subitem {type}, \hyperpage{183}
+    \subitem {value}, \hyperpage{183}
+    \subitem {visited}, \hyperpage{183}
+  \item {AUCTION}
+    \subitem {main.h}, \hyperpage{299}
+  \item {AuctionState}
+    \subitem {MonopolyGameEngine.h}, \hyperpage{304}
+  \item {average\_fitness}
+    \subitem {neat::specie}, \hyperpage{222}
+
+  \indexspace
+
+  \item {BANK\_PAYS\_YOU}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {bias\_mutation\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{177}
+  \item {bias\_size}
+    \subitem {neat::network\_info\_container}, \hyperpage{179}
+  \item {BIDDING}
+    \subitem {MonopolyGameEngine.h}, \hyperpage{304}
+  \item {Board}, \hyperpage{40}
+    \subitem {Board}, \hyperpage{40}
+    \subitem {clearBoard}, \hyperpage{41}
+    \subitem {getBoard}, \hyperpage{41}
+    \subitem {getBoardPosition}, \hyperpage{41}
+    \subitem {getFieldById}, \hyperpage{42}
+    \subitem {getFieldNumber}, \hyperpage{42}
+    \subitem {getFieldPositon}, \hyperpage{42}
+    \subitem {getFieldRotation}, \hyperpage{43}
+  \item {Board.cc}
+    \subitem {json}, \hyperpage{275}
+    \subitem {jsonToStationRent}, \hyperpage{276}
+    \subitem {jsonToStreetRent}, \hyperpage{276}
+    \subitem {jsonToUtilityRent}, \hyperpage{277}
+  \item {Board.h}
+    \subitem {json}, \hyperpage{279}
+    \subitem {jsonToStationRent}, \hyperpage{279}
+    \subitem {jsonToStreetRent}, \hyperpage{280}
+    \subitem {jsonToUtilityRent}, \hyperpage{280}
+    \subitem {PossibleFields}, \hyperpage{279}
+  \item {BOARDGAME}
+    \subitem {main.h}, \hyperpage{299}
+  \item {buildingsManagingWorker}
+    \subitem {MonopolyGameEngine}, \hyperpage{118}
+  \item {Button}, \hyperpage{44}
+    \subitem {Button}, \hyperpage{45}
+    \subitem {draw}, \hyperpage{47}
+    \subitem {getEventType}, \hyperpage{47}
+    \subitem {getIsActive}, \hyperpage{47}
+    \subitem {getIsClicked}, \hyperpage{47}
+    \subitem {getIsFocus}, \hyperpage{48}
+    \subitem {getIsVisible}, \hyperpage{48}
+    \subitem {getSize}, \hyperpage{48}
+    \subitem {getText}, \hyperpage{48}
+    \subitem {getWasReleased}, \hyperpage{49}
+    \subitem {isMouseOver}, \hyperpage{49}
+    \subitem {mouseIsNotOver}, \hyperpage{49}
+    \subitem {mouseIsOver}, \hyperpage{50}
+    \subitem {setActiveBackColor}, \hyperpage{50}
+    \subitem {setActiveTextColor}, \hyperpage{50}
+    \subitem {setButtonFocus}, \hyperpage{51}
+    \subitem {setButtonUnfocus}, \hyperpage{51}
+    \subitem {setEventType}, \hyperpage{52}
+    \subitem {setFocusBackColor}, \hyperpage{52}
+    \subitem {setFocusTextColor}, \hyperpage{52}
+    \subitem {setFont}, \hyperpage{53}
+    \subitem {setInactiveBackColor}, \hyperpage{53}
+    \subitem {setInactiveTextColor}, \hyperpage{53}
+    \subitem {setIsActive}, \hyperpage{53}
+    \subitem {setIsClicked}, \hyperpage{54}
+    \subitem {setIsFocus}, \hyperpage{54}
+    \subitem {setIsVisible}, \hyperpage{54}
+    \subitem {setPosition}, \hyperpage{55}
+    \subitem {setWasReleased}, \hyperpage{55}
+    \subitem {updateColors}, \hyperpage{55}
+  \item {buttonClickHandle}
+    \subitem {GameMenuScreen}, \hyperpage{85}
+  \item {buttonSetColors}
+    \subitem {ActiveScreen}, \hyperpage{13}
+  \item {BUY}
+    \subitem {main.h}, \hyperpage{297}
+  \item {BUY\_ACTION}
+    \subitem {main.h}, \hyperpage{301}
+  \item {BuyDecision}
+    \subitem {main.h}, \hyperpage{297}
+
+  \indexspace
+
+  \item {calculateGroupFieldsOwned}
+    \subitem {MonopolyGameEngine}, \hyperpage{119}
+  \item {calculateRent}
+    \subitem {MonopolyGameEngine}, \hyperpage{120}
+    \subitem {StationField}, \hyperpage{226}
+    \subitem {StreetField}, \hyperpage{229}
+    \subitem {UtilityField}, \hyperpage{237}
+  \item {can\_be\_recurrent}
+    \subitem {neat::genome}, \hyperpage{101}
+  \item {CARD}
+    \subitem {main.h}, \hyperpage{299}
+  \item {CHANCE}
+    \subitem {main.h}, \hyperpage{299}
+  \item {Chance.h}
+    \subitem {BANK\_PAYS\_YOU}, \hyperpage{285}
+    \subitem {ChanceType}, \hyperpage{285}
+    \subitem {GET\_OUT\_OF\_JAIL\_CARD}, \hyperpage{285}
+    \subitem {GO\_TO\_JAIL\_CARD}, \hyperpage{285}
+    \subitem {MOVEMENT\_SPACES}, \hyperpage{285}
+    \subitem {MOVEMENT\_TO\_PROPERTY}, \hyperpage{285}
+    \subitem {MOVEMENT\_WITH\_BUY\_OR\_PAY}, \hyperpage{285}
+    \subitem {PAY\_FOR\_HOUSE\_HOTEL}, \hyperpage{285}
+    \subitem {PAY\_PLAYERS}, \hyperpage{285}
+    \subitem {TAX\_CARD}, \hyperpage{285}
+  \item {ChanceCard}, \hyperpage{55}
+    \subitem {ChanceCard}, \hyperpage{56}
+    \subitem {createSprite}, \hyperpage{58}
+    \subitem {getGraphicPath}, \hyperpage{58}
+    \subitem {getHeight}, \hyperpage{58}
+    \subitem {getId}, \hyperpage{58}
+    \subitem {getPosition}, \hyperpage{59}
+    \subitem {getRotation}, \hyperpage{59}
+    \subitem {getSprite}, \hyperpage{59}
+    \subitem {getText}, \hyperpage{59}
+    \subitem {getTexture}, \hyperpage{60}
+    \subitem {getType}, \hyperpage{60}
+    \subitem {getValue}, \hyperpage{60}
+    \subitem {getWidth}, \hyperpage{61}
+    \subitem {setPosition}, \hyperpage{61}
+    \subitem {setRotation}, \hyperpage{61}
+  \item {ChanceType}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {clear}
+    \subitem {ContextWindow}, \hyperpage{63}
+    \subitem {GameEngine}, \hyperpage{79}
+  \item {clearBoard}
+    \subitem {Board}, \hyperpage{41}
+    \subitem {MonopolyGameEngine}, \hyperpage{121}
+  \item {clearFieldOwnedId}
+    \subitem {Player}, \hyperpage{191}
+  \item {clearPlayers}
+    \subitem {MonopolyGameEngine}, \hyperpage{121}
+  \item {clearSelectionState}
+    \subitem {AiAdapter}, \hyperpage{21}
+  \item {clearWall}
+    \subitem {NotificationWall}, \hyperpage{185}
+  \item {colorGroupEmpty}
+    \subitem {MonopolyGameEngine}, \hyperpage{122}
+  \item {COMMUNITY\_CHEST}
+    \subitem {main.h}, \hyperpage{299}
+  \item {connection\_mutate\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+  \item {ContextWindow}, \hyperpage{62}
+    \subitem {clear}, \hyperpage{63}
+    \subitem {ContextWindow}, \hyperpage{63}
+    \subitem {display}, \hyperpage{63}
+    \subitem {GetInstance}, \hyperpage{64}
+    \subitem {getView}, \hyperpage{64}
+    \subitem {getWindow}, \hyperpage{65}
+    \subitem {isOpen}, \hyperpage{65}
+    \subitem {operator=}, \hyperpage{66}
+    \subitem {view\_}, \hyperpage{66}
+    \subitem {window\_}, \hyperpage{66}
+  \item {convertCard}
+    \subitem {AiAdapter}, \hyperpage{21}
+  \item {convertHouse}
+    \subitem {AiAdapter}, \hyperpage{21}
+  \item {convertHouseValue}
+    \subitem {AiAdapter}, \hyperpage{22}
+  \item {convertMoney}
+    \subitem {AiAdapter}, \hyperpage{23}
+  \item {convertMoneyValue}
+    \subitem {AiAdapter}, \hyperpage{23}
+  \item {convertPosition}
+    \subitem {AiAdapter}, \hyperpage{24}
+  \item {createAuctionBidButton}
+    \subitem {MonopolyGameEngine}, \hyperpage{123}
+  \item {createAuctionOfferButtons}
+    \subitem {MonopolyGameEngine}, \hyperpage{123}
+  \item {createAuctionResignButton}
+    \subitem {MonopolyGameEngine}, \hyperpage{124}
+  \item {createAvailableHousesHotelText}
+    \subitem {MonopolyGameEngine}, \hyperpage{125}
+  \item {createBoard}
+    \subitem {MonopolyGameEngine}, \hyperpage{126}
+  \item {createButtonBuyResign}
+    \subitem {MonopolyGameEngine}, \hyperpage{126}
+  \item {createButtonNextProperty}
+    \subitem {MonopolyGameEngine}, \hyperpage{127}
+  \item {createButtonPerviousProperty}
+    \subitem {MonopolyGameEngine}, \hyperpage{128}
+  \item {createButtonRollDice}
+    \subitem {MonopolyGameEngine}, \hyperpage{129}
+  \item {createButtonsBankrupt}
+    \subitem {MonopolyGameEngine}, \hyperpage{129}
+  \item {createButtonsBuySellHouseHotel}
+    \subitem {MonopolyGameEngine}, \hyperpage{130}
+  \item {createButtonsJailPay}
+    \subitem {MonopolyGameEngine}, \hyperpage{131}
+  \item {createButtonsNextTurn}
+    \subitem {MonopolyGameEngine}, \hyperpage{132}
+  \item {createButtonWithdraw}
+    \subitem {MonopolyGameEngine}, \hyperpage{133}
+  \item {createChanceCards}
+    \subitem {MonopolyGameEngine}, \hyperpage{134}
+  \item {createChoosePlayerScreen}
+    \subitem {Withdraw}, \hyperpage{242}
+  \item {createCurrentOfferBidderInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{135}
+  \item {createDecisionPlayerScreen}
+    \subitem {Withdraw}, \hyperpage{243}
+  \item {createFlagSprite}
+    \subitem {PropertyField}, \hyperpage{212}
+  \item {createMortagingButton}
+    \subitem {MonopolyGameEngine}, \hyperpage{135}
+  \item {createPlayers}
+    \subitem {MonopolyGameEngine}, \hyperpage{136}
+  \item {createResultScreenStuff}
+    \subitem {MonopolyGameEngine}, \hyperpage{137}
+  \item {createSprite}
+    \subitem {ChanceCard}, \hyperpage{58}
+    \subitem {Field}, \hyperpage{70}
+    \subitem {Player}, \hyperpage{191}
+  \item {createTextBiddedProperty}
+    \subitem {MonopolyGameEngine}, \hyperpage{138}
+  \item {createTextBidderInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{138}
+  \item {createTextHighestBidInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{139}
+  \item {createTextLeadingBidderInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{140}
+  \item {createTextPlayersInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{141}
+  \item {createTextrolled\_value}
+    \subitem {MonopolyGameEngine}, \hyperpage{142}
+  \item {createTextTurnInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{142}
+  \item {createValuePlayerScreen}
+    \subitem {Withdraw}, \hyperpage{244}
+  \item {crossover\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+
+  \indexspace
+
+  \item {decideAcceptTrade}
+    \subitem {AiPlayer}, \hyperpage{32}
+    \subitem {Player}, \hyperpage{192}
+  \item {decideAuctionBid}
+    \subitem {AiPlayer}, \hyperpage{33}
+    \subitem {Player}, \hyperpage{192}
+  \item {decideBuildHouse}
+    \subitem {AiPlayer}, \hyperpage{34}
+    \subitem {Player}, \hyperpage{192}
+  \item {decideBuy}
+    \subitem {AiPlayer}, \hyperpage{34}
+    \subitem {Player}, \hyperpage{192}
+  \item {decideJail}
+    \subitem {AiPlayer}, \hyperpage{35}
+    \subitem {Player}, \hyperpage{193}
+  \item {decideMortgage}
+    \subitem {AiPlayer}, \hyperpage{36}
+    \subitem {Player}, \hyperpage{193}
+  \item {decideOfferTrade}
+    \subitem {AiPlayer}, \hyperpage{37}
+    \subitem {Player}, \hyperpage{194}
+  \item {decideSellHouse}
+    \subitem {AiPlayer}, \hyperpage{37}
+    \subitem {Player}, \hyperpage{194}
+  \item {decideUnmortgage}
+    \subitem {AiPlayer}, \hyperpage{38}
+    \subitem {Player}, \hyperpage{194}
+  \item {Decision}
+    \subitem {main.h}, \hyperpage{297}
+  \item {delta\_disjoint}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{221}
+  \item {delta\_threshold}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{221}
+  \item {delta\_weights}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{221}
+  \item {DimensionException}, \hyperpage{67}
+    \subitem {DimensionException}, \hyperpage{67, 68}
+    \subitem {getBadDimension}, \hyperpage{68}
+  \item {disable\_mutation\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+  \item {display}
+    \subitem {ContextWindow}, \hyperpage{63}
+    \subitem {GameEngine}, \hyperpage{80}
+  \item {draw}
+    \subitem {ActiveScreen}, \hyperpage{14}
+    \subitem {Button}, \hyperpage{47}
+    \subitem {GameMenuScreen}, \hyperpage{86}
+    \subitem {GameScreen}, \hyperpage{95}
+    \subitem {MainMenuScreen}, \hyperpage{106}
+
+  \indexspace
+
+  \item {enable\_mutation\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+  \item {enabled}
+    \subitem {neat::gene}, \hyperpage{99}
+  \item {ENDING}
+    \subitem {MonopolyGameEngine.h}, \hyperpage{304}
+  \item {evaluate}
+    \subitem {ann::neuralnet}, \hyperpage{180}
+  \item {EXIT}
+    \subitem {main.h}, \hyperpage{300}
+  \item {export\_tofile}
+    \subitem {ann::neuralnet}, \hyperpage{181}
+    \subitem {neat::pool}, \hyperpage{208}
+
+  \indexspace
+
+  \item {Field}, \hyperpage{68}
+    \subitem {createSprite}, \hyperpage{70}
+    \subitem {Field}, \hyperpage{69}
+    \subitem {getContextWindow}, \hyperpage{70}
+    \subitem {getGraphicPath}, \hyperpage{71}
+    \subitem {getHeight}, \hyperpage{71}
+    \subitem {getId}, \hyperpage{72}
+    \subitem {getName}, \hyperpage{72}
+    \subitem {getNameText}, \hyperpage{73}
+    \subitem {getPosition}, \hyperpage{73}
+    \subitem {getRotation}, \hyperpage{74}
+    \subitem {getSprite}, \hyperpage{74}
+    \subitem {getTexture}, \hyperpage{75}
+    \subitem {getType}, \hyperpage{75}
+    \subitem {getWidth}, \hyperpage{76}
+    \subitem {setHeight}, \hyperpage{76}
+    \subitem {setPosition}, \hyperpage{76}
+    \subitem {setRotation}, \hyperpage{77}
+    \subitem {setWidth}, \hyperpage{77}
+  \item {FIELD\_ACTION}
+    \subitem {main.h}, \hyperpage{301}
+  \item {FieldType}
+    \subitem {main.h}, \hyperpage{297}
+  \item {fitness}
+    \subitem {neat::genome}, \hyperpage{101}
+  \item {FOUR\_HOUSES}
+    \subitem {main.h}, \hyperpage{301}
+  \item {FOUR\_STATIONS}
+    \subitem {main.h}, \hyperpage{301}
+  \item {FRAMES\_PER\_SEC\_MAX}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {FREE\_PARKING}
+    \subitem {main.h}, \hyperpage{299}
+  \item {from\_genome}
+    \subitem {ann::neuralnet}, \hyperpage{181}
+  \item {from\_node}
+    \subitem {neat::gene}, \hyperpage{99}
+  \item {functional\_nodes}
+    \subitem {neat::network\_info\_container}, \hyperpage{179}
+
+  \indexspace
+
+  \item {GAME\_ENDED}
+    \subitem {main.h}, \hyperpage{300}
+  \item {GAME\_MENU}
+    \subitem {main.h}, \hyperpage{297}
+  \item {GameEngine}, \hyperpage{77}
+    \subitem {clear}, \hyperpage{79}
+    \subitem {display}, \hyperpage{80}
+    \subitem {GameEngine}, \hyperpage{78, 79}
+    \subitem {getContextWindow}, \hyperpage{81}
+    \subitem {getwindow\_height}, \hyperpage{81}
+    \subitem {getwindow\_width}, \hyperpage{81}
+    \subitem {pollForEvents}, \hyperpage{82}
+    \subitem {worker}, \hyperpage{82}
+  \item {gameMenuCreate}
+    \subitem {GameMenuScreen}, \hyperpage{87}
+  \item {GameMenuScreen}, \hyperpage{83}
+    \subitem {buttonClickHandle}, \hyperpage{85}
+    \subitem {draw}, \hyperpage{86}
+    \subitem {gameMenuCreate}, \hyperpage{87}
+    \subitem {GameMenuScreen}, \hyperpage{85}
+    \subitem {getPlayerNumFromEventType}, \hyperpage{87}
+    \subitem {getPlayersSettings}, \hyperpage{88}
+    \subitem {isEventTypeAILevel}, \hyperpage{88}
+    \subitem {isEventTypeSetAI}, \hyperpage{89}
+    \subitem {setAILevelColumnVisibility}, \hyperpage{89}
+    \subitem {setDefaultAILevelButtonsFocus}, \hyperpage{90}
+    \subitem {setOtherButtonsInactive}, \hyperpage{91}
+    \subitem {setPlayerSettings}, \hyperpage{92}
+    \subitem {worker}, \hyperpage{92}
+  \item {GAMES\_IN\_ROUND}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {GameScreen}, \hyperpage{93}
+    \subitem {draw}, \hyperpage{95}
+    \subitem {GameScreen}, \hyperpage{94}
+    \subitem {getPlayersResult}, \hyperpage{96}
+    \subitem {worker}, \hyperpage{97}
+  \item {GameScreenType}
+    \subitem {main.h}, \hyperpage{299}
+  \item {generation}
+    \subitem {neat::pool}, \hyperpage{208}
+  \item {generator}
+    \subitem {neat::pool}, \hyperpage{209}
+  \item {genes}
+    \subitem {neat::genome}, \hyperpage{101}
+  \item {genome}
+    \subitem {neat::genome}, \hyperpage{100}
+  \item {genomes}
+    \subitem {neat::specie}, \hyperpage{222}
+  \item {get\_genomes}
+    \subitem {neat::pool}, \hyperpage{208}
+  \item {GET\_OUT\_OF\_JAIL\_CARD}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {getAcceptDecisionButton}
+    \subitem {Withdraw}, \hyperpage{244}
+  \item {getAdapter}
+    \subitem {AiPlayer}, \hyperpage{39}
+    \subitem {Player}, \hyperpage{195}
+  \item {getAiLevel}
+    \subitem {Player}, \hyperpage{195}
+  \item {getAllPropertyDataSprite}
+    \subitem {MonopolyGameEngine}, \hyperpage{143}
+  \item {getAllPropertyDataTexts}
+    \subitem {MonopolyGameEngine}, \hyperpage{143}
+  \item {getAuctionButtons}
+    \subitem {MonopolyGameEngine}, \hyperpage{144}
+  \item {getAuctionState}
+    \subitem {MonopolyGameEngine}, \hyperpage{144}
+  \item {getAuctionTexts}
+    \subitem {MonopolyGameEngine}, \hyperpage{145}
+  \item {getBadDimension}
+    \subitem {DimensionException}, \hyperpage{68}
+  \item {getBadOffset}
+    \subitem {SpriteOffsetException}, \hyperpage{224}
+  \item {getBadRotation}
+    \subitem {RotationException}, \hyperpage{220}
+  \item {getBoard}
+    \subitem {Board}, \hyperpage{41}
+    \subitem {MonopolyGameEngine}, \hyperpage{145}
+  \item {getBoardPosition}
+    \subitem {Board}, \hyperpage{41}
+  \item {getButtons}
+    \subitem {ActiveScreen}, \hyperpage{14}
+    \subitem {MonopolyGameEngine}, \hyperpage{146}
+    \subitem {Withdraw}, \hyperpage{244}
+  \item {getColor}
+    \subitem {Player}, \hyperpage{195}
+  \item {getContextWindow}
+    \subitem {ActiveScreen}, \hyperpage{14}
+    \subitem {Field}, \hyperpage{70}
+    \subitem {GameEngine}, \hyperpage{81}
+  \item {getEventType}
+    \subitem {Button}, \hyperpage{47}
+  \item {getFieldById}
+    \subitem {Board}, \hyperpage{42}
+  \item {getFieldNumber}
+    \subitem {Board}, \hyperpage{42}
+  \item {getFieldOwnedId}
+    \subitem {Player}, \hyperpage{196}
+  \item {getFieldPositon}
+    \subitem {Board}, \hyperpage{42}
+  \item {getFieldRotation}
+    \subitem {Board}, \hyperpage{43}
+  \item {getFont}
+    \subitem {ActiveScreen}, \hyperpage{15}
+    \subitem {MonopolyGameEngine}, \hyperpage{146}
+    \subitem {NotificationWall}, \hyperpage{185}
+    \subitem {Withdraw}, \hyperpage{245}
+  \item {getFontSize}
+    \subitem {MonopolyGameEngine}, \hyperpage{148}
+    \subitem {NotificationWall}, \hyperpage{186}
+    \subitem {Withdraw}, \hyperpage{245}
+  \item {getGraphicPath}
+    \subitem {ChanceCard}, \hyperpage{58}
+    \subitem {Field}, \hyperpage{71}
+  \item {getGroupMembers}
+    \subitem {PropertyField}, \hyperpage{213}
+  \item {getHeight}
+    \subitem {ChanceCard}, \hyperpage{58}
+    \subitem {Field}, \hyperpage{71}
+  \item {getHotelCount}
+    \subitem {MonopolyGameEngine}, \hyperpage{149}
+  \item {getHotelPrice}
+    \subitem {StreetField}, \hyperpage{230}
+  \item {getHotelSprite}
+    \subitem {MonopolyGameEngine}, \hyperpage{150}
+  \item {getHotelTexture}
+    \subitem {MonopolyGameEngine}, \hyperpage{151}
+  \item {getHouseCount}
+    \subitem {MonopolyGameEngine}, \hyperpage{151}
+  \item {getHouseNumber}
+    \subitem {StreetField}, \hyperpage{230}
+  \item {getHousePrice}
+    \subitem {StreetField}, \hyperpage{230}
+  \item {getHouseSize}
+    \subitem {MonopolyGameEngine}, \hyperpage{152}
+  \item {getHouseSprite}
+    \subitem {MonopolyGameEngine}, \hyperpage{152}
+  \item {getHouseTexture}
+    \subitem {MonopolyGameEngine}, \hyperpage{153}
+  \item {getId}
+    \subitem {ChanceCard}, \hyperpage{58}
+    \subitem {Field}, \hyperpage{72}
+    \subitem {Player}, \hyperpage{196}
+  \item {getInputs}
+    \subitem {AiAdapter}, \hyperpage{24}
+  \item {GetInstance}
+    \subitem {ContextWindow}, \hyperpage{64}
+  \item {getInvalidNumber}
+    \subitem {HouseException}, \hyperpage{103}
+  \item {getIsActive}
+    \subitem {Button}, \hyperpage{47}
+  \item {getIsAi}
+    \subitem {Player}, \hyperpage{196}
+  \item {getIsClicked}
+    \subitem {Button}, \hyperpage{47}
+  \item {getIsFocus}
+    \subitem {Button}, \hyperpage{48}
+  \item {getIsHotel}
+    \subitem {StreetField}, \hyperpage{231}
+  \item {getIsMortgaged}
+    \subitem {PropertyField}, \hyperpage{213}
+  \item {getIsVisible}
+    \subitem {Button}, \hyperpage{48}
+  \item {getJailCards}
+    \subitem {Player}, \hyperpage{196}
+  \item {getJailStatus}
+    \subitem {Player}, \hyperpage{196}
+  \item {getMoney}
+    \subitem {Player}, \hyperpage{197}
+  \item {getMortgage}
+    \subitem {PropertyField}, \hyperpage{214}
+  \item {getName}
+    \subitem {Field}, \hyperpage{72}
+  \item {getNameText}
+    \subitem {Field}, \hyperpage{73}
+  \item {getNeuralNetwork}
+    \subitem {AiPlayer}, \hyperpage{39}
+    \subitem {Player}, \hyperpage{197}
+  \item {getNotificationsWall}
+    \subitem {MonopolyGameEngine}, \hyperpage{154}
+  \item {getOwner}
+    \subitem {PropertyField}, \hyperpage{214}
+  \item {getOwnerFlag}
+    \subitem {PropertyField}, \hyperpage{215}
+  \item {getPlayer1AddButton}
+    \subitem {Withdraw}, \hyperpage{246}
+  \item {getPlayer1Button}
+    \subitem {Withdraw}, \hyperpage{246}
+  \item {getPlayer1IndexNextButton}
+    \subitem {Withdraw}, \hyperpage{246}
+  \item {getPlayer1IndexPreviousButton}
+    \subitem {Withdraw}, \hyperpage{247}
+  \item {getPlayer1IndexProperties}
+    \subitem {Withdraw}, \hyperpage{247}
+  \item {getPlayer1minus1}
+    \subitem {Withdraw}, \hyperpage{247}
+  \item {getPlayer1minus10}
+    \subitem {Withdraw}, \hyperpage{247}
+  \item {getPlayer1minus100}
+    \subitem {Withdraw}, \hyperpage{248}
+  \item {getPlayer1NextButton}
+    \subitem {Withdraw}, \hyperpage{248}
+  \item {getPlayer1plus1}
+    \subitem {Withdraw}, \hyperpage{248}
+  \item {getPlayer1plus10}
+    \subitem {Withdraw}, \hyperpage{248}
+  \item {getPlayer1plus100}
+    \subitem {Withdraw}, \hyperpage{249}
+  \item {getPlayer1PreviousButton}
+    \subitem {Withdraw}, \hyperpage{249}
+  \item {getPlayer1RemoveButton}
+    \subitem {Withdraw}, \hyperpage{249}
+  \item {getPlayer1ToWithdraw}
+    \subitem {Withdraw}, \hyperpage{249}
+  \item {getPlayer2AddButton}
+    \subitem {Withdraw}, \hyperpage{250}
+  \item {getPlayer2Button}
+    \subitem {Withdraw}, \hyperpage{250}
+  \item {getPlayer2IndexNextButton}
+    \subitem {Withdraw}, \hyperpage{250}
+  \item {getPlayer2IndexPreviousButton}
+    \subitem {Withdraw}, \hyperpage{250}
+  \item {getPlayer2IndexProperties}
+    \subitem {Withdraw}, \hyperpage{251}
+  \item {getPlayer2minus1}
+    \subitem {Withdraw}, \hyperpage{251}
+  \item {getPlayer2minus10}
+    \subitem {Withdraw}, \hyperpage{251}
+  \item {getPlayer2minus100}
+    \subitem {Withdraw}, \hyperpage{251}
+  \item {getPlayer2NextButton}
+    \subitem {Withdraw}, \hyperpage{252}
+  \item {getPlayer2plus1}
+    \subitem {Withdraw}, \hyperpage{252}
+  \item {getPlayer2plus10}
+    \subitem {Withdraw}, \hyperpage{252}
+  \item {getPlayer2plus100}
+    \subitem {Withdraw}, \hyperpage{252}
+  \item {getPlayer2PreviousButton}
+    \subitem {Withdraw}, \hyperpage{253}
+  \item {getPlayer2RemoveButton}
+    \subitem {Withdraw}, \hyperpage{253}
+  \item {getPlayer2ToWithdraw}
+    \subitem {Withdraw}, \hyperpage{253}
+  \item {getPlayer3Button}
+    \subitem {Withdraw}, \hyperpage{253}
+  \item {getPlayer4Button}
+    \subitem {Withdraw}, \hyperpage{254}
+  \item {getPlayerNumFromEventType}
+    \subitem {GameMenuScreen}, \hyperpage{87}
+  \item {getPlayers}
+    \subitem {MonopolyGameEngine}, \hyperpage{154}
+  \item {getPlayersResult}
+    \subitem {ActiveScreen}, \hyperpage{15}
+    \subitem {GameScreen}, \hyperpage{96}
+    \subitem {MonopolyGameEngine}, \hyperpage{155}
+  \item {getPlayersSettings}
+    \subitem {ActiveScreen}, \hyperpage{16}
+    \subitem {GameMenuScreen}, \hyperpage{88}
+  \item {getPosition}
+    \subitem {ChanceCard}, \hyperpage{59}
+    \subitem {Field}, \hyperpage{73}
+    \subitem {Player}, \hyperpage{197}
+  \item {getPrice}
+    \subitem {PropertyField}, \hyperpage{215}
+  \item {getPropertyDataSprite}
+    \subitem {MonopolyGameEngine}, \hyperpage{155}
+  \item {getPropertyDataTexts}
+    \subitem {MonopolyGameEngine}, \hyperpage{156}
+  \item {getPropertyNameToDraw}
+    \subitem {MonopolyGameEngine}, \hyperpage{156}
+  \item {getRentMultipliers}
+    \subitem {UtilityField}, \hyperpage{238}
+  \item {getRentValues}
+    \subitem {StationField}, \hyperpage{226}
+    \subitem {StreetField}, \hyperpage{231}
+  \item {getResignButton}
+    \subitem {Withdraw}, \hyperpage{254}
+  \item {getResignDecisionButton}
+    \subitem {Withdraw}, \hyperpage{254}
+  \item {getResignValueButton}
+    \subitem {Withdraw}, \hyperpage{254}
+  \item {getResultPlace}
+    \subitem {Player}, \hyperpage{198}
+  \item {getResultTexts}
+    \subitem {MonopolyGameEngine}, \hyperpage{157}
+  \item {getRotation}
+    \subitem {ChanceCard}, \hyperpage{59}
+    \subitem {Field}, \hyperpage{74}
+  \item {getScreenType}
+    \subitem {ActiveScreen}, \hyperpage{16}
+    \subitem {MonopolyGameEngine}, \hyperpage{158}
+  \item {getSize}
+    \subitem {Button}, \hyperpage{48}
+  \item {getSprite}
+    \subitem {ChanceCard}, \hyperpage{59}
+    \subitem {Field}, \hyperpage{74}
+    \subitem {Player}, \hyperpage{198}
+  \item {getSpriteOffsetX}
+    \subitem {Player}, \hyperpage{198}
+  \item {getSpriteOffsetY}
+    \subitem {Player}, \hyperpage{198}
+  \item {getSpritePropertyPlayer1}
+    \subitem {Withdraw}, \hyperpage{255}
+  \item {getSpritePropertyPlayer1Index}
+    \subitem {Withdraw}, \hyperpage{255}
+  \item {getSpritePropertyPlayer2}
+    \subitem {Withdraw}, \hyperpage{255}
+  \item {getSpritePropertyPlayer2Index}
+    \subitem {Withdraw}, \hyperpage{256}
+  \item {getSubmitValueButton}
+    \subitem {Withdraw}, \hyperpage{256}
+  \item {getTaxValue}
+    \subitem {TaxField}, \hyperpage{235}
+  \item {getText}
+    \subitem {Button}, \hyperpage{48}
+    \subitem {ChanceCard}, \hyperpage{59}
+  \item {getTexts}
+    \subitem {ActiveScreen}, \hyperpage{16}
+    \subitem {MonopolyGameEngine}, \hyperpage{158}
+    \subitem {Withdraw}, \hyperpage{257}
+  \item {getTextsPropertyPlayer1}
+    \subitem {Withdraw}, \hyperpage{257}
+  \item {getTextsPropertyPlayer1Index}
+    \subitem {Withdraw}, \hyperpage{257}
+  \item {getTextsPropertyPlayer2}
+    \subitem {Withdraw}, \hyperpage{258}
+  \item {getTextsPropertyPlayer2Index}
+    \subitem {Withdraw}, \hyperpage{258}
+  \item {getTexture}
+    \subitem {ChanceCard}, \hyperpage{60}
+    \subitem {Field}, \hyperpage{75}
+    \subitem {Player}, \hyperpage{198}
+  \item {getTexturePropertyPlayer1}
+    \subitem {Withdraw}, \hyperpage{259}
+  \item {getTexturePropertyPlayer1Index}
+    \subitem {Withdraw}, \hyperpage{259}
+  \item {getTexturePropertyPlayer2}
+    \subitem {Withdraw}, \hyperpage{260}
+  \item {getTexturePropertyPlayer2Index}
+    \subitem {Withdraw}, \hyperpage{260}
+  \item {getTurnState}
+    \subitem {MonopolyGameEngine}, \hyperpage{159}
+    \subitem {Withdraw}, \hyperpage{261}
+  \item {getType}
+    \subitem {ChanceCard}, \hyperpage{60}
+    \subitem {Field}, \hyperpage{75}
+  \item {getUnmortgageValue}
+    \subitem {PropertyField}, \hyperpage{216}
+  \item {getValue}
+    \subitem {ChanceCard}, \hyperpage{60}
+  \item {getView}
+    \subitem {ContextWindow}, \hyperpage{64}
+  \item {getWall}
+    \subitem {NotificationWall}, \hyperpage{186}
+  \item {getWasReleased}
+    \subitem {Button}, \hyperpage{49}
+  \item {getWidth}
+    \subitem {ChanceCard}, \hyperpage{61}
+    \subitem {Field}, \hyperpage{76}
+  \item {getWindow}
+    \subitem {ContextWindow}, \hyperpage{65}
+  \item {getwindow\_height}
+    \subitem {GameEngine}, \hyperpage{81}
+  \item {getwindow\_width}
+    \subitem {GameEngine}, \hyperpage{81}
+  \item {getWithdraw}
+    \subitem {MonopolyGameEngine}, \hyperpage{159}
+  \item {global\_rank}
+    \subitem {neat::genome}, \hyperpage{101}
+  \item {GO}
+    \subitem {main.h}, \hyperpage{299}
+  \item {GO\_TO\_JAIL}
+    \subitem {main.h}, \hyperpage{299}
+  \item {GO\_TO\_JAIL\_CARD}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {groupCompleted}
+    \subitem {MonopolyGameEngine}, \hyperpage{160}
+
+  \indexspace
+
+  \item {hasFieldOwnedId}
+    \subitem {Player}, \hyperpage{198}
+  \item {height}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {HEIGHT\_MAX}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {HOTEL}
+    \subitem {main.h}, \hyperpage{301}
+  \item {HouseException}, \hyperpage{102}
+    \subitem {getInvalidNumber}, \hyperpage{103}
+    \subitem {HouseException}, \hyperpage{103}
+
+  \indexspace
+
+  \item {IDLE}
+    \subitem {main.h}, \hyperpage{300}
+  \item {import\_fromfile}
+    \subitem {ann::neuralnet}, \hyperpage{181}
+    \subitem {neat::pool}, \hyperpage{208}
+  \item {in\_nodes}
+    \subitem {ann::neuron}, \hyperpage{183}
+  \item {INITIALIZATION}
+    \subitem {MonopolyGameEngine.h}, \hyperpage{304}
+  \item {innovation\_container}
+    \subitem {neat::innovation\_container}, \hyperpage{104}
+  \item {innovation\_num}
+    \subitem {neat::gene}, \hyperpage{99}
+  \item {input\_size}
+    \subitem {neat::network\_info\_container}, \hyperpage{179}
+  \item {isBuildingLegal}
+    \subitem {MonopolyGameEngine}, \hyperpage{161}
+  \item {isDestroyingLegal}
+    \subitem {MonopolyGameEngine}, \hyperpage{162}
+  \item {isEventTypeAILevel}
+    \subitem {GameMenuScreen}, \hyperpage{88}
+  \item {isEventTypeSetAI}
+    \subitem {GameMenuScreen}, \hyperpage{89}
+  \item {isHotelBuildingLegal}
+    \subitem {MonopolyGameEngine}, \hyperpage{163}
+  \item {isHotelDestroyingLegal}
+    \subitem {MonopolyGameEngine}, \hyperpage{164}
+  \item {isHuman}
+    \subitem {playerSettings}, \hyperpage{206}
+  \item {isMouseOver}
+    \subitem {Button}, \hyperpage{49}
+  \item {isNone}
+    \subitem {playerSettings}, \hyperpage{206}
+  \item {isNonZeroValue}
+    \subitem {Withdraw}, \hyperpage{261}
+  \item {isOpen}
+    \subitem {ContextWindow}, \hyperpage{65}
+
+  \indexspace
+
+  \item {JAIL}
+    \subitem {main.h}, \hyperpage{299}
+  \item {JailDecision}
+    \subitem {main.h}, \hyperpage{299}
+  \item {json}
+    \subitem {Board.cc}, \hyperpage{275}
+    \subitem {Board.h}, \hyperpage{279}
+  \item {jsonToStationRent}
+    \subitem {Board.cc}, \hyperpage{276}
+    \subitem {Board.h}, \hyperpage{279}
+  \item {jsonToStreetRent}
+    \subitem {Board.cc}, \hyperpage{276}
+    \subitem {Board.h}, \hyperpage{280}
+  \item {jsonToUtilityRent}
+    \subitem {Board.cc}, \hyperpage{277}
+    \subitem {Board.h}, \hyperpage{280}
+
+  \indexspace
+
+  \item {level}
+    \subitem {playerSettings}, \hyperpage{206}
+  \item {link\_mutation\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {main.cc}
+    \subitem {FRAMES\_PER\_SEC\_MAX}, \hyperpage{294}
+    \subitem {GAMES\_IN\_ROUND}, \hyperpage{294}
+    \subitem {height}, \hyperpage{294}
+    \subitem {HEIGHT\_MAX}, \hyperpage{294}
+    \subitem {main}, \hyperpage{294}
+    \subitem {TRAIN}, \hyperpage{294}
+    \subitem {width}, \hyperpage{294}
+    \subitem {WIDTH\_MAX}, \hyperpage{295}
+  \item {main.h}
+    \subitem {ActiveScreenType}, \hyperpage{297}
+    \subitem {AUCTION}, \hyperpage{299}
+    \subitem {BOARDGAME}, \hyperpage{299}
+    \subitem {BUY}, \hyperpage{297}
+    \subitem {BUY\_ACTION}, \hyperpage{301}
+    \subitem {BuyDecision}, \hyperpage{297}
+    \subitem {CARD}, \hyperpage{299}
+    \subitem {CHANCE}, \hyperpage{299}
+    \subitem {COMMUNITY\_CHEST}, \hyperpage{299}
+    \subitem {Decision}, \hyperpage{297}
+    \subitem {EXIT}, \hyperpage{300}
+    \subitem {FIELD\_ACTION}, \hyperpage{301}
+    \subitem {FieldType}, \hyperpage{297}
+    \subitem {FOUR\_HOUSES}, \hyperpage{301}
+    \subitem {FOUR\_STATIONS}, \hyperpage{301}
+    \subitem {FREE\_PARKING}, \hyperpage{299}
+    \subitem {GAME\_ENDED}, \hyperpage{300}
+    \subitem {GAME\_MENU}, \hyperpage{297}
+    \subitem {GameScreenType}, \hyperpage{299}
+    \subitem {GO}, \hyperpage{299}
+    \subitem {GO\_TO\_JAIL}, \hyperpage{299}
+    \subitem {HOTEL}, \hyperpage{301}
+    \subitem {IDLE}, \hyperpage{300}
+    \subitem {JAIL}, \hyperpage{299}
+    \subitem {JailDecision}, \hyperpage{299}
+    \subitem {MAIN\_MENU}, \hyperpage{297}
+    \subitem {MONOPOLY\_GAME}, \hyperpage{297}
+    \subitem {NO}, \hyperpage{297}
+    \subitem {NO\_HOUSES}, \hyperpage{301}
+    \subitem {NO\_TURN}, \hyperpage{301}
+    \subitem {NONE}, \hyperpage{297}
+    \subitem {ONE\_HOUSE}, \hyperpage{301}
+    \subitem {ONE\_STATION}, \hyperpage{301}
+    \subitem {ONE\_UTILITY}, \hyperpage{302}
+    \subitem {PAY}, \hyperpage{299}
+    \subitem {PAY\_RENT}, \hyperpage{301}
+    \subitem {PLAY}, \hyperpage{300}
+    \subitem {PLAYER\_1\_SET\_AI}, \hyperpage{300}
+    \subitem {PLAYER\_1\_SET\_AI\_LEVEL\_1}, \hyperpage{300}
+    \subitem {PLAYER\_1\_SET\_AI\_LEVEL\_2}, \hyperpage{300}
+    \subitem {PLAYER\_1\_SET\_AI\_LEVEL\_3}, \hyperpage{300}
+    \subitem {PLAYER\_1\_SET\_HUMAN}, \hyperpage{300}
+    \subitem {PLAYER\_1\_SET\_NONE}, \hyperpage{300}
+    \subitem {PLAYER\_2\_SET\_AI}, \hyperpage{300}
+    \subitem {PLAYER\_2\_SET\_AI\_LEVEL\_1}, \hyperpage{300}
+    \subitem {PLAYER\_2\_SET\_AI\_LEVEL\_2}, \hyperpage{300}
+    \subitem {PLAYER\_2\_SET\_AI\_LEVEL\_3}, \hyperpage{300}
+    \subitem {PLAYER\_2\_SET\_HUMAN}, \hyperpage{300}
+    \subitem {PLAYER\_2\_SET\_NONE}, \hyperpage{300}
+    \subitem {PLAYER\_3\_SET\_AI}, \hyperpage{300}
+    \subitem {PLAYER\_3\_SET\_AI\_LEVEL\_1}, \hyperpage{300}
+    \subitem {PLAYER\_3\_SET\_AI\_LEVEL\_2}, \hyperpage{300}
+    \subitem {PLAYER\_3\_SET\_AI\_LEVEL\_3}, \hyperpage{300}
+    \subitem {PLAYER\_3\_SET\_HUMAN}, \hyperpage{300}
+    \subitem {PLAYER\_3\_SET\_NONE}, \hyperpage{300}
+    \subitem {PLAYER\_4\_SET\_AI}, \hyperpage{300}
+    \subitem {PLAYER\_4\_SET\_AI\_LEVEL\_1}, \hyperpage{300}
+    \subitem {PLAYER\_4\_SET\_AI\_LEVEL\_2}, \hyperpage{300}
+    \subitem {PLAYER\_4\_SET\_AI\_LEVEL\_3}, \hyperpage{300}
+    \subitem {PLAYER\_4\_SET\_HUMAN}, \hyperpage{300}
+    \subitem {PLAYER\_4\_SET\_NONE}, \hyperpage{300}
+    \subitem {RESIGN}, \hyperpage{297}
+    \subitem {RESULT}, \hyperpage{299}
+    \subitem {RESULTS}, \hyperpage{301}
+    \subitem {RETURN\_TO\_MAIN\_MENU}, \hyperpage{300}
+    \subitem {ROLL}, \hyperpage{299}
+    \subitem {ROLL\_DICE}, \hyperpage{301}
+    \subitem {ScreenEventType}, \hyperpage{299}
+    \subitem {START\_GAME}, \hyperpage{300}
+    \subitem {STATION}, \hyperpage{299}
+    \subitem {StationTiers}, \hyperpage{300}
+    \subitem {STREET}, \hyperpage{299}
+    \subitem {StreetTiers}, \hyperpage{301}
+    \subitem {TAX}, \hyperpage{299}
+    \subitem {THREE\_HOUSES}, \hyperpage{301}
+    \subitem {THREE\_STATIONS}, \hyperpage{301}
+    \subitem {TURN\_END}, \hyperpage{301}
+    \subitem {TurnState}, \hyperpage{301}
+    \subitem {TWO\_HOUESES}, \hyperpage{301}
+    \subitem {TWO\_STATIONS}, \hyperpage{301}
+    \subitem {TWO\_UTILITIES}, \hyperpage{302}
+    \subitem {UTILITY}, \hyperpage{299}
+    \subitem {UtilityTiers}, \hyperpage{301}
+    \subitem {WITHDRAW\_ADD\_VALUE}, \hyperpage{299}
+    \subitem {WITHDRAW\_CHOOSE\_PLAYER}, \hyperpage{299}
+    \subitem {WITHDRAW\_DECISION}, \hyperpage{299}
+    \subitem {WITHDRAW\_ONGOING}, \hyperpage{301}
+    \subitem {YES}, \hyperpage{297}
+  \item {MAIN\_MENU}
+    \subitem {main.h}, \hyperpage{297}
+  \item {mainMenuCreate}
+    \subitem {MainMenuScreen}, \hyperpage{107}
+  \item {MainMenuScreen}, \hyperpage{105}
+    \subitem {draw}, \hyperpage{106}
+    \subitem {mainMenuCreate}, \hyperpage{107}
+    \subitem {MainMenuScreen}, \hyperpage{106}
+    \subitem {worker}, \hyperpage{108}
+  \item {makeWithdraw}
+    \subitem {Withdraw}, \hyperpage{261}
+  \item {max\_fitness}
+    \subitem {neat::pool}, \hyperpage{209}
+  \item {max\_neuron}
+    \subitem {neat::genome}, \hyperpage{101}
+  \item {moneyTextUpdate}
+    \subitem {Withdraw}, \hyperpage{262}
+  \item {moneyTransferIndex}
+    \subitem {Withdraw}, \hyperpage{262}
+  \item {MONOPOLY\_GAME}
+    \subitem {main.h}, \hyperpage{297}
+  \item {MonopolyGameEngine}, \hyperpage{108}
+    \subitem {addAuctionButton}, \hyperpage{112}
+    \subitem {addAuctionText}, \hyperpage{113}
+    \subitem {addButton}, \hyperpage{114}
+    \subitem {addHotels}, \hyperpage{115}
+    \subitem {addHouses}, \hyperpage{115}
+    \subitem {addText}, \hyperpage{116}
+    \subitem {aiBuildingsMangingWorker}, \hyperpage{117}
+    \subitem {buildingsManagingWorker}, \hyperpage{118}
+    \subitem {calculateGroupFieldsOwned}, \hyperpage{119}
+    \subitem {calculateRent}, \hyperpage{120}
+    \subitem {clearBoard}, \hyperpage{121}
+    \subitem {clearPlayers}, \hyperpage{121}
+    \subitem {colorGroupEmpty}, \hyperpage{122}
+    \subitem {createAuctionBidButton}, \hyperpage{123}
+    \subitem {createAuctionOfferButtons}, \hyperpage{123}
+    \subitem {createAuctionResignButton}, \hyperpage{124}
+    \subitem {createAvailableHousesHotelText}, \hyperpage{125}
+    \subitem {createBoard}, \hyperpage{126}
+    \subitem {createButtonBuyResign}, \hyperpage{126}
+    \subitem {createButtonNextProperty}, \hyperpage{127}
+    \subitem {createButtonPerviousProperty}, \hyperpage{128}
+    \subitem {createButtonRollDice}, \hyperpage{129}
+    \subitem {createButtonsBankrupt}, \hyperpage{129}
+    \subitem {createButtonsBuySellHouseHotel}, \hyperpage{130}
+    \subitem {createButtonsJailPay}, \hyperpage{131}
+    \subitem {createButtonsNextTurn}, \hyperpage{132}
+    \subitem {createButtonWithdraw}, \hyperpage{133}
+    \subitem {createChanceCards}, \hyperpage{134}
+    \subitem {createCurrentOfferBidderInfo}, \hyperpage{135}
+    \subitem {createMortagingButton}, \hyperpage{135}
+    \subitem {createPlayers}, \hyperpage{136}
+    \subitem {createResultScreenStuff}, \hyperpage{137}
+    \subitem {createTextBiddedProperty}, \hyperpage{138}
+    \subitem {createTextBidderInfo}, \hyperpage{138}
+    \subitem {createTextHighestBidInfo}, \hyperpage{139}
+    \subitem {createTextLeadingBidderInfo}, \hyperpage{140}
+    \subitem {createTextPlayersInfo}, \hyperpage{141}
+    \subitem {createTextrolled\_value}, \hyperpage{142}
+    \subitem {createTextTurnInfo}, \hyperpage{142}
+    \subitem {getAllPropertyDataSprite}, \hyperpage{143}
+    \subitem {getAllPropertyDataTexts}, \hyperpage{143}
+    \subitem {getAuctionButtons}, \hyperpage{144}
+    \subitem {getAuctionState}, \hyperpage{144}
+    \subitem {getAuctionTexts}, \hyperpage{145}
+    \subitem {getBoard}, \hyperpage{145}
+    \subitem {getButtons}, \hyperpage{146}
+    \subitem {getFont}, \hyperpage{146}
+    \subitem {getFontSize}, \hyperpage{148}
+    \subitem {getHotelCount}, \hyperpage{149}
+    \subitem {getHotelSprite}, \hyperpage{150}
+    \subitem {getHotelTexture}, \hyperpage{151}
+    \subitem {getHouseCount}, \hyperpage{151}
+    \subitem {getHouseSize}, \hyperpage{152}
+    \subitem {getHouseSprite}, \hyperpage{152}
+    \subitem {getHouseTexture}, \hyperpage{153}
+    \subitem {getNotificationsWall}, \hyperpage{154}
+    \subitem {getPlayers}, \hyperpage{154}
+    \subitem {getPlayersResult}, \hyperpage{155}
+    \subitem {getPropertyDataSprite}, \hyperpage{155}
+    \subitem {getPropertyDataTexts}, \hyperpage{156}
+    \subitem {getPropertyNameToDraw}, \hyperpage{156}
+    \subitem {getResultTexts}, \hyperpage{157}
+    \subitem {getScreenType}, \hyperpage{158}
+    \subitem {getTexts}, \hyperpage{158}
+    \subitem {getTurnState}, \hyperpage{159}
+    \subitem {getWithdraw}, \hyperpage{159}
+    \subitem {groupCompleted}, \hyperpage{160}
+    \subitem {isBuildingLegal}, \hyperpage{161}
+    \subitem {isDestroyingLegal}, \hyperpage{162}
+    \subitem {isHotelBuildingLegal}, \hyperpage{163}
+    \subitem {isHotelDestroyingLegal}, \hyperpage{164}
+    \subitem {MonopolyGameEngine}, \hyperpage{112}
+    \subitem {monopolyGameWorker}, \hyperpage{165}
+    \subitem {performAuction}, \hyperpage{167}
+    \subitem {setAuctionState}, \hyperpage{167}
+    \subitem {setFont}, \hyperpage{168}
+    \subitem {setHotelCount}, \hyperpage{168}
+    \subitem {setHouseCount}, \hyperpage{169}
+    \subitem {setplayer\_index\_turn}, \hyperpage{169}
+    \subitem {setScreenType}, \hyperpage{170}
+    \subitem {showPropertyData}, \hyperpage{170}
+    \subitem {shuffleChanceCards}, \hyperpage{172}
+    \subitem {substractHotels}, \hyperpage{172}
+    \subitem {substractHouses}, \hyperpage{173}
+    \subitem {turnInfoTextShow}, \hyperpage{174}
+    \subitem {updateAvailableHousesHotelText}, \hyperpage{174}
+    \subitem {updateResultScreenStuff}, \hyperpage{175}
+    \subitem {updateTextPlayersInfo}, \hyperpage{175}
+  \item {MonopolyGameEngine.h}
+    \subitem {AuctionState}, \hyperpage{304}
+    \subitem {BIDDING}, \hyperpage{304}
+    \subitem {ENDING}, \hyperpage{304}
+    \subitem {INITIALIZATION}, \hyperpage{304}
+    \subitem {NO\_AUCTION}, \hyperpage{304}
+    \subitem {PASS\_BIDDING\_TURN}, \hyperpage{304}
+  \item {monopolyGameWorker}
+    \subitem {MonopolyGameEngine}, \hyperpage{165}
+  \item {mouseIsNotOver}
+    \subitem {Button}, \hyperpage{49}
+  \item {mouseIsOver}
+    \subitem {Button}, \hyperpage{50}
+  \item {MOVEMENT\_SPACES}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {MOVEMENT\_TO\_PROPERTY}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {MOVEMENT\_WITH\_BUY\_OR\_PAY}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {mutation\_rates}
+    \subitem {neat::genome}, \hyperpage{101}
+    \subitem {neat::pool}, \hyperpage{209}
+
+  \indexspace
+
+  \item {neat}, \hyperpage{9}
+  \item {neat::gene}, \hyperpage{98}
+    \subitem {enabled}, \hyperpage{99}
+    \subitem {from\_node}, \hyperpage{99}
+    \subitem {innovation\_num}, \hyperpage{99}
+    \subitem {to\_node}, \hyperpage{99}
+    \subitem {weight}, \hyperpage{99}
+  \item {neat::genome}, \hyperpage{100}
+    \subitem {adjusted\_fitness}, \hyperpage{101}
+    \subitem {can\_be\_recurrent}, \hyperpage{101}
+    \subitem {fitness}, \hyperpage{101}
+    \subitem {genes}, \hyperpage{101}
+    \subitem {genome}, \hyperpage{100}
+    \subitem {global\_rank}, \hyperpage{101}
+    \subitem {max\_neuron}, \hyperpage{101}
+    \subitem {mutation\_rates}, \hyperpage{101}
+    \subitem {network\_info}, \hyperpage{102}
+  \item {neat::innovation\_container}, \hyperpage{103}
+    \subitem {add\_gene}, \hyperpage{104}
+    \subitem {innovation\_container}, \hyperpage{104}
+    \subitem {number}, \hyperpage{104}
+    \subitem {pool}, \hyperpage{104}
+    \subitem {reset}, \hyperpage{104}
+  \item {neat::mutation\_rate\_container}, \hyperpage{176}
+    \subitem {bias\_mutation\_chance}, \hyperpage{177}
+    \subitem {connection\_mutate\_chance}, \hyperpage{178}
+    \subitem {crossover\_chance}, \hyperpage{178}
+    \subitem {disable\_mutation\_chance}, \hyperpage{178}
+    \subitem {enable\_mutation\_chance}, \hyperpage{178}
+    \subitem {link\_mutation\_chance}, \hyperpage{178}
+    \subitem {node\_mutation\_chance}, \hyperpage{178}
+    \subitem {perturb\_chance}, \hyperpage{178}
+    \subitem {read}, \hyperpage{177}
+    \subitem {step\_size}, \hyperpage{178}
+    \subitem {write}, \hyperpage{177}
+  \item {neat::network\_info\_container}, \hyperpage{179}
+    \subitem {bias\_size}, \hyperpage{179}
+    \subitem {functional\_nodes}, \hyperpage{179}
+    \subitem {input\_size}, \hyperpage{179}
+    \subitem {output\_size}, \hyperpage{179}
+    \subitem {recurrent}, \hyperpage{180}
+  \item {neat::pool}, \hyperpage{207}
+    \subitem {export\_tofile}, \hyperpage{208}
+    \subitem {generation}, \hyperpage{208}
+    \subitem {generator}, \hyperpage{209}
+    \subitem {get\_genomes}, \hyperpage{208}
+    \subitem {import\_fromfile}, \hyperpage{208}
+    \subitem {max\_fitness}, \hyperpage{209}
+    \subitem {mutation\_rates}, \hyperpage{209}
+    \subitem {network\_info}, \hyperpage{209}
+    \subitem {new\_generation}, \hyperpage{208}
+    \subitem {pool}, \hyperpage{207}
+    \subitem {rd}, \hyperpage{209}
+    \subitem {speciating\_parameters}, \hyperpage{209}
+    \subitem {species}, \hyperpage{209}
+  \item {neat::speciating\_parameter\_container}, \hyperpage{220}
+    \subitem {delta\_disjoint}, \hyperpage{221}
+    \subitem {delta\_threshold}, \hyperpage{221}
+    \subitem {delta\_weights}, \hyperpage{221}
+    \subitem {population}, \hyperpage{221}
+    \subitem {read}, \hyperpage{220}
+    \subitem {stale\_species}, \hyperpage{221}
+    \subitem {write}, \hyperpage{220}
+  \item {neat::specie}, \hyperpage{222}
+    \subitem {average\_fitness}, \hyperpage{222}
+    \subitem {genomes}, \hyperpage{222}
+    \subitem {staleness}, \hyperpage{222}
+    \subitem {top\_fitness}, \hyperpage{222}
+  \item {network\_info}
+    \subitem {neat::genome}, \hyperpage{102}
+    \subitem {neat::pool}, \hyperpage{209}
+  \item {neuralnet}
+    \subitem {ann::neuralnet}, \hyperpage{180}
+  \item {neuron}
+    \subitem {ann::neuron}, \hyperpage{182}
+  \item {new\_generation}
+    \subitem {neat::pool}, \hyperpage{208}
+  \item {NO}
+    \subitem {main.h}, \hyperpage{297}
+  \item {NO\_AUCTION}
+    \subitem {MonopolyGameEngine.h}, \hyperpage{304}
+  \item {NO\_HOUSES}
+    \subitem {main.h}, \hyperpage{301}
+  \item {NO\_TURN}
+    \subitem {main.h}, \hyperpage{301}
+  \item {node\_mutation\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+  \item {NON\_RECURRENT}
+    \subitem {ann}, \hyperpage{9}
+  \item {NONE}
+    \subitem {main.h}, \hyperpage{297}
+  \item {NotificationWall}, \hyperpage{183}
+    \subitem {addToWall}, \hyperpage{184}
+    \subitem {clearWall}, \hyperpage{185}
+    \subitem {getFont}, \hyperpage{185}
+    \subitem {getFontSize}, \hyperpage{186}
+    \subitem {getWall}, \hyperpage{186}
+    \subitem {NotificationWall}, \hyperpage{184}
+    \subitem {setFont}, \hyperpage{187}
+  \item {number}
+    \subitem {neat::innovation\_container}, \hyperpage{104}
+
+  \indexspace
+
+  \item {ONE\_HOUSE}
+    \subitem {main.h}, \hyperpage{301}
+  \item {ONE\_STATION}
+    \subitem {main.h}, \hyperpage{301}
+  \item {ONE\_UTILITY}
+    \subitem {main.h}, \hyperpage{302}
+  \item {operator=}
+    \subitem {ContextWindow}, \hyperpage{66}
+  \item {output\_size}
+    \subitem {neat::network\_info\_container}, \hyperpage{179}
+
+  \indexspace
+
+  \item {PASS\_BIDDING\_TURN}
+    \subitem {MonopolyGameEngine.h}, \hyperpage{304}
+  \item {PAY}
+    \subitem {main.h}, \hyperpage{299}
+  \item {PAY\_FOR\_HOUSE\_HOTEL}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {PAY\_PLAYERS}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {PAY\_RENT}
+    \subitem {main.h}, \hyperpage{301}
+  \item {performAuction}
+    \subitem {MonopolyGameEngine}, \hyperpage{167}
+  \item {perturb\_chance}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+  \item {PLAY}
+    \subitem {main.h}, \hyperpage{300}
+  \item {Player}, \hyperpage{187}
+    \subitem {addFieldOwnedId}, \hyperpage{190}
+    \subitem {addMoney}, \hyperpage{191}
+    \subitem {clearFieldOwnedId}, \hyperpage{191}
+    \subitem {createSprite}, \hyperpage{191}
+    \subitem {decideAcceptTrade}, \hyperpage{192}
+    \subitem {decideAuctionBid}, \hyperpage{192}
+    \subitem {decideBuildHouse}, \hyperpage{192}
+    \subitem {decideBuy}, \hyperpage{192}
+    \subitem {decideJail}, \hyperpage{193}
+    \subitem {decideMortgage}, \hyperpage{193}
+    \subitem {decideOfferTrade}, \hyperpage{194}
+    \subitem {decideSellHouse}, \hyperpage{194}
+    \subitem {decideUnmortgage}, \hyperpage{194}
+    \subitem {getAdapter}, \hyperpage{195}
+    \subitem {getAiLevel}, \hyperpage{195}
+    \subitem {getColor}, \hyperpage{195}
+    \subitem {getFieldOwnedId}, \hyperpage{196}
+    \subitem {getId}, \hyperpage{196}
+    \subitem {getIsAi}, \hyperpage{196}
+    \subitem {getJailCards}, \hyperpage{196}
+    \subitem {getJailStatus}, \hyperpage{196}
+    \subitem {getMoney}, \hyperpage{197}
+    \subitem {getNeuralNetwork}, \hyperpage{197}
+    \subitem {getPosition}, \hyperpage{197}
+    \subitem {getResultPlace}, \hyperpage{198}
+    \subitem {getSprite}, \hyperpage{198}
+    \subitem {getSpriteOffsetX}, \hyperpage{198}
+    \subitem {getSpriteOffsetY}, \hyperpage{198}
+    \subitem {getTexture}, \hyperpage{198}
+    \subitem {hasFieldOwnedId}, \hyperpage{198}
+    \subitem {Player}, \hyperpage{189}
+    \subitem {reduceJailStatus}, \hyperpage{199}
+    \subitem {removeFieldOwnedId}, \hyperpage{199}
+    \subitem {setAiLevel}, \hyperpage{199}
+    \subitem {setColor}, \hyperpage{200}
+    \subitem {setId}, \hyperpage{200}
+    \subitem {setIsAi}, \hyperpage{201}
+    \subitem {setJailCards}, \hyperpage{202}
+    \subitem {setJailStatus}, \hyperpage{202}
+    \subitem {setMoney}, \hyperpage{203}
+    \subitem {setPosition}, \hyperpage{203}
+    \subitem {setResultPlace}, \hyperpage{204}
+    \subitem {setSpriteOffsetX}, \hyperpage{204}
+    \subitem {setSpriteOffsetY}, \hyperpage{205}
+    \subitem {setSpritePosition}, \hyperpage{205}
+    \subitem {substractMoney}, \hyperpage{205}
+  \item {PLAYER\_1\_SET\_AI}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_1\_SET\_AI\_LEVEL\_1}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_1\_SET\_AI\_LEVEL\_2}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_1\_SET\_AI\_LEVEL\_3}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_1\_SET\_HUMAN}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_1\_SET\_NONE}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_2\_SET\_AI}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_2\_SET\_AI\_LEVEL\_1}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_2\_SET\_AI\_LEVEL\_2}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_2\_SET\_AI\_LEVEL\_3}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_2\_SET\_HUMAN}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_2\_SET\_NONE}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_3\_SET\_AI}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_3\_SET\_AI\_LEVEL\_1}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_3\_SET\_AI\_LEVEL\_2}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_3\_SET\_AI\_LEVEL\_3}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_3\_SET\_HUMAN}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_3\_SET\_NONE}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_4\_SET\_AI}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_4\_SET\_AI\_LEVEL\_1}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_4\_SET\_AI\_LEVEL\_2}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_4\_SET\_AI\_LEVEL\_3}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_4\_SET\_HUMAN}
+    \subitem {main.h}, \hyperpage{300}
+  \item {PLAYER\_4\_SET\_NONE}
+    \subitem {main.h}, \hyperpage{300}
+  \item {playerSettings}, \hyperpage{206}
+    \subitem {isHuman}, \hyperpage{206}
+    \subitem {isNone}, \hyperpage{206}
+    \subitem {level}, \hyperpage{206}
+  \item {pollForEvents}
+    \subitem {GameEngine}, \hyperpage{82}
+  \item {pool}
+    \subitem {neat::innovation\_container}, \hyperpage{104}
+    \subitem {neat::pool}, \hyperpage{207}
+  \item {population}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{221}
+  \item {PossibleFields}
+    \subitem {Board.h}, \hyperpage{279}
+  \item {PropertyField}, \hyperpage{210}
+    \subitem {createFlagSprite}, \hyperpage{212}
+    \subitem {getGroupMembers}, \hyperpage{213}
+    \subitem {getIsMortgaged}, \hyperpage{213}
+    \subitem {getMortgage}, \hyperpage{214}
+    \subitem {getOwner}, \hyperpage{214}
+    \subitem {getOwnerFlag}, \hyperpage{215}
+    \subitem {getPrice}, \hyperpage{215}
+    \subitem {getUnmortgageValue}, \hyperpage{216}
+    \subitem {PropertyField}, \hyperpage{211}
+    \subitem {resetDefault}, \hyperpage{216}
+    \subitem {resetOwner}, \hyperpage{217}
+    \subitem {setIsMortgaged}, \hyperpage{217}
+    \subitem {setOwner}, \hyperpage{218}
+  \item {propertyPlayerMoveIndex}
+    \subitem {Withdraw}, \hyperpage{263}
+
+  \indexspace
+
+  \item {rd}
+    \subitem {neat::pool}, \hyperpage{209}
+  \item {read}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{177}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{220}
+  \item {RECURRENT}
+    \subitem {ann}, \hyperpage{9}
+  \item {recurrent}
+    \subitem {neat::network\_info\_container}, \hyperpage{180}
+  \item {reduceJailStatus}
+    \subitem {Player}, \hyperpage{199}
+  \item {removeFieldOwnedId}
+    \subitem {Player}, \hyperpage{199}
+  \item {reset}
+    \subitem {neat::innovation\_container}, \hyperpage{104}
+  \item {resetDefault}
+    \subitem {PropertyField}, \hyperpage{216}
+    \subitem {StreetField}, \hyperpage{232}
+  \item {resetOwner}
+    \subitem {PropertyField}, \hyperpage{217}
+  \item {RESIGN}
+    \subitem {main.h}, \hyperpage{297}
+  \item {RESULT}
+    \subitem {main.h}, \hyperpage{299}
+  \item {RESULTS}
+    \subitem {main.h}, \hyperpage{301}
+  \item {RETURN\_TO\_MAIN\_MENU}
+    \subitem {main.h}, \hyperpage{300}
+  \item {ROLL}
+    \subitem {main.h}, \hyperpage{299}
+  \item {ROLL\_DICE}
+    \subitem {main.h}, \hyperpage{301}
+  \item {RotationException}, \hyperpage{218}
+    \subitem {getBadRotation}, \hyperpage{220}
+    \subitem {RotationException}, \hyperpage{219}
+
+  \indexspace
+
+  \item {ScreenEventType}
+    \subitem {main.h}, \hyperpage{299}
+  \item {setActiveBackColor}
+    \subitem {Button}, \hyperpage{50}
+  \item {setActiveTextColor}
+    \subitem {Button}, \hyperpage{50}
+  \item {setAiLevel}
+    \subitem {Player}, \hyperpage{199}
+  \item {setAILevelColumnVisibility}
+    \subitem {GameMenuScreen}, \hyperpage{89}
+  \item {setAuctionState}
+    \subitem {MonopolyGameEngine}, \hyperpage{167}
+  \item {setBoard}
+    \subitem {Withdraw}, \hyperpage{263}
+  \item {setButtonFocus}
+    \subitem {Button}, \hyperpage{51}
+  \item {setButtonUnfocus}
+    \subitem {Button}, \hyperpage{51}
+  \item {setCard}
+    \subitem {AiAdapter}, \hyperpage{25}
+  \item {setChooseScreenVisible}
+    \subitem {Withdraw}, \hyperpage{264}
+  \item {setColor}
+    \subitem {Player}, \hyperpage{200}
+  \item {setContextWindow}
+    \subitem {ActiveScreen}, \hyperpage{17}
+  \item {setDecisionScreenVisible}
+    \subitem {Withdraw}, \hyperpage{264}
+  \item {setDefaultAILevelButtonsFocus}
+    \subitem {GameMenuScreen}, \hyperpage{90}
+  \item {setEventType}
+    \subitem {Button}, \hyperpage{52}
+  \item {setFocusBackColor}
+    \subitem {Button}, \hyperpage{52}
+  \item {setFocusTextColor}
+    \subitem {Button}, \hyperpage{52}
+  \item {setFont}
+    \subitem {ActiveScreen}, \hyperpage{17}
+    \subitem {Button}, \hyperpage{53}
+    \subitem {MonopolyGameEngine}, \hyperpage{168}
+    \subitem {NotificationWall}, \hyperpage{187}
+    \subitem {Withdraw}, \hyperpage{265}
+  \item {setHeight}
+    \subitem {Field}, \hyperpage{76}
+  \item {setHotelCount}
+    \subitem {MonopolyGameEngine}, \hyperpage{168}
+  \item {setHouse}
+    \subitem {AiAdapter}, \hyperpage{26}
+  \item {setHouseCount}
+    \subitem {MonopolyGameEngine}, \hyperpage{169}
+  \item {setHouseNumber}
+    \subitem {StreetField}, \hyperpage{232}
+  \item {setId}
+    \subitem {Player}, \hyperpage{200}
+  \item {setInactiveBackColor}
+    \subitem {Button}, \hyperpage{53}
+  \item {setInactiveTextColor}
+    \subitem {Button}, \hyperpage{53}
+  \item {setIsActive}
+    \subitem {Button}, \hyperpage{53}
+  \item {setIsAi}
+    \subitem {Player}, \hyperpage{201}
+  \item {setIsClicked}
+    \subitem {Button}, \hyperpage{54}
+  \item {setIsFocus}
+    \subitem {Button}, \hyperpage{54}
+  \item {setIsHotel}
+    \subitem {StreetField}, \hyperpage{233}
+  \item {setIsMortgaged}
+    \subitem {PropertyField}, \hyperpage{217}
+  \item {setIsVisible}
+    \subitem {Button}, \hyperpage{54}
+  \item {setJail}
+    \subitem {AiAdapter}, \hyperpage{26}
+  \item {setJailCards}
+    \subitem {Player}, \hyperpage{202}
+  \item {setJailStatus}
+    \subitem {Player}, \hyperpage{202}
+  \item {setMoney}
+    \subitem {AiAdapter}, \hyperpage{27}
+    \subitem {Player}, \hyperpage{203}
+  \item {setMoneyContext}
+    \subitem {AiAdapter}, \hyperpage{27}
+  \item {setMortgage}
+    \subitem {AiAdapter}, \hyperpage{28}
+  \item {setNeuralNetwork}
+    \subitem {AiPlayer}, \hyperpage{39}
+  \item {setOtherButtonsInactive}
+    \subitem {GameMenuScreen}, \hyperpage{91}
+  \item {setOwner}
+    \subitem {AiAdapter}, \hyperpage{28}
+    \subitem {PropertyField}, \hyperpage{218}
+  \item {setPlayer1IndexProperties}
+    \subitem {Withdraw}, \hyperpage{266}
+  \item {setPlayer1ToWithdraw}
+    \subitem {Withdraw}, \hyperpage{266}
+  \item {setPlayer2IndexProperties}
+    \subitem {Withdraw}, \hyperpage{266}
+  \item {setPlayer2ToWithdraw}
+    \subitem {Withdraw}, \hyperpage{266}
+  \item {setplayer\_index\_turn}
+    \subitem {MonopolyGameEngine}, \hyperpage{169}
+  \item {setPlayerSettings}
+    \subitem {GameMenuScreen}, \hyperpage{92}
+  \item {setPosition}
+    \subitem {AiAdapter}, \hyperpage{28}
+    \subitem {Button}, \hyperpage{55}
+    \subitem {ChanceCard}, \hyperpage{61}
+    \subitem {Field}, \hyperpage{76}
+    \subitem {Player}, \hyperpage{203}
+  \item {setResultPlace}
+    \subitem {Player}, \hyperpage{204}
+  \item {setRotation}
+    \subitem {ChanceCard}, \hyperpage{61}
+    \subitem {Field}, \hyperpage{77}
+  \item {setScreenType}
+    \subitem {ActiveScreen}, \hyperpage{18}
+    \subitem {MonopolyGameEngine}, \hyperpage{170}
+  \item {setSelection}
+    \subitem {AiAdapter}, \hyperpage{29}
+  \item {setSelectionState}
+    \subitem {AiAdapter}, \hyperpage{29}
+  \item {setSpriteOffsetX}
+    \subitem {Player}, \hyperpage{204}
+  \item {setSpriteOffsetY}
+    \subitem {Player}, \hyperpage{205}
+  \item {setSpritePosition}
+    \subitem {Player}, \hyperpage{205}
+  \item {setTurn}
+    \subitem {AiAdapter}, \hyperpage{29}
+  \item {setTurnState}
+    \subitem {Withdraw}, \hyperpage{267}
+  \item {setValueScreenVisible}
+    \subitem {Withdraw}, \hyperpage{267}
+  \item {setWasReleased}
+    \subitem {Button}, \hyperpage{55}
+  \item {setWidth}
+    \subitem {Field}, \hyperpage{77}
+  \item {showProperty}
+    \subitem {Withdraw}, \hyperpage{268}
+  \item {showPropertyData}
+    \subitem {MonopolyGameEngine}, \hyperpage{170}
+  \item {shuffleChanceCards}
+    \subitem {MonopolyGameEngine}, \hyperpage{172}
+  \item {speciating\_parameters}
+    \subitem {neat::pool}, \hyperpage{209}
+  \item {species}
+    \subitem {neat::pool}, \hyperpage{209}
+  \item {SpriteOffsetException}, \hyperpage{223}
+    \subitem {getBadOffset}, \hyperpage{224}
+    \subitem {SpriteOffsetException}, \hyperpage{223, 224}
+  \item {stale\_species}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{221}
+  \item {staleness}
+    \subitem {neat::specie}, \hyperpage{222}
+  \item {START\_GAME}
+    \subitem {main.h}, \hyperpage{300}
+  \item {STATION}
+    \subitem {main.h}, \hyperpage{299}
+  \item {StationField}, \hyperpage{224}
+    \subitem {calculateRent}, \hyperpage{226}
+    \subitem {getRentValues}, \hyperpage{226}
+    \subitem {StationField}, \hyperpage{225}
+  \item {StationTiers}
+    \subitem {main.h}, \hyperpage{300}
+  \item {step\_size}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{178}
+  \item {STREET}
+    \subitem {main.h}, \hyperpage{299}
+  \item {StreetField}, \hyperpage{227}
+    \subitem {calculateRent}, \hyperpage{229}
+    \subitem {getHotelPrice}, \hyperpage{230}
+    \subitem {getHouseNumber}, \hyperpage{230}
+    \subitem {getHousePrice}, \hyperpage{230}
+    \subitem {getIsHotel}, \hyperpage{231}
+    \subitem {getRentValues}, \hyperpage{231}
+    \subitem {resetDefault}, \hyperpage{232}
+    \subitem {setHouseNumber}, \hyperpage{232}
+    \subitem {setIsHotel}, \hyperpage{233}
+    \subitem {StreetField}, \hyperpage{229}
+  \item {StreetTiers}
+    \subitem {main.h}, \hyperpage{301}
+  \item {substractHotels}
+    \subitem {MonopolyGameEngine}, \hyperpage{172}
+  \item {substractHouses}
+    \subitem {MonopolyGameEngine}, \hyperpage{173}
+  \item {substractMoney}
+    \subitem {Player}, \hyperpage{205}
+
+  \indexspace
+
+  \item {TAX}
+    \subitem {main.h}, \hyperpage{299}
+  \item {TAX\_CARD}
+    \subitem {Chance.h}, \hyperpage{285}
+  \item {TaxField}, \hyperpage{233}
+    \subitem {getTaxValue}, \hyperpage{235}
+    \subitem {TaxField}, \hyperpage{234}
+  \item {THREE\_HOUSES}
+    \subitem {main.h}, \hyperpage{301}
+  \item {THREE\_STATIONS}
+    \subitem {main.h}, \hyperpage{301}
+  \item {to\_node}
+    \subitem {neat::gene}, \hyperpage{99}
+  \item {top\_fitness}
+    \subitem {neat::specie}, \hyperpage{222}
+  \item {TRAIN}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {TURN\_END}
+    \subitem {main.h}, \hyperpage{301}
+  \item {turnInfoTextShow}
+    \subitem {MonopolyGameEngine}, \hyperpage{174}
+  \item {TurnState}
+    \subitem {main.h}, \hyperpage{301}
+  \item {TWO\_HOUESES}
+    \subitem {main.h}, \hyperpage{301}
+  \item {TWO\_STATIONS}
+    \subitem {main.h}, \hyperpage{301}
+  \item {TWO\_UTILITIES}
+    \subitem {main.h}, \hyperpage{302}
+  \item {type}
+    \subitem {ann}, \hyperpage{9}
+    \subitem {ann::neuron}, \hyperpage{183}
+
+  \indexspace
+
+  \item {updateAvailableHousesHotelText}
+    \subitem {MonopolyGameEngine}, \hyperpage{174}
+  \item {updateColors}
+    \subitem {Button}, \hyperpage{55}
+  \item {updateResultScreenStuff}
+    \subitem {MonopolyGameEngine}, \hyperpage{175}
+  \item {updateTextPlayersInfo}
+    \subitem {MonopolyGameEngine}, \hyperpage{175}
+  \item {UTILITY}
+    \subitem {main.h}, \hyperpage{299}
+  \item {UtilityField}, \hyperpage{236}
+    \subitem {calculateRent}, \hyperpage{237}
+    \subitem {getRentMultipliers}, \hyperpage{238}
+    \subitem {UtilityField}, \hyperpage{237}
+  \item {UtilityTiers}
+    \subitem {main.h}, \hyperpage{301}
+
+  \indexspace
+
+  \item {value}
+    \subitem {ann::neuron}, \hyperpage{183}
+  \item {view\_}
+    \subitem {ContextWindow}, \hyperpage{66}
+  \item {visited}
+    \subitem {ann::neuron}, \hyperpage{183}
+
+  \indexspace
+
+  \item {weight}
+    \subitem {neat::gene}, \hyperpage{99}
+  \item {width}
+    \subitem {main.cc}, \hyperpage{294}
+  \item {WIDTH\_MAX}
+    \subitem {main.cc}, \hyperpage{295}
+  \item {window\_}
+    \subitem {ContextWindow}, \hyperpage{66}
+  \item {Withdraw}, \hyperpage{238}
+    \subitem {addPropertyPlayerShowed}, \hyperpage{242}
+    \subitem {createChoosePlayerScreen}, \hyperpage{242}
+    \subitem {createDecisionPlayerScreen}, \hyperpage{243}
+    \subitem {createValuePlayerScreen}, \hyperpage{244}
+    \subitem {getAcceptDecisionButton}, \hyperpage{244}
+    \subitem {getButtons}, \hyperpage{244}
+    \subitem {getFont}, \hyperpage{245}
+    \subitem {getFontSize}, \hyperpage{245}
+    \subitem {getPlayer1AddButton}, \hyperpage{246}
+    \subitem {getPlayer1Button}, \hyperpage{246}
+    \subitem {getPlayer1IndexNextButton}, \hyperpage{246}
+    \subitem {getPlayer1IndexPreviousButton}, \hyperpage{247}
+    \subitem {getPlayer1IndexProperties}, \hyperpage{247}
+    \subitem {getPlayer1minus1}, \hyperpage{247}
+    \subitem {getPlayer1minus10}, \hyperpage{247}
+    \subitem {getPlayer1minus100}, \hyperpage{248}
+    \subitem {getPlayer1NextButton}, \hyperpage{248}
+    \subitem {getPlayer1plus1}, \hyperpage{248}
+    \subitem {getPlayer1plus10}, \hyperpage{248}
+    \subitem {getPlayer1plus100}, \hyperpage{249}
+    \subitem {getPlayer1PreviousButton}, \hyperpage{249}
+    \subitem {getPlayer1RemoveButton}, \hyperpage{249}
+    \subitem {getPlayer1ToWithdraw}, \hyperpage{249}
+    \subitem {getPlayer2AddButton}, \hyperpage{250}
+    \subitem {getPlayer2Button}, \hyperpage{250}
+    \subitem {getPlayer2IndexNextButton}, \hyperpage{250}
+    \subitem {getPlayer2IndexPreviousButton}, \hyperpage{250}
+    \subitem {getPlayer2IndexProperties}, \hyperpage{251}
+    \subitem {getPlayer2minus1}, \hyperpage{251}
+    \subitem {getPlayer2minus10}, \hyperpage{251}
+    \subitem {getPlayer2minus100}, \hyperpage{251}
+    \subitem {getPlayer2NextButton}, \hyperpage{252}
+    \subitem {getPlayer2plus1}, \hyperpage{252}
+    \subitem {getPlayer2plus10}, \hyperpage{252}
+    \subitem {getPlayer2plus100}, \hyperpage{252}
+    \subitem {getPlayer2PreviousButton}, \hyperpage{253}
+    \subitem {getPlayer2RemoveButton}, \hyperpage{253}
+    \subitem {getPlayer2ToWithdraw}, \hyperpage{253}
+    \subitem {getPlayer3Button}, \hyperpage{253}
+    \subitem {getPlayer4Button}, \hyperpage{254}
+    \subitem {getResignButton}, \hyperpage{254}
+    \subitem {getResignDecisionButton}, \hyperpage{254}
+    \subitem {getResignValueButton}, \hyperpage{254}
+    \subitem {getSpritePropertyPlayer1}, \hyperpage{255}
+    \subitem {getSpritePropertyPlayer1Index}, \hyperpage{255}
+    \subitem {getSpritePropertyPlayer2}, \hyperpage{255}
+    \subitem {getSpritePropertyPlayer2Index}, \hyperpage{256}
+    \subitem {getSubmitValueButton}, \hyperpage{256}
+    \subitem {getTexts}, \hyperpage{257}
+    \subitem {getTextsPropertyPlayer1}, \hyperpage{257}
+    \subitem {getTextsPropertyPlayer1Index}, \hyperpage{257}
+    \subitem {getTextsPropertyPlayer2}, \hyperpage{258}
+    \subitem {getTextsPropertyPlayer2Index}, \hyperpage{258}
+    \subitem {getTexturePropertyPlayer1}, \hyperpage{259}
+    \subitem {getTexturePropertyPlayer1Index}, \hyperpage{259}
+    \subitem {getTexturePropertyPlayer2}, \hyperpage{260}
+    \subitem {getTexturePropertyPlayer2Index}, \hyperpage{260}
+    \subitem {getTurnState}, \hyperpage{261}
+    \subitem {isNonZeroValue}, \hyperpage{261}
+    \subitem {makeWithdraw}, \hyperpage{261}
+    \subitem {moneyTextUpdate}, \hyperpage{262}
+    \subitem {moneyTransferIndex}, \hyperpage{262}
+    \subitem {propertyPlayerMoveIndex}, \hyperpage{263}
+    \subitem {setBoard}, \hyperpage{263}
+    \subitem {setChooseScreenVisible}, \hyperpage{264}
+    \subitem {setDecisionScreenVisible}, \hyperpage{264}
+    \subitem {setFont}, \hyperpage{265}
+    \subitem {setPlayer1IndexProperties}, \hyperpage{266}
+    \subitem {setPlayer1ToWithdraw}, \hyperpage{266}
+    \subitem {setPlayer2IndexProperties}, \hyperpage{266}
+    \subitem {setPlayer2ToWithdraw}, \hyperpage{266}
+    \subitem {setTurnState}, \hyperpage{267}
+    \subitem {setValueScreenVisible}, \hyperpage{267}
+    \subitem {showProperty}, \hyperpage{268}
+    \subitem {Withdraw}, \hyperpage{242}
+  \item {WITHDRAW\_ADD\_VALUE}
+    \subitem {main.h}, \hyperpage{299}
+  \item {WITHDRAW\_CHOOSE\_PLAYER}
+    \subitem {main.h}, \hyperpage{299}
+  \item {WITHDRAW\_DECISION}
+    \subitem {main.h}, \hyperpage{299}
+  \item {WITHDRAW\_ONGOING}
+    \subitem {main.h}, \hyperpage{301}
+  \item {worker}
+    \subitem {ActiveScreen}, \hyperpage{19}
+    \subitem {GameEngine}, \hyperpage{82}
+    \subitem {GameMenuScreen}, \hyperpage{92}
+    \subitem {GameScreen}, \hyperpage{97}
+    \subitem {MainMenuScreen}, \hyperpage{108}
+  \item {write}
+    \subitem {neat::mutation\_rate\_container}, \hyperpage{177}
+    \subitem {neat::speciating\_parameter\_container}, \hyperpage{220}
+
+  \indexspace
+
+  \item {YES}
+    \subitem {main.h}, \hyperpage{297}
+
+\end{theindex}

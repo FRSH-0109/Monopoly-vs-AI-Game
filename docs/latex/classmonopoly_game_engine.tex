@@ -1,0 +1,1797 @@
+\hypertarget{classmonopoly_game_engine}{}\doxysection{monopoly\+Game\+Engine Class Reference}
+\label{classmonopoly_game_engine}\index{monopolyGameEngine@{monopolyGameEngine}}
+
+
+{\ttfamily \#include $<$Monopoly\+Game\+Engine.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmonopoly_game_engine_a69a290ee4659f315a39e6ca11ded46f2}{monopoly\+Game\+Engine}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ac54a5e28a83fa032b0a435e68ad79bf5}{set\+Screen\+Type}} (\mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}} new\+Screen\+Type)
+\item 
+\mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}} \mbox{\hyperlink{classmonopoly_game_engine_a2b6b4f415cc0b8dca63c44d01eb052c3}{get\+Screen\+Type}} () const
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a08991c84ad649cea8a1e8d93f911c5ad}{create\+Button\+Roll\+Dice}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a442f54154ce96c27af24e3e3767bf2ab}{create\+Text\+Turn\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a603ea518679d0045b3c9cd9567a57aa8}{create\+Text\+Rolled\+Value}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a04045ab52d75c210266c71ba994e7871}{create\+Text\+Players\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ab00dbe0baa4635500d93c2004f7e0218}{update\+Text\+Players\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a7ff28e544f58693a35065b83f2a9ab05}{create\+Text\+Bidded\+Property}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a61b780452ccbef3a005727902e6fd104}{create\+Text\+Bidder\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_af9e9f54376e8ba1c7d5550585e8a5157}{create\+Text\+Highest\+Bid\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a5b52940b42693c329db1e770bca763e5}{create\+Text\+Leading\+Bidder\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a6eec29c749588b03ff06b4ad6c436077}{create\+Current\+Offer\+Bidder\+Info}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_afc6f2b5737a9a642d6531e7e35043d3b}{create\+Button\+Buy\+Resign}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a1aa1e4532404965b9fbf59ee5a1b34ff}{create\+Button\+Next\+Property}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a439ef95f3f0eb956fa7a7f1cefc3e251}{create\+Button\+Pervious\+Property}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a34df202e27c1adb6a3db0e74e99d0eae}{create\+Buttons\+Buy\+Sell\+House\+Hotel}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ae0b8e1bb219ee27ca82ad4dacdef6db5}{create\+Buttons\+Bankrupt}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_aabdbae2868a603ba37b4d00161da7d2a}{create\+Buttons\+Next\+Turn}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a3f7ab310f0aaf5dad6a174c1b6c058dc}{create\+Buttons\+Jail\+Pay}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a7848f61249fb58380e8ca9f11e599fe6}{create\+Auction\+Offer\+Buttons}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_aecb1bcba8503a9b60df0563557c27a78}{create\+Auction\+Bid\+Button}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a0d8cbc20ae90259c3f0e5258472c6532}{create\+Auction\+Resign\+Button}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a4244d1a680b65483d836e11fe697d09c}{create\+Button\+Withdraw}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a8ae1626f4ffd737295fd1786ca3d2dbe}{create\+Mortaging\+Button}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a35ed5314742ad633d58bc7fcb975a7e4}{create\+Result\+Screen\+Stuff}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a6dbe0b7eb3ce8969cd6c0fead31d1de0}{update\+Result\+Screen\+Stuff}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_aacbd6ca705e1af117659326ed41739e9}{show\+Property\+Data}} (unsigned int pos, bool is\+Property\+Shown\+To\+Buy)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a25420ad24a931e657807ebd75deeac21}{turn\+Info\+Text\+Show}} ()
+\item 
+sf\+::\+Font \& \mbox{\hyperlink{classmonopoly_game_engine_aa1c15fdbe8a343109e69453126c99d90}{get\+Font}} ()
+\item 
+unsigned int \mbox{\hyperlink{classmonopoly_game_engine_a2e00931eaa6fae4e2967e73503264f7a}{get\+Font\+Size}} () const
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a37eb275ab8693e3a9cb880ed28e96619}{set\+Font}} (sf\+::\+Font font)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_adaefef1ef3de4e2ef27e98af810b41f1}{add\+Button}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+Tmp)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a1799fd373de57a19e6ae6ec093d9da98}{add\+Text}} (std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ text\+Tmp)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ad78a5696a741e9d5b2d9c623c838794f}{add\+Auction\+Button}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+Tmp)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ad0583aed4fa19f0cc2af556756cf35de}{add\+Auction\+Text}} (std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ text\+Tmp)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a112d14d9d3f29d4eff3c1e6312cd2b74}{get\+Buttons}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a725648837b685e09ad109b1df5fe6b26}{get\+Texts}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_aa3147ef9aec82d45897d26876501c941}{get\+Auction\+Buttons}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a0c520ed7bbed4b79a2751fab3a3e5a06}{get\+Auction\+Texts}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a698cc15829ce7746aa91d13b1118f775}{get\+Result\+Texts}} ()
+\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{classmonopoly_game_engine_af39261a73081362104f6903cbb0d9fac}{get\+Property\+Data\+Sprite}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a67985c9d763b7be9fb7862c8bae68093}{get\+Property\+Data\+Texts}} ()
+\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{classmonopoly_game_engine_ac90ad5e071142c64f6e5afd1b6cd05a7}{get\+All\+Property\+Data\+Sprite}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a95b9271cec3eaea84db5bbfed9dcb39a}{get\+All\+Property\+Data\+Texts}} ()
+\item 
+\mbox{\hyperlink{class_notification_wall}{Notification\+Wall}} \& \mbox{\hyperlink{classmonopoly_game_engine_a013e2403ef046ed54fb174e5be2fb778}{get\+Notifications\+Wall}} ()
+\item 
+sf\+::\+Text \mbox{\hyperlink{classmonopoly_game_engine_aad007df963dd4282db08c76e822ee4d4}{get\+Property\+Name\+To\+Draw}} (sf\+::\+Text text, sf\+::\+Sprite \&sprite, float rotation)
+\item 
+sf\+::\+Texture \& \mbox{\hyperlink{classmonopoly_game_engine_a95fe88c83c04b63fba78639fc7c959fb}{get\+House\+Texture}} ()
+\item 
+sf\+::\+Texture \& \mbox{\hyperlink{classmonopoly_game_engine_a3136df257c81ea381b1f1ab79645ee08}{get\+Hotel\+Texture}} ()
+\item 
+sf\+::\+Vector2f \& \mbox{\hyperlink{classmonopoly_game_engine_ab1341f5f1118c0917188762027f75b24}{get\+House\+Size}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ae0c334aca31dcd731e7e514b4617a60d}{create\+Players}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&players\+From\+Game\+Engine)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ab0261bd52e57d53b7606c1e5afe0a1e0}{clear\+Players}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a24a5d04b4a2fa46edbd26fc4e818d0d7}{create\+Board}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_af068824bca82230623d71c92905ea467}{clear\+Board}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_board}{Board}} $>$ \mbox{\hyperlink{classmonopoly_game_engine_a7745bb931ce95f84f0b07843414e0d36}{get\+Board}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \& \mbox{\hyperlink{classmonopoly_game_engine_a67825c05bbd8b0619f56b4a41af75573}{get\+Players}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \mbox{\hyperlink{classmonopoly_game_engine_ade2307b4ac8c360c2934853a8b5bd3c0}{get\+Players\+Result}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a448fc541c7d6c8d928294241336d03ac}{set\+Player\+Index\+Turn}} (unsigned int indx)
+\item 
+\mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} \mbox{\hyperlink{classmonopoly_game_engine_ab70a61e0dc47c4cab5b451adfb5229d3}{get\+Turn\+State}} () const
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ab9fe1412aa26177e7cc8a19871c7678b}{set\+Auction\+State}} (\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} new\+State)
+\item 
+\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} \mbox{\hyperlink{classmonopoly_game_engine_ab4df2acc56199304443a249c4534fefe}{get\+Auction\+State}} ()
+\item 
+unsigned int \mbox{\hyperlink{classmonopoly_game_engine_afed3b08203b9ef68ed47018e29739c94}{get\+House\+Count}} ()
+\item 
+unsigned int \mbox{\hyperlink{classmonopoly_game_engine_af6479c9c150af4f6f19811427b18675f}{get\+Hotel\+Count}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a69495369d29826bab9be4555184c89a3}{set\+House\+Count}} (unsigned int new\+\_\+count)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a929ee51bc796ef0d0cd8500d79bf488b}{set\+Hotel\+Count}} (unsigned int new\+\_\+count)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ab7de7f4666764569f6bf3cbad8408ed1}{add\+Houses}} (unsigned int added\+\_\+amount)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_ab76a68872f1e019cdebe742806333fb9}{substract\+Houses}} (unsigned int substracted\+\_\+amount)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a99af650b99e1f4a3bc186da3aac6743f}{add\+Hotels}} (unsigned int added\+\_\+amount)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a277d25afb09545726767d1330b70bce5}{substract\+Hotels}} (unsigned int substracted\+\_\+amount)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a722f01bafc4530dbc53a51f053612fd7}{perform\+Auction}} ()
+\item 
+unsigned int \mbox{\hyperlink{classmonopoly_game_engine_ae11118cfb349e2ed9d3e4119e1a82240}{calculate\+Group\+Fields\+Owned}} (std\+::vector$<$ unsigned int $>$ player\+\_\+fields, \mbox{\hyperlink{class_property_field}{Property\+Field}} \&field) const
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_a812b12efc4a929ca7d81d98cf9acf761}{group\+Completed}} (std\+::vector$<$ unsigned int $>$ player\+\_\+fields, \mbox{\hyperlink{class_property_field}{Property\+Field}} \&field) const
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_afe6721e131658a56956b4aca576420bf}{is\+Building\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} field)
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_a3e7b1e0ef7e0aa94a12775c1b928a315}{is\+Destroying\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} field)
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_a4b8a36fd929cbdfebba4aed60c4c9300}{is\+Hotel\+Building\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_a3e437e4b8342de7d4b4476c0cdcff6a0}{is\+Hotel\+Destroying\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_af0dcb169ec97293dadc327ad4b861df5}{color\+Group\+Empty}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ mortaging, \mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{classmonopoly_game_engine_ad5a4954bfbbea5ddef2adc8def7319e2}{get\+House\+Sprite}} (\mbox{\hyperlink{class_street_field}{Street\+Field}} \&field, unsigned int houses\+Number)
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{classmonopoly_game_engine_ad10ae26632d0940098e4fda5c428a0bb}{get\+Hotel\+Sprite}} (\mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a8b035a55bf9704c96b24dd363b217530}{create\+Available\+Houses\+Hotel\+Text}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a10ce9db1976a313762833e15f8c2dd6f}{update\+Available\+Houses\+Hotel\+Text}} ()
+\item 
+unsigned int \mbox{\hyperlink{classmonopoly_game_engine_a8d42166e5ec753ab32057e6584602644}{calculate\+Rent}} (unsigned int rolled\+Val, int pos)
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_aa5881c8915bd0277e2094b5b0bfaf337}{buildings\+Managing\+Worker}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_aa16c7ef618a34bfe7139734f98731d7e}{ai\+Buildings\+Manging\+Worker}} ()
+\item 
+bool \mbox{\hyperlink{classmonopoly_game_engine_acfa722f1ffec4781429f86997595db7d}{monopoly\+Game\+Worker}} ()
+\item 
+\mbox{\hyperlink{class_withdraw}{Withdraw}} \& \mbox{\hyperlink{classmonopoly_game_engine_ab619c0b887da09afd07e451166bc81db}{get\+Withdraw}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a04b039c88593d22fd66fe63172513f16}{create\+Chance\+Cards}} ()
+\item 
+void \mbox{\hyperlink{classmonopoly_game_engine_a56dd279003ce0c1c7415692cacdb06ea}{shuffle\+Chance\+Cards}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmonopoly_game_engine_a69a290ee4659f315a39e6ca11ded46f2}\label{classmonopoly_game_engine_a69a290ee4659f315a39e6ca11ded46f2}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!monopolyGameEngine@{monopolyGameEngine}}
+\index{monopolyGameEngine@{monopolyGameEngine}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{monopolyGameEngine()}{monopolyGameEngine()}}
+{\footnotesize\ttfamily monopoly\+Game\+Engine\+::monopoly\+Game\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmonopoly_game_engine_ad78a5696a741e9d5b2d9c623c838794f}\label{classmonopoly_game_engine_ad78a5696a741e9d5b2d9c623c838794f}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!addAuctionButton@{addAuctionButton}}
+\index{addAuctionButton@{addAuctionButton}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addAuctionButton()}{addAuctionButton()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::add\+Auction\+Button (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+Tmp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ad78a5696a741e9d5b2d9c623c838794f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ad0583aed4fa19f0cc2af556756cf35de}\label{classmonopoly_game_engine_ad0583aed4fa19f0cc2af556756cf35de}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!addAuctionText@{addAuctionText}}
+\index{addAuctionText@{addAuctionText}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addAuctionText()}{addAuctionText()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::add\+Auction\+Text (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$}]{text\+Tmp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ad0583aed4fa19f0cc2af556756cf35de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_adaefef1ef3de4e2ef27e98af810b41f1}\label{classmonopoly_game_engine_adaefef1ef3de4e2ef27e98af810b41f1}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!addButton@{addButton}}
+\index{addButton@{addButton}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::add\+Button (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+Tmp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_adaefef1ef3de4e2ef27e98af810b41f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a99af650b99e1f4a3bc186da3aac6743f}\label{classmonopoly_game_engine_a99af650b99e1f4a3bc186da3aac6743f}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!addHotels@{addHotels}}
+\index{addHotels@{addHotels}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addHotels()}{addHotels()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::add\+Hotels (\begin{DoxyParamCaption}\item[{unsigned int}]{added\+\_\+amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a99af650b99e1f4a3bc186da3aac6743f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a99af650b99e1f4a3bc186da3aac6743f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab7de7f4666764569f6bf3cbad8408ed1}\label{classmonopoly_game_engine_ab7de7f4666764569f6bf3cbad8408ed1}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!addHouses@{addHouses}}
+\index{addHouses@{addHouses}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addHouses()}{addHouses()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::add\+Houses (\begin{DoxyParamCaption}\item[{unsigned int}]{added\+\_\+amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab7de7f4666764569f6bf3cbad8408ed1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab7de7f4666764569f6bf3cbad8408ed1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a1799fd373de57a19e6ae6ec093d9da98}\label{classmonopoly_game_engine_a1799fd373de57a19e6ae6ec093d9da98}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!addText@{addText}}
+\index{addText@{addText}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addText()}{addText()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::add\+Text (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$}]{text\+Tmp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a1799fd373de57a19e6ae6ec093d9da98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aa16c7ef618a34bfe7139734f98731d7e}\label{classmonopoly_game_engine_aa16c7ef618a34bfe7139734f98731d7e}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!aiBuildingsMangingWorker@{aiBuildingsMangingWorker}}
+\index{aiBuildingsMangingWorker@{aiBuildingsMangingWorker}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{aiBuildingsMangingWorker()}{aiBuildingsMangingWorker()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::ai\+Buildings\+Manging\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aa16c7ef618a34bfe7139734f98731d7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aa16c7ef618a34bfe7139734f98731d7e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aa5881c8915bd0277e2094b5b0bfaf337}\label{classmonopoly_game_engine_aa5881c8915bd0277e2094b5b0bfaf337}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!buildingsManagingWorker@{buildingsManagingWorker}}
+\index{buildingsManagingWorker@{buildingsManagingWorker}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{buildingsManagingWorker()}{buildingsManagingWorker()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::buildings\+Managing\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aa5881c8915bd0277e2094b5b0bfaf337_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aa5881c8915bd0277e2094b5b0bfaf337_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ae11118cfb349e2ed9d3e4119e1a82240}\label{classmonopoly_game_engine_ae11118cfb349e2ed9d3e4119e1a82240}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!calculateGroupFieldsOwned@{calculateGroupFieldsOwned}}
+\index{calculateGroupFieldsOwned@{calculateGroupFieldsOwned}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{calculateGroupFieldsOwned()}{calculateGroupFieldsOwned()}}
+{\footnotesize\ttfamily unsigned int monopoly\+Game\+Engine\+::calculate\+Group\+Fields\+Owned (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{player\+\_\+fields,  }\item[{\mbox{\hyperlink{class_property_field}{Property\+Field}} \&}]{field }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ae11118cfb349e2ed9d3e4119e1a82240_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ae11118cfb349e2ed9d3e4119e1a82240_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a8d42166e5ec753ab32057e6584602644}\label{classmonopoly_game_engine_a8d42166e5ec753ab32057e6584602644}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!calculateRent@{calculateRent}}
+\index{calculateRent@{calculateRent}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{calculateRent()}{calculateRent()}}
+{\footnotesize\ttfamily unsigned int monopoly\+Game\+Engine\+::calculate\+Rent (\begin{DoxyParamCaption}\item[{unsigned int}]{rolled\+Val,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a8d42166e5ec753ab32057e6584602644_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a8d42166e5ec753ab32057e6584602644_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_af068824bca82230623d71c92905ea467}\label{classmonopoly_game_engine_af068824bca82230623d71c92905ea467}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!clearBoard@{clearBoard}}
+\index{clearBoard@{clearBoard}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{clearBoard()}{clearBoard()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::clear\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmonopoly_game_engine_ab0261bd52e57d53b7606c1e5afe0a1e0}\label{classmonopoly_game_engine_ab0261bd52e57d53b7606c1e5afe0a1e0}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!clearPlayers@{clearPlayers}}
+\index{clearPlayers@{clearPlayers}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{clearPlayers()}{clearPlayers()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::clear\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab0261bd52e57d53b7606c1e5afe0a1e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_af0dcb169ec97293dadc327ad4b861df5}\label{classmonopoly_game_engine_af0dcb169ec97293dadc327ad4b861df5}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!colorGroupEmpty@{colorGroupEmpty}}
+\index{colorGroupEmpty@{colorGroupEmpty}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{colorGroupEmpty()}{colorGroupEmpty()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::color\+Group\+Empty (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{mortaging,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_af0dcb169ec97293dadc327ad4b861df5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_af0dcb169ec97293dadc327ad4b861df5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aecb1bcba8503a9b60df0563557c27a78}\label{classmonopoly_game_engine_aecb1bcba8503a9b60df0563557c27a78}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createAuctionBidButton@{createAuctionBidButton}}
+\index{createAuctionBidButton@{createAuctionBidButton}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAuctionBidButton()}{createAuctionBidButton()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Auction\+Bid\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aecb1bcba8503a9b60df0563557c27a78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aecb1bcba8503a9b60df0563557c27a78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a7848f61249fb58380e8ca9f11e599fe6}\label{classmonopoly_game_engine_a7848f61249fb58380e8ca9f11e599fe6}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createAuctionOfferButtons@{createAuctionOfferButtons}}
+\index{createAuctionOfferButtons@{createAuctionOfferButtons}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAuctionOfferButtons()}{createAuctionOfferButtons()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Auction\+Offer\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a7848f61249fb58380e8ca9f11e599fe6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a7848f61249fb58380e8ca9f11e599fe6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a0d8cbc20ae90259c3f0e5258472c6532}\label{classmonopoly_game_engine_a0d8cbc20ae90259c3f0e5258472c6532}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createAuctionResignButton@{createAuctionResignButton}}
+\index{createAuctionResignButton@{createAuctionResignButton}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAuctionResignButton()}{createAuctionResignButton()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Auction\+Resign\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a0d8cbc20ae90259c3f0e5258472c6532_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a0d8cbc20ae90259c3f0e5258472c6532_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a8b035a55bf9704c96b24dd363b217530}\label{classmonopoly_game_engine_a8b035a55bf9704c96b24dd363b217530}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createAvailableHousesHotelText@{createAvailableHousesHotelText}}
+\index{createAvailableHousesHotelText@{createAvailableHousesHotelText}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAvailableHousesHotelText()}{createAvailableHousesHotelText()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Available\+Houses\+Hotel\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a8b035a55bf9704c96b24dd363b217530_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a8b035a55bf9704c96b24dd363b217530_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a24a5d04b4a2fa46edbd26fc4e818d0d7}\label{classmonopoly_game_engine_a24a5d04b4a2fa46edbd26fc4e818d0d7}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createBoard@{createBoard}}
+\index{createBoard@{createBoard}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createBoard()}{createBoard()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a24a5d04b4a2fa46edbd26fc4e818d0d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_afc6f2b5737a9a642d6531e7e35043d3b}\label{classmonopoly_game_engine_afc6f2b5737a9a642d6531e7e35043d3b}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonBuyResign@{createButtonBuyResign}}
+\index{createButtonBuyResign@{createButtonBuyResign}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonBuyResign()}{createButtonBuyResign()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Button\+Buy\+Resign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_afc6f2b5737a9a642d6531e7e35043d3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_afc6f2b5737a9a642d6531e7e35043d3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a1aa1e4532404965b9fbf59ee5a1b34ff}\label{classmonopoly_game_engine_a1aa1e4532404965b9fbf59ee5a1b34ff}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonNextProperty@{createButtonNextProperty}}
+\index{createButtonNextProperty@{createButtonNextProperty}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonNextProperty()}{createButtonNextProperty()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Button\+Next\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a1aa1e4532404965b9fbf59ee5a1b34ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a1aa1e4532404965b9fbf59ee5a1b34ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a439ef95f3f0eb956fa7a7f1cefc3e251}\label{classmonopoly_game_engine_a439ef95f3f0eb956fa7a7f1cefc3e251}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonPerviousProperty@{createButtonPerviousProperty}}
+\index{createButtonPerviousProperty@{createButtonPerviousProperty}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonPerviousProperty()}{createButtonPerviousProperty()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Button\+Pervious\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a439ef95f3f0eb956fa7a7f1cefc3e251_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a439ef95f3f0eb956fa7a7f1cefc3e251_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a08991c84ad649cea8a1e8d93f911c5ad}\label{classmonopoly_game_engine_a08991c84ad649cea8a1e8d93f911c5ad}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonRollDice@{createButtonRollDice}}
+\index{createButtonRollDice@{createButtonRollDice}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonRollDice()}{createButtonRollDice()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Button\+Roll\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a08991c84ad649cea8a1e8d93f911c5ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a08991c84ad649cea8a1e8d93f911c5ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ae0b8e1bb219ee27ca82ad4dacdef6db5}\label{classmonopoly_game_engine_ae0b8e1bb219ee27ca82ad4dacdef6db5}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonsBankrupt@{createButtonsBankrupt}}
+\index{createButtonsBankrupt@{createButtonsBankrupt}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsBankrupt()}{createButtonsBankrupt()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Buttons\+Bankrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ae0b8e1bb219ee27ca82ad4dacdef6db5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ae0b8e1bb219ee27ca82ad4dacdef6db5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a34df202e27c1adb6a3db0e74e99d0eae}\label{classmonopoly_game_engine_a34df202e27c1adb6a3db0e74e99d0eae}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonsBuySellHouseHotel@{createButtonsBuySellHouseHotel}}
+\index{createButtonsBuySellHouseHotel@{createButtonsBuySellHouseHotel}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsBuySellHouseHotel()}{createButtonsBuySellHouseHotel()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Buttons\+Buy\+Sell\+House\+Hotel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a34df202e27c1adb6a3db0e74e99d0eae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a34df202e27c1adb6a3db0e74e99d0eae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a3f7ab310f0aaf5dad6a174c1b6c058dc}\label{classmonopoly_game_engine_a3f7ab310f0aaf5dad6a174c1b6c058dc}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonsJailPay@{createButtonsJailPay}}
+\index{createButtonsJailPay@{createButtonsJailPay}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsJailPay()}{createButtonsJailPay()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Buttons\+Jail\+Pay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3f7ab310f0aaf5dad6a174c1b6c058dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3f7ab310f0aaf5dad6a174c1b6c058dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aabdbae2868a603ba37b4d00161da7d2a}\label{classmonopoly_game_engine_aabdbae2868a603ba37b4d00161da7d2a}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonsNextTurn@{createButtonsNextTurn}}
+\index{createButtonsNextTurn@{createButtonsNextTurn}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsNextTurn()}{createButtonsNextTurn()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Buttons\+Next\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aabdbae2868a603ba37b4d00161da7d2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aabdbae2868a603ba37b4d00161da7d2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a4244d1a680b65483d836e11fe697d09c}\label{classmonopoly_game_engine_a4244d1a680b65483d836e11fe697d09c}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createButtonWithdraw@{createButtonWithdraw}}
+\index{createButtonWithdraw@{createButtonWithdraw}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonWithdraw()}{createButtonWithdraw()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Button\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a4244d1a680b65483d836e11fe697d09c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a4244d1a680b65483d836e11fe697d09c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a04b039c88593d22fd66fe63172513f16}\label{classmonopoly_game_engine_a04b039c88593d22fd66fe63172513f16}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createChanceCards@{createChanceCards}}
+\index{createChanceCards@{createChanceCards}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createChanceCards()}{createChanceCards()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Chance\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a04b039c88593d22fd66fe63172513f16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a04b039c88593d22fd66fe63172513f16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a6eec29c749588b03ff06b4ad6c436077}\label{classmonopoly_game_engine_a6eec29c749588b03ff06b4ad6c436077}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createCurrentOfferBidderInfo@{createCurrentOfferBidderInfo}}
+\index{createCurrentOfferBidderInfo@{createCurrentOfferBidderInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createCurrentOfferBidderInfo()}{createCurrentOfferBidderInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Current\+Offer\+Bidder\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a6eec29c749588b03ff06b4ad6c436077_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a6eec29c749588b03ff06b4ad6c436077_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a8ae1626f4ffd737295fd1786ca3d2dbe}\label{classmonopoly_game_engine_a8ae1626f4ffd737295fd1786ca3d2dbe}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createMortagingButton@{createMortagingButton}}
+\index{createMortagingButton@{createMortagingButton}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createMortagingButton()}{createMortagingButton()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Mortaging\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a8ae1626f4ffd737295fd1786ca3d2dbe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a8ae1626f4ffd737295fd1786ca3d2dbe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ae0c334aca31dcd731e7e514b4617a60d}\label{classmonopoly_game_engine_ae0c334aca31dcd731e7e514b4617a60d}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createPlayers@{createPlayers}}
+\index{createPlayers@{createPlayers}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createPlayers()}{createPlayers()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Players (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&}]{players\+From\+Game\+Engine }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ae0c334aca31dcd731e7e514b4617a60d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ae0c334aca31dcd731e7e514b4617a60d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a35ed5314742ad633d58bc7fcb975a7e4}\label{classmonopoly_game_engine_a35ed5314742ad633d58bc7fcb975a7e4}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createResultScreenStuff@{createResultScreenStuff}}
+\index{createResultScreenStuff@{createResultScreenStuff}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createResultScreenStuff()}{createResultScreenStuff()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Result\+Screen\+Stuff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a35ed5314742ad633d58bc7fcb975a7e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a35ed5314742ad633d58bc7fcb975a7e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a7ff28e544f58693a35065b83f2a9ab05}\label{classmonopoly_game_engine_a7ff28e544f58693a35065b83f2a9ab05}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextBiddedProperty@{createTextBiddedProperty}}
+\index{createTextBiddedProperty@{createTextBiddedProperty}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextBiddedProperty()}{createTextBiddedProperty()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Bidded\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a7ff28e544f58693a35065b83f2a9ab05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a7ff28e544f58693a35065b83f2a9ab05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a61b780452ccbef3a005727902e6fd104}\label{classmonopoly_game_engine_a61b780452ccbef3a005727902e6fd104}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextBidderInfo@{createTextBidderInfo}}
+\index{createTextBidderInfo@{createTextBidderInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextBidderInfo()}{createTextBidderInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Bidder\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a61b780452ccbef3a005727902e6fd104_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a61b780452ccbef3a005727902e6fd104_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_af9e9f54376e8ba1c7d5550585e8a5157}\label{classmonopoly_game_engine_af9e9f54376e8ba1c7d5550585e8a5157}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextHighestBidInfo@{createTextHighestBidInfo}}
+\index{createTextHighestBidInfo@{createTextHighestBidInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextHighestBidInfo()}{createTextHighestBidInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Highest\+Bid\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_af9e9f54376e8ba1c7d5550585e8a5157_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_af9e9f54376e8ba1c7d5550585e8a5157_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a5b52940b42693c329db1e770bca763e5}\label{classmonopoly_game_engine_a5b52940b42693c329db1e770bca763e5}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextLeadingBidderInfo@{createTextLeadingBidderInfo}}
+\index{createTextLeadingBidderInfo@{createTextLeadingBidderInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextLeadingBidderInfo()}{createTextLeadingBidderInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Leading\+Bidder\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a5b52940b42693c329db1e770bca763e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a5b52940b42693c329db1e770bca763e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a04045ab52d75c210266c71ba994e7871}\label{classmonopoly_game_engine_a04045ab52d75c210266c71ba994e7871}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextPlayersInfo@{createTextPlayersInfo}}
+\index{createTextPlayersInfo@{createTextPlayersInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextPlayersInfo()}{createTextPlayersInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Players\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a04045ab52d75c210266c71ba994e7871_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a04045ab52d75c210266c71ba994e7871_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a603ea518679d0045b3c9cd9567a57aa8}\label{classmonopoly_game_engine_a603ea518679d0045b3c9cd9567a57aa8}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextRolledValue@{createTextRolledValue}}
+\index{createTextRolledValue@{createTextRolledValue}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextRolledValue()}{createTextRolledValue()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Rolled\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a603ea518679d0045b3c9cd9567a57aa8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a603ea518679d0045b3c9cd9567a57aa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a442f54154ce96c27af24e3e3767bf2ab}\label{classmonopoly_game_engine_a442f54154ce96c27af24e3e3767bf2ab}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!createTextTurnInfo@{createTextTurnInfo}}
+\index{createTextTurnInfo@{createTextTurnInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextTurnInfo()}{createTextTurnInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::create\+Text\+Turn\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a442f54154ce96c27af24e3e3767bf2ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a442f54154ce96c27af24e3e3767bf2ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ac90ad5e071142c64f6e5afd1b6cd05a7}\label{classmonopoly_game_engine_ac90ad5e071142c64f6e5afd1b6cd05a7}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getAllPropertyDataSprite@{getAllPropertyDataSprite}}
+\index{getAllPropertyDataSprite@{getAllPropertyDataSprite}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAllPropertyDataSprite()}{getAllPropertyDataSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& monopoly\+Game\+Engine\+::get\+All\+Property\+Data\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ac90ad5e071142c64f6e5afd1b6cd05a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a95b9271cec3eaea84db5bbfed9dcb39a}\label{classmonopoly_game_engine_a95b9271cec3eaea84db5bbfed9dcb39a}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getAllPropertyDataTexts@{getAllPropertyDataTexts}}
+\index{getAllPropertyDataTexts@{getAllPropertyDataTexts}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAllPropertyDataTexts()}{getAllPropertyDataTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& monopoly\+Game\+Engine\+::get\+All\+Property\+Data\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a95b9271cec3eaea84db5bbfed9dcb39a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aa3147ef9aec82d45897d26876501c941}\label{classmonopoly_game_engine_aa3147ef9aec82d45897d26876501c941}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getAuctionButtons@{getAuctionButtons}}
+\index{getAuctionButtons@{getAuctionButtons}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAuctionButtons()}{getAuctionButtons()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Auction\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aa3147ef9aec82d45897d26876501c941_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab4df2acc56199304443a249c4534fefe}\label{classmonopoly_game_engine_ab4df2acc56199304443a249c4534fefe}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getAuctionState@{getAuctionState}}
+\index{getAuctionState@{getAuctionState}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAuctionState()}{getAuctionState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} monopoly\+Game\+Engine\+::get\+Auction\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab4df2acc56199304443a249c4534fefe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a0c520ed7bbed4b79a2751fab3a3e5a06}\label{classmonopoly_game_engine_a0c520ed7bbed4b79a2751fab3a3e5a06}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getAuctionTexts@{getAuctionTexts}}
+\index{getAuctionTexts@{getAuctionTexts}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAuctionTexts()}{getAuctionTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Auction\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a0c520ed7bbed4b79a2751fab3a3e5a06_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a7745bb931ce95f84f0b07843414e0d36}\label{classmonopoly_game_engine_a7745bb931ce95f84f0b07843414e0d36}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_board}{Board}} $>$ monopoly\+Game\+Engine\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a7745bb931ce95f84f0b07843414e0d36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a112d14d9d3f29d4eff3c1e6312cd2b74}\label{classmonopoly_game_engine_a112d14d9d3f29d4eff3c1e6312cd2b74}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getButtons@{getButtons}}
+\index{getButtons@{getButtons}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getButtons()}{getButtons()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a112d14d9d3f29d4eff3c1e6312cd2b74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aa1c15fdbe8a343109e69453126c99d90}\label{classmonopoly_game_engine_aa1c15fdbe8a343109e69453126c99d90}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getFont@{getFont}}
+\index{getFont@{getFont}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily sf\+::\+Font \& monopoly\+Game\+Engine\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmonopoly_game_engine_aa1c15fdbe8a343109e69453126c99d90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a2e00931eaa6fae4e2967e73503264f7a}\label{classmonopoly_game_engine_a2e00931eaa6fae4e2967e73503264f7a}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getFontSize@{getFontSize}}
+\index{getFontSize@{getFontSize}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
+{\footnotesize\ttfamily unsigned int monopoly\+Game\+Engine\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmonopoly_game_engine_a2e00931eaa6fae4e2967e73503264f7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_af6479c9c150af4f6f19811427b18675f}\label{classmonopoly_game_engine_af6479c9c150af4f6f19811427b18675f}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHotelCount@{getHotelCount}}
+\index{getHotelCount@{getHotelCount}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHotelCount()}{getHotelCount()}}
+{\footnotesize\ttfamily unsigned int monopoly\+Game\+Engine\+::get\+Hotel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_af6479c9c150af4f6f19811427b18675f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ad10ae26632d0940098e4fda5c428a0bb}\label{classmonopoly_game_engine_ad10ae26632d0940098e4fda5c428a0bb}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHotelSprite@{getHotelSprite}}
+\index{getHotelSprite@{getHotelSprite}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHotelSprite()}{getHotelSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite monopoly\+Game\+Engine\+::get\+Hotel\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ad10ae26632d0940098e4fda5c428a0bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ad10ae26632d0940098e4fda5c428a0bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a3136df257c81ea381b1f1ab79645ee08}\label{classmonopoly_game_engine_a3136df257c81ea381b1f1ab79645ee08}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHotelTexture@{getHotelTexture}}
+\index{getHotelTexture@{getHotelTexture}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHotelTexture()}{getHotelTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& monopoly\+Game\+Engine\+::get\+Hotel\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3136df257c81ea381b1f1ab79645ee08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_afed3b08203b9ef68ed47018e29739c94}\label{classmonopoly_game_engine_afed3b08203b9ef68ed47018e29739c94}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHouseCount@{getHouseCount}}
+\index{getHouseCount@{getHouseCount}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseCount()}{getHouseCount()}}
+{\footnotesize\ttfamily unsigned int monopoly\+Game\+Engine\+::get\+House\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_afed3b08203b9ef68ed47018e29739c94_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab1341f5f1118c0917188762027f75b24}\label{classmonopoly_game_engine_ab1341f5f1118c0917188762027f75b24}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHouseSize@{getHouseSize}}
+\index{getHouseSize@{getHouseSize}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseSize()}{getHouseSize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f \& monopoly\+Game\+Engine\+::get\+House\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab1341f5f1118c0917188762027f75b24_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ad5a4954bfbbea5ddef2adc8def7319e2}\label{classmonopoly_game_engine_ad5a4954bfbbea5ddef2adc8def7319e2}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHouseSprite@{getHouseSprite}}
+\index{getHouseSprite@{getHouseSprite}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseSprite()}{getHouseSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite monopoly\+Game\+Engine\+::get\+House\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field,  }\item[{unsigned int}]{houses\+Number }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ad5a4954bfbbea5ddef2adc8def7319e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ad5a4954bfbbea5ddef2adc8def7319e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a95fe88c83c04b63fba78639fc7c959fb}\label{classmonopoly_game_engine_a95fe88c83c04b63fba78639fc7c959fb}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getHouseTexture@{getHouseTexture}}
+\index{getHouseTexture@{getHouseTexture}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseTexture()}{getHouseTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& monopoly\+Game\+Engine\+::get\+House\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a95fe88c83c04b63fba78639fc7c959fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a013e2403ef046ed54fb174e5be2fb778}\label{classmonopoly_game_engine_a013e2403ef046ed54fb174e5be2fb778}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getNotificationsWall@{getNotificationsWall}}
+\index{getNotificationsWall@{getNotificationsWall}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getNotificationsWall()}{getNotificationsWall()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_notification_wall}{Notification\+Wall}} \& monopoly\+Game\+Engine\+::get\+Notifications\+Wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a013e2403ef046ed54fb174e5be2fb778_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a67825c05bbd8b0619f56b4a41af75573}\label{classmonopoly_game_engine_a67825c05bbd8b0619f56b4a41af75573}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPlayers()}{getPlayers()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a67825c05bbd8b0619f56b4a41af75573_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ade2307b4ac8c360c2934853a8b5bd3c0}\label{classmonopoly_game_engine_ade2307b4ac8c360c2934853a8b5bd3c0}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getPlayersResult@{getPlayersResult}}
+\index{getPlayersResult@{getPlayersResult}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPlayersResult()}{getPlayersResult()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ monopoly\+Game\+Engine\+::get\+Players\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ade2307b4ac8c360c2934853a8b5bd3c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_af39261a73081362104f6903cbb0d9fac}\label{classmonopoly_game_engine_af39261a73081362104f6903cbb0d9fac}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getPropertyDataSprite@{getPropertyDataSprite}}
+\index{getPropertyDataSprite@{getPropertyDataSprite}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPropertyDataSprite()}{getPropertyDataSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& monopoly\+Game\+Engine\+::get\+Property\+Data\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_af39261a73081362104f6903cbb0d9fac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a67985c9d763b7be9fb7862c8bae68093}\label{classmonopoly_game_engine_a67985c9d763b7be9fb7862c8bae68093}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getPropertyDataTexts@{getPropertyDataTexts}}
+\index{getPropertyDataTexts@{getPropertyDataTexts}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPropertyDataTexts()}{getPropertyDataTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Property\+Data\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a67985c9d763b7be9fb7862c8bae68093_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aad007df963dd4282db08c76e822ee4d4}\label{classmonopoly_game_engine_aad007df963dd4282db08c76e822ee4d4}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getPropertyNameToDraw@{getPropertyNameToDraw}}
+\index{getPropertyNameToDraw@{getPropertyNameToDraw}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPropertyNameToDraw()}{getPropertyNameToDraw()}}
+{\footnotesize\ttfamily sf\+::\+Text monopoly\+Game\+Engine\+::get\+Property\+Name\+To\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Text}]{text,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{float}]{rotation }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aad007df963dd4282db08c76e822ee4d4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aad007df963dd4282db08c76e822ee4d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a698cc15829ce7746aa91d13b1118f775}\label{classmonopoly_game_engine_a698cc15829ce7746aa91d13b1118f775}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getResultTexts@{getResultTexts}}
+\index{getResultTexts@{getResultTexts}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getResultTexts()}{getResultTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Result\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a698cc15829ce7746aa91d13b1118f775_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a2b6b4f415cc0b8dca63c44d01eb052c3}\label{classmonopoly_game_engine_a2b6b4f415cc0b8dca63c44d01eb052c3}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getScreenType@{getScreenType}}
+\index{getScreenType@{getScreenType}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getScreenType()}{getScreenType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}} monopoly\+Game\+Engine\+::get\+Screen\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a2b6b4f415cc0b8dca63c44d01eb052c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a725648837b685e09ad109b1df5fe6b26}\label{classmonopoly_game_engine_a725648837b685e09ad109b1df5fe6b26}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getTexts@{getTexts}}
+\index{getTexts@{getTexts}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getTexts()}{getTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& monopoly\+Game\+Engine\+::get\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a725648837b685e09ad109b1df5fe6b26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab70a61e0dc47c4cab5b451adfb5229d3}\label{classmonopoly_game_engine_ab70a61e0dc47c4cab5b451adfb5229d3}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getTurnState@{getTurnState}}
+\index{getTurnState@{getTurnState}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getTurnState()}{getTurnState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} monopoly\+Game\+Engine\+::get\+Turn\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab70a61e0dc47c4cab5b451adfb5229d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab619c0b887da09afd07e451166bc81db}\label{classmonopoly_game_engine_ab619c0b887da09afd07e451166bc81db}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!getWithdraw@{getWithdraw}}
+\index{getWithdraw@{getWithdraw}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getWithdraw()}{getWithdraw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_withdraw}{Withdraw}} \& monopoly\+Game\+Engine\+::get\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab619c0b887da09afd07e451166bc81db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a812b12efc4a929ca7d81d98cf9acf761}\label{classmonopoly_game_engine_a812b12efc4a929ca7d81d98cf9acf761}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!groupCompleted@{groupCompleted}}
+\index{groupCompleted@{groupCompleted}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{groupCompleted()}{groupCompleted()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::group\+Completed (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{player\+\_\+fields,  }\item[{\mbox{\hyperlink{class_property_field}{Property\+Field}} \&}]{field }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a812b12efc4a929ca7d81d98cf9acf761_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a812b12efc4a929ca7d81d98cf9acf761_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_afe6721e131658a56956b4aca576420bf}\label{classmonopoly_game_engine_afe6721e131658a56956b4aca576420bf}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!isBuildingLegal@{isBuildingLegal}}
+\index{isBuildingLegal@{isBuildingLegal}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isBuildingLegal()}{isBuildingLegal()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::is\+Building\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}}}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_afe6721e131658a56956b4aca576420bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_afe6721e131658a56956b4aca576420bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a3e7b1e0ef7e0aa94a12775c1b928a315}\label{classmonopoly_game_engine_a3e7b1e0ef7e0aa94a12775c1b928a315}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!isDestroyingLegal@{isDestroyingLegal}}
+\index{isDestroyingLegal@{isDestroyingLegal}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isDestroyingLegal()}{isDestroyingLegal()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::is\+Destroying\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}}}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3e7b1e0ef7e0aa94a12775c1b928a315_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3e7b1e0ef7e0aa94a12775c1b928a315_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a4b8a36fd929cbdfebba4aed60c4c9300}\label{classmonopoly_game_engine_a4b8a36fd929cbdfebba4aed60c4c9300}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!isHotelBuildingLegal@{isHotelBuildingLegal}}
+\index{isHotelBuildingLegal@{isHotelBuildingLegal}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isHotelBuildingLegal()}{isHotelBuildingLegal()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::is\+Hotel\+Building\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a4b8a36fd929cbdfebba4aed60c4c9300_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a4b8a36fd929cbdfebba4aed60c4c9300_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a3e437e4b8342de7d4b4476c0cdcff6a0}\label{classmonopoly_game_engine_a3e437e4b8342de7d4b4476c0cdcff6a0}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!isHotelDestroyingLegal@{isHotelDestroyingLegal}}
+\index{isHotelDestroyingLegal@{isHotelDestroyingLegal}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isHotelDestroyingLegal()}{isHotelDestroyingLegal()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::is\+Hotel\+Destroying\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3e437e4b8342de7d4b4476c0cdcff6a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a3e437e4b8342de7d4b4476c0cdcff6a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_acfa722f1ffec4781429f86997595db7d}\label{classmonopoly_game_engine_acfa722f1ffec4781429f86997595db7d}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!monopolyGameWorker@{monopolyGameWorker}}
+\index{monopolyGameWorker@{monopolyGameWorker}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{monopolyGameWorker()}{monopolyGameWorker()}}
+{\footnotesize\ttfamily bool monopoly\+Game\+Engine\+::monopoly\+Game\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmonopoly_game_engine_acfa722f1ffec4781429f86997595db7d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_acfa722f1ffec4781429f86997595db7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a722f01bafc4530dbc53a51f053612fd7}\label{classmonopoly_game_engine_a722f01bafc4530dbc53a51f053612fd7}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!performAuction@{performAuction}}
+\index{performAuction@{performAuction}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{performAuction()}{performAuction()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::perform\+Auction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a722f01bafc4530dbc53a51f053612fd7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a722f01bafc4530dbc53a51f053612fd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab9fe1412aa26177e7cc8a19871c7678b}\label{classmonopoly_game_engine_ab9fe1412aa26177e7cc8a19871c7678b}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!setAuctionState@{setAuctionState}}
+\index{setAuctionState@{setAuctionState}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setAuctionState()}{setAuctionState()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::set\+Auction\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}}}]{new\+State }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab9fe1412aa26177e7cc8a19871c7678b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a37eb275ab8693e3a9cb880ed28e96619}\label{classmonopoly_game_engine_a37eb275ab8693e3a9cb880ed28e96619}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!setFont@{setFont}}
+\index{setFont@{setFont}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font}]{font }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a37eb275ab8693e3a9cb880ed28e96619_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a929ee51bc796ef0d0cd8500d79bf488b}\label{classmonopoly_game_engine_a929ee51bc796ef0d0cd8500d79bf488b}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!setHotelCount@{setHotelCount}}
+\index{setHotelCount@{setHotelCount}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setHotelCount()}{setHotelCount()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::set\+Hotel\+Count (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+count }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a929ee51bc796ef0d0cd8500d79bf488b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a69495369d29826bab9be4555184c89a3}\label{classmonopoly_game_engine_a69495369d29826bab9be4555184c89a3}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!setHouseCount@{setHouseCount}}
+\index{setHouseCount@{setHouseCount}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setHouseCount()}{setHouseCount()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::set\+House\+Count (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+count }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a69495369d29826bab9be4555184c89a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a448fc541c7d6c8d928294241336d03ac}\label{classmonopoly_game_engine_a448fc541c7d6c8d928294241336d03ac}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!setPlayerIndexTurn@{setPlayerIndexTurn}}
+\index{setPlayerIndexTurn@{setPlayerIndexTurn}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setPlayerIndexTurn()}{setPlayerIndexTurn()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::set\+Player\+Index\+Turn (\begin{DoxyParamCaption}\item[{unsigned int}]{indx }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a448fc541c7d6c8d928294241336d03ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ac54a5e28a83fa032b0a435e68ad79bf5}\label{classmonopoly_game_engine_ac54a5e28a83fa032b0a435e68ad79bf5}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!setScreenType@{setScreenType}}
+\index{setScreenType@{setScreenType}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setScreenType()}{setScreenType()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::set\+Screen\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}}}]{new\+Screen\+Type }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ac54a5e28a83fa032b0a435e68ad79bf5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_aacbd6ca705e1af117659326ed41739e9}\label{classmonopoly_game_engine_aacbd6ca705e1af117659326ed41739e9}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!showPropertyData@{showPropertyData}}
+\index{showPropertyData@{showPropertyData}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{showPropertyData()}{showPropertyData()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::show\+Property\+Data (\begin{DoxyParamCaption}\item[{unsigned int}]{pos,  }\item[{bool}]{is\+Property\+Shown\+To\+Buy }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmonopoly_game_engine_aacbd6ca705e1af117659326ed41739e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_aacbd6ca705e1af117659326ed41739e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a56dd279003ce0c1c7415692cacdb06ea}\label{classmonopoly_game_engine_a56dd279003ce0c1c7415692cacdb06ea}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!shuffleChanceCards@{shuffleChanceCards}}
+\index{shuffleChanceCards@{shuffleChanceCards}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{shuffleChanceCards()}{shuffleChanceCards()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::shuffle\+Chance\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a56dd279003ce0c1c7415692cacdb06ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a277d25afb09545726767d1330b70bce5}\label{classmonopoly_game_engine_a277d25afb09545726767d1330b70bce5}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!substractHotels@{substractHotels}}
+\index{substractHotels@{substractHotels}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{substractHotels()}{substractHotels()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::substract\+Hotels (\begin{DoxyParamCaption}\item[{unsigned int}]{substracted\+\_\+amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a277d25afb09545726767d1330b70bce5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a277d25afb09545726767d1330b70bce5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab76a68872f1e019cdebe742806333fb9}\label{classmonopoly_game_engine_ab76a68872f1e019cdebe742806333fb9}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!substractHouses@{substractHouses}}
+\index{substractHouses@{substractHouses}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{substractHouses()}{substractHouses()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::substract\+Houses (\begin{DoxyParamCaption}\item[{unsigned int}]{substracted\+\_\+amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab76a68872f1e019cdebe742806333fb9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab76a68872f1e019cdebe742806333fb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a25420ad24a931e657807ebd75deeac21}\label{classmonopoly_game_engine_a25420ad24a931e657807ebd75deeac21}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!turnInfoTextShow@{turnInfoTextShow}}
+\index{turnInfoTextShow@{turnInfoTextShow}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{turnInfoTextShow()}{turnInfoTextShow()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::turn\+Info\+Text\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a25420ad24a931e657807ebd75deeac21_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a10ce9db1976a313762833e15f8c2dd6f}\label{classmonopoly_game_engine_a10ce9db1976a313762833e15f8c2dd6f}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!updateAvailableHousesHotelText@{updateAvailableHousesHotelText}}
+\index{updateAvailableHousesHotelText@{updateAvailableHousesHotelText}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{updateAvailableHousesHotelText()}{updateAvailableHousesHotelText()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::update\+Available\+Houses\+Hotel\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a10ce9db1976a313762833e15f8c2dd6f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a10ce9db1976a313762833e15f8c2dd6f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_a6dbe0b7eb3ce8969cd6c0fead31d1de0}\label{classmonopoly_game_engine_a6dbe0b7eb3ce8969cd6c0fead31d1de0}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!updateResultScreenStuff@{updateResultScreenStuff}}
+\index{updateResultScreenStuff@{updateResultScreenStuff}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{updateResultScreenStuff()}{updateResultScreenStuff()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::update\+Result\+Screen\+Stuff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a6dbe0b7eb3ce8969cd6c0fead31d1de0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_a6dbe0b7eb3ce8969cd6c0fead31d1de0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmonopoly_game_engine_ab00dbe0baa4635500d93c2004f7e0218}\label{classmonopoly_game_engine_ab00dbe0baa4635500d93c2004f7e0218}} 
+\index{monopolyGameEngine@{monopolyGameEngine}!updateTextPlayersInfo@{updateTextPlayersInfo}}
+\index{updateTextPlayersInfo@{updateTextPlayersInfo}!monopolyGameEngine@{monopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{updateTextPlayersInfo()}{updateTextPlayersInfo()}}
+{\footnotesize\ttfamily void monopoly\+Game\+Engine\+::update\+Text\+Players\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab00dbe0baa4635500d93c2004f7e0218_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmonopoly_game_engine_ab00dbe0baa4635500d93c2004f7e0218_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_monopoly_game_engine_8h}{Monopoly\+Game\+Engine.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_monopoly_game_engine_8cc}{Monopoly\+Game\+Engine.\+cc}}\end{DoxyCompactItemize}

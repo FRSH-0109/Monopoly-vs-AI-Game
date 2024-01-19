@@ -1,0 +1,32 @@
+<map id="MonopolyGameEngine::aiBuildingsMangingWorker" name="MonopolyGameEngine::aiBuildingsMangingWorker">
+<area shape="rect" id="node1" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="5,676,208,717"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a48c42eb3f7bdd1a2758f196d83f83cdd" title="Adds hotels to the available count." alt="" coords="281,5,450,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a398cb3a8d88d5cbec47ec7230408a59f" title="Adds houses to the available count." alt="" coords="281,136,450,177"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#afd604c9fd373fa220ebe04ff9d5f191b" title="Checks if a color group is empty (no properties owned) for a player." alt="" coords="281,369,450,411"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="547,552,717,593"/>
+<area shape="rect" id="node9" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title="Gets the number of houses on the property." alt="" coords="525,333,739,359"/>
+<area shape="rect" id="node11" href="$class_street_field.html#a51d31e674e5526536210d24ed5bdc2c2" title="Gets the price of a hotel." alt="" coords="538,953,726,979"/>
+<area shape="rect" id="node12" href="$class_street_field.html#a812b99b2c3dc615a26f81756fa41aa51" title="Gets the price of a house." alt="" coords="535,231,729,258"/>
+<area shape="rect" id="node13" href="$class_field.html#aa3ea436b800a8078f04be2678c42f7c0" title="Gets the ID of the field." alt="" coords="318,902,413,929"/>
+<area shape="rect" id="node14" href="$class_street_field.html#a79785c76389d7bf9171797b9d1a16ebd" title="Checks if there is a hotel on the property." alt="" coords="549,785,715,811"/>
+<area shape="rect" id="node15" href="$class_property_field.html#ac52da7b908a73ce329c1aff55f971bed" title="Checks if the property is mortgaged." alt="" coords="523,683,741,710"/>
+<area shape="rect" id="node16" href="$class_property_field.html#a118e8dac5640ec978cbd14519e0880fe" title="Gets the mortgage value of the property." alt="" coords="266,953,465,979"/>
+<area shape="rect" id="node17" href="$class_field.html#ad2e239a719acc3285a9b11b3aef6808c" title="Gets the name of the field." alt="" coords="305,1003,426,1030"/>
+<area shape="rect" id="node18" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="309,1054,421,1081"/>
+<area shape="rect" id="node19" href="$class_property_field.html#aa323b39c72226b6d81782fb9f8b5ffd7" title="Gets the value needed to unmortgage the property." alt="" coords="256,1105,475,1147"/>
+<area shape="rect" id="node20" href="$class_monopoly_game_engine.html#aaf7f625f32dc53f7413236a79afaf6d5" title="Checks if building houses on a street is legal for a player." alt="" coords="281,435,450,476"/>
+<area shape="rect" id="node22" href="$class_monopoly_game_engine.html#afaf31ce9d8aaef4b36bbefe9b4b72f78" title="Checks if destroying houses on a street is legal for a player." alt="" coords="281,500,450,541"/>
+<area shape="rect" id="node23" href="$class_monopoly_game_engine.html#a34646774679d5ef5e9bbc6317953c7fa" title="Checks if building a hotel on a street is legal for a player." alt="" coords="281,735,450,776"/>
+<area shape="rect" id="node25" href="$class_monopoly_game_engine.html#ac01307d6ae292277aa3caf5855955a8c" title="Checks if destroying a hotel on a street is legal for a player." alt="" coords="274,617,457,659"/>
+<area shape="rect" id="node26" href="$class_street_field.html#a9cdeb6a4610eed4f47e20d2cdebbe3a1" title="Sets the number of houses on the property." alt="" coords="259,1171,472,1198"/>
+<area shape="rect" id="node27" href="$class_street_field.html#aa50b622f5cc3dfa6ee3d00aa1a24bd14" title="Sets the hotel state on the property." alt="" coords="282,1222,449,1249"/>
+<area shape="rect" id="node28" href="$class_property_field.html#a8ed81fa863c3d443a69141445d66616e" title="Sets the mortgaged state of the property." alt="" coords="257,1273,474,1299"/>
+<area shape="rect" id="node29" href="$class_monopoly_game_engine.html#aff717ed99341b6d5ead0f68553803738" title="Subtracts hotels from the available count." alt="" coords="281,71,450,112"/>
+<area shape="rect" id="node30" href="$class_monopoly_game_engine.html#afa5bca69b0ead2b54879815f37f06a1f" title="Subtracts houses from the available count." alt="" coords="281,201,450,243"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#aa705a9f340c99ddf656caec00e2ae107" title="Sets the count of hotels available for purchase." alt="" coords="547,64,717,105"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#ac85b2577a665a2510cbd65226d4ae790" title="Sets the count of houses available for purchase." alt="" coords="547,144,717,185"/>
+<area shape="rect" id="node8" href="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f" title="Gets the IDs of the group members (properties in the same group)." alt="" coords="789,471,1027,498"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#aa486edceb7c305c2f24785a6ee8ca2fc" title="Checks if a group of properties is completed by a player." alt="" coords="547,435,717,476"/>
+<area shape="rect" id="node21" href="$class_monopoly_game_engine.html#ae2a4e228360bfceb91c7a5cd6803b0fd" title="Gets the count of houses available for purchase." alt="" coords="547,617,717,659"/>
+<area shape="rect" id="node24" href="$class_monopoly_game_engine.html#a13906373d7ee42cd405154047d76b281" title="Gets the count of hotels available for purchase." alt="" coords="547,887,717,928"/>
+</map>

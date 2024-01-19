@@ -1,0 +1,52 @@
+<map id="GameScreen::GameScreen" name="GameScreen::GameScreen">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1465,201,1491"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#adf5644d237334e6749252420d80fac32" title="Adds a button to the GUI." alt="" coords="539,477,708,519"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#ac6f1dd50f3c5eecc6ba2872a1b895fd9" title="Clears player objects from the game." alt="" coords="285,1705,455,1747"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a8237eb4fd279a8f4b094c14987ea37a1" title="Creates a button for participating in an auction by bidding." alt="" coords="278,135,462,176"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a41effaad0143e79955701cff92b2620f" title="Creates buttons for handling auction offers." alt="" coords="269,804,471,845"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#a3fc21384392435cdfcab356f98d5a838" title="Creates a button for resigning from an auction." alt="" coords="267,69,473,111"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#ac8629f2abd1bf12cfc0af747d16c867f" title="Creates text displaying the available count of houses and hotels." alt="" coords="249,1000,491,1041"/>
+<area shape="rect" id="node12" href="$class_monopoly_game_engine.html#a01c8f3df78160a7b8719e1ad06d9c239" title="Creates the game board." alt="" coords="285,1771,455,1812"/>
+<area shape="rect" id="node13" href="$class_monopoly_game_engine.html#a742de8013c1466a6913bb5f5eceafeb4" title="Creates a button for buying or resigning from a property." alt="" coords="279,869,461,911"/>
+<area shape="rect" id="node14" href="$class_monopoly_game_engine.html#a6a7786536439ae5af3c53d896b0a9a71" title="Creates a button for moving to the next property." alt="" coords="270,935,470,976"/>
+<area shape="rect" id="node15" href="$class_monopoly_game_engine.html#aa54fdcd0727761f010c096435dd40999" title="Creates a button for moving to the previous property." alt="" coords="257,200,483,241"/>
+<area shape="rect" id="node16" href="$class_monopoly_game_engine.html#ab7c6acc2b155fbdc1952280c494a05fe" title="Creates the button for rolling the dice." alt="" coords="285,265,455,307"/>
+<area shape="rect" id="node17" href="$class_monopoly_game_engine.html#af7a1b759d097257097926ed7fd60da14" title="Creates buttons for handling bankruptcy." alt="" coords="280,331,460,372"/>
+<area shape="rect" id="node18" href="$class_monopoly_game_engine.html#abbda29a495969e795d71c3a5d215b547" title="Creates buttons for buying, selling houses, and hotels." alt="" coords="265,397,475,453"/>
+<area shape="rect" id="node19" href="$class_monopoly_game_engine.html#ae9772861221c6ce195b7b63122bf5523" title="Creates buttons for handling actions related to the jail (paying to get out)." alt="" coords="285,477,455,519"/>
+<area shape="rect" id="node20" href="$class_monopoly_game_engine.html#a525ceed24c6db4fd8823fb1af27ba24b" title="Creates buttons for moving to the next turn." alt="" coords="281,543,459,584"/>
+<area shape="rect" id="node21" href="$class_monopoly_game_engine.html#a59d448ed643e21447ac85cdfeea1fa1b" title="Creates a button for withdrawing from the game." alt="" coords="282,608,458,649"/>
+<area shape="rect" id="node22" href="$class_monopoly_game_engine.html#a3e16a285485813a9e4a121a198739176" title="Creates the chance cards for the game." alt="" coords="285,1836,455,1877"/>
+<area shape="rect" id="node23" href="$class_withdraw.html#a2f8b173f0fdf10f7bb3232c57b96f114" title="Creates the screen for choosing players during withdrawal." alt="" coords="259,1901,481,1943"/>
+<area shape="rect" id="node24" href="$class_monopoly_game_engine.html#a555cc64819179c99afb2b39b58599074" title="Creates text for displaying the current offer in an auction." alt="" coords="261,1457,479,1499"/>
+<area shape="rect" id="node25" href="$class_withdraw.html#ad4a9b237332fe45afa4730ccc20e1e0b" title="Creates the screen for making decisions during withdrawal." alt="" coords="276,1967,464,2008"/>
+<area shape="rect" id="node26" href="$class_monopoly_game_engine.html#af61f87c35e7969f4665091d80007a8dd" title="Creates buttons for mortgaging properties." alt="" coords="280,673,460,715"/>
+<area shape="rect" id="node27" href="$class_monopoly_game_engine.html#abc237772db36ef7096d874ac7bf15076" title="Creates player objects based on input vector." alt="" coords="285,2032,455,2073"/>
+<area shape="rect" id="node28" href="$class_monopoly_game_engine.html#a746b88ee3a606c98cfa368192c1a34e9" title="Creates various elements for the result screen." alt="" coords="277,739,463,780"/>
+<area shape="rect" id="node29" href="$class_monopoly_game_engine.html#a9655bc29084d61fe0503ec16272630e6" title="Creates text for displaying information about the bidded property." alt="" coords="271,1196,469,1237"/>
+<area shape="rect" id="node30" href="$class_monopoly_game_engine.html#a932aa1b22c5b339c568f8ea34749b1fb" title="Creates text for displaying information about the bidder." alt="" coords="285,1261,455,1303"/>
+<area shape="rect" id="node31" href="$class_monopoly_game_engine.html#a04528f2dbaa4725b4430bdef63b2d9d0" title="Creates text for displaying the highest bid in an auction." alt="" coords="273,1327,467,1368"/>
+<area shape="rect" id="node32" href="$class_monopoly_game_engine.html#ac4396e37a67a062d796345afc0642af2" title="Creates text for displaying information about the leading bidder in an auction." alt="" coords="262,1392,478,1433"/>
+<area shape="rect" id="node33" href="$class_monopoly_game_engine.html#a32c0ecaa71c51cdaae65178836af75b0" title="Creates text for displaying players&#39; information." alt="" coords="285,1523,455,1564"/>
+<area shape="rect" id="node34" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="539,1588,708,1629"/>
+<area shape="rect" id="node35" href="$class_monopoly_game_engine.html#a73d985dc04d394ec469ee5d01e6b9a89" title="Creates text for displaying the rolled dice value." alt="" coords="281,1065,459,1107"/>
+<area shape="rect" id="node36" href="$class_monopoly_game_engine.html#a7b07579e424f37298496eefaae2390e1" title="Creates text for displaying turn information." alt="" coords="285,1131,455,1172"/>
+<area shape="rect" id="node37" href="$class_withdraw.html#a1e777d7591c901b33d190e8f5c6f4a77" title="Creates the screen for specifying values during withdrawal." alt="" coords="265,2097,475,2139"/>
+<area shape="rect" id="node38" href="$class_withdraw.html#a9176fc09f39a59cec708685ee053b9ac" title="Getter for the vector of buttons used in the withdrawal process." alt="" coords="289,2163,451,2190"/>
+<area shape="rect" id="node39" href="$class_active_screen.html#a6566d6bd5327b662b7cf587b1c26ce61" title="Gets the SFML font used for text on the screen." alt="" coords="288,2214,452,2241"/>
+<area shape="rect" id="node40" href="$class_context_window.html#ae1d1fa169768a6ed2a1651f6d5594fc2" title="Gets the pointer to the ContextWindow instance." alt="" coords="265,2265,475,2291"/>
+<area shape="rect" id="node41" href="$class_monopoly_game_engine.html#a7a4c2e5ec5a548c44d2dca59438453b5" title="Returns a reference to the Withdraw object." alt="" coords="285,2316,455,2357"/>
+<area shape="rect" id="node42" href="$class_withdraw.html#ac3ff353242bfee519f0058258631c454" title="Setter for the gameboard." alt="" coords="295,2382,445,2409"/>
+<area shape="rect" id="node43" href="$class_active_screen.html#a3de2c1b9355ef27577cf8af01c0f4632" title="Sets the pointer to the ContextWindow." alt="" coords="277,2433,463,2475"/>
+<area shape="rect" id="node44" href="$class_active_screen.html#ae56257f26e8cc35bc9bf476e4a633e20" title="Sets the SFML font used for text on the screen." alt="" coords="289,2499,451,2526"/>
+<area shape="rect" id="node45" href="$class_monopoly_game_engine.html#a034d5e74627aa03da60bbcc92d671a61" title="Sets the font to be used in the GUI." alt="" coords="285,2551,455,2592"/>
+<area shape="rect" id="node46" href="$class_withdraw.html#a01109432adc0c8b78f288c1805ca02d0" title="Setter for the font used in rendering text." alt="" coords="301,2617,439,2643"/>
+<area shape="rect" id="node47" href="$class_monopoly_game_engine.html#ad6860ebdf586eff99b476ff529fb4e96" title="Sets the index of the player whose turn it is." alt="" coords="285,2668,455,2709"/>
+<area shape="rect" id="node48" href="$class_active_screen.html#ac551bc4bf328afb1226d57cdf9e13daf" title="Sets the type of the active screen." alt="" coords="265,2734,475,2761"/>
+<area shape="rect" id="node49" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="285,1588,455,1629"/>
+<area shape="rect" id="node50" href="$class_monopoly_game_engine.html#a73ae5aa5598545a9b12264072a087364" title="Displays text related to turn information." alt="" coords="285,2785,455,2827"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a653ae4bf65d14a524938058081a2f12d" title="Adds an auction button to the GUI." alt="" coords="539,135,708,176"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#acaf81e835720ba22173b0dd6a0a87bf9" title="Returns the font used in the GUI." alt="" coords="539,804,708,845"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#af3f9a189ddaca72b5eb57b72bc4fbbe4" title="Returns the font size used in the GUI." alt="" coords="539,869,708,911"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#ac523b02a2ad163063c25e7019f57774c" title="Adds auction text to the GUI." alt="" coords="539,1295,708,1336"/>
+</map>

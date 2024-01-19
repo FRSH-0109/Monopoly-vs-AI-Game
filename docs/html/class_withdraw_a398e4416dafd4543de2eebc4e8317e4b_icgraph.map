@@ -1,0 +1,4 @@
+<map id="Withdraw::getSpritePropertyPlayer2Index" name="Withdraw::getSpritePropertyPlayer2Index">
+<area shape="rect" id="node1" title="Getter for Player 2&#39;s offered property sprite." alt="" coords="199,5,404,47"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="5,13,151,39"/>
+</map>

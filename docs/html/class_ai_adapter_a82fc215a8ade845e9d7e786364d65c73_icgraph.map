@@ -1,0 +1,4 @@
+<map id="AiAdapter::convertPosition" name="AiAdapter::convertPosition">
+<area shape="rect" id="node1" title="Converts position into a format suitable for AI input." alt="" coords="220,5,415,32"/>
+<area shape="rect" id="node2" href="$class_ai_adapter.html#ad77b636dd77f7cec496a3cee56a62e78" title="Sets the position for a given index." alt="" coords="5,5,172,32"/>
+</map>

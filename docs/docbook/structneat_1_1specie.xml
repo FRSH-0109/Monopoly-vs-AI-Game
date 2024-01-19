@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structneat_1_1specie" xml:lang="en-US">
+<title>neat::specie Struct Reference</title>
+<indexterm><primary>neat::specie</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1specie_1ad988c29b7f9cbb0cf5df431cdcaa0edc"/>unsigned int <emphasis role="strong">top_fitness</emphasis> = 0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1specie_1adffda9390477e12b247eacb028c62382"/>unsigned int <emphasis role="strong">average_fitness</emphasis> = 0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1specie_1a01beb89b7df29bf481d2608bce8445a8"/>unsigned int <emphasis role="strong">staleness</emphasis> = 0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1specie_1ad1a5d5c0334db03479f217a132da0a5b"/>std::vector&lt; <link linkend="_classneat_1_1genome">genome</link> &gt; <emphasis role="strong">genomes</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link></section>

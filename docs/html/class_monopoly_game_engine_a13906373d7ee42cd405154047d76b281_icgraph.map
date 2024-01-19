@@ -1,0 +1,11 @@
+<map id="MonopolyGameEngine::getHotelCount" name="MonopolyGameEngine::getHotelCount">
+<area shape="rect" id="node1" title="Gets the count of hotels available for purchase." alt="" coords="981,77,1151,119"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac8629f2abd1bf12cfc0af747d16c867f" title="Creates text displaying the available count of houses and hotels." alt="" coords="690,5,931,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a34646774679d5ef5e9bbc6317953c7fa" title="Checks if building a hotel on a street is legal for a player." alt="" coords="726,77,895,119"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#ae9a8bf736199ef2e643f750be08b1bed" title="Updates the text displaying the available count of houses and hotels." alt="" coords="688,156,933,197"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="441,6,637,33"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="437,57,640,99"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="439,123,638,164"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,123,389,164"/>
+<area shape="rect" id="node7" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,130,163,157"/>
+</map>

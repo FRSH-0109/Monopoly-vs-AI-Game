@@ -1,0 +1,164 @@
+\hypertarget{class_notification_wall}{}\doxysection{Notification\+Wall Class Reference}
+\label{class_notification_wall}\index{NotificationWall@{NotificationWall}}
+
+
+Represents a notification wall that displays messages.  
+
+
+
+
+{\ttfamily \#include $<$Notification\+Wall.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_notification_wall_a3ccb93b8fa08c067479db1c6bf8f2cac}{Notification\+Wall}} ()
+\item 
+void \mbox{\hyperlink{class_notification_wall_ae2f70a86d938bd130180d2e76079bcaf}{clear\+Wall}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_notification_wall_a0dad79435cd7be0f9f20619172a7e168}{get\+Wall}} ()
+\item 
+void \mbox{\hyperlink{class_notification_wall_aa855b921732d7cffe8c8388d30ead116}{add\+To\+Wall}} (std\+::string text)
+\item 
+unsigned int \mbox{\hyperlink{class_notification_wall_a168674a90c0e91e98f7535215c06c05c}{get\+Font\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_notification_wall_a775496e213b1559aa63119829f5fe914}{set\+Font}} (sf\+::\+Font font)
+\item 
+sf\+::\+Font \& \mbox{\hyperlink{class_notification_wall_aef1f5f7372c584354e1617c63bdee7cd}{get\+Font}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a notification wall that displays messages. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_notification_wall_a3ccb93b8fa08c067479db1c6bf8f2cac}\label{class_notification_wall_a3ccb93b8fa08c067479db1c6bf8f2cac}} 
+\index{NotificationWall@{NotificationWall}!NotificationWall@{NotificationWall}}
+\index{NotificationWall@{NotificationWall}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{NotificationWall()}{NotificationWall()}}
+{\footnotesize\ttfamily Notification\+Wall\+::\+Notification\+Wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor for the \mbox{\hyperlink{class_notification_wall}{Notification\+Wall}} class. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_a3ccb93b8fa08c067479db1c6bf8f2cac_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_notification_wall_aa855b921732d7cffe8c8388d30ead116}\label{class_notification_wall_aa855b921732d7cffe8c8388d30ead116}} 
+\index{NotificationWall@{NotificationWall}!addToWall@{addToWall}}
+\index{addToWall@{addToWall}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{addToWall()}{addToWall()}}
+{\footnotesize\ttfamily void Notification\+Wall\+::add\+To\+Wall (\begin{DoxyParamCaption}\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+Add a new message to the notification wall.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text of the message to be added. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_aa855b921732d7cffe8c8388d30ead116_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notification_wall_ae2f70a86d938bd130180d2e76079bcaf}\label{class_notification_wall_ae2f70a86d938bd130180d2e76079bcaf}} 
+\index{NotificationWall@{NotificationWall}!clearWall@{clearWall}}
+\index{clearWall@{clearWall}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{clearWall()}{clearWall()}}
+{\footnotesize\ttfamily void Notification\+Wall\+::clear\+Wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all notifications from the wall. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_ae2f70a86d938bd130180d2e76079bcaf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notification_wall_aef1f5f7372c584354e1617c63bdee7cd}\label{class_notification_wall_aef1f5f7372c584354e1617c63bdee7cd}} 
+\index{NotificationWall@{NotificationWall}!getFont@{getFont}}
+\index{getFont@{getFont}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily sf\+::\+Font \& Notification\+Wall\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the font used for rendering notifications.
+
+\begin{DoxyReturn}{Returns}
+Reference to font of \mbox{\hyperlink{class_player}{Player}} object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_aef1f5f7372c584354e1617c63bdee7cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notification_wall_a168674a90c0e91e98f7535215c06c05c}\label{class_notification_wall_a168674a90c0e91e98f7535215c06c05c}} 
+\index{NotificationWall@{NotificationWall}!getFontSize@{getFontSize}}
+\index{getFontSize@{getFontSize}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
+{\footnotesize\ttfamily unsigned int Notification\+Wall\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the font size used for rendering notifications.
+
+\begin{DoxyReturn}{Returns}
+Used font size for \mbox{\hyperlink{class_player}{Player}} object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_a168674a90c0e91e98f7535215c06c05c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notification_wall_a0dad79435cd7be0f9f20619172a7e168}\label{class_notification_wall_a0dad79435cd7be0f9f20619172a7e168}} 
+\index{NotificationWall@{NotificationWall}!getWall@{getWall}}
+\index{getWall@{getWall}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{getWall()}{getWall()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Notification\+Wall\+::get\+Wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the vector of shared pointers to sf\+::\+Text for notifications.
+
+\begin{DoxyReturn}{Returns}
+Reference for vector of pointer to text messages in the wall. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_a0dad79435cd7be0f9f20619172a7e168_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notification_wall_a775496e213b1559aa63119829f5fe914}\label{class_notification_wall_a775496e213b1559aa63119829f5fe914}} 
+\index{NotificationWall@{NotificationWall}!setFont@{setFont}}
+\index{setFont@{setFont}!NotificationWall@{NotificationWall}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Notification\+Wall\+::set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font}]{font }\end{DoxyParamCaption})}
+
+Set the font for rendering notifications.
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & The font to be set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notification_wall_a775496e213b1559aa63119829f5fe914_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_notification_wall_8h}{Notification\+Wall.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_notification_wall_8cc}{Notification\+Wall.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="GameMenuScreen::draw" name="GameMenuScreen::draw">
+<area shape="rect" id="node1" title="Draws the game menu screen." alt="" coords="5,93,187,120"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="244,5,431,32"/>
+<area shape="rect" id="node3" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="244,57,431,98"/>
+<area shape="rect" id="node4" href="$class_active_screen.html#a83ce836bcc0364d216ee126716b27da0" title="Gets the vector of SFML Text objects displayed on the screen." alt="" coords="252,123,423,149"/>
+<area shape="rect" id="node5" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="235,173,440,200"/>
+</map>

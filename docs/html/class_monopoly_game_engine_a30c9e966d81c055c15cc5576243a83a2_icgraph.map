@@ -1,0 +1,19 @@
+<map id="MonopolyGameEngine::getBoard" name="MonopolyGameEngine::getBoard">
+<area shape="rect" id="node1" title="Returns a pointer to the game board." alt="" coords="919,435,1088,476"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="437,304,640,345"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,369,389,411"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="439,369,638,411"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a2af1706f23548c8ad118133badfc0160" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="454,447,623,488"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#afd604c9fd373fa220ebe04ff9d5f191b" title="Checks if a color group is empty (no properties owned) for a player." alt="" coords="695,239,864,280"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a32c0ecaa71c51cdaae65178836af75b0" title="Creates text for displaying players&#39; information." alt="" coords="694,719,865,760"/>
+<area shape="rect" id="node9" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="441,726,637,753"/>
+<area shape="rect" id="node10" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="707,835,852,862"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#aaf7f625f32dc53f7413236a79afaf6d5" title="Checks if building houses on a street is legal for a player." alt="" coords="695,304,864,345"/>
+<area shape="rect" id="node12" href="$class_monopoly_game_engine.html#afaf31ce9d8aaef4b36bbefe9b4b72f78" title="Checks if destroying houses on a street is legal for a player." alt="" coords="695,369,864,411"/>
+<area shape="rect" id="node13" href="$class_monopoly_game_engine.html#a34646774679d5ef5e9bbc6317953c7fa" title="Checks if building a hotel on a street is legal for a player." alt="" coords="695,435,864,476"/>
+<area shape="rect" id="node14" href="$class_monopoly_game_engine.html#ac01307d6ae292277aa3caf5855955a8c" title="Checks if destroying a hotel on a street is legal for a player." alt="" coords="688,173,871,215"/>
+<area shape="rect" id="node15" href="$class_monopoly_game_engine.html#aa95037b493d8fb2294404944a14dcca4" title="Performs the auction." alt="" coords="454,536,623,577"/>
+<area shape="rect" id="node16" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="695,653,864,695"/>
+<area shape="rect" id="node17" href="$class_monopoly_game_engine.html#a153294a850e9c8d42d35e95eec1de17e" title="Updates the text displaying players&#39; information." alt="" coords="451,5,626,47"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,377,163,403"/>
+</map>

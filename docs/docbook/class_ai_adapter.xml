@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_ai_adapter" xml:lang="en-US">
+<title>AiAdapter Class Reference</title>
+<indexterm><primary>AiAdapter</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1ac76618fcec497abb9b30456c39bb824a"/>std::vector&lt; double &gt; <emphasis role="strong">getInputs</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a00bc5e6ed594a79e67736032d552ccf6"/>double <emphasis role="strong">convertMoney</emphasis> (unsigned int money)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a840ba14a6c65e4b7572ca9838b62c4f7"/>double <emphasis role="strong">convertMoneyValue</emphasis> (double value)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a0e0bbefc2b13cefab3ab2ccf16851bfe"/>double <emphasis role="strong">convertHouseValue</emphasis> (double value)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a82fc215a8ade845e9d7e786364d65c73"/>double <emphasis role="strong">convertPosition</emphasis> (unsigned int position)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a0629687775c5795afacc09ad37a18d09"/>double <emphasis role="strong">convertCard</emphasis> (unsigned int cards)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a10711aa34ec520301090d8d8d921acdd"/>double <emphasis role="strong">convertHouse</emphasis> (bool isHotel, unsigned int houseNumber)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a7b67096720f25f078235770a288360a9"/>void <emphasis role="strong">setTurn</emphasis> (unsigned int index)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a6993afbe81e3e8d5f94fb39ad932f80c"/>void <emphasis role="strong">setSelection</emphasis> (unsigned int index)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1aec456f7628cc0301d98584fb60216cbd"/>void <emphasis role="strong">setSelectionState</emphasis> (unsigned int index, int state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a61ac5b597efb1a019cec64ef9bbc0291"/>void <emphasis role="strong">setMoneyContext</emphasis> (unsigned int state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a42eddc31ae4a6ead2f0ae64e6ab84b3f"/>void <emphasis role="strong">clearSelectionState</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1ad77b636dd77f7cec496a3cee56a62e78"/>void <emphasis role="strong">setPosition</emphasis> (unsigned int index, unsigned int position)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1adb20752fe0a0030069c6ff1fd8464f4a"/>void <emphasis role="strong">setMoney</emphasis> (unsigned int index, unsigned int money)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a70dc5b14b109ce0b77865676e804b6f6"/>void <emphasis role="strong">setCard</emphasis> (unsigned int index, unsigned int cards)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a99a38f215b9c4244e2db1ddc7f2466d1"/>void <emphasis role="strong">setJail</emphasis> (unsigned int index, unsigned int state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a5c1c7ba8e34cabe430825dd185beb547"/>void <emphasis role="strong">setOwner</emphasis> (unsigned int property, unsigned int state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a266f351cf8ecd0aa00943068b7357bc8"/>void <emphasis role="strong">setMortgage</emphasis> (unsigned int property, unsigned int state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_ai_adapter_1a261820efa64eda05774ae3cafe20b460"/>void <emphasis role="strong">setHouse</emphasis> (bool isHotel, unsigned int houseNumber, unsigned int id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__ai_adapter_8h">AiAdapter.h</link>/home/kamil/zpr/Monopoly/<link linkend="__ai_adapter_8cc">AiAdapter.cc</link></section>

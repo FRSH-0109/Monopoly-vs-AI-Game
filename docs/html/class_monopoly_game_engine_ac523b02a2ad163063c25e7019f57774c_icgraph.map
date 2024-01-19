@@ -1,0 +1,10 @@
+<map id="MonopolyGameEngine::addAuctionText" name="MonopolyGameEngine::addAuctionText">
+<area shape="rect" id="node1" title="Adds auction text to the GUI." alt="" coords="516,169,685,211"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a41effaad0143e79955701cff92b2620f" title="Creates buttons for handling auction offers." alt="" coords="257,5,460,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a555cc64819179c99afb2b39b58599074" title="Creates text for displaying the current offer in an auction." alt="" coords="249,71,468,112"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a9655bc29084d61fe0503ec16272630e6" title="Creates text for displaying information about the bidded property." alt="" coords="259,136,458,177"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a932aa1b22c5b339c568f8ea34749b1fb" title="Creates text for displaying information about the bidder." alt="" coords="274,201,443,243"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a04528f2dbaa4725b4430bdef63b2d9d0" title="Creates text for displaying the highest bid in an auction." alt="" coords="261,267,456,308"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#ac4396e37a67a062d796345afc0642af2" title="Creates text for displaying information about the leading bidder in an auction." alt="" coords="251,332,467,373"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="5,177,201,203"/>
+</map>

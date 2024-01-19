@@ -1,0 +1,15 @@
+<map id="MonopolyGameEngine::calculateRent" name="MonopolyGameEngine::calculateRent">
+<area shape="rect" id="node1" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="5,281,175,323"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#af6b0a0923148f7dc901195dccfdc7952" title="Calculates the number of group fields owned by a player." alt="" coords="228,5,439,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="249,71,418,112"/>
+<area shape="rect" id="node5" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title="Gets the number of houses on the property." alt="" coords="226,137,441,163"/>
+<area shape="rect" id="node6" href="$class_street_field.html#a79785c76389d7bf9171797b9d1a16ebd" title="Checks if there is a hotel on the property." alt="" coords="250,187,417,214"/>
+<area shape="rect" id="node7" href="$class_property_field.html#ac52da7b908a73ce329c1aff55f971bed" title="Checks if the property is mortgaged." alt="" coords="224,238,443,265"/>
+<area shape="rect" id="node8" href="$class_property_field.html#a4e8d167377c43ea54f32d355d8d07993" title="Gets the owner of the property." alt="" coords="244,289,423,315"/>
+<area shape="rect" id="node9" href="$class_utility_field.html#a5476d4355c82780f3ec8d173513590ae" title="Calculates the rent for the utility property." alt="" coords="223,339,444,366"/>
+<area shape="rect" id="node10" href="$class_street_field.html#af6ffa6777200808afa686a07a1be6e9a" title="Gets the rent values for different tiers." alt="" coords="236,390,431,417"/>
+<area shape="rect" id="node11" href="$class_station_field.html#ae23e828cefa568b38ff525cd9db3b511" title="Gets the rent values for different tiers." alt="" coords="233,441,434,467"/>
+<area shape="rect" id="node12" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="277,491,389,518"/>
+<area shape="rect" id="node13" href="$class_monopoly_game_engine.html#aa486edceb7c305c2f24785a6ee8ca2fc" title="Checks if a group of properties is completed by a player." alt="" coords="249,543,418,584"/>
+<area shape="rect" id="node3" href="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f" title="Gets the IDs of the group members (properties in the same group)." alt="" coords="492,282,729,309"/>
+</map>

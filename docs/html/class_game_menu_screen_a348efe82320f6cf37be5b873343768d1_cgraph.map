@@ -1,0 +1,4 @@
+<map id="GameMenuScreen::setDefaultAILevelButtonsFocus" name="GameMenuScreen::setDefaultAILevelButtonsFocus">
+<area shape="rect" id="node1" title="Sets the default AI level buttons&#39; focus." alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="271,13,457,39"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="GameMenuScreen::worker" name="GameMenuScreen::worker">
+<area shape="rect" id="node1" title="Worker function for the game menu screen." alt="" coords="5,165,199,191"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a5ec0f806edaf1275af6d9eb044e2d8f6" title="Handles button clicks in the game menu." alt="" coords="247,99,469,140"/>
+<area shape="rect" id="node4" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="803,109,989,135"/>
+<area shape="rect" id="node9" href="$class_active_screen.html#a385001a5027f0b2f00145a54b668368f" title="Sets the colors of a button based on its state." alt="" coords="249,215,467,242"/>
+<area shape="rect" id="node10" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="265,267,451,308"/>
+<area shape="rect" id="node11" href="$class_game_menu_screen.html#aa5f7b6ac2cb57c6f700aefe1f727bd77" title="Sets other buttons inactive when a button is clicked." alt="" coords="523,229,729,271"/>
+<area shape="rect" id="node3" href="$class_game_menu_screen.html#ae427ab9331af7fb8bfa52d88a0977b3e" title="Sets the AI level column visibility." alt="" coords="517,164,735,205"/>
+<area shape="rect" id="node7" href="$class_game_menu_screen.html#a348efe82320f6cf37be5b873343768d1" title="Sets the default AI level buttons&#39; focus." alt="" coords="517,99,735,140"/>
+<area shape="rect" id="node8" href="$class_game_menu_screen.html#ade9e4b9082cd923b43e45ea1f74ebaba" title="Sets the player settings." alt="" coords="521,33,731,75"/>
+<area shape="rect" id="node5" href="$class_game_menu_screen.html#a974eb5076298fbba7e4d6b577f74e888" title="Gets the player number from the ScreenEventType." alt="" coords="791,164,1001,205"/>
+<area shape="rect" id="node6" href="$class_game_menu_screen.html#a8734e38603d1886079ff185c5aa399bc" title="Checks if the ScreenEventType is related to AI level." alt="" coords="783,229,1009,271"/>
+<area shape="rect" id="node12" href="$class_game_menu_screen.html#a704fad5ddf438187195732e2b727aaaf" title="Checks if the ScreenEventType is related to setting AI." alt="" coords="783,295,1009,336"/>
+</map>

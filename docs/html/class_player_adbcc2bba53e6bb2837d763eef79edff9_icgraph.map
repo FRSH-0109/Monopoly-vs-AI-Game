@@ -1,0 +1,8 @@
+<map id="Player::setIsAi" name="Player::setIsAi">
+<area shape="rect" id="node1" title=" " alt="" coords="467,93,581,120"/>
+<area shape="rect" id="node2" href="$class_ai_player.html#a8039dc621ac1f6b087d0f1732ce3ab55" title=" " alt="" coords="265,5,403,32"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#abc237772db36ef7096d874ac7bf15076" title="Creates player objects based on input vector." alt="" coords="249,57,419,98"/>
+<area shape="rect" id="node5" href="$class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8" title=" " alt="" coords="278,123,390,149"/>
+<area shape="rect" id="node6" href="$class_game_engine.html#a2f16fc4e451a3a4942992319eb37455b" title="Worker function for processing player&#45;related tasks." alt="" coords="255,173,413,200"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="5,64,201,91"/>
+</map>

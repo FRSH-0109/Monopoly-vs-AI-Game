@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_field" xml:lang="en-US">
+<title>Field Class Reference</title>
+<indexterm><primary>Field</primary></indexterm>
+Inheritance diagram for Field:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_field__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_field_1acc8e72c4faac0f5c48b9d353e9350112"/><emphasis role="strong">Field</emphasis> (const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1af1d9991ce36def51f2999a959b7873fa"/><link linkend="_class_context_window">ContextWindow</link> * <emphasis role="strong">getContextWindow</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1aa3ea436b800a8078f04be2678c42f7c0"/>unsigned int <emphasis role="strong">getId</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a3c5261dc7fc032dd06268d3c94028d73"/>FieldType <emphasis role="strong">getType</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1ad2e239a719acc3285a9b11b3aef6808c"/>const std::string <emphasis role="strong">getName</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9"/>const std::string <emphasis role="strong">getGraphicPath</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1ad5706e4c154214fe43db7ecc7a6b74ca"/>unsigned int <emphasis role="strong">getWidth</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a24552dc1bcb1f574ce8db0761c33790a"/>unsigned int <emphasis role="strong">getHeight</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a646e28cf7899eb73bd120e7e7f936633"/>float <emphasis role="strong">getRotation</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1ad9461468ec68a4148453553cc3150fa6"/>const sf::Sprite &amp; <emphasis role="strong">getSprite</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00"/>const sf::Texture &amp; <emphasis role="strong">getTexture</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd"/>const sf::Vector2i &amp; <emphasis role="strong">getPosition</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7"/>const sf::Text &amp; <emphasis role="strong">getNameText</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1aba57b17e88be43f271fbcb85822a56c3"/>void <emphasis role="strong">createSprite</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1"/>void <emphasis role="strong">setHeight</emphasis> (unsigned int new_height)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a664b22a22c392fcd9a20df37ab1e5739"/>void <emphasis role="strong">setWidth</emphasis> (unsigned int new_width)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1a683664b9bd5309929a3104736b666357"/>void <emphasis role="strong">setRotation</emphasis> (float new_roation)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_field_1ae4e02fa62cdb947a134ce665ac1b0f69"/>void <emphasis role="strong">setPosition</emphasis> (sf::Vector2i pos)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__field_8h">Field.h</link>/home/kamil/zpr/Monopoly/<link linkend="__field_8cc">Field.cc</link></section>

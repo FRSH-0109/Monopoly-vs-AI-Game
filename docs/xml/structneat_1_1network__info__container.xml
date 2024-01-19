@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structneat_1_1network__info__container" kind="struct" language="C++" prot="public">
+    <compoundname>neat::network_info_container</compoundname>
+    <includes refid="_tinyneat_8h" local="no">Tinyneat.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::network_info_container::input_size</definition>
+        <argsstring></argsstring>
+        <name>input_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="63" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf" compoundref="_tinyann_8cc" startline="88" endline="139">ann::neuralnet::from_genome</referencedby>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">neat::pool::pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::network_info_container::bias_size</definition>
+        <argsstring></argsstring>
+        <name>bias_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="64" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf" compoundref="_tinyann_8cc" startline="88" endline="139">ann::neuralnet::from_genome</referencedby>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">neat::pool::pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::network_info_container::output_size</definition>
+        <argsstring></argsstring>
+        <name>output_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="65" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf" compoundref="_tinyann_8cc" startline="88" endline="139">ann::neuralnet::from_genome</referencedby>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">neat::pool::pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::network_info_container::functional_nodes</definition>
+        <argsstring></argsstring>
+        <name>functional_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="66" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classneat_1_1genome_1aaaeefb37d3d349e7623a7eabea49f82c" compoundref="_tinyneat_8cc" startline="15" endline="19">neat::genome::genome</referencedby>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">neat::pool::pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool neat::network_info_container::recurrent</definition>
+        <argsstring></argsstring>
+        <name>recurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="67" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf" compoundref="_tinyann_8cc" startline="88" endline="139">ann::neuralnet::from_genome</referencedby>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">neat::pool::pool</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="62" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="62" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" prot="public" virt="non-virtual"><scope>neat::network_info_container</scope><name>bias_size</name></member>
+      <member refid="structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733" prot="public" virt="non-virtual"><scope>neat::network_info_container</scope><name>functional_nodes</name></member>
+      <member refid="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" prot="public" virt="non-virtual"><scope>neat::network_info_container</scope><name>input_size</name></member>
+      <member refid="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" prot="public" virt="non-virtual"><scope>neat::network_info_container</scope><name>output_size</name></member>
+      <member refid="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" prot="public" virt="non-virtual"><scope>neat::network_info_container</scope><name>recurrent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

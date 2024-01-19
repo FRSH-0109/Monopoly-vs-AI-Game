@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::createChanceCards" name="MonopolyGameEngine::createChanceCards">
+<area shape="rect" id="node1" title="Creates the chance cards for the game." alt="" coords="5,5,175,47"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a198a2731eb63d6c0a57bd0411bad89e9" title="Shuffles the chance cards." alt="" coords="223,5,392,47"/>
+</map>

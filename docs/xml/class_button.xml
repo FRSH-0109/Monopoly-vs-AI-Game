@@ -1,0 +1,1017 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_button" kind="class" language="C++" prot="public">
+    <compoundname>Button</compoundname>
+    <includes refid="_button_8h" local="no">Button.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_button_1afb14df3467baef8f8e3571276a7c966c" prot="private" static="no" mutable="no">
+        <type>sf::RectangleShape</type>
+        <definition>sf::RectangleShape Button::buttonShape_</definition>
+        <argsstring></argsstring>
+        <name>buttonShape_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The SFML RectangleShape representing the button. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="207" column="20" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1ae963d85f40ec0dee6919ad419717edca" prot="private" static="no" mutable="no">
+        <type>sf::Text</type>
+        <definition>sf::Text Button::text_</definition>
+        <argsstring></argsstring>
+        <name>text_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The SFML Text object representing the text on the button. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="208" column="10" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1afbd6571184079ba8d93882da8e2b72e2" prot="private" static="no" mutable="no">
+        <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+        <definition>ScreenEventType Button::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of screen event associated with the button. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="209" column="17" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1ae7298ede96330325486ab1b40bc70047" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint Button::btnWidth</definition>
+        <argsstring></argsstring>
+        <name>btnWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The width of the button. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="211" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1a8de8bbb7f43dc1df30eb958f1d439404" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint Button::btnHeight</definition>
+        <argsstring></argsstring>
+        <name>btnHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The height of the button. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="212" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1a20148306ff56cd049a898b255503b5d1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Button::isClicked_</definition>
+        <argsstring></argsstring>
+        <name>isClicked_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag indicating if the button is clicked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="214" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1ac536744daeee11104f9f253e0c3d3686" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Button::isVisible_</definition>
+        <argsstring></argsstring>
+        <name>isVisible_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag indicating if the button is visible. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="215" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1a4e7500cc3663f02024769456f3d3bf13" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Button::isActive_</definition>
+        <argsstring></argsstring>
+        <name>isActive_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag indicating if the button is active. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="216" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1ac72daf3569b5377239127efa31864729" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Button::isFocus_</definition>
+        <argsstring></argsstring>
+        <name>isFocus_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag indicating if the button is in focus. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="217" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1aefe9d1156df27f0cefc6ab0a39e76869" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Button::wasReleased_</definition>
+        <argsstring></argsstring>
+        <name>wasReleased_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag indicating if the button was released. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="218" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1a78d69aa11c2428cf509d4f895f702c72" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Button::activeBackColor_</definition>
+        <argsstring></argsstring>
+        <name>activeBackColor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The background color when the button is active. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="220" column="11" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1acecb09f66f7b44d35c4586152ee9e356" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Button::activeTextColor_</definition>
+        <argsstring></argsstring>
+        <name>activeTextColor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The text color when the button is active. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="221" column="11" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1afe7af3c1e63618ceb879d5e10c9159d3" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Button::inActiveBackColor_</definition>
+        <argsstring></argsstring>
+        <name>inActiveBackColor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The background color when the button is inactive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="222" column="11" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1ac619193dbb51eed3cf284e31f5291e80" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Button::inActiveTextColor_</definition>
+        <argsstring></argsstring>
+        <name>inActiveTextColor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The text color when the button is inactive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="223" column="11" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1a8fcd26961b76f5f4cfc1248a8157ddf7" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Button::focusBackColor_</definition>
+        <argsstring></argsstring>
+        <name>focusBackColor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The background color when the button is in focus. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="224" column="11" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_button_1ae98e45f8b1a567a735c81cbc9ece40b5" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Button::focusTextColor_</definition>
+        <argsstring></argsstring>
+        <name>focusTextColor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The text color when the button is in focus. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="225" column="11" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_button_1aeef559a4dc6afe4b7992f4cc6200e992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Button::Button</definition>
+        <argsstring>(ScreenEventType type, sf::String btnText, sf::Vector2f buttonSize, int charSize)</argsstring>
+        <name>Button</name>
+        <param>
+          <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>sf::String</type>
+          <declname>btnText</declname>
+        </param>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>buttonSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>charSize</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_button" kindref="compound">Button</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of screen event associated with the button. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>btnText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text displayed on the button. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buttonSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the button. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character size of the text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="34" column="1" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="13" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1adf65892636ea303a84e1391106ea7cb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::draw</definition>
+        <argsstring>(sf::RenderWindow &amp;window)</argsstring>
+        <name>draw</name>
+        <param>
+          <type>sf::RenderWindow &amp;</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Draws the button on the specified window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML window to draw the button on. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="40" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a34779d5dfdc96291a25454975c14e2b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Button::isMouseOver</definition>
+        <argsstring>(sf::RenderWindow &amp;window)</argsstring>
+        <name>isMouseOver</name>
+        <param>
+          <type>sf::RenderWindow &amp;</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the mouse is over the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the mouse is over the button, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="47" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="86" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1af56e575bb7162c0fd8d4957ba7d034d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Button::mouseIsOver</definition>
+        <argsstring>()</argsstring>
+        <name>mouseIsOver</name>
+        <briefdescription>
+<para>Virtual function called when the mouse is over the button. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="52" column="14" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="94" bodyend="96"/>
+        <references refid="class_button_1ae553fa694c6ce78568f846ddd791e6a2" compoundref="_button_8cc" startline="61" endline="63">setButtonFocus</references>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a570ca8dd513b159a2175df0aa9ea7c54" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Button::mouseIsNotOver</definition>
+        <argsstring>()</argsstring>
+        <name>mouseIsNotOver</name>
+        <briefdescription>
+<para>Virtual function called when the mouse is not over the button. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="57" column="14" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="98" bodyend="100"/>
+        <references refid="class_button_1a8e4070b3ea3e499e805c03c2a9d0713d" compoundref="_button_8cc" startline="65" endline="67">setButtonUnfocus</references>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a7087e218c95541abab91adba42ff5e5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+        <definition>ScreenEventType Button::getEventType</definition>
+        <argsstring>()</argsstring>
+        <name>getEventType</name>
+        <briefdescription>
+<para>Gets the type of screen event associated with the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The screen event type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="63" column="17" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a570723c1f92f01ef1ef2998338f215a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setEventType</definition>
+        <argsstring>(ScreenEventType event)</argsstring>
+        <name>setEventType</name>
+        <param>
+          <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Sets the type of screen event associated with the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen event type to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="69" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a25a860f1b3490fe1346d36337a759b75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setFont</definition>
+        <argsstring>(sf::Font &amp;fonts)</argsstring>
+        <name>setFont</name>
+        <param>
+          <type>sf::Font &amp;</type>
+          <declname>fonts</declname>
+        </param>
+        <briefdescription>
+<para>Sets the font for the button text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fonts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The font to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="75" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a465bc046f013a24af6679fb9b7cad2b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setPosition</definition>
+        <argsstring>(sf::Vector2f point)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Sets the position of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="81" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="69" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a3c9c6168241bdfdc16dfc69848482599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setIsClicked</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setIsClicked</name>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the state of the button as clicked or not clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The state to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="87" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="102" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a2219d51c220740b01c352974882af574" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Button::getIsClicked</definition>
+        <argsstring>()</argsstring>
+        <name>getIsClicked</name>
+        <briefdescription>
+<para>Gets the state of the button (clicked or not clicked). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the button is clicked, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="93" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a0860c867e652f08390c05929d6837c13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f Button::getSize</definition>
+        <argsstring>()</argsstring>
+        <name>getSize</name>
+        <briefdescription>
+<para>Gets the size of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The size of the button. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="99" column="14" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1ad0c17a851c583752826018170c9fe980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setIsVisible</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setIsVisible</name>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the visibility state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visibility state to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="105" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="114" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1af9c1d05c1ff0eba579db538f82eaf055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Button::getIsVisible</definition>
+        <argsstring>()</argsstring>
+        <name>getIsVisible</name>
+        <briefdescription>
+<para>Gets the visibility state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the button is visible, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="111" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1aa1c40b1e9d6721bce0200c5136cc0d84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setIsActive</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setIsActive</name>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the active state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The active state to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="117" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a782dba13361565b4c616f45af799b0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Button::getIsActive</definition>
+        <argsstring>()</argsstring>
+        <name>getIsActive</name>
+        <briefdescription>
+<para>Gets the active state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the button is active, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="123" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="126" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1ae84c0d3f2c6f047455de3ff91f1322d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setIsFocus</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setIsFocus</name>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the focus state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The focus state to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="129" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="130" bodyend="132"/>
+        <referencedby refid="class_button_1ae553fa694c6ce78568f846ddd791e6a2" compoundref="_button_8cc" startline="61" endline="63">setButtonFocus</referencedby>
+        <referencedby refid="class_button_1a8e4070b3ea3e499e805c03c2a9d0713d" compoundref="_button_8cc" startline="65" endline="67">setButtonUnfocus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1ae0b1c8827cf3297a99fed32a79e63314" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Button::getIsFocus</definition>
+        <argsstring>()</argsstring>
+        <name>getIsFocus</name>
+        <briefdescription>
+<para>Gets the focus state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the button is in focus, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="135" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="134" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a1c2e473eb65a51608a75b77419404d7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setWasReleased</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setWasReleased</name>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the state of the button as released or not released. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The state to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="141" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="142" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a8c9bc47f5182ab1bafa899eadac2f394" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Button::getWasReleased</definition>
+        <argsstring>()</argsstring>
+        <name>getWasReleased</name>
+        <briefdescription>
+<para>Gets the state of the button (released or not released). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the button was released, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="147" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1aba461925dd4989abca1262c2295a9902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Text &amp;</type>
+        <definition>sf::Text &amp; Button::getText</definition>
+        <argsstring>()</argsstring>
+        <name>getText</name>
+        <briefdescription>
+<para>Gets the SFML Text object associated with the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The SFML Text object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="153" column="10" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="138" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a71f7c59ef8030cbbbc71986ebb825742" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setActiveBackColor</definition>
+        <argsstring>(sf::Color color)</argsstring>
+        <name>setActiveBackColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the background color and text color when the button is active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The background color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="159" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1aa364c0369ab38c93d16942a70b4d4241" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setActiveTextColor</definition>
+        <argsstring>(sf::Color color)</argsstring>
+        <name>setActiveTextColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the text color when the button is active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="165" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1ac5161631eb39913b5890fde4879c32b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setInactiveBackColor</definition>
+        <argsstring>(sf::Color color)</argsstring>
+        <name>setInactiveBackColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the background color and text color when the button is inactive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The background color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="171" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a327b1692fa110c1668eded2bdf9ba98c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setInactiveTextColor</definition>
+        <argsstring>(sf::Color color)</argsstring>
+        <name>setInactiveTextColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the text color when the button is inactive. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="177" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a14094ee107d9e3bc3575431329a428a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setFocusBackColor</definition>
+        <argsstring>(sf::Color color)</argsstring>
+        <name>setFocusBackColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the background color and text color when the button is in focus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The background color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="183" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a26d258df4b6f383de921fb717618d896" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setFocusTextColor</definition>
+        <argsstring>(sf::Color color)</argsstring>
+        <name>setFocusTextColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the text color when the button is in focus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="189" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1ae553fa694c6ce78568f846ddd791e6a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setButtonFocus</definition>
+        <argsstring>()</argsstring>
+        <name>setButtonFocus</name>
+        <briefdescription>
+<para>Sets the button state to focused. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="194" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="61" bodyend="63"/>
+        <references refid="class_button_1ae84c0d3f2c6f047455de3ff91f1322d9" compoundref="_button_8cc" startline="130" endline="132">setIsFocus</references>
+        <referencedby refid="class_button_1af56e575bb7162c0fd8d4957ba7d034d6" compoundref="_button_8cc" startline="94" endline="96">mouseIsOver</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1a8e4070b3ea3e499e805c03c2a9d0713d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::setButtonUnfocus</definition>
+        <argsstring>()</argsstring>
+        <name>setButtonUnfocus</name>
+        <briefdescription>
+<para>Sets the button state to unfocused. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="199" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="65" bodyend="67"/>
+        <references refid="class_button_1ae84c0d3f2c6f047455de3ff91f1322d9" compoundref="_button_8cc" startline="130" endline="132">setIsFocus</references>
+        <referencedby refid="class_button_1a570ca8dd513b159a2175df0aa9ea7c54" compoundref="_button_8cc" startline="98" endline="100">mouseIsNotOver</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_button_1ade4c79b172fadf65cd127816ab75cc32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Button::updateColors</definition>
+        <argsstring>()</argsstring>
+        <name>updateColors</name>
+        <briefdescription>
+<para>Updates the colors of the button based on its state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Button.h" line="204" column="6" bodyfile="/home/kamil/zpr/Monopoly/Button.cc" bodystart="150" bodyend="163"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a button for handling user interactions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Button.h" line="25" column="1" bodyfile="/home/kamil/zpr/Monopoly/Button.h" bodystart="25" bodyend="226"/>
+    <listofallmembers>
+      <member refid="class_button_1a78d69aa11c2428cf509d4f895f702c72" prot="private" virt="non-virtual"><scope>Button</scope><name>activeBackColor_</name></member>
+      <member refid="class_button_1acecb09f66f7b44d35c4586152ee9e356" prot="private" virt="non-virtual"><scope>Button</scope><name>activeTextColor_</name></member>
+      <member refid="class_button_1a8de8bbb7f43dc1df30eb958f1d439404" prot="private" virt="non-virtual"><scope>Button</scope><name>btnHeight</name></member>
+      <member refid="class_button_1ae7298ede96330325486ab1b40bc70047" prot="private" virt="non-virtual"><scope>Button</scope><name>btnWidth</name></member>
+      <member refid="class_button_1aeef559a4dc6afe4b7992f4cc6200e992" prot="public" virt="non-virtual"><scope>Button</scope><name>Button</name></member>
+      <member refid="class_button_1afb14df3467baef8f8e3571276a7c966c" prot="private" virt="non-virtual"><scope>Button</scope><name>buttonShape_</name></member>
+      <member refid="class_button_1adf65892636ea303a84e1391106ea7cb0" prot="public" virt="non-virtual"><scope>Button</scope><name>draw</name></member>
+      <member refid="class_button_1a8fcd26961b76f5f4cfc1248a8157ddf7" prot="private" virt="non-virtual"><scope>Button</scope><name>focusBackColor_</name></member>
+      <member refid="class_button_1ae98e45f8b1a567a735c81cbc9ece40b5" prot="private" virt="non-virtual"><scope>Button</scope><name>focusTextColor_</name></member>
+      <member refid="class_button_1a7087e218c95541abab91adba42ff5e5b" prot="public" virt="non-virtual"><scope>Button</scope><name>getEventType</name></member>
+      <member refid="class_button_1a782dba13361565b4c616f45af799b0b8" prot="public" virt="non-virtual"><scope>Button</scope><name>getIsActive</name></member>
+      <member refid="class_button_1a2219d51c220740b01c352974882af574" prot="public" virt="non-virtual"><scope>Button</scope><name>getIsClicked</name></member>
+      <member refid="class_button_1ae0b1c8827cf3297a99fed32a79e63314" prot="public" virt="non-virtual"><scope>Button</scope><name>getIsFocus</name></member>
+      <member refid="class_button_1af9c1d05c1ff0eba579db538f82eaf055" prot="public" virt="non-virtual"><scope>Button</scope><name>getIsVisible</name></member>
+      <member refid="class_button_1a0860c867e652f08390c05929d6837c13" prot="public" virt="non-virtual"><scope>Button</scope><name>getSize</name></member>
+      <member refid="class_button_1aba461925dd4989abca1262c2295a9902" prot="public" virt="non-virtual"><scope>Button</scope><name>getText</name></member>
+      <member refid="class_button_1a8c9bc47f5182ab1bafa899eadac2f394" prot="public" virt="non-virtual"><scope>Button</scope><name>getWasReleased</name></member>
+      <member refid="class_button_1afe7af3c1e63618ceb879d5e10c9159d3" prot="private" virt="non-virtual"><scope>Button</scope><name>inActiveBackColor_</name></member>
+      <member refid="class_button_1ac619193dbb51eed3cf284e31f5291e80" prot="private" virt="non-virtual"><scope>Button</scope><name>inActiveTextColor_</name></member>
+      <member refid="class_button_1a4e7500cc3663f02024769456f3d3bf13" prot="private" virt="non-virtual"><scope>Button</scope><name>isActive_</name></member>
+      <member refid="class_button_1a20148306ff56cd049a898b255503b5d1" prot="private" virt="non-virtual"><scope>Button</scope><name>isClicked_</name></member>
+      <member refid="class_button_1ac72daf3569b5377239127efa31864729" prot="private" virt="non-virtual"><scope>Button</scope><name>isFocus_</name></member>
+      <member refid="class_button_1a34779d5dfdc96291a25454975c14e2b2" prot="public" virt="non-virtual"><scope>Button</scope><name>isMouseOver</name></member>
+      <member refid="class_button_1ac536744daeee11104f9f253e0c3d3686" prot="private" virt="non-virtual"><scope>Button</scope><name>isVisible_</name></member>
+      <member refid="class_button_1a570ca8dd513b159a2175df0aa9ea7c54" prot="public" virt="virtual"><scope>Button</scope><name>mouseIsNotOver</name></member>
+      <member refid="class_button_1af56e575bb7162c0fd8d4957ba7d034d6" prot="public" virt="virtual"><scope>Button</scope><name>mouseIsOver</name></member>
+      <member refid="class_button_1a71f7c59ef8030cbbbc71986ebb825742" prot="public" virt="non-virtual"><scope>Button</scope><name>setActiveBackColor</name></member>
+      <member refid="class_button_1aa364c0369ab38c93d16942a70b4d4241" prot="public" virt="non-virtual"><scope>Button</scope><name>setActiveTextColor</name></member>
+      <member refid="class_button_1ae553fa694c6ce78568f846ddd791e6a2" prot="public" virt="non-virtual"><scope>Button</scope><name>setButtonFocus</name></member>
+      <member refid="class_button_1a8e4070b3ea3e499e805c03c2a9d0713d" prot="public" virt="non-virtual"><scope>Button</scope><name>setButtonUnfocus</name></member>
+      <member refid="class_button_1a570723c1f92f01ef1ef2998338f215a4" prot="public" virt="non-virtual"><scope>Button</scope><name>setEventType</name></member>
+      <member refid="class_button_1a14094ee107d9e3bc3575431329a428a8" prot="public" virt="non-virtual"><scope>Button</scope><name>setFocusBackColor</name></member>
+      <member refid="class_button_1a26d258df4b6f383de921fb717618d896" prot="public" virt="non-virtual"><scope>Button</scope><name>setFocusTextColor</name></member>
+      <member refid="class_button_1a25a860f1b3490fe1346d36337a759b75" prot="public" virt="non-virtual"><scope>Button</scope><name>setFont</name></member>
+      <member refid="class_button_1ac5161631eb39913b5890fde4879c32b1" prot="public" virt="non-virtual"><scope>Button</scope><name>setInactiveBackColor</name></member>
+      <member refid="class_button_1a327b1692fa110c1668eded2bdf9ba98c" prot="public" virt="non-virtual"><scope>Button</scope><name>setInactiveTextColor</name></member>
+      <member refid="class_button_1aa1c40b1e9d6721bce0200c5136cc0d84" prot="public" virt="non-virtual"><scope>Button</scope><name>setIsActive</name></member>
+      <member refid="class_button_1a3c9c6168241bdfdc16dfc69848482599" prot="public" virt="non-virtual"><scope>Button</scope><name>setIsClicked</name></member>
+      <member refid="class_button_1ae84c0d3f2c6f047455de3ff91f1322d9" prot="public" virt="non-virtual"><scope>Button</scope><name>setIsFocus</name></member>
+      <member refid="class_button_1ad0c17a851c583752826018170c9fe980" prot="public" virt="non-virtual"><scope>Button</scope><name>setIsVisible</name></member>
+      <member refid="class_button_1a465bc046f013a24af6679fb9b7cad2b6" prot="public" virt="non-virtual"><scope>Button</scope><name>setPosition</name></member>
+      <member refid="class_button_1a1c2e473eb65a51608a75b77419404d7c" prot="public" virt="non-virtual"><scope>Button</scope><name>setWasReleased</name></member>
+      <member refid="class_button_1ae963d85f40ec0dee6919ad419717edca" prot="private" virt="non-virtual"><scope>Button</scope><name>text_</name></member>
+      <member refid="class_button_1afbd6571184079ba8d93882da8e2b72e2" prot="private" virt="non-virtual"><scope>Button</scope><name>type_</name></member>
+      <member refid="class_button_1ade4c79b172fadf65cd127816ab75cc32" prot="public" virt="non-virtual"><scope>Button</scope><name>updateColors</name></member>
+      <member refid="class_button_1aefe9d1156df27f0cefc6ab0a39e76869" prot="private" virt="non-virtual"><scope>Button</scope><name>wasReleased_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<map id="/home/kamil/zpr/Monopoly/Field.h" name="/home/kamil/zpr/Monopoly/Field.h">
+<area shape="rect" id="node1" title="Header file containing staff for single monopoly board game field. Separated to many deriving classes..." alt="" coords="468,5,663,47"/>
+<area shape="rect" id="node2" href="$_board_8h.html" title="Header file for monopoly game board, creation is based on json file &#39;board.json&#39;. Mainly handles all ..." alt="" coords="333,95,528,136"/>
+<area shape="rect" id="node11" href="$_withdraw_8h.html" title="Header file for trade/withdraw mechanism in the monopoly game between players." alt="" coords="468,184,663,225"/>
+<area shape="rect" id="node13" href="$_field_8cc.html" title="Source file containing staff for single monopoly board game field. Separated to many deriving classes..." alt="" coords="603,95,797,136"/>
+<area shape="rect" id="node3" href="$_board_8cc.html" title="Source file for monopoly game board, creation is based on json file &#39;board.json&#39;. Mainly handles all ..." alt="" coords="199,184,393,225"/>
+<area shape="rect" id="node4" href="$_monopoly_game_engine_8h.html" title="Header file of class used to handle whole monopoly game process, turns, actions with players,..." alt="" coords="333,273,528,315"/>
+<area shape="rect" id="node5" href="$_game_screen_8h.html" title="Header file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..." alt="" coords="224,363,419,404"/>
+<area shape="rect" id="node10" href="$_monopoly_game_engine_8cc.html" title="Source file of class used to handle whole monopoly game process, turns, actions with players,..." alt="" coords="443,363,637,404"/>
+<area shape="rect" id="node6" href="$_game_engine_8h.html" title="Header file for GameEngine class, used to handle lowes level program operations as input interactions..." alt="" coords="115,452,309,493"/>
+<area shape="rect" id="node9" href="$_game_screen_8cc.html" title="Source file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..." alt="" coords="333,452,528,493"/>
+<area shape="rect" id="node7" href="$_game_engine_8cc.html" title="Source file for GameEngine class, used to handle lowes level program operations as input interactions..." alt="" coords="5,541,200,583"/>
+<area shape="rect" id="node8" href="$main_8cc.html" title="Source file launching monopoly game vs AI project." alt="" coords="224,541,419,583"/>
+<area shape="rect" id="node12" href="$_withdraw_8cc.html" title="Source file for trade/withdraw mehanism in monopoly game between players." alt="" coords="552,273,747,315"/>
+</map>

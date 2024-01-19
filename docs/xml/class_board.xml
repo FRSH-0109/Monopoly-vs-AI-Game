@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_board" kind="class" language="C++" prot="public">
+    <compoundname>Board</compoundname>
+    <includes refid="_board_8h" local="no">Board.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_board_1af598bd7676127bd752223600da19aac9" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Board::field_number_</definition>
+        <argsstring></argsstring>
+        <name>field_number_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="40" column="14" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_board_1ab6ec1e0ae75f04adad7e200084af6b13" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" kindref="member">PossibleFields</ref> &gt;</type>
+        <definition>std::vector&lt;PossibleFields&gt; Board::board_</definition>
+        <argsstring></argsstring>
+        <name>board_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Numer of field on the board </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="41" column="13" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_board_1ace79d4c6dd708cdddabb09299637f422" prot="private" static="no" mutable="no">
+        <type>sf::Vector2i</type>
+        <definition>sf::Vector2i Board::BOARD_POSITION_</definition>
+        <argsstring></argsstring>
+        <name>BOARD_POSITION_</name>
+        <initializer>= sf::Vector2i(700, 700)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector containing all fields </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="42" column="14" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_board_1a20a95d1a99fc64aae2732c93b430d157" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Board::BOARD_SCALE</definition>
+        <argsstring></argsstring>
+        <name>BOARD_SCALE</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Origin position for displaying board stuff </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="43" column="7" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_board_1a79e3b8de081a3c283aebb122cc333dc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Board::Board</definition>
+        <argsstring>(const std::string file_path)</argsstring>
+        <name>Board</name>
+        <param>
+          <type>const std::string</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_board" kindref="compound">Board</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Scale for displaying board stuff <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the &apos;board.json&apos; file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="50" column="1" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="20" bodyend="126"/>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa81d2bb6df05f24d8afc01889a493875c" compoundref="main_8h" startline="132">CHANCE</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa73226d8625a6ca9e2460030618a7fec5" compoundref="main_8h" startline="132">COMMUNITY_CHEST</references>
+        <references refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" compoundref="_field_8cc" startline="183" endline="217">PropertyField::createFlagSprite</references>
+        <references refid="class_field_1aba57b17e88be43f271fbcb85822a56c3" compoundref="_field_8cc" startline="92" endline="104">Field::createSprite</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa676f8257843de2c2b3429b956a8c7d38" compoundref="main_8h" startline="132">FREE_PARKING</references>
+        <references refid="class_board_1a2b73746e47152ecea46f7a03d58ea3e8" compoundref="_board_8cc" startline="128" endline="153">getFieldPositon</references>
+        <references refid="class_board_1a7ae5ceb0363e2d0bf1520108074c9485" compoundref="_board_8cc" startline="155" endline="166">getFieldRotation</references>
+        <references refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" compoundref="_field_8cc" startline="52" endline="54">Field::getType</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa50d8e53aac4e002d0fd296c5033ce985" compoundref="main_8h" startline="132">GO</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4c8584e93a1064fe61e904f19722d2d3" compoundref="main_8h" startline="132">GO_TO_JAIL</references>
+        <references refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" compoundref="main_8cc" startline="18">height</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa660bfa29a629dc2680b8fba156bf35b2" compoundref="main_8h" startline="132">JAIL</references>
+        <references refid="_board_8cc_1ad42d602c22869eaeb607bcce29881af1" compoundref="_board_8cc" startline="207" endline="215">jsonToStationRent</references>
+        <references refid="_board_8cc_1a92671e84f9d38a1f5a64ef20ad23ec39" compoundref="_board_8cc" startline="195" endline="205">jsonToStreetRent</references>
+        <references refid="_board_8cc_1a9f51f2d21bf4f1468f4481d2b6cf20a6" compoundref="_board_8cc" startline="217" endline="223">jsonToUtilityRent</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daabe1ce018b886341a69d81ead8cffc786" compoundref="main_8h" startline="132">STATION</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4bcaa53ccaacd4fb0a09eda9b8666ec8" compoundref="main_8h" startline="132">STREET</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa30e59148af45aa6e6ab6bf5250a83f95" compoundref="main_8h" startline="132">TAX</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daaf91e6d92929883d407d0e190c4f45ad5" compoundref="main_8h" startline="132">UTILITY</references>
+        <references refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" compoundref="main_8cc" startline="17">width</references>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1a259fe7f8131ebd8614cfa3a5ce4de724" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" kindref="member">PossibleFields</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; PossibleFields &gt; &amp; Board::getBoard</definition>
+        <argsstring>()</argsstring>
+        <name>getBoard</name>
+        <briefdescription>
+<para>Getter for the entire game board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A vector containing all types of fields on the board. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="56" column="19" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="168" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1a1c969a12d80bf889bede688c5c4b4c6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Board::getFieldNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getFieldNumber</name>
+        <briefdescription>
+<para>Getter for the number of fields on the board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of fields. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="62" column="14" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="172" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1a4f1dde258689798d125165c2eddaaa86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Vector2i</type>
+        <definition>const sf::Vector2i Board::getBoardPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getBoardPosition</name>
+        <briefdescription>
+<para>Getter for the position of the entire game board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The position as an sf::Vector2i. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="68" column="20" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1a5f148daa03da25d40dff3fc613568d6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Board::clearBoard</definition>
+        <argsstring>()</argsstring>
+        <name>clearBoard</name>
+        <briefdescription>
+<para>Clears the entire game board. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="73" column="6" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1a2b73746e47152ecea46f7a03d58ea3e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Vector2i</type>
+        <definition>sf::Vector2i Board::getFieldPositon</definition>
+        <argsstring>(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y)</argsstring>
+        <name>getFieldPositon</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>sf::Vector2i</type>
+          <declname>prevPos</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Getter for the position of a specific field on the board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prevPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous position of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The horizontal position of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertical position of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The position of the field as an sf::Vector2i. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="83" column="14" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="128" bodyend="153"/>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1a7ae5ceb0363e2d0bf1520108074c9485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Board::getFieldRotation</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>getFieldRotation</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Getter for the rotation angle of a specific field on the board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The rotation angle of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="90" column="7" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="155" bodyend="166"/>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_board_1aa9a40a410b22ebbb1c87a91d16741711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" kindref="member">PossibleFields</ref> &amp;</type>
+        <definition>PossibleFields &amp; Board::getFieldById</definition>
+        <argsstring>(unsigned int wanted_id)</argsstring>
+        <name>getFieldById</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>wanted_id</declname>
+        </param>
+        <briefdescription>
+<para>Getter for a specific field on the board by its unique identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wanted_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the field specified by the identifier. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="97" column="16" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="185" bodyend="193"/>
+        <references refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" compoundref="_field_8cc" startline="48" endline="50">Field::getId</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class representing the monopoly game board. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Board.h" line="39" column="1" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="39" bodyend="98"/>
+    <listofallmembers>
+      <member refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" prot="public" virt="non-virtual"><scope>Board</scope><name>Board</name></member>
+      <member refid="class_board_1ab6ec1e0ae75f04adad7e200084af6b13" prot="private" virt="non-virtual"><scope>Board</scope><name>board_</name></member>
+      <member refid="class_board_1ace79d4c6dd708cdddabb09299637f422" prot="private" virt="non-virtual"><scope>Board</scope><name>BOARD_POSITION_</name></member>
+      <member refid="class_board_1a20a95d1a99fc64aae2732c93b430d157" prot="private" virt="non-virtual"><scope>Board</scope><name>BOARD_SCALE</name></member>
+      <member refid="class_board_1a5f148daa03da25d40dff3fc613568d6f" prot="public" virt="non-virtual"><scope>Board</scope><name>clearBoard</name></member>
+      <member refid="class_board_1af598bd7676127bd752223600da19aac9" prot="private" virt="non-virtual"><scope>Board</scope><name>field_number_</name></member>
+      <member refid="class_board_1a259fe7f8131ebd8614cfa3a5ce4de724" prot="public" virt="non-virtual"><scope>Board</scope><name>getBoard</name></member>
+      <member refid="class_board_1a4f1dde258689798d125165c2eddaaa86" prot="public" virt="non-virtual"><scope>Board</scope><name>getBoardPosition</name></member>
+      <member refid="class_board_1aa9a40a410b22ebbb1c87a91d16741711" prot="public" virt="non-virtual"><scope>Board</scope><name>getFieldById</name></member>
+      <member refid="class_board_1a1c969a12d80bf889bede688c5c4b4c6a" prot="public" virt="non-virtual"><scope>Board</scope><name>getFieldNumber</name></member>
+      <member refid="class_board_1a2b73746e47152ecea46f7a03d58ea3e8" prot="public" virt="non-virtual"><scope>Board</scope><name>getFieldPositon</name></member>
+      <member refid="class_board_1a7ae5ceb0363e2d0bf1520108074c9485" prot="public" virt="non-virtual"><scope>Board</scope><name>getFieldRotation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

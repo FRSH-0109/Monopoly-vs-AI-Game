@@ -1,0 +1,7 @@
+<map id="MonopolyGameEngine::createAuctionBidButton" name="MonopolyGameEngine::createAuctionBidButton">
+<area shape="rect" id="node1" title="Creates a button for participating in an auction by bidding." alt="" coords="5,104,189,145"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a653ae4bf65d14a524938058081a2f12d" title="Adds an auction button to the GUI." alt="" coords="237,5,407,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#adf5644d237334e6749252420d80fac32" title="Adds a button to the GUI." alt="" coords="237,71,407,112"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#acaf81e835720ba22173b0dd6a0a87bf9" title="Returns the font used in the GUI." alt="" coords="237,136,407,177"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#af3f9a189ddaca72b5eb57b72bc4fbbe4" title="Returns the font size used in the GUI." alt="" coords="237,201,407,243"/>
+</map>

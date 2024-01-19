@@ -1,0 +1,365 @@
+\hypertarget{class_property_field}{}\doxysection{Property\+Field Class Reference}
+\label{class_property_field}\index{PropertyField@{PropertyField}}
+
+
+Derived class representing a property field on the game board.  
+
+
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+
+
+Inheritance diagram for Property\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_property_field__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Property\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_property_field__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_property_field_aba9f3d809377e263842e8aa382e78a49}{Property\+Field}} (const unsigned int id, const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} type, const std\+::string name, const std\+::string graphic\+\_\+path, const unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}, const unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}, const float rotation, const sf\+::\+Vector2i position, const unsigned int price, const std\+::vector$<$ unsigned int $>$ group\+\_\+members, const unsigned int mortgage)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_property_field}{Property\+Field}} class. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_property_field_aafcf4b8fd5fb49a727cb564c0c99a3eb}{get\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Gets the price of the property. \end{DoxyCompactList}\item 
+const std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_property_field_a676180ae8ad98644572c47787ea0a01f}{get\+Group\+Members}} ()
+\begin{DoxyCompactList}\small\item\em Gets the IDs of the group members (properties in the same group). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_property_field_a118e8dac5640ec978cbd14519e0880fe}{get\+Mortgage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the mortgage value of the property. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_property_field_ac52da7b908a73ce329c1aff55f971bed}{get\+Is\+Mortgaged}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the property is mortgaged. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_property_field_aa323b39c72226b6d81782fb9f8b5ffd7}{get\+Unmortgage\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Gets the value needed to unmortgage the property. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ \mbox{\hyperlink{class_property_field_a4e8d167377c43ea54f32d355d8d07993}{get\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Gets the owner of the property. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \& \mbox{\hyperlink{class_property_field_a1fc8ddd955fb2c1b271a259785eab177}{get\+Owner\+Flag}} ()
+\begin{DoxyCompactList}\small\item\em Gets the owner flag sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_property_field_a8ed81fa863c3d443a69141445d66616e}{set\+Is\+Mortgaged}} (bool new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Sets the mortgaged state of the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_property_field_aff8b7ee4568a0721149145074f2aa160}{set\+Owner}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ new\+\_\+owner)
+\begin{DoxyCompactList}\small\item\em Sets the owner of the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_property_field_aa3a6b0249d36134b9cc63872922e447f}{reset\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Resets the owner of the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_property_field_aa458959642c699213a8f537532e0f371}{reset\+Default}} ()
+\begin{DoxyCompactList}\small\item\em Resets the property to its default state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_property_field_a3323e39ff44b4d61c5b6f77e7da17f99}{create\+Flag\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Creates the owner flag sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Derived class representing a property field on the game board. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_property_field_aba9f3d809377e263842e8aa382e78a49}\label{class_property_field_aba9f3d809377e263842e8aa382e78a49}} 
+\index{PropertyField@{PropertyField}!PropertyField@{PropertyField}}
+\index{PropertyField@{PropertyField}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{PropertyField()}{PropertyField()}}
+{\footnotesize\ttfamily Property\+Field\+::\+Property\+Field (\begin{DoxyParamCaption}\item[{const unsigned int}]{id,  }\item[{const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}}}]{type,  }\item[{const std\+::string}]{name,  }\item[{const std\+::string}]{graphic\+\_\+path,  }\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height,  }\item[{const float}]{rotation,  }\item[{const sf\+::\+Vector2i}]{position,  }\item[{const unsigned int}]{price,  }\item[{const std\+::vector$<$ unsigned int $>$}]{group\+\_\+members,  }\item[{const unsigned int}]{mortgage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{class_property_field}{Property\+Field}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the field. \\
+\hline
+{\em type} & The type of the field. \\
+\hline
+{\em name} & The name of the field. \\
+\hline
+{\em graphic\+\_\+path} & The file path to the field\textquotesingle{}s graphic. \\
+\hline
+{\em width} & The width of the field. \\
+\hline
+{\em height} & The height of the field. \\
+\hline
+{\em rotation} & The rotation angle of the field. \\
+\hline
+{\em position} & The position of the field on the board. \\
+\hline
+{\em price} & The price of the property. \\
+\hline
+{\em group\+\_\+members} & The IDs of the group members (properties in the same group). \\
+\hline
+{\em mortgage} & The mortgage value of the property. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_property_field_a3323e39ff44b4d61c5b6f77e7da17f99}\label{class_property_field_a3323e39ff44b4d61c5b6f77e7da17f99}} 
+\index{PropertyField@{PropertyField}!createFlagSprite@{createFlagSprite}}
+\index{createFlagSprite@{createFlagSprite}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{createFlagSprite()}{createFlagSprite()}}
+{\footnotesize\ttfamily void Property\+Field\+::create\+Flag\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the owner flag sprite. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_a3323e39ff44b4d61c5b6f77e7da17f99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_property_field_a3323e39ff44b4d61c5b6f77e7da17f99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_a676180ae8ad98644572c47787ea0a01f}\label{class_property_field_a676180ae8ad98644572c47787ea0a01f}} 
+\index{PropertyField@{PropertyField}!getGroupMembers@{getGroupMembers}}
+\index{getGroupMembers@{getGroupMembers}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getGroupMembers()}{getGroupMembers()}}
+{\footnotesize\ttfamily const std\+::vector$<$ unsigned int $>$ Property\+Field\+::get\+Group\+Members (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the IDs of the group members (properties in the same group). 
+
+\begin{DoxyReturn}{Returns}
+The IDs of the group members. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_a676180ae8ad98644572c47787ea0a01f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_ac52da7b908a73ce329c1aff55f971bed}\label{class_property_field_ac52da7b908a73ce329c1aff55f971bed}} 
+\index{PropertyField@{PropertyField}!getIsMortgaged@{getIsMortgaged}}
+\index{getIsMortgaged@{getIsMortgaged}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getIsMortgaged()}{getIsMortgaged()}}
+{\footnotesize\ttfamily bool Property\+Field\+::get\+Is\+Mortgaged (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the property is mortgaged. 
+
+\begin{DoxyReturn}{Returns}
+True if the property is mortgaged, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_ac52da7b908a73ce329c1aff55f971bed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_a118e8dac5640ec978cbd14519e0880fe}\label{class_property_field_a118e8dac5640ec978cbd14519e0880fe}} 
+\index{PropertyField@{PropertyField}!getMortgage@{getMortgage}}
+\index{getMortgage@{getMortgage}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getMortgage()}{getMortgage()}}
+{\footnotesize\ttfamily unsigned int Property\+Field\+::get\+Mortgage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the mortgage value of the property. 
+
+\begin{DoxyReturn}{Returns}
+The mortgage value of the property. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_a118e8dac5640ec978cbd14519e0880fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_a4e8d167377c43ea54f32d355d8d07993}\label{class_property_field_a4e8d167377c43ea54f32d355d8d07993}} 
+\index{PropertyField@{PropertyField}!getOwner@{getOwner}}
+\index{getOwner@{getOwner}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getOwner()}{getOwner()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ Property\+Field\+::get\+Owner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the owner of the property. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the owner of the property. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_a4e8d167377c43ea54f32d355d8d07993_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_a1fc8ddd955fb2c1b271a259785eab177}\label{class_property_field_a1fc8ddd955fb2c1b271a259785eab177}} 
+\index{PropertyField@{PropertyField}!getOwnerFlag@{getOwnerFlag}}
+\index{getOwnerFlag@{getOwnerFlag}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getOwnerFlag()}{getOwnerFlag()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape \& Property\+Field\+::get\+Owner\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the owner flag sprite. 
+
+\begin{DoxyReturn}{Returns}
+The owner flag sprite. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_a1fc8ddd955fb2c1b271a259785eab177_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_aafcf4b8fd5fb49a727cb564c0c99a3eb}\label{class_property_field_aafcf4b8fd5fb49a727cb564c0c99a3eb}} 
+\index{PropertyField@{PropertyField}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily unsigned int Property\+Field\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the price of the property. 
+
+\begin{DoxyReturn}{Returns}
+The price of the property. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_aafcf4b8fd5fb49a727cb564c0c99a3eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_aa323b39c72226b6d81782fb9f8b5ffd7}\label{class_property_field_aa323b39c72226b6d81782fb9f8b5ffd7}} 
+\index{PropertyField@{PropertyField}!getUnmortgageValue@{getUnmortgageValue}}
+\index{getUnmortgageValue@{getUnmortgageValue}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{getUnmortgageValue()}{getUnmortgageValue()}}
+{\footnotesize\ttfamily unsigned int Property\+Field\+::get\+Unmortgage\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the value needed to unmortgage the property. 
+
+\begin{DoxyReturn}{Returns}
+The value needed to unmortgage the property. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_aa323b39c72226b6d81782fb9f8b5ffd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_aa458959642c699213a8f537532e0f371}\label{class_property_field_aa458959642c699213a8f537532e0f371}} 
+\index{PropertyField@{PropertyField}!resetDefault@{resetDefault}}
+\index{resetDefault@{resetDefault}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{resetDefault()}{resetDefault()}}
+{\footnotesize\ttfamily void Property\+Field\+::reset\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the property to its default state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_aa458959642c699213a8f537532e0f371_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_aa3a6b0249d36134b9cc63872922e447f}\label{class_property_field_aa3a6b0249d36134b9cc63872922e447f}} 
+\index{PropertyField@{PropertyField}!resetOwner@{resetOwner}}
+\index{resetOwner@{resetOwner}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{resetOwner()}{resetOwner()}}
+{\footnotesize\ttfamily void Property\+Field\+::reset\+Owner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the owner of the property. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_aa3a6b0249d36134b9cc63872922e447f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_a8ed81fa863c3d443a69141445d66616e}\label{class_property_field_a8ed81fa863c3d443a69141445d66616e}} 
+\index{PropertyField@{PropertyField}!setIsMortgaged@{setIsMortgaged}}
+\index{setIsMortgaged@{setIsMortgaged}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{setIsMortgaged()}{setIsMortgaged()}}
+{\footnotesize\ttfamily void Property\+Field\+::set\+Is\+Mortgaged (\begin{DoxyParamCaption}\item[{bool}]{new\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Sets the mortgaged state of the property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & The new mortgaged state. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_a8ed81fa863c3d443a69141445d66616e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_property_field_aff8b7ee4568a0721149145074f2aa160}\label{class_property_field_aff8b7ee4568a0721149145074f2aa160}} 
+\index{PropertyField@{PropertyField}!setOwner@{setOwner}}
+\index{setOwner@{setOwner}!PropertyField@{PropertyField}}
+\doxysubsubsection{\texorpdfstring{setOwner()}{setOwner()}}
+{\footnotesize\ttfamily void Property\+Field\+::set\+Owner (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{new\+\_\+owner }\end{DoxyParamCaption})}
+
+
+
+Sets the owner of the property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+owner} & A shared pointer to the new owner. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_property_field_aff8b7ee4568a0721149145074f2aa160_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8h}{Field.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8cc}{Field.\+cc}}\end{DoxyCompactItemize}

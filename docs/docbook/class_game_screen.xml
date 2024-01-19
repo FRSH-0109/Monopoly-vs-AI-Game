@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_game_screen" xml:lang="en-US">
+<title>GameScreen Class Reference</title>
+<indexterm><primary>GameScreen</primary></indexterm>
+Inheritance diagram for GameScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_game_screen__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for GameScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_game_screen__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16"/><emphasis role="strong">GameScreen</emphasis> (std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt;&gt; &amp;players_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_screen_1a140fce95914abbf9efac4ad6bb0c98dc"/>ScreenEventType <emphasis role="strong">worker</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_screen_1a0608fef110d89dab557fd0bac6950b77"/>void <emphasis role="strong">draw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_screen_1a954ec5b6fb0da4ff4d6d3feccea9d4b5"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; &gt; <emphasis role="strong">getPlayersResult</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__game_screen_8h">GameScreen.h</link>/home/kamil/zpr/Monopoly/<link linkend="__game_screen_8cc">GameScreen.cc</link></section>

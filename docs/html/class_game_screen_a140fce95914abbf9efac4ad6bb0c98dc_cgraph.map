@@ -1,0 +1,52 @@
+<map id="GameScreen::worker" name="GameScreen::worker">
+<area shape="rect" id="node1" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,540,163,567"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#a385001a5027f0b2f00145a54b668368f" title="Sets the colors of a button based on its state." alt="" coords="211,5,429,32"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a2b1fb71410fb88b1cde5077f62fb82fd" title="Returns a vector of pointers to buttons in the GUI." alt="" coords="791,111,961,153"/>
+<area shape="rect" id="node4" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="227,1107,413,1149"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="231,1042,409,1083"/>
+<area shape="rect" id="node6" href="$class_withdraw.html#a8573a264b72dddafdf68ba509f3fc752" title="Changes showed property in certain column." alt="" coords="495,486,705,527"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="775,585,977,626"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="1319,945,1488,986"/>
+<area shape="rect" id="node12" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title="Gets the number of houses on the property." alt="" coords="1296,448,1511,475"/>
+<area shape="rect" id="node16" href="$class_street_field.html#a79785c76389d7bf9171797b9d1a16ebd" title="Checks if there is a hotel on the property." alt="" coords="1055,1180,1222,1207"/>
+<area shape="rect" id="node19" href="$class_field.html#ad2e239a719acc3285a9b11b3aef6808c" title="Gets the name of the field." alt="" coords="1078,927,1199,953"/>
+<area shape="rect" id="node20" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="1083,977,1195,1004"/>
+<area shape="rect" id="node22" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="777,650,975,691"/>
+<area shape="rect" id="node23" href="$class_property_field.html#a4e8d167377c43ea54f32d355d8d07993" title="Gets the owner of the property." alt="" coords="1049,1231,1228,1257"/>
+<area shape="rect" id="node24" href="$class_monopoly_game_engine.html#a2af1706f23548c8ad118133badfc0160" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="791,1118,961,1159"/>
+<area shape="rect" id="node25" href="$class_monopoly_game_engine.html#ac157740551b8c65aefd2f1563305406a" title="Gets the current state of the auction." alt="" coords="791,1183,961,1225"/>
+<area shape="rect" id="node26" href="$class_monopoly_game_engine.html#ab1be3d89016a48d4df0f8440a254e4d1" title="Returns a vector of pointers to players in the game." alt="" coords="515,1497,685,1538"/>
+<area shape="rect" id="node27" href="$class_monopoly_game_engine.html#a5a7f70b3a7d70f563daf7426772590b4" title="Gets the current screen type." alt="" coords="515,1562,685,1603"/>
+<area shape="rect" id="node28" href="$class_tax_field.html#ac1ed0a0b9fa1c10a67f9759bb6a0f3d9" title="Calculates the tax for Tax property." alt="" coords="519,1628,681,1655"/>
+<area shape="rect" id="node29" href="$class_chance_card.html#a3f54572894e5259f3f4ed887b6ca3e5d" title="Getter for the text describing the action of the chance card." alt="" coords="522,1679,678,1705"/>
+<area shape="rect" id="node30" href="$class_monopoly_game_engine.html#a3eb8af1a66fd12f93da8072c3a2edfa8" title="Gets the current turn state." alt="" coords="515,1730,685,1771"/>
+<area shape="rect" id="node31" href="$class_chance_card.html#a9a328e8b7d8630469f0c114dbb3f947f" title="Getter for the type of the chance card." alt="" coords="521,1796,679,1823"/>
+<area shape="rect" id="node32" href="$class_chance_card.html#a648076fb0cbccc144fc76f241cc892ec" title="Getter for the value associated with the chance card." alt="" coords="517,1847,683,1873"/>
+<area shape="rect" id="node33" href="$class_monopoly_game_engine.html#a7a4c2e5ec5a548c44d2dca59438453b5" title="Returns a reference to the Withdraw object." alt="" coords="515,1898,685,1939"/>
+<area shape="rect" id="node34" href="$class_withdraw.html#a19f82027534a13d80536846c5af25829" title="Initiates the withdrawal process (exchange of money and properties)." alt="" coords="781,1016,971,1043"/>
+<area shape="rect" id="node35" href="$class_withdraw.html#a90b6611bc2eeec22d3b562fd183bf81e" title="Updates the displayed money text during the withdrawal process." alt="" coords="495,1964,705,1991"/>
+<area shape="rect" id="node36" href="$class_withdraw.html#ad2d77a9938893978c4a83432d51b67f9" title="Transfers money during the withdrawal process." alt="" coords="488,2015,712,2041"/>
+<area shape="rect" id="node37" href="$class_monopoly_game_engine.html#aa95037b493d8fb2294404944a14dcca4" title="Performs the auction." alt="" coords="515,1227,685,1269"/>
+<area shape="rect" id="node38" href="$class_monopoly_game_engine.html#aa95963ea9455d6ac635d27eab779b6ce" title="Sets the state of the auction." alt="" coords="791,1351,961,1393"/>
+<area shape="rect" id="node39" href="$class_withdraw.html#a24f1c04617ff3aa4de94c1648360f7c4" title="Moves properties between players ownership and withdraw offer." alt="" coords="507,2066,693,2107"/>
+<area shape="rect" id="node40" href="$class_withdraw.html#a06d1cefc0b0fcf141a9a5c7ee0084a34" title="Sets the visibility of the choose player screen." alt="" coords="499,107,701,149"/>
+<area shape="rect" id="node41" href="$class_withdraw.html#a554845d087366abdc2672a7b6224ff68" title="Sets the visibility of the decision player screen." alt="" coords="771,885,981,926"/>
+<area shape="rect" id="node42" href="$class_withdraw.html#aed1f0d13e5f3ce83500ec90b9338796a" title="Sets Passive Player for withdrawal." alt="" coords="482,239,718,265"/>
+<area shape="rect" id="node43" href="$class_monopoly_game_engine.html#a1687a15b6b383199232fa95b947a4b6f" title="Sets the screen type to the specified type." alt="" coords="515,290,685,331"/>
+<area shape="rect" id="node44" href="$class_withdraw.html#acfbbad2752cb193ca17e8f2ab3ce9b1a" title="Sets the visibility of the value player screen." alt="" coords="505,755,695,797"/>
+<area shape="rect" id="node45" href="$class_withdraw.html#ab7bdb73ec95d72b844d65de653cb4214" title="Shows the property details for the specified column during the withdrawal process." alt="" coords="786,716,966,743"/>
+<area shape="rect" id="node46" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="791,767,961,809"/>
+<area shape="rect" id="node47" href="$class_monopoly_game_engine.html#a73ae5aa5598545a9b12264072a087364" title="Displays text related to turn information." alt="" coords="515,355,685,397"/>
+<area shape="rect" id="node48" href="$class_monopoly_game_engine.html#ae9a8bf736199ef2e643f750be08b1bed" title="Updates the text displaying the available count of houses and hotels." alt="" coords="477,421,723,462"/>
+<area shape="rect" id="node49" href="$class_monopoly_game_engine.html#abdc99bcb328742800042bcbbfe1bc3f7" title="Updates elements on the result screen." alt="" coords="505,173,695,214"/>
+<area shape="rect" id="node50" href="$class_monopoly_game_engine.html#a153294a850e9c8d42d35e95eec1de17e" title="Updates the text displaying players&#39; information." alt="" coords="789,950,963,991"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a48c42eb3f7bdd1a2758f196d83f83cdd" title="Adds hotels to the available count." alt="" coords="1054,506,1223,547"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#a398cb3a8d88d5cbec47ec7230408a59f" title="Adds houses to the available count." alt="" coords="1054,310,1223,351"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#afd604c9fd373fa220ebe04ff9d5f191b" title="Checks if a color group is empty (no properties owned) for a player." alt="" coords="1054,441,1223,482"/>
+<area shape="rect" id="node13" href="$class_street_field.html#a51d31e674e5526536210d24ed5bdc2c2" title="Gets the price of a hotel." alt="" coords="1045,825,1233,852"/>
+<area shape="rect" id="node14" href="$class_street_field.html#a812b99b2c3dc615a26f81756fa41aa51" title="Gets the price of a house." alt="" coords="1041,724,1236,751"/>
+<area shape="rect" id="node15" href="$class_field.html#aa3ea436b800a8078f04be2678c42f7c0" title="Gets the ID of the field." alt="" coords="1091,208,1186,235"/>
+<area shape="rect" id="node17" href="$class_property_field.html#ac52da7b908a73ce329c1aff55f971bed" title="Checks if the property is mortgaged." alt="" coords="1029,673,1248,700"/>
+<area shape="rect" id="node18" href="$class_property_field.html#a118e8dac5640ec978cbd14519e0880fe" title="Gets the mortgage value of the property." alt="" coords="1039,775,1238,801"/>
+<area shape="rect" id="node21" href="$class_property_field.html#aa323b39c72226b6d81782fb9f8b5ffd7" title="Gets the value needed to unmortgage the property." alt="" coords="1029,375,1248,417"/>
+</map>

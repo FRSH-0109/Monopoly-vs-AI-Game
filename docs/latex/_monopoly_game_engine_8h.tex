@@ -1,0 +1,94 @@
+\hypertarget{_monopoly_game_engine_8h}{}\doxysection{/home/kamil/zpr/\+Monopoly/\+Monopoly\+Game\+Engine.h File Reference}
+\label{_monopoly_game_engine_8h}\index{/home/kamil/zpr/Monopoly/MonopolyGameEngine.h@{/home/kamil/zpr/Monopoly/MonopolyGameEngine.h}}
+
+
+Header file of class used to handle whole monopoly game process, turns, actions with players, board etc.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Active\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Chance.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Notification\+Wall.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Withdraw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+Include dependency graph for Monopoly\+Game\+Engine.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_monopoly_game_engine_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_monopoly_game_engine_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_monopoly_game_engine}{Monopoly\+Game\+Engine}}
+\begin{DoxyCompactList}\small\item\em Class representing the main game engine for the Monopoly game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} \{ \newline
+\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3aace6aedb9800fa923394608e2fd6e511}{NO\+\_\+\+AUCTION}}
+, \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a3f68f09b467e0062fc47370c7e961578}{INITIALIZATION}}
+, \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a013bcca5bdca5ab04d8cc6f7b91cda21}{PASS\+\_\+\+BIDDING\+\_\+\+TURN}}
+, \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a1c0f067e43e3fe18cbcd1073bcd0848b}{BIDDING}}
+, \newline
+\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3aca114391980a4b8e57873b25c0e16b75}{ENDING}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the state of an auction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of class used to handle whole monopoly game process, turns, actions with players, board etc. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Kosnik, Kacper Radzikowski 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}\label{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}} 
+\index{MonopolyGameEngine.h@{MonopolyGameEngine.h}!AuctionState@{AuctionState}}
+\index{AuctionState@{AuctionState}!MonopolyGameEngine.h@{MonopolyGameEngine.h}}
+\doxysubsubsection{\texorpdfstring{AuctionState}{AuctionState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}}}
+
+
+
+Enum representing the state of an auction. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_AUCTION@{NO\_AUCTION}!MonopolyGameEngine.h@{MonopolyGameEngine.h}}\index{MonopolyGameEngine.h@{MonopolyGameEngine.h}!NO\_AUCTION@{NO\_AUCTION}}}\mbox{\Hypertarget{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3aace6aedb9800fa923394608e2fd6e511}\label{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3aace6aedb9800fa923394608e2fd6e511}} 
+NO\+\_\+\+AUCTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INITIALIZATION@{INITIALIZATION}!MonopolyGameEngine.h@{MonopolyGameEngine.h}}\index{MonopolyGameEngine.h@{MonopolyGameEngine.h}!INITIALIZATION@{INITIALIZATION}}}\mbox{\Hypertarget{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a3f68f09b467e0062fc47370c7e961578}\label{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a3f68f09b467e0062fc47370c7e961578}} 
+INITIALIZATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PASS\_BIDDING\_TURN@{PASS\_BIDDING\_TURN}!MonopolyGameEngine.h@{MonopolyGameEngine.h}}\index{MonopolyGameEngine.h@{MonopolyGameEngine.h}!PASS\_BIDDING\_TURN@{PASS\_BIDDING\_TURN}}}\mbox{\Hypertarget{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a013bcca5bdca5ab04d8cc6f7b91cda21}\label{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a013bcca5bdca5ab04d8cc6f7b91cda21}} 
+PASS\+\_\+\+BIDDING\+\_\+\+TURN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIDDING@{BIDDING}!MonopolyGameEngine.h@{MonopolyGameEngine.h}}\index{MonopolyGameEngine.h@{MonopolyGameEngine.h}!BIDDING@{BIDDING}}}\mbox{\Hypertarget{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a1c0f067e43e3fe18cbcd1073bcd0848b}\label{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3a1c0f067e43e3fe18cbcd1073bcd0848b}} 
+BIDDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENDING@{ENDING}!MonopolyGameEngine.h@{MonopolyGameEngine.h}}\index{MonopolyGameEngine.h@{MonopolyGameEngine.h}!ENDING@{ENDING}}}\mbox{\Hypertarget{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3aca114391980a4b8e57873b25c0e16b75}\label{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3aca114391980a4b8e57873b25c0e16b75}} 
+ENDING&\\
+\hline
+
+\end{DoxyEnumFields}

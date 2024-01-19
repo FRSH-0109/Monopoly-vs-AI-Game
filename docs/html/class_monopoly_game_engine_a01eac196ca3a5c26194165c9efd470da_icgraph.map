@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::monopolyGameWorker" name="MonopolyGameEngine::monopolyGameWorker">
+<area shape="rect" id="node1" title="Main Worker method for whole monopoly game engine." alt="" coords="211,5,389,47"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,13,163,39"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="ContextWindow::GetInstance" name="ContextWindow::GetInstance">
+<area shape="rect" id="node1" title="Gets the pointer to the ContextWindow instance." alt="" coords="548,123,759,149"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a398cd2cb9ed1f5b94a6e8c008f2249ca" title="Constructor for the GameEngine class." alt="" coords="291,5,487,32"/>
+<area shape="rect" id="node3" href="$class_game_menu_screen.html#af17f9c5e3353be5c531251c4e78d6d0c" title="Function to create the game menu." alt="" coords="277,57,500,98"/>
+<area shape="rect" id="node5" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="291,123,487,149"/>
+<area shape="rect" id="node6" href="$class_field.html#af1d9991ce36def51f2999a959b7873fa" title="Gets the pointer to the context window." alt="" coords="296,173,481,200"/>
+<area shape="rect" id="node7" href="$class_main_menu_screen.html#ac1f40ff20eed76db8a0fc8cca1a8cd0b" title="Function to create the main menu." alt="" coords="283,225,494,266"/>
+<area shape="rect" id="node4" href="$class_game_menu_screen.html#a5c3726575383e12d2a0f55e035be6719" title="Constructor for the GameMenuScreen class." alt="" coords="5,57,229,98"/>
+<area shape="rect" id="node8" href="$class_main_menu_screen.html#a4d246c87a47788cf7802e145e9ab0f6e" title="Constructor for the MainMenuScreen class." alt="" coords="12,225,223,266"/>
+</map>

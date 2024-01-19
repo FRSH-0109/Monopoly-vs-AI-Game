@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structneat_1_1gene" kind="struct" language="C++" prot="public">
+    <compoundname>neat::gene</compoundname>
+    <includes refid="_tinyneat_8h" local="no">Tinyneat.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structneat_1_1gene_1a63201e3e9dfa24c572adaf6c2d7664cd" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::gene::innovation_num</definition>
+        <argsstring></argsstring>
+        <name>innovation_num</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="71" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" compoundref="_tinyneat_8cc" startline="546" endline="607">neat::pool::export_tofile</referencedby>
+        <referencedby refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" compoundref="_tinyneat_8cc" startline="460" endline="544">neat::pool::import_fromfile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::gene::from_node</definition>
+        <argsstring></argsstring>
+        <name>from_node</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="72" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7" compoundref="_tinyneat_8h" startline="124" endline="130">neat::innovation_container::add_gene</referencedby>
+        <referencedby refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" compoundref="_tinyneat_8cc" startline="546" endline="607">neat::pool::export_tofile</referencedby>
+        <referencedby refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" compoundref="_tinyneat_8cc" startline="460" endline="544">neat::pool::import_fromfile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::gene::to_node</definition>
+        <argsstring></argsstring>
+        <name>to_node</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="73" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7" compoundref="_tinyneat_8h" startline="124" endline="130">neat::innovation_container::add_gene</referencedby>
+        <referencedby refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" compoundref="_tinyneat_8cc" startline="546" endline="607">neat::pool::export_tofile</referencedby>
+        <referencedby refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" compoundref="_tinyneat_8cc" startline="460" endline="544">neat::pool::import_fromfile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1gene_1a6a8213ab23b642b97e013856df0f29bd" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::gene::weight</definition>
+        <argsstring></argsstring>
+        <name>weight</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="74" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" compoundref="_tinyneat_8cc" startline="546" endline="607">neat::pool::export_tofile</referencedby>
+        <referencedby refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" compoundref="_tinyneat_8cc" startline="460" endline="544">neat::pool::import_fromfile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1gene_1accac39e6c4341708d6036e2f773b5b40" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool neat::gene::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="75" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" compoundref="_tinyneat_8cc" startline="546" endline="607">neat::pool::export_tofile</referencedby>
+        <referencedby refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" compoundref="_tinyneat_8cc" startline="460" endline="544">neat::pool::import_fromfile</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="70" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="70" bodyend="76"/>
+    <listofallmembers>
+      <member refid="structneat_1_1gene_1accac39e6c4341708d6036e2f773b5b40" prot="public" virt="non-virtual"><scope>neat::gene</scope><name>enabled</name></member>
+      <member refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" prot="public" virt="non-virtual"><scope>neat::gene</scope><name>from_node</name></member>
+      <member refid="structneat_1_1gene_1a63201e3e9dfa24c572adaf6c2d7664cd" prot="public" virt="non-virtual"><scope>neat::gene</scope><name>innovation_num</name></member>
+      <member refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" prot="public" virt="non-virtual"><scope>neat::gene</scope><name>to_node</name></member>
+      <member refid="structneat_1_1gene_1a6a8213ab23b642b97e013856df0f29bd" prot="public" virt="non-virtual"><scope>neat::gene</scope><name>weight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

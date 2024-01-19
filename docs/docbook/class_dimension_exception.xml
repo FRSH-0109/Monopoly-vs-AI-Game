@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_dimension_exception" xml:lang="en-US">
+<title>DimensionException Class Reference</title>
+<indexterm><primary>DimensionException</primary></indexterm>
+Inheritance diagram for DimensionException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_dimension_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for DimensionException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_dimension_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_dimension_exception_1a205b2338798ce20d22bc13908b45f1eb"/><emphasis role="strong">DimensionException</emphasis> (unsigned int dimension)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_dimension_exception_1aeea90857bf7639ea21ca8dbfdef5805e"/><emphasis role="strong">DimensionException</emphasis> (const <link linkend="_class_dimension_exception">DimensionException</link> &amp;e)  throw ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_dimension_exception_1a78036604ba7a79af8e5dd438ad41e388"/>unsigned int <emphasis role="strong">getBadDimension</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="_main_8h">main.h</link></section>

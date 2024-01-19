@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_rotation_exception" xml:lang="en-US">
+<title>RotationException Class Reference</title>
+<indexterm><primary>RotationException</primary></indexterm>
+Inheritance diagram for RotationException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_rotation_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RotationException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_rotation_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_rotation_exception_1aaccd10ab00dafb9786a5cc95c6f23ec8"/><emphasis role="strong">RotationException</emphasis> (float rotation)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_rotation_exception_1ab7a841d71bac25dd3a28dd4e1fccab0c"/><emphasis role="strong">RotationException</emphasis> (const <link linkend="_class_rotation_exception">RotationException</link> &amp;e)  throw ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_rotation_exception_1a3af9294374405df6219c80b2b32a703d"/>float <emphasis role="strong">getBadRotation</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="_main_8h">main.h</link></section>

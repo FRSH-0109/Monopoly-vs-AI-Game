@@ -1,0 +1,21 @@
+digraph "GameMenuScreen::buttonClickHandle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="GameMenuScreen::buttonClick\lHandle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GameMenuScreen::setAILevel\lColumnVisibility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#ae427ab9331af7fb8bfa52d88a0977b3e",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ActiveScreen::getButtons",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_active_screen.html#aefe54d9a04210b2985890f3657974484",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GameMenuScreen::getPlayer\lNumFromEventType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a974eb5076298fbba7e4d6b577f74e888",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="GameMenuScreen::isEventType\lAILevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a8734e38603d1886079ff185c5aa399bc",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="GameMenuScreen::setDefault\lAILevelButtonsFocus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a348efe82320f6cf37be5b873343768d1",tooltip=" "];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="GameMenuScreen::setPlayer\lSettings",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#ade9e4b9082cd923b43e45ea1f74ebaba",tooltip=" "];
+}

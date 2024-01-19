@@ -1,0 +1,6 @@
+<map id="monopolyGameEngine::getHouseTexture" name="monopolyGameEngine::getHouseTexture">
+<area shape="rect" id="node1" title=" " alt="" coords="417,25,588,67"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title=" " alt="" coords="5,33,151,59"/>
+<area shape="rect" id="node3" href="$classmonopoly_game_engine.html#ad10ae26632d0940098e4fda5c428a0bb" title=" " alt="" coords="199,25,369,67"/>
+<area shape="rect" id="node4" href="$classmonopoly_game_engine.html#ad5a4954bfbbea5ddef2adc8def7319e2" title=" " alt="" coords="199,91,369,132"/>
+</map>

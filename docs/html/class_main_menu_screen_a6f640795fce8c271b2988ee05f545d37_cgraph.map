@@ -1,0 +1,5 @@
+<map id="MainMenuScreen::draw" name="MainMenuScreen::draw">
+<area shape="rect" id="node1" title="Draws the main menu screen." alt="" coords="5,35,180,61"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="228,5,415,32"/>
+<area shape="rect" id="node3" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="228,57,415,98"/>
+</map>

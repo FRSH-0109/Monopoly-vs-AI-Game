@@ -1,0 +1,32 @@
+<map id="monopolyGameEngine::buildingsManagingWorker" name="monopolyGameEngine::buildingsManagingWorker">
+<area shape="rect" id="node1" title=" " alt="" coords="5,647,204,688"/>
+<area shape="rect" id="node2" href="$classmonopoly_game_engine.html#a99af650b99e1f4a3bc186da3aac6743f" title=" " alt="" coords="276,5,447,47"/>
+<area shape="rect" id="node4" href="$classmonopoly_game_engine.html#ab7de7f4666764569f6bf3cbad8408ed1" title=" " alt="" coords="276,136,447,177"/>
+<area shape="rect" id="node6" href="$classmonopoly_game_engine.html#af0dcb169ec97293dadc327ad4b861df5" title=" " alt="" coords="276,369,447,411"/>
+<area shape="rect" id="node7" href="$classmonopoly_game_engine.html#a7745bb931ce95f84f0b07843414e0d36" title=" " alt="" coords="543,552,713,593"/>
+<area shape="rect" id="node9" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title=" " alt="" coords="521,333,735,359"/>
+<area shape="rect" id="node11" href="$class_street_field.html#a51d31e674e5526536210d24ed5bdc2c2" title=" " alt="" coords="534,953,722,979"/>
+<area shape="rect" id="node12" href="$class_street_field.html#a812b99b2c3dc615a26f81756fa41aa51" title=" " alt="" coords="531,231,725,258"/>
+<area shape="rect" id="node13" href="$class_property_field.html#a1fffe1254ab983b26a27f44f60790118" title=" " alt="" coords="519,683,737,710"/>
+<area shape="rect" id="node14" href="$class_property_field.html#afeddcb21f639b779a94a5d471059e7e3" title=" " alt="" coords="262,851,461,878"/>
+<area shape="rect" id="node15" href="$class_field.html#ad2e239a719acc3285a9b11b3aef6808c" title=" " alt="" coords="301,902,422,929"/>
+<area shape="rect" id="node16" href="$class_property_field.html#a4e8d167377c43ea54f32d355d8d07993" title=" " alt="" coords="272,953,451,979"/>
+<area shape="rect" id="node17" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="305,1003,417,1030"/>
+<area shape="rect" id="node18" href="$class_property_field.html#a5e8b305dba61b190acbfbf4f1e82af96" title=" " alt="" coords="252,1055,471,1096"/>
+<area shape="rect" id="node19" href="$classmonopoly_game_engine.html#afe6721e131658a56956b4aca576420bf" title=" " alt="" coords="276,435,447,476"/>
+<area shape="rect" id="node21" href="$classmonopoly_game_engine.html#a3e7b1e0ef7e0aa94a12775c1b928a315" title=" " alt="" coords="276,500,447,541"/>
+<area shape="rect" id="node22" href="$classmonopoly_game_engine.html#a4b8a36fd929cbdfebba4aed60c4c9300" title=" " alt="" coords="276,735,447,776"/>
+<area shape="rect" id="node25" href="$classmonopoly_game_engine.html#a3e437e4b8342de7d4b4476c0cdcff6a0" title=" " alt="" coords="270,617,453,659"/>
+<area shape="rect" id="node26" href="$class_street_field.html#a9cdeb6a4610eed4f47e20d2cdebbe3a1" title=" " alt="" coords="255,1121,468,1147"/>
+<area shape="rect" id="node27" href="$class_street_field.html#aa50b622f5cc3dfa6ee3d00aa1a24bd14" title=" " alt="" coords="278,1171,445,1198"/>
+<area shape="rect" id="node28" href="$class_property_field.html#a8ed81fa863c3d443a69141445d66616e" title=" " alt="" coords="253,1222,470,1249"/>
+<area shape="rect" id="node29" href="$classmonopoly_game_engine.html#a277d25afb09545726767d1330b70bce5" title=" " alt="" coords="276,71,447,112"/>
+<area shape="rect" id="node30" href="$classmonopoly_game_engine.html#ab76a68872f1e019cdebe742806333fb9" title=" " alt="" coords="276,201,447,243"/>
+<area shape="rect" id="node3" href="$classmonopoly_game_engine.html#a929ee51bc796ef0d0cd8500d79bf488b" title=" " alt="" coords="543,64,713,105"/>
+<area shape="rect" id="node5" href="$classmonopoly_game_engine.html#a69495369d29826bab9be4555184c89a3" title=" " alt="" coords="543,144,713,185"/>
+<area shape="rect" id="node8" href="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f" title=" " alt="" coords="785,471,1023,498"/>
+<area shape="rect" id="node10" href="$classmonopoly_game_engine.html#a812b12efc4a929ca7d81d98cf9acf761" title=" " alt="" coords="543,435,713,476"/>
+<area shape="rect" id="node20" href="$classmonopoly_game_engine.html#afed3b08203b9ef68ed47018e29739c94" title=" " alt="" coords="543,617,713,659"/>
+<area shape="rect" id="node23" href="$classmonopoly_game_engine.html#af6479c9c150af4f6f19811427b18675f" title=" " alt="" coords="543,887,713,928"/>
+<area shape="rect" id="node24" href="$class_street_field.html#a79785c76389d7bf9171797b9d1a16ebd" title=" " alt="" coords="545,785,711,811"/>
+</map>

@@ -1,0 +1,571 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_chance_card" kind="class" language="C++" prot="public">
+    <compoundname>ChanceCard</compoundname>
+    <includes refid="_chance_8h" local="no">Chance.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_chance_card_1af8d42148d503d4449de0053129cf4b26" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ChanceCard::id_</definition>
+        <argsstring></argsstring>
+        <name>id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique identifier for the chance card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="41" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a3892d0d38c4a36f53b5e3d1c362deb3c" prot="private" static="no" mutable="no">
+        <type><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref></type>
+        <definition>ChanceType ChanceCard::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type of the chance card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="42" column="12" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a3cdfe8cd85ce41b6c4c89e9c587c99b0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ChanceCard::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Value associated with the chance card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="43" column="5" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a63add6b7a50a70daad46d19a892b78cf" prot="private" static="no" mutable="no">
+        <type>sf::String</type>
+        <definition>sf::String ChanceCard::text_</definition>
+        <argsstring></argsstring>
+        <name>text_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Text describing the action of the chance card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="44" column="12" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1afb7805fb02267d8788d82b962329f1c1" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ChanceCard::graphic_path_</definition>
+        <argsstring></argsstring>
+        <name>graphic_path_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Path to the graphic associated with the chance card. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="45" column="13" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a514503d5ec09fcc81755f9c3e3b68615" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ChanceCard::width_</definition>
+        <argsstring></argsstring>
+        <name>width_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the graphic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="46" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a253b4366197dce2f18ae5f309b21e0cc" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ChanceCard::height_</definition>
+        <argsstring></argsstring>
+        <name>height_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Height of the graphic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="47" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a07cb2286920fa7f6b91900db27380272" prot="private" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture ChanceCard::texture_</definition>
+        <argsstring></argsstring>
+        <name>texture_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Texture for the graphic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="48" column="13" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1af9c8b2c6fbf35b79536c6d2a0a7dde3d" prot="private" static="no" mutable="no">
+        <type>sf::Sprite</type>
+        <definition>sf::Sprite ChanceCard::sprite_</definition>
+        <argsstring></argsstring>
+        <name>sprite_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sprite for the graphic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="49" column="12" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a43110a18620f75ec2a79f6ddcdf10514" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f ChanceCard::position_</definition>
+        <argsstring></argsstring>
+        <name>position_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Position of the chance card on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="50" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_chance_card_1a51364a47000df359860868aa03ce6428" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ChanceCard::rotation_</definition>
+        <argsstring></argsstring>
+        <name>rotation_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotation of the chance card graphic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="51" column="7" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_chance_card_1abbdcd4fe09d4310ae46d5ab35de0f59a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ChanceCard::ChanceCard</definition>
+        <argsstring>(const unsigned int id, const ChanceType type, unsigned int value, const sf::String text, const std::string graphic_path, const unsigned int width, const unsigned int height, const sf::Vector2f position)</argsstring>
+        <name>ChanceCard</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const sf::String</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>graphic_path</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2f</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_chance_card" kindref="compound">ChanceCard</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for the chance card. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the chance card. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value associated with the chance card. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text describing the action of the chance card. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graphic_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the graphic associated with the chance card. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the graphic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the graphic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the chance card on the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="67" column="1" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="17" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1af1c04b05577b32427b2c3777c1a89b7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int ChanceCard::getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+<para>Getter for the unique identifier of the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int Unique identifier for the chance card. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="81" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a9a328e8b7d8630469f0c114dbb3f947f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref></type>
+        <definition>ChanceType ChanceCard::getType</definition>
+        <argsstring>()</argsstring>
+        <name>getType</name>
+        <briefdescription>
+<para>Getter for the type of the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ChanceType Type of the chance card. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="88" column="12" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="44" bodyend="46"/>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a648076fb0cbccc144fc76f241cc892ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ChanceCard::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <briefdescription>
+<para>Getter for the value associated with the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int Value associated with the chance card. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="95" column="5" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="40" bodyend="42"/>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a3f54572894e5259f3f4ed887b6ca3e5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::String</type>
+        <definition>const sf::String ChanceCard::getText</definition>
+        <argsstring>()</argsstring>
+        <name>getText</name>
+        <briefdescription>
+<para>Getter for the text describing the action of the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const sf::String&amp; Text describing the action of the chance card. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="102" column="18" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="48" bodyend="50"/>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1aea4c2fcb474809701df580bfd8d50649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int ChanceCard::getWidth</definition>
+        <argsstring>()</argsstring>
+        <name>getWidth</name>
+        <briefdescription>
+<para>Getter for the width of the graphic associated with the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int Width of the graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="109" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1ac6be18fbd58a42f3a85833e52b3d4573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int ChanceCard::getHeight</definition>
+        <argsstring>()</argsstring>
+        <name>getHeight</name>
+        <briefdescription>
+<para>Getter for the height of the graphic associated with the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int Height of the graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="116" column="14" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1afa07dc486bd4180707f9502de3c039ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string ChanceCard::getGraphicPath</definition>
+        <argsstring>()</argsstring>
+        <name>getGraphicPath</name>
+        <briefdescription>
+<para>Getter for the path to the graphic associated with the chance card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const std::string&amp; Path to the graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="123" column="19" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a38a4b0e0b09994e95321fc2f843a2f89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float ChanceCard::getRotation</definition>
+        <argsstring>()</argsstring>
+        <name>getRotation</name>
+        <briefdescription>
+<para>Getter for the rotation of the chance card graphic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>float Rotation of the chance card graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="130" column="7" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1ada5b5f2faefed41ffe0e17a39f9c3967" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Sprite &amp;</type>
+        <definition>const sf::Sprite &amp; ChanceCard::getSprite</definition>
+        <argsstring>()</argsstring>
+        <name>getSprite</name>
+        <briefdescription>
+<para>Getter for the sprite associated with the chance card graphic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const sf::Sprite&amp; Sprite of the chance card graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="137" column="18" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a890639f01e47852617c617c0d992f80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Texture &amp;</type>
+        <definition>const sf::Texture &amp; ChanceCard::getTexture</definition>
+        <argsstring>()</argsstring>
+        <name>getTexture</name>
+        <briefdescription>
+<para>Getter for the texture associated with the chance card graphic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const sf::Texture&amp; Texture of the chance card graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="144" column="19" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a411399b942a676234c9e2ea93bbad98b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Vector2f &amp;</type>
+        <definition>const sf::Vector2f &amp; ChanceCard::getPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getPosition</name>
+        <briefdescription>
+<para>Getter for the position of the chance card on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const sf::Vector2f&amp; Position of the chance card. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="151" column="20" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a6e05f936f5bdfa29b8a4a12a368be4e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ChanceCard::setRotation</definition>
+        <argsstring>(float new_roation)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>float</type>
+          <declname>new_roation</declname>
+        </param>
+        <briefdescription>
+<para>Setter for the rotation of the chance card graphic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_roation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New rotation value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="158" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1a785f3e0c0122bf2015dcd62ff430a605" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ChanceCard::setPosition</definition>
+        <argsstring>(sf::Vector2f pos)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Setter for the position of the chance card on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New position value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="165" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_chance_card_1ac676e005fc49d99abebff163a6252da5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ChanceCard::createSprite</definition>
+        <argsstring>()</argsstring>
+        <name>createSprite</name>
+        <briefdescription>
+<para>Creates the sprite for the chance card using its graphic. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="170" column="6" bodyfile="/home/kamil/zpr/Monopoly/Chance.cc" bodystart="80" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a chance card in the monopoly game. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Chance.h" line="39" column="1" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="39" bodyend="171"/>
+    <listofallmembers>
+      <member refid="class_chance_card_1abbdcd4fe09d4310ae46d5ab35de0f59a" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>ChanceCard</name></member>
+      <member refid="class_chance_card_1ac676e005fc49d99abebff163a6252da5" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>createSprite</name></member>
+      <member refid="class_chance_card_1afa07dc486bd4180707f9502de3c039ea" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getGraphicPath</name></member>
+      <member refid="class_chance_card_1ac6be18fbd58a42f3a85833e52b3d4573" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getHeight</name></member>
+      <member refid="class_chance_card_1af1c04b05577b32427b2c3777c1a89b7b" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getId</name></member>
+      <member refid="class_chance_card_1a411399b942a676234c9e2ea93bbad98b" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getPosition</name></member>
+      <member refid="class_chance_card_1a38a4b0e0b09994e95321fc2f843a2f89" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getRotation</name></member>
+      <member refid="class_chance_card_1ada5b5f2faefed41ffe0e17a39f9c3967" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getSprite</name></member>
+      <member refid="class_chance_card_1a3f54572894e5259f3f4ed887b6ca3e5d" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getText</name></member>
+      <member refid="class_chance_card_1a890639f01e47852617c617c0d992f80b" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getTexture</name></member>
+      <member refid="class_chance_card_1a9a328e8b7d8630469f0c114dbb3f947f" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getType</name></member>
+      <member refid="class_chance_card_1a648076fb0cbccc144fc76f241cc892ec" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getValue</name></member>
+      <member refid="class_chance_card_1aea4c2fcb474809701df580bfd8d50649" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>getWidth</name></member>
+      <member refid="class_chance_card_1afb7805fb02267d8788d82b962329f1c1" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>graphic_path_</name></member>
+      <member refid="class_chance_card_1a253b4366197dce2f18ae5f309b21e0cc" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>height_</name></member>
+      <member refid="class_chance_card_1af8d42148d503d4449de0053129cf4b26" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>id_</name></member>
+      <member refid="class_chance_card_1a43110a18620f75ec2a79f6ddcdf10514" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>position_</name></member>
+      <member refid="class_chance_card_1a51364a47000df359860868aa03ce6428" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>rotation_</name></member>
+      <member refid="class_chance_card_1a785f3e0c0122bf2015dcd62ff430a605" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>setPosition</name></member>
+      <member refid="class_chance_card_1a6e05f936f5bdfa29b8a4a12a368be4e3" prot="public" virt="non-virtual"><scope>ChanceCard</scope><name>setRotation</name></member>
+      <member refid="class_chance_card_1af9c8b2c6fbf35b79536c6d2a0a7dde3d" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>sprite_</name></member>
+      <member refid="class_chance_card_1a63add6b7a50a70daad46d19a892b78cf" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>text_</name></member>
+      <member refid="class_chance_card_1a07cb2286920fa7f6b91900db27380272" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>texture_</name></member>
+      <member refid="class_chance_card_1a3892d0d38c4a36f53b5e3d1c362deb3c" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>type_</name></member>
+      <member refid="class_chance_card_1a3cdfe8cd85ce41b6c4c89e9c587c99b0" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>value_</name></member>
+      <member refid="class_chance_card_1a514503d5ec09fcc81755f9c3e3b68615" prot="private" virt="non-virtual"><scope>ChanceCard</scope><name>width_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

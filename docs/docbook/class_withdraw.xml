@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_withdraw" xml:lang="en-US">
+<title>Withdraw Class Reference</title>
+<indexterm><primary>Withdraw</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_withdraw_1ac3ff353242bfee519f0058258631c454"/>void <emphasis role="strong">setBoard</emphasis> (std::shared_ptr&lt; <link linkend="_class_board">Board</link> &gt; board_ptr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a0f4055d95a2cefafbe974d49bcec5531"/>void <emphasis role="strong">setTurnState</emphasis> (TurnState state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a0f3fd96ab6c928dcac54ac55a1b7be3d"/>TurnState <emphasis role="strong">getTurnState</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a3ea0051e8185c3702e1009936e508df6"/>sf::Font &amp; <emphasis role="strong">getFont</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aed82a313991c3f3a38c68738a613256f"/>unsigned int <emphasis role="strong">getFontSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a01109432adc0c8b78f288c1805ca02d0"/>void <emphasis role="strong">setFont</emphasis> (sf::Font font)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a9176fc09f39a59cec708685ee053b9ac"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; &gt; &amp; <emphasis role="strong">getButtons</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a095689316bdad34354e14b8ffd18c995"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a0b40b07770eab69344d8bdb35902155e"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1Button</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a091c37bf6929de0085fabf2d7f59574b"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2Button</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ac2bbfa2841c0e30a80b78ac00b626df3"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer3Button</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a8466a780108a4cee43a60c7ce5f96286"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer4Button</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a710eb4657248e1b8d3d058dcdc576ff6"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getResignButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a2f8b173f0fdf10f7bb3232c57b96f114"/>void <emphasis role="strong">createChoosePlayerScreen</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a1e777d7591c901b33d190e8f5c6f4a77"/>void <emphasis role="strong">createValuePlayerScreen</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ad4a9b237332fe45afa4730ccc20e1e0b"/>void <emphasis role="strong">createDecisionPlayerScreen</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a3385eeffa834b145f427a64b9ff61b75"/>void <emphasis role="strong">setChooseScreenVisible</emphasis> (bool isVisible)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ab37317304ca4577a2d6f7f6158ca88ac"/>void <emphasis role="strong">setValueScreenVisible</emphasis> (bool isVisible)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a6cca8fa1c449f82c5fc3495db33821c9"/>void <emphasis role="strong">setDecisionScreenVisible</emphasis> (bool isVisible)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ad6d6fe6a2cc686f1deea05fa9ae5033f"/>void <emphasis role="strong">setPlayer1ToWithdraw</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; player_ptr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aed1f0d13e5f3ce83500ec90b9338796a"/>void <emphasis role="strong">setPlayer2ToWithdraw</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; player_ptr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aeb5e3609e3ff27cbcda1f564c18d256f"/>std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; <emphasis role="strong">getPlayer1ToWithdraw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a82a457bf898c8845ab38458a8a2d3cf5"/>std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; <emphasis role="strong">getPlayer2ToWithdraw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a08e2ce2ebc989bcabb109f6b8ca2489c"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getResignValueButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ac604b13c491169954292fee491bcea26"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getSubmitValueButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a842454e0b86473552db820f70c703624"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1minus1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a10b2cabb94eb5d484271a94c97b70370"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1minus10</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a4367d468bb941dd8326b5856dd525a37"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1minus100</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a58b1ffd27603e753ba7abdb29acf1314"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1plus1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1acaf2b764f148764e5d4e600fc9291c6d"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1plus10</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a3697bee3aadebc0cde7bb14b5734f200"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1plus100</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a433b90092e9aea1deade9d09bf0f53bb"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2minus1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a2991a78ccf18dc06191bf5bb2493a8c8"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2minus10</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1add8c0389fcb067416de24846724a90e3"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2minus100</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ad71f8629800c81970c28e69d19091fff"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2plus1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a510ba4ba2fa7044c7769f737158e7a84"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2plus10</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ab624df7121d9f7b636f712a141663ad0"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2plus100</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a6a5f2ccfb239b924b0521a390609d5fc"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1NextButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a6add7cd9e18b8066ce60af2722e84422"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1PreviousButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aaba58d928bb11f6430f0b3dee9e9114d"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2NextButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aa074572589a75bd97bd3771243752ace"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2PreviousButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ac0c3e2f788b930cd5ed0031bbf0fba92"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1IndexNextButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a1efca195a06baa1f08d7183e994b7e0a"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1IndexPreviousButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aed5e9b3d3c905f942bc6e7dba72fda4e"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2IndexNextButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a9ea76ae122045f46ab5afc2c6f73aa6a"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2IndexPreviousButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aceb8cd9e4b2c1ed99e72278ca840969d"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1AddButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a0acdd19c19851dd0ea796de6d94b1ceb"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer1RemoveButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a36687d86bc6d5b4649b8a112d2e39fa6"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2AddButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1afdd56cdac9e6e103132dd5f4b11dde82"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getPlayer2RemoveButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a2852ce90c05783a2d8f1921ce5df4992"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getResignDecisionButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aab8cdcdf3e5d4b4339b60f0808700838"/>std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; <emphasis role="strong">getAcceptDecisionButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a6ca7dcfe8ce12dd9bdb800173348bcda"/>void <emphasis role="strong">moneyTransferIndex</emphasis> (unsigned int playerNum, int money)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a90b6611bc2eeec22d3b562fd183bf81e"/>void <emphasis role="strong">moneyTextUpdate</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a19f82027534a13d80536846c5af25829"/>void <emphasis role="strong">makeWithdraw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214"/>void <emphasis role="strong">showProperty</emphasis> (int column)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aaa00a66063e50b3aa3cf82a04d0fa859"/>sf::Sprite &amp; <emphasis role="strong">getSpritePropertyPlayer1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a3af83369b71131d448d48f9383c890c0"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTextsPropertyPlayer1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a7b2ecdf7344d06ee5a1124a3e125618d"/>sf::Sprite &amp; <emphasis role="strong">getSpritePropertyPlayer1Index</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a516b9056df7808d8c2a33a57772d9ad8"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTextsPropertyPlayer1Index</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a7d62275f21184e601494c0068d28fab0"/>sf::Sprite &amp; <emphasis role="strong">getSpritePropertyPlayer2</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1af50af1bd76c6d76465a8fe344496b6e7"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTextsPropertyPlayer2</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a398e4416dafd4543de2eebc4e8317e4b"/>sf::Sprite &amp; <emphasis role="strong">getSpritePropertyPlayer2Index</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a947ffd9307c3592b6023d11d892f2692"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTextsPropertyPlayer2Index</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aeb76e48063bbc11819fb5a9304c90aa1"/>std::shared_ptr&lt; sf::Texture &gt; <emphasis role="strong">getTexturePropertyPlayer1</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a30c3828b0c528ff79403158e1501358a"/>std::shared_ptr&lt; sf::Texture &gt; <emphasis role="strong">getTexturePropertyPlayer1Index</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a17a68a4b288fa26a7802c2f553fc6279"/>std::shared_ptr&lt; sf::Texture &gt; <emphasis role="strong">getTexturePropertyPlayer2</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a31943c48aa1e04aa4f1ec43900f5acc0"/>std::shared_ptr&lt; sf::Texture &gt; <emphasis role="strong">getTexturePropertyPlayer2Index</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a8573a264b72dddafdf68ba509f3fc752"/>void <emphasis role="strong">addPropertyPlayerShowed</emphasis> (int i, unsigned int col)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1aab93d45027bcc3d03b1f799bc23064b6"/>void <emphasis role="strong">propertyPlayerMoveIndex</emphasis> (int dir, unsigned int plrNum)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_withdraw_1a076b7446fff22cc7357d92078e3f336f"/>bool <emphasis role="strong">isNonZeroValue</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__withdraw_8h">Withdraw.h</link>/home/kamil/zpr/Monopoly/<link linkend="__withdraw_8cc">Withdraw.cc</link></section>

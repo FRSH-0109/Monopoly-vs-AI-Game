@@ -1,0 +1,10 @@
+<map id="monopolyGameEngine::isBuildingLegal" name="monopolyGameEngine::isBuildingLegal">
+<area shape="rect" id="node1" title=" " alt="" coords="5,181,176,223"/>
+<area shape="rect" id="node2" href="$classmonopoly_game_engine.html#a7745bb931ce95f84f0b07843414e0d36" title=" " alt="" coords="248,5,419,47"/>
+<area shape="rect" id="node3" href="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f" title=" " alt="" coords="491,210,728,237"/>
+<area shape="rect" id="node4" href="$classmonopoly_game_engine.html#afed3b08203b9ef68ed47018e29739c94" title=" " alt="" coords="248,123,419,164"/>
+<area shape="rect" id="node5" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title=" " alt="" coords="226,189,441,215"/>
+<area shape="rect" id="node6" href="$class_street_field.html#a812b99b2c3dc615a26f81756fa41aa51" title=" " alt="" coords="236,239,431,266"/>
+<area shape="rect" id="node7" href="$class_property_field.html#a1fffe1254ab983b26a27f44f60790118" title=" " alt="" coords="224,290,443,317"/>
+<area shape="rect" id="node8" href="$classmonopoly_game_engine.html#a812b12efc4a929ca7d81d98cf9acf761" title=" " alt="" coords="248,341,419,383"/>
+</map>

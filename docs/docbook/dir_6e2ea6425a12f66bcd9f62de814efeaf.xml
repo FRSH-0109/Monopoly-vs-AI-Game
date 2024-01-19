@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_6e2ea6425a12f66bcd9f62de814efeaf" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly Directory Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__active_screen_8cc">ActiveScreen.cc</link></para>
+
+<para>Source file handling displayed screens of project Base claass is <link linkend="_class_active_screen">ActiveScreen</link>, then derived class are used to work with specific screen shown. </para>
+</listitem>
+            <listitem><para>file <link linkend="__active_screen_8h">ActiveScreen.h</link></para>
+
+<para>Header file handling displayed screens of project Base claass is <link linkend="_class_active_screen">ActiveScreen</link>, then derived class are used to work with specific screen shown. </para>
+</listitem>
+            <listitem><para>file <link linkend="__ai_adapter_8cc">AiAdapter.cc</link></para>
+
+<para>TODO. </para>
+</listitem>
+            <listitem><para>file <link linkend="__ai_adapter_8h">AiAdapter.h</link></para>
+
+<para>TODO. </para>
+</listitem>
+            <listitem><para>file <link linkend="__board_8cc">Board.cc</link></para>
+
+<para>Source file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+</listitem>
+            <listitem><para>file <link linkend="__board_8h">Board.h</link></para>
+
+<para>Header file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+</listitem>
+            <listitem><para>file <link linkend="__button_8cc">Button.cc</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__button_8h">Button.h</link></para>
+
+<para>Source file for handling button objects actions used to communicate with user. </para>
+</listitem>
+            <listitem><para>file <link linkend="__chance_8cc">Chance.cc</link></para>
+
+<para>Source file for monopoly game chance cards, their types, actions... </para>
+</listitem>
+            <listitem><para>file <link linkend="__chance_8h">Chance.h</link></para>
+
+<para>Header file for monopoly game chance cards, their types, actions... </para>
+</listitem>
+            <listitem><para>file <link linkend="__context_window_8cc">ContextWindow.cc</link></para>
+
+<para>Source file for context Window class It is Singleton class type used mainly for handling SFML window operations between other classes. </para>
+</listitem>
+            <listitem><para>file <link linkend="__context_window_8h">ContextWindow.h</link></para>
+
+<para>Source file for context Window class It is Singleton class type used mainly for handling SFML window operations between other classes. </para>
+</listitem>
+            <listitem><para>file <link linkend="__field_8cc">Field.cc</link></para>
+
+<para>Source file containing staff for single monopoly board game field. Separated to many deriving classes types each for specific field type. </para>
+</listitem>
+            <listitem><para>file <link linkend="__field_8h">Field.h</link></para>
+
+<para>Header file containing staff for single monopoly board game field. Separated to many deriving classes types each for specific field type. </para>
+</listitem>
+            <listitem><para>file <link linkend="__game_engine_8cc">GameEngine.cc</link></para>
+
+<para>Source file for <link linkend="_class_game_engine">GameEngine</link> class, used to handle lowes level program operations as input interactions (mouse, keyboard) or display window. </para>
+</listitem>
+            <listitem><para>file <link linkend="__game_engine_8h">GameEngine.h</link></para>
+
+<para>Header file for <link linkend="_class_game_engine">GameEngine</link> class, used to handle lowes level program operations as input interactions (mouse, keyboard) or display window. </para>
+</listitem>
+            <listitem><para>file <link linkend="__game_screen_8cc">GameScreen.cc</link></para>
+
+<para>Source file for game screen class deriving from <link linkend="_class_active_screen">ActiveScreen</link> class. Used to handle monopoly game activities and drawing. </para>
+</listitem>
+            <listitem><para>file <link linkend="__game_screen_8h">GameScreen.h</link></para>
+
+<para>Header file for game screen class deriving from <link linkend="_class_active_screen">ActiveScreen</link> class. Used to handle monopoly game activities and drawing. </para>
+</listitem>
+            <listitem><para>file <link linkend="_main_8cc">main.cc</link></para>
+
+<para>Source file launching monopoly game vs AI project. </para>
+</listitem>
+            <listitem><para>file <link linkend="_main_8h">main.h</link></para>
+
+<para>Header file containing structures shared between project files. </para>
+</listitem>
+            <listitem><para>file <link linkend="__monopoly_game_engine_8cc">MonopolyGameEngine.cc</link></para>
+
+<para>Source file of class used to handle whole monopoly game process, turns, actions with players, board etc. </para>
+</listitem>
+            <listitem><para>file <link linkend="__monopoly_game_engine_8h">MonopolyGameEngine.h</link></para>
+
+<para>Header file of class used to handle whole monopoly game process, turns, actions with players, board etc. </para>
+</listitem>
+            <listitem><para>file <link linkend="__notification_wall_8cc">NotificationWall.cc</link></para>
+
+<para>Source file of class used to display list of messages/notifications as finite list with certain length. It automatically rolls over when gets next message. </para>
+</listitem>
+            <listitem><para>file <link linkend="__notification_wall_8h">NotificationWall.h</link></para>
+
+<para>Header file of class used to display list of messages/notifications as finite list with certain length. It automatically rolls over when gets next message. </para>
+</listitem>
+            <listitem><para>file <link linkend="__player_8cc">Player.cc</link></para>
+
+<para>Implementation file for <link linkend="_class_player">Player</link> class and AI <link linkend="_class_player">Player</link> class, containing data and methods for a player in a Monopoly game. </para>
+</listitem>
+            <listitem><para>file <link linkend="__player_8h">Player.h</link></para>
+
+<para>Implementation file for <link linkend="_class_player">Player</link> class and AI <link linkend="_class_player">Player</link> class, containing data and methods for a player in a Monopoly game. </para>
+</listitem>
+            <listitem><para>file <link linkend="__tinyann_8cc">Tinyann.cc</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__tinyann_8h">Tinyann.h</link></para>
+
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+</listitem>
+            <listitem><para>file <link linkend="__tinyneat_8cc">Tinyneat.cc</link></para>
+
+<para>Source file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+</listitem>
+            <listitem><para>file <link linkend="__tinyneat_8h">Tinyneat.h</link></para>
+
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+</listitem>
+            <listitem><para>file <link linkend="__withdraw_8cc">Withdraw.cc</link></para>
+
+<para>Source file for trade/withdraw mehanism in monopoly game between players. </para>
+</listitem>
+            <listitem><para>file <link linkend="__withdraw_8h">Withdraw.h</link></para>
+
+<para>Header file for trade/withdraw mehanism in monopoly game between players. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

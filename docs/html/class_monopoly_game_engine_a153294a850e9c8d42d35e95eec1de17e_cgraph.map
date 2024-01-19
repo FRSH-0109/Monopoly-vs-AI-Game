@@ -1,0 +1,5 @@
+<map id="MonopolyGameEngine::updateTextPlayersInfo" name="MonopolyGameEngine::updateTextPlayersInfo">
+<area shape="rect" id="node1" title="Updates the text displaying players&#39; information." alt="" coords="5,35,180,76"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="228,5,397,47"/>
+<area shape="rect" id="node3" href="$class_field.html#ad2e239a719acc3285a9b11b3aef6808c" title="Gets the name of the field." alt="" coords="252,71,373,98"/>
+</map>

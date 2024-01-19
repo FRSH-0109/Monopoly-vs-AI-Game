@@ -1,0 +1,4 @@
+<map id="Field::createSprite" name="Field::createSprite">
+<area shape="rect" id="node1" title="Creates the sprite for the field." alt="" coords="160,5,300,32"/>
+<area shape="rect" id="node2" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="5,5,112,32"/>
+</map>

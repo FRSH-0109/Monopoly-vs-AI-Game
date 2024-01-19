@@ -1,0 +1,419 @@
+\hypertarget{class_field}{}\doxysection{Field Class Reference}
+\label{class_field}\index{Field@{Field}}
+
+
+Base class representing a generic game field.  
+
+
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+
+
+Inheritance diagram for Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_field__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_field_acc8e72c4faac0f5c48b9d353e9350112}{Field}} (const unsigned int id, const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} type, const std\+::string name, const std\+::string graphic\+\_\+path, const unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}, const unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}, const float rotation, const sf\+::\+Vector2i position)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_field}{Field}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ \mbox{\hyperlink{class_field_af1d9991ce36def51f2999a959b7873fa}{get\+Context\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Gets the pointer to the context window. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_field_aa3ea436b800a8078f04be2678c42f7c0}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the ID of the field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} \mbox{\hyperlink{class_field_a3c5261dc7fc032dd06268d3c94028d73}{get\+Type}} ()
+\item 
+const std\+::string \mbox{\hyperlink{class_field_ad2e239a719acc3285a9b11b3aef6808c}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the field. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_field_a2bca2e8d2cb8bfc9ebbc61f617e3e7b9}{get\+Graphic\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Gets the file path to the field\textquotesingle{}s graphic. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_field_ad5706e4c154214fe43db7ecc7a6b74ca}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the field. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_field_a24552dc1bcb1f574ce8db0761c33790a}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the field. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_field_a646e28cf7899eb73bd120e7e7f936633}{get\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rotation angle of the field. \end{DoxyCompactList}\item 
+const sf\+::\+Sprite \& \mbox{\hyperlink{class_field_ad9461468ec68a4148453553cc3150fa6}{get\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Gets the sprite representing the field. \end{DoxyCompactList}\item 
+const sf\+::\+Texture \& \mbox{\hyperlink{class_field_a0c228e9b9ccc6465183a2b82c9a7ef00}{get\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Gets the texture of the field. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2i \& \mbox{\hyperlink{class_field_a8b6e4fc0827f44e90449d6ad9a62dafd}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the field on the board. \end{DoxyCompactList}\item 
+const sf\+::\+Text \& \mbox{\hyperlink{class_field_a74d7c9f2b1b4ada1685410a5cfd45bc7}{get\+Name\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Gets the text representing the name of the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_field_aba57b17e88be43f271fbcb85822a56c3}{create\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Creates the sprite for the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_field_a7fe07fc987253e7c5dd7c5cccf30c2a1}{set\+Height}} (unsigned int new\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Sets the height of the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_field_a664b22a22c392fcd9a20df37ab1e5739}{set\+Width}} (unsigned int new\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Sets the width of the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_field_ad43e7dadad3ce417d9b699f53f8adb83}{set\+Rotation}} (float new\+\_\+rotation)
+\begin{DoxyCompactList}\small\item\em Sets the rotation angle of the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_field_ae4e02fa62cdb947a134ce665ac1b0f69}{set\+Position}} (sf\+::\+Vector2i pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the field on the board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class representing a generic game field. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_field_acc8e72c4faac0f5c48b9d353e9350112}\label{class_field_acc8e72c4faac0f5c48b9d353e9350112}} 
+\index{Field@{Field}!Field@{Field}}
+\index{Field@{Field}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{Field()}{Field()}}
+{\footnotesize\ttfamily Field\+::\+Field (\begin{DoxyParamCaption}\item[{const unsigned int}]{id,  }\item[{const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}}}]{type,  }\item[{const std\+::string}]{name,  }\item[{const std\+::string}]{graphic\+\_\+path,  }\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height,  }\item[{const float}]{rotation,  }\item[{const sf\+::\+Vector2i}]{position }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_field}{Field}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the field. \\
+\hline
+{\em type} & The type of the field. \\
+\hline
+{\em name} & The name of the field. \\
+\hline
+{\em graphic\+\_\+path} & The file path to the field\textquotesingle{}s graphic. \\
+\hline
+{\em width} & The width of the field. \\
+\hline
+{\em height} & The height of the field. \\
+\hline
+{\em rotation} & The rotation angle of the field. \\
+\hline
+{\em position} & The position of the field on the board. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_field_aba57b17e88be43f271fbcb85822a56c3}\label{class_field_aba57b17e88be43f271fbcb85822a56c3}} 
+\index{Field@{Field}!createSprite@{createSprite}}
+\index{createSprite@{createSprite}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{createSprite()}{createSprite()}}
+{\footnotesize\ttfamily void Field\+::create\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the sprite for the field. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_field_aba57b17e88be43f271fbcb85822a56c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_af1d9991ce36def51f2999a959b7873fa}\label{class_field_af1d9991ce36def51f2999a959b7873fa}} 
+\index{Field@{Field}!getContextWindow@{getContextWindow}}
+\index{getContextWindow@{getContextWindow}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getContextWindow()}{getContextWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ Field\+::get\+Context\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the pointer to the context window. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the context window. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_af1d9991ce36def51f2999a959b7873fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a2bca2e8d2cb8bfc9ebbc61f617e3e7b9}\label{class_field_a2bca2e8d2cb8bfc9ebbc61f617e3e7b9}} 
+\index{Field@{Field}!getGraphicPath@{getGraphicPath}}
+\index{getGraphicPath@{getGraphicPath}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getGraphicPath()}{getGraphicPath()}}
+{\footnotesize\ttfamily const std\+::string Field\+::get\+Graphic\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the file path to the field\textquotesingle{}s graphic. 
+
+\begin{DoxyReturn}{Returns}
+The file path to the field\textquotesingle{}s graphic. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_a2bca2e8d2cb8bfc9ebbc61f617e3e7b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a24552dc1bcb1f574ce8db0761c33790a}\label{class_field_a24552dc1bcb1f574ce8db0761c33790a}} 
+\index{Field@{Field}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily unsigned int Field\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the height of the field. 
+
+\begin{DoxyReturn}{Returns}
+The height of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_a24552dc1bcb1f574ce8db0761c33790a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_aa3ea436b800a8078f04be2678c42f7c0}\label{class_field_aa3ea436b800a8078f04be2678c42f7c0}} 
+\index{Field@{Field}!getId@{getId}}
+\index{getId@{getId}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily unsigned int Field\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the ID of the field. 
+
+\begin{DoxyReturn}{Returns}
+The ID of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_aa3ea436b800a8078f04be2678c42f7c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_ad2e239a719acc3285a9b11b3aef6808c}\label{class_field_ad2e239a719acc3285a9b11b3aef6808c}} 
+\index{Field@{Field}!getName@{getName}}
+\index{getName@{getName}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string Field\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the name of the field. 
+
+\begin{DoxyReturn}{Returns}
+The name of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_ad2e239a719acc3285a9b11b3aef6808c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a74d7c9f2b1b4ada1685410a5cfd45bc7}\label{class_field_a74d7c9f2b1b4ada1685410a5cfd45bc7}} 
+\index{Field@{Field}!getNameText@{getNameText}}
+\index{getNameText@{getNameText}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getNameText()}{getNameText()}}
+{\footnotesize\ttfamily const sf\+::\+Text \& Field\+::get\+Name\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the text representing the name of the field. 
+
+\begin{DoxyReturn}{Returns}
+The text representing the name of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_field_a74d7c9f2b1b4ada1685410a5cfd45bc7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a8b6e4fc0827f44e90449d6ad9a62dafd}\label{class_field_a8b6e4fc0827f44e90449d6ad9a62dafd}} 
+\index{Field@{Field}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2i \& Field\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the position of the field on the board. 
+
+\begin{DoxyReturn}{Returns}
+The position of the field on the board. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_a8b6e4fc0827f44e90449d6ad9a62dafd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a646e28cf7899eb73bd120e7e7f936633}\label{class_field_a646e28cf7899eb73bd120e7e7f936633}} 
+\index{Field@{Field}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float Field\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the rotation angle of the field. 
+
+\begin{DoxyReturn}{Returns}
+The rotation angle of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_a646e28cf7899eb73bd120e7e7f936633_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_ad9461468ec68a4148453553cc3150fa6}\label{class_field_ad9461468ec68a4148453553cc3150fa6}} 
+\index{Field@{Field}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily const sf\+::\+Sprite \& Field\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the sprite representing the field. 
+
+\begin{DoxyReturn}{Returns}
+The sprite representing the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_field_ad9461468ec68a4148453553cc3150fa6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a0c228e9b9ccc6465183a2b82c9a7ef00}\label{class_field_a0c228e9b9ccc6465183a2b82c9a7ef00}} 
+\index{Field@{Field}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily const sf\+::\+Texture \& Field\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the texture of the field. 
+
+\begin{DoxyReturn}{Returns}
+The texture of the field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_a3c5261dc7fc032dd06268d3c94028d73}\label{class_field_a3c5261dc7fc032dd06268d3c94028d73}} 
+\index{Field@{Field}!getType@{getType}}
+\index{getType@{getType}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} Field\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_a3c5261dc7fc032dd06268d3c94028d73_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_ad5706e4c154214fe43db7ecc7a6b74ca}\label{class_field_ad5706e4c154214fe43db7ecc7a6b74ca}} 
+\index{Field@{Field}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily unsigned int Field\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the width of the field. 
+
+\begin{DoxyReturn}{Returns}
+The width of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_field_ad5706e4c154214fe43db7ecc7a6b74ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_field_a7fe07fc987253e7c5dd7c5cccf30c2a1}\label{class_field_a7fe07fc987253e7c5dd7c5cccf30c2a1}} 
+\index{Field@{Field}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void Field\+::set\+Height (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Sets the height of the field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+height} & The new height of the field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_field_ae4e02fa62cdb947a134ce665ac1b0f69}\label{class_field_ae4e02fa62cdb947a134ce665ac1b0f69}} 
+\index{Field@{Field}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Field\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{pos }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the field on the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The new position of the field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_field_ad43e7dadad3ce417d9b699f53f8adb83}\label{class_field_ad43e7dadad3ce417d9b699f53f8adb83}} 
+\index{Field@{Field}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Field\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+rotation }\end{DoxyParamCaption})}
+
+
+
+Sets the rotation angle of the field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+rotation} & The new rotation angle of the field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_field_a664b22a22c392fcd9a20df37ab1e5739}\label{class_field_a664b22a22c392fcd9a20df37ab1e5739}} 
+\index{Field@{Field}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!Field@{Field}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void Field\+::set\+Width (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Sets the width of the field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+width} & The new width of the field. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8h}{Field.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8cc}{Field.\+cc}}\end{DoxyCompactItemize}

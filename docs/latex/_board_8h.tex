@@ -1,0 +1,161 @@
+\hypertarget{_board_8h}{}\doxysection{/home/kamil/zpr/\+Monopoly/\+Board.h File Reference}
+\label{_board_8h}\index{/home/kamil/zpr/Monopoly/Board.h@{/home/kamil/zpr/Monopoly/Board.h}}
+
+
+Header file for monopoly game board, creation is based on json file \textquotesingle{}board.\+json\textquotesingle{}. Mainly handles all types of fields and their usage.  
+
+
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}../json/json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+Include dependency graph for Board.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_board_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_board_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_board}{Board}}
+\begin{DoxyCompactList}\small\item\em Class representing the monopoly game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{_board_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\item 
+using \mbox{\hyperlink{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}{Possible\+Fields}} = std\+::variant$<$ \mbox{\hyperlink{class_field}{Field}}, \mbox{\hyperlink{class_property_field}{Property\+Field}}, \mbox{\hyperlink{class_street_field}{Street\+Field}}, \mbox{\hyperlink{class_station_field}{Station\+Field}}, \mbox{\hyperlink{class_utility_field}{Utility\+Field}}, \mbox{\hyperlink{class_tax_field}{Tax\+Field}} $>$
+\begin{DoxyCompactList}\small\item\em A variant type representing different types of fields on the monopoly board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{_board_8h_a92671e84f9d38a1f5a64ef20ad23ec39}{json\+To\+Street\+Rent}} (const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&element)
+\begin{DoxyCompactList}\small\item\em Converts JSON data to a map of rent values for street properties. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{_board_8h_ad42d602c22869eaeb607bcce29881af1}{json\+To\+Station\+Rent}} (const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&element)
+\begin{DoxyCompactList}\small\item\em Converts JSON data to a map of rent values for station properties. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{_board_8h_a9f51f2d21bf4f1468f4481d2b6cf20a6}{json\+To\+Utility\+Rent}} (const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&element)
+\begin{DoxyCompactList}\small\item\em Converts JSON data to a map of rent multipliers for utility properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for monopoly game board, creation is based on json file \textquotesingle{}board.\+json\textquotesingle{}. Mainly handles all types of fields and their usage. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Kosnik, Kacper Radzikowski 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_board_8h_ab701e3ac61a85b337ec5c1abaad6742d}\label{_board_8h_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{Board.h@{Board.h}!json@{json}}
+\index{json@{json}!Board.h@{Board.h}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+\mbox{\Hypertarget{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}\label{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}} 
+\index{Board.h@{Board.h}!PossibleFields@{PossibleFields}}
+\index{PossibleFields@{PossibleFields}!Board.h@{Board.h}}
+\doxysubsubsection{\texorpdfstring{PossibleFields}{PossibleFields}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}{Possible\+Fields}}}
+
+
+
+A variant type representing different types of fields on the monopoly board. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_board_8h_ad42d602c22869eaeb607bcce29881af1}\label{_board_8h_ad42d602c22869eaeb607bcce29881af1}} 
+\index{Board.h@{Board.h}!jsonToStationRent@{jsonToStationRent}}
+\index{jsonToStationRent@{jsonToStationRent}!Board.h@{Board.h}}
+\doxysubsubsection{\texorpdfstring{jsonToStationRent()}{jsonToStationRent()}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int$>$ json\+To\+Station\+Rent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Converts JSON data to a map of rent values for station properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The JSON data containing rent values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of rent values for station properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_board_8h_ad42d602c22869eaeb607bcce29881af1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_board_8h_a92671e84f9d38a1f5a64ef20ad23ec39}\label{_board_8h_a92671e84f9d38a1f5a64ef20ad23ec39}} 
+\index{Board.h@{Board.h}!jsonToStreetRent@{jsonToStreetRent}}
+\index{jsonToStreetRent@{jsonToStreetRent}!Board.h@{Board.h}}
+\doxysubsubsection{\texorpdfstring{jsonToStreetRent()}{jsonToStreetRent()}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int$>$ json\+To\+Street\+Rent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Converts JSON data to a map of rent values for street properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The JSON data containing rent values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of rent values for street properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{_board_8h_a92671e84f9d38a1f5a64ef20ad23ec39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_board_8h_a9f51f2d21bf4f1468f4481d2b6cf20a6}\label{_board_8h_a9f51f2d21bf4f1468f4481d2b6cf20a6}} 
+\index{Board.h@{Board.h}!jsonToUtilityRent@{jsonToUtilityRent}}
+\index{jsonToUtilityRent@{jsonToUtilityRent}!Board.h@{Board.h}}
+\doxysubsubsection{\texorpdfstring{jsonToUtilityRent()}{jsonToUtilityRent()}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int$>$ json\+To\+Utility\+Rent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Converts JSON data to a map of rent multipliers for utility properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The JSON data containing rent multipliers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of rent multipliers for utility properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{_board_8h_a9f51f2d21bf4f1468f4481d2b6cf20a6_icgraph}
+\end{center}
+\end{figure}

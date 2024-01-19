@@ -1,0 +1,7 @@
+<map id="AiPlayer::decideUnmortgage" name="AiPlayer::decideUnmortgage">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,213,108"/>
+<area shape="rect" id="node2" href="$classann_1_1neuralnet.html#af6ea7c4bc68dbd966cc80a63a6a3519d" title=" " alt="" coords="261,5,443,32"/>
+<area shape="rect" id="node3" href="$class_player.html#a223c145e34c3288cf74be4c77dc58591" title=" " alt="" coords="262,56,442,83"/>
+<area shape="rect" id="node4" href="$class_ai_adapter.html#ac76618fcec497abb9b30456c39bb824a" title="Gets the AI network inputs." alt="" coords="275,107,429,133"/>
+<area shape="rect" id="node5" href="$class_player.html#a39465d76fc735a64d104b8b21e574b8c" title=" " alt="" coords="284,157,420,184"/>
+</map>

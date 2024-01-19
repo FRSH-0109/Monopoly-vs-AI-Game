@@ -1,0 +1,32 @@
+digraph "StreetField::getHotelPrice"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="StreetField::getHotelPrice",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="monopolyGameEngine\l::aiBuildingsMangingWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#aa16c7ef618a34bfe7139734f98731d7e",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="monopolyGameEngine\l::monopolyGameWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#acfa722f1ffec4781429f86997595db7d",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GameScreen::worker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="monopolyGameEngine\l::buildingsManagingWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#aa5881c8915bd0277e2094b5b0bfaf337",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="monopolyGameEngine\l::isHotelBuildingLegal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a4b8a36fd929cbdfebba4aed60c4c9300",tooltip=" "];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Withdraw::showProperty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_withdraw.html#ab7bdb73ec95d72b844d65de653cb4214",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Withdraw::setValueScreen\lVisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_withdraw.html#ab37317304ca4577a2d6f7f6158ca88ac",tooltip=" "];
+  Node8 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="monopolyGameEngine\l::showPropertyData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#aacbd6ca705e1af117659326ed41739e9",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="GameScreen::GameScreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16",tooltip=" "];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

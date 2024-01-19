@@ -1,0 +1,6 @@
+<map id="ActiveScreen::buttonSetColors" name="ActiveScreen::buttonSetColors">
+<area shape="rect" id="node1" title="Sets the colors of a button based on its state." alt="" coords="247,56,465,83"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a930fac59e5231f348579a57991246e07" title="Worker function for the game menu screen." alt="" coords="5,5,199,32"/>
+<area shape="rect" id="node3" href="$class_main_menu_screen.html#afdd21c26a37bfc5b952836e283b31688" title="Worker function for the main menu screen." alt="" coords="9,56,195,83"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="23,107,181,133"/>
+</map>

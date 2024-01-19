@@ -1,0 +1,5 @@
+<map id="Withdraw::createDecisionPlayerScreen" name="Withdraw::createDecisionPlayerScreen">
+<area shape="rect" id="node1" title="Creates the screen for making decisions during withdrawal." alt="" coords="5,23,193,65"/>
+<area shape="rect" id="node2" href="$class_withdraw.html#a3ea0051e8185c3702e1009936e508df6" title="Getter for the font used in rendering text." alt="" coords="255,5,395,32"/>
+<area shape="rect" id="node3" href="$class_withdraw.html#aed82a313991c3f3a38c68738a613256f" title="Getter for the font size used in rendering text." alt="" coords="241,56,408,83"/>
+</map>

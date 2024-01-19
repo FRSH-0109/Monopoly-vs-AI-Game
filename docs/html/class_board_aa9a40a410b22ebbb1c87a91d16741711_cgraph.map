@@ -1,0 +1,4 @@
+<map id="Board::getFieldById" name="Board::getFieldById">
+<area shape="rect" id="node1" title="Getter for a specific field on the board by its unique identifier." alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$class_field.html#aa3ea436b800a8078f04be2678c42f7c0" title="Gets the ID of the field." alt="" coords="203,5,297,32"/>
+</map>

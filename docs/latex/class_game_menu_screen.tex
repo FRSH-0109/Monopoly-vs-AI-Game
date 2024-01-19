@@ -1,0 +1,420 @@
+\hypertarget{class_game_menu_screen}{}\doxysection{Game\+Menu\+Screen Class Reference}
+\label{class_game_menu_screen}\index{GameMenuScreen@{GameMenuScreen}}
+
+
+Represents the screen for the game menu.  
+
+
+
+
+{\ttfamily \#include $<$Active\+Screen.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Menu\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_game_menu_screen__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Menu\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_game_menu_screen__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_menu_screen_a5c3726575383e12d2a0f55e035be6719}{Game\+Menu\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_game_menu_screen}{Game\+Menu\+Screen}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_af17f9c5e3353be5c531251c4e78d6d0c}{game\+Menu\+Create}} ()
+\begin{DoxyCompactList}\small\item\em Function to create the game menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} \mbox{\hyperlink{class_game_menu_screen_a930fac59e5231f348579a57991246e07}{worker}} ()
+\begin{DoxyCompactList}\small\item\em Worker function for the game menu screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_ade9e4b9082cd923b43e45ea1f74ebaba}{set\+Player\+Settings}} (unsigned int index, bool is\+None, bool is\+Human, int level)
+\begin{DoxyCompactList}\small\item\em Sets the player settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_a5ec0f806edaf1275af6d9eb044e2d8f6}{button\+Click\+Handle}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+Ptr)
+\begin{DoxyCompactList}\small\item\em Handles button clicks in the game menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_aa5f7b6ac2cb57c6f700aefe1f727bd77}{set\+Other\+Buttons\+Inactive}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+Ptr)
+\begin{DoxyCompactList}\small\item\em Sets other buttons inactive when a button is clicked. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_menu_screen_a974eb5076298fbba7e4d6b577f74e888}{get\+Player\+Num\+From\+Event\+Type}} (\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} event)
+\begin{DoxyCompactList}\small\item\em Gets the player number from the Screen\+Event\+Type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_ae427ab9331af7fb8bfa52d88a0977b3e}{set\+AILevel\+Column\+Visibility}} (int player\+Num, bool visible)
+\begin{DoxyCompactList}\small\item\em Sets the AI level column visibility. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_menu_screen_a8734e38603d1886079ff185c5aa399bc}{is\+Event\+Type\+AILevel}} (int player\+Num, \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the Screen\+Event\+Type is related to AI level. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_menu_screen_a704fad5ddf438187195732e2b727aaaf}{is\+Event\+Type\+Set\+AI}} (int player\+Num, \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the Screen\+Event\+Type is related to setting AI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_a348efe82320f6cf37be5b873343768d1}{set\+Default\+AILevel\+Buttons\+Focus}} (int player\+Num)
+\begin{DoxyCompactList}\small\item\em Sets the default AI level buttons\textquotesingle{} focus. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structplayer_settings}{player\+Settings}} $>$ $>$ \mbox{\hyperlink{class_game_menu_screen_a1ec0a4aa6bc44f2153e9d2abf290e7c4}{get\+Players\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em Gets the players\textquotesingle{} settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_menu_screen_a4f3b0441bbb05d9c97a5f2970eeacd16}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws the game menu screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the screen for the game menu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_menu_screen_a5c3726575383e12d2a0f55e035be6719}\label{class_game_menu_screen_a5c3726575383e12d2a0f55e035be6719}} 
+\index{GameMenuScreen@{GameMenuScreen}!GameMenuScreen@{GameMenuScreen}}
+\index{GameMenuScreen@{GameMenuScreen}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{GameMenuScreen()}{GameMenuScreen()}}
+{\footnotesize\ttfamily Game\+Menu\+Screen\+::\+Game\+Menu\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_game_menu_screen}{Game\+Menu\+Screen}} class. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a5c3726575383e12d2a0f55e035be6719_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_menu_screen_a5ec0f806edaf1275af6d9eb044e2d8f6}\label{class_game_menu_screen_a5ec0f806edaf1275af6d9eb044e2d8f6}} 
+\index{GameMenuScreen@{GameMenuScreen}!buttonClickHandle@{buttonClickHandle}}
+\index{buttonClickHandle@{buttonClickHandle}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{buttonClickHandle()}{buttonClickHandle()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::button\+Click\+Handle (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Handles button clicks in the game menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+Ptr} & The shared pointer to the \mbox{\hyperlink{class_button}{Button}} clicked. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a5ec0f806edaf1275af6d9eb044e2d8f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a5ec0f806edaf1275af6d9eb044e2d8f6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_a4f3b0441bbb05d9c97a5f2970eeacd16}\label{class_game_menu_screen_a4f3b0441bbb05d9c97a5f2970eeacd16}} 
+\index{GameMenuScreen@{GameMenuScreen}!draw@{draw}}
+\index{draw@{draw}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the game menu screen. 
+
+
+
+Implements \mbox{\hyperlink{class_active_screen_a381ad867612f98caa038c0b775f0c39a}{Active\+Screen}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a4f3b0441bbb05d9c97a5f2970eeacd16_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_af17f9c5e3353be5c531251c4e78d6d0c}\label{class_game_menu_screen_af17f9c5e3353be5c531251c4e78d6d0c}} 
+\index{GameMenuScreen@{GameMenuScreen}!gameMenuCreate@{gameMenuCreate}}
+\index{gameMenuCreate@{gameMenuCreate}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{gameMenuCreate()}{gameMenuCreate()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::game\+Menu\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to create the game menu. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_af17f9c5e3353be5c531251c4e78d6d0c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_af17f9c5e3353be5c531251c4e78d6d0c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_a974eb5076298fbba7e4d6b577f74e888}\label{class_game_menu_screen_a974eb5076298fbba7e4d6b577f74e888}} 
+\index{GameMenuScreen@{GameMenuScreen}!getPlayerNumFromEventType@{getPlayerNumFromEventType}}
+\index{getPlayerNumFromEventType@{getPlayerNumFromEventType}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{getPlayerNumFromEventType()}{getPlayerNumFromEventType()}}
+{\footnotesize\ttfamily int Game\+Menu\+Screen\+::get\+Player\+Num\+From\+Event\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Gets the player number from the Screen\+Event\+Type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The Screen\+Event\+Type to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The player number. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a974eb5076298fbba7e4d6b577f74e888_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_a1ec0a4aa6bc44f2153e9d2abf290e7c4}\label{class_game_menu_screen_a1ec0a4aa6bc44f2153e9d2abf290e7c4}} 
+\index{GameMenuScreen@{GameMenuScreen}!getPlayersSettings@{getPlayersSettings}}
+\index{getPlayersSettings@{getPlayersSettings}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{getPlayersSettings()}{getPlayersSettings()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structplayer_settings}{player\+Settings}} $>$ $>$ Game\+Menu\+Screen\+::get\+Players\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the players\textquotesingle{} settings. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to \mbox{\hyperlink{structplayer_settings}{player\+Settings}} objects. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_active_screen_a571c9f50c3d50235b43a1d2cb01ad72f}{Active\+Screen}}.
+
+\mbox{\Hypertarget{class_game_menu_screen_a8734e38603d1886079ff185c5aa399bc}\label{class_game_menu_screen_a8734e38603d1886079ff185c5aa399bc}} 
+\index{GameMenuScreen@{GameMenuScreen}!isEventTypeAILevel@{isEventTypeAILevel}}
+\index{isEventTypeAILevel@{isEventTypeAILevel}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{isEventTypeAILevel()}{isEventTypeAILevel()}}
+{\footnotesize\ttfamily bool Game\+Menu\+Screen\+::is\+Event\+Type\+AILevel (\begin{DoxyParamCaption}\item[{int}]{player\+Num,  }\item[{\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the Screen\+Event\+Type is related to AI level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Num} & The player number. \\
+\hline
+{\em event} & The Screen\+Event\+Type to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the event is related to AI level, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a8734e38603d1886079ff185c5aa399bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_a704fad5ddf438187195732e2b727aaaf}\label{class_game_menu_screen_a704fad5ddf438187195732e2b727aaaf}} 
+\index{GameMenuScreen@{GameMenuScreen}!isEventTypeSetAI@{isEventTypeSetAI}}
+\index{isEventTypeSetAI@{isEventTypeSetAI}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{isEventTypeSetAI()}{isEventTypeSetAI()}}
+{\footnotesize\ttfamily bool Game\+Menu\+Screen\+::is\+Event\+Type\+Set\+AI (\begin{DoxyParamCaption}\item[{int}]{player\+Num,  }\item[{\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the Screen\+Event\+Type is related to setting AI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Num} & The player number. \\
+\hline
+{\em event} & The Screen\+Event\+Type to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the event is related to setting AI, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a704fad5ddf438187195732e2b727aaaf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_ae427ab9331af7fb8bfa52d88a0977b3e}\label{class_game_menu_screen_ae427ab9331af7fb8bfa52d88a0977b3e}} 
+\index{GameMenuScreen@{GameMenuScreen}!setAILevelColumnVisibility@{setAILevelColumnVisibility}}
+\index{setAILevelColumnVisibility@{setAILevelColumnVisibility}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{setAILevelColumnVisibility()}{setAILevelColumnVisibility()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::set\+AILevel\+Column\+Visibility (\begin{DoxyParamCaption}\item[{int}]{player\+Num,  }\item[{bool}]{visible }\end{DoxyParamCaption})}
+
+
+
+Sets the AI level column visibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Num} & The player number. \\
+\hline
+{\em visible} & Flag indicating if the column should be visible. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_ae427ab9331af7fb8bfa52d88a0977b3e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_ae427ab9331af7fb8bfa52d88a0977b3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_a348efe82320f6cf37be5b873343768d1}\label{class_game_menu_screen_a348efe82320f6cf37be5b873343768d1}} 
+\index{GameMenuScreen@{GameMenuScreen}!setDefaultAILevelButtonsFocus@{setDefaultAILevelButtonsFocus}}
+\index{setDefaultAILevelButtonsFocus@{setDefaultAILevelButtonsFocus}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{setDefaultAILevelButtonsFocus()}{setDefaultAILevelButtonsFocus()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::set\+Default\+AILevel\+Buttons\+Focus (\begin{DoxyParamCaption}\item[{int}]{player\+Num }\end{DoxyParamCaption})}
+
+
+
+Sets the default AI level buttons\textquotesingle{} focus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Num} & The player number. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a348efe82320f6cf37be5b873343768d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a348efe82320f6cf37be5b873343768d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_aa5f7b6ac2cb57c6f700aefe1f727bd77}\label{class_game_menu_screen_aa5f7b6ac2cb57c6f700aefe1f727bd77}} 
+\index{GameMenuScreen@{GameMenuScreen}!setOtherButtonsInactive@{setOtherButtonsInactive}}
+\index{setOtherButtonsInactive@{setOtherButtonsInactive}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{setOtherButtonsInactive()}{setOtherButtonsInactive()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::set\+Other\+Buttons\+Inactive (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Sets other buttons inactive when a button is clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+Ptr} & The shared pointer to the \mbox{\hyperlink{class_button}{Button}} clicked. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_aa5f7b6ac2cb57c6f700aefe1f727bd77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_aa5f7b6ac2cb57c6f700aefe1f727bd77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_ade9e4b9082cd923b43e45ea1f74ebaba}\label{class_game_menu_screen_ade9e4b9082cd923b43e45ea1f74ebaba}} 
+\index{GameMenuScreen@{GameMenuScreen}!setPlayerSettings@{setPlayerSettings}}
+\index{setPlayerSettings@{setPlayerSettings}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{setPlayerSettings()}{setPlayerSettings()}}
+{\footnotesize\ttfamily void Game\+Menu\+Screen\+::set\+Player\+Settings (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{bool}]{is\+None,  }\item[{bool}]{is\+Human,  }\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Sets the player settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the player. \\
+\hline
+{\em is\+None} & Flag indicating if the player is set to None. \\
+\hline
+{\em is\+Human} & Flag indicating if the player is human. \\
+\hline
+{\em level} & The AI level of the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_ade9e4b9082cd923b43e45ea1f74ebaba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_menu_screen_a930fac59e5231f348579a57991246e07}\label{class_game_menu_screen_a930fac59e5231f348579a57991246e07}} 
+\index{GameMenuScreen@{GameMenuScreen}!worker@{worker}}
+\index{worker@{worker}!GameMenuScreen@{GameMenuScreen}}
+\doxysubsubsection{\texorpdfstring{worker()}{worker()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} Game\+Menu\+Screen\+::worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Worker function for the game menu screen. 
+
+\begin{DoxyReturn}{Returns}
+The Screen\+Event\+Type associated with the user interaction. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_active_screen_a3cd9d9f9571195d3fd030c41512348da}{Active\+Screen}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_menu_screen_a930fac59e5231f348579a57991246e07_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_active_screen_8h}{Active\+Screen.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_active_screen_8cc}{Active\+Screen.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="PropertyField::resetDefault" name="PropertyField::resetDefault">
+<area shape="rect" id="node1" title="Resets the property to its default state." alt="" coords="5,31,203,57"/>
+<area shape="rect" id="node2" href="$class_property_field.html#aa3a6b0249d36134b9cc63872922e447f" title="Resets the owner of the property." alt="" coords="264,5,455,32"/>
+<area shape="rect" id="node3" href="$class_property_field.html#a8ed81fa863c3d443a69141445d66616e" title="Sets the mortgaged state of the property." alt="" coords="251,56,468,83"/>
+</map>

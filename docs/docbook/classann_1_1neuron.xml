@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classann_1_1neuron" xml:lang="en-US">
+<title>ann::neuron Class Reference</title>
+<indexterm><primary>ann::neuron</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classann_1_1neuron_1aabb42bdb443921bc5eb1f132d3d9d5aa"/>int <emphasis role="strong">type</emphasis> = 0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classann_1_1neuron_1a0b6b6472402523a9c87e3a6e2afa6b5a"/>double <emphasis role="strong">value</emphasis> = 0.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classann_1_1neuron_1a921b38cf47c642db2d8db2b6e0514c77"/>bool <emphasis role="strong">visited</emphasis> = false</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classann_1_1neuron_1aaa89c9870e47b5a3d7ff99e3de9f92c0"/>std::vector&lt; std::pair&lt; size_t, double &gt; &gt; <emphasis role="strong">in_nodes</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyann_8h">Tinyann.h</link></section>

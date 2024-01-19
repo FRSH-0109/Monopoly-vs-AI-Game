@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_context_window" kind="class" language="C++" prot="public">
+    <compoundname>ContextWindow</compoundname>
+    <includes refid="_context_window_8h" local="no">ContextWindow.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_context_window_1a1d77a7936d736685ae6dd4f50f333f44" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow * ContextWindow::context_window_</definition>
+        <argsstring></argsstring>
+        <name>context_window_</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Static pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref> instance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="28" column="22" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_context_window_1a25341464088c696488399cdeb7d7b577" prot="public" static="no" mutable="no">
+        <type>sf::RenderWindow</type>
+        <definition>sf::RenderWindow ContextWindow::window_</definition>
+        <argsstring></argsstring>
+        <name>window_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SFML RenderWindow object for rendering graphics. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="50" column="18" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">getWindow</referencedby>
+        <referencedby refid="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" compoundref="_field_8cc" startline="106" endline="112">Field::setHeight</referencedby>
+        <referencedby refid="class_field_1a664b22a22c392fcd9a20df37ab1e5739" compoundref="_field_8cc" startline="114" endline="120">Field::setWidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_context_window_1a825b9ccdca45f2807b44e40077fbae02" prot="public" static="no" mutable="no">
+        <type>sf::View</type>
+        <definition>sf::View ContextWindow::view_</definition>
+        <argsstring></argsstring>
+        <name>view_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SFML View object for defining a camera in the 2D scene. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="51" column="10" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" compoundref="_context_window_8cc" startline="45" endline="47">getView</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_context_window_1abe0be6d5b093c829cb8d649d07024d92" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ContextWindow::ContextWindow</definition>
+        <argsstring>()</argsstring>
+        <name>ContextWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private constructor to enforce Singleton pattern. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="27" column="1" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="20" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_context_window_1ae56e76fedccfadd3762531f1737428dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ContextWindow::ContextWindow</definition>
+        <argsstring>(ContextWindow &amp;other)=delete</argsstring>
+        <name>ContextWindow</name>
+        <param>
+          <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Deleted constructor for proper Singleton class implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_context_window_1a8625c1b2f2d6d6a73677cb04c9c4d69c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ContextWindow::operator=</definition>
+        <argsstring>(const ContextWindow &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_context_window" kindref="compound">ContextWindow</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted = operator for proper Singleton class implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="41" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ContextWindow::display</definition>
+        <argsstring>()</argsstring>
+        <name>display</name>
+        <briefdescription>
+<para>Displays the contents of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="56" column="6" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="29" bodyend="31"/>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">getWindow</references>
+        <referencedby refid="class_game_engine_1acfa98b8be6a8843ec87d8dd3d7b23349" compoundref="_game_engine_8cc" startline="78" endline="87">GameEngine::display</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_context_window_1a08a570de8e104db8123418800b23ad2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ContextWindow::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Clears the contents of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="61" column="6" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="33" bodyend="35"/>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">getWindow</references>
+      </memberdef>
+      <memberdef kind="function" id="class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ContextWindow::isOpen</definition>
+        <argsstring>()</argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+<para>Checks if the window is open. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the window is open, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="68" column="6" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="37" bodyend="39"/>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">getWindow</references>
+      </memberdef>
+      <memberdef kind="function" id="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::RenderWindow &amp;</type>
+        <definition>sf::RenderWindow &amp; ContextWindow::getWindow</definition>
+        <argsstring>()</argsstring>
+        <name>getWindow</name>
+        <briefdescription>
+<para>Gets the SFML RenderWindow object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the SFML RenderWindow object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="75" column="18" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="41" bodyend="43"/>
+        <references refid="class_context_window_1a25341464088c696488399cdeb7d7b577" compoundref="_context_window_8h" startline="50">window_</references>
+        <referencedby refid="class_context_window_1a08a570de8e104db8123418800b23ad2c" compoundref="_context_window_8cc" startline="33" endline="35">clear</referencedby>
+        <referencedby refid="class_game_engine_1a9bfc5c11e97601f3588c62027b43616d" compoundref="_game_engine_8cc" startline="58" endline="60">GameEngine::clear</referencedby>
+        <referencedby refid="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" compoundref="_context_window_8cc" startline="29" endline="31">display</referencedby>
+        <referencedby refid="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16" compoundref="_active_screen_8cc" startline="223" endline="233">GameMenuScreen::draw</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_game_engine_1a398cd2cb9ed1f5b94a6e8c008f2249ca" compoundref="_game_engine_8cc" startline="18" endline="36">GameEngine::GameEngine</referencedby>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40" compoundref="_context_window_8cc" startline="37" endline="39">isOpen</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+        <referencedby refid="class_game_engine_1a63e839e92c780aa9b8fe159a73a8fabd" compoundref="_game_engine_8cc" startline="62" endline="76">GameEngine::pollForEvents</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::View &amp;</type>
+        <definition>sf::View &amp; ContextWindow::getView</definition>
+        <argsstring>()</argsstring>
+        <name>getView</name>
+        <briefdescription>
+<para>Gets the SFML View object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the SFML View object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="82" column="10" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="45" bodyend="47"/>
+        <references refid="class_context_window_1a825b9ccdca45f2807b44e40077fbae02" compoundref="_context_window_8h" startline="51">view_</references>
+        <referencedby refid="class_game_engine_1a398cd2cb9ed1f5b94a6e8c008f2249ca" compoundref="_game_engine_8cc" startline="18" endline="36">GameEngine::GameEngine</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow * ContextWindow::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <briefdescription>
+<para>Gets the pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="48" column="22" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.cc" bodystart="22" bodyend="27"/>
+        <referencedby refid="class_game_engine_1a398cd2cb9ed1f5b94a6e8c008f2249ca" compoundref="_game_engine_8cc" startline="18" endline="36">GameEngine::GameEngine</referencedby>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" compoundref="_game_screen_8cc" startline="17" endline="66">GameScreen::GameScreen</referencedby>
+        <referencedby refid="class_field_1af1d9991ce36def51f2999a959b7873fa" compoundref="_field_8cc" startline="39" endline="42">Field::getContextWindow</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a Singleton class for handling SFML window operations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_context_window" kindref="compound">ContextWindow</ref> class is a Singleton class used mainly for handling SFML window operations between other classes. </para>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/ContextWindow.h" line="25" column="1" bodyfile="/home/kamil/zpr/Monopoly/ContextWindow.h" bodystart="25" bodyend="83"/>
+    <listofallmembers>
+      <member refid="class_context_window_1a08a570de8e104db8123418800b23ad2c" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>clear</name></member>
+      <member refid="class_context_window_1a1d77a7936d736685ae6dd4f50f333f44" prot="private" virt="non-virtual"><scope>ContextWindow</scope><name>context_window_</name></member>
+      <member refid="class_context_window_1abe0be6d5b093c829cb8d649d07024d92" prot="private" virt="non-virtual"><scope>ContextWindow</scope><name>ContextWindow</name></member>
+      <member refid="class_context_window_1ae56e76fedccfadd3762531f1737428dd" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>ContextWindow</name></member>
+      <member refid="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>display</name></member>
+      <member refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>GetInstance</name></member>
+      <member refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>getView</name></member>
+      <member refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>getWindow</name></member>
+      <member refid="class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>isOpen</name></member>
+      <member refid="class_context_window_1a8625c1b2f2d6d6a73677cb04c9c4d69c" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>operator=</name></member>
+      <member refid="class_context_window_1a825b9ccdca45f2807b44e40077fbae02" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>view_</name></member>
+      <member refid="class_context_window_1a25341464088c696488399cdeb7d7b577" prot="public" virt="non-virtual"><scope>ContextWindow</scope><name>window_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

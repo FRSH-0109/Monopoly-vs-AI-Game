@@ -1,0 +1,8 @@
+<map id="MonopolyGameEngine::performAuction" name="MonopolyGameEngine::performAuction">
+<area shape="rect" id="node1" title="Performs the auction." alt="" coords="5,129,175,171"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac157740551b8c65aefd2f1563305406a" title="Gets the current state of the auction." alt="" coords="223,5,392,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="223,71,392,112"/>
+<area shape="rect" id="node4" href="$class_property_field.html#aafcf4b8fd5fb49a727cb564c0c99a3eb" title="Gets the price of the property." alt="" coords="223,137,392,163"/>
+<area shape="rect" id="node5" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="251,187,363,214"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#aa95963ea9455d6ac635d27eab779b6ce" title="Sets the state of the auction." alt="" coords="223,239,392,280"/>
+</map>

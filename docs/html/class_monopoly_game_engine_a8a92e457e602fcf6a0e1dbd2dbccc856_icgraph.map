@@ -1,0 +1,9 @@
+<map id="MonopolyGameEngine::addText" name="MonopolyGameEngine::addText">
+<area shape="rect" id="node1" title="Adds text to the GUI." alt="" coords="539,152,708,193"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac8629f2abd1bf12cfc0af747d16c867f" title="Creates text displaying the available count of houses and hotels." alt="" coords="249,5,491,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#abbda29a495969e795d71c3a5d215b547" title="Creates buttons for buying, selling houses, and hotels." alt="" coords="265,71,475,127"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a32c0ecaa71c51cdaae65178836af75b0" title="Creates text for displaying players&#39; information." alt="" coords="285,152,455,193"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a73d985dc04d394ec469ee5d01e6b9a89" title="Creates text for displaying the rolled dice value." alt="" coords="281,217,459,259"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a7b07579e424f37298496eefaae2390e1" title="Creates text for displaying turn information." alt="" coords="285,283,455,324"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="5,159,201,186"/>
+</map>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structplayer_settings" xml:lang="en-US">
+<title>playerSettings Struct Reference</title>
+<indexterm><primary>playerSettings</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structplayer_settings_1a4e09d82bad1ebe1d80d01b77f6c22af8"/>bool <emphasis role="strong">isNone</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structplayer_settings_1a7e4f4f6444ffff96d1d0a2f24702227e"/>bool <emphasis role="strong">isHuman</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structplayer_settings_1a8c54bc6ea5588e457e7f4a4a3e8d7b5e"/>int <emphasis role="strong">level</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="_main_8h">main.h</link></section>

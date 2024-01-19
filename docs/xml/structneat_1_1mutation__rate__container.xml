@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structneat_1_1mutation__rate__container" kind="struct" language="C++" prot="public">
+    <compoundname>neat::mutation_rate_container</compoundname>
+    <includes refid="_tinyneat_8h" local="no">Tinyneat.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1a85fb4293430dff8370fd6c8dc605d632" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::connection_mutate_chance</definition>
+        <argsstring></argsstring>
+        <name>connection_mutate_chance</name>
+        <initializer>= 0.25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="37" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1a324c7255ddf2ae3aa86641e5d2802b74" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::perturb_chance</definition>
+        <argsstring></argsstring>
+        <name>perturb_chance</name>
+        <initializer>= 0.90</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="38" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1af23420caa17f977d11d760be23915430" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::crossover_chance</definition>
+        <argsstring></argsstring>
+        <name>crossover_chance</name>
+        <initializer>= 0.75</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="39" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1a78f5efae4c29355ec967433e97732eb0" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::link_mutation_chance</definition>
+        <argsstring></argsstring>
+        <name>link_mutation_chance</name>
+        <initializer>= 2.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="40" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1a49d56c792a4f9b1d4fea921fb6b01660" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::node_mutation_chance</definition>
+        <argsstring></argsstring>
+        <name>node_mutation_chance</name>
+        <initializer>= 0.50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="41" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1add0037d4a5c4b62f9eba2feaaf28bbc8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::bias_mutation_chance</definition>
+        <argsstring></argsstring>
+        <name>bias_mutation_chance</name>
+        <initializer>= 0.40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="42" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1acd06788e00f7fdc2c12ff6ed64887dae" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::step_size</definition>
+        <argsstring></argsstring>
+        <name>step_size</name>
+        <initializer>= 0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="43" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1a3b02ae2d4acd5e263b242357099120b7" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::disable_mutation_chance</definition>
+        <argsstring></argsstring>
+        <name>disable_mutation_chance</name>
+        <initializer>= 0.4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="44" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1mutation__rate__container_1a77ec9dfea30fe11c7d50f5a01e6cf4ef" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::mutation_rate_container::enable_mutation_chance</definition>
+        <argsstring></argsstring>
+        <name>enable_mutation_chance</name>
+        <initializer>= 0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="45" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structneat_1_1mutation__rate__container_1afeaa2325ca22c0b1f54f30bff2d4afed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::mutation_rate_container::read</definition>
+        <argsstring>(std::ifstream &amp;o)</argsstring>
+        <name>read</name>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="47" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="609" bodyend="619"/>
+        <referencedby refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" compoundref="_tinyneat_8cc" startline="460" endline="544">neat::pool::import_fromfile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structneat_1_1mutation__rate__container_1a79b3a916b32de0d74446777a890260db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::mutation_rate_container::write</definition>
+        <argsstring>(std::ofstream &amp;o, std::string prefix)</argsstring>
+        <name>write</name>
+        <param>
+          <type>std::ofstream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="48" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="621" bodyend="631"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="36" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="36" bodyend="49"/>
+    <listofallmembers>
+      <member refid="structneat_1_1mutation__rate__container_1add0037d4a5c4b62f9eba2feaaf28bbc8" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>bias_mutation_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a85fb4293430dff8370fd6c8dc605d632" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>connection_mutate_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1af23420caa17f977d11d760be23915430" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>crossover_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a3b02ae2d4acd5e263b242357099120b7" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>disable_mutation_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a77ec9dfea30fe11c7d50f5a01e6cf4ef" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>enable_mutation_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a78f5efae4c29355ec967433e97732eb0" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>link_mutation_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a49d56c792a4f9b1d4fea921fb6b01660" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>node_mutation_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a324c7255ddf2ae3aa86641e5d2802b74" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>perturb_chance</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1afeaa2325ca22c0b1f54f30bff2d4afed" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>read</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1acd06788e00f7fdc2c12ff6ed64887dae" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>step_size</name></member>
+      <member refid="structneat_1_1mutation__rate__container_1a79b3a916b32de0d74446777a890260db" prot="public" virt="non-virtual"><scope>neat::mutation_rate_container</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

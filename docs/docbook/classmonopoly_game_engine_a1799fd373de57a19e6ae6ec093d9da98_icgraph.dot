@@ -1,0 +1,24 @@
+digraph "monopolyGameEngine::addText"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="monopolyGameEngine\l::addText",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="monopolyGameEngine\l::createAvailableHousesHotelText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a8b035a55bf9704c96b24dd363b217530",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GameScreen::GameScreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="monopolyGameEngine\l::createButtonsBuySellHouse\lHotel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a34df202e27c1adb6a3db0e74e99d0eae",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="monopolyGameEngine\l::createTextPlayersInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a04045ab52d75c210266c71ba994e7871",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="monopolyGameEngine\l::createTextRolledValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a603ea518679d0045b3c9cd9567a57aa8",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="monopolyGameEngine\l::createTextTurnInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a442f54154ce96c27af24e3e3767bf2ab",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

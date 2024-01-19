@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structneat_1_1speciating__parameter__container" kind="struct" language="C++" prot="public">
+    <compoundname>neat::speciating_parameter_container</compoundname>
+    <includes refid="_tinyneat_8h" local="no">Tinyneat.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structneat_1_1speciating__parameter__container_1ad2458c000476a017111cc5ae8adc8780" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::speciating_parameter_container::population</definition>
+        <argsstring></argsstring>
+        <name>population</name>
+        <initializer>= 240</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="52" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">neat::pool::pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1speciating__parameter__container_1a031fef276c80aed6bc53ca26e2d4b801" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::speciating_parameter_container::delta_disjoint</definition>
+        <argsstring></argsstring>
+        <name>delta_disjoint</name>
+        <initializer>= 2.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="53" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1speciating__parameter__container_1a4bd4257f2cb785b4a652adfef4b2ab56" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::speciating_parameter_container::delta_weights</definition>
+        <argsstring></argsstring>
+        <name>delta_weights</name>
+        <initializer>= 0.4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="54" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1speciating__parameter__container_1a73347a764c86e9775a17b27b4db0b583" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double neat::speciating_parameter_container::delta_threshold</definition>
+        <argsstring></argsstring>
+        <name>delta_threshold</name>
+        <initializer>= 1.3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="55" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structneat_1_1speciating__parameter__container_1a040a8d008b7400bf02d63d4c5ab0612f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::speciating_parameter_container::stale_species</definition>
+        <argsstring></argsstring>
+        <name>stale_species</name>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="56" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structneat_1_1speciating__parameter__container_1aae938961a4707b04ea19f078d8af1fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::speciating_parameter_container::read</definition>
+        <argsstring>(std::ifstream &amp;o)</argsstring>
+        <name>read</name>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="58" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="633" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="structneat_1_1speciating__parameter__container_1abcd57a349c318372854d94aa388944f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::speciating_parameter_container::write</definition>
+        <argsstring>(std::ofstream &amp;o, std::string prefix)</argsstring>
+        <name>write</name>
+        <param>
+          <type>std::ofstream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="59" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="641" bodyend="647"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="51" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="51" bodyend="60"/>
+    <listofallmembers>
+      <member refid="structneat_1_1speciating__parameter__container_1a031fef276c80aed6bc53ca26e2d4b801" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>delta_disjoint</name></member>
+      <member refid="structneat_1_1speciating__parameter__container_1a73347a764c86e9775a17b27b4db0b583" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>delta_threshold</name></member>
+      <member refid="structneat_1_1speciating__parameter__container_1a4bd4257f2cb785b4a652adfef4b2ab56" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>delta_weights</name></member>
+      <member refid="structneat_1_1speciating__parameter__container_1ad2458c000476a017111cc5ae8adc8780" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>population</name></member>
+      <member refid="structneat_1_1speciating__parameter__container_1aae938961a4707b04ea19f078d8af1fd6" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>read</name></member>
+      <member refid="structneat_1_1speciating__parameter__container_1a040a8d008b7400bf02d63d4c5ab0612f" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>stale_species</name></member>
+      <member refid="structneat_1_1speciating__parameter__container_1abcd57a349c318372854d94aa388944f3" prot="public" virt="non-virtual"><scope>neat::speciating_parameter_container</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

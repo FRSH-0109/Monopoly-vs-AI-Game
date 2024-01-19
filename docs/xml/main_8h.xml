@@ -1,0 +1,969 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="main_8h" kind="file" language="C++">
+    <compoundname>main.h</compoundname>
+    <includedby refid="_active_screen_8h" local="yes">/home/kamil/zpr/Monopoly/ActiveScreen.h</includedby>
+    <includedby refid="_board_8h" local="yes">/home/kamil/zpr/Monopoly/Board.h</includedby>
+    <includedby refid="_button_8h" local="yes">/home/kamil/zpr/Monopoly/Button.h</includedby>
+    <includedby refid="_chance_8h" local="yes">/home/kamil/zpr/Monopoly/Chance.h</includedby>
+    <includedby refid="_field_8h" local="yes">/home/kamil/zpr/Monopoly/Field.h</includedby>
+    <includedby refid="_game_engine_8h" local="yes">/home/kamil/zpr/Monopoly/GameEngine.h</includedby>
+    <includedby refid="_monopoly_game_engine_8h" local="yes">/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</includedby>
+    <includedby refid="_player_8h" local="yes">/home/kamil/zpr/Monopoly/Player.h</includedby>
+    <includedby refid="_withdraw_8h" local="yes">/home/kamil/zpr/Monopoly/Withdraw.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/ActiveScreen.cc</label>
+        <link refid="_active_screen_8cc"/>
+      </node>
+      <node id="10">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/ActiveScreen.h</label>
+        <link refid="_active_screen_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/kamil/zpr/Monopoly/Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>/home/kamil/zpr/Monopoly/Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="17">
+        <label>/home/kamil/zpr/Monopoly/Chance.h</label>
+        <link refid="_chance_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/kamil/zpr/Monopoly/Button.cc</label>
+        <link refid="_button_8cc"/>
+      </node>
+      <node id="18">
+        <label>/home/kamil/zpr/Monopoly/Chance.cc</label>
+        <link refid="_chance_8cc"/>
+      </node>
+      <node id="15">
+        <label>/home/kamil/zpr/Monopoly/Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/kamil/zpr/Monopoly/Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>/home/kamil/zpr/Monopoly/Field.cc</label>
+        <link refid="_field_8cc"/>
+      </node>
+      <node id="9">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/kamil/zpr/Monopoly/Board.cc</label>
+        <link refid="_board_8cc"/>
+      </node>
+      <node id="22">
+        <label>/home/kamil/zpr/Monopoly/Player.cc</label>
+        <link refid="_player_8cc"/>
+      </node>
+      <node id="8">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+      <node id="14">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.cc</label>
+        <link refid="_withdraw_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_dimension_exception" prot="public">DimensionException</innerclass>
+    <innerclass refid="class_rotation_exception" prot="public">RotationException</innerclass>
+    <innerclass refid="class_sprite_offset_exception" prot="public">SpriteOffsetException</innerclass>
+    <innerclass refid="structplayer_settings" prot="public">playerSettings</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="main_8h_1a1fbb23a4b2427b486453417312008cfb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TurnState</name>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfba099a1107d491216f971a9f58e08abdd5" prot="public">
+          <name>ROLL_DICE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfbabb5f67832e200b08e5e2a19bf32e1d3d" prot="public">
+          <name>FIELD_ACTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfbaadfb6dd0e03e15e442580ace912d1b71" prot="public">
+          <name>BUY_ACTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfba4e193c6e86daebec935247df1bdefe81" prot="public">
+          <name>PAY_RENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfba3d215bd2cb3f68104967d4a5706dfa66" prot="public">
+          <name>TURN_END</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfbab4ed9978f386ea18f050801b0ac02379" prot="public">
+          <name>WITHDRAW_ONGOING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfba14b4b35c7a8b79c53370a7e79a1aa5ed" prot="public">
+          <name>RESULTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a1fbb23a4b2427b486453417312008cfba3f8787368a9aa87f0bde02c09574a1df" prot="public">
+          <name>NO_TURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing monopoly game states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="67" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="67" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1a816a6251d75e4dcd37d944ca68752095" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GameScreenType</name>
+        <enumvalue id="main_8h_1a816a6251d75e4dcd37d944ca68752095a346a9950c4deb7434599827156fb0a5d" prot="public">
+          <name>BOARDGAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a816a6251d75e4dcd37d944ca68752095a101eeb39bd34a660642f0049a15b9a00" prot="public">
+          <name>WITHDRAW_CHOOSE_PLAYER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a816a6251d75e4dcd37d944ca68752095a676348a9c84d4798693550bfe5abefb4" prot="public">
+          <name>WITHDRAW_ADD_VALUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a816a6251d75e4dcd37d944ca68752095a54a1652cbf634efed1a32b13ce600121" prot="public">
+          <name>WITHDRAW_DECISION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a816a6251d75e4dcd37d944ca68752095ad1d2481f8e5c8b3feb0e8e1e10d2605d" prot="public">
+          <name>AUCTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a816a6251d75e4dcd37d944ca68752095a7186ecefe792fdae9fec0a42f105ad6b" prot="public">
+          <name>RESULT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing possible showed screens in game screen object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="82" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ActiveScreenType</name>
+        <enumvalue id="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eac157bdf0b85a40d2619cbc8bc1ae5fe2" prot="public">
+          <name>NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eac22743f1fc74de09544ecc9bab74a17b" prot="public">
+          <name>MAIN_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eaa65481e2492a0d2954f4e8de6dabf01d" prot="public">
+          <name>GAME_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3ea562b9839d5f81729482626570ca43b5e" prot="public">
+          <name>MONOPOLY_GAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing possible screen to be shown. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="88" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ScreenEventType</name>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afd6a0e4343048b10646dd2976cc5ad18" prot="public">
+          <name>IDLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7a10b5d68d31711288e1fe0fa17dbf4f" prot="public">
+          <name>EXIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0352906d1ea1dfcd663c918f3a86755b" prot="public">
+          <name>PLAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a25009c3a00abcaa12abf0f04eb8d5b67" prot="public">
+          <name>RETURN_TO_MAIN_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aefeae4e7efa7be08dead75bb7d0bda64" prot="public">
+          <name>PLAYER_1_SET_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a064250338f42c9f7e1befb71f7cf802e" prot="public">
+          <name>PLAYER_2_SET_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8325febe2c6095e6293d46c7642695ba" prot="public">
+          <name>PLAYER_3_SET_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ab31023d85b15b88cd7ec364fead83304" prot="public">
+          <name>PLAYER_4_SET_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a05eb103383e8fab8ec3c7bb0ce3b784c" prot="public">
+          <name>PLAYER_1_SET_HUMAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a4e1b1f9764dc1d2478cc5a9293242cdd" prot="public">
+          <name>PLAYER_2_SET_HUMAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0ab423c3a677b07e0af42d5fdff4a05a" prot="public">
+          <name>PLAYER_3_SET_HUMAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afc2c1b58ad426453cc5b6310d491fc7b" prot="public">
+          <name>PLAYER_4_SET_HUMAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aea6984aa09b2b69208ca7eecf236f818" prot="public">
+          <name>PLAYER_1_SET_AI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a3b399446ef96348a6d6f2c29b2167f8b" prot="public">
+          <name>PLAYER_2_SET_AI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aff036f98f13340398bfa63e59f4b0356" prot="public">
+          <name>PLAYER_3_SET_AI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a265730736e3985c3e75bc451b99978a8" prot="public">
+          <name>PLAYER_4_SET_AI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" prot="public">
+          <name>PLAYER_1_SET_AI_LEVEL_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" prot="public">
+          <name>PLAYER_2_SET_AI_LEVEL_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" prot="public">
+          <name>PLAYER_3_SET_AI_LEVEL_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" prot="public">
+          <name>PLAYER_4_SET_AI_LEVEL_1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" prot="public">
+          <name>PLAYER_1_SET_AI_LEVEL_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" prot="public">
+          <name>PLAYER_2_SET_AI_LEVEL_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" prot="public">
+          <name>PLAYER_3_SET_AI_LEVEL_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" prot="public">
+          <name>PLAYER_4_SET_AI_LEVEL_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" prot="public">
+          <name>PLAYER_1_SET_AI_LEVEL_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" prot="public">
+          <name>PLAYER_2_SET_AI_LEVEL_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" prot="public">
+          <name>PLAYER_3_SET_AI_LEVEL_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" prot="public">
+          <name>PLAYER_4_SET_AI_LEVEL_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3accab244294e0e1bcded736405b2db375" prot="public">
+          <name>START_GAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a176f3285bbb35321f21db4745967df3a" prot="public">
+          <name>GAME_ENDED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing events that can be returned from showed screens of ActiveScreenType type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="95" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="95" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FieldType</name>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4bcaa53ccaacd4fb0a09eda9b8666ec8" prot="public">
+          <name>STREET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daabe1ce018b886341a69d81ead8cffc786" prot="public">
+          <name>STATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daaf91e6d92929883d407d0e190c4f45ad5" prot="public">
+          <name>UTILITY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa50d8e53aac4e002d0fd296c5033ce985" prot="public">
+          <name>GO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa81d2bb6df05f24d8afc01889a493875c" prot="public">
+          <name>CHANCE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa73226d8625a6ca9e2460030618a7fec5" prot="public">
+          <name>COMMUNITY_CHEST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa30e59148af45aa6e6ab6bf5250a83f95" prot="public">
+          <name>TAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa660bfa29a629dc2680b8fba156bf35b2" prot="public">
+          <name>JAIL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa676f8257843de2c2b3429b956a8c7d38" prot="public">
+          <name>FREE_PARKING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4c8584e93a1064fe61e904f19722d2d3" prot="public">
+          <name>GO_TO_JAIL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing possible fields types in monopoly board. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="132" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>StreetTiers</name>
+        <enumvalue id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3afbe39846abf8d0ca655daa4c5e6675f6" prot="public">
+          <name>NO_HOUSES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3ae9309352dfb1c2542328bf77b979b796" prot="public">
+          <name>ONE_HOUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a0ab6dd54fe0c67ece897f56705db3e3f" prot="public">
+          <name>TWO_HOUESES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a3cfedac7ca093a36b14fd248a3b8a5b4" prot="public">
+          <name>THREE_HOUSES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a1721e377912232cb891c4f9d8b96a59a" prot="public">
+          <name>FOUR_HOUSES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a9d02c50113762d50ac07c31528974579" prot="public">
+          <name>HOTEL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing possible street tiers (houses and hotel posessions) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="138" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="138" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1a5557e51432d2a191244125a3af3594be" prot="public" static="no" strong="no">
+        <type></type>
+        <name>StationTiers</name>
+        <enumvalue id="main_8h_1a5557e51432d2a191244125a3af3594bea5abd12f5714ad8a5c78fbcfdd13d8363" prot="public">
+          <name>ONE_STATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a5557e51432d2a191244125a3af3594bea324e5b4c78cf4a0c67ef4164dc635dc2" prot="public">
+          <name>TWO_STATIONS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a5557e51432d2a191244125a3af3594bea4ee7c40343f7fc51e168ebb665d4865d" prot="public">
+          <name>THREE_STATIONS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a5557e51432d2a191244125a3af3594beaf5d374fd66e430d41b08642d1197a585" prot="public">
+          <name>FOUR_STATIONS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing possible station tiers (how many is owned) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="144" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="144" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1adcf7f1dbe13f702c7153ae56f085a113" prot="public" static="no" strong="no">
+        <type></type>
+        <name>UtilityTiers</name>
+        <enumvalue id="main_8h_1adcf7f1dbe13f702c7153ae56f085a113ae71bdf2240af02a5ef8ded8c01a8a692" prot="public">
+          <name>ONE_UTILITY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1adcf7f1dbe13f702c7153ae56f085a113afd679c479954ac2c4c7143bc5e45cb6d" prot="public">
+          <name>TWO_UTILITIES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum describing possible utility tiers (how many is owned) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="150" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="150" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Decision</name>
+        <enumvalue id="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca99f136a862ba5c7d16967231c29f09d6" prot="public">
+          <name>YES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca0d077f5b932ce05e5b9f30c6087a2f31" prot="public">
+          <name>NO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enums describing ai adapter decisions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="156" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>JailDecision</name>
+        <enumvalue id="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa2eeb9fef8a6a516fa6437a44a6efbd52" prot="public">
+          <name>ROLL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa4ec59db2fdb4c4c9a2cbef2d790131f5" prot="public">
+          <name>PAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa159689cdd8e8646707acb32f0b09b07a" prot="public">
+          <name>CARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="157" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="enum" id="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007" prot="public" static="no" strong="no">
+        <type></type>
+        <name>BuyDecision</name>
+        <enumvalue id="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007a63bd0e8187aecf59420bcdb967a523ab" prot="public">
+          <name>BUY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007a528042e12195bec7e89166ebb030caf7" prot="public">
+          <name>RESIGN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="158" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="158" bodyend="158"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file containing structures shared between project files. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MAIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_dimension_exception" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_dimension_exception" kindref="compound">DimensionException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bad_dimension_;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="class_dimension_exception_1a205b2338798ce20d22bc13908b45f1eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dimension_exception_1a205b2338798ce20d22bc13908b45f1eb" kindref="member">DimensionException</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dimension)<sp/>:<sp/>bad_dimension_(dimension){};</highlight></codeline>
+<codeline lineno="22" refid="class_dimension_exception_1aeea90857bf7639ea21ca8dbfdef5805e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dimension_exception_1aeea90857bf7639ea21ca8dbfdef5805e" kindref="member">DimensionException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_dimension_exception" kindref="compound">DimensionException</ref>&amp;<sp/>e)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">()<sp/>:<sp/>bad_dimension_(e.bad_dimension_){};</highlight></codeline>
+<codeline lineno="23" refid="class_dimension_exception_1a78036604ba7a79af8e5dd438ad41e388" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_dimension_exception_1a78036604ba7a79af8e5dd438ad41e388" kindref="member">getBadDimension</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bad_dimension_;<sp/>};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_rotation_exception" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_rotation_exception" kindref="compound">RotationException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bad_rotation_;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="class_rotation_exception_1aaccd10ab00dafb9786a5cc95c6f23ec8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_rotation_exception_1aaccd10ab00dafb9786a5cc95c6f23ec8" kindref="member">RotationException</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotation)<sp/>:<sp/>bad_rotation_(rotation){};</highlight></codeline>
+<codeline lineno="35" refid="class_rotation_exception_1ab7a841d71bac25dd3a28dd4e1fccab0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_rotation_exception_1ab7a841d71bac25dd3a28dd4e1fccab0c" kindref="member">RotationException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_rotation_exception" kindref="compound">RotationException</ref>&amp;<sp/>e)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">()<sp/>:<sp/>bad_rotation_(e.bad_rotation_){};</highlight></codeline>
+<codeline lineno="36" refid="class_rotation_exception_1a3af9294374405df6219c80b2b32a703d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_rotation_exception_1a3af9294374405df6219c80b2b32a703d" kindref="member">getBadRotation</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bad_rotation_;<sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_sprite_offset_exception" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_sprite_offset_exception" kindref="compound">SpriteOffsetException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bad_offset_;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="class_sprite_offset_exception_1a399916b1259c4f8ee2b8a2da0c71c40d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_sprite_offset_exception_1a399916b1259c4f8ee2b8a2da0c71c40d" kindref="member">SpriteOffsetException</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>offset)<sp/>:<sp/>bad_offset_(offset){};</highlight></codeline>
+<codeline lineno="48" refid="class_sprite_offset_exception_1a63919d23583c8ae96d23e6093cd8dacd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_sprite_offset_exception_1a63919d23583c8ae96d23e6093cd8dacd" kindref="member">SpriteOffsetException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_sprite_offset_exception" kindref="compound">SpriteOffsetException</ref>&amp;<sp/>e)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">()<sp/>:<sp/>bad_offset_(e.bad_offset_){};</highlight></codeline>
+<codeline lineno="49" refid="class_sprite_offset_exception_1a10004d81ae7236bd215d50fec24211da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_sprite_offset_exception_1a10004d81ae7236bd215d50fec24211da" kindref="member">getBadOffset</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bad_offset_;<sp/>};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="structplayer_settings" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structplayer_settings" kindref="compound">playerSettings</ref><sp/>{</highlight></codeline>
+<codeline lineno="58" refid="structplayer_settings_1a4e09d82bad1ebe1d80d01b77f6c22af8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structplayer_settings_1a4e09d82bad1ebe1d80d01b77f6c22af8" kindref="member">isNone</ref>;</highlight></codeline>
+<codeline lineno="59" refid="structplayer_settings_1a7e4f4f6444ffff96d1d0a2f24702227e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structplayer_settings_1a7e4f4f6444ffff96d1d0a2f24702227e" kindref="member">isHuman</ref>;</highlight></codeline>
+<codeline lineno="60" refid="structplayer_settings_1a8c54bc6ea5588e457e7f4a4a3e8d7b5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structplayer_settings_1a8c54bc6ea5588e457e7f4a4a3e8d7b5e" kindref="member">level</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="main_8h_1a1fbb23a4b2427b486453417312008cfba099a1107d491216f971a9f58e08abdd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfba099a1107d491216f971a9f58e08abdd5" kindref="member">ROLL_DICE</ref>,</highlight></codeline>
+<codeline lineno="69" refid="main_8h_1a1fbb23a4b2427b486453417312008cfbabb5f67832e200b08e5e2a19bf32e1d3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfbabb5f67832e200b08e5e2a19bf32e1d3d" kindref="member">FIELD_ACTION</ref>,</highlight></codeline>
+<codeline lineno="70" refid="main_8h_1a1fbb23a4b2427b486453417312008cfbaadfb6dd0e03e15e442580ace912d1b71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfbaadfb6dd0e03e15e442580ace912d1b71" kindref="member">BUY_ACTION</ref>,</highlight></codeline>
+<codeline lineno="71" refid="main_8h_1a1fbb23a4b2427b486453417312008cfba4e193c6e86daebec935247df1bdefe81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfba4e193c6e86daebec935247df1bdefe81" kindref="member">PAY_RENT</ref>,</highlight></codeline>
+<codeline lineno="72" refid="main_8h_1a1fbb23a4b2427b486453417312008cfba3d215bd2cb3f68104967d4a5706dfa66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfba3d215bd2cb3f68104967d4a5706dfa66" kindref="member">TURN_END</ref>,</highlight></codeline>
+<codeline lineno="73" refid="main_8h_1a1fbb23a4b2427b486453417312008cfbab4ed9978f386ea18f050801b0ac02379" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfbab4ed9978f386ea18f050801b0ac02379" kindref="member">WITHDRAW_ONGOING</ref>,</highlight></codeline>
+<codeline lineno="74" refid="main_8h_1a1fbb23a4b2427b486453417312008cfba14b4b35c7a8b79c53370a7e79a1aa5ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfba14b4b35c7a8b79c53370a7e79a1aa5ed" kindref="member">RESULTS</ref>,</highlight></codeline>
+<codeline lineno="75" refid="main_8h_1a1fbb23a4b2427b486453417312008cfba3f8787368a9aa87f0bde02c09574a1df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfba3f8787368a9aa87f0bde02c09574a1df" kindref="member">NO_TURN</ref>,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="main_8h_1a816a6251d75e4dcd37d944ca68752095ad1d2481f8e5c8b3feb0e8e1e10d2605d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095" kindref="member">GameScreenType</ref><sp/>{<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a346a9950c4deb7434599827156fb0a5d" kindref="member">BOARDGAME</ref>,<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a101eeb39bd34a660642f0049a15b9a00" kindref="member">WITHDRAW_CHOOSE_PLAYER</ref>,<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a676348a9c84d4798693550bfe5abefb4" kindref="member">WITHDRAW_ADD_VALUE</ref>,<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a54a1652cbf634efed1a32b13ce600121" kindref="member">WITHDRAW_DECISION</ref>,<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095ad1d2481f8e5c8b3feb0e8e1e10d2605d" kindref="member">AUCTION</ref>,<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a7186ecefe792fdae9fec0a42f105ad6b" kindref="member">RESULT</ref><sp/>};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e" kindref="member">ActiveScreenType</ref><sp/>{<sp/><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eac157bdf0b85a40d2619cbc8bc1ae5fe2" kindref="member">NONE</ref>,<sp/><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eac22743f1fc74de09544ecc9bab74a17b" kindref="member">MAIN_MENU</ref>,<sp/><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eaa65481e2492a0d2954f4e8de6dabf01d" kindref="member">GAME_MENU</ref>,<sp/><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3ea562b9839d5f81729482626570ca43b5e" kindref="member">MONOPOLY_GAME</ref><sp/>};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref><sp/>{</highlight></codeline>
+<codeline lineno="96" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afd6a0e4343048b10646dd2976cc5ad18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afd6a0e4343048b10646dd2976cc5ad18" kindref="member">IDLE</ref>,</highlight></codeline>
+<codeline lineno="97" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7a10b5d68d31711288e1fe0fa17dbf4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7a10b5d68d31711288e1fe0fa17dbf4f" kindref="member">EXIT</ref>,</highlight></codeline>
+<codeline lineno="98" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0352906d1ea1dfcd663c918f3a86755b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0352906d1ea1dfcd663c918f3a86755b" kindref="member">PLAY</ref>,</highlight></codeline>
+<codeline lineno="99" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a25009c3a00abcaa12abf0f04eb8d5b67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a25009c3a00abcaa12abf0f04eb8d5b67" kindref="member">RETURN_TO_MAIN_MENU</ref>,</highlight></codeline>
+<codeline lineno="100" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aefeae4e7efa7be08dead75bb7d0bda64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aefeae4e7efa7be08dead75bb7d0bda64" kindref="member">PLAYER_1_SET_NONE</ref>,</highlight></codeline>
+<codeline lineno="101" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a064250338f42c9f7e1befb71f7cf802e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a064250338f42c9f7e1befb71f7cf802e" kindref="member">PLAYER_2_SET_NONE</ref>,</highlight></codeline>
+<codeline lineno="102" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8325febe2c6095e6293d46c7642695ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8325febe2c6095e6293d46c7642695ba" kindref="member">PLAYER_3_SET_NONE</ref>,</highlight></codeline>
+<codeline lineno="103" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ab31023d85b15b88cd7ec364fead83304" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ab31023d85b15b88cd7ec364fead83304" kindref="member">PLAYER_4_SET_NONE</ref>,</highlight></codeline>
+<codeline lineno="104" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a05eb103383e8fab8ec3c7bb0ce3b784c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a05eb103383e8fab8ec3c7bb0ce3b784c" kindref="member">PLAYER_1_SET_HUMAN</ref>,</highlight></codeline>
+<codeline lineno="105" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a4e1b1f9764dc1d2478cc5a9293242cdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a4e1b1f9764dc1d2478cc5a9293242cdd" kindref="member">PLAYER_2_SET_HUMAN</ref>,</highlight></codeline>
+<codeline lineno="106" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0ab423c3a677b07e0af42d5fdff4a05a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0ab423c3a677b07e0af42d5fdff4a05a" kindref="member">PLAYER_3_SET_HUMAN</ref>,</highlight></codeline>
+<codeline lineno="107" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afc2c1b58ad426453cc5b6310d491fc7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afc2c1b58ad426453cc5b6310d491fc7b" kindref="member">PLAYER_4_SET_HUMAN</ref>,</highlight></codeline>
+<codeline lineno="108" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aea6984aa09b2b69208ca7eecf236f818" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aea6984aa09b2b69208ca7eecf236f818" kindref="member">PLAYER_1_SET_AI</ref>,</highlight></codeline>
+<codeline lineno="109" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a3b399446ef96348a6d6f2c29b2167f8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a3b399446ef96348a6d6f2c29b2167f8b" kindref="member">PLAYER_2_SET_AI</ref>,</highlight></codeline>
+<codeline lineno="110" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aff036f98f13340398bfa63e59f4b0356" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aff036f98f13340398bfa63e59f4b0356" kindref="member">PLAYER_3_SET_AI</ref>,</highlight></codeline>
+<codeline lineno="111" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a265730736e3985c3e75bc451b99978a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a265730736e3985c3e75bc451b99978a8" kindref="member">PLAYER_4_SET_AI</ref>,</highlight></codeline>
+<codeline lineno="112" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" kindref="member">PLAYER_1_SET_AI_LEVEL_1</ref>,</highlight></codeline>
+<codeline lineno="113" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" kindref="member">PLAYER_2_SET_AI_LEVEL_1</ref>,</highlight></codeline>
+<codeline lineno="114" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" kindref="member">PLAYER_3_SET_AI_LEVEL_1</ref>,</highlight></codeline>
+<codeline lineno="115" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" kindref="member">PLAYER_4_SET_AI_LEVEL_1</ref>,</highlight></codeline>
+<codeline lineno="116" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" kindref="member">PLAYER_1_SET_AI_LEVEL_2</ref>,</highlight></codeline>
+<codeline lineno="117" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" kindref="member">PLAYER_2_SET_AI_LEVEL_2</ref>,</highlight></codeline>
+<codeline lineno="118" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" kindref="member">PLAYER_3_SET_AI_LEVEL_2</ref>,</highlight></codeline>
+<codeline lineno="119" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" kindref="member">PLAYER_4_SET_AI_LEVEL_2</ref>,</highlight></codeline>
+<codeline lineno="120" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" kindref="member">PLAYER_1_SET_AI_LEVEL_3</ref>,</highlight></codeline>
+<codeline lineno="121" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" kindref="member">PLAYER_2_SET_AI_LEVEL_3</ref>,</highlight></codeline>
+<codeline lineno="122" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" kindref="member">PLAYER_3_SET_AI_LEVEL_3</ref>,</highlight></codeline>
+<codeline lineno="123" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" kindref="member">PLAYER_4_SET_AI_LEVEL_3</ref>,</highlight></codeline>
+<codeline lineno="124" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3accab244294e0e1bcded736405b2db375" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3accab244294e0e1bcded736405b2db375" kindref="member">START_GAME</ref>,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a176f3285bbb35321f21db4745967df3a" kindref="member">GAME_ENDED</ref></highlight></codeline>
+<codeline lineno="126" refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a176f3285bbb35321f21db4745967df3a" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa81d2bb6df05f24d8afc01889a493875c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref><sp/>{<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4bcaa53ccaacd4fb0a09eda9b8666ec8" kindref="member">STREET</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daabe1ce018b886341a69d81ead8cffc786" kindref="member">STATION</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daaf91e6d92929883d407d0e190c4f45ad5" kindref="member">UTILITY</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa50d8e53aac4e002d0fd296c5033ce985" kindref="member">GO</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa81d2bb6df05f24d8afc01889a493875c" kindref="member">CHANCE</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa73226d8625a6ca9e2460030618a7fec5" kindref="member">COMMUNITY_CHEST</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa30e59148af45aa6e6ab6bf5250a83f95" kindref="member">TAX</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa660bfa29a629dc2680b8fba156bf35b2" kindref="member">JAIL</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa676f8257843de2c2b3429b956a8c7d38" kindref="member">FREE_PARKING</ref>,<sp/><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4c8584e93a1064fe61e904f19722d2d3" kindref="member">GO_TO_JAIL</ref><sp/>};</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a1721e377912232cb891c4f9d8b96a59a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3" kindref="member">StreetTiers</ref><sp/>{<sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3afbe39846abf8d0ca655daa4c5e6675f6" kindref="member">NO_HOUSES</ref>,<sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3ae9309352dfb1c2542328bf77b979b796" kindref="member">ONE_HOUSE</ref>,<sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a0ab6dd54fe0c67ece897f56705db3e3f" kindref="member">TWO_HOUESES</ref>,<sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a3cfedac7ca093a36b14fd248a3b8a5b4" kindref="member">THREE_HOUSES</ref>,<sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a1721e377912232cb891c4f9d8b96a59a" kindref="member">FOUR_HOUSES</ref>,<sp/><ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a9d02c50113762d50ac07c31528974579" kindref="member">HOTEL</ref><sp/>};</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="main_8h_1a5557e51432d2a191244125a3af3594beaf5d374fd66e430d41b08642d1197a585" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1a5557e51432d2a191244125a3af3594be" kindref="member">StationTiers</ref><sp/>{<sp/><ref refid="main_8h_1a5557e51432d2a191244125a3af3594bea5abd12f5714ad8a5c78fbcfdd13d8363" kindref="member">ONE_STATION</ref>,<sp/><ref refid="main_8h_1a5557e51432d2a191244125a3af3594bea324e5b4c78cf4a0c67ef4164dc635dc2" kindref="member">TWO_STATIONS</ref>,<sp/><ref refid="main_8h_1a5557e51432d2a191244125a3af3594bea4ee7c40343f7fc51e168ebb665d4865d" kindref="member">THREE_STATIONS</ref>,<sp/><ref refid="main_8h_1a5557e51432d2a191244125a3af3594beaf5d374fd66e430d41b08642d1197a585" kindref="member">FOUR_STATIONS</ref><sp/>};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113ae71bdf2240af02a5ef8ded8c01a8a692" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113" kindref="member">UtilityTiers</ref><sp/>{<sp/><ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113ae71bdf2240af02a5ef8ded8c01a8a692" kindref="member">ONE_UTILITY</ref>,<sp/><ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113afd679c479954ac2c4c7143bc5e45cb6d" kindref="member">TWO_UTILITIES</ref><sp/>};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" kindref="member">Decision</ref><sp/>{<sp/><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca99f136a862ba5c7d16967231c29f09d6" kindref="member">YES</ref>,<sp/><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca0d077f5b932ce05e5b9f30c6087a2f31" kindref="member">NO</ref><sp/>};</highlight></codeline>
+<codeline lineno="157" refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa159689cdd8e8646707acb32f0b09b07a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4a" kindref="member">JailDecision</ref><sp/>{<sp/><ref refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa2eeb9fef8a6a516fa6437a44a6efbd52" kindref="member">ROLL</ref>,<sp/><ref refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa4ec59db2fdb4c4c9a2cbef2d790131f5" kindref="member">PAY</ref>,<sp/><ref refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa159689cdd8e8646707acb32f0b09b07a" kindref="member">CARD</ref><sp/>};</highlight></codeline>
+<codeline lineno="158" refid="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007a63bd0e8187aecf59420bcdb967a523ab" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007" kindref="member">BuyDecision</ref><sp/>{<sp/><ref refid="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007a63bd0e8187aecf59420bcdb967a523ab" kindref="member">BUY</ref>,<sp/><ref refid="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007a528042e12195bec7e89166ebb030caf7" kindref="member">RESIGN</ref><sp/>};</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/main.h"/>
+  </compounddef>
+</doxygen>

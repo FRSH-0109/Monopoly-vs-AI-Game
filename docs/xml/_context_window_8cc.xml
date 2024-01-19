@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_context_window_8cc" kind="file" language="C++">
+    <compoundname>ContextWindow.cc</compoundname>
+    <includes refid="_context_window_8h" local="yes">ContextWindow.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/ContextWindow.cc</label>
+        <link refid="_context_window_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Source file for context Window class It is Singleton class type used mainly for handling SFML window operations between other classes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_context_window_8h" kindref="compound">ContextWindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ContextWindow<sp/>Class<sp/>Implementation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="class_context_window" kindref="compound">ContextWindow</ref>*<sp/>ContextWindow::context_window_<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">ContextWindow::ContextWindow(){};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" refkind="member"><highlight class="normal"><ref refid="class_context_window" kindref="compound">ContextWindow</ref>*<sp/><ref refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" kindref="member">ContextWindow::GetInstance</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(context_window_<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context_window_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_context_window" kindref="compound">ContextWindow</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>context_window_;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" kindref="member">ContextWindow::display</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" kindref="member">getWindow</ref>().display();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_context_window_1a08a570de8e104db8123418800b23ad2c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a08a570de8e104db8123418800b23ad2c" kindref="member">ContextWindow::clear</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" kindref="member">getWindow</ref>().clear();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40" kindref="member">ContextWindow::isOpen</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" kindref="member">getWindow</ref>().isOpen();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" refkind="member"><highlight class="normal">sf::RenderWindow&amp;<sp/><ref refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" kindref="member">ContextWindow::getWindow</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a25341464088c696488399cdeb7d7b577" kindref="member">window_</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" refkind="member"><highlight class="normal">sf::View&amp;<sp/><ref refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" kindref="member">ContextWindow::getView</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a825b9ccdca45f2807b44e40077fbae02" kindref="member">view_</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/ContextWindow.cc"/>
+  </compounddef>
+</doxygen>

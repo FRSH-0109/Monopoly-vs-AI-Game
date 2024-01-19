@@ -1,0 +1,135 @@
+\hypertarget{class_game_screen}{}\doxysection{Game\+Screen Class Reference}
+\label{class_game_screen}\index{GameScreen@{GameScreen}}
+
+
+{\ttfamily \#include $<$Game\+Screen.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_game_screen__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_game_screen__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_screen_a3866912fd5861b29c9ad3c08ea67fd16}{Game\+Screen}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&players\+\_\+)
+\item 
+\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} \mbox{\hyperlink{class_game_screen_a140fce95914abbf9efac4ad6bb0c98dc}{worker}} ()
+\begin{DoxyCompactList}\small\item\em Pure virtual function representing the worker function for the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_screen_a0608fef110d89dab557fd0bac6950b77}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Pure virtual function to draw the screen. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \mbox{\hyperlink{class_game_screen_a954ec5b6fb0da4ff4d6d3feccea9d4b5}{get\+Players\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function to get players\textquotesingle{} results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_screen_a3866912fd5861b29c9ad3c08ea67fd16}\label{class_game_screen_a3866912fd5861b29c9ad3c08ea67fd16}} 
+\index{GameScreen@{GameScreen}!GameScreen@{GameScreen}}
+\index{GameScreen@{GameScreen}!GameScreen@{GameScreen}}
+\doxysubsubsection{\texorpdfstring{GameScreen()}{GameScreen()}}
+{\footnotesize\ttfamily Game\+Screen\+::\+Game\+Screen (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&}]{players\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_game_screen_a3866912fd5861b29c9ad3c08ea67fd16_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_screen_a0608fef110d89dab557fd0bac6950b77}\label{class_game_screen_a0608fef110d89dab557fd0bac6950b77}} 
+\index{GameScreen@{GameScreen}!draw@{draw}}
+\index{draw@{draw}!GameScreen@{GameScreen}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Game\+Screen\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual function to draw the screen. 
+
+
+
+Implements \mbox{\hyperlink{class_active_screen_a381ad867612f98caa038c0b775f0c39a}{Active\+Screen}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_game_screen_a0608fef110d89dab557fd0bac6950b77_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_screen_a954ec5b6fb0da4ff4d6d3feccea9d4b5}\label{class_game_screen_a954ec5b6fb0da4ff4d6d3feccea9d4b5}} 
+\index{GameScreen@{GameScreen}!getPlayersResult@{getPlayersResult}}
+\index{getPlayersResult@{getPlayersResult}!GameScreen@{GameScreen}}
+\doxysubsubsection{\texorpdfstring{getPlayersResult()}{getPlayersResult()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ Game\+Screen\+::get\+Players\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function to get players\textquotesingle{} results. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to \mbox{\hyperlink{class_player}{Player}} objects. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_active_screen_a33f41ba13061ef1700f475e916bcba3b}{Active\+Screen}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_screen_a954ec5b6fb0da4ff4d6d3feccea9d4b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_screen_a140fce95914abbf9efac4ad6bb0c98dc}\label{class_game_screen_a140fce95914abbf9efac4ad6bb0c98dc}} 
+\index{GameScreen@{GameScreen}!worker@{worker}}
+\index{worker@{worker}!GameScreen@{GameScreen}}
+\doxysubsubsection{\texorpdfstring{worker()}{worker()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} Game\+Screen\+::worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual function representing the worker function for the screen. 
+
+\begin{DoxyReturn}{Returns}
+The Screen\+Event\+Type associated with the user interaction. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_active_screen_a3cd9d9f9571195d3fd030c41512348da}{Active\+Screen}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_screen_a140fce95914abbf9efac4ad6bb0c98dc_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_game_screen_8h}{Game\+Screen.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_game_screen_8cc}{Game\+Screen.\+cc}}\end{DoxyCompactItemize}

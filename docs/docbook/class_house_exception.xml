@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_house_exception" xml:lang="en-US">
+<title>HouseException Class Reference</title>
+<indexterm><primary>HouseException</primary></indexterm>
+Inheritance diagram for HouseException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_house_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for HouseException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_house_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_house_exception_1aa89fb6aeb7766817198046f9a0bf3976"/><emphasis role="strong">HouseException</emphasis> (unsigned int houses)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_house_exception_1aa2b790bc114a9c1eca0a5cdcd1836da9"/><emphasis role="strong">HouseException</emphasis> (const <link linkend="_class_house_exception">HouseException</link> &amp;e)  throw ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_house_exception_1a669fd71c193b4d08bd9afc9c0c60d003"/>unsigned int <emphasis role="strong">getInvalidNumber</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__field_8h">Field.h</link>/home/kamil/zpr/Monopoly/<link linkend="__field_8cc">Field.cc</link></section>

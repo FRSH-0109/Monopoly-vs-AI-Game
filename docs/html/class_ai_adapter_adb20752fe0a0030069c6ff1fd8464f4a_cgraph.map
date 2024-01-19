@@ -1,0 +1,4 @@
+<map id="AiAdapter::setMoney" name="AiAdapter::setMoney">
+<area shape="rect" id="node1" title="Sets the money for a given index." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$class_ai_adapter.html#a00bc5e6ed594a79e67736032d552ccf6" title="Converts money into a format suitable for AI input." alt="" coords="212,5,399,32"/>
+</map>

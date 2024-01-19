@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_station_field" xml:lang="en-US">
+<title>StationField Class Reference</title>
+<indexterm><primary>StationField</primary></indexterm>
+Inheritance diagram for StationField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_station_field__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for StationField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_station_field__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_station_field_1ac05ad21f6406bb6106e49ab5488a77b5"/><emphasis role="strong">StationField</emphasis> (const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int price, const std::map&lt; StationTiers, unsigned int &gt; rent_values, const std::vector&lt; unsigned int &gt; group_members, const unsigned int Mortgage)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_station_field_1ae23e828cefa568b38ff525cd9db3b511"/>const std::map&lt; StationTiers, unsigned int &gt; <emphasis role="strong">getRentValues</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_station_field_1aa20df8c80cb42b080679ef12f81b842c"/>unsigned int <emphasis role="strong">calculateRent</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__field_8h">Field.h</link>/home/kamil/zpr/Monopoly/<link linkend="__field_8cc">Field.cc</link></section>

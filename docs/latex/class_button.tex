@@ -1,0 +1,563 @@
+\hypertarget{class_button}{}\doxysection{Button Class Reference}
+\label{class_button}\index{Button@{Button}}
+
+
+Represents a button for handling user interactions.  
+
+
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_aeef559a4dc6afe4b7992f4cc6200e992}{Button}} (\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} type, sf\+::\+String btn\+Text, sf\+::\+Vector2f button\+Size, int char\+Size)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_button}{Button}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_adf65892636ea303a84e1391106ea7cb0}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws the button on the specified window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_a34779d5dfdc96291a25454975c14e2b2}{is\+Mouse\+Over}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is over the button. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_button_af56e575bb7162c0fd8d4957ba7d034d6}{mouse\+Is\+Over}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function called when the mouse is over the button. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_button_a570ca8dd513b159a2175df0aa9ea7c54}{mouse\+Is\+Not\+Over}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function called when the mouse is not over the button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} \mbox{\hyperlink{class_button_a7087e218c95541abab91adba42ff5e5b}{get\+Event\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of screen event associated with the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a570723c1f92f01ef1ef2998338f215a4}{set\+Event\+Type}} (\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} event)
+\begin{DoxyCompactList}\small\item\em Sets the type of screen event associated with the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a25a860f1b3490fe1346d36337a759b75}{set\+Font}} (sf\+::\+Font \&fonts)
+\begin{DoxyCompactList}\small\item\em Sets the font for the button text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a465bc046f013a24af6679fb9b7cad2b6}{set\+Position}} (sf\+::\+Vector2f point)
+\begin{DoxyCompactList}\small\item\em Sets the position of the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a3c9c6168241bdfdc16dfc69848482599}{set\+Is\+Clicked}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the state of the button as clicked or not clicked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_a2219d51c220740b01c352974882af574}{get\+Is\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em Gets the state of the button (clicked or not clicked). \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_button_a0860c867e652f08390c05929d6837c13}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the size of the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ad0c17a851c583752826018170c9fe980}{set\+Is\+Visible}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the visibility state of the button. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_af9c1d05c1ff0eba579db538f82eaf055}{get\+Is\+Visible}} ()
+\begin{DoxyCompactList}\small\item\em Gets the visibility state of the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_aa1c40b1e9d6721bce0200c5136cc0d84}{set\+Is\+Active}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the active state of the button. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_a782dba13361565b4c616f45af799b0b8}{get\+Is\+Active}} ()
+\begin{DoxyCompactList}\small\item\em Gets the active state of the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ae84c0d3f2c6f047455de3ff91f1322d9}{set\+Is\+Focus}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the focus state of the button. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_ae0b1c8827cf3297a99fed32a79e63314}{get\+Is\+Focus}} ()
+\begin{DoxyCompactList}\small\item\em Gets the focus state of the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a1c2e473eb65a51608a75b77419404d7c}{set\+Was\+Released}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the state of the button as released or not released. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_a8c9bc47f5182ab1bafa899eadac2f394}{get\+Was\+Released}} ()
+\begin{DoxyCompactList}\small\item\em Gets the state of the button (released or not released). \end{DoxyCompactList}\item 
+sf\+::\+Text \& \mbox{\hyperlink{class_button_aba461925dd4989abca1262c2295a9902}{get\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Gets the SFML Text object associated with the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a71f7c59ef8030cbbbc71986ebb825742}{set\+Active\+Back\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the background color and text color when the button is active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_aa364c0369ab38c93d16942a70b4d4241}{set\+Active\+Text\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the text color when the button is active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ac5161631eb39913b5890fde4879c32b1}{set\+Inactive\+Back\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the background color and text color when the button is inactive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a327b1692fa110c1668eded2bdf9ba98c}{set\+Inactive\+Text\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the text color when the button is inactive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a14094ee107d9e3bc3575431329a428a8}{set\+Focus\+Back\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the background color and text color when the button is in focus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a26d258df4b6f383de921fb717618d896}{set\+Focus\+Text\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the text color when the button is in focus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ae553fa694c6ce78568f846ddd791e6a2}{set\+Button\+Focus}} ()
+\begin{DoxyCompactList}\small\item\em Sets the button state to focused. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a8e4070b3ea3e499e805c03c2a9d0713d}{set\+Button\+Unfocus}} ()
+\begin{DoxyCompactList}\small\item\em Sets the button state to unfocused. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ade4c79b172fadf65cd127816ab75cc32}{update\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Updates the colors of the button based on its state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a button for handling user interactions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_button_aeef559a4dc6afe4b7992f4cc6200e992}\label{class_button_aeef559a4dc6afe4b7992f4cc6200e992}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}}}]{type,  }\item[{sf\+::\+String}]{btn\+Text,  }\item[{sf\+::\+Vector2f}]{button\+Size,  }\item[{int}]{char\+Size }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_button}{Button}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of screen event associated with the button. \\
+\hline
+{\em btn\+Text} & The text displayed on the button. \\
+\hline
+{\em button\+Size} & The size of the button. \\
+\hline
+{\em char\+Size} & The character size of the text. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_button_adf65892636ea303a84e1391106ea7cb0}\label{class_button_adf65892636ea303a84e1391106ea7cb0}} 
+\index{Button@{Button}!draw@{draw}}
+\index{draw@{draw}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Button\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Draws the button on the specified window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML window to draw the button on. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a7087e218c95541abab91adba42ff5e5b}\label{class_button_a7087e218c95541abab91adba42ff5e5b}} 
+\index{Button@{Button}!getEventType@{getEventType}}
+\index{getEventType@{getEventType}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getEventType()}{getEventType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} Button\+::get\+Event\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the type of screen event associated with the button. 
+
+\begin{DoxyReturn}{Returns}
+The screen event type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_a782dba13361565b4c616f45af799b0b8}\label{class_button_a782dba13361565b4c616f45af799b0b8}} 
+\index{Button@{Button}!getIsActive@{getIsActive}}
+\index{getIsActive@{getIsActive}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getIsActive()}{getIsActive()}}
+{\footnotesize\ttfamily bool Button\+::get\+Is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the active state of the button. 
+
+\begin{DoxyReturn}{Returns}
+True if the button is active, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_a2219d51c220740b01c352974882af574}\label{class_button_a2219d51c220740b01c352974882af574}} 
+\index{Button@{Button}!getIsClicked@{getIsClicked}}
+\index{getIsClicked@{getIsClicked}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getIsClicked()}{getIsClicked()}}
+{\footnotesize\ttfamily bool Button\+::get\+Is\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the state of the button (clicked or not clicked). 
+
+\begin{DoxyReturn}{Returns}
+True if the button is clicked, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_ae0b1c8827cf3297a99fed32a79e63314}\label{class_button_ae0b1c8827cf3297a99fed32a79e63314}} 
+\index{Button@{Button}!getIsFocus@{getIsFocus}}
+\index{getIsFocus@{getIsFocus}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getIsFocus()}{getIsFocus()}}
+{\footnotesize\ttfamily bool Button\+::get\+Is\+Focus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the focus state of the button. 
+
+\begin{DoxyReturn}{Returns}
+True if the button is in focus, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_af9c1d05c1ff0eba579db538f82eaf055}\label{class_button_af9c1d05c1ff0eba579db538f82eaf055}} 
+\index{Button@{Button}!getIsVisible@{getIsVisible}}
+\index{getIsVisible@{getIsVisible}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getIsVisible()}{getIsVisible()}}
+{\footnotesize\ttfamily bool Button\+::get\+Is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the visibility state of the button. 
+
+\begin{DoxyReturn}{Returns}
+True if the button is visible, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_a0860c867e652f08390c05929d6837c13}\label{class_button_a0860c867e652f08390c05929d6837c13}} 
+\index{Button@{Button}!getSize@{getSize}}
+\index{getSize@{getSize}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Button\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the size of the button. 
+
+\begin{DoxyReturn}{Returns}
+The size of the button. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_aba461925dd4989abca1262c2295a9902}\label{class_button_aba461925dd4989abca1262c2295a9902}} 
+\index{Button@{Button}!getText@{getText}}
+\index{getText@{getText}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily sf\+::\+Text \& Button\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the SFML Text object associated with the button. 
+
+\begin{DoxyReturn}{Returns}
+The SFML Text object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_a8c9bc47f5182ab1bafa899eadac2f394}\label{class_button_a8c9bc47f5182ab1bafa899eadac2f394}} 
+\index{Button@{Button}!getWasReleased@{getWasReleased}}
+\index{getWasReleased@{getWasReleased}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{getWasReleased()}{getWasReleased()}}
+{\footnotesize\ttfamily bool Button\+::get\+Was\+Released (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the state of the button (released or not released). 
+
+\begin{DoxyReturn}{Returns}
+True if the button was released, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_a34779d5dfdc96291a25454975c14e2b2}\label{class_button_a34779d5dfdc96291a25454975c14e2b2}} 
+\index{Button@{Button}!isMouseOver@{isMouseOver}}
+\index{isMouseOver@{isMouseOver}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isMouseOver()}{isMouseOver()}}
+{\footnotesize\ttfamily bool Button\+::is\+Mouse\+Over (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Checks if the mouse is over the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the button, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_button_a570ca8dd513b159a2175df0aa9ea7c54}\label{class_button_a570ca8dd513b159a2175df0aa9ea7c54}} 
+\index{Button@{Button}!mouseIsNotOver@{mouseIsNotOver}}
+\index{mouseIsNotOver@{mouseIsNotOver}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{mouseIsNotOver()}{mouseIsNotOver()}}
+{\footnotesize\ttfamily void Button\+::mouse\+Is\+Not\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function called when the mouse is not over the button. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a570ca8dd513b159a2175df0aa9ea7c54_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_button_af56e575bb7162c0fd8d4957ba7d034d6}\label{class_button_af56e575bb7162c0fd8d4957ba7d034d6}} 
+\index{Button@{Button}!mouseIsOver@{mouseIsOver}}
+\index{mouseIsOver@{mouseIsOver}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{mouseIsOver()}{mouseIsOver()}}
+{\footnotesize\ttfamily void Button\+::mouse\+Is\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function called when the mouse is over the button. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_af56e575bb7162c0fd8d4957ba7d034d6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_button_a71f7c59ef8030cbbbc71986ebb825742}\label{class_button_a71f7c59ef8030cbbbc71986ebb825742}} 
+\index{Button@{Button}!setActiveBackColor@{setActiveBackColor}}
+\index{setActiveBackColor@{setActiveBackColor}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setActiveBackColor()}{setActiveBackColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Active\+Back\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the background color and text color when the button is active. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The background color to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_aa364c0369ab38c93d16942a70b4d4241}\label{class_button_aa364c0369ab38c93d16942a70b4d4241}} 
+\index{Button@{Button}!setActiveTextColor@{setActiveTextColor}}
+\index{setActiveTextColor@{setActiveTextColor}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setActiveTextColor()}{setActiveTextColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Active\+Text\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the text color when the button is active. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The text color to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_ae553fa694c6ce78568f846ddd791e6a2}\label{class_button_ae553fa694c6ce78568f846ddd791e6a2}} 
+\index{Button@{Button}!setButtonFocus@{setButtonFocus}}
+\index{setButtonFocus@{setButtonFocus}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setButtonFocus()}{setButtonFocus()}}
+{\footnotesize\ttfamily void Button\+::set\+Button\+Focus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the button state to focused. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_ae553fa694c6ce78568f846ddd791e6a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_ae553fa694c6ce78568f846ddd791e6a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_button_a8e4070b3ea3e499e805c03c2a9d0713d}\label{class_button_a8e4070b3ea3e499e805c03c2a9d0713d}} 
+\index{Button@{Button}!setButtonUnfocus@{setButtonUnfocus}}
+\index{setButtonUnfocus@{setButtonUnfocus}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setButtonUnfocus()}{setButtonUnfocus()}}
+{\footnotesize\ttfamily void Button\+::set\+Button\+Unfocus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the button state to unfocused. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a8e4070b3ea3e499e805c03c2a9d0713d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a8e4070b3ea3e499e805c03c2a9d0713d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_button_a570723c1f92f01ef1ef2998338f215a4}\label{class_button_a570723c1f92f01ef1ef2998338f215a4}} 
+\index{Button@{Button}!setEventType@{setEventType}}
+\index{setEventType@{setEventType}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setEventType()}{setEventType()}}
+{\footnotesize\ttfamily void Button\+::set\+Event\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Sets the type of screen event associated with the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The screen event type to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a14094ee107d9e3bc3575431329a428a8}\label{class_button_a14094ee107d9e3bc3575431329a428a8}} 
+\index{Button@{Button}!setFocusBackColor@{setFocusBackColor}}
+\index{setFocusBackColor@{setFocusBackColor}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setFocusBackColor()}{setFocusBackColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Focus\+Back\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the background color and text color when the button is in focus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The background color to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a26d258df4b6f383de921fb717618d896}\label{class_button_a26d258df4b6f383de921fb717618d896}} 
+\index{Button@{Button}!setFocusTextColor@{setFocusTextColor}}
+\index{setFocusTextColor@{setFocusTextColor}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setFocusTextColor()}{setFocusTextColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Focus\+Text\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the text color when the button is in focus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The text color to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a25a860f1b3490fe1346d36337a759b75}\label{class_button_a25a860f1b3490fe1346d36337a759b75}} 
+\index{Button@{Button}!setFont@{setFont}}
+\index{setFont@{setFont}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Button\+::set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{fonts }\end{DoxyParamCaption})}
+
+
+
+Sets the font for the button text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fonts} & The font to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_ac5161631eb39913b5890fde4879c32b1}\label{class_button_ac5161631eb39913b5890fde4879c32b1}} 
+\index{Button@{Button}!setInactiveBackColor@{setInactiveBackColor}}
+\index{setInactiveBackColor@{setInactiveBackColor}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setInactiveBackColor()}{setInactiveBackColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Inactive\+Back\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the background color and text color when the button is inactive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The background color to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a327b1692fa110c1668eded2bdf9ba98c}\label{class_button_a327b1692fa110c1668eded2bdf9ba98c}} 
+\index{Button@{Button}!setInactiveTextColor@{setInactiveTextColor}}
+\index{setInactiveTextColor@{setInactiveTextColor}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setInactiveTextColor()}{setInactiveTextColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Inactive\+Text\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the text color when the button is inactive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The text color to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_aa1c40b1e9d6721bce0200c5136cc0d84}\label{class_button_aa1c40b1e9d6721bce0200c5136cc0d84}} 
+\index{Button@{Button}!setIsActive@{setIsActive}}
+\index{setIsActive@{setIsActive}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setIsActive()}{setIsActive()}}
+{\footnotesize\ttfamily void Button\+::set\+Is\+Active (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the active state of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The active state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a3c9c6168241bdfdc16dfc69848482599}\label{class_button_a3c9c6168241bdfdc16dfc69848482599}} 
+\index{Button@{Button}!setIsClicked@{setIsClicked}}
+\index{setIsClicked@{setIsClicked}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setIsClicked()}{setIsClicked()}}
+{\footnotesize\ttfamily void Button\+::set\+Is\+Clicked (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the button as clicked or not clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_ae84c0d3f2c6f047455de3ff91f1322d9}\label{class_button_ae84c0d3f2c6f047455de3ff91f1322d9}} 
+\index{Button@{Button}!setIsFocus@{setIsFocus}}
+\index{setIsFocus@{setIsFocus}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setIsFocus()}{setIsFocus()}}
+{\footnotesize\ttfamily void Button\+::set\+Is\+Focus (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the focus state of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The focus state to set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_ae84c0d3f2c6f047455de3ff91f1322d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_button_ad0c17a851c583752826018170c9fe980}\label{class_button_ad0c17a851c583752826018170c9fe980}} 
+\index{Button@{Button}!setIsVisible@{setIsVisible}}
+\index{setIsVisible@{setIsVisible}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setIsVisible()}{setIsVisible()}}
+{\footnotesize\ttfamily void Button\+::set\+Is\+Visible (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the visibility state of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The visibility state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a465bc046f013a24af6679fb9b7cad2b6}\label{class_button_a465bc046f013a24af6679fb9b7cad2b6}} 
+\index{Button@{Button}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Button\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{point }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The position to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_a1c2e473eb65a51608a75b77419404d7c}\label{class_button_a1c2e473eb65a51608a75b77419404d7c}} 
+\index{Button@{Button}!setWasReleased@{setWasReleased}}
+\index{setWasReleased@{setWasReleased}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setWasReleased()}{setWasReleased()}}
+{\footnotesize\ttfamily void Button\+::set\+Was\+Released (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the button as released or not released. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_button_ade4c79b172fadf65cd127816ab75cc32}\label{class_button_ade4c79b172fadf65cd127816ab75cc32}} 
+\index{Button@{Button}!updateColors@{updateColors}}
+\index{updateColors@{updateColors}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{updateColors()}{updateColors()}}
+{\footnotesize\ttfamily void Button\+::update\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the colors of the button based on its state. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_button_8h}{Button.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_button_8cc}{Button.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,803 @@
+\hypertarget{class_player}{}\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+Represents a player in a Monopoly game.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_player__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\item 
+\mbox{\hyperlink{class_player_a56b1fc165843e6a22ba8e06348b05a60}{Player}} (unsigned int money)
+\item 
+unsigned int \mbox{\hyperlink{class_player_a2d4f3ca739a5500c9e5f32932ed13019}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_player_a2de8544be02b4464afb87b6169139068}{set\+Position}} (unsigned int new\+\_\+position)
+\item 
+bool \mbox{\hyperlink{class_player_afbc9c4c7035653e4c4a56f863bd9f91c}{has\+Field\+Owned\+Id}} (unsigned int id) const
+\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_player_a223c145e34c3288cf74be4c77dc58591}{get\+Field\+Owned\+Id}} () const
+\item 
+void \mbox{\hyperlink{class_player_afa1e3b200143dbd91fd746576bac8da4}{add\+Field\+Owned\+Id}} (unsigned int id)
+\item 
+void \mbox{\hyperlink{class_player_a1159031a207eddc655626adc8d420da4}{remove\+Field\+Owned\+Id}} (unsigned int id)
+\item 
+void \mbox{\hyperlink{class_player_ac2f724596f37e2922bd2df2d4922d670}{clear\+Field\+Owned\+Id}} ()
+\item 
+void \mbox{\hyperlink{class_player_aa44dae5224ce813c88265734662080bb}{set\+Money}} (unsigned int value)
+\item 
+unsigned int \mbox{\hyperlink{class_player_a39465d76fc735a64d104b8b21e574b8c}{get\+Money}} () const
+\item 
+void \mbox{\hyperlink{class_player_a79f2a8218f4b17df9ed5ef79cfa85690}{add\+Money}} (unsigned int value)
+\item 
+bool \mbox{\hyperlink{class_player_a6d24d184974e84bb529bcfb1366d0f9d}{substract\+Money}} (unsigned int value)
+\item 
+void \mbox{\hyperlink{class_player_a67a3c5ddc234276cf72245f939a40438}{set\+Jail\+Status}} (unsigned int new\+\_\+jail\+\_\+status)
+\item 
+unsigned int \mbox{\hyperlink{class_player_ab27fb6eba2edafbe7c674abf2d85cc91}{get\+Jail\+Status}} () const
+\item 
+void \mbox{\hyperlink{class_player_a66e516d298b44b902bf15732a0e66515}{set\+Jail\+Cards}} (unsigned int new\+\_\+jail\+\_\+cards)
+\item 
+unsigned int \mbox{\hyperlink{class_player_ad4d8755ebdffb8e7bfccc1119f0f7042}{get\+Jail\+Cards}} () const
+\item 
+void \mbox{\hyperlink{class_player_a3ebff2af2ca397ffcb64a2ddd91d8cee}{reduce\+Jail\+Status}} ()
+\item 
+void \mbox{\hyperlink{class_player_aec0b2d2447f555e247ac01a54a15d77f}{set\+Id}} (unsigned int new\+\_\+id)
+\item 
+unsigned int \mbox{\hyperlink{class_player_a44be12490dcf4b7195ae494561f81c28}{get\+Id}} () const
+\item 
+void \mbox{\hyperlink{class_player_a0686aac84725114b7c5b540189b47c60}{set\+Color}} (sf\+::\+Color new\+\_\+color)
+\item 
+sf\+::\+Color \mbox{\hyperlink{class_player_a6af84629a95779c478adcd24efcefb1b}{get\+Color}} () const
+\item 
+void \mbox{\hyperlink{class_player_adbcc2bba53e6bb2837d763eef79edff9}{set\+Is\+Ai}} (bool new\+\_\+is\+\_\+ai)
+\item 
+bool \mbox{\hyperlink{class_player_a59d465cbbc51c4371d1e770a682e6d97}{get\+Is\+Ai}} () const
+\item 
+void \mbox{\hyperlink{class_player_ab1032df37bafe0a30acadb7bb1ccb97a}{set\+Ai\+Level}} (unsigned int ai\+\_\+level)
+\item 
+unsigned int \mbox{\hyperlink{class_player_a9ba3a7b625d50ad49f73eca39aff8248}{get\+Ai\+Level}} () const
+\item 
+void \mbox{\hyperlink{class_player_a79df4c23544bfc40ec2d2420617da758}{set\+Result\+Place}} (unsigned int place)
+\item 
+unsigned int \mbox{\hyperlink{class_player_a55e1a7856785c48db04f478ebc242cef}{get\+Result\+Place}} () const
+\item 
+void \mbox{\hyperlink{class_player_aa6f0a7987a39716fb71558a017c75c51}{create\+Sprite}} ()
+\item 
+sf\+::\+Texture \& \mbox{\hyperlink{class_player_aa27d00d02d75f945a9b5bb8624104658}{get\+Texture}} ()
+\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_player_a408134399497e07b0ba53e82d5c40958}{get\+Sprite}} ()
+\item 
+float \mbox{\hyperlink{class_player_ad7cbe5430cf9ade1cb6b60dc73019fb7}{get\+Sprite\+OffsetX}} () const
+\item 
+float \mbox{\hyperlink{class_player_aa59d45a1ed19a90404174126d69c55c1}{get\+Sprite\+OffsetY}} () const
+\item 
+void \mbox{\hyperlink{class_player_a0861445aeb9c42d8f1da69e811ad4aa7}{set\+Sprite\+OffsetX}} (const float offset\+\_\+x)
+\item 
+void \mbox{\hyperlink{class_player_a53a4de1ec98d14b8648d12960bfef043}{set\+Sprite\+OffsetY}} (const float offset\+\_\+y)
+\item 
+void \mbox{\hyperlink{class_player_a804d87f26ce849e33068db8095f805d7}{set\+Sprite\+Position}} (sf\+::\+Vector2f new\+\_\+pos)
+\item 
+virtual \mbox{\hyperlink{class_ai_adapter}{Ai\+Adapter}} \& \mbox{\hyperlink{class_player_a963ec6ae7e632ce539c27761dac64260}{get\+Adapter}} ()
+\item 
+virtual \mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}} \& \mbox{\hyperlink{class_player_a84e305a0a267be2c435a40544ddd35c8}{get\+Neural\+Network}} ()
+\item 
+virtual \mbox{\hyperlink{main_8h_a8a2b1218113cc3385a8aaf1870e4a007}{Buy\+Decision}} \mbox{\hyperlink{class_player_adfeb87a6e956897e314f5396d5662293}{decide\+Buy}} (unsigned int index)
+\item 
+virtual \mbox{\hyperlink{main_8h_ab6ecd1223ac100310bac8f0f0131eb4a}{Jail\+Decision}} \mbox{\hyperlink{class_player_a83461a9c984ddf60dd6f3a9775690d45}{decide\+Jail}} ()
+\item 
+virtual \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_player_a9c596f7c08886d9db546d3c222611f5f}{decide\+Mortgage}} (unsigned int index)
+\item 
+virtual \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_player_a612f3f8120ad911a6dded373573d55bc}{decide\+Unmortgage}} (unsigned int index)
+\item 
+virtual unsigned int \mbox{\hyperlink{class_player_af3da06d4c1776f82ff4cd8619377fd7d}{decide\+Auction\+Bid}} (unsigned int price)
+\item 
+virtual unsigned int \mbox{\hyperlink{class_player_a71313606c3b4a7b363cabd40bd9a7126}{decide\+Build\+House}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{class_player_afa5630a45ffb3f996be4229cbad75bb0}{decide\+Sell\+House}} ()
+\item 
+virtual \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_player_a42244fc7463a4fc447a73f35d2dcb483}{decide\+Offer\+Trade}} ()
+\item 
+virtual \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_player_a7adf207e9b3b987da924fd602ecc6528}{decide\+Accept\+Trade}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a player in a Monopoly game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor for \mbox{\hyperlink{class_player}{Player}} class. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a56b1fc165843e6a22ba8e06348b05a60}\label{class_player_a56b1fc165843e6a22ba8e06348b05a60}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{unsigned int}]{money }\end{DoxyParamCaption})}
+
+Constructor for \mbox{\hyperlink{class_player}{Player}} class with initial money.
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & Initial amount of money for the player. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a56b1fc165843e6a22ba8e06348b05a60_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_afa1e3b200143dbd91fd746576bac8da4}\label{class_player_afa1e3b200143dbd91fd746576bac8da4}} 
+\index{Player@{Player}!addFieldOwnedId@{addFieldOwnedId}}
+\index{addFieldOwnedId@{addFieldOwnedId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{addFieldOwnedId()}{addFieldOwnedId()}}
+{\footnotesize\ttfamily void Player\+::add\+Field\+Owned\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+Add a property with the specified ID to the list of properties owned by the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the property to add. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_afa1e3b200143dbd91fd746576bac8da4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a79f2a8218f4b17df9ed5ef79cfa85690}\label{class_player_a79f2a8218f4b17df9ed5ef79cfa85690}} 
+\index{Player@{Player}!addMoney@{addMoney}}
+\index{addMoney@{addMoney}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{addMoney()}{addMoney()}}
+{\footnotesize\ttfamily void Player\+::add\+Money (\begin{DoxyParamCaption}\item[{unsigned int}]{value }\end{DoxyParamCaption})}
+
+Add a specified amount of money to the player\textquotesingle{}s balance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Amount of money to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_ac2f724596f37e2922bd2df2d4922d670}\label{class_player_ac2f724596f37e2922bd2df2d4922d670}} 
+\index{Player@{Player}!clearFieldOwnedId@{clearFieldOwnedId}}
+\index{clearFieldOwnedId@{clearFieldOwnedId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{clearFieldOwnedId()}{clearFieldOwnedId()}}
+{\footnotesize\ttfamily void Player\+::clear\+Field\+Owned\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear the list of properties owned by the player. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_player_ac2f724596f37e2922bd2df2d4922d670_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_aa6f0a7987a39716fb71558a017c75c51}\label{class_player_aa6f0a7987a39716fb71558a017c75c51}} 
+\index{Player@{Player}!createSprite@{createSprite}}
+\index{createSprite@{createSprite}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{createSprite()}{createSprite()}}
+{\footnotesize\ttfamily void Player\+::create\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create the sprite for the player. \mbox{\Hypertarget{class_player_a7adf207e9b3b987da924fd602ecc6528}\label{class_player_a7adf207e9b3b987da924fd602ecc6528}} 
+\index{Player@{Player}!decideAcceptTrade@{decideAcceptTrade}}
+\index{decideAcceptTrade@{decideAcceptTrade}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideAcceptTrade()}{decideAcceptTrade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Player\+::decide\+Accept\+Trade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a decision for accepting a trade (virtual function, needs to be overridden by derived classes).
+
+\begin{DoxyReturn}{Returns}
+Decision object representing the acceptance of the trade. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_affc4990f1252789326aa28a7797462ab}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_af3da06d4c1776f82ff4cd8619377fd7d}\label{class_player_af3da06d4c1776f82ff4cd8619377fd7d}} 
+\index{Player@{Player}!decideAuctionBid@{decideAuctionBid}}
+\index{decideAuctionBid@{decideAuctionBid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideAuctionBid()}{decideAuctionBid()}}
+{\footnotesize\ttfamily unsigned int Player\+::decide\+Auction\+Bid (\begin{DoxyParamCaption}\item[{unsigned int}]{price }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a decision for auction bidding (virtual function, needs to be overridden by derived classes).
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & Current price in the auction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The bid amount decided by the player. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a441701de5fdaa5958fcc36e9791a9edc}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_a71313606c3b4a7b363cabd40bd9a7126}\label{class_player_a71313606c3b4a7b363cabd40bd9a7126}} 
+\index{Player@{Player}!decideBuildHouse@{decideBuildHouse}}
+\index{decideBuildHouse@{decideBuildHouse}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideBuildHouse()}{decideBuildHouse()}}
+{\footnotesize\ttfamily unsigned int Player\+::decide\+Build\+House (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a decision for building a house (virtual function, needs to be overridden by derived classes).
+
+\begin{DoxyReturn}{Returns}
+The index of the property on which to build a house. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a94760240482130380840c0d303a19642}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_adfeb87a6e956897e314f5396d5662293}\label{class_player_adfeb87a6e956897e314f5396d5662293}} 
+\index{Player@{Player}!decideBuy@{decideBuy}}
+\index{decideBuy@{decideBuy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideBuy()}{decideBuy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a8a2b1218113cc3385a8aaf1870e4a007}{Buy\+Decision}} Player\+::decide\+Buy (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a buying decision (virtual function, needs to be overridden by derived classes).
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the property to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Buy\+Decision object representing the decision. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a4ec346de3b8d48b157354452569ec266}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_a83461a9c984ddf60dd6f3a9775690d45}\label{class_player_a83461a9c984ddf60dd6f3a9775690d45}} 
+\index{Player@{Player}!decideJail@{decideJail}}
+\index{decideJail@{decideJail}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideJail()}{decideJail()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_ab6ecd1223ac100310bac8f0f0131eb4a}{Jail\+Decision}} Player\+::decide\+Jail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a jail decision (virtual function, needs to be overridden by derived classes).
+
+\begin{DoxyReturn}{Returns}
+Jail\+Decision object representing the decision. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_add73dc5a5c94ac7afff1ee5be8fb7637}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_a9c596f7c08886d9db546d3c222611f5f}\label{class_player_a9c596f7c08886d9db546d3c222611f5f}} 
+\index{Player@{Player}!decideMortgage@{decideMortgage}}
+\index{decideMortgage@{decideMortgage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideMortgage()}{decideMortgage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Player\+::decide\+Mortgage (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a mortgage decision (virtual function, needs to be overridden by derived classes).
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the property to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decision object representing the mortgage decision. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_ade144bf242d81cb7e0b4b714545ebeb9}{Ai\+Player}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a9c596f7c08886d9db546d3c222611f5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a42244fc7463a4fc447a73f35d2dcb483}\label{class_player_a42244fc7463a4fc447a73f35d2dcb483}} 
+\index{Player@{Player}!decideOfferTrade@{decideOfferTrade}}
+\index{decideOfferTrade@{decideOfferTrade}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideOfferTrade()}{decideOfferTrade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Player\+::decide\+Offer\+Trade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a decision for offering a trade (virtual function, needs to be overridden by derived classes).
+
+\begin{DoxyReturn}{Returns}
+Decision object representing the trade offer. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a84e084321dab6cea80ec5ea0f5564c02}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_afa5630a45ffb3f996be4229cbad75bb0}\label{class_player_afa5630a45ffb3f996be4229cbad75bb0}} 
+\index{Player@{Player}!decideSellHouse@{decideSellHouse}}
+\index{decideSellHouse@{decideSellHouse}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideSellHouse()}{decideSellHouse()}}
+{\footnotesize\ttfamily unsigned int Player\+::decide\+Sell\+House (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make a decision for selling a house (virtual function, needs to be overridden by derived classes).
+
+\begin{DoxyReturn}{Returns}
+The index of the property from which to sell a house. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a141ea4b1a96050ae1ac1f6925c308135}{Ai\+Player}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_afa5630a45ffb3f996be4229cbad75bb0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a612f3f8120ad911a6dded373573d55bc}\label{class_player_a612f3f8120ad911a6dded373573d55bc}} 
+\index{Player@{Player}!decideUnmortgage@{decideUnmortgage}}
+\index{decideUnmortgage@{decideUnmortgage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{decideUnmortgage()}{decideUnmortgage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Player\+::decide\+Unmortgage (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make an unmortgage decision (virtual function, needs to be overridden by derived classes).
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the property to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decision object representing the unmortgage decision. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_ad37f0daac7f78c3179a6bd95da7c07af}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_a963ec6ae7e632ce539c27761dac64260}\label{class_player_a963ec6ae7e632ce539c27761dac64260}} 
+\index{Player@{Player}!getAdapter@{getAdapter}}
+\index{getAdapter@{getAdapter}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getAdapter()}{getAdapter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ai_adapter}{Ai\+Adapter}} \& Player\+::get\+Adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the AI adapter (virtual function, needs to be overridden by derived classes). DO NOT USE THIS \begin{DoxyReturn}{Returns}
+Reference to the AI adapter. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a5d5a34086d564d1de13ac38bf1885b3a}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_a9ba3a7b625d50ad49f73eca39aff8248}\label{class_player_a9ba3a7b625d50ad49f73eca39aff8248}} 
+\index{Player@{Player}!getAiLevel@{getAiLevel}}
+\index{getAiLevel@{getAiLevel}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getAiLevel()}{getAiLevel()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Ai\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the AI level of the player. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a9ba3a7b625d50ad49f73eca39aff8248_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a6af84629a95779c478adcd24efcefb1b}\label{class_player_a6af84629a95779c478adcd24efcefb1b}} 
+\index{Player@{Player}!getColor@{getColor}}
+\index{getColor@{getColor}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily sf\+::\+Color Player\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the color associated with the player. \mbox{\Hypertarget{class_player_a223c145e34c3288cf74be4c77dc58591}\label{class_player_a223c145e34c3288cf74be4c77dc58591}} 
+\index{Player@{Player}!getFieldOwnedId@{getFieldOwnedId}}
+\index{getFieldOwnedId@{getFieldOwnedId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getFieldOwnedId()}{getFieldOwnedId()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned int $>$ Player\+::get\+Field\+Owned\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get a vector of property IDs owned by the player. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a223c145e34c3288cf74be4c77dc58591_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a44be12490dcf4b7195ae494561f81c28}\label{class_player_a44be12490dcf4b7195ae494561f81c28}} 
+\index{Player@{Player}!getId@{getId}}
+\index{getId@{getId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the unique identifier of the player. \mbox{\Hypertarget{class_player_a59d465cbbc51c4371d1e770a682e6d97}\label{class_player_a59d465cbbc51c4371d1e770a682e6d97}} 
+\index{Player@{Player}!getIsAi@{getIsAi}}
+\index{getIsAi@{getIsAi}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getIsAi()}{getIsAi()}}
+{\footnotesize\ttfamily bool Player\+::get\+Is\+Ai (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the AI status of the player. \mbox{\Hypertarget{class_player_ad4d8755ebdffb8e7bfccc1119f0f7042}\label{class_player_ad4d8755ebdffb8e7bfccc1119f0f7042}} 
+\index{Player@{Player}!getJailCards@{getJailCards}}
+\index{getJailCards@{getJailCards}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getJailCards()}{getJailCards()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Jail\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the current number of jail cards the player has. \mbox{\Hypertarget{class_player_ab27fb6eba2edafbe7c674abf2d85cc91}\label{class_player_ab27fb6eba2edafbe7c674abf2d85cc91}} 
+\index{Player@{Player}!getJailStatus@{getJailStatus}}
+\index{getJailStatus@{getJailStatus}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getJailStatus()}{getJailStatus()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Jail\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the current jail status of the player. \mbox{\Hypertarget{class_player_a39465d76fc735a64d104b8b21e574b8c}\label{class_player_a39465d76fc735a64d104b8b21e574b8c}} 
+\index{Player@{Player}!getMoney@{getMoney}}
+\index{getMoney@{getMoney}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getMoney()}{getMoney()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the current amount of money the player has. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a39465d76fc735a64d104b8b21e574b8c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a84e305a0a267be2c435a40544ddd35c8}\label{class_player_a84e305a0a267be2c435a40544ddd35c8}} 
+\index{Player@{Player}!getNeuralNetwork@{getNeuralNetwork}}
+\index{getNeuralNetwork@{getNeuralNetwork}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getNeuralNetwork()}{getNeuralNetwork()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}}\& Player\+::get\+Neural\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the Neural Network of a player (virtual function, needs to be overridden by derived classes).
+
+\begin{DoxyReturn}{Returns}
+Reference to the neuralnet class from a tinyai library. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_ai_player_a47e04e0a4457aaaef551c06eea00230f}{Ai\+Player}}.
+
+\mbox{\Hypertarget{class_player_a2d4f3ca739a5500c9e5f32932ed13019}\label{class_player_a2d4f3ca739a5500c9e5f32932ed13019}} 
+\index{Player@{Player}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the current position of the player. \mbox{\Hypertarget{class_player_a55e1a7856785c48db04f478ebc242cef}\label{class_player_a55e1a7856785c48db04f478ebc242cef}} 
+\index{Player@{Player}!getResultPlace@{getResultPlace}}
+\index{getResultPlace@{getResultPlace}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getResultPlace()}{getResultPlace()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Result\+Place (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the final result place of the player in the game. \mbox{\Hypertarget{class_player_a408134399497e07b0ba53e82d5c40958}\label{class_player_a408134399497e07b0ba53e82d5c40958}} 
+\index{Player@{Player}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Player\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the sprite representing the player on the game board. \mbox{\Hypertarget{class_player_ad7cbe5430cf9ade1cb6b60dc73019fb7}\label{class_player_ad7cbe5430cf9ade1cb6b60dc73019fb7}} 
+\index{Player@{Player}!getSpriteOffsetX@{getSpriteOffsetX}}
+\index{getSpriteOffsetX@{getSpriteOffsetX}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getSpriteOffsetX()}{getSpriteOffsetX()}}
+{\footnotesize\ttfamily float Player\+::get\+Sprite\+OffsetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the offset of the player sprite along the X-\/axis. \mbox{\Hypertarget{class_player_aa59d45a1ed19a90404174126d69c55c1}\label{class_player_aa59d45a1ed19a90404174126d69c55c1}} 
+\index{Player@{Player}!getSpriteOffsetY@{getSpriteOffsetY}}
+\index{getSpriteOffsetY@{getSpriteOffsetY}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getSpriteOffsetY()}{getSpriteOffsetY()}}
+{\footnotesize\ttfamily float Player\+::get\+Sprite\+OffsetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the offset of the player sprite along the Y-\/axis. \mbox{\Hypertarget{class_player_aa27d00d02d75f945a9b5bb8624104658}\label{class_player_aa27d00d02d75f945a9b5bb8624104658}} 
+\index{Player@{Player}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& Player\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the texture of the player\textquotesingle{}s sprite. \mbox{\Hypertarget{class_player_afbc9c4c7035653e4c4a56f863bd9f91c}\label{class_player_afbc9c4c7035653e4c4a56f863bd9f91c}} 
+\index{Player@{Player}!hasFieldOwnedId@{hasFieldOwnedId}}
+\index{hasFieldOwnedId@{hasFieldOwnedId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{hasFieldOwnedId()}{hasFieldOwnedId()}}
+{\footnotesize\ttfamily bool Player\+::has\+Field\+Owned\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption}) const}
+
+Check if the player owns a property with the specified ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the property to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the player owns the property, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_afbc9c4c7035653e4c4a56f863bd9f91c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a3ebff2af2ca397ffcb64a2ddd91d8cee}\label{class_player_a3ebff2af2ca397ffcb64a2ddd91d8cee}} 
+\index{Player@{Player}!reduceJailStatus@{reduceJailStatus}}
+\index{reduceJailStatus@{reduceJailStatus}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{reduceJailStatus()}{reduceJailStatus()}}
+{\footnotesize\ttfamily void Player\+::reduce\+Jail\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reduce the jail status of the player by one. \mbox{\Hypertarget{class_player_a1159031a207eddc655626adc8d420da4}\label{class_player_a1159031a207eddc655626adc8d420da4}} 
+\index{Player@{Player}!removeFieldOwnedId@{removeFieldOwnedId}}
+\index{removeFieldOwnedId@{removeFieldOwnedId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{removeFieldOwnedId()}{removeFieldOwnedId()}}
+{\footnotesize\ttfamily void Player\+::remove\+Field\+Owned\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+Remove a property with the specified ID from the list of properties owned by the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the property to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_ab1032df37bafe0a30acadb7bb1ccb97a}\label{class_player_ab1032df37bafe0a30acadb7bb1ccb97a}} 
+\index{Player@{Player}!setAiLevel@{setAiLevel}}
+\index{setAiLevel@{setAiLevel}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setAiLevel()}{setAiLevel()}}
+{\footnotesize\ttfamily void Player\+::set\+Ai\+Level (\begin{DoxyParamCaption}\item[{unsigned int}]{ai\+\_\+level }\end{DoxyParamCaption})}
+
+Set the AI level of the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ai\+\_\+level} & New AI level for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_ab1032df37bafe0a30acadb7bb1ccb97a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a0686aac84725114b7c5b540189b47c60}\label{class_player_a0686aac84725114b7c5b540189b47c60}} 
+\index{Player@{Player}!setColor@{setColor}}
+\index{setColor@{setColor}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Player\+::set\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{new\+\_\+color }\end{DoxyParamCaption})}
+
+Set the color associated with the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+color} & New color for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a0686aac84725114b7c5b540189b47c60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_aec0b2d2447f555e247ac01a54a15d77f}\label{class_player_aec0b2d2447f555e247ac01a54a15d77f}} 
+\index{Player@{Player}!setId@{setId}}
+\index{setId@{setId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Player\+::set\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+Set the unique identifier for the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+id} & New unique identifier for the player. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{class_player_aec0b2d2447f555e247ac01a54a15d77f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_aec0b2d2447f555e247ac01a54a15d77f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_adbcc2bba53e6bb2837d763eef79edff9}\label{class_player_adbcc2bba53e6bb2837d763eef79edff9}} 
+\index{Player@{Player}!setIsAi@{setIsAi}}
+\index{setIsAi@{setIsAi}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setIsAi()}{setIsAi()}}
+{\footnotesize\ttfamily void Player\+::set\+Is\+Ai (\begin{DoxyParamCaption}\item[{bool}]{new\+\_\+is\+\_\+ai }\end{DoxyParamCaption})}
+
+Set the AI status of the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+is\+\_\+ai} & New AI status for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_adbcc2bba53e6bb2837d763eef79edff9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a66e516d298b44b902bf15732a0e66515}\label{class_player_a66e516d298b44b902bf15732a0e66515}} 
+\index{Player@{Player}!setJailCards@{setJailCards}}
+\index{setJailCards@{setJailCards}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setJailCards()}{setJailCards()}}
+{\footnotesize\ttfamily void Player\+::set\+Jail\+Cards (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+jail\+\_\+cards }\end{DoxyParamCaption})}
+
+Set the number of jail cards the player has.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+jail\+\_\+cards} & New number of jail cards for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{class_player_a66e516d298b44b902bf15732a0e66515_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a67a3c5ddc234276cf72245f939a40438}\label{class_player_a67a3c5ddc234276cf72245f939a40438}} 
+\index{Player@{Player}!setJailStatus@{setJailStatus}}
+\index{setJailStatus@{setJailStatus}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setJailStatus()}{setJailStatus()}}
+{\footnotesize\ttfamily void Player\+::set\+Jail\+Status (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+jail\+\_\+status }\end{DoxyParamCaption})}
+
+Set the jail status of the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+jail\+\_\+status} & New jail status for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_player_a67a3c5ddc234276cf72245f939a40438_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_aa44dae5224ce813c88265734662080bb}\label{class_player_aa44dae5224ce813c88265734662080bb}} 
+\index{Player@{Player}!setMoney@{setMoney}}
+\index{setMoney@{setMoney}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setMoney()}{setMoney()}}
+{\footnotesize\ttfamily void Player\+::set\+Money (\begin{DoxyParamCaption}\item[{unsigned int}]{value }\end{DoxyParamCaption})}
+
+Set the amount of money the player has.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New amount of money for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_player_aa44dae5224ce813c88265734662080bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a2de8544be02b4464afb87b6169139068}\label{class_player_a2de8544be02b4464afb87b6169139068}} 
+\index{Player@{Player}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Player\+::set\+Position (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+position }\end{DoxyParamCaption})}
+
+Set the current position of the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+position} & New position for the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_player_a2de8544be02b4464afb87b6169139068_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a79df4c23544bfc40ec2d2420617da758}\label{class_player_a79df4c23544bfc40ec2d2420617da758}} 
+\index{Player@{Player}!setResultPlace@{setResultPlace}}
+\index{setResultPlace@{setResultPlace}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setResultPlace()}{setResultPlace()}}
+{\footnotesize\ttfamily void Player\+::set\+Result\+Place (\begin{DoxyParamCaption}\item[{unsigned int}]{place }\end{DoxyParamCaption})}
+
+Set the final result place of the player in the game. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_player_a79df4c23544bfc40ec2d2420617da758_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a0861445aeb9c42d8f1da69e811ad4aa7}\label{class_player_a0861445aeb9c42d8f1da69e811ad4aa7}} 
+\index{Player@{Player}!setSpriteOffsetX@{setSpriteOffsetX}}
+\index{setSpriteOffsetX@{setSpriteOffsetX}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setSpriteOffsetX()}{setSpriteOffsetX()}}
+{\footnotesize\ttfamily void Player\+::set\+Sprite\+OffsetX (\begin{DoxyParamCaption}\item[{const float}]{offset\+\_\+x }\end{DoxyParamCaption})}
+
+Set the offset of the player sprite along the X-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset\+\_\+x} & New offset value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a53a4de1ec98d14b8648d12960bfef043}\label{class_player_a53a4de1ec98d14b8648d12960bfef043}} 
+\index{Player@{Player}!setSpriteOffsetY@{setSpriteOffsetY}}
+\index{setSpriteOffsetY@{setSpriteOffsetY}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setSpriteOffsetY()}{setSpriteOffsetY()}}
+{\footnotesize\ttfamily void Player\+::set\+Sprite\+OffsetY (\begin{DoxyParamCaption}\item[{const float}]{offset\+\_\+y }\end{DoxyParamCaption})}
+
+Set the offset of the player sprite along the Y-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset\+\_\+y} & New offset value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a804d87f26ce849e33068db8095f805d7}\label{class_player_a804d87f26ce849e33068db8095f805d7}} 
+\index{Player@{Player}!setSpritePosition@{setSpritePosition}}
+\index{setSpritePosition@{setSpritePosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setSpritePosition()}{setSpritePosition()}}
+{\footnotesize\ttfamily void Player\+::set\+Sprite\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{new\+\_\+pos }\end{DoxyParamCaption})}
+
+Set the position of the player sprite.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+pos} & New position for the player sprite. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a6d24d184974e84bb529bcfb1366d0f9d}\label{class_player_a6d24d184974e84bb529bcfb1366d0f9d}} 
+\index{Player@{Player}!substractMoney@{substractMoney}}
+\index{substractMoney@{substractMoney}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{substractMoney()}{substractMoney()}}
+{\footnotesize\ttfamily bool Player\+::substract\+Money (\begin{DoxyParamCaption}\item[{unsigned int}]{value }\end{DoxyParamCaption})}
+
+Subtract a specified amount of money from the player\textquotesingle{}s balance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Amount of money to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the player had enough money and the subtraction was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_player_8cc}{Player.\+cc}}\end{DoxyCompactItemize}

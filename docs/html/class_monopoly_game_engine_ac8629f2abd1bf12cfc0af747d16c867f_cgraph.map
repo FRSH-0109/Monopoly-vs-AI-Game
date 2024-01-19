@@ -1,0 +1,8 @@
+<map id="MonopolyGameEngine::createAvailableHousesHotelText" name="MonopolyGameEngine::createAvailableHousesHotelText">
+<area shape="rect" id="node1" title="Creates text displaying the available count of houses and hotels." alt="" coords="5,136,247,177"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a8a92e457e602fcf6a0e1dbd2dbccc856" title="Adds text to the GUI." alt="" coords="295,5,464,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#acaf81e835720ba22173b0dd6a0a87bf9" title="Returns the font used in the GUI." alt="" coords="295,71,464,112"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#af3f9a189ddaca72b5eb57b72bc4fbbe4" title="Returns the font size used in the GUI." alt="" coords="295,136,464,177"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a13906373d7ee42cd405154047d76b281" title="Gets the count of hotels available for purchase." alt="" coords="295,201,464,243"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#ae2a4e228360bfceb91c7a5cd6803b0fd" title="Gets the count of houses available for purchase." alt="" coords="295,267,464,308"/>
+</map>

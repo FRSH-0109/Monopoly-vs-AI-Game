@@ -1,0 +1,11 @@
+<map id="GameMenuScreen::gameMenuCreate" name="GameMenuScreen::gameMenuCreate">
+<area shape="rect" id="node1" title="Function to create the game menu." alt="" coords="5,191,228,233"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#ab51ef0260eead96cb3d88ecdb42cdd36" title="Adds a button to the screen." alt="" coords="290,5,473,32"/>
+<area shape="rect" id="node3" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="288,56,475,83"/>
+<area shape="rect" id="node4" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="288,107,475,149"/>
+<area shape="rect" id="node5" href="$class_active_screen.html#a6566d6bd5327b662b7cf587b1c26ce61" title="Gets the SFML font used for text on the screen." alt="" coords="299,173,463,200"/>
+<area shape="rect" id="node6" href="$class_context_window.html#ae1d1fa169768a6ed2a1651f6d5594fc2" title="Gets the pointer to the ContextWindow instance." alt="" coords="276,224,487,251"/>
+<area shape="rect" id="node7" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="279,275,484,301"/>
+<area shape="rect" id="node8" href="$class_active_screen.html#a3de2c1b9355ef27577cf8af01c0f4632" title="Sets the pointer to the ContextWindow." alt="" coords="288,326,475,367"/>
+<area shape="rect" id="node9" href="$class_active_screen.html#ae56257f26e8cc35bc9bf476e4a633e20" title="Sets the SFML font used for text on the screen." alt="" coords="300,392,463,419"/>
+</map>

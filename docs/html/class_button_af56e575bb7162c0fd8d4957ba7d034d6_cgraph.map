@@ -1,0 +1,5 @@
+<map id="Button::mouseIsOver" name="Button::mouseIsOver">
+<area shape="rect" id="node1" title="Virtual function called when the mouse is over the button." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$class_button.html#ae553fa694c6ce78568f846ddd791e6a2" title="Sets the button state to focused." alt="" coords="212,5,385,32"/>
+<area shape="rect" id="node3" href="$class_button.html#ae84c0d3f2c6f047455de3ff91f1322d9" title="Sets the focus state of the button." alt="" coords="433,5,575,32"/>
+</map>

@@ -1,0 +1,201 @@
+\hypertarget{class_board}{}\doxysection{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+Class representing the monopoly game board.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_a79e3b8de081a3c283aebb122cc333dc3}{Board}} (const std\+::string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_board}{Board}} class. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}{Possible\+Fields}} $>$ \& \mbox{\hyperlink{class_board_a259fe7f8131ebd8614cfa3a5ce4de724}{get\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the entire game board. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_board_a1c969a12d80bf889bede688c5c4b4c6a}{get\+Field\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the number of fields on the board. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2i \mbox{\hyperlink{class_board_a4f1dde258689798d125165c2eddaaa86}{get\+Board\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the position of the entire game board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a5f148daa03da25d40dff3fc613568d6f}{clear\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Clears the entire game board. \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_board_a2b73746e47152ecea46f7a03d58ea3e8}{get\+Field\+Positon}} (unsigned int id, sf\+::\+Vector2i prev\+Pos, unsigned int x, unsigned int y)
+\begin{DoxyCompactList}\small\item\em Getter for the position of a specific field on the board. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_board_a7ae5ceb0363e2d0bf1520108074c9485}{get\+Field\+Rotation}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Getter for the rotation angle of a specific field on the board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}{Possible\+Fields}} \& \mbox{\hyperlink{class_board_aa9a40a410b22ebbb1c87a91d16741711}{get\+Field\+By\+Id}} (unsigned int wanted\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Getter for a specific field on the board by its unique identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the monopoly game board. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_board_a79e3b8de081a3c283aebb122cc333dc3}\label{class_board_a79e3b8de081a3c283aebb122cc333dc3}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_board}{Board}} class. 
+
+Scale for displaying board stuff 
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The file path to the \textquotesingle{}board.\+json\textquotesingle{} file. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a79e3b8de081a3c283aebb122cc333dc3_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_a5f148daa03da25d40dff3fc613568d6f}\label{class_board_a5f148daa03da25d40dff3fc613568d6f}} 
+\index{Board@{Board}!clearBoard@{clearBoard}}
+\index{clearBoard@{clearBoard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{clearBoard()}{clearBoard()}}
+{\footnotesize\ttfamily void Board\+::clear\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the entire game board. 
+
+\mbox{\Hypertarget{class_board_a259fe7f8131ebd8614cfa3a5ce4de724}\label{class_board_a259fe7f8131ebd8614cfa3a5ce4de724}} 
+\index{Board@{Board}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}{Possible\+Fields}} $>$ \& Board\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the entire game board. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing all types of fields on the board. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a4f1dde258689798d125165c2eddaaa86}\label{class_board_a4f1dde258689798d125165c2eddaaa86}} 
+\index{Board@{Board}!getBoardPosition@{getBoardPosition}}
+\index{getBoardPosition@{getBoardPosition}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getBoardPosition()}{getBoardPosition()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2i Board\+::get\+Board\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the position of the entire game board. 
+
+\begin{DoxyReturn}{Returns}
+The position as an sf\+::\+Vector2i. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_aa9a40a410b22ebbb1c87a91d16741711}\label{class_board_aa9a40a410b22ebbb1c87a91d16741711}} 
+\index{Board@{Board}!getFieldById@{getFieldById}}
+\index{getFieldById@{getFieldById}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getFieldById()}{getFieldById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_board_8h_ad39b748df1ce97bcd7b1b6557ee2f7b4}{Possible\+Fields}} \& Board\+::get\+Field\+By\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{wanted\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Getter for a specific field on the board by its unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wanted\+\_\+id} & The unique identifier of the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the field specified by the identifier. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_board_aa9a40a410b22ebbb1c87a91d16741711_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_board_a1c969a12d80bf889bede688c5c4b4c6a}\label{class_board_a1c969a12d80bf889bede688c5c4b4c6a}} 
+\index{Board@{Board}!getFieldNumber@{getFieldNumber}}
+\index{getFieldNumber@{getFieldNumber}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getFieldNumber()}{getFieldNumber()}}
+{\footnotesize\ttfamily unsigned int Board\+::get\+Field\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the number of fields on the board. 
+
+\begin{DoxyReturn}{Returns}
+The number of fields. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a2b73746e47152ecea46f7a03d58ea3e8}\label{class_board_a2b73746e47152ecea46f7a03d58ea3e8}} 
+\index{Board@{Board}!getFieldPositon@{getFieldPositon}}
+\index{getFieldPositon@{getFieldPositon}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getFieldPositon()}{getFieldPositon()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Board\+::get\+Field\+Positon (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{sf\+::\+Vector2i}]{prev\+Pos,  }\item[{unsigned int}]{x,  }\item[{unsigned int}]{y }\end{DoxyParamCaption})}
+
+
+
+Getter for the position of a specific field on the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the field. \\
+\hline
+{\em prev\+Pos} & The previous position of the field. \\
+\hline
+{\em x} & The horizontal position of the field. \\
+\hline
+{\em y} & The vertical position of the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position of the field as an sf\+::\+Vector2i. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_board_a2b73746e47152ecea46f7a03d58ea3e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_board_a7ae5ceb0363e2d0bf1520108074c9485}\label{class_board_a7ae5ceb0363e2d0bf1520108074c9485}} 
+\index{Board@{Board}!getFieldRotation@{getFieldRotation}}
+\index{getFieldRotation@{getFieldRotation}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getFieldRotation()}{getFieldRotation()}}
+{\footnotesize\ttfamily float Board\+::get\+Field\+Rotation (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Getter for the rotation angle of a specific field on the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rotation angle of the field. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_board_a7ae5ceb0363e2d0bf1520108074c9485_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_board_8h}{Board.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_board_8cc}{Board.\+cc}}\end{DoxyCompactItemize}

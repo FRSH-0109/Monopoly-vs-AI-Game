@@ -1,0 +1,6 @@
+<map id="MainMenuScreen::worker" name="MainMenuScreen::worker">
+<area shape="rect" id="node1" title="Worker function for the main menu screen." alt="" coords="5,56,192,83"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#a385001a5027f0b2f00145a54b668368f" title="Sets the colors of a button based on its state." alt="" coords="240,5,459,32"/>
+<area shape="rect" id="node3" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="256,56,443,83"/>
+<area shape="rect" id="node4" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="256,107,443,149"/>
+</map>

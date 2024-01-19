@@ -1,0 +1,6 @@
+<map id="ActiveScreen" name="ActiveScreen">
+<area shape="rect" id="node1" title="Represents the base class for handling displayed screens in the project." alt="" coords="171,5,277,32"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html" title="Represents the screen for the game menu." alt="" coords="5,80,147,107"/>
+<area shape="rect" id="node3" href="$class_game_screen.html" title=" " alt="" coords="171,80,277,107"/>
+<area shape="rect" id="node4" href="$class_main_menu_screen.html" title="Represents the screen for the main menu." alt="" coords="301,80,435,107"/>
+</map>

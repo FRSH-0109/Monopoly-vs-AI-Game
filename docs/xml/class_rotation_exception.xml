@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_rotation_exception" kind="class" language="C++" prot="public">
+    <compoundname>RotationException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <includes refid="main_8h" local="no">main.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_rotation_exception_1a1322d421851f635e56b97acf53f815d6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float RotationException::bad_rotation_</definition>
+        <argsstring></argsstring>
+        <name>bad_rotation_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="31" column="7" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_rotation_exception_1aaccd10ab00dafb9786a5cc95c6f23ec8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RotationException::RotationException</definition>
+        <argsstring>(float rotation)</argsstring>
+        <name>RotationException</name>
+        <param>
+          <type>float</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="34" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rotation_exception_1ab7a841d71bac25dd3a28dd4e1fccab0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RotationException::RotationException</definition>
+        <argsstring>(const RotationException &amp;e)</argsstring>
+        <name>RotationException</name>
+        <param>
+          <type>const <ref refid="class_rotation_exception" kindref="compound">RotationException</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="35" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rotation_exception_1a3af9294374405df6219c80b2b32a703d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float RotationException::getBadRotation</definition>
+        <argsstring>()</argsstring>
+        <name>getBadRotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="36" column="7" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exception for handling passing wrong rotation to any displayed object. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RotationException</label>
+        <link refid="class_rotation_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>RotationException</label>
+        <link refid="class_rotation_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/main.h" line="30" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="30" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_rotation_exception_1a1322d421851f635e56b97acf53f815d6" prot="private" virt="non-virtual"><scope>RotationException</scope><name>bad_rotation_</name></member>
+      <member refid="class_rotation_exception_1a3af9294374405df6219c80b2b32a703d" prot="public" virt="non-virtual"><scope>RotationException</scope><name>getBadRotation</name></member>
+      <member refid="class_rotation_exception_1aaccd10ab00dafb9786a5cc95c6f23ec8" prot="public" virt="non-virtual"><scope>RotationException</scope><name>RotationException</name></member>
+      <member refid="class_rotation_exception_1ab7a841d71bac25dd3a28dd4e1fccab0c" prot="public" virt="non-virtual"><scope>RotationException</scope><name>RotationException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_active_screen" xml:lang="en-US">
+<title>ActiveScreen Class Reference</title>
+<indexterm><primary>ActiveScreen</primary></indexterm>
+Inheritance diagram for ActiveScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_active_screen__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_active_screen_1a3cd9d9f9571195d3fd030c41512348da"/>virtual ScreenEventType <emphasis role="strong">worker</emphasis> ()=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a381ad867612f98caa038c0b775f0c39a"/>virtual void <emphasis role="strong">draw</emphasis> ()=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61"/>sf::Font &amp; <emphasis role="strong">getFont</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20"/>void <emphasis role="strong">setFont</emphasis> (sf::Font font)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1ae0a7c90f6f382c7f0f3fa9ccd01c44f0"/>void <emphasis role="strong">addButton</emphasis> (std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; buttonTmp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a513b36eddddee551720033049449d434"/>void <emphasis role="strong">addText</emphasis> (std::shared_ptr&lt; sf::Text &gt; textTmp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1aefe54d9a04210b2985890f3657974484"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; &gt; &amp; <emphasis role="strong">getButtons</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a83ce836bcc0364d216ee126716b27da0"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68"/><link linkend="_class_context_window">ContextWindow</link> * <emphasis role="strong">getContextWindow</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632"/>void <emphasis role="strong">setContextWindow</emphasis> (<link linkend="_class_context_window">ContextWindow</link> *)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1aa4db9f544d20ad9c7b1fe2af4d55ea3d"/>ActiveScreenType <emphasis role="strong">getScreenType</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf"/>void <emphasis role="strong">setScreenType</emphasis> (ActiveScreenType type)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a385001a5027f0b2f00145a54b668368f"/>void <emphasis role="strong">buttonSetColors</emphasis> (std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; buttonPtr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a571c9f50c3d50235b43a1d2cb01ad72f"/>virtual std::vector&lt; std::shared_ptr&lt; <link linkend="_structplayer_settings">playerSettings</link> &gt; &gt; <emphasis role="strong">getPlayersSettings</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_active_screen_1a33f41ba13061ef1700f475e916bcba3b"/>virtual std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; &gt; <emphasis role="strong">getPlayersResult</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__active_screen_8h">ActiveScreen.h</link>/home/kamil/zpr/Monopoly/<link linkend="__active_screen_8cc">ActiveScreen.cc</link></section>

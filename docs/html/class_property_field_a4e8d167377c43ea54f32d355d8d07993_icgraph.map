@@ -1,0 +1,8 @@
+<map id="PropertyField::getOwner" name="PropertyField::getOwner">
+<area shape="rect" id="node1" title="Gets the owner of the property." alt="" coords="684,101,863,127"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="437,5,636,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,64,389,105"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a2af1706f23548c8ad118133badfc0160" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="452,123,621,164"/>
+<area shape="rect" id="node6" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="464,189,609,215"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,71,163,98"/>
+</map>

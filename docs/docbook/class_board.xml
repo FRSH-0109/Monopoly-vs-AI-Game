@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_board" xml:lang="en-US">
+<title>Board Class Reference</title>
+<indexterm><primary>Board</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_board_1a79e3b8de081a3c283aebb122cc333dc3"/><emphasis role="strong">Board</emphasis> (const std::string file_path)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1a259fe7f8131ebd8614cfa3a5ce4de724"/>const std::vector&lt; PossibleFields &gt; &amp; <emphasis role="strong">getBoard</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1a1c969a12d80bf889bede688c5c4b4c6a"/>unsigned int <emphasis role="strong">getFieldNumber</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1a4f1dde258689798d125165c2eddaaa86"/>const sf::Vector2i <emphasis role="strong">getBoardPosition</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1a5f148daa03da25d40dff3fc613568d6f"/>void <emphasis role="strong">clearBoard</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1a2b73746e47152ecea46f7a03d58ea3e8"/>sf::Vector2i <emphasis role="strong">getFieldPositon</emphasis> (unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1a7ae5ceb0363e2d0bf1520108074c9485"/>float <emphasis role="strong">getFieldRotation</emphasis> (unsigned int id)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_board_1aa9a40a410b22ebbb1c87a91d16741711"/>PossibleFields &amp; <emphasis role="strong">getFieldById</emphasis> (unsigned int wanted_id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__board_8h">Board.h</link>/home/kamil/zpr/Monopoly/<link linkend="__board_8cc">Board.cc</link></section>

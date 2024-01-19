@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_game_menu_screen" xml:lang="en-US">
+<title>GameMenuScreen Class Reference</title>
+<indexterm><primary>GameMenuScreen</primary></indexterm>
+Inheritance diagram for GameMenuScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_game_menu_screen__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for GameMenuScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_game_menu_screen__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c"/>void <emphasis role="strong">gameMenuCreate</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a930fac59e5231f348579a57991246e07"/>ScreenEventType <emphasis role="strong">worker</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1ade9e4b9082cd923b43e45ea1f74ebaba"/>void <emphasis role="strong">setPlayerSettings</emphasis> (unsigned int index, bool isNone, bool isHuman, int level)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6"/>void <emphasis role="strong">buttonClickHandle</emphasis> (std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; buttonPtr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77"/>void <emphasis role="strong">setOtherButtonsInactive</emphasis> (std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; buttonPtr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a974eb5076298fbba7e4d6b577f74e888"/>int <emphasis role="strong">getPlayerNumFromEventType</emphasis> (ScreenEventType event)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e"/>void <emphasis role="strong">setAILevelColumnVisibility</emphasis> (int playerNum, bool visible)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a8734e38603d1886079ff185c5aa399bc"/>bool <emphasis role="strong">isEventTypeAILevel</emphasis> (int playerNum, ScreenEventType event)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a704fad5ddf438187195732e2b727aaaf"/>bool <emphasis role="strong">isEventTypeSetAI</emphasis> (int playerNum, ScreenEventType event)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a348efe82320f6cf37be5b873343768d1"/>void <emphasis role="strong">setDefaultAILevelButtonsFocus</emphasis> (int playerNum)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a1ec0a4aa6bc44f2153e9d2abf290e7c4"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_structplayer_settings">playerSettings</link> &gt; &gt; <emphasis role="strong">getPlayersSettings</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16"/>void <emphasis role="strong">draw</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__active_screen_8h">ActiveScreen.h</link>/home/kamil/zpr/Monopoly/<link linkend="__active_screen_8cc">ActiveScreen.cc</link></section>

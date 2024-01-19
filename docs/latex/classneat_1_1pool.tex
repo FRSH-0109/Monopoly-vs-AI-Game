@@ -1,0 +1,147 @@
+\hypertarget{classneat_1_1pool}{}\doxysection{neat\+::pool Class Reference}
+\label{classneat_1_1pool}\index{neat::pool@{neat::pool}}
+
+
+{\ttfamily \#include $<$Tinyneat.\+h$>$}
+
+
+
+Collaboration diagram for neat\+::pool\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classneat_1_1pool__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classneat_1_1pool_a7ef3d5df12e96e0be1db0d2d6e86a595}{pool}} (unsigned int input, unsigned int output, unsigned int bias=1, bool rec=false)
+\item 
+void \mbox{\hyperlink{classneat_1_1pool_a5abf875445e788d913ab8416a47e8ee3}{new\+\_\+generation}} ()
+\item 
+unsigned int \mbox{\hyperlink{classneat_1_1pool_a6811b1137e4eb75496f0319cf7ce3349}{generation}} ()
+\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{structneat_1_1specie}{specie}} $\ast$, \mbox{\hyperlink{classneat_1_1genome}{genome}} $\ast$ $>$ $>$ \mbox{\hyperlink{classneat_1_1pool_a34603a3e12abf4f136c294933a9d2cc9}{get\+\_\+genomes}} ()
+\item 
+void \mbox{\hyperlink{classneat_1_1pool_a4e8227c81e53bc040698bb0db18f4c0f}{import\+\_\+fromfile}} (std\+::string filename)
+\item 
+void \mbox{\hyperlink{classneat_1_1pool_a24aac8dd547c4089a5b5617e1c5824b5}{export\+\_\+tofile}} (std\+::string filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classneat_1_1pool_ad22233683f54678400ef45fe6f7a38ed}{max\+\_\+fitness}} = 0
+\item 
+\mbox{\hyperlink{structneat_1_1mutation__rate__container}{mutation\+\_\+rate\+\_\+container}} \mbox{\hyperlink{classneat_1_1pool_a037e36677258536cfc40ad2dccfe4d7f}{mutation\+\_\+rates}}
+\item 
+\mbox{\hyperlink{structneat_1_1speciating__parameter__container}{speciating\+\_\+parameter\+\_\+container}} \mbox{\hyperlink{classneat_1_1pool_a19cf05d7934ea6033866da21eaf7252f}{speciating\+\_\+parameters}}
+\item 
+\mbox{\hyperlink{structneat_1_1network__info__container}{network\+\_\+info\+\_\+container}} \mbox{\hyperlink{classneat_1_1pool_abe5e4171f187f19ebe85409369ede596}{network\+\_\+info}}
+\item 
+std\+::random\+\_\+device \mbox{\hyperlink{classneat_1_1pool_a421cb787dd4759f77f88e019a2b62fc7}{rd}}
+\item 
+std\+::mt19937 \mbox{\hyperlink{classneat_1_1pool_a3095de5083752395ffd294b95b4a1705}{generator}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{structneat_1_1specie}{specie}} $>$ \mbox{\hyperlink{classneat_1_1pool_a3056b5880db8c3837c1f2af0e4a3faff}{species}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classneat_1_1pool_a7ef3d5df12e96e0be1db0d2d6e86a595}\label{classneat_1_1pool_a7ef3d5df12e96e0be1db0d2d6e86a595}} 
+\index{neat::pool@{neat::pool}!pool@{pool}}
+\index{pool@{pool}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{pool()}{pool()}}
+{\footnotesize\ttfamily neat\+::pool\+::pool (\begin{DoxyParamCaption}\item[{unsigned int}]{input,  }\item[{unsigned int}]{output,  }\item[{unsigned int}]{bias = {\ttfamily 1},  }\item[{bool}]{rec = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classneat_1_1pool_a24aac8dd547c4089a5b5617e1c5824b5}\label{classneat_1_1pool_a24aac8dd547c4089a5b5617e1c5824b5}} 
+\index{neat::pool@{neat::pool}!export\_tofile@{export\_tofile}}
+\index{export\_tofile@{export\_tofile}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{export\_tofile()}{export\_tofile()}}
+{\footnotesize\ttfamily void neat\+::pool\+::export\+\_\+tofile (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classneat_1_1pool_a6811b1137e4eb75496f0319cf7ce3349}\label{classneat_1_1pool_a6811b1137e4eb75496f0319cf7ce3349}} 
+\index{neat::pool@{neat::pool}!generation@{generation}}
+\index{generation@{generation}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{generation()}{generation()}}
+{\footnotesize\ttfamily unsigned int neat\+::pool\+::generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classneat_1_1pool_a34603a3e12abf4f136c294933a9d2cc9}\label{classneat_1_1pool_a34603a3e12abf4f136c294933a9d2cc9}} 
+\index{neat::pool@{neat::pool}!get\_genomes@{get\_genomes}}
+\index{get\_genomes@{get\_genomes}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{get\_genomes()}{get\_genomes()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{structneat_1_1specie}{specie}}$\ast$, \mbox{\hyperlink{classneat_1_1genome}{genome}}$\ast$$>$ $>$ neat\+::pool\+::get\+\_\+genomes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classneat_1_1pool_a4e8227c81e53bc040698bb0db18f4c0f}\label{classneat_1_1pool_a4e8227c81e53bc040698bb0db18f4c0f}} 
+\index{neat::pool@{neat::pool}!import\_fromfile@{import\_fromfile}}
+\index{import\_fromfile@{import\_fromfile}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{import\_fromfile()}{import\_fromfile()}}
+{\footnotesize\ttfamily void neat\+::pool\+::import\+\_\+fromfile (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classneat_1_1pool_a4e8227c81e53bc040698bb0db18f4c0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classneat_1_1pool_a5abf875445e788d913ab8416a47e8ee3}\label{classneat_1_1pool_a5abf875445e788d913ab8416a47e8ee3}} 
+\index{neat::pool@{neat::pool}!new\_generation@{new\_generation}}
+\index{new\_generation@{new\_generation}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{new\_generation()}{new\_generation()}}
+{\footnotesize\ttfamily void neat\+::pool\+::new\+\_\+generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classneat_1_1pool_a3095de5083752395ffd294b95b4a1705}\label{classneat_1_1pool_a3095de5083752395ffd294b95b4a1705}} 
+\index{neat::pool@{neat::pool}!generator@{generator}}
+\index{generator@{generator}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{generator}{generator}}
+{\footnotesize\ttfamily std\+::mt19937 neat\+::pool\+::generator}
+
+\mbox{\Hypertarget{classneat_1_1pool_ad22233683f54678400ef45fe6f7a38ed}\label{classneat_1_1pool_ad22233683f54678400ef45fe6f7a38ed}} 
+\index{neat::pool@{neat::pool}!max\_fitness@{max\_fitness}}
+\index{max\_fitness@{max\_fitness}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{max\_fitness}{max\_fitness}}
+{\footnotesize\ttfamily unsigned int neat\+::pool\+::max\+\_\+fitness = 0}
+
+\mbox{\Hypertarget{classneat_1_1pool_a037e36677258536cfc40ad2dccfe4d7f}\label{classneat_1_1pool_a037e36677258536cfc40ad2dccfe4d7f}} 
+\index{neat::pool@{neat::pool}!mutation\_rates@{mutation\_rates}}
+\index{mutation\_rates@{mutation\_rates}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{mutation\_rates}{mutation\_rates}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structneat_1_1mutation__rate__container}{mutation\+\_\+rate\+\_\+container}} neat\+::pool\+::mutation\+\_\+rates}
+
+\mbox{\Hypertarget{classneat_1_1pool_abe5e4171f187f19ebe85409369ede596}\label{classneat_1_1pool_abe5e4171f187f19ebe85409369ede596}} 
+\index{neat::pool@{neat::pool}!network\_info@{network\_info}}
+\index{network\_info@{network\_info}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{network\_info}{network\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structneat_1_1network__info__container}{network\+\_\+info\+\_\+container}} neat\+::pool\+::network\+\_\+info}
+
+\mbox{\Hypertarget{classneat_1_1pool_a421cb787dd4759f77f88e019a2b62fc7}\label{classneat_1_1pool_a421cb787dd4759f77f88e019a2b62fc7}} 
+\index{neat::pool@{neat::pool}!rd@{rd}}
+\index{rd@{rd}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{rd}{rd}}
+{\footnotesize\ttfamily std\+::random\+\_\+device neat\+::pool\+::rd}
+
+\mbox{\Hypertarget{classneat_1_1pool_a19cf05d7934ea6033866da21eaf7252f}\label{classneat_1_1pool_a19cf05d7934ea6033866da21eaf7252f}} 
+\index{neat::pool@{neat::pool}!speciating\_parameters@{speciating\_parameters}}
+\index{speciating\_parameters@{speciating\_parameters}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{speciating\_parameters}{speciating\_parameters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structneat_1_1speciating__parameter__container}{speciating\+\_\+parameter\+\_\+container}} neat\+::pool\+::speciating\+\_\+parameters}
+
+\mbox{\Hypertarget{classneat_1_1pool_a3056b5880db8c3837c1f2af0e4a3faff}\label{classneat_1_1pool_a3056b5880db8c3837c1f2af0e4a3faff}} 
+\index{neat::pool@{neat::pool}!species@{species}}
+\index{species@{species}!neat::pool@{neat::pool}}
+\doxysubsubsection{\texorpdfstring{species}{species}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{structneat_1_1specie}{specie}}$>$ neat\+::pool\+::species}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_tinyneat_8h}{Tinyneat.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_tinyneat_8cc}{Tinyneat.\+cc}}\end{DoxyCompactItemize}

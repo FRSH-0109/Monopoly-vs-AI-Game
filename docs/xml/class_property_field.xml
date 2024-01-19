@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_property_field" kind="class" language="C++" prot="public">
+    <compoundname>PropertyField</compoundname>
+    <basecompoundref refid="class_field" prot="public" virt="non-virtual">Field</basecompoundref>
+    <derivedcompoundref refid="class_station_field" prot="public" virt="non-virtual">StationField</derivedcompoundref>
+    <derivedcompoundref refid="class_street_field" prot="public" virt="non-virtual">StreetField</derivedcompoundref>
+    <derivedcompoundref refid="class_utility_field" prot="public" virt="non-virtual">UtilityField</derivedcompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_property_field_1af1ae55a5d197292406c5993b9c0432a0" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int PropertyField::price_</definition>
+        <argsstring></argsstring>
+        <name>price_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="181" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_property_field_1a859cf05ff8605ca87b4a973e66ad858e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt;unsigned int&gt; PropertyField::group_members_</definition>
+        <argsstring></argsstring>
+        <name>group_members_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="182" column="13" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_property_field_1a5712bd4195d460bb65d0fe16f36ea0d0" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int PropertyField::mortgage_</definition>
+        <argsstring></argsstring>
+        <name>mortgage_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="183" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_property_field_1a4fae44c0c58955b88300dc54857685ee" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PropertyField::is_mortgaged_</definition>
+        <argsstring></argsstring>
+        <name>is_mortgaged_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="184" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_property_field_1afb57e5331efb9c8b922d3069e160386b" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int PropertyField::unmortgage_value_</definition>
+        <argsstring></argsstring>
+        <name>unmortgage_value_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="185" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_property_field_1af3d61a57b349eee2ec908af8133f5de4" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Player&gt; PropertyField::owner_</definition>
+        <argsstring></argsstring>
+        <name>owner_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="186" column="17" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_property_field_1abfc0eb4d4619ee75596c1e898eb62bca" prot="private" static="no" mutable="no">
+        <type>sf::RectangleShape</type>
+        <definition>sf::RectangleShape PropertyField::owner_flag_</definition>
+        <argsstring></argsstring>
+        <name>owner_flag_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="187" column="20" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_property_field_1aba9f3d809377e263842e8aa382e78a49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PropertyField::PropertyField</definition>
+        <argsstring>(const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int price, const std::vector&lt; unsigned int &gt; group_members, const unsigned int mortgage)</argsstring>
+        <name>PropertyField</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>graphic_path</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2i</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>price</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; unsigned int &gt;</type>
+          <declname>group_members</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>mortgage</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_property_field" kindref="compound">PropertyField</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graphic_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the field&apos;s graphic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation angle of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the field on the board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The price of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>group_members</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The IDs of the group members (properties in the same group). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mortgage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mortgage value of the property. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="204" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="204" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1aafcf4b8fd5fb49a727cb564c0c99a3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int PropertyField::getPrice</definition>
+        <argsstring>()</argsstring>
+        <name>getPrice</name>
+        <briefdescription>
+<para>Gets the price of the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The price of the property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="227" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="138" bodyend="140"/>
+        <referencedby refid="class_monopoly_game_engine_1aa95037b493d8fb2294404944a14dcca4" compoundref="_monopoly_game_engine_8cc" startline="219" endline="374">MonopolyGameEngine::performAuction</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1a676180ae8ad98644572c47787ea0a01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; unsigned int &gt;</type>
+        <definition>const std::vector&lt; unsigned int &gt; PropertyField::getGroupMembers</definition>
+        <argsstring>()</argsstring>
+        <name>getGroupMembers</name>
+        <briefdescription>
+<para>Gets the IDs of the group members (properties in the same group). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The IDs of the group members. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="233" column="19" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="142" bodyend="144"/>
+        <referencedby refid="class_monopoly_game_engine_1af6b0a0923148f7dc901195dccfdc7952" compoundref="_monopoly_game_engine_8cc" startline="386" endline="396">MonopolyGameEngine::calculateGroupFieldsOwned</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1afd604c9fd373fa220ebe04ff9d5f191b" compoundref="_monopoly_game_engine_8cc" startline="467" endline="485">MonopolyGameEngine::colorGroupEmpty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1aa486edceb7c305c2f24785a6ee8ca2fc" compoundref="_monopoly_game_engine_8cc" startline="376" endline="384">MonopolyGameEngine::groupCompleted</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1aaf7f625f32dc53f7413236a79afaf6d5" compoundref="_monopoly_game_engine_8cc" startline="398" endline="415">MonopolyGameEngine::isBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1afaf31ce9d8aaef4b36bbefe9b4b72f78" compoundref="_monopoly_game_engine_8cc" startline="417" endline="431">MonopolyGameEngine::isDestroyingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a34646774679d5ef5e9bbc6317953c7fa" compoundref="_monopoly_game_engine_8cc" startline="433" endline="450">MonopolyGameEngine::isHotelBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1ac01307d6ae292277aa3caf5855955a8c" compoundref="_monopoly_game_engine_8cc" startline="452" endline="465">MonopolyGameEngine::isHotelDestroyingLegal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1a118e8dac5640ec978cbd14519e0880fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int PropertyField::getMortgage</definition>
+        <argsstring>()</argsstring>
+        <name>getMortgage</name>
+        <briefdescription>
+<para>Gets the mortgage value of the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The mortgage value of the property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="239" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="146" bodyend="148"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1ac52da7b908a73ce329c1aff55f971bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool PropertyField::getIsMortgaged</definition>
+        <argsstring>()</argsstring>
+        <name>getIsMortgaged</name>
+        <briefdescription>
+<para>Checks if the property is mortgaged. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the property is mortgaged, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="245" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="150" bodyend="152"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1aaf7f625f32dc53f7413236a79afaf6d5" compoundref="_monopoly_game_engine_8cc" startline="398" endline="415">MonopolyGameEngine::isBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1afaf31ce9d8aaef4b36bbefe9b4b72f78" compoundref="_monopoly_game_engine_8cc" startline="417" endline="431">MonopolyGameEngine::isDestroyingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a34646774679d5ef5e9bbc6317953c7fa" compoundref="_monopoly_game_engine_8cc" startline="433" endline="450">MonopolyGameEngine::isHotelBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1ac01307d6ae292277aa3caf5855955a8c" compoundref="_monopoly_game_engine_8cc" startline="452" endline="465">MonopolyGameEngine::isHotelDestroyingLegal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1aa323b39c72226b6d81782fb9f8b5ffd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int PropertyField::getUnmortgageValue</definition>
+        <argsstring>()</argsstring>
+        <name>getUnmortgageValue</name>
+        <briefdescription>
+<para>Gets the value needed to unmortgage the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value needed to unmortgage the property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="251" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="154" bodyend="156"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1a4e8d167377c43ea54f32d355d8d07993" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Player &gt; PropertyField::getOwner</definition>
+        <argsstring>()</argsstring>
+        <name>getOwner</name>
+        <briefdescription>
+<para>Gets the owner of the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A shared pointer to the owner of the property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="257" column="17" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="158" bodyend="160"/>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1a1fc8ddd955fb2c1b271a259785eab177" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::RectangleShape &amp;</type>
+        <definition>sf::RectangleShape &amp; PropertyField::getOwnerFlag</definition>
+        <argsstring>()</argsstring>
+        <name>getOwnerFlag</name>
+        <briefdescription>
+<para>Gets the owner flag sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The owner flag sprite. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="263" column="20" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="162" bodyend="164"/>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1a8ed81fa863c3d443a69141445d66616e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PropertyField::setIsMortgaged</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>setIsMortgaged</name>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the mortgaged state of the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new mortgaged state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="269" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="166" bodyend="168"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_property_field_1aa458959642c699213a8f537532e0f371" compoundref="_field_8cc" startline="178" endline="181">resetDefault</referencedby>
+        <referencedby refid="class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8" compoundref="_field_8cc" startline="255" endline="260">StreetField::resetDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1aff8b7ee4568a0721149145074f2aa160" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PropertyField::setOwner</definition>
+        <argsstring>(std::shared_ptr&lt; Player &gt; new_owner)</argsstring>
+        <name>setOwner</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;</type>
+          <declname>new_owner</declname>
+        </param>
+        <briefdescription>
+<para>Sets the owner of the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A shared pointer to the new owner. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="275" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="170" bodyend="172"/>
+        <referencedby refid="class_withdraw_1a19f82027534a13d80536846c5af25829" compoundref="_withdraw_8cc" startline="1333" endline="1396">Withdraw::makeWithdraw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1aa3a6b0249d36134b9cc63872922e447f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PropertyField::resetOwner</definition>
+        <argsstring>()</argsstring>
+        <name>resetOwner</name>
+        <briefdescription>
+<para>Resets the owner of the property. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="280" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="174" bodyend="176"/>
+        <referencedby refid="class_property_field_1aa458959642c699213a8f537532e0f371" compoundref="_field_8cc" startline="178" endline="181">resetDefault</referencedby>
+        <referencedby refid="class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8" compoundref="_field_8cc" startline="255" endline="260">StreetField::resetDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1aa458959642c699213a8f537532e0f371" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PropertyField::resetDefault</definition>
+        <argsstring>()</argsstring>
+        <name>resetDefault</name>
+        <briefdescription>
+<para>Resets the property to its default state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="285" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="178" bodyend="181"/>
+        <references refid="class_property_field_1aa3a6b0249d36134b9cc63872922e447f" compoundref="_field_8cc" startline="174" endline="176">resetOwner</references>
+        <references refid="class_property_field_1a8ed81fa863c3d443a69141445d66616e" compoundref="_field_8cc" startline="166" endline="168">setIsMortgaged</references>
+      </memberdef>
+      <memberdef kind="function" id="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PropertyField::createFlagSprite</definition>
+        <argsstring>()</argsstring>
+        <name>createFlagSprite</name>
+        <briefdescription>
+<para>Creates the owner flag sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="290" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="183" bodyend="217"/>
+        <references refid="class_field_1a24552dc1bcb1f574ce8db0761c33790a" compoundref="_field_8cc" startline="68" endline="70">Field::getHeight</references>
+        <references refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" compoundref="_field_8cc" startline="48" endline="50">Field::getId</references>
+        <references refid="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" compoundref="_field_8cc" startline="88" endline="90">Field::getPosition</references>
+        <references refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" compoundref="_field_8cc" startline="72" endline="74">Field::getRotation</references>
+        <references refid="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" compoundref="_field_8cc" startline="64" endline="66">Field::getWidth</references>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Derived class representing a property field on the game board. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>UtilityField</label>
+        <link refid="class_utility_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+      <node id="3">
+        <label>StationField</label>
+        <link refid="class_station_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>StreetField</label>
+        <link refid="class_street_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/Field.h" line="180" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="180" bodyend="291"/>
+    <listofallmembers>
+      <member refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>createFlagSprite</name></member>
+      <member refid="class_field_1aba57b17e88be43f271fbcb85822a56c3" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>createSprite</name></member>
+      <member refid="class_field_1acc8e72c4faac0f5c48b9d353e9350112" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>Field</name></member>
+      <member refid="class_field_1af1d9991ce36def51f2999a959b7873fa" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getContextWindow</name></member>
+      <member refid="class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getGraphicPath</name></member>
+      <member refid="class_property_field_1a676180ae8ad98644572c47787ea0a01f" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getGroupMembers</name></member>
+      <member refid="class_field_1a24552dc1bcb1f574ce8db0761c33790a" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getHeight</name></member>
+      <member refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getId</name></member>
+      <member refid="class_property_field_1ac52da7b908a73ce329c1aff55f971bed" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getIsMortgaged</name></member>
+      <member refid="class_property_field_1a118e8dac5640ec978cbd14519e0880fe" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getMortgage</name></member>
+      <member refid="class_field_1ad2e239a719acc3285a9b11b3aef6808c" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getName</name></member>
+      <member refid="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getNameText</name></member>
+      <member refid="class_property_field_1a4e8d167377c43ea54f32d355d8d07993" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getOwner</name></member>
+      <member refid="class_property_field_1a1fc8ddd955fb2c1b271a259785eab177" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getOwnerFlag</name></member>
+      <member refid="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getPosition</name></member>
+      <member refid="class_property_field_1aafcf4b8fd5fb49a727cb564c0c99a3eb" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getPrice</name></member>
+      <member refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getRotation</name></member>
+      <member refid="class_field_1ad9461468ec68a4148453553cc3150fa6" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getSprite</name></member>
+      <member refid="class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getTexture</name></member>
+      <member refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getType</name></member>
+      <member refid="class_property_field_1aa323b39c72226b6d81782fb9f8b5ffd7" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getUnmortgageValue</name></member>
+      <member refid="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>getWidth</name></member>
+      <member refid="class_property_field_1a859cf05ff8605ca87b4a973e66ad858e" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>group_members_</name></member>
+      <member refid="class_property_field_1a4fae44c0c58955b88300dc54857685ee" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>is_mortgaged_</name></member>
+      <member refid="class_property_field_1a5712bd4195d460bb65d0fe16f36ea0d0" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>mortgage_</name></member>
+      <member refid="class_property_field_1af3d61a57b349eee2ec908af8133f5de4" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>owner_</name></member>
+      <member refid="class_property_field_1abfc0eb4d4619ee75596c1e898eb62bca" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>owner_flag_</name></member>
+      <member refid="class_property_field_1af1ae55a5d197292406c5993b9c0432a0" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>price_</name></member>
+      <member refid="class_property_field_1aba9f3d809377e263842e8aa382e78a49" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>PropertyField</name></member>
+      <member refid="class_property_field_1aa458959642c699213a8f537532e0f371" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>resetDefault</name></member>
+      <member refid="class_property_field_1aa3a6b0249d36134b9cc63872922e447f" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>resetOwner</name></member>
+      <member refid="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>setHeight</name></member>
+      <member refid="class_property_field_1a8ed81fa863c3d443a69141445d66616e" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>setIsMortgaged</name></member>
+      <member refid="class_property_field_1aff8b7ee4568a0721149145074f2aa160" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>setOwner</name></member>
+      <member refid="class_field_1ae4e02fa62cdb947a134ce665ac1b0f69" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>setPosition</name></member>
+      <member refid="class_field_1ad43e7dadad3ce417d9b699f53f8adb83" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>setRotation</name></member>
+      <member refid="class_field_1a664b22a22c392fcd9a20df37ab1e5739" prot="public" virt="non-virtual"><scope>PropertyField</scope><name>setWidth</name></member>
+      <member refid="class_property_field_1afb57e5331efb9c8b922d3069e160386b" prot="private" virt="non-virtual"><scope>PropertyField</scope><name>unmortgage_value_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

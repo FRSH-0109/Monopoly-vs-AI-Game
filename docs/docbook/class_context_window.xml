@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_context_window" xml:lang="en-US">
+<title>ContextWindow Class Reference</title>
+<indexterm><primary>ContextWindow</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_context_window_1ae56e76fedccfadd3762531f1737428dd"/><emphasis role="strong">ContextWindow</emphasis> (<link linkend="_class_context_window">ContextWindow</link> &amp;other)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1a8625c1b2f2d6d6a73677cb04c9c4d69c"/>void <emphasis role="strong">operator=</emphasis> (const <link linkend="_class_context_window">ContextWindow</link> &amp;)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5"/>void <emphasis role="strong">display</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1a08a570de8e104db8123418800b23ad2c"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40"/>bool <emphasis role="strong">isOpen</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1aeb95c8c03177e672167f42b7672f2d7f"/>sf::RenderWindow &amp; <emphasis role="strong">getWindow</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26"/>sf::View &amp; <emphasis role="strong">getView</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2"/>static <link linkend="_class_context_window">ContextWindow</link> * <emphasis role="strong">GetInstance</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_context_window_1a25341464088c696488399cdeb7d7b577"/>sf::RenderWindow <emphasis role="strong">window_</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_context_window_1a825b9ccdca45f2807b44e40077fbae02"/>sf::View <emphasis role="strong">view_</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__context_window_8h">ContextWindow.h</link>/home/kamil/zpr/Monopoly/<link linkend="__context_window_8cc">ContextWindow.cc</link></section>

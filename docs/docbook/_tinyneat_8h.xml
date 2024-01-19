@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__tinyneat_8h" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Tinyneat.h File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Tinyneat.h</primary></indexterm>
+<para>
+
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+ 
+</para>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;list&gt;
+#include &lt;map&gt;
+#include &lt;queue&gt;
+#include &lt;random&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for Tinyneat.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_tinyneat_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_tinyneat_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structneat_1_1mutation__rate__container">neat::mutation_rate_container</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1speciating__parameter__container">neat::speciating_parameter_container</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1network__info__container">neat::network_info_container</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1gene">neat::gene</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classneat_1_1genome">neat::genome</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1specie">neat::specie</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classneat_1_1innovation__container">neat::innovation_container</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classneat_1_1pool">neat::pool</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>hav4ik </para>
+</formalpara>
+</para>
+</section>
+</section>

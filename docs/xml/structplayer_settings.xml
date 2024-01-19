@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structplayer_settings" kind="struct" language="C++" prot="public">
+    <compoundname>playerSettings</compoundname>
+    <includes refid="main_8h" local="no">main.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structplayer_settings_1a4e09d82bad1ebe1d80d01b77f6c22af8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool playerSettings::isNone</definition>
+        <argsstring></argsstring>
+        <name>isNone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="58" column="6" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">GameEngine::worker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structplayer_settings_1a7e4f4f6444ffff96d1d0a2f24702227e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool playerSettings::isHuman</definition>
+        <argsstring></argsstring>
+        <name>isHuman</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="59" column="6" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">GameEngine::worker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structplayer_settings_1a8c54bc6ea5588e457e7f4a4a3e8d7b5e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int playerSettings::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="60" column="5" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">GameEngine::worker</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct describing player settings manipulted from game menu. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/main.h" line="57" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="57" bodyend="61"/>
+    <listofallmembers>
+      <member refid="structplayer_settings_1a7e4f4f6444ffff96d1d0a2f24702227e" prot="public" virt="non-virtual"><scope>playerSettings</scope><name>isHuman</name></member>
+      <member refid="structplayer_settings_1a4e09d82bad1ebe1d80d01b77f6c22af8" prot="public" virt="non-virtual"><scope>playerSettings</scope><name>isNone</name></member>
+      <member refid="structplayer_settings_1a8c54bc6ea5588e457e7f4a4a3e8d7b5e" prot="public" virt="non-virtual"><scope>playerSettings</scope><name>level</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

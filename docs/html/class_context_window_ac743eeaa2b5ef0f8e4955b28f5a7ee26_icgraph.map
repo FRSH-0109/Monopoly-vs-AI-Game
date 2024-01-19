@@ -1,0 +1,4 @@
+<map id="ContextWindow::getView" name="ContextWindow::getView">
+<area shape="rect" id="node1" title="Gets the SFML View object." alt="" coords="249,5,435,32"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a398cd2cb9ed1f5b94a6e8c008f2249ca" title="Constructor for the GameEngine class." alt="" coords="5,5,201,32"/>
+</map>

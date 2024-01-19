@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::createButtonsBuySellHouseHotel" name="MonopolyGameEngine::createButtonsBuySellHouseHotel">
+<area shape="rect" id="node1" title="Creates buttons for buying, selling houses, and hotels." alt="" coords="249,5,460,61"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="5,20,201,47"/>
+</map>

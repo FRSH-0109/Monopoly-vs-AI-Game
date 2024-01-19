@@ -1,0 +1,4 @@
+<map id="Withdraw::getTexts" name="Withdraw::getTexts">
+<area shape="rect" id="node1" title="Getter for the vector of text objects used in the withdrawal process." alt="" coords="199,5,345,32"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="5,5,151,32"/>
+</map>

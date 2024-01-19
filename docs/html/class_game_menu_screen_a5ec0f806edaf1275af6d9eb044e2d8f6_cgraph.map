@@ -1,0 +1,9 @@
+<map id="GameMenuScreen::buttonClickHandle" name="GameMenuScreen::buttonClickHandle">
+<area shape="rect" id="node1" title="Handles button clicks in the game menu." alt="" coords="5,71,228,112"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#ae427ab9331af7fb8bfa52d88a0977b3e" title="Sets the AI level column visibility." alt="" coords="276,71,493,112"/>
+<area shape="rect" id="node6" href="$class_game_menu_screen.html#a348efe82320f6cf37be5b873343768d1" title="Sets the default AI level buttons&#39; focus." alt="" coords="276,5,493,47"/>
+<area shape="rect" id="node7" href="$class_game_menu_screen.html#ade9e4b9082cd923b43e45ea1f74ebaba" title="Sets the player settings." alt="" coords="279,136,490,177"/>
+<area shape="rect" id="node3" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="561,15,748,42"/>
+<area shape="rect" id="node4" href="$class_game_menu_screen.html#a974eb5076298fbba7e4d6b577f74e888" title="Gets the player number from the ScreenEventType." alt="" coords="549,69,760,111"/>
+<area shape="rect" id="node5" href="$class_game_menu_screen.html#a8734e38603d1886079ff185c5aa399bc" title="Checks if the ScreenEventType is related to AI level." alt="" coords="541,135,768,176"/>
+</map>

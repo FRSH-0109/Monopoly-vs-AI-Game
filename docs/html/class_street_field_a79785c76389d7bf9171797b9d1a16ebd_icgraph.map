@@ -1,0 +1,11 @@
+<map id="StreetField::getIsHotel" name="StreetField::getIsHotel">
+<area shape="rect" id="node1" title="Checks if there is a hotel on the property." alt="" coords="919,115,1085,142"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="437,68,640,109"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,101,389,142"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a2af1706f23548c8ad118133badfc0160" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="454,198,623,240"/>
+<area shape="rect" id="node6" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="707,256,852,283"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a34646774679d5ef5e9bbc6317953c7fa" title="Checks if building a hotel on a street is legal for a player." alt="" coords="695,74,864,116"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#ac01307d6ae292277aa3caf5855955a8c" title="Checks if destroying a hotel on a street is legal for a player." alt="" coords="688,140,871,181"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,108,163,135"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="439,133,638,174"/>
+</map>

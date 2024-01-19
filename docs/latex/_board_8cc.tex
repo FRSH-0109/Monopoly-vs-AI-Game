@@ -1,0 +1,127 @@
+\hypertarget{_board_8cc}{}\doxysection{/home/kamil/zpr/\+Monopoly/\+Board.cc File Reference}
+\label{_board_8cc}\index{/home/kamil/zpr/Monopoly/Board.cc@{/home/kamil/zpr/Monopoly/Board.cc}}
+
+
+Source file for monopoly game board, creation is based on json file \textquotesingle{}board.\+json\textquotesingle{}. Mainly handles all types of fields and their usage.  
+
+
+{\ttfamily \#include \char`\"{}Board.\+h\char`\"{}}\newline
+Include dependency graph for Board.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_board_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{_board_8cc_a92671e84f9d38a1f5a64ef20ad23ec39}{json\+To\+Street\+Rent}} (const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&element)
+\begin{DoxyCompactList}\small\item\em Converts JSON data to a map of rent values for street properties. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{_board_8cc_ad42d602c22869eaeb607bcce29881af1}{json\+To\+Station\+Rent}} (const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&element)
+\begin{DoxyCompactList}\small\item\em Converts JSON data to a map of rent values for station properties. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{_board_8cc_a9f51f2d21bf4f1468f4481d2b6cf20a6}{json\+To\+Utility\+Rent}} (const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&element)
+\begin{DoxyCompactList}\small\item\em Converts JSON data to a map of rent multipliers for utility properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source file for monopoly game board, creation is based on json file \textquotesingle{}board.\+json\textquotesingle{}. Mainly handles all types of fields and their usage. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Kosnik, Kacper Radzikowski 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}\label{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{Board.cc@{Board.cc}!json@{json}}
+\index{json@{json}!Board.cc@{Board.cc}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_board_8cc_ad42d602c22869eaeb607bcce29881af1}\label{_board_8cc_ad42d602c22869eaeb607bcce29881af1}} 
+\index{Board.cc@{Board.cc}!jsonToStationRent@{jsonToStationRent}}
+\index{jsonToStationRent@{jsonToStationRent}!Board.cc@{Board.cc}}
+\doxysubsubsection{\texorpdfstring{jsonToStationRent()}{jsonToStationRent()}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int$>$ json\+To\+Station\+Rent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Converts JSON data to a map of rent values for station properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The JSON data containing rent values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of rent values for station properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_board_8cc_ad42d602c22869eaeb607bcce29881af1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_board_8cc_a92671e84f9d38a1f5a64ef20ad23ec39}\label{_board_8cc_a92671e84f9d38a1f5a64ef20ad23ec39}} 
+\index{Board.cc@{Board.cc}!jsonToStreetRent@{jsonToStreetRent}}
+\index{jsonToStreetRent@{jsonToStreetRent}!Board.cc@{Board.cc}}
+\doxysubsubsection{\texorpdfstring{jsonToStreetRent()}{jsonToStreetRent()}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int$>$ json\+To\+Street\+Rent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Converts JSON data to a map of rent values for street properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The JSON data containing rent values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of rent values for street properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{_board_8cc_a92671e84f9d38a1f5a64ef20ad23ec39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_board_8cc_a9f51f2d21bf4f1468f4481d2b6cf20a6}\label{_board_8cc_a9f51f2d21bf4f1468f4481d2b6cf20a6}} 
+\index{Board.cc@{Board.cc}!jsonToUtilityRent@{jsonToUtilityRent}}
+\index{jsonToUtilityRent@{jsonToUtilityRent}!Board.cc@{Board.cc}}
+\doxysubsubsection{\texorpdfstring{jsonToUtilityRent()}{jsonToUtilityRent()}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int$>$ json\+To\+Utility\+Rent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_board_8cc_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Converts JSON data to a map of rent multipliers for utility properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The JSON data containing rent multipliers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of rent multipliers for utility properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{_board_8cc_a9f51f2d21bf4f1468f4481d2b6cf20a6_icgraph}
+\end{center}
+\end{figure}

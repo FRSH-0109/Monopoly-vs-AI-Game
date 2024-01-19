@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_ai_player" xml:lang="en-US">
+<title>AiPlayer Class Reference</title>
+<indexterm><primary>AiPlayer</primary></indexterm>
+<para>
+
+<para>Represents an AI player in a Monopoly game, inheriting from <link linkend="_class_player">Player</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Player.h&gt;</computeroutput>
+</para>
+Inheritance diagram for AiPlayer:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for AiPlayer:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_ai_player_1a8039dc621ac1f6b087d0f1732ce3ab55">AiPlayer</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_ai_player_1ad1267fc957d88796271b562c188c0b68">AiPlayer</link> (unsigned int money)</para>
+</listitem>
+            <listitem><para><link linkend="_class_ai_adapter">AiAdapter</link> &amp; <link linkend="_class_ai_player_1a5d5a34086d564d1de13ac38bf1885b3a">getAdapter</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classann_1_1neuralnet">ann::neuralnet</link> &amp; <link linkend="_class_ai_player_1a47e04e0a4457aaaef551c06eea00230f">getNeuralNetwork</link> ()</para>
+</listitem>
+            <listitem><para>BuyDecision <link linkend="_class_ai_player_1a4ec346de3b8d48b157354452569ec266">decideBuy</link> (unsigned int index) override</para>
+</listitem>
+            <listitem><para>JailDecision <link linkend="_class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637">decideJail</link> () override</para>
+</listitem>
+            <listitem><para>Decision <link linkend="_class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9">decideMortgage</link> (unsigned int index) override</para>
+</listitem>
+            <listitem><para>Decision <link linkend="_class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af">decideUnmortgage</link> (unsigned int index) override</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_ai_player_1a441701de5fdaa5958fcc36e9791a9edc">decideAuctionBid</link> (unsigned int price) override</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_ai_player_1a94760240482130380840c0d303a19642">decideBuildHouse</link> () override</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135">decideSellHouse</link> () override</para>
+</listitem>
+            <listitem><para>Decision <link linkend="_class_ai_player_1a84e084321dab6cea80ec5ea0f5564c02">decideOfferTrade</link> () override</para>
+</listitem>
+            <listitem><para>Decision <link linkend="_class_ai_player_1affc4990f1252789326aa28a7797462ab">decideAcceptTrade</link> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents an AI player in a Monopoly game, inheriting from <link linkend="_class_player">Player</link>. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_ai_player_1a8039dc621ac1f6b087d0f1732ce3ab55"/>    <section>
+    <title>AiPlayer()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>AiPlayer</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>AiPlayer</secondary></indexterm>
+<para><computeroutput>AiPlayer::AiPlayer ( )</computeroutput></para>
+<para>Default constructor for <link linkend="_class_ai_player">AiPlayer</link> class. </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player_a8039dc621ac1f6b087d0f1732ce3ab55_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_ai_player_1ad1267fc957d88796271b562c188c0b68"/>    <section>
+    <title>AiPlayer()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>AiPlayer</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>AiPlayer</secondary></indexterm>
+<para><computeroutput>AiPlayer::AiPlayer (unsigned int money)</computeroutput></para>
+<para>Constructor for <link linkend="_class_ai_player">AiPlayer</link> class with initial money.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>money</entry>
+                                <entry>
+<para>Initial amount of money for the AI player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player_ad1267fc957d88796271b562c188c0b68_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_ai_player_1affc4990f1252789326aa28a7797462ab"/>    <section>
+    <title>decideAcceptTrade()</title>
+<indexterm><primary>decideAcceptTrade</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideAcceptTrade</secondary></indexterm>
+<para><computeroutput>Decision AiPlayer::decideAcceptTrade ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for accepting a trade for the AI player (override from base class).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Decision object representing the acceptance of the trade. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1a7adf207e9b3b987da924fd602ecc6528">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1a441701de5fdaa5958fcc36e9791a9edc"/>    <section>
+    <title>decideAuctionBid()</title>
+<indexterm><primary>decideAuctionBid</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideAuctionBid</secondary></indexterm>
+<para><computeroutput>unsigned int AiPlayer::decideAuctionBid (unsigned int price)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for auction bidding for the AI player (override from base class).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>price</entry>
+                                <entry>
+<para>Current price in the auction. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The bid amount decided by the AI player. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1af3da06d4c1776f82ff4cd8619377fd7d">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1a94760240482130380840c0d303a19642"/>    <section>
+    <title>decideBuildHouse()</title>
+<indexterm><primary>decideBuildHouse</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideBuildHouse</secondary></indexterm>
+<para><computeroutput>unsigned int AiPlayer::decideBuildHouse ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for building a house for the AI player (override from base class).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The index of the property on which the AI player decides to build a house. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1a71313606c3b4a7b363cabd40bd9a7126">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1a4ec346de3b8d48b157354452569ec266"/>    <section>
+    <title>decideBuy()</title>
+<indexterm><primary>decideBuy</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideBuy</secondary></indexterm>
+<para><computeroutput>BuyDecision AiPlayer::decideBuy (unsigned int index)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a buying decision for the AI player (override from base class).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>Index of the property to consider. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>BuyDecision object representing the decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1adfeb87a6e956897e314f5396d5662293">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637"/>    <section>
+    <title>decideJail()</title>
+<indexterm><primary>decideJail</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideJail</secondary></indexterm>
+<para><computeroutput>JailDecision AiPlayer::decideJail ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a jail decision for the AI player (override from base class).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>JailDecision object representing the decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1a83461a9c984ddf60dd6f3a9775690d45">Player</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player_add73dc5a5c94ac7afff1ee5be8fb7637_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9"/>    <section>
+    <title>decideMortgage()</title>
+<indexterm><primary>decideMortgage</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideMortgage</secondary></indexterm>
+<para><computeroutput>Decision AiPlayer::decideMortgage (unsigned int index)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a mortgage decision for the AI player (override from base class).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>Index of the property to consider. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Decision object representing the mortgage decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1a9c596f7c08886d9db546d3c222611f5f">Player</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player_ade144bf242d81cb7e0b4b714545ebeb9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_ai_player_1a84e084321dab6cea80ec5ea0f5564c02"/>    <section>
+    <title>decideOfferTrade()</title>
+<indexterm><primary>decideOfferTrade</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideOfferTrade</secondary></indexterm>
+<para><computeroutput>Decision AiPlayer::decideOfferTrade ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for offering a trade for the AI player (override from base class).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Decision object representing the trade offer. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1a42244fc7463a4fc447a73f35d2dcb483">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135"/>    <section>
+    <title>decideSellHouse()</title>
+<indexterm><primary>decideSellHouse</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideSellHouse</secondary></indexterm>
+<para><computeroutput>unsigned int AiPlayer::decideSellHouse ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for selling a house for the AI player (override from base class).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The index of the property from which the AI player decides to sell a house. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1afa5630a45ffb3f996be4229cbad75bb0">Player</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ai_player_a141ea4b1a96050ae1ac1f6925c308135_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af"/>    <section>
+    <title>decideUnmortgage()</title>
+<indexterm><primary>decideUnmortgage</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>decideUnmortgage</secondary></indexterm>
+<para><computeroutput>Decision AiPlayer::decideUnmortgage (unsigned int index)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make an unmortgage decision for the AI player (override from base class).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>Index of the property to consider. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Decision object representing the unmortgage decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_player_1a612f3f8120ad911a6dded373573d55bc">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1a5d5a34086d564d1de13ac38bf1885b3a"/>    <section>
+    <title>getAdapter()</title>
+<indexterm><primary>getAdapter</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>getAdapter</secondary></indexterm>
+<para><computeroutput><link linkend="_class_ai_adapter">AiAdapter</link> &amp; AiPlayer::getAdapter ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Get the AI adapter associated with the AI player. </para>
+<para>
+Reimplemented from <link linkend="_class_player_1ad1f5ed43230c25cd58b712a3ae64ef17">Player</link>.</para>
+    </section><anchor xml:id="_class_ai_player_1a47e04e0a4457aaaef551c06eea00230f"/>    <section>
+    <title>getNeuralNetwork()</title>
+<indexterm><primary>getNeuralNetwork</primary><secondary>AiPlayer</secondary></indexterm>
+<indexterm><primary>AiPlayer</primary><secondary>getNeuralNetwork</secondary></indexterm>
+<para><computeroutput><link linkend="_classann_1_1neuralnet">ann::neuralnet</link> &amp; AiPlayer::getNeuralNetwork ( )</computeroutput></para>
+<para>Get the neural network associated with the AI player. </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__player_8h">Player.h</link>/home/kamil/zpr/Monopoly/<link linkend="__player_8cc">Player.cc</link></section>
+</section>

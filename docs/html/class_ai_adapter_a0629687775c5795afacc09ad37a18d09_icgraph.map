@@ -1,0 +1,4 @@
+<map id="AiAdapter::convertCard" name="AiAdapter::convertCard">
+<area shape="rect" id="node1" title="Converts card value into a format suitable for AI input." alt="" coords="197,5,371,32"/>
+<area shape="rect" id="node2" href="$class_ai_adapter.html#a70dc5b14b109ce0b77865676e804b6f6" title="Sets the card for a given index." alt="" coords="5,5,149,32"/>
+</map>

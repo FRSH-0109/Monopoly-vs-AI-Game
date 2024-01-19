@@ -1,0 +1,6 @@
+<map id="GameMenuScreen::setAILevelColumnVisibility" name="GameMenuScreen::setAILevelColumnVisibility">
+<area shape="rect" id="node1" title="Sets the AI level column visibility." alt="" coords="5,57,223,98"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="291,5,477,32"/>
+<area shape="rect" id="node3" href="$class_game_menu_screen.html#a974eb5076298fbba7e4d6b577f74e888" title="Gets the player number from the ScreenEventType." alt="" coords="279,57,489,98"/>
+<area shape="rect" id="node4" href="$class_game_menu_screen.html#a8734e38603d1886079ff185c5aa399bc" title="Checks if the ScreenEventType is related to AI level." alt="" coords="271,122,497,163"/>
+</map>

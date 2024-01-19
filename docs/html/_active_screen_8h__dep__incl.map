@@ -1,0 +1,11 @@
+<map id="/home/kamil/zpr/Monopoly/ActiveScreen.h" name="/home/kamil/zpr/Monopoly/ActiveScreen.h">
+<area shape="rect" id="node1" title="Header file handling displayed screens of project Base claass is ActiveScreen, then derived class are..." alt="" coords="165,5,360,47"/>
+<area shape="rect" id="node2" href="$_active_screen_8cc.html" title="Source file handling displayed screens of project Base claass is ActiveScreen, then derived class are..." alt="" coords="5,95,200,136"/>
+<area shape="rect" id="node3" href="$_game_engine_8h.html" title="Header file for GameEngine class, used to handle lowes level program operations as input interactions..." alt="" coords="140,273,335,315"/>
+<area shape="rect" id="node6" href="$_game_screen_8h.html" title="Header file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..." alt="" coords="275,184,469,225"/>
+<area shape="rect" id="node8" href="$_monopoly_game_engine_8h.html" title="Header file of class used to handle whole monopoly game process, turns, actions with players,..." alt="" coords="325,95,520,136"/>
+<area shape="rect" id="node4" href="$_game_engine_8cc.html" title="Source file for GameEngine class, used to handle lowes level program operations as input interactions..." alt="" coords="31,363,225,404"/>
+<area shape="rect" id="node5" href="$main_8cc.html" title="Source file launching monopoly game vs AI project." alt="" coords="249,363,444,404"/>
+<area shape="rect" id="node7" href="$_game_screen_8cc.html" title="Source file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..." alt="" coords="359,273,553,315"/>
+<area shape="rect" id="node9" href="$_monopoly_game_engine_8cc.html" title="Source file of class used to handle whole monopoly game process, turns, actions with players,..." alt="" coords="493,184,688,225"/>
+</map>

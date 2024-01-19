@@ -1,0 +1,2423 @@
+\hypertarget{class_monopoly_game_engine}{}\doxysection{Monopoly\+Game\+Engine Class Reference}
+\label{class_monopoly_game_engine}\index{MonopolyGameEngine@{MonopolyGameEngine}}
+
+
+Class representing the main game engine for the Monopoly game.  
+
+
+
+
+{\ttfamily \#include $<$Monopoly\+Game\+Engine.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_monopoly_game_engine_a0145e733b4897ca398f0d0505a58be6c}{Monopoly\+Game\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the {\ttfamily monopoly\+Game\+Engine} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a1687a15b6b383199232fa95b947a4b6f}{set\+Screen\+Type}} (\mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}} new\+\_\+screen\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Sets the screen type to the specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}} \mbox{\hyperlink{class_monopoly_game_engine_a5a7f70b3a7d70f563daf7426772590b4}{get\+Screen\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current screen type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ab7c6acc2b155fbdc1952280c494a05fe}{create\+Button\+Roll\+Dice}} ()
+\begin{DoxyCompactList}\small\item\em Creates the button for rolling the dice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a7b07579e424f37298496eefaae2390e1}{create\+Text\+Turn\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying turn information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a73d985dc04d394ec469ee5d01e6b9a89}{create\+Textrolled\+\_\+value}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying the rolled dice value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a32c0ecaa71c51cdaae65178836af75b0}{create\+Text\+Players\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying players\textquotesingle{} information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a153294a850e9c8d42d35e95eec1de17e}{update\+Text\+Players\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Updates the text displaying players\textquotesingle{} information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a9655bc29084d61fe0503ec16272630e6}{create\+Text\+Bidded\+Property}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying information about the bidded property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a932aa1b22c5b339c568f8ea34749b1fb}{create\+Text\+Bidder\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying information about the bidder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a04528f2dbaa4725b4430bdef63b2d9d0}{create\+Text\+Highest\+Bid\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying the highest bid in an auction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ac4396e37a67a062d796345afc0642af2}{create\+Text\+Leading\+Bidder\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying information about the leading bidder in an auction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a555cc64819179c99afb2b39b58599074}{create\+Current\+Offer\+Bidder\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Creates text for displaying the current offer in an auction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a742de8013c1466a6913bb5f5eceafeb4}{create\+Button\+Buy\+Resign}} ()
+\begin{DoxyCompactList}\small\item\em Creates a button for buying or resigning from a property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a6a7786536439ae5af3c53d896b0a9a71}{create\+Button\+Next\+Property}} ()
+\begin{DoxyCompactList}\small\item\em Creates a button for moving to the next property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_aa54fdcd0727761f010c096435dd40999}{create\+Button\+Pervious\+Property}} ()
+\begin{DoxyCompactList}\small\item\em Creates a button for moving to the previous property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_abbda29a495969e795d71c3a5d215b547}{create\+Buttons\+Buy\+Sell\+House\+Hotel}} ()
+\begin{DoxyCompactList}\small\item\em Creates buttons for buying, selling houses, and hotels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_af7a1b759d097257097926ed7fd60da14}{create\+Buttons\+Bankrupt}} ()
+\begin{DoxyCompactList}\small\item\em Creates buttons for handling bankruptcy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a525ceed24c6db4fd8823fb1af27ba24b}{create\+Buttons\+Next\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em Creates buttons for moving to the next turn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ae9772861221c6ce195b7b63122bf5523}{create\+Buttons\+Jail\+Pay}} ()
+\begin{DoxyCompactList}\small\item\em Creates buttons for handling actions related to the jail (paying to get out). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a41effaad0143e79955701cff92b2620f}{create\+Auction\+Offer\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Creates buttons for handling auction offers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a8237eb4fd279a8f4b094c14987ea37a1}{create\+Auction\+Bid\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Creates a button for participating in an auction by bidding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a3fc21384392435cdfcab356f98d5a838}{create\+Auction\+Resign\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Creates a button for resigning from an auction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a59d448ed643e21447ac85cdfeea1fa1b}{create\+Button\+Withdraw}} ()
+\begin{DoxyCompactList}\small\item\em Creates a button for withdrawing from the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_af61f87c35e7969f4665091d80007a8dd}{create\+Mortaging\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Creates buttons for mortgaging properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a746b88ee3a606c98cfa368192c1a34e9}{create\+Result\+Screen\+Stuff}} ()
+\begin{DoxyCompactList}\small\item\em Creates various elements for the result screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_abdc99bcb328742800042bcbbfe1bc3f7}{update\+Result\+Screen\+Stuff}} ()
+\begin{DoxyCompactList}\small\item\em Updates elements on the result screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a2056b74cb9e17d045b01b7e49db82afe}{show\+Property\+Data}} (unsigned int pos, bool is\+\_\+property\+\_\+shown\+\_\+to\+\_\+buy)
+\begin{DoxyCompactList}\small\item\em Shows property data on the GUI based on the position and whether it is shown to buy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a73ae5aa5598545a9b12264072a087364}{turn\+Info\+Text\+Show}} ()
+\begin{DoxyCompactList}\small\item\em Displays text related to turn information. \end{DoxyCompactList}\item 
+sf\+::\+Font \& \mbox{\hyperlink{class_monopoly_game_engine_acaf81e835720ba22173b0dd6a0a87bf9}{get\+Font}} ()
+\begin{DoxyCompactList}\small\item\em Returns the font used in the GUI. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_monopoly_game_engine_af3f9a189ddaca72b5eb57b72bc4fbbe4}{get\+Font\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the font size used in the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a034d5e74627aa03da60bbcc92d671a61}{set\+Font}} (sf\+::\+Font font)
+\begin{DoxyCompactList}\small\item\em Sets the font to be used in the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_adf5644d237334e6749252420d80fac32}{add\+Button}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+\_\+tmp)
+\begin{DoxyCompactList}\small\item\em Adds a button to the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a8a92e457e602fcf6a0e1dbd2dbccc856}{add\+Text}} (std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ text\+\_\+tmp)
+\begin{DoxyCompactList}\small\item\em Adds text to the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a653ae4bf65d14a524938058081a2f12d}{add\+Auction\+Button}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+\_\+tmp)
+\begin{DoxyCompactList}\small\item\em Adds an auction button to the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ac523b02a2ad163063c25e7019f57774c}{add\+Auction\+Text}} (std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ text\+\_\+tmp)
+\begin{DoxyCompactList}\small\item\em Adds auction text to the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_a2b1fb71410fb88b1cde5077f62fb82fd}{get\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to buttons in the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_a3c28362ff3b68d93dec6dae6c0304641}{get\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to text elements in the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_afe06604028fa9abf53bae7fc6a909ae7}{get\+Auction\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to auction buttons in the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_accb94fe0ad5bc9ce44f3dda3c91a4ce7}{get\+Auction\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to auction text elements in the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_af7cde31ae39d022e3d5f8be45d235ded}{get\+Result\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to text elements used in the result screen. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_monopoly_game_engine_a98b4a5fdbf5e68ab062cd677ccb24f74}{get\+Property\+Data\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Returns the sprite representing property data in the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_ac70b0b504fb2271353038a59c6604691}{get\+Property\+Data\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to text elements representing property data in the GUI. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_monopoly_game_engine_ac21527f42cd63f19528e7ab3f51363db}{get\+All\+Property\+Data\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Returns the sprite representing all property data in the GUI. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_aaf046cdf2a5b7bd05e1f8272b510de0f}{get\+All\+Property\+Data\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to text elements representing all property data in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_notification_wall}{Notification\+Wall}} \& \mbox{\hyperlink{class_monopoly_game_engine_a19263d676193f65b54209020dfdb928e}{get\+Notifications\+Wall}} ()
+\begin{DoxyCompactList}\small\item\em Returns the notification wall used in the GUI. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{class_monopoly_game_engine_a838f18e88cd79f8cce47dd0dbb42ae3e}{get\+Property\+Name\+To\+Draw}} (sf\+::\+Text text, sf\+::\+Sprite \&sprite, float rotation)
+\begin{DoxyCompactList}\small\item\em Gets the text suitable for drawing a property name. \end{DoxyCompactList}\item 
+sf\+::\+Texture \& \mbox{\hyperlink{class_monopoly_game_engine_ab55601ce0bb0b73719a5376723daa774}{get\+House\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Returns the texture of the house used in the GUI. \end{DoxyCompactList}\item 
+sf\+::\+Texture \& \mbox{\hyperlink{class_monopoly_game_engine_a56b2b17c31119dac5b1933571bac35f6}{get\+Hotel\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Returns the texture of the hotel used in the GUI. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \& \mbox{\hyperlink{class_monopoly_game_engine_ad0390270b455b07db016a389c89df8ea}{get\+House\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of a house in the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_abc237772db36ef7096d874ac7bf15076}{create\+Players}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&players\+\_\+from\+\_\+game\+\_\+engine)
+\begin{DoxyCompactList}\small\item\em Creates player objects based on input vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ac6f1dd50f3c5eecc6ba2872a1b895fd9}{clear\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Clears player objects from the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a01c8f3df78160a7b8719e1ad06d9c239}{create\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Creates the game board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_aca3157b9d922346e32ba8777f0b439e0}{clear\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Clears the game board. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_board}{Board}} $>$ \mbox{\hyperlink{class_monopoly_game_engine_a30c9e966d81c055c15cc5576243a83a2}{get\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the game board. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \& \mbox{\hyperlink{class_monopoly_game_engine_ab1be3d89016a48d4df0f8440a254e4d1}{get\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to players in the game. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \mbox{\hyperlink{class_monopoly_game_engine_adac095bade2743a916480efc934911d5}{get\+Players\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of pointers to players based on game result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ad6860ebdf586eff99b476ff529fb4e96}{setplayer\+\_\+index\+\_\+turn}} (unsigned int indx)
+\begin{DoxyCompactList}\small\item\em Sets the index of the player whose turn it is. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} \mbox{\hyperlink{class_monopoly_game_engine_a3eb8af1a66fd12f93da8072c3a2edfa8}{get\+Turn\+State}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current turn state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_aa95963ea9455d6ac635d27eab779b6ce}{set\+Auction\+State}} (\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Sets the state of the auction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} \mbox{\hyperlink{class_monopoly_game_engine_ac157740551b8c65aefd2f1563305406a}{get\+Auction\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current state of the auction. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_monopoly_game_engine_ae2a4e228360bfceb91c7a5cd6803b0fd}{get\+House\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets the count of houses available for purchase. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_monopoly_game_engine_a13906373d7ee42cd405154047d76b281}{get\+Hotel\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets the count of hotels available for purchase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ac85b2577a665a2510cbd65226d4ae790}{set\+House\+Count}} (unsigned int new\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Sets the count of houses available for purchase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_aa705a9f340c99ddf656caec00e2ae107}{set\+Hotel\+Count}} (unsigned int new\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Sets the count of hotels available for purchase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a398cb3a8d88d5cbec47ec7230408a59f}{add\+Houses}} (unsigned int added\+\_\+amount)
+\begin{DoxyCompactList}\small\item\em Adds houses to the available count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_afa5bca69b0ead2b54879815f37f06a1f}{substract\+Houses}} (unsigned int substracted\+\_\+amount)
+\begin{DoxyCompactList}\small\item\em Subtracts houses from the available count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a48c42eb3f7bdd1a2758f196d83f83cdd}{add\+Hotels}} (unsigned int added\+\_\+amount)
+\begin{DoxyCompactList}\small\item\em Adds hotels to the available count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_aff717ed99341b6d5ead0f68553803738}{substract\+Hotels}} (unsigned int substracted\+\_\+amount)
+\begin{DoxyCompactList}\small\item\em Subtracts hotels from the available count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_aa95037b493d8fb2294404944a14dcca4}{perform\+Auction}} ()
+\begin{DoxyCompactList}\small\item\em Performs the auction. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_monopoly_game_engine_af6b0a0923148f7dc901195dccfdc7952}{calculate\+Group\+Fields\+Owned}} (std\+::vector$<$ unsigned int $>$ player\+\_\+fields, \mbox{\hyperlink{class_property_field}{Property\+Field}} \&field) const
+\begin{DoxyCompactList}\small\item\em Calculates the number of group fields owned by a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_aa486edceb7c305c2f24785a6ee8ca2fc}{group\+Completed}} (std\+::vector$<$ unsigned int $>$ player\+\_\+fields, \mbox{\hyperlink{class_property_field}{Property\+Field}} \&field) const
+\begin{DoxyCompactList}\small\item\em Checks if a group of properties is completed by a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_aaf7f625f32dc53f7413236a79afaf6d5}{is\+Building\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} field)
+\begin{DoxyCompactList}\small\item\em Checks if building houses on a street is legal for a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_afaf31ce9d8aaef4b36bbefe9b4b72f78}{is\+Destroying\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} field)
+\begin{DoxyCompactList}\small\item\em Checks if destroying houses on a street is legal for a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_a34646774679d5ef5e9bbc6317953c7fa}{is\+Hotel\+Building\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\begin{DoxyCompactList}\small\item\em Checks if building a hotel on a street is legal for a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_ac01307d6ae292277aa3caf5855955a8c}{is\+Hotel\+Destroying\+Legal}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ builder, \mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\begin{DoxyCompactList}\small\item\em Checks if destroying a hotel on a street is legal for a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_afd604c9fd373fa220ebe04ff9d5f191b}{color\+Group\+Empty}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ mortgaging, \mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\begin{DoxyCompactList}\small\item\em Checks if a color group is empty (no properties owned) for a player. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_monopoly_game_engine_a64330a6b6eea093a923675e749c00807}{get\+House\+Sprite}} (\mbox{\hyperlink{class_street_field}{Street\+Field}} \&field, unsigned int houses\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Gets the sprite for a house on a street. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_monopoly_game_engine_a2831ee2158d97ff536fd0fee57e338e2}{get\+Hotel\+Sprite}} (\mbox{\hyperlink{class_street_field}{Street\+Field}} \&field)
+\begin{DoxyCompactList}\small\item\em Gets the sprite for a hotel on a street. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ac8629f2abd1bf12cfc0af747d16c867f}{create\+Available\+Houses\+Hotel\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Creates text displaying the available count of houses and hotels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ae9a8bf736199ef2e643f750be08b1bed}{update\+Available\+Houses\+Hotel\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Updates the text displaying the available count of houses and hotels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_monopoly_game_engine_a2af1706f23548c8ad118133badfc0160}{calculate\+Rent}} (unsigned int rolled\+\_\+val, int pos)
+\begin{DoxyCompactList}\small\item\em Calculates the rent to be paid based on the rolled dice value and property position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a6f09145fdc73c99a2fdf64c53ee1713a}{buildings\+Managing\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Worker method for managing building and destroying houses/hotels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_ad9478380894898178164adc82c2fabeb}{ai\+Buildings\+Manging\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em AI worker method for managing building and destroying houses/hotels. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monopoly_game_engine_a01eac196ca3a5c26194165c9efd470da}{monopoly\+Game\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Main Worker method for whole monopoly game engine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_withdraw}{Withdraw}} \& \mbox{\hyperlink{class_monopoly_game_engine_a7a4c2e5ec5a548c44d2dca59438453b5}{get\+Withdraw}} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the \mbox{\hyperlink{class_withdraw}{Withdraw}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a3e16a285485813a9e4a121a198739176}{create\+Chance\+Cards}} ()
+\begin{DoxyCompactList}\small\item\em Creates the chance cards for the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monopoly_game_engine_a198a2731eb63d6c0a57bd0411bad89e9}{shuffle\+Chance\+Cards}} ()
+\begin{DoxyCompactList}\small\item\em Shuffles the chance cards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the main game engine for the Monopoly game. 
+
+The \mbox{\hyperlink{class_monopoly_game_engine}{Monopoly\+Game\+Engine}} class handles the overall game flow, including player turns, actions, and interactions with the game board. It also manages the graphical user interface (GUI) components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_monopoly_game_engine_a0145e733b4897ca398f0d0505a58be6c}\label{class_monopoly_game_engine_a0145e733b4897ca398f0d0505a58be6c}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!MonopolyGameEngine@{MonopolyGameEngine}}
+\index{MonopolyGameEngine@{MonopolyGameEngine}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{MonopolyGameEngine()}{MonopolyGameEngine()}}
+{\footnotesize\ttfamily Monopoly\+Game\+Engine\+::\+Monopoly\+Game\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the {\ttfamily monopoly\+Game\+Engine} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_monopoly_game_engine_a653ae4bf65d14a524938058081a2f12d}\label{class_monopoly_game_engine_a653ae4bf65d14a524938058081a2f12d}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!addAuctionButton@{addAuctionButton}}
+\index{addAuctionButton@{addAuctionButton}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addAuctionButton()}{addAuctionButton()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::add\+Auction\+Button (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+\_\+tmp }\end{DoxyParamCaption})}
+
+
+
+Adds an auction button to the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+\_\+tmp} & Pointer to the auction button to be added. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a653ae4bf65d14a524938058081a2f12d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac523b02a2ad163063c25e7019f57774c}\label{class_monopoly_game_engine_ac523b02a2ad163063c25e7019f57774c}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!addAuctionText@{addAuctionText}}
+\index{addAuctionText@{addAuctionText}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addAuctionText()}{addAuctionText()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::add\+Auction\+Text (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$}]{text\+\_\+tmp }\end{DoxyParamCaption})}
+
+
+
+Adds auction text to the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+tmp} & Pointer to the auction text to be added. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac523b02a2ad163063c25e7019f57774c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_adf5644d237334e6749252420d80fac32}\label{class_monopoly_game_engine_adf5644d237334e6749252420d80fac32}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!addButton@{addButton}}
+\index{addButton@{addButton}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::add\+Button (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+\_\+tmp }\end{DoxyParamCaption})}
+
+
+
+Adds a button to the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+\_\+tmp} & Pointer to the button to be added. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_adf5644d237334e6749252420d80fac32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a48c42eb3f7bdd1a2758f196d83f83cdd}\label{class_monopoly_game_engine_a48c42eb3f7bdd1a2758f196d83f83cdd}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!addHotels@{addHotels}}
+\index{addHotels@{addHotels}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addHotels()}{addHotels()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::add\+Hotels (\begin{DoxyParamCaption}\item[{unsigned int}]{added\+\_\+amount }\end{DoxyParamCaption})}
+
+
+
+Adds hotels to the available count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em added\+\_\+amount} & Amount to be added. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a48c42eb3f7bdd1a2758f196d83f83cdd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a48c42eb3f7bdd1a2758f196d83f83cdd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a398cb3a8d88d5cbec47ec7230408a59f}\label{class_monopoly_game_engine_a398cb3a8d88d5cbec47ec7230408a59f}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!addHouses@{addHouses}}
+\index{addHouses@{addHouses}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addHouses()}{addHouses()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::add\+Houses (\begin{DoxyParamCaption}\item[{unsigned int}]{added\+\_\+amount }\end{DoxyParamCaption})}
+
+
+
+Adds houses to the available count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em added\+\_\+amount} & Amount to be added. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a398cb3a8d88d5cbec47ec7230408a59f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a398cb3a8d88d5cbec47ec7230408a59f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a8a92e457e602fcf6a0e1dbd2dbccc856}\label{class_monopoly_game_engine_a8a92e457e602fcf6a0e1dbd2dbccc856}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!addText@{addText}}
+\index{addText@{addText}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{addText()}{addText()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::add\+Text (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$}]{text\+\_\+tmp }\end{DoxyParamCaption})}
+
+
+
+Adds text to the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+tmp} & Pointer to the text to be added. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a8a92e457e602fcf6a0e1dbd2dbccc856_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ad9478380894898178164adc82c2fabeb}\label{class_monopoly_game_engine_ad9478380894898178164adc82c2fabeb}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!aiBuildingsMangingWorker@{aiBuildingsMangingWorker}}
+\index{aiBuildingsMangingWorker@{aiBuildingsMangingWorker}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{aiBuildingsMangingWorker()}{aiBuildingsMangingWorker()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::ai\+Buildings\+Manging\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+AI worker method for managing building and destroying houses/hotels. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ad9478380894898178164adc82c2fabeb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ad9478380894898178164adc82c2fabeb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a6f09145fdc73c99a2fdf64c53ee1713a}\label{class_monopoly_game_engine_a6f09145fdc73c99a2fdf64c53ee1713a}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!buildingsManagingWorker@{buildingsManagingWorker}}
+\index{buildingsManagingWorker@{buildingsManagingWorker}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{buildingsManagingWorker()}{buildingsManagingWorker()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::buildings\+Managing\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Worker method for managing building and destroying houses/hotels. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a6f09145fdc73c99a2fdf64c53ee1713a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a6f09145fdc73c99a2fdf64c53ee1713a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_af6b0a0923148f7dc901195dccfdc7952}\label{class_monopoly_game_engine_af6b0a0923148f7dc901195dccfdc7952}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!calculateGroupFieldsOwned@{calculateGroupFieldsOwned}}
+\index{calculateGroupFieldsOwned@{calculateGroupFieldsOwned}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{calculateGroupFieldsOwned()}{calculateGroupFieldsOwned()}}
+{\footnotesize\ttfamily unsigned int Monopoly\+Game\+Engine\+::calculate\+Group\+Fields\+Owned (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{player\+\_\+fields,  }\item[{\mbox{\hyperlink{class_property_field}{Property\+Field}} \&}]{field }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the number of group fields owned by a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+fields} & Vector of field positions owned by the player. \\
+\hline
+{\em field} & Property field to check for group completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of group fields owned. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af6b0a0923148f7dc901195dccfdc7952_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af6b0a0923148f7dc901195dccfdc7952_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a2af1706f23548c8ad118133badfc0160}\label{class_monopoly_game_engine_a2af1706f23548c8ad118133badfc0160}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!calculateRent@{calculateRent}}
+\index{calculateRent@{calculateRent}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{calculateRent()}{calculateRent()}}
+{\footnotesize\ttfamily unsigned int Monopoly\+Game\+Engine\+::calculate\+Rent (\begin{DoxyParamCaption}\item[{unsigned int}]{rolled\+\_\+val,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Calculates the rent to be paid based on the rolled dice value and property position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rolled\+\_\+val} & Rolled dice value. \\
+\hline
+{\em pos} & Property position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated rent amount. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a2af1706f23548c8ad118133badfc0160_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a2af1706f23548c8ad118133badfc0160_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aca3157b9d922346e32ba8777f0b439e0}\label{class_monopoly_game_engine_aca3157b9d922346e32ba8777f0b439e0}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!clearBoard@{clearBoard}}
+\index{clearBoard@{clearBoard}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{clearBoard()}{clearBoard()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::clear\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the game board. 
+
+\mbox{\Hypertarget{class_monopoly_game_engine_ac6f1dd50f3c5eecc6ba2872a1b895fd9}\label{class_monopoly_game_engine_ac6f1dd50f3c5eecc6ba2872a1b895fd9}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!clearPlayers@{clearPlayers}}
+\index{clearPlayers@{clearPlayers}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{clearPlayers()}{clearPlayers()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::clear\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears player objects from the game. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac6f1dd50f3c5eecc6ba2872a1b895fd9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_afd604c9fd373fa220ebe04ff9d5f191b}\label{class_monopoly_game_engine_afd604c9fd373fa220ebe04ff9d5f191b}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!colorGroupEmpty@{colorGroupEmpty}}
+\index{colorGroupEmpty@{colorGroupEmpty}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{colorGroupEmpty()}{colorGroupEmpty()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::color\+Group\+Empty (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{mortgaging,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+
+
+Checks if a color group is empty (no properties owned) for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mortgaging} & \mbox{\hyperlink{class_player}{Player}} attempting to mortgage properties. \\
+\hline
+{\em field} & Street field to check for a color group. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the color group is empty, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afd604c9fd373fa220ebe04ff9d5f191b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afd604c9fd373fa220ebe04ff9d5f191b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a8237eb4fd279a8f4b094c14987ea37a1}\label{class_monopoly_game_engine_a8237eb4fd279a8f4b094c14987ea37a1}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createAuctionBidButton@{createAuctionBidButton}}
+\index{createAuctionBidButton@{createAuctionBidButton}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAuctionBidButton()}{createAuctionBidButton()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Auction\+Bid\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a button for participating in an auction by bidding. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a8237eb4fd279a8f4b094c14987ea37a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a8237eb4fd279a8f4b094c14987ea37a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a41effaad0143e79955701cff92b2620f}\label{class_monopoly_game_engine_a41effaad0143e79955701cff92b2620f}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createAuctionOfferButtons@{createAuctionOfferButtons}}
+\index{createAuctionOfferButtons@{createAuctionOfferButtons}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAuctionOfferButtons()}{createAuctionOfferButtons()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Auction\+Offer\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates buttons for handling auction offers. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a41effaad0143e79955701cff92b2620f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a41effaad0143e79955701cff92b2620f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a3fc21384392435cdfcab356f98d5a838}\label{class_monopoly_game_engine_a3fc21384392435cdfcab356f98d5a838}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createAuctionResignButton@{createAuctionResignButton}}
+\index{createAuctionResignButton@{createAuctionResignButton}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAuctionResignButton()}{createAuctionResignButton()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Auction\+Resign\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a button for resigning from an auction. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a3fc21384392435cdfcab356f98d5a838_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a3fc21384392435cdfcab356f98d5a838_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac8629f2abd1bf12cfc0af747d16c867f}\label{class_monopoly_game_engine_ac8629f2abd1bf12cfc0af747d16c867f}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createAvailableHousesHotelText@{createAvailableHousesHotelText}}
+\index{createAvailableHousesHotelText@{createAvailableHousesHotelText}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createAvailableHousesHotelText()}{createAvailableHousesHotelText()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Available\+Houses\+Hotel\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text displaying the available count of houses and hotels. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac8629f2abd1bf12cfc0af747d16c867f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac8629f2abd1bf12cfc0af747d16c867f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a01c8f3df78160a7b8719e1ad06d9c239}\label{class_monopoly_game_engine_a01c8f3df78160a7b8719e1ad06d9c239}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createBoard@{createBoard}}
+\index{createBoard@{createBoard}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createBoard()}{createBoard()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the game board. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a01c8f3df78160a7b8719e1ad06d9c239_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a742de8013c1466a6913bb5f5eceafeb4}\label{class_monopoly_game_engine_a742de8013c1466a6913bb5f5eceafeb4}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonBuyResign@{createButtonBuyResign}}
+\index{createButtonBuyResign@{createButtonBuyResign}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonBuyResign()}{createButtonBuyResign()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Button\+Buy\+Resign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a button for buying or resigning from a property. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a742de8013c1466a6913bb5f5eceafeb4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a742de8013c1466a6913bb5f5eceafeb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a6a7786536439ae5af3c53d896b0a9a71}\label{class_monopoly_game_engine_a6a7786536439ae5af3c53d896b0a9a71}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonNextProperty@{createButtonNextProperty}}
+\index{createButtonNextProperty@{createButtonNextProperty}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonNextProperty()}{createButtonNextProperty()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Button\+Next\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a button for moving to the next property. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a6a7786536439ae5af3c53d896b0a9a71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a6a7786536439ae5af3c53d896b0a9a71_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aa54fdcd0727761f010c096435dd40999}\label{class_monopoly_game_engine_aa54fdcd0727761f010c096435dd40999}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonPerviousProperty@{createButtonPerviousProperty}}
+\index{createButtonPerviousProperty@{createButtonPerviousProperty}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonPerviousProperty()}{createButtonPerviousProperty()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Button\+Pervious\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a button for moving to the previous property. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa54fdcd0727761f010c096435dd40999_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa54fdcd0727761f010c096435dd40999_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ab7c6acc2b155fbdc1952280c494a05fe}\label{class_monopoly_game_engine_ab7c6acc2b155fbdc1952280c494a05fe}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonRollDice@{createButtonRollDice}}
+\index{createButtonRollDice@{createButtonRollDice}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonRollDice()}{createButtonRollDice()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Button\+Roll\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the button for rolling the dice. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ab7c6acc2b155fbdc1952280c494a05fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ab7c6acc2b155fbdc1952280c494a05fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_af7a1b759d097257097926ed7fd60da14}\label{class_monopoly_game_engine_af7a1b759d097257097926ed7fd60da14}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonsBankrupt@{createButtonsBankrupt}}
+\index{createButtonsBankrupt@{createButtonsBankrupt}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsBankrupt()}{createButtonsBankrupt()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Buttons\+Bankrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates buttons for handling bankruptcy. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af7a1b759d097257097926ed7fd60da14_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af7a1b759d097257097926ed7fd60da14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_abbda29a495969e795d71c3a5d215b547}\label{class_monopoly_game_engine_abbda29a495969e795d71c3a5d215b547}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonsBuySellHouseHotel@{createButtonsBuySellHouseHotel}}
+\index{createButtonsBuySellHouseHotel@{createButtonsBuySellHouseHotel}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsBuySellHouseHotel()}{createButtonsBuySellHouseHotel()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Buttons\+Buy\+Sell\+House\+Hotel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates buttons for buying, selling houses, and hotels. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_abbda29a495969e795d71c3a5d215b547_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_abbda29a495969e795d71c3a5d215b547_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ae9772861221c6ce195b7b63122bf5523}\label{class_monopoly_game_engine_ae9772861221c6ce195b7b63122bf5523}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonsJailPay@{createButtonsJailPay}}
+\index{createButtonsJailPay@{createButtonsJailPay}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsJailPay()}{createButtonsJailPay()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Buttons\+Jail\+Pay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates buttons for handling actions related to the jail (paying to get out). 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ae9772861221c6ce195b7b63122bf5523_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ae9772861221c6ce195b7b63122bf5523_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a525ceed24c6db4fd8823fb1af27ba24b}\label{class_monopoly_game_engine_a525ceed24c6db4fd8823fb1af27ba24b}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonsNextTurn@{createButtonsNextTurn}}
+\index{createButtonsNextTurn@{createButtonsNextTurn}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonsNextTurn()}{createButtonsNextTurn()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Buttons\+Next\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates buttons for moving to the next turn. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a525ceed24c6db4fd8823fb1af27ba24b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a525ceed24c6db4fd8823fb1af27ba24b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a59d448ed643e21447ac85cdfeea1fa1b}\label{class_monopoly_game_engine_a59d448ed643e21447ac85cdfeea1fa1b}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createButtonWithdraw@{createButtonWithdraw}}
+\index{createButtonWithdraw@{createButtonWithdraw}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createButtonWithdraw()}{createButtonWithdraw()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Button\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a button for withdrawing from the game. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a59d448ed643e21447ac85cdfeea1fa1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a59d448ed643e21447ac85cdfeea1fa1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a3e16a285485813a9e4a121a198739176}\label{class_monopoly_game_engine_a3e16a285485813a9e4a121a198739176}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createChanceCards@{createChanceCards}}
+\index{createChanceCards@{createChanceCards}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createChanceCards()}{createChanceCards()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Chance\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the chance cards for the game. 
+
+This method initializes and populates the collection of \mbox{\hyperlink{class_chance_card}{Chance\+Card}} objects used in the game. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a3e16a285485813a9e4a121a198739176_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a3e16a285485813a9e4a121a198739176_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a555cc64819179c99afb2b39b58599074}\label{class_monopoly_game_engine_a555cc64819179c99afb2b39b58599074}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createCurrentOfferBidderInfo@{createCurrentOfferBidderInfo}}
+\index{createCurrentOfferBidderInfo@{createCurrentOfferBidderInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createCurrentOfferBidderInfo()}{createCurrentOfferBidderInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Current\+Offer\+Bidder\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying the current offer in an auction. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a555cc64819179c99afb2b39b58599074_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a555cc64819179c99afb2b39b58599074_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_af61f87c35e7969f4665091d80007a8dd}\label{class_monopoly_game_engine_af61f87c35e7969f4665091d80007a8dd}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createMortagingButton@{createMortagingButton}}
+\index{createMortagingButton@{createMortagingButton}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createMortagingButton()}{createMortagingButton()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Mortaging\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates buttons for mortgaging properties. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af61f87c35e7969f4665091d80007a8dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af61f87c35e7969f4665091d80007a8dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_abc237772db36ef7096d874ac7bf15076}\label{class_monopoly_game_engine_abc237772db36ef7096d874ac7bf15076}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createPlayers@{createPlayers}}
+\index{createPlayers@{createPlayers}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createPlayers()}{createPlayers()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Players (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&}]{players\+\_\+from\+\_\+game\+\_\+engine }\end{DoxyParamCaption})}
+
+
+
+Creates player objects based on input vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em players\+\_\+from\+\_\+game\+\_\+engine} & Vector of pointers to players. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_abc237772db36ef7096d874ac7bf15076_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_abc237772db36ef7096d874ac7bf15076_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a746b88ee3a606c98cfa368192c1a34e9}\label{class_monopoly_game_engine_a746b88ee3a606c98cfa368192c1a34e9}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createResultScreenStuff@{createResultScreenStuff}}
+\index{createResultScreenStuff@{createResultScreenStuff}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createResultScreenStuff()}{createResultScreenStuff()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Result\+Screen\+Stuff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates various elements for the result screen. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a746b88ee3a606c98cfa368192c1a34e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a746b88ee3a606c98cfa368192c1a34e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a9655bc29084d61fe0503ec16272630e6}\label{class_monopoly_game_engine_a9655bc29084d61fe0503ec16272630e6}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextBiddedProperty@{createTextBiddedProperty}}
+\index{createTextBiddedProperty@{createTextBiddedProperty}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextBiddedProperty()}{createTextBiddedProperty()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Text\+Bidded\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying information about the bidded property. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a9655bc29084d61fe0503ec16272630e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a9655bc29084d61fe0503ec16272630e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a932aa1b22c5b339c568f8ea34749b1fb}\label{class_monopoly_game_engine_a932aa1b22c5b339c568f8ea34749b1fb}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextBidderInfo@{createTextBidderInfo}}
+\index{createTextBidderInfo@{createTextBidderInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextBidderInfo()}{createTextBidderInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Text\+Bidder\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying information about the bidder. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a932aa1b22c5b339c568f8ea34749b1fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a932aa1b22c5b339c568f8ea34749b1fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a04528f2dbaa4725b4430bdef63b2d9d0}\label{class_monopoly_game_engine_a04528f2dbaa4725b4430bdef63b2d9d0}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextHighestBidInfo@{createTextHighestBidInfo}}
+\index{createTextHighestBidInfo@{createTextHighestBidInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextHighestBidInfo()}{createTextHighestBidInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Text\+Highest\+Bid\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying the highest bid in an auction. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a04528f2dbaa4725b4430bdef63b2d9d0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a04528f2dbaa4725b4430bdef63b2d9d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac4396e37a67a062d796345afc0642af2}\label{class_monopoly_game_engine_ac4396e37a67a062d796345afc0642af2}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextLeadingBidderInfo@{createTextLeadingBidderInfo}}
+\index{createTextLeadingBidderInfo@{createTextLeadingBidderInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextLeadingBidderInfo()}{createTextLeadingBidderInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Text\+Leading\+Bidder\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying information about the leading bidder in an auction. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac4396e37a67a062d796345afc0642af2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac4396e37a67a062d796345afc0642af2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a32c0ecaa71c51cdaae65178836af75b0}\label{class_monopoly_game_engine_a32c0ecaa71c51cdaae65178836af75b0}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextPlayersInfo@{createTextPlayersInfo}}
+\index{createTextPlayersInfo@{createTextPlayersInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextPlayersInfo()}{createTextPlayersInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Text\+Players\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying players\textquotesingle{} information. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a32c0ecaa71c51cdaae65178836af75b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a32c0ecaa71c51cdaae65178836af75b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a73d985dc04d394ec469ee5d01e6b9a89}\label{class_monopoly_game_engine_a73d985dc04d394ec469ee5d01e6b9a89}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextrolled\_value@{createTextrolled\_value}}
+\index{createTextrolled\_value@{createTextrolled\_value}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextrolled\_value()}{createTextrolled\_value()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Textrolled\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying the rolled dice value. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a73d985dc04d394ec469ee5d01e6b9a89_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a73d985dc04d394ec469ee5d01e6b9a89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a7b07579e424f37298496eefaae2390e1}\label{class_monopoly_game_engine_a7b07579e424f37298496eefaae2390e1}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!createTextTurnInfo@{createTextTurnInfo}}
+\index{createTextTurnInfo@{createTextTurnInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{createTextTurnInfo()}{createTextTurnInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::create\+Text\+Turn\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates text for displaying turn information. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a7b07579e424f37298496eefaae2390e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a7b07579e424f37298496eefaae2390e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac21527f42cd63f19528e7ab3f51363db}\label{class_monopoly_game_engine_ac21527f42cd63f19528e7ab3f51363db}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getAllPropertyDataSprite@{getAllPropertyDataSprite}}
+\index{getAllPropertyDataSprite@{getAllPropertyDataSprite}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAllPropertyDataSprite()}{getAllPropertyDataSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Monopoly\+Game\+Engine\+::get\+All\+Property\+Data\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the sprite representing all property data in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the all property data sprite. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac21527f42cd63f19528e7ab3f51363db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aaf046cdf2a5b7bd05e1f8272b510de0f}\label{class_monopoly_game_engine_aaf046cdf2a5b7bd05e1f8272b510de0f}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getAllPropertyDataTexts@{getAllPropertyDataTexts}}
+\index{getAllPropertyDataTexts@{getAllPropertyDataTexts}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAllPropertyDataTexts()}{getAllPropertyDataTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+All\+Property\+Data\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to text elements representing all property data in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to all property data text elements. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aaf046cdf2a5b7bd05e1f8272b510de0f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_afe06604028fa9abf53bae7fc6a909ae7}\label{class_monopoly_game_engine_afe06604028fa9abf53bae7fc6a909ae7}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getAuctionButtons@{getAuctionButtons}}
+\index{getAuctionButtons@{getAuctionButtons}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAuctionButtons()}{getAuctionButtons()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Auction\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to auction buttons in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to auction buttons. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afe06604028fa9abf53bae7fc6a909ae7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac157740551b8c65aefd2f1563305406a}\label{class_monopoly_game_engine_ac157740551b8c65aefd2f1563305406a}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getAuctionState@{getAuctionState}}
+\index{getAuctionState@{getAuctionState}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAuctionState()}{getAuctionState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}} Monopoly\+Game\+Engine\+::get\+Auction\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current state of the auction. 
+
+\begin{DoxyReturn}{Returns}
+Current state of the auction. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac157740551b8c65aefd2f1563305406a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_accb94fe0ad5bc9ce44f3dda3c91a4ce7}\label{class_monopoly_game_engine_accb94fe0ad5bc9ce44f3dda3c91a4ce7}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getAuctionTexts@{getAuctionTexts}}
+\index{getAuctionTexts@{getAuctionTexts}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getAuctionTexts()}{getAuctionTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Auction\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to auction text elements in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to auction text elements. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_accb94fe0ad5bc9ce44f3dda3c91a4ce7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a30c9e966d81c055c15cc5576243a83a2}\label{class_monopoly_game_engine_a30c9e966d81c055c15cc5576243a83a2}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_board}{Board}} $>$ Monopoly\+Game\+Engine\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the game board. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the game board. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a30c9e966d81c055c15cc5576243a83a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a2b1fb71410fb88b1cde5077f62fb82fd}\label{class_monopoly_game_engine_a2b1fb71410fb88b1cde5077f62fb82fd}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getButtons@{getButtons}}
+\index{getButtons@{getButtons}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getButtons()}{getButtons()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to buttons in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to buttons. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a2b1fb71410fb88b1cde5077f62fb82fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_acaf81e835720ba22173b0dd6a0a87bf9}\label{class_monopoly_game_engine_acaf81e835720ba22173b0dd6a0a87bf9}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getFont@{getFont}}
+\index{getFont@{getFont}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily sf\+::\+Font \& Monopoly\+Game\+Engine\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the font used in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the font. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_monopoly_game_engine_acaf81e835720ba22173b0dd6a0a87bf9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_af3f9a189ddaca72b5eb57b72bc4fbbe4}\label{class_monopoly_game_engine_af3f9a189ddaca72b5eb57b72bc4fbbe4}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getFontSize@{getFontSize}}
+\index{getFontSize@{getFontSize}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
+{\footnotesize\ttfamily unsigned int Monopoly\+Game\+Engine\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the font size used in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Font size. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_monopoly_game_engine_af3f9a189ddaca72b5eb57b72bc4fbbe4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a13906373d7ee42cd405154047d76b281}\label{class_monopoly_game_engine_a13906373d7ee42cd405154047d76b281}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHotelCount@{getHotelCount}}
+\index{getHotelCount@{getHotelCount}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHotelCount()}{getHotelCount()}}
+{\footnotesize\ttfamily unsigned int Monopoly\+Game\+Engine\+::get\+Hotel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the count of hotels available for purchase. 
+
+\begin{DoxyReturn}{Returns}
+Count of hotels. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a13906373d7ee42cd405154047d76b281_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a2831ee2158d97ff536fd0fee57e338e2}\label{class_monopoly_game_engine_a2831ee2158d97ff536fd0fee57e338e2}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHotelSprite@{getHotelSprite}}
+\index{getHotelSprite@{getHotelSprite}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHotelSprite()}{getHotelSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite Monopoly\+Game\+Engine\+::get\+Hotel\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+
+
+Gets the sprite for a hotel on a street. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Street field to get the hotel sprite for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sprite of the hotel. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a2831ee2158d97ff536fd0fee57e338e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a2831ee2158d97ff536fd0fee57e338e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a56b2b17c31119dac5b1933571bac35f6}\label{class_monopoly_game_engine_a56b2b17c31119dac5b1933571bac35f6}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHotelTexture@{getHotelTexture}}
+\index{getHotelTexture@{getHotelTexture}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHotelTexture()}{getHotelTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& Monopoly\+Game\+Engine\+::get\+Hotel\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the texture of the hotel used in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the hotel texture. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a56b2b17c31119dac5b1933571bac35f6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ae2a4e228360bfceb91c7a5cd6803b0fd}\label{class_monopoly_game_engine_ae2a4e228360bfceb91c7a5cd6803b0fd}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHouseCount@{getHouseCount}}
+\index{getHouseCount@{getHouseCount}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseCount()}{getHouseCount()}}
+{\footnotesize\ttfamily unsigned int Monopoly\+Game\+Engine\+::get\+House\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the count of houses available for purchase. 
+
+\begin{DoxyReturn}{Returns}
+Count of houses. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ae2a4e228360bfceb91c7a5cd6803b0fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ad0390270b455b07db016a389c89df8ea}\label{class_monopoly_game_engine_ad0390270b455b07db016a389c89df8ea}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHouseSize@{getHouseSize}}
+\index{getHouseSize@{getHouseSize}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseSize()}{getHouseSize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f \& Monopoly\+Game\+Engine\+::get\+House\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the size of a house in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the house size. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ad0390270b455b07db016a389c89df8ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a64330a6b6eea093a923675e749c00807}\label{class_monopoly_game_engine_a64330a6b6eea093a923675e749c00807}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHouseSprite@{getHouseSprite}}
+\index{getHouseSprite@{getHouseSprite}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseSprite()}{getHouseSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite Monopoly\+Game\+Engine\+::get\+House\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field,  }\item[{unsigned int}]{houses\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Gets the sprite for a house on a street. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Street field to get the house sprite for. \\
+\hline
+{\em houses\+\_\+number} & Number of houses on the street. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sprite of the house. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a64330a6b6eea093a923675e749c00807_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a64330a6b6eea093a923675e749c00807_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ab55601ce0bb0b73719a5376723daa774}\label{class_monopoly_game_engine_ab55601ce0bb0b73719a5376723daa774}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getHouseTexture@{getHouseTexture}}
+\index{getHouseTexture@{getHouseTexture}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getHouseTexture()}{getHouseTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& Monopoly\+Game\+Engine\+::get\+House\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the texture of the house used in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the house texture. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ab55601ce0bb0b73719a5376723daa774_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a19263d676193f65b54209020dfdb928e}\label{class_monopoly_game_engine_a19263d676193f65b54209020dfdb928e}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getNotificationsWall@{getNotificationsWall}}
+\index{getNotificationsWall@{getNotificationsWall}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getNotificationsWall()}{getNotificationsWall()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_notification_wall}{Notification\+Wall}} \& Monopoly\+Game\+Engine\+::get\+Notifications\+Wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the notification wall used in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the notification wall. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a19263d676193f65b54209020dfdb928e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ab1be3d89016a48d4df0f8440a254e4d1}\label{class_monopoly_game_engine_ab1be3d89016a48d4df0f8440a254e4d1}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPlayers()}{getPlayers()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to players in the game. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to players. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ab1be3d89016a48d4df0f8440a254e4d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_adac095bade2743a916480efc934911d5}\label{class_monopoly_game_engine_adac095bade2743a916480efc934911d5}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getPlayersResult@{getPlayersResult}}
+\index{getPlayersResult@{getPlayersResult}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPlayersResult()}{getPlayersResult()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ Monopoly\+Game\+Engine\+::get\+Players\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to players based on game result. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to players. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_adac095bade2743a916480efc934911d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a98b4a5fdbf5e68ab062cd677ccb24f74}\label{class_monopoly_game_engine_a98b4a5fdbf5e68ab062cd677ccb24f74}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getPropertyDataSprite@{getPropertyDataSprite}}
+\index{getPropertyDataSprite@{getPropertyDataSprite}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPropertyDataSprite()}{getPropertyDataSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Monopoly\+Game\+Engine\+::get\+Property\+Data\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the sprite representing property data in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the property data sprite. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a98b4a5fdbf5e68ab062cd677ccb24f74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac70b0b504fb2271353038a59c6604691}\label{class_monopoly_game_engine_ac70b0b504fb2271353038a59c6604691}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getPropertyDataTexts@{getPropertyDataTexts}}
+\index{getPropertyDataTexts@{getPropertyDataTexts}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPropertyDataTexts()}{getPropertyDataTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Property\+Data\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to text elements representing property data in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to property data text elements. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac70b0b504fb2271353038a59c6604691_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a838f18e88cd79f8cce47dd0dbb42ae3e}\label{class_monopoly_game_engine_a838f18e88cd79f8cce47dd0dbb42ae3e}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getPropertyNameToDraw@{getPropertyNameToDraw}}
+\index{getPropertyNameToDraw@{getPropertyNameToDraw}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getPropertyNameToDraw()}{getPropertyNameToDraw()}}
+{\footnotesize\ttfamily sf\+::\+Text Monopoly\+Game\+Engine\+::get\+Property\+Name\+To\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Text}]{text,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{float}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Gets the text suitable for drawing a property name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Original text to be drawn. \\
+\hline
+{\em sprite} & Reference to the sprite associated with the property. \\
+\hline
+{\em rotation} & Rotation angle of the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modified text for drawing. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a838f18e88cd79f8cce47dd0dbb42ae3e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a838f18e88cd79f8cce47dd0dbb42ae3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_af7cde31ae39d022e3d5f8be45d235ded}\label{class_monopoly_game_engine_af7cde31ae39d022e3d5f8be45d235ded}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getResultTexts@{getResultTexts}}
+\index{getResultTexts@{getResultTexts}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getResultTexts()}{getResultTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Result\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to text elements used in the result screen. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to result screen text elements. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_af7cde31ae39d022e3d5f8be45d235ded_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a5a7f70b3a7d70f563daf7426772590b4}\label{class_monopoly_game_engine_a5a7f70b3a7d70f563daf7426772590b4}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getScreenType@{getScreenType}}
+\index{getScreenType@{getScreenType}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getScreenType()}{getScreenType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}} Monopoly\+Game\+Engine\+::get\+Screen\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current screen type. 
+
+\begin{DoxyReturn}{Returns}
+The current screen type. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a5a7f70b3a7d70f563daf7426772590b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a3c28362ff3b68d93dec6dae6c0304641}\label{class_monopoly_game_engine_a3c28362ff3b68d93dec6dae6c0304641}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getTexts@{getTexts}}
+\index{getTexts@{getTexts}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getTexts()}{getTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Monopoly\+Game\+Engine\+::get\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of pointers to text elements in the GUI. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pointers to text elements. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a3c28362ff3b68d93dec6dae6c0304641_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a3eb8af1a66fd12f93da8072c3a2edfa8}\label{class_monopoly_game_engine_a3eb8af1a66fd12f93da8072c3a2edfa8}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getTurnState@{getTurnState}}
+\index{getTurnState@{getTurnState}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getTurnState()}{getTurnState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} Monopoly\+Game\+Engine\+::get\+Turn\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current turn state. 
+
+\begin{DoxyReturn}{Returns}
+Current turn state. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a3eb8af1a66fd12f93da8072c3a2edfa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a7a4c2e5ec5a548c44d2dca59438453b5}\label{class_monopoly_game_engine_a7a4c2e5ec5a548c44d2dca59438453b5}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!getWithdraw@{getWithdraw}}
+\index{getWithdraw@{getWithdraw}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{getWithdraw()}{getWithdraw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_withdraw}{Withdraw}} \& Monopoly\+Game\+Engine\+::get\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a reference to the \mbox{\hyperlink{class_withdraw}{Withdraw}} object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_withdraw}{Withdraw}}\& Reference to the \mbox{\hyperlink{class_withdraw}{Withdraw}} object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a7a4c2e5ec5a548c44d2dca59438453b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aa486edceb7c305c2f24785a6ee8ca2fc}\label{class_monopoly_game_engine_aa486edceb7c305c2f24785a6ee8ca2fc}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!groupCompleted@{groupCompleted}}
+\index{groupCompleted@{groupCompleted}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{groupCompleted()}{groupCompleted()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::group\+Completed (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{player\+\_\+fields,  }\item[{\mbox{\hyperlink{class_property_field}{Property\+Field}} \&}]{field }\end{DoxyParamCaption}) const}
+
+
+
+Checks if a group of properties is completed by a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+fields} & Vector of field positions owned by the player. \\
+\hline
+{\em field} & Property field to check for group completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the group is completed, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa486edceb7c305c2f24785a6ee8ca2fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa486edceb7c305c2f24785a6ee8ca2fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aaf7f625f32dc53f7413236a79afaf6d5}\label{class_monopoly_game_engine_aaf7f625f32dc53f7413236a79afaf6d5}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!isBuildingLegal@{isBuildingLegal}}
+\index{isBuildingLegal@{isBuildingLegal}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isBuildingLegal()}{isBuildingLegal()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::is\+Building\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}}}]{field }\end{DoxyParamCaption})}
+
+
+
+Checks if building houses on a street is legal for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em builder} & \mbox{\hyperlink{class_player}{Player}} attempting to build houses. \\
+\hline
+{\em field} & Street field to build houses on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if building is legal, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aaf7f625f32dc53f7413236a79afaf6d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aaf7f625f32dc53f7413236a79afaf6d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_afaf31ce9d8aaef4b36bbefe9b4b72f78}\label{class_monopoly_game_engine_afaf31ce9d8aaef4b36bbefe9b4b72f78}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!isDestroyingLegal@{isDestroyingLegal}}
+\index{isDestroyingLegal@{isDestroyingLegal}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isDestroyingLegal()}{isDestroyingLegal()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::is\+Destroying\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}}}]{field }\end{DoxyParamCaption})}
+
+
+
+Checks if destroying houses on a street is legal for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em builder} & \mbox{\hyperlink{class_player}{Player}} attempting to destroy houses. \\
+\hline
+{\em field} & Street field to destroy houses on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if destroying is legal, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afaf31ce9d8aaef4b36bbefe9b4b72f78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afaf31ce9d8aaef4b36bbefe9b4b72f78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a34646774679d5ef5e9bbc6317953c7fa}\label{class_monopoly_game_engine_a34646774679d5ef5e9bbc6317953c7fa}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!isHotelBuildingLegal@{isHotelBuildingLegal}}
+\index{isHotelBuildingLegal@{isHotelBuildingLegal}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isHotelBuildingLegal()}{isHotelBuildingLegal()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::is\+Hotel\+Building\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+
+
+Checks if building a hotel on a street is legal for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em builder} & \mbox{\hyperlink{class_player}{Player}} attempting to build a hotel. \\
+\hline
+{\em field} & Street field to build a hotel on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if building a hotel is legal, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a34646774679d5ef5e9bbc6317953c7fa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a34646774679d5ef5e9bbc6317953c7fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac01307d6ae292277aa3caf5855955a8c}\label{class_monopoly_game_engine_ac01307d6ae292277aa3caf5855955a8c}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!isHotelDestroyingLegal@{isHotelDestroyingLegal}}
+\index{isHotelDestroyingLegal@{isHotelDestroyingLegal}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{isHotelDestroyingLegal()}{isHotelDestroyingLegal()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::is\+Hotel\+Destroying\+Legal (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{builder,  }\item[{\mbox{\hyperlink{class_street_field}{Street\+Field}} \&}]{field }\end{DoxyParamCaption})}
+
+
+
+Checks if destroying a hotel on a street is legal for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em builder} & \mbox{\hyperlink{class_player}{Player}} attempting to destroy a hotel. \\
+\hline
+{\em field} & Street field to destroy a hotel on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if destroying a hotel is legal, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac01307d6ae292277aa3caf5855955a8c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac01307d6ae292277aa3caf5855955a8c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a01eac196ca3a5c26194165c9efd470da}\label{class_monopoly_game_engine_a01eac196ca3a5c26194165c9efd470da}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!monopolyGameWorker@{monopolyGameWorker}}
+\index{monopolyGameWorker@{monopolyGameWorker}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{monopolyGameWorker()}{monopolyGameWorker()}}
+{\footnotesize\ttfamily bool Monopoly\+Game\+Engine\+::monopoly\+Game\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main Worker method for whole monopoly game engine. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_monopoly_game_engine_a01eac196ca3a5c26194165c9efd470da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a01eac196ca3a5c26194165c9efd470da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aa95037b493d8fb2294404944a14dcca4}\label{class_monopoly_game_engine_aa95037b493d8fb2294404944a14dcca4}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!performAuction@{performAuction}}
+\index{performAuction@{performAuction}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{performAuction()}{performAuction()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::perform\+Auction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Performs the auction. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa95037b493d8fb2294404944a14dcca4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa95037b493d8fb2294404944a14dcca4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aa95963ea9455d6ac635d27eab779b6ce}\label{class_monopoly_game_engine_aa95963ea9455d6ac635d27eab779b6ce}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!setAuctionState@{setAuctionState}}
+\index{setAuctionState@{setAuctionState}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setAuctionState()}{setAuctionState()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::set\+Auction\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_monopoly_game_engine_8h_a7a1cb6d43fe517095daf4aa86259b5e3}{Auction\+State}}}]{new\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the auction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & New state of the auction. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa95963ea9455d6ac635d27eab779b6ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a034d5e74627aa03da60bbcc92d671a61}\label{class_monopoly_game_engine_a034d5e74627aa03da60bbcc92d671a61}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!setFont@{setFont}}
+\index{setFont@{setFont}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font}]{font }\end{DoxyParamCaption})}
+
+
+
+Sets the font to be used in the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & Font to be set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a034d5e74627aa03da60bbcc92d671a61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aa705a9f340c99ddf656caec00e2ae107}\label{class_monopoly_game_engine_aa705a9f340c99ddf656caec00e2ae107}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!setHotelCount@{setHotelCount}}
+\index{setHotelCount@{setHotelCount}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setHotelCount()}{setHotelCount()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::set\+Hotel\+Count (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Sets the count of hotels available for purchase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+count} & New count of hotels. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aa705a9f340c99ddf656caec00e2ae107_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ac85b2577a665a2510cbd65226d4ae790}\label{class_monopoly_game_engine_ac85b2577a665a2510cbd65226d4ae790}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!setHouseCount@{setHouseCount}}
+\index{setHouseCount@{setHouseCount}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setHouseCount()}{setHouseCount()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::set\+House\+Count (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Sets the count of houses available for purchase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+count} & New count of houses. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ac85b2577a665a2510cbd65226d4ae790_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ad6860ebdf586eff99b476ff529fb4e96}\label{class_monopoly_game_engine_ad6860ebdf586eff99b476ff529fb4e96}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!setplayer\_index\_turn@{setplayer\_index\_turn}}
+\index{setplayer\_index\_turn@{setplayer\_index\_turn}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setplayer\_index\_turn()}{setplayer\_index\_turn()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::setplayer\+\_\+index\+\_\+turn (\begin{DoxyParamCaption}\item[{unsigned int}]{indx }\end{DoxyParamCaption})}
+
+
+
+Sets the index of the player whose turn it is. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indx} & Index of the player. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ad6860ebdf586eff99b476ff529fb4e96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a1687a15b6b383199232fa95b947a4b6f}\label{class_monopoly_game_engine_a1687a15b6b383199232fa95b947a4b6f}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!setScreenType@{setScreenType}}
+\index{setScreenType@{setScreenType}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{setScreenType()}{setScreenType()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::set\+Screen\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_a816a6251d75e4dcd37d944ca68752095}{Game\+Screen\+Type}}}]{new\+\_\+screen\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Sets the screen type to the specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+screen\+\_\+type} & The new screen type. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a1687a15b6b383199232fa95b947a4b6f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a2056b74cb9e17d045b01b7e49db82afe}\label{class_monopoly_game_engine_a2056b74cb9e17d045b01b7e49db82afe}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!showPropertyData@{showPropertyData}}
+\index{showPropertyData@{showPropertyData}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{showPropertyData()}{showPropertyData()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::show\+Property\+Data (\begin{DoxyParamCaption}\item[{unsigned int}]{pos,  }\item[{bool}]{is\+\_\+property\+\_\+shown\+\_\+to\+\_\+buy }\end{DoxyParamCaption})}
+
+
+
+Shows property data on the GUI based on the position and whether it is shown to buy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position of the property. \\
+\hline
+{\em is\+\_\+property\+\_\+shown\+\_\+to\+\_\+buy} & Indicates whether the property information is shown for buying. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_monopoly_game_engine_a2056b74cb9e17d045b01b7e49db82afe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a2056b74cb9e17d045b01b7e49db82afe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a198a2731eb63d6c0a57bd0411bad89e9}\label{class_monopoly_game_engine_a198a2731eb63d6c0a57bd0411bad89e9}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!shuffleChanceCards@{shuffleChanceCards}}
+\index{shuffleChanceCards@{shuffleChanceCards}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{shuffleChanceCards()}{shuffleChanceCards()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::shuffle\+Chance\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Shuffles the chance cards. 
+
+This method shuffles the collection of \mbox{\hyperlink{class_chance_card}{Chance\+Card}} objects to randomize the order in which they will be drawn during the game. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a198a2731eb63d6c0a57bd0411bad89e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_aff717ed99341b6d5ead0f68553803738}\label{class_monopoly_game_engine_aff717ed99341b6d5ead0f68553803738}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!substractHotels@{substractHotels}}
+\index{substractHotels@{substractHotels}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{substractHotels()}{substractHotels()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::substract\+Hotels (\begin{DoxyParamCaption}\item[{unsigned int}]{substracted\+\_\+amount }\end{DoxyParamCaption})}
+
+
+
+Subtracts hotels from the available count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em substracted\+\_\+amount} & Amount to be subtracted. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aff717ed99341b6d5ead0f68553803738_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_aff717ed99341b6d5ead0f68553803738_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_afa5bca69b0ead2b54879815f37f06a1f}\label{class_monopoly_game_engine_afa5bca69b0ead2b54879815f37f06a1f}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!substractHouses@{substractHouses}}
+\index{substractHouses@{substractHouses}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{substractHouses()}{substractHouses()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::substract\+Houses (\begin{DoxyParamCaption}\item[{unsigned int}]{substracted\+\_\+amount }\end{DoxyParamCaption})}
+
+
+
+Subtracts houses from the available count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em substracted\+\_\+amount} & Amount to be subtracted. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afa5bca69b0ead2b54879815f37f06a1f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_afa5bca69b0ead2b54879815f37f06a1f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a73ae5aa5598545a9b12264072a087364}\label{class_monopoly_game_engine_a73ae5aa5598545a9b12264072a087364}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!turnInfoTextShow@{turnInfoTextShow}}
+\index{turnInfoTextShow@{turnInfoTextShow}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{turnInfoTextShow()}{turnInfoTextShow()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::turn\+Info\+Text\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays text related to turn information. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a73ae5aa5598545a9b12264072a087364_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_ae9a8bf736199ef2e643f750be08b1bed}\label{class_monopoly_game_engine_ae9a8bf736199ef2e643f750be08b1bed}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!updateAvailableHousesHotelText@{updateAvailableHousesHotelText}}
+\index{updateAvailableHousesHotelText@{updateAvailableHousesHotelText}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{updateAvailableHousesHotelText()}{updateAvailableHousesHotelText()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::update\+Available\+Houses\+Hotel\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the text displaying the available count of houses and hotels. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ae9a8bf736199ef2e643f750be08b1bed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_ae9a8bf736199ef2e643f750be08b1bed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_abdc99bcb328742800042bcbbfe1bc3f7}\label{class_monopoly_game_engine_abdc99bcb328742800042bcbbfe1bc3f7}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!updateResultScreenStuff@{updateResultScreenStuff}}
+\index{updateResultScreenStuff@{updateResultScreenStuff}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{updateResultScreenStuff()}{updateResultScreenStuff()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::update\+Result\+Screen\+Stuff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates elements on the result screen. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_abdc99bcb328742800042bcbbfe1bc3f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_abdc99bcb328742800042bcbbfe1bc3f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_monopoly_game_engine_a153294a850e9c8d42d35e95eec1de17e}\label{class_monopoly_game_engine_a153294a850e9c8d42d35e95eec1de17e}} 
+\index{MonopolyGameEngine@{MonopolyGameEngine}!updateTextPlayersInfo@{updateTextPlayersInfo}}
+\index{updateTextPlayersInfo@{updateTextPlayersInfo}!MonopolyGameEngine@{MonopolyGameEngine}}
+\doxysubsubsection{\texorpdfstring{updateTextPlayersInfo()}{updateTextPlayersInfo()}}
+{\footnotesize\ttfamily void Monopoly\+Game\+Engine\+::update\+Text\+Players\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the text displaying players\textquotesingle{} information. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a153294a850e9c8d42d35e95eec1de17e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_monopoly_game_engine_a153294a850e9c8d42d35e95eec1de17e_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_monopoly_game_engine_8h}{Monopoly\+Game\+Engine.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_monopoly_game_engine_8cc}{Monopoly\+Game\+Engine.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::getResultTexts" name="MonopolyGameEngine::getResultTexts">
+<area shape="rect" id="node1" title="Returns a vector of pointers to text elements used in the result screen." alt="" coords="199,5,368,47"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="5,13,151,39"/>
+</map>

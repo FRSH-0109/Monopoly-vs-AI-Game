@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::substractHotels" name="MonopolyGameEngine::substractHotels">
+<area shape="rect" id="node1" title="Subtracts hotels from the available count." alt="" coords="5,5,175,47"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#aa705a9f340c99ddf656caec00e2ae107" title="Sets the count of hotels available for purchase." alt="" coords="223,5,392,47"/>
+</map>

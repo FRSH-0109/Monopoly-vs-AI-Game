@@ -1,0 +1,7 @@
+<map id="monopolyGameEngine::getHouseSprite" name="monopolyGameEngine::getHouseSprite">
+<area shape="rect" id="node1" title=" " alt="" coords="5,100,176,141"/>
+<area shape="rect" id="node2" href="$classmonopoly_game_engine.html#ab1341f5f1118c0917188762027f75b24" title=" " alt="" coords="224,5,395,47"/>
+<area shape="rect" id="node3" href="$classmonopoly_game_engine.html#a95fe88c83c04b63fba78639fc7c959fb" title=" " alt="" coords="224,71,395,112"/>
+<area shape="rect" id="node4" href="$class_field.html#a8b6e4fc0827f44e90449d6ad9a62dafd" title=" " alt="" coords="242,137,377,163"/>
+<area shape="rect" id="node5" href="$class_field.html#a646e28cf7899eb73bd120e7e7f936633" title=" " alt="" coords="241,187,378,214"/>
+</map>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_sprite_offset_exception" xml:lang="en-US">
+<title>SpriteOffsetException Class Reference</title>
+<indexterm><primary>SpriteOffsetException</primary></indexterm>
+Inheritance diagram for SpriteOffsetException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_sprite_offset_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for SpriteOffsetException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_sprite_offset_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_sprite_offset_exception_1a399916b1259c4f8ee2b8a2da0c71c40d"/><emphasis role="strong">SpriteOffsetException</emphasis> (float offset)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_sprite_offset_exception_1a63919d23583c8ae96d23e6093cd8dacd"/><emphasis role="strong">SpriteOffsetException</emphasis> (const <link linkend="_class_sprite_offset_exception">SpriteOffsetException</link> &amp;e)  throw ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_sprite_offset_exception_1a10004d81ae7236bd215d50fec24211da"/>float <emphasis role="strong">getBadOffset</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="_main_8h">main.h</link></section>

@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_tinyneat_8h" kind="file" language="C++">
+    <compoundname>Tinyneat.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">list</includes>
+    <includes local="no">map</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">random</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_player_8h" local="yes">/home/kamil/zpr/Monopoly/Player.h</includedby>
+    <includedby refid="_tinyann_8h" local="yes">/home/kamil/zpr/Monopoly/Tinyann.h</includedby>
+    <includedby refid="_tinyneat_8cc" local="yes">/home/kamil/zpr/Monopoly/Tinyneat.cc</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>list</label>
+      </node>
+      <node id="8">
+        <label>queue</label>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Tinyneat.h</label>
+        <link refid="_tinyneat_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cmath</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="9">
+        <label>random</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/ActiveScreen.cc</label>
+        <link refid="_active_screen_8cc"/>
+      </node>
+      <node id="21">
+        <label>/home/kamil/zpr/Monopoly/Tinyneat.cc</label>
+        <link refid="_tinyneat_8cc"/>
+      </node>
+      <node id="11">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="8">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Tinyneat.h</label>
+        <link refid="_tinyneat_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/ActiveScreen.h</label>
+        <link refid="_active_screen_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/kamil/zpr/Monopoly/Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="12">
+        <label>/home/kamil/zpr/Monopoly/Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/kamil/zpr/Monopoly/Tinyann.h</label>
+        <link refid="_tinyann_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/home/kamil/zpr/Monopoly/Field.cc</label>
+        <link refid="_field_8cc"/>
+      </node>
+      <node id="10">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/kamil/zpr/Monopoly/Board.cc</label>
+        <link refid="_board_8cc"/>
+      </node>
+      <node id="18">
+        <label>/home/kamil/zpr/Monopoly/Player.cc</label>
+        <link refid="_player_8cc"/>
+      </node>
+      <node id="20">
+        <label>/home/kamil/zpr/Monopoly/Tinyann.cc</label>
+        <link refid="_tinyann_8cc"/>
+      </node>
+      <node id="9">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+      <node id="16">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.cc</label>
+        <link refid="_withdraw_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structneat_1_1mutation__rate__container" prot="public">neat::mutation_rate_container</innerclass>
+    <innerclass refid="structneat_1_1speciating__parameter__container" prot="public">neat::speciating_parameter_container</innerclass>
+    <innerclass refid="structneat_1_1network__info__container" prot="public">neat::network_info_container</innerclass>
+    <innerclass refid="structneat_1_1gene" prot="public">neat::gene</innerclass>
+    <innerclass refid="classneat_1_1genome" prot="public">neat::genome</innerclass>
+    <innerclass refid="structneat_1_1specie" prot="public">neat::specie</innerclass>
+    <innerclass refid="classneat_1_1innovation__container" prot="public">neat::innovation_container</innerclass>
+    <innerclass refid="classneat_1_1pool" prot="public">neat::pool</innerclass>
+    <innernamespace refid="namespaceneat">neat</innernamespace>
+    <briefdescription>
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <ulink url="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</ulink>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>hav4ik </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__TINYNEAT_HPP__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__TINYNEAT_HPP__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>custom<sp/>defines:</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>INCLUDE_ENABLED_GENES_IF_POSSIBLE<sp/><sp/>-<sp/>if<sp/>during<sp/>experiment<sp/>you<sp/>found<sp/>that<sp/>too<sp/>many<sp/>genes<sp/>are</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disabled,<sp/>you<sp/>can<sp/>use<sp/>this<sp/>option.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>ALLOW_RECURRENCY_IN_NETWORK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>allowing<sp/>recurrent<sp/>links</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>GIVING_NAMES_FOR_SPECIES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>giving<sp/>species<sp/>unique<sp/>names<sp/>(need<sp/>a<sp/>dictionary<sp/>with</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>names<sp/>in<sp/>a<sp/>file<sp/>&quot;specie_names.dict&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="namespaceneat" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceneat" kindref="compound">neat</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structneat_1_1mutation__rate__container" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37" refid="structneat_1_1mutation__rate__container_1a85fb4293430dff8370fd6c8dc605d632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>connection_mutate_chance<sp/>=<sp/>0.25;</highlight></codeline>
+<codeline lineno="38" refid="structneat_1_1mutation__rate__container_1a324c7255ddf2ae3aa86641e5d2802b74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>perturb_chance<sp/>=<sp/>0.90;</highlight></codeline>
+<codeline lineno="39" refid="structneat_1_1mutation__rate__container_1af23420caa17f977d11d760be23915430" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>crossover_chance<sp/>=<sp/>0.75;</highlight></codeline>
+<codeline lineno="40" refid="structneat_1_1mutation__rate__container_1a78f5efae4c29355ec967433e97732eb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>link_mutation_chance<sp/>=<sp/>2.0;</highlight></codeline>
+<codeline lineno="41" refid="structneat_1_1mutation__rate__container_1a49d56c792a4f9b1d4fea921fb6b01660" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>node_mutation_chance<sp/>=<sp/>0.50;</highlight></codeline>
+<codeline lineno="42" refid="structneat_1_1mutation__rate__container_1add0037d4a5c4b62f9eba2feaaf28bbc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bias_mutation_chance<sp/>=<sp/>0.40;</highlight></codeline>
+<codeline lineno="43" refid="structneat_1_1mutation__rate__container_1acd06788e00f7fdc2c12ff6ed64887dae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_size<sp/>=<sp/>0.1;</highlight></codeline>
+<codeline lineno="44" refid="structneat_1_1mutation__rate__container_1a3b02ae2d4acd5e263b242357099120b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>disable_mutation_chance<sp/>=<sp/>0.4;</highlight></codeline>
+<codeline lineno="45" refid="structneat_1_1mutation__rate__container_1a77ec9dfea30fe11c7d50f5a01e6cf4ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>enable_mutation_chance<sp/>=<sp/>0.2;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>read(std::ifstream&amp;<sp/>o);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(std::ofstream&amp;<sp/>o,<sp/>std::string<sp/>prefix);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}<sp/><ref refid="structneat_1_1mutation__rate__container" kindref="compound">mutation_rate_container</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="structneat_1_1speciating__parameter__container" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52" refid="structneat_1_1speciating__parameter__container_1ad2458c000476a017111cc5ae8adc8780" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>population<sp/>=<sp/>240;</highlight></codeline>
+<codeline lineno="53" refid="structneat_1_1speciating__parameter__container_1a031fef276c80aed6bc53ca26e2d4b801" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta_disjoint<sp/>=<sp/>2.0;</highlight></codeline>
+<codeline lineno="54" refid="structneat_1_1speciating__parameter__container_1a4bd4257f2cb785b4a652adfef4b2ab56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta_weights<sp/>=<sp/>0.4;</highlight></codeline>
+<codeline lineno="55" refid="structneat_1_1speciating__parameter__container_1a73347a764c86e9775a17b27b4db0b583" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta_threshold<sp/>=<sp/>1.3;</highlight></codeline>
+<codeline lineno="56" refid="structneat_1_1speciating__parameter__container_1a040a8d008b7400bf02d63d4c5ab0612f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stale_species<sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>read(std::ifstream&amp;<sp/>o);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(std::ofstream&amp;<sp/>o,<sp/>std::string<sp/>prefix);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<sp/><ref refid="structneat_1_1speciating__parameter__container" kindref="compound">speciating_parameter_container</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structneat_1_1network__info__container" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63" refid="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" kindref="member">input_size</ref>;</highlight></codeline>
+<codeline lineno="64" refid="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" kindref="member">bias_size</ref>;</highlight></codeline>
+<codeline lineno="65" refid="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" kindref="member">output_size</ref>;</highlight></codeline>
+<codeline lineno="66" refid="structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733" kindref="member">functional_nodes</ref>;</highlight></codeline>
+<codeline lineno="67" refid="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" kindref="member">recurrent</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/><ref refid="structneat_1_1network__info__container" kindref="compound">network_info_container</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="structneat_1_1gene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71" refid="structneat_1_1gene_1a63201e3e9dfa24c572adaf6c2d7664cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>innovation_num<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="72" refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>from_node<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="73" refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>to_node<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="74" refid="structneat_1_1gene_1a6a8213ab23b642b97e013856df0f29bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>weight<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="75" refid="structneat_1_1gene_1accac39e6c4341708d6036e2f773b5b40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<sp/><ref refid="structneat_1_1gene" kindref="compound">gene</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classneat_1_1genome" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classneat_1_1genome" kindref="compound">genome</ref><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83" refid="classneat_1_1genome_1a5f409ba7667960382e1a389e711dff62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome_1a5f409ba7667960382e1a389e711dff62" kindref="member">fitness</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="84" refid="classneat_1_1genome_1a2524aa01356e2f4bea91b7a836928d5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome_1a2524aa01356e2f4bea91b7a836928d5d" kindref="member">adjusted_fitness</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="85" refid="classneat_1_1genome_1a7bd0ce5d45f57fd761fe60707d9dcd13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome_1a7bd0ce5d45f57fd761fe60707d9dcd13" kindref="member">global_rank</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86" refid="classneat_1_1genome_1a0e1bbbb2b2fb52ed1ba29e1f56e1c591" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome_1a0e1bbbb2b2fb52ed1ba29e1f56e1c591" kindref="member">max_neuron</ref>;</highlight></codeline>
+<codeline lineno="87" refid="classneat_1_1genome_1ac668a27526470c797b3cb33d68550493" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome_1ac668a27526470c797b3cb33d68550493" kindref="member">can_be_recurrent</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classneat_1_1genome_1a8382d3c24160873ffa8a01450a7a28bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structneat_1_1mutation__rate__container" kindref="compound">mutation_rate_container</ref><sp/><ref refid="classneat_1_1genome_1a8382d3c24160873ffa8a01450a7a28bd" kindref="member">mutation_rates</ref>;</highlight></codeline>
+<codeline lineno="90" refid="classneat_1_1genome_1a3254ddbe0d8e472670b0af13b4a42872" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structneat_1_1network__info__container" kindref="compound">network_info_container</ref><sp/><ref refid="classneat_1_1genome_1a3254ddbe0d8e472670b0af13b4a42872" kindref="member">network_info</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classneat_1_1genome_1a31e3a36c77d9024226311780fc9a68f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;unsigned<sp/>int,<sp/>gene&gt;<sp/><ref refid="classneat_1_1genome_1a31e3a36c77d9024226311780fc9a68f3" kindref="member">genes</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>(<ref refid="structneat_1_1network__info__container" kindref="compound">network_info_container</ref>&amp;<sp/>info,<sp/><ref refid="structneat_1_1mutation__rate__container" kindref="compound">mutation_rate_container</ref>&amp;<sp/>rates);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classneat_1_1genome_1a490c08947bdcb261622a3b5da9f5e021" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1genome_1a490c08947bdcb261622a3b5da9f5e021" kindref="member">genome</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>a<sp/>specie<sp/>is<sp/>group<sp/>of<sp/>genomes<sp/>which<sp/>differences<sp/>is<sp/>smaller<sp/>than<sp/>some<sp/>threshold<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="structneat_1_1specie" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101" refid="structneat_1_1specie_1ad988c29b7f9cbb0cf5df431cdcaa0edc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>top_fitness<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102" refid="structneat_1_1specie_1adffda9390477e12b247eacb028c62382" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>average_fitness<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103" refid="structneat_1_1specie_1a01beb89b7df29bf481d2608bce8445a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>staleness<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>GIVING_NAMES_FOR_SPECIES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>name;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="structneat_1_1specie_1ad1a5d5c0334db03479f217a132da0a5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;genome&gt;<sp/><ref refid="structneat_1_1specie_1ad1a5d5c0334db03479f217a132da0a5b" kindref="member">genomes</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}<sp/><ref refid="structneat_1_1specie" kindref="compound">specie</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classneat_1_1innovation__container" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classneat_1_1innovation__container" kindref="compound">innovation_container</ref><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_number;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::pair&lt;unsigned<sp/>int,<sp/>unsigned<sp/>int&gt;,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;<sp/>track;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_innovation_number(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_number<sp/>=<sp/>num;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classneat_1_1innovation__container_1ac26844581a79430afd26c114b8b1686d" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119" refid="classneat_1_1innovation__container_1a94c3e431be20eea66837e1b894761647" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classneat_1_1pool" kindref="compound">pool</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="122" refid="classneat_1_1innovation__container_1a26698188a50f5dbd5c72440a871efc1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1innovation__container_1a26698188a50f5dbd5c72440a871efc1c" kindref="member">innovation_container</ref>()<sp/>:<sp/>_number(0)<sp/>{}</highlight></codeline>
+<codeline lineno="123" refid="classneat_1_1innovation__container_1ac26844581a79430afd26c114b8b1686d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1innovation__container_1ac26844581a79430afd26c114b8b1686d" kindref="member">reset</ref>()<sp/>{<sp/>track.clear();<sp/>};</highlight></codeline>
+<codeline lineno="124" refid="classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7" kindref="member">add_gene</ref>(<ref refid="structneat_1_1gene" kindref="compound">gene</ref>&amp;<sp/>g)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>track.find(std::make_pair(g.<ref refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" kindref="member">from_node</ref>,<sp/>g.<ref refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" kindref="member">to_node</ref>));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>track.end())</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>track[std::make_pair(g.<ref refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" kindref="member">from_node</ref>,<sp/>g.<ref refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" kindref="member">to_node</ref>)]<sp/>=<sp/>++_number;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(*it).second;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131" refid="classneat_1_1innovation__container_1a1afb92313cfd6d29afbb11c6655c442e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1innovation__container_1a1afb92313cfd6d29afbb11c6655c442e" kindref="member">number</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_number;<sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>a<sp/>small<sp/>world,<sp/>where<sp/>individuals<sp/>(genomes)<sp/>are<sp/>making<sp/>babies<sp/>and<sp/>evolving,</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>becoming<sp/>better<sp/>and<sp/>better<sp/>after<sp/>each<sp/>generation<sp/>:)</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="classneat_1_1pool" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classneat_1_1pool" kindref="compound">pool</ref><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1pool" kindref="compound">pool</ref>(){};</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>important<sp/>part,<sp/>only<sp/>accecible<sp/>for<sp/>friend<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1innovation__container" kindref="compound">innovation_container</ref><sp/>innovation;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>innovation<sp/>tracking<sp/>in<sp/>current<sp/>generation,<sp/>should<sp/>be<sp/>cleared<sp/>after<sp/>each<sp/>generation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::pair&lt;unsigned<sp/>int,<sp/>unsigned<sp/>int&gt;,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;<sp/>track;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>generation_number<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>evolutionary<sp/>methods<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref><sp/>crossover(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g2);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mutate_weight(<ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mutate_enable_disable(<ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mutate_link(<ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force_bias);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mutate_node(<ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mutate(<ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>disjoint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g2);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>weights(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g2);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_same_species(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>g2);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>specie<sp/>ranking<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>rank_globally();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>calculate_average_fitness(<ref refid="structneat_1_1specie" kindref="compound">specie</ref>&amp;<sp/>s);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>total_average_fitness();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>evolution<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cull_species(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cut_to_one);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref><sp/>breed_child(<ref refid="structneat_1_1specie" kindref="compound">specie</ref>&amp;<sp/>s);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_stale_species();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_weak_species();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_to_species(<ref refid="classneat_1_1genome" kindref="compound">genome</ref>&amp;<sp/>child);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>pool<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="classneat_1_1pool_1ad22233683f54678400ef45fe6f7a38ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1pool_1ad22233683f54678400ef45fe6f7a38ed" kindref="member">max_fitness</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>mutation<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="classneat_1_1pool_1a037e36677258536cfc40ad2dccfe4d7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structneat_1_1mutation__rate__container" kindref="compound">mutation_rate_container</ref><sp/><ref refid="classneat_1_1pool_1a037e36677258536cfc40ad2dccfe4d7f" kindref="member">mutation_rates</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>species<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="classneat_1_1pool_1a19cf05d7934ea6033866da21eaf7252f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structneat_1_1speciating__parameter__container" kindref="compound">speciating_parameter_container</ref><sp/><ref refid="classneat_1_1pool_1a19cf05d7934ea6033866da21eaf7252f" kindref="member">speciating_parameters</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>neural<sp/>network<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="classneat_1_1pool_1abe5e4171f187f19ebe85409369ede596" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structneat_1_1network__info__container" kindref="compound">network_info_container</ref><sp/><ref refid="classneat_1_1pool_1abe5e4171f187f19ebe85409369ede596" kindref="member">network_info</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pool&apos;s<sp/>local<sp/>random<sp/>number<sp/>generator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::random_device<sp/><ref refid="classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7" kindref="member">rd</ref>;</highlight></codeline>
+<codeline lineno="188" refid="classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705" kindref="member">generator</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>species<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="classneat_1_1pool_1a3056b5880db8c3837c1f2af0e4a3faff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;specie&gt;<sp/><ref refid="classneat_1_1pool_1a3056b5880db8c3837c1f2af0e4a3faff" kindref="member">species</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" kindref="member">pool</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>input,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>output,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bias<sp/>=<sp/>1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>rec<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;network_info.<ref refid="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" kindref="member">input_size</ref><sp/>=<sp/>input;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;network_info.<ref refid="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" kindref="member">output_size</ref><sp/>=<sp/>output;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;network_info.<ref refid="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" kindref="member">bias_size</ref><sp/>=<sp/>bias;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;network_info.<ref refid="structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733" kindref="member">functional_nodes</ref><sp/>=<sp/>input<sp/>+<sp/>output<sp/>+<sp/>bias;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;network_info.<ref refid="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" kindref="member">recurrent</ref><sp/>=<sp/>rec;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>seed<sp/>the<sp/>mersenne<sp/>twister<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>random<sp/>number<sp/>from<sp/>our<sp/>computer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705" kindref="member">generator</ref>.seed(<ref refid="classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7" kindref="member">rd</ref>());</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>a<sp/>basic<sp/>generation<sp/>with<sp/>default<sp/>genomes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>this-&gt;speciating_parameters.<ref refid="structneat_1_1speciating__parameter__container_1ad2458c000476a017111cc5ae8adc8780" kindref="member">population</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classneat_1_1genome" kindref="compound">genome</ref><sp/>new_genome(this-&gt;network_info,<sp/>this-&gt;mutation_rates);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;mutate(new_genome);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;add_to_species(new_genome);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>next<sp/>generation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1pool_1a5abf875445e788d913ab8416a47e8ee3" kindref="member">new_generation</ref>();</highlight></codeline>
+<codeline lineno="215" refid="classneat_1_1pool_1a6811b1137e4eb75496f0319cf7ce3349" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1pool_1a6811b1137e4eb75496f0319cf7ce3349" kindref="member">generation</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;generation_number;<sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>calculate<sp/>fitness<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="classneat_1_1pool_1a34603a3e12abf4f136c294933a9d2cc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;specie*,<sp/>genome*&gt;&gt;<sp/><ref refid="classneat_1_1pool_1a34603a3e12abf4f136c294933a9d2cc9" kindref="member">get_genomes</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;specie*,<sp/>genome*&gt;&gt;<sp/>genomes;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>s<sp/>=<sp/>this-&gt;species.begin();<sp/>s<sp/>!=<sp/>this-&gt;species.end();<sp/>s++)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>(*s).genomes.size();<sp/>i++)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genomes.push_back(std::make_pair(&amp;(*s),<sp/>&amp;((*s).genomes[i])));</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>genomes;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>import<sp/>and<sp/>export<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" kindref="member">import_fromfile</ref>(std::string<sp/>filename);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" kindref="member">export_tofile</ref>(std::string<sp/>filename);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>neat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h"/>
+  </compounddef>
+</doxygen>

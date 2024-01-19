@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_board_8h" kind="file" language="C++">
+    <compoundname>Board.h</compoundname>
+    <includes local="no">fstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">variant</includes>
+    <includes local="no">vector</includes>
+    <includes local="yes">../json/json.hpp</includes>
+    <includes refid="_field_8h" local="yes">Field.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="_board_8cc" local="yes">/home/kamil/zpr/Monopoly/Board.cc</includedby>
+    <includedby refid="_monopoly_game_engine_8h" local="yes">/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</includedby>
+    <includedby refid="_withdraw_8h" local="yes">/home/kamil/zpr/Monopoly/Withdraw.h</includedby>
+    <incdepgraph>
+      <node id="23">
+        <label>list</label>
+      </node>
+      <node id="13">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="24">
+        <label>queue</label>
+      </node>
+      <node id="22">
+        <label>Tinyneat.h</label>
+        <link refid="_tinyneat_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>bits/stdc++.h</label>
+      </node>
+      <node id="7">
+        <label>variant</label>
+      </node>
+      <node id="9">
+        <label>../json/json.hpp</label>
+      </node>
+      <node id="11">
+        <label>cmath</label>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="26">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+      </node>
+      <node id="2">
+        <label>fstream</label>
+      </node>
+      <node id="14">
+        <label>Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>random</label>
+      </node>
+      <node id="20">
+        <label>stack</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="19">
+        <label>array</label>
+      </node>
+      <node id="10">
+        <label>Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Tinyann.h</label>
+        <link refid="_tinyann_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="21">
+        <label>unordered_map</label>
+      </node>
+      <node id="16">
+        <label>algorithm</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="17">
+        <label>AiAdapter.h</label>
+        <link refid="_ai_adapter_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/Board.cc</label>
+        <link refid="_board_8cc"/>
+      </node>
+      <node id="8">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+      <node id="11">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.cc</label>
+        <link refid="_withdraw_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_board" prot="public">Board</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_board_8h_1ab701e3ac61a85b337ec5c1abaad6742d" prot="public" static="no">
+        <type>nlohmann::json</type>
+        <definition>using json =  nlohmann::json</definition>
+        <argsstring></argsstring>
+        <name>json</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="26" column="1" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="class_field" kindref="compound">Field</ref>, <ref refid="class_property_field" kindref="compound">PropertyField</ref>, <ref refid="class_street_field" kindref="compound">StreetField</ref>, <ref refid="class_station_field" kindref="compound">StationField</ref>, <ref refid="class_utility_field" kindref="compound">UtilityField</ref>, <ref refid="class_tax_field" kindref="compound">TaxField</ref> &gt;</type>
+        <definition>PossibleFields</definition>
+        <argsstring></argsstring>
+        <name>PossibleFields</name>
+        <briefdescription>
+<para>A variant type representing different types of fields on the monopoly board. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="33" column="1" bodyfile="/home/kamil/zpr/Monopoly/Board.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_board_8h_1a92671e84f9d38a1f5a64ef20ad23ec39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; <ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3" kindref="member">StreetTiers</ref>, unsigned int &gt;</type>
+        <definition>std::map&lt;StreetTiers, unsigned int&gt; jsonToStreetRent</definition>
+        <argsstring>(const json &amp;element)</argsstring>
+        <name>jsonToStreetRent</name>
+        <param>
+          <type>const <ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref> &amp;</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>Converts JSON data to a map of rent values for street properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>element</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The JSON data containing rent values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A map of rent values for street properties. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="105" column="10" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="195" bodyend="205" declfile="/home/kamil/zpr/Monopoly/Board.h" declline="105" declcolumn="10"/>
+        <references refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a1721e377912232cb891c4f9d8b96a59a" compoundref="main_8h" startline="138">FOUR_HOUSES</references>
+        <references refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a9d02c50113762d50ac07c31528974579" compoundref="main_8h" startline="138">HOTEL</references>
+        <references refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3afbe39846abf8d0ca655daa4c5e6675f6" compoundref="main_8h" startline="138">NO_HOUSES</references>
+        <references refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3ae9309352dfb1c2542328bf77b979b796" compoundref="main_8h" startline="138">ONE_HOUSE</references>
+        <references refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a3cfedac7ca093a36b14fd248a3b8a5b4" compoundref="main_8h" startline="138">THREE_HOUSES</references>
+        <references refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3a0ab6dd54fe0c67ece897f56705db3e3f" compoundref="main_8h" startline="138">TWO_HOUESES</references>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_board_8h_1ad42d602c22869eaeb607bcce29881af1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; <ref refid="main_8h_1a5557e51432d2a191244125a3af3594be" kindref="member">StationTiers</ref>, unsigned int &gt;</type>
+        <definition>std::map&lt;StationTiers, unsigned int&gt; jsonToStationRent</definition>
+        <argsstring>(const json &amp;element)</argsstring>
+        <name>jsonToStationRent</name>
+        <param>
+          <type>const <ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref> &amp;</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>Converts JSON data to a map of rent values for station properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>element</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The JSON data containing rent values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A map of rent values for station properties. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="112" column="10" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="207" bodyend="215" declfile="/home/kamil/zpr/Monopoly/Board.h" declline="112" declcolumn="10"/>
+        <references refid="main_8h_1a5557e51432d2a191244125a3af3594beaf5d374fd66e430d41b08642d1197a585" compoundref="main_8h" startline="144">FOUR_STATIONS</references>
+        <references refid="main_8h_1a5557e51432d2a191244125a3af3594bea5abd12f5714ad8a5c78fbcfdd13d8363" compoundref="main_8h" startline="144">ONE_STATION</references>
+        <references refid="main_8h_1a5557e51432d2a191244125a3af3594bea4ee7c40343f7fc51e168ebb665d4865d" compoundref="main_8h" startline="144">THREE_STATIONS</references>
+        <references refid="main_8h_1a5557e51432d2a191244125a3af3594bea324e5b4c78cf4a0c67ef4164dc635dc2" compoundref="main_8h" startline="144">TWO_STATIONS</references>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_board_8h_1a9f51f2d21bf4f1468f4481d2b6cf20a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; <ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113" kindref="member">UtilityTiers</ref>, unsigned int &gt;</type>
+        <definition>std::map&lt;UtilityTiers, unsigned int&gt; jsonToUtilityRent</definition>
+        <argsstring>(const json &amp;element)</argsstring>
+        <name>jsonToUtilityRent</name>
+        <param>
+          <type>const <ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref> &amp;</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>Converts JSON data to a map of rent multipliers for utility properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>element</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The JSON data containing rent multipliers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A map of rent multipliers for utility properties. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Board.h" line="119" column="10" bodyfile="/home/kamil/zpr/Monopoly/Board.cc" bodystart="217" bodyend="223" declfile="/home/kamil/zpr/Monopoly/Board.h" declline="119" declcolumn="10"/>
+        <references refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113ae71bdf2240af02a5ef8ded8c01a8a692" compoundref="main_8h" startline="150">ONE_UTILITY</references>
+        <references refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113afd679c479954ac2c4c7143bc5e45cb6d" compoundref="main_8h" startline="150">TWO_UTILITIES</references>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BOARD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOARD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../json/json.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_field_8h" kindref="compound">Field.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="_board_8h_1ab701e3ac61a85b337ec5c1abaad6742d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref><sp/>=<sp/><ref refid="_board_8h_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">nlohmann::json</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" kindref="member">PossibleFields</ref><sp/>=<sp/>std::variant&lt;Field,<sp/>PropertyField,<sp/>StreetField,<sp/>StationField,<sp/>UtilityField,<sp/>TaxField&gt;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_board" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_board" kindref="compound">Board</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>field_number_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;PossibleFields&gt;<sp/>board_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2i<sp/>BOARD_POSITION_<sp/>=<sp/>sf::Vector2i(700,<sp/>700);<sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>BOARD_SCALE<sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" kindref="member">Board</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>file_path);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;PossibleFields&gt;&amp;<sp/><ref refid="class_board_1a259fe7f8131ebd8614cfa3a5ce4de724" kindref="member">getBoard</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_board_1a1c969a12d80bf889bede688c5c4b4c6a" kindref="member">getFieldNumber</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2i<sp/><ref refid="class_board_1a4f1dde258689798d125165c2eddaaa86" kindref="member">getBoardPosition</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_board_1a5f148daa03da25d40dff3fc613568d6f" kindref="member">clearBoard</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2i<sp/><ref refid="class_board_1a2b73746e47152ecea46f7a03d58ea3e8" kindref="member">getFieldPositon</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>sf::Vector2i<sp/>prevPos,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_board_1a7ae5ceb0363e2d0bf1520108074c9485" kindref="member">getFieldRotation</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_board_8h_1ad39b748df1ce97bcd7b1b6557ee2f7b4" kindref="member">PossibleFields</ref>&amp;<sp/><ref refid="class_board_1aa9a40a410b22ebbb1c87a91d16741711" kindref="member">getFieldById</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>wanted_id);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">std::map&lt;StreetTiers,<sp/>unsigned<sp/>int&gt;<sp/><ref refid="_board_8h_1a92671e84f9d38a1f5a64ef20ad23ec39" kindref="member">jsonToStreetRent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref>&amp;<sp/>element);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">std::map&lt;StationTiers,<sp/>unsigned<sp/>int&gt;<sp/><ref refid="_board_8h_1ad42d602c22869eaeb607bcce29881af1" kindref="member">jsonToStationRent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref>&amp;<sp/>element);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">std::map&lt;UtilityTiers,<sp/>unsigned<sp/>int&gt;<sp/><ref refid="_board_8h_1a9f51f2d21bf4f1468f4481d2b6cf20a6" kindref="member">jsonToUtilityRent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref>&amp;<sp/>element);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/Board.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__button_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Button.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Button.cc</primary></indexterm>
+<programlisting>#include &quot;Button.h&quot;
+</programlisting>Include dependency graph for Button.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_button_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>

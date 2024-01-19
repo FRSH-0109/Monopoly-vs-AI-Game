@@ -1,0 +1,8 @@
+<map id="MonopolyGameEngine::isDestroyingLegal" name="MonopolyGameEngine::isDestroyingLegal">
+<area shape="rect" id="node1" title="Checks if destroying houses on a street is legal for a player." alt="" coords="5,115,175,156"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="247,5,417,47"/>
+<area shape="rect" id="node3" href="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f" title="Gets the IDs of the group members (properties in the same group)." alt="" coords="489,151,727,178"/>
+<area shape="rect" id="node4" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title="Gets the number of houses on the property." alt="" coords="225,122,439,149"/>
+<area shape="rect" id="node5" href="$class_property_field.html#ac52da7b908a73ce329c1aff55f971bed" title="Checks if the property is mortgaged." alt="" coords="223,173,441,199"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#aa486edceb7c305c2f24785a6ee8ca2fc" title="Checks if a group of properties is completed by a player." alt="" coords="247,224,417,265"/>
+</map>

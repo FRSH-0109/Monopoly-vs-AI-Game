@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structneat_1_1gene" xml:lang="en-US">
+<title>neat::gene Struct Reference</title>
+<indexterm><primary>neat::gene</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1gene_1a63201e3e9dfa24c572adaf6c2d7664cd"/>unsigned int <emphasis role="strong">innovation_num</emphasis> = -1</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1gene_1a641865cacfdafffe283110962e57ce13"/>unsigned int <emphasis role="strong">from_node</emphasis> = -1</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2"/>unsigned int <emphasis role="strong">to_node</emphasis> = -1</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1gene_1a6a8213ab23b642b97e013856df0f29bd"/>double <emphasis role="strong">weight</emphasis> = 0.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1gene_1accac39e6c4341708d6036e2f773b5b40"/>bool <emphasis role="strong">enabled</emphasis> = true</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link></section>

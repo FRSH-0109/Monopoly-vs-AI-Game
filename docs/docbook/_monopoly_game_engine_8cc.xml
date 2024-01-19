@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__monopoly_game_engine_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</primary></indexterm>
+<para>
+
+<para>Source file of class used to handle whole monopoly game process, turns, actions with players, board etc. </para>
+ 
+</para>
+<programlisting>#include &quot;MonopolyGameEngine.h&quot;
+</programlisting>Include dependency graph for MonopolyGameEngine.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_monopoly_game_engine_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file of class used to handle whole monopoly game process, turns, actions with players, board etc. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

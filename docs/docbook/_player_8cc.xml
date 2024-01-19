@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__player_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Player.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Player.cc</primary></indexterm>
+<para>
+
+<para>Implementation file for <link linkend="_class_player">Player</link> class and AI <link linkend="_class_player">Player</link> class, containing data and methods for a player in a Monopoly game. </para>
+ 
+</para>
+<programlisting>#include &quot;Player.h&quot;
+</programlisting>Include dependency graph for Player.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_player_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Implementation file for <link linkend="_class_player">Player</link> class and AI <link linkend="_class_player">Player</link> class, containing data and methods for a player in a Monopoly game. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

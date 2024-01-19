@@ -1,0 +1,14 @@
+digraph "neat::pool"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="neat::pool",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" network_info" ,fontname="Helvetica"];
+  Node2 [label="neat::network_info\l_container",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structneat_1_1network__info__container.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" speciating_parameters" ,fontname="Helvetica"];
+  Node3 [label="neat::speciating_parameter\l_container",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structneat_1_1speciating__parameter__container.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mutation_rates" ,fontname="Helvetica"];
+  Node4 [label="neat::mutation_rate\l_container",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structneat_1_1mutation__rate__container.html",tooltip=" "];
+}

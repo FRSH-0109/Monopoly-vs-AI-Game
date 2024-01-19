@@ -1,0 +1,295 @@
+\hypertarget{class_chance_card}{}\doxysection{Chance\+Card Class Reference}
+\label{class_chance_card}\index{ChanceCard@{ChanceCard}}
+
+
+Represents a chance card in the monopoly game.  
+
+
+
+
+{\ttfamily \#include $<$Chance.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chance_card_abbdcd4fe09d4310ae46d5ab35de0f59a}{Chance\+Card}} (const unsigned int id, const \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}{Chance\+Type}} type, unsigned int value, const sf\+::\+String text, const std\+::string graphic\+\_\+path, const unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}, const unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}, const sf\+::\+Vector2f position)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_chance_card}{Chance\+Card}} class. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_chance_card_af1c04b05577b32427b2c3777c1a89b7b}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the unique identifier of the chance card. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}{Chance\+Type}} \mbox{\hyperlink{class_chance_card_a9a328e8b7d8630469f0c114dbb3f947f}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the type of the chance card. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_chance_card_a648076fb0cbccc144fc76f241cc892ec}{get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the value associated with the chance card. \end{DoxyCompactList}\item 
+const sf\+::\+String \mbox{\hyperlink{class_chance_card_a3f54572894e5259f3f4ed887b6ca3e5d}{get\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text describing the action of the chance card. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_chance_card_aea4c2fcb474809701df580bfd8d50649}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the width of the graphic associated with the chance card. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_chance_card_ac6be18fbd58a42f3a85833e52b3d4573}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the height of the graphic associated with the chance card. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_chance_card_afa07dc486bd4180707f9502de3c039ea}{get\+Graphic\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the path to the graphic associated with the chance card. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_chance_card_a38a4b0e0b09994e95321fc2f843a2f89}{get\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the rotation of the chance card graphic. \end{DoxyCompactList}\item 
+const sf\+::\+Sprite \& \mbox{\hyperlink{class_chance_card_ada5b5f2faefed41ffe0e17a39f9c3967}{get\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the sprite associated with the chance card graphic. \end{DoxyCompactList}\item 
+const sf\+::\+Texture \& \mbox{\hyperlink{class_chance_card_a890639f01e47852617c617c0d992f80b}{get\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the texture associated with the chance card graphic. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \& \mbox{\hyperlink{class_chance_card_a411399b942a676234c9e2ea93bbad98b}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the position of the chance card on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chance_card_a6e05f936f5bdfa29b8a4a12a368be4e3}{set\+Rotation}} (float new\+\_\+roation)
+\begin{DoxyCompactList}\small\item\em Setter for the rotation of the chance card graphic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chance_card_a785f3e0c0122bf2015dcd62ff430a605}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Setter for the position of the chance card on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chance_card_ac676e005fc49d99abebff163a6252da5}{create\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Creates the sprite for the chance card using its graphic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a chance card in the monopoly game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_chance_card_abbdcd4fe09d4310ae46d5ab35de0f59a}\label{class_chance_card_abbdcd4fe09d4310ae46d5ab35de0f59a}} 
+\index{ChanceCard@{ChanceCard}!ChanceCard@{ChanceCard}}
+\index{ChanceCard@{ChanceCard}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{ChanceCard()}{ChanceCard()}}
+{\footnotesize\ttfamily Chance\+Card\+::\+Chance\+Card (\begin{DoxyParamCaption}\item[{const unsigned int}]{id,  }\item[{const \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}{Chance\+Type}}}]{type,  }\item[{unsigned int}]{value,  }\item[{const sf\+::\+String}]{text,  }\item[{const std\+::string}]{graphic\+\_\+path,  }\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height,  }\item[{const sf\+::\+Vector2f}]{position }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_chance_card}{Chance\+Card}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Unique identifier for the chance card. \\
+\hline
+{\em type} & Type of the chance card. \\
+\hline
+{\em value} & Value associated with the chance card. \\
+\hline
+{\em text} & Text describing the action of the chance card. \\
+\hline
+{\em graphic\+\_\+path} & Path to the graphic associated with the chance card. \\
+\hline
+{\em width} & Width of the graphic. \\
+\hline
+{\em height} & Height of the graphic. \\
+\hline
+{\em position} & Position of the chance card on the screen. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_chance_card_ac676e005fc49d99abebff163a6252da5}\label{class_chance_card_ac676e005fc49d99abebff163a6252da5}} 
+\index{ChanceCard@{ChanceCard}!createSprite@{createSprite}}
+\index{createSprite@{createSprite}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{createSprite()}{createSprite()}}
+{\footnotesize\ttfamily void Chance\+Card\+::create\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the sprite for the chance card using its graphic. 
+
+\mbox{\Hypertarget{class_chance_card_afa07dc486bd4180707f9502de3c039ea}\label{class_chance_card_afa07dc486bd4180707f9502de3c039ea}} 
+\index{ChanceCard@{ChanceCard}!getGraphicPath@{getGraphicPath}}
+\index{getGraphicPath@{getGraphicPath}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getGraphicPath()}{getGraphicPath()}}
+{\footnotesize\ttfamily const std\+::string Chance\+Card\+::get\+Graphic\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the path to the graphic associated with the chance card. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& Path to the graphic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_ac6be18fbd58a42f3a85833e52b3d4573}\label{class_chance_card_ac6be18fbd58a42f3a85833e52b3d4573}} 
+\index{ChanceCard@{ChanceCard}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily unsigned int Chance\+Card\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the height of the graphic associated with the chance card. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int Height of the graphic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_af1c04b05577b32427b2c3777c1a89b7b}\label{class_chance_card_af1c04b05577b32427b2c3777c1a89b7b}} 
+\index{ChanceCard@{ChanceCard}!getId@{getId}}
+\index{getId@{getId}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily unsigned int Chance\+Card\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the unique identifier of the chance card. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int Unique identifier for the chance card. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_a411399b942a676234c9e2ea93bbad98b}\label{class_chance_card_a411399b942a676234c9e2ea93bbad98b}} 
+\index{ChanceCard@{ChanceCard}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f \& Chance\+Card\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the position of the chance card on the screen. 
+
+\begin{DoxyReturn}{Returns}
+const sf\+::\+Vector2f\& Position of the chance card. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_a38a4b0e0b09994e95321fc2f843a2f89}\label{class_chance_card_a38a4b0e0b09994e95321fc2f843a2f89}} 
+\index{ChanceCard@{ChanceCard}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float Chance\+Card\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the rotation of the chance card graphic. 
+
+\begin{DoxyReturn}{Returns}
+float Rotation of the chance card graphic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_ada5b5f2faefed41ffe0e17a39f9c3967}\label{class_chance_card_ada5b5f2faefed41ffe0e17a39f9c3967}} 
+\index{ChanceCard@{ChanceCard}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily const sf\+::\+Sprite \& Chance\+Card\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the sprite associated with the chance card graphic. 
+
+\begin{DoxyReturn}{Returns}
+const sf\+::\+Sprite\& Sprite of the chance card graphic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_a3f54572894e5259f3f4ed887b6ca3e5d}\label{class_chance_card_a3f54572894e5259f3f4ed887b6ca3e5d}} 
+\index{ChanceCard@{ChanceCard}!getText@{getText}}
+\index{getText@{getText}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily const sf\+::\+String Chance\+Card\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the text describing the action of the chance card. 
+
+\begin{DoxyReturn}{Returns}
+const sf\+::\+String\& Text describing the action of the chance card. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chance_card_a3f54572894e5259f3f4ed887b6ca3e5d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_chance_card_a890639f01e47852617c617c0d992f80b}\label{class_chance_card_a890639f01e47852617c617c0d992f80b}} 
+\index{ChanceCard@{ChanceCard}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily const sf\+::\+Texture \& Chance\+Card\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the texture associated with the chance card graphic. 
+
+\begin{DoxyReturn}{Returns}
+const sf\+::\+Texture\& Texture of the chance card graphic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_a9a328e8b7d8630469f0c114dbb3f947f}\label{class_chance_card_a9a328e8b7d8630469f0c114dbb3f947f}} 
+\index{ChanceCard@{ChanceCard}!getType@{getType}}
+\index{getType@{getType}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}{Chance\+Type}} Chance\+Card\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the type of the chance card. 
+
+\begin{DoxyReturn}{Returns}
+Chance\+Type Type of the chance card. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chance_card_a9a328e8b7d8630469f0c114dbb3f947f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_chance_card_a648076fb0cbccc144fc76f241cc892ec}\label{class_chance_card_a648076fb0cbccc144fc76f241cc892ec}} 
+\index{ChanceCard@{ChanceCard}!getValue@{getValue}}
+\index{getValue@{getValue}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily int Chance\+Card\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the value associated with the chance card. 
+
+\begin{DoxyReturn}{Returns}
+int Value associated with the chance card. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chance_card_a648076fb0cbccc144fc76f241cc892ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_chance_card_aea4c2fcb474809701df580bfd8d50649}\label{class_chance_card_aea4c2fcb474809701df580bfd8d50649}} 
+\index{ChanceCard@{ChanceCard}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily unsigned int Chance\+Card\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the width of the graphic associated with the chance card. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int Width of the graphic. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chance_card_a785f3e0c0122bf2015dcd62ff430a605}\label{class_chance_card_a785f3e0c0122bf2015dcd62ff430a605}} 
+\index{ChanceCard@{ChanceCard}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Chance\+Card\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{pos }\end{DoxyParamCaption})}
+
+
+
+Setter for the position of the chance card on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & New position value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chance_card_a6e05f936f5bdfa29b8a4a12a368be4e3}\label{class_chance_card_a6e05f936f5bdfa29b8a4a12a368be4e3}} 
+\index{ChanceCard@{ChanceCard}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!ChanceCard@{ChanceCard}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Chance\+Card\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+roation }\end{DoxyParamCaption})}
+
+
+
+Setter for the rotation of the chance card graphic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+roation} & New rotation value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_chance_8h}{Chance.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_chance_8cc}{Chance.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,394 @@
+\hypertarget{class_ai_player}{}\doxysection{Ai\+Player Class Reference}
+\label{class_ai_player}\index{AiPlayer@{AiPlayer}}
+
+
+Represents an AI player in a Monopoly game, inheriting from \mbox{\hyperlink{class_player}{Player}}.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for Ai\+Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_ai_player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ai\+Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_ai_player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ai_player_a8039dc621ac1f6b087d0f1732ce3ab55}{Ai\+Player}} ()
+\item 
+\mbox{\hyperlink{class_ai_player_ad1267fc957d88796271b562c188c0b68}{Ai\+Player}} (unsigned int money)
+\item 
+\mbox{\hyperlink{class_ai_player_a4a2cbc1f46ddce268b614dafae2e5e8a}{Ai\+Player}} (unsigned int money, \mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}} nn)
+\item 
+\mbox{\hyperlink{class_ai_adapter}{Ai\+Adapter}} \& \mbox{\hyperlink{class_ai_player_a5d5a34086d564d1de13ac38bf1885b3a}{get\+Adapter}} ()
+\item 
+\mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}} \& \mbox{\hyperlink{class_ai_player_a47e04e0a4457aaaef551c06eea00230f}{get\+Neural\+Network}} ()
+\item 
+void \mbox{\hyperlink{class_ai_player_a8deec5aebde9d29c2363837aea19748f}{set\+Neural\+Network}} (\mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}} new\+\_\+nn)
+\item 
+\mbox{\hyperlink{main_8h_a8a2b1218113cc3385a8aaf1870e4a007}{Buy\+Decision}} \mbox{\hyperlink{class_ai_player_a4ec346de3b8d48b157354452569ec266}{decide\+Buy}} (unsigned int index) override
+\item 
+\mbox{\hyperlink{main_8h_ab6ecd1223ac100310bac8f0f0131eb4a}{Jail\+Decision}} \mbox{\hyperlink{class_ai_player_add73dc5a5c94ac7afff1ee5be8fb7637}{decide\+Jail}} () override
+\item 
+\mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_ai_player_ade144bf242d81cb7e0b4b714545ebeb9}{decide\+Mortgage}} (unsigned int index) override
+\item 
+\mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_ai_player_ad37f0daac7f78c3179a6bd95da7c07af}{decide\+Unmortgage}} (unsigned int index) override
+\item 
+unsigned int \mbox{\hyperlink{class_ai_player_a441701de5fdaa5958fcc36e9791a9edc}{decide\+Auction\+Bid}} (unsigned int price) override
+\item 
+unsigned int \mbox{\hyperlink{class_ai_player_a94760240482130380840c0d303a19642}{decide\+Build\+House}} () override
+\item 
+unsigned int \mbox{\hyperlink{class_ai_player_a141ea4b1a96050ae1ac1f6925c308135}{decide\+Sell\+House}} () override
+\item 
+\mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_ai_player_a84e084321dab6cea80ec5ea0f5564c02}{decide\+Offer\+Trade}} () override
+\item 
+\mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} \mbox{\hyperlink{class_ai_player_affc4990f1252789326aa28a7797462ab}{decide\+Accept\+Trade}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an AI player in a Monopoly game, inheriting from \mbox{\hyperlink{class_player}{Player}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ai_player_a8039dc621ac1f6b087d0f1732ce3ab55}\label{class_ai_player_a8039dc621ac1f6b087d0f1732ce3ab55}} 
+\index{AiPlayer@{AiPlayer}!AiPlayer@{AiPlayer}}
+\index{AiPlayer@{AiPlayer}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{AiPlayer()}{AiPlayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Ai\+Player\+::\+Ai\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor for \mbox{\hyperlink{class_ai_player}{Ai\+Player}} class. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_ai_player_a8039dc621ac1f6b087d0f1732ce3ab55_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_ad1267fc957d88796271b562c188c0b68}\label{class_ai_player_ad1267fc957d88796271b562c188c0b68}} 
+\index{AiPlayer@{AiPlayer}!AiPlayer@{AiPlayer}}
+\index{AiPlayer@{AiPlayer}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{AiPlayer()}{AiPlayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Ai\+Player\+::\+Ai\+Player (\begin{DoxyParamCaption}\item[{unsigned int}]{money }\end{DoxyParamCaption})}
+
+Constructor for \mbox{\hyperlink{class_ai_player}{Ai\+Player}} class with initial money.
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & Initial amount of money for the AI player. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_ai_player_ad1267fc957d88796271b562c188c0b68_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a4a2cbc1f46ddce268b614dafae2e5e8a}\label{class_ai_player_a4a2cbc1f46ddce268b614dafae2e5e8a}} 
+\index{AiPlayer@{AiPlayer}!AiPlayer@{AiPlayer}}
+\index{AiPlayer@{AiPlayer}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{AiPlayer()}{AiPlayer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Ai\+Player\+::\+Ai\+Player (\begin{DoxyParamCaption}\item[{unsigned int}]{money,  }\item[{\mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}}}]{nn }\end{DoxyParamCaption})}
+
+Constructor for \mbox{\hyperlink{class_ai_player}{Ai\+Player}} class with initial money and neural\+\_\+network.
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & Initial amount of money for the AI player. \\
+\hline
+{\em n} & Neural network used by a \mbox{\hyperlink{class_player}{Player}}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_ai_player_a4a2cbc1f46ddce268b614dafae2e5e8a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ai_player_affc4990f1252789326aa28a7797462ab}\label{class_ai_player_affc4990f1252789326aa28a7797462ab}} 
+\index{AiPlayer@{AiPlayer}!decideAcceptTrade@{decideAcceptTrade}}
+\index{decideAcceptTrade@{decideAcceptTrade}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideAcceptTrade()}{decideAcceptTrade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Ai\+Player\+::decide\+Accept\+Trade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a decision for accepting a trade for the AI player (override from base class).
+
+\begin{DoxyReturn}{Returns}
+Decision object representing the acceptance of the trade. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_a7adf207e9b3b987da924fd602ecc6528}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_affc4990f1252789326aa28a7797462ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a441701de5fdaa5958fcc36e9791a9edc}\label{class_ai_player_a441701de5fdaa5958fcc36e9791a9edc}} 
+\index{AiPlayer@{AiPlayer}!decideAuctionBid@{decideAuctionBid}}
+\index{decideAuctionBid@{decideAuctionBid}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideAuctionBid()}{decideAuctionBid()}}
+{\footnotesize\ttfamily unsigned int Ai\+Player\+::decide\+Auction\+Bid (\begin{DoxyParamCaption}\item[{unsigned int}]{price }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a decision for auction bidding for the AI player (override from base class).
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & Current price in the auction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The bid amount decided by the AI player. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_af3da06d4c1776f82ff4cd8619377fd7d}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_a441701de5fdaa5958fcc36e9791a9edc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a94760240482130380840c0d303a19642}\label{class_ai_player_a94760240482130380840c0d303a19642}} 
+\index{AiPlayer@{AiPlayer}!decideBuildHouse@{decideBuildHouse}}
+\index{decideBuildHouse@{decideBuildHouse}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideBuildHouse()}{decideBuildHouse()}}
+{\footnotesize\ttfamily unsigned int Ai\+Player\+::decide\+Build\+House (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a decision for building a house for the AI player (override from base class).
+
+\begin{DoxyReturn}{Returns}
+The index of the property on which the AI player decides to build a house. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_a71313606c3b4a7b363cabd40bd9a7126}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_a94760240482130380840c0d303a19642_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a4ec346de3b8d48b157354452569ec266}\label{class_ai_player_a4ec346de3b8d48b157354452569ec266}} 
+\index{AiPlayer@{AiPlayer}!decideBuy@{decideBuy}}
+\index{decideBuy@{decideBuy}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideBuy()}{decideBuy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a8a2b1218113cc3385a8aaf1870e4a007}{Buy\+Decision}} Ai\+Player\+::decide\+Buy (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a buying decision for the AI player (override from base class).
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the property to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Buy\+Decision object representing the decision. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_adfeb87a6e956897e314f5396d5662293}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_a4ec346de3b8d48b157354452569ec266_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_add73dc5a5c94ac7afff1ee5be8fb7637}\label{class_ai_player_add73dc5a5c94ac7afff1ee5be8fb7637}} 
+\index{AiPlayer@{AiPlayer}!decideJail@{decideJail}}
+\index{decideJail@{decideJail}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideJail()}{decideJail()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_ab6ecd1223ac100310bac8f0f0131eb4a}{Jail\+Decision}} Ai\+Player\+::decide\+Jail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a jail decision for the AI player (override from base class).
+
+\begin{DoxyReturn}{Returns}
+Jail\+Decision object representing the decision. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_a83461a9c984ddf60dd6f3a9775690d45}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_add73dc5a5c94ac7afff1ee5be8fb7637_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_ade144bf242d81cb7e0b4b714545ebeb9}\label{class_ai_player_ade144bf242d81cb7e0b4b714545ebeb9}} 
+\index{AiPlayer@{AiPlayer}!decideMortgage@{decideMortgage}}
+\index{decideMortgage@{decideMortgage}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideMortgage()}{decideMortgage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Ai\+Player\+::decide\+Mortgage (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a mortgage decision for the AI player (override from base class).
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the property to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decision object representing the mortgage decision. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_a9c596f7c08886d9db546d3c222611f5f}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_ade144bf242d81cb7e0b4b714545ebeb9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a84e084321dab6cea80ec5ea0f5564c02}\label{class_ai_player_a84e084321dab6cea80ec5ea0f5564c02}} 
+\index{AiPlayer@{AiPlayer}!decideOfferTrade@{decideOfferTrade}}
+\index{decideOfferTrade@{decideOfferTrade}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideOfferTrade()}{decideOfferTrade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Ai\+Player\+::decide\+Offer\+Trade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a decision for offering a trade for the AI player (override from base class).
+
+\begin{DoxyReturn}{Returns}
+Decision object representing the trade offer. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_a42244fc7463a4fc447a73f35d2dcb483}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_a84e084321dab6cea80ec5ea0f5564c02_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a141ea4b1a96050ae1ac1f6925c308135}\label{class_ai_player_a141ea4b1a96050ae1ac1f6925c308135}} 
+\index{AiPlayer@{AiPlayer}!decideSellHouse@{decideSellHouse}}
+\index{decideSellHouse@{decideSellHouse}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideSellHouse()}{decideSellHouse()}}
+{\footnotesize\ttfamily unsigned int Ai\+Player\+::decide\+Sell\+House (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make a decision for selling a house for the AI player (override from base class).
+
+\begin{DoxyReturn}{Returns}
+The index of the property from which the AI player decides to sell a house. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_afa5630a45ffb3f996be4229cbad75bb0}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_a141ea4b1a96050ae1ac1f6925c308135_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_ad37f0daac7f78c3179a6bd95da7c07af}\label{class_ai_player_ad37f0daac7f78c3179a6bd95da7c07af}} 
+\index{AiPlayer@{AiPlayer}!decideUnmortgage@{decideUnmortgage}}
+\index{decideUnmortgage@{decideUnmortgage}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{decideUnmortgage()}{decideUnmortgage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a45e4fd10ecc28edb6f4e3084b50ccb9c}{Decision}} Ai\+Player\+::decide\+Unmortgage (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Make an unmortgage decision for the AI player (override from base class).
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the property to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decision object representing the unmortgage decision. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_player_a612f3f8120ad911a6dded373573d55bc}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_ad37f0daac7f78c3179a6bd95da7c07af_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_player_a5d5a34086d564d1de13ac38bf1885b3a}\label{class_ai_player_a5d5a34086d564d1de13ac38bf1885b3a}} 
+\index{AiPlayer@{AiPlayer}!getAdapter@{getAdapter}}
+\index{getAdapter@{getAdapter}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{getAdapter()}{getAdapter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ai_adapter}{Ai\+Adapter}} \& Ai\+Player\+::get\+Adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the AI adapter associated with the AI player. 
+
+Reimplemented from \mbox{\hyperlink{class_player_a963ec6ae7e632ce539c27761dac64260}{Player}}.
+
+\mbox{\Hypertarget{class_ai_player_a47e04e0a4457aaaef551c06eea00230f}\label{class_ai_player_a47e04e0a4457aaaef551c06eea00230f}} 
+\index{AiPlayer@{AiPlayer}!getNeuralNetwork@{getNeuralNetwork}}
+\index{getNeuralNetwork@{getNeuralNetwork}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{getNeuralNetwork()}{getNeuralNetwork()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}} \& Ai\+Player\+::get\+Neural\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the neural network associated with the AI player. 
+
+Reimplemented from \mbox{\hyperlink{class_player_a84e305a0a267be2c435a40544ddd35c8}{Player}}.
+
+\mbox{\Hypertarget{class_ai_player_a8deec5aebde9d29c2363837aea19748f}\label{class_ai_player_a8deec5aebde9d29c2363837aea19748f}} 
+\index{AiPlayer@{AiPlayer}!setNeuralNetwork@{setNeuralNetwork}}
+\index{setNeuralNetwork@{setNeuralNetwork}!AiPlayer@{AiPlayer}}
+\doxysubsubsection{\texorpdfstring{setNeuralNetwork()}{setNeuralNetwork()}}
+{\footnotesize\ttfamily void Ai\+Player\+::set\+Neural\+Network (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classann_1_1neuralnet}{ann\+::neuralnet}}}]{new\+\_\+nn }\end{DoxyParamCaption})}
+
+Set the neura network used by the AI player. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_player_a8deec5aebde9d29c2363837aea19748f_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_player_8cc}{Player.\+cc}}\end{DoxyCompactItemize}

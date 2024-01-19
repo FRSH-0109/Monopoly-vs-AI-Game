@@ -1,0 +1,51 @@
+digraph "/home/kamil/zpr/Monopoly/Tinyann.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/kamil/zpr/Monopoly\l/Tinyann.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file for AI implementation of tiny library from github user hav4ik, repository: https://github..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="/home/kamil/zpr/Monopoly\l/Player.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_player_8h.html",tooltip="Implementation file for Player class and AI Player class, containing data and methods for a player in..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="/home/kamil/zpr/Monopoly\l/ActiveScreen.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_active_screen_8h.html",tooltip="Header file handling displayed screens of project Base claass is ActiveScreen, then derived class are..."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="/home/kamil/zpr/Monopoly\l/ActiveScreen.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_active_screen_8cc.html",tooltip="Source file handling displayed screens of project Base claass is ActiveScreen, then derived class are..."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="/home/kamil/zpr/Monopoly\l/GameEngine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_engine_8h.html",tooltip="Header file for GameEngine class, used to handle lowes level program operations as input interactions..."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/kamil/zpr/Monopoly\l/GameEngine.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_engine_8cc.html",tooltip="Source file for GameEngine class, used to handle lowes level program operations as input interactions..."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/kamil/zpr/Monopoly\l/main.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cc.html",tooltip="Source file launching monopoly game vs AI project."];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="/home/kamil/zpr/Monopoly\l/GameScreen.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_screen_8h.html",tooltip="Header file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..."];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="/home/kamil/zpr/Monopoly\l/GameScreen.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_screen_8cc.html",tooltip="Source file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..."];
+  Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="/home/kamil/zpr/Monopoly\l/MonopolyGameEngine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_monopoly_game_engine_8h.html",tooltip="Header file of class used to handle whole monopoly game process, turns, actions with players,..."];
+  Node10 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="/home/kamil/zpr/Monopoly\l/MonopolyGameEngine.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_monopoly_game_engine_8cc.html",tooltip="Source file of class used to handle whole monopoly game process, turns, actions with players,..."];
+  Node2 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="/home/kamil/zpr/Monopoly\l/Field.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_field_8h.html",tooltip="Header file containing staff for single monopoly board game field. Separated to many deriving classes..."];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="/home/kamil/zpr/Monopoly\l/Board.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_board_8h.html",tooltip="Header file for monopoly game board, creation is based on json file 'board.json'. Mainly handles all ..."];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="/home/kamil/zpr/Monopoly\l/Board.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_board_8cc.html",tooltip="Source file for monopoly game board, creation is based on json file 'board.json'. Mainly handles all ..."];
+  Node13 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="/home/kamil/zpr/Monopoly\l/Withdraw.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_withdraw_8h.html",tooltip="Header file for trade/withdraw mehanism in monopoly game between players."];
+  Node15 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="/home/kamil/zpr/Monopoly\l/Withdraw.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_withdraw_8cc.html",tooltip="Source file for trade/withdraw mehanism in monopoly game between players."];
+  Node12 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="/home/kamil/zpr/Monopoly\l/Field.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_field_8cc.html",tooltip="Source file containing staff for single monopoly board game field. Separated to many deriving classes..."];
+  Node12 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="/home/kamil/zpr/Monopoly\l/Player.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_player_8cc.html",tooltip="Implementation file for Player class and AI Player class, containing data and methods for a player in..."];
+  Node2 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

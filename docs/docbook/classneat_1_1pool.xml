@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classneat_1_1pool" xml:lang="en-US">
+<title>neat::pool Class Reference</title>
+<indexterm><primary>neat::pool</primary></indexterm>
+Collaboration diagram for neat::pool:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classneat_1_1pool__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595"/><emphasis role="strong">pool</emphasis> (unsigned int input, unsigned int output, unsigned int bias=1, bool rec=false)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a5abf875445e788d913ab8416a47e8ee3"/>void <emphasis role="strong">new_generation</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a6811b1137e4eb75496f0319cf7ce3349"/>unsigned int <emphasis role="strong">generation</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a34603a3e12abf4f136c294933a9d2cc9"/>std::vector&lt; std::pair&lt; <link linkend="_structneat_1_1specie">specie</link> *, <link linkend="_classneat_1_1genome">genome</link> * &gt; &gt; <emphasis role="strong">get_genomes</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f"/>void <emphasis role="strong">import_fromfile</emphasis> (std::string filename)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5"/>void <emphasis role="strong">export_tofile</emphasis> (std::string filename)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1ad22233683f54678400ef45fe6f7a38ed"/>unsigned int <emphasis role="strong">max_fitness</emphasis> = 0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a037e36677258536cfc40ad2dccfe4d7f"/><link linkend="_structneat_1_1mutation__rate__container">mutation_rate_container</link> <emphasis role="strong">mutation_rates</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a19cf05d7934ea6033866da21eaf7252f"/><link linkend="_structneat_1_1speciating__parameter__container">speciating_parameter_container</link> <emphasis role="strong">speciating_parameters</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1abe5e4171f187f19ebe85409369ede596"/><link linkend="_structneat_1_1network__info__container">network_info_container</link> <emphasis role="strong">network_info</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7"/>std::random_device <emphasis role="strong">rd</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705"/>std::mt19937 <emphasis role="strong">generator</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1pool_1a3056b5880db8c3837c1f2af0e4a3faff"/>std::list&lt; <link linkend="_structneat_1_1specie">specie</link> &gt; <emphasis role="strong">species</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link>/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8cc">Tinyneat.cc</link></section>

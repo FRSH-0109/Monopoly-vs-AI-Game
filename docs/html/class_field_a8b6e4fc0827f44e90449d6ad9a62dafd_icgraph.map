@@ -1,0 +1,8 @@
+<map id="Field::getPosition" name="Field::getPosition">
+<area shape="rect" id="node1" title="Gets the position of the field on the board." alt="" coords="432,78,567,105"/>
+<area shape="rect" id="node2" href="$class_property_field.html#a3323e39ff44b4d61c5b6f77e7da17f99" title="Creates the owner flag sprite." alt="" coords="199,5,384,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a2831ee2158d97ff536fd0fee57e338e2" title="Gets the sprite for a hotel on a street." alt="" coords="207,71,376,112"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a64330a6b6eea093a923675e749c00807" title="Gets the sprite for a house on a street." alt="" coords="207,136,376,177"/>
+<area shape="rect" id="node3" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="25,13,131,39"/>
+<area shape="rect" id="node5" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="5,110,151,137"/>
+</map>

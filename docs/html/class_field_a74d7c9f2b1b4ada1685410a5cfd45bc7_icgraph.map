@@ -1,0 +1,4 @@
+<map id="Field::getNameText" name="Field::getNameText">
+<area shape="rect" id="node1" title="Gets the text representing the name of the field." alt="" coords="199,5,347,32"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="5,5,151,32"/>
+</map>

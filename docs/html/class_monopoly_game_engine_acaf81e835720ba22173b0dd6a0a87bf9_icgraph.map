@@ -1,0 +1,33 @@
+<map id="MonopolyGameEngine::getFont" name="MonopolyGameEngine::getFont">
+<area shape="rect" id="node1" title="Returns the font used in the GUI." alt="" coords="744,835,913,876"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a8237eb4fd279a8f4b094c14987ea37a1" title="Creates a button for participating in an auction by bidding." alt="" coords="483,201,667,243"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a41effaad0143e79955701cff92b2620f" title="Creates buttons for handling auction offers." alt="" coords="474,267,677,308"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a3fc21384392435cdfcab356f98d5a838" title="Creates a button for resigning from an auction." alt="" coords="472,332,679,373"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#ac8629f2abd1bf12cfc0af747d16c867f" title="Creates text displaying the available count of houses and hotels." alt="" coords="455,397,696,439"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a742de8013c1466a6913bb5f5eceafeb4" title="Creates a button for buying or resigning from a property." alt="" coords="484,463,667,504"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a6a7786536439ae5af3c53d896b0a9a71" title="Creates a button for moving to the next property." alt="" coords="475,528,675,569"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#aa54fdcd0727761f010c096435dd40999" title="Creates a button for moving to the previous property." alt="" coords="463,593,688,635"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#ab7c6acc2b155fbdc1952280c494a05fe" title="Creates the button for rolling the dice." alt="" coords="491,659,660,700"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#af7a1b759d097257097926ed7fd60da14" title="Creates buttons for handling bankruptcy." alt="" coords="485,724,665,765"/>
+<area shape="rect" id="node12" href="$class_monopoly_game_engine.html#abbda29a495969e795d71c3a5d215b547" title="Creates buttons for buying, selling houses, and hotels." alt="" coords="470,790,681,846"/>
+<area shape="rect" id="node13" href="$class_monopoly_game_engine.html#ae9772861221c6ce195b7b63122bf5523" title="Creates buttons for handling actions related to the jail (paying to get out)." alt="" coords="491,871,660,912"/>
+<area shape="rect" id="node14" href="$class_monopoly_game_engine.html#a525ceed24c6db4fd8823fb1af27ba24b" title="Creates buttons for moving to the next turn." alt="" coords="486,936,665,977"/>
+<area shape="rect" id="node15" href="$class_monopoly_game_engine.html#a59d448ed643e21447ac85cdfeea1fa1b" title="Creates a button for withdrawing from the game." alt="" coords="487,1001,663,1043"/>
+<area shape="rect" id="node16" href="$class_monopoly_game_engine.html#a555cc64819179c99afb2b39b58599074" title="Creates text for displaying the current offer in an auction." alt="" coords="466,1067,685,1108"/>
+<area shape="rect" id="node17" href="$class_monopoly_game_engine.html#af61f87c35e7969f4665091d80007a8dd" title="Creates buttons for mortgaging properties." alt="" coords="485,1132,665,1173"/>
+<area shape="rect" id="node18" href="$class_monopoly_game_engine.html#a746b88ee3a606c98cfa368192c1a34e9" title="Creates various elements for the result screen." alt="" coords="482,1197,669,1239"/>
+<area shape="rect" id="node19" href="$class_monopoly_game_engine.html#a9655bc29084d61fe0503ec16272630e6" title="Creates text for displaying information about the bidded property." alt="" coords="476,1263,675,1304"/>
+<area shape="rect" id="node20" href="$class_monopoly_game_engine.html#a932aa1b22c5b339c568f8ea34749b1fb" title="Creates text for displaying information about the bidder." alt="" coords="491,1328,660,1369"/>
+<area shape="rect" id="node21" href="$class_monopoly_game_engine.html#a04528f2dbaa4725b4430bdef63b2d9d0" title="Creates text for displaying the highest bid in an auction." alt="" coords="478,1393,673,1435"/>
+<area shape="rect" id="node22" href="$class_monopoly_game_engine.html#ac4396e37a67a062d796345afc0642af2" title="Creates text for displaying information about the leading bidder in an auction." alt="" coords="467,1459,683,1500"/>
+<area shape="rect" id="node23" href="$class_monopoly_game_engine.html#a32c0ecaa71c51cdaae65178836af75b0" title="Creates text for displaying players&#39; information." alt="" coords="490,5,661,47"/>
+<area shape="rect" id="node24" href="$class_monopoly_game_engine.html#a73d985dc04d394ec469ee5d01e6b9a89" title="Creates text for displaying the rolled dice value." alt="" coords="486,71,665,112"/>
+<area shape="rect" id="node25" href="$class_monopoly_game_engine.html#a7b07579e424f37298496eefaae2390e1" title="Creates text for displaying turn information." alt="" coords="491,136,660,177"/>
+<area shape="rect" id="node26" href="$class_monopoly_game_engine.html#a838f18e88cd79f8cce47dd0dbb42ae3e" title="Gets the text suitable for drawing a property name." alt="" coords="479,1655,672,1696"/>
+<area shape="rect" id="node28" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="491,1524,660,1565"/>
+<area shape="rect" id="node31" href="$class_monopoly_game_engine.html#abdc99bcb328742800042bcbbfe1bc3f7" title="Updates elements on the result screen." alt="" coords="480,1589,671,1631"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="211,769,407,795"/>
+<area shape="rect" id="node27" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="236,1662,381,1689"/>
+<area shape="rect" id="node29" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="219,1557,398,1599"/>
+<area shape="rect" id="node30" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,1565,163,1591"/>
+</map>

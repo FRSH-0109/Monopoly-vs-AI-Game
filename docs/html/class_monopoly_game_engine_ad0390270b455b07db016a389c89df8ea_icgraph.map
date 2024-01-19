@@ -1,0 +1,6 @@
+<map id="MonopolyGameEngine::getHouseSize" name="MonopolyGameEngine::getHouseSize">
+<area shape="rect" id="node1" title="Returns the size of a house in the GUI." alt="" coords="416,39,585,80"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a2831ee2158d97ff536fd0fee57e338e2" title="Gets the sprite for a hotel on a street." alt="" coords="199,5,368,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a64330a6b6eea093a923675e749c00807" title="Gets the sprite for a house on a street." alt="" coords="199,71,368,112"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="5,46,151,73"/>
+</map>

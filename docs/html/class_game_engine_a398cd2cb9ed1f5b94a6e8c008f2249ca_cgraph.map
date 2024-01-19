@@ -1,0 +1,7 @@
+<map id="GameEngine::GameEngine" name="GameEngine::GameEngine">
+<area shape="rect" id="node1" title="Constructor for the GameEngine class." alt="" coords="5,81,201,108"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a2a10627656f88da08fc3bb9ec760323a" title="Gets the pointer to the context window." alt="" coords="249,5,487,32"/>
+<area shape="rect" id="node3" href="$class_context_window.html#ae1d1fa169768a6ed2a1651f6d5594fc2" title="Gets the pointer to the ContextWindow instance." alt="" coords="263,56,473,83"/>
+<area shape="rect" id="node4" href="$class_context_window.html#ac743eeaa2b5ef0f8e4955b28f5a7ee26" title="Gets the SFML View object." alt="" coords="275,107,461,133"/>
+<area shape="rect" id="node5" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="265,157,471,184"/>
+</map>

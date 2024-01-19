@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__tinyneat_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Tinyneat.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Tinyneat.cc</primary></indexterm>
+<para>
+
+<para>Source file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+ 
+</para>
+<programlisting>#include &quot;Tinyneat.h&quot;
+</programlisting>Include dependency graph for Tinyneat.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_tinyneat_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>hav4ik </para>
+</formalpara>
+</para>
+</section>
+</section>

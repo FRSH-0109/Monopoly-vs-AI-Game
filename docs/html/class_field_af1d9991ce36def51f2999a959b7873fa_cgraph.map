@@ -1,0 +1,4 @@
+<map id="Field::getContextWindow" name="Field::getContextWindow">
+<area shape="rect" id="node1" title="Gets the pointer to the context window." alt="" coords="5,5,191,32"/>
+<area shape="rect" id="node2" href="$class_context_window.html#ae1d1fa169768a6ed2a1651f6d5594fc2" title="Gets the pointer to the ContextWindow instance." alt="" coords="239,5,449,32"/>
+</map>

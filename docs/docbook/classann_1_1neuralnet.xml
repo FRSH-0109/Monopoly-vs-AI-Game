@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classann_1_1neuralnet" xml:lang="en-US">
+<title>ann::neuralnet Class Reference</title>
+<indexterm><primary>ann::neuralnet</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf"/>void <emphasis role="strong">from_genome</emphasis> (const <link linkend="_classneat_1_1genome">neat::genome</link> &amp;a)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classann_1_1neuralnet_1af6ea7c4bc68dbd966cc80a63a6a3519d"/>void <emphasis role="strong">evaluate</emphasis> (const std::vector&lt; double &gt; &amp;input, std::vector&lt; double &gt; &amp;output)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classann_1_1neuralnet_1aafc20f4edec46ac91452f5bb97152ebe"/>void <emphasis role="strong">import_fromfile</emphasis> (std::string filename)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classann_1_1neuralnet_1ab06c14a353b59733365443f36dd40a37"/>void <emphasis role="strong">export_tofile</emphasis> (std::string filename)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyann_8h">Tinyann.h</link>/home/kamil/zpr/Monopoly/Tinyann.cc</section>
