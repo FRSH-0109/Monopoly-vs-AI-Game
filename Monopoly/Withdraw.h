@@ -1,8 +1,11 @@
 /**
  * @file Withdraw.h
  *
- * @brief Header file for trade/withdraw mehanism
- * in monopoly game between players
+ * @brief Header file for trade/withdraw mechanism
+ *        in the monopoly game between players
+ *
+ * This file contains the declaration of the Withdraw class, which represents
+ * the trade and withdraw mechanism in a monopoly game between players.
  *
  * @author Kamil Kosnik, Kacper Radzikowski
  *
@@ -21,19 +24,30 @@
 #include "Player.h"
 #include "main.h"
 
+/**
+ * @class Withdraw
+ *
+ * @brief Represents the trade and withdraw mechanism in a monopoly game.
+ *
+ * The Withdraw class handles the trade and withdraw functionality between players
+ * in a monopoly game. It includes features such as choosing players, specifying values,
+ * and making decisions during the withdrawal process.
+ */
+
 class Withdraw {
    private:
-	bool ALLOW_ONE_SIDE_BENEFIT_WITHDRAW = 1;
-	float PROPERTY_SHOW_SCALE = 4;
-	std::shared_ptr<Board> gameboard_;
-	const unsigned int FONT_SIZE = 30;
-	sf::Font font_;
-	std::vector<std::shared_ptr<Button>> buttons_;
-	std::vector<std::shared_ptr<sf::Text>> texts_;
+ 	// Class constants
+	bool ALLOW_ONE_SIDE_BENEFIT_WITHDRAW = 1;	/** If only one side can benefit from second side.*/
+	float PROPERTY_SHOW_SCALE = 4;			/** Scale factor for property sprite display.*/
+	std::shared_ptr<Board> gameboard_;		/** Pointer to monopoly gameboard object ,source for data about fields.*/
+	const unsigned int FONT_SIZE = 30;		/** Font size for rendering text.*/
+	sf::Font font_;					/** Font used for rendering text.*/
+	std::vector<std::shared_ptr<Button>> buttons_;  /** Vector of buttons used in the withdrawal process.*/
+  	std::vector<std::shared_ptr<sf::Text>> texts_;  /** Vector of text objects used in the withdrawal process.*/
 
-	// choose player screen
-	std::shared_ptr<sf::Text> choosePlayerText_;
-	sf::Vector2f CHOOSE_PLAYER_TEXT_POSITION = sf::Vector2f(980, 200);
+	// Choose Player Screen members
+	std::shared_ptr<sf::Text> choosePlayerText_;	/** Vector of text objects used in the withdrawal choose player process.*/
+	sf::Vector2f CHOOSE_PLAYER_TEXT_POSITION = sf::Vector2f(980, 200);	/** Origin position for first text object used in the withdrawal choose player process.*/
 	std::shared_ptr<Button> choosePlayer1Button_;
 	std::shared_ptr<Button> choosePlayer2Button_;
 	std::shared_ptr<Button> choosePlayer3Button_;
@@ -41,7 +55,7 @@ class Withdraw {
 	sf::Vector2f RESIGN_BUTTON_POSITION = sf::Vector2f(980, 700);
 	std::shared_ptr<Button> resignButton_;
 
-	// add value screen
+	 // Add Value Screen members
 	sf::Vector2f RESIGN_VALUE_BUTTON_POSITION = sf::Vector2f(820, 100);
 	std::shared_ptr<Button> resignValueButton_;
 	std::shared_ptr<Button> submitValueButton_;
@@ -127,7 +141,7 @@ class Withdraw {
 	std::shared_ptr<Button> addPropertyPlayer2Button_;
 	std::shared_ptr<Button> removePropertyPlayer2Button_;
 
-	// submit
+	 // Submit Screen members
 	sf::Vector2f DECISION_TEXT_POSITION = sf::Vector2f(980, 200);
 	std::shared_ptr<sf::Text> playerInfoText_;
 	std::shared_ptr<sf::Text> playerInfoMoney_;
