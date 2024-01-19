@@ -11,6 +11,11 @@
 
 #include "ActiveScreen.h"
 
+// =============================================================================
+// ActiveScreen Class Implementation
+// =============================================================================
+
+
 ActiveScreen::ActiveScreen() {}
 
 void ActiveScreen::setFont(sf::Font font) {
@@ -31,26 +36,6 @@ void ActiveScreen::addText(std::shared_ptr<sf::Text> text_tmp) {
 	texts_.push_back(text);
 }
 
-void MainMenuScreen::draw() {
-	for (auto element : getButtons()) {
-		if (element->getIsVisible()) {
-			element->draw(getContextWindow()->getWindow());
-		}
-	}
-}
-
-void GameMenuScreen::draw() {
-	for (auto element : getButtons()) {
-		if (element->getIsVisible()) {
-			element->draw(getContextWindow()->getWindow());
-		}
-	}
-
-	for (auto element : getTexts()) {
-		getContextWindow()->getWindow().draw(*element);
-	}
-}
-
 void ActiveScreen::setContextWindow(ContextWindow* cw) {
 	context_window_ = cw;
 }
@@ -65,6 +50,28 @@ ActiveScreenType ActiveScreen::getScreenType() {
 
 void ActiveScreen::setScreenType(ActiveScreenType type) {
 	type_ = type;
+}
+
+std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {
+	return buttons_;
+}
+
+std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts() {
+	return texts_;
+}
+
+void ActiveScreen::buttonSetColors(std::shared_ptr<Button> buttonPtr) {
+	buttonPtr->updateColors();
+}
+
+std::vector<std::shared_ptr<playerSettings>> ActiveScreen::getPlayersSettings() const {
+	std::vector<std::shared_ptr<playerSettings>> empty;
+	return empty;
+}
+
+std::vector<std::shared_ptr<Player>> ActiveScreen::getPlayersResult() {
+	std::vector<std::shared_ptr<Player>> empty;
+	return empty;
 }
 
 MainMenuScreen::MainMenuScreen() {
@@ -129,35 +136,12 @@ ScreenEventType MainMenuScreen::worker() {
 	return eventType;
 }
 
-ScreenEventType GameMenuScreen::worker() {
-	ScreenEventType eventType = IDLE;
+void MainMenuScreen::draw() {
 	for (auto element : getButtons()) {
 		if (element->getIsVisible()) {
-			if (element->isMouseOver(getContextWindow()->getWindow())) {
-				element->mouseIsOver();
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-					element->setIsClicked(true);
-				}
-			} else {
-				element->mouseIsNotOver();
-			}
-			if (element->getIsClicked()) {
-				setOtherButtonsInactive(element);
-				buttonClickHandle(element);
-				if (element->getEventType() == START_GAME) {
-					element->setIsActive(false);  // in case of not starting game
-				} else {
-					element->setIsActive(true);
-				}
-				element->setIsClicked(false);
-				return element->getEventType();
-			}
+			element->draw(getContextWindow()->getWindow());
 		}
-
-		buttonSetColors(element);
 	}
-
-	return eventType;
 }
 
 GameMenuScreen::GameMenuScreen() {
@@ -234,6 +218,49 @@ void GameMenuScreen::gameMenuCreate() {
 	createPlayerSettingsColumn(2, col2, y_step);
 	createPlayerSettingsColumn(3, col3, y_step);
 	createPlayerSettingsColumn(4, col4, y_step);
+}
+
+void GameMenuScreen::draw() {
+	for (auto element : getButtons()) {
+		if (element->getIsVisible()) {
+			element->draw(getContextWindow()->getWindow());
+		}
+	}
+
+	for (auto element : getTexts()) {
+		getContextWindow()->getWindow().draw(*element);
+	}
+}
+
+ScreenEventType GameMenuScreen::worker() {
+	ScreenEventType eventType = IDLE;
+	for (auto element : getButtons()) {
+		if (element->getIsVisible()) {
+			if (element->isMouseOver(getContextWindow()->getWindow())) {
+				element->mouseIsOver();
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+					element->setIsClicked(true);
+				}
+			} else {
+				element->mouseIsNotOver();
+			}
+			if (element->getIsClicked()) {
+				setOtherButtonsInactive(element);
+				buttonClickHandle(element);
+				if (element->getEventType() == START_GAME) {
+					element->setIsActive(false);  // in case of not starting game
+				} else {
+					element->setIsActive(true);
+				}
+				element->setIsClicked(false);
+				return element->getEventType();
+			}
+		}
+
+		buttonSetColors(element);
+	}
+
+	return eventType;
 }
 
 void GameMenuScreen::createPlayerSettingsColumn(int colNum, sf::Vector2f posStart, int yStep) {
@@ -420,14 +447,6 @@ void GameMenuScreen::setPlayerSettings(unsigned int index, bool isNone, bool isH
 		playerSettingsList_[index]->isHuman = isHuman;
 		playerSettingsList_[index]->level = level;
 	}
-}
-
-std::vector<std::shared_ptr<Button>>& ActiveScreen::getButtons() {
-	return buttons_;
-}
-
-std::vector<std::shared_ptr<sf::Text>>& ActiveScreen::getTexts() {
-	return texts_;
 }
 
 void GameMenuScreen::buttonClickHandle(std::shared_ptr<Button> buttonPtr) {
@@ -669,20 +688,6 @@ void GameMenuScreen::setDefaultAILevelButtonsFocus(int playerNum) {
 	}
 }
 
-void ActiveScreen::buttonSetColors(std::shared_ptr<Button> buttonPtr) {
-	buttonPtr->updateColors();
-}
-
 std::vector<std::shared_ptr<playerSettings>> GameMenuScreen::getPlayersSettings() const {
 	return playerSettingsList_;
-}
-
-std::vector<std::shared_ptr<playerSettings>> ActiveScreen::getPlayersSettings() const {
-	std::vector<std::shared_ptr<playerSettings>> empty;
-	return empty;
-}
-
-std::vector<std::shared_ptr<Player>> ActiveScreen::getPlayersResult() {
-	std::vector<std::shared_ptr<Player>> empty;
-	return empty;
 }
