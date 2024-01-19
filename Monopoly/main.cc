@@ -20,7 +20,7 @@ unsigned int height;
 unsigned int FRAMES_PER_SEC_MAX = 1;
 
 bool TRAIN = true;
-int GAMES_IN_ROUND = 5;
+int GAMES_IN_ROUND = 10;
 
 static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 	for (int i = playerResults.size() - 1; i >= 0; --i) {
@@ -64,7 +64,7 @@ int main() {
 		unsigned int second_fitness = 0;
 		unsigned int third_fitness = 0;
 		unsigned int generations = 100;
-		unsigned int swiss_rounds = 10;
+		// unsigned int swiss_rounds = 10;
 		auto spiece = p.species.begin();
 		neat::genome former_best_performer = (*spiece).genomes[0];
 		neat::genome former_second_performer = (*spiece).genomes[1];
@@ -124,8 +124,9 @@ int main() {
 							// 	g4.fitness += reward;
 							// }
 						}
+					}
 
-						if (g.fitness > max_fitness) {
+					if (g.fitness > max_fitness) {
 							third_fitness = second_performer.fitness;
 							third_performer = second_performer;
 							second_fitness = best_performer.fitness;
@@ -141,7 +142,6 @@ int main() {
 							third_fitness = g.fitness;
 							third_performer = g;
 						}
-					}
 				}
 				// std::sort((*s).genomes.begin(), (*s).genomes.end(), genomeComp);
 				// }
@@ -150,14 +150,14 @@ int main() {
 			former_second_performer = second_performer;
 			former_third_performer = third_performer;
 			p.new_generation();
-			if (gen == 29) {
+			if (gen == 15) {
 				p.export_tofile("monopoly_level1_ai.res");
 			} else if (gen == 59) {
 				p.export_tofile("monopoly_level2_ai.res");
 			}
 			std::cout << "gen: " << gen << std::endl;
+			p.export_tofile("monopoly_level3_ai.res");
 		}
-		p.export_tofile("monopoly_level3_ai.res");
 	}
 
 	// play game with all custom players, passed vector is empty
