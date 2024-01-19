@@ -1989,7 +1989,8 @@ void monopolyGameEngine::createButtonRollDice() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonRollDice(new Button(IDLE, L"Rzut kośćmi", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonRollDice =
+		(std::make_shared<Button>(IDLE, L"Rzut kośćmi", buttonSize, getFontSize()));
 	buttonRollDice->setFont(getFont());
 	buttonRollDice->setPosition(ROLL_DICE_BUTTON_POSITION);
 	buttonRollDice->setActiveBackColor(activeButtonBackColor);
@@ -2142,7 +2143,7 @@ void monopolyGameEngine::createButtonBuyResign() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBuy(new Button(IDLE, "Kup", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuy = (std::make_shared<Button>(IDLE, "Kup", buttonSize, getFontSize()));
 	buttonBuy->setFont(getFont());
 	buttonBuy->setPosition(BUY_BUTTON_POSITION);
 	buttonBuy->setActiveBackColor(activeButtonBackColor);
@@ -2158,7 +2159,7 @@ void monopolyGameEngine::createButtonBuyResign() {
 	buyFieldButton_ = buttonBuy;
 	addButton(buttonBuy);
 
-	std::shared_ptr<Button> buttonResign(new Button(IDLE, "Rezygnuj", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonResign = (std::make_shared<Button>(IDLE, "Rezygnuj", buttonSize, getFontSize()));
 	buttonResign->setFont(getFont());
 	buttonResign->setPosition(sf::Vector2f(BUY_BUTTON_POSITION.x + 140, BUY_BUTTON_POSITION.y));
 	buttonResign->setActiveBackColor(activeButtonBackColor);
@@ -2183,7 +2184,7 @@ void monopolyGameEngine::createButtonNextProperty() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonNext(new Button(IDLE, L"Następny", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonNext = (std::make_shared<Button>(IDLE, L"Następny", buttonSize, getFontSize()));
 	buttonNext->setFont(getFont());
 	buttonNext->setPosition(NEXT_PROPERTY_BUTTON_POSITION);
 	buttonNext->setActiveBackColor(activeButtonBackColor);
@@ -2208,7 +2209,7 @@ void monopolyGameEngine::createButtonPerviousProperty() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonPrev(new Button(IDLE, "Poprzedni", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonPrev = (std::make_shared<Button>(IDLE, "Poprzedni", buttonSize, getFontSize()));
 	buttonPrev->setFont(getFont());
 	buttonPrev->setPosition(PREVIOUS_PROPERTY_BUTTON_POSITION);
 	buttonPrev->setActiveBackColor(activeButtonBackColor);
@@ -2243,7 +2244,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBuyHouse(new Button(IDLE, "Kup", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuyHouse = (std::make_shared<Button>(IDLE, "Kup", buttonSize, getFontSize()));
 	buttonBuyHouse->setFont(getFont());
 	buttonBuyHouse->setPosition(BUY_HOUSE_BUTTON_POSITION);
 	buttonBuyHouse->setActiveBackColor(activeButtonBackColor);
@@ -2259,7 +2260,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buyHouseButton_ = buttonBuyHouse;
 	addButton(buttonBuyHouse);
 
-	std::shared_ptr<Button> buttonSellHouse(new Button(IDLE, "Sprzedaj", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonSellHouse = (std::make_shared<Button>(IDLE, "Sprzedaj", buttonSize, getFontSize()));
 	buttonSellHouse->setFont(getFont());
 	buttonSellHouse->setPosition(SELL_HOUSE_BUTTON_POSITION);
 	buttonSellHouse->setActiveBackColor(activeButtonBackColor);
@@ -2275,7 +2276,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	sellHouseButton_ = buttonSellHouse;
 	addButton(buttonSellHouse);
 
-	std::shared_ptr<Button> buttonBuyHotel(new Button(IDLE, "Kup", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBuyHotel = (std::make_shared<Button>(IDLE, "Kup", buttonSize, getFontSize()));
 	buttonBuyHotel->setFont(getFont());
 	buttonBuyHotel->setPosition(BUY_HOTEL_BUTTON_POSITION);
 	buttonBuyHotel->setActiveBackColor(activeButtonBackColor);
@@ -2291,7 +2292,7 @@ void monopolyGameEngine::createButtonsBuySellHouseHotel() {
 	buyHotelButton_ = buttonBuyHotel;
 	addButton(buttonBuyHotel);
 
-	std::shared_ptr<Button> buttonSellHotel(new Button(IDLE, "Sprzedaj", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonSellHotel = (std::make_shared<Button>(IDLE, "Sprzedaj", buttonSize, getFontSize()));
 	buttonSellHotel->setFont(getFont());
 	buttonSellHotel->setPosition(SELL_HOTEL_BUTTON_POSITION);
 	buttonSellHotel->setActiveBackColor(activeButtonBackColor);
@@ -2316,7 +2317,7 @@ void monopolyGameEngine::createButtonsBankrupt() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonBankrupt(new Button(IDLE, "Bankrutuj", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBankrupt = (std::make_shared<Button>(IDLE, "Bankrutuj", buttonSize, getFontSize()));
 	buttonBankrupt->setFont(getFont());
 	buttonBankrupt->setPosition(BANKRUPT_BUTTON_POSITION);
 	buttonBankrupt->setActiveBackColor(activeButtonBackColor);
@@ -2341,7 +2342,8 @@ void monopolyGameEngine::createButtonsNextTurn() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonNextTurn(new Button(IDLE, "Kolejna tura", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonNextTurn =
+		(std::make_shared<Button>(IDLE, "Kolejna tura", buttonSize, getFontSize()));
 	buttonNextTurn->setFont(getFont());
 	buttonNextTurn->setPosition(NEXT_TURN_BUTTON_POSITION);
 	buttonNextTurn->setActiveBackColor(activeButtonBackColor);
@@ -2412,7 +2414,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonAdd100(new Button(IDLE, "+", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonAdd100 = (std::make_shared<Button>(IDLE, "+", buttonSize, getFontSize() + 10));
 	buttonAdd100->setFont(getFont());
 	buttonAdd100->setPosition(ADD_100_BUTTON_POSITION);
 	buttonAdd100->getText().setPosition(ADD_100_BUTTON_POSITION.x - 12, ADD_100_BUTTON_POSITION.y - 28);
@@ -2430,7 +2432,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonAdd100);
 	addAuctionButton(buttonAdd100);
 
-	std::shared_ptr<Button> buttonAdd10(new Button(IDLE, "+", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonAdd10 = (std::make_shared<Button>(IDLE, "+", buttonSize, getFontSize() + 10));
 	buttonAdd10->setFont(getFont());
 	buttonAdd10->setPosition(ADD_10_BUTTON_POSITION);
 	buttonAdd10->getText().setPosition(ADD_10_BUTTON_POSITION.x - 12, ADD_10_BUTTON_POSITION.y - 28);
@@ -2448,7 +2450,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonAdd10);
 	addAuctionButton(buttonAdd10);
 
-	std::shared_ptr<Button> buttonAdd1(new Button(IDLE, "+", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonAdd1 = (std::make_shared<Button>(IDLE, "+", buttonSize, getFontSize() + 10));
 	buttonAdd1->setFont(getFont());
 	buttonAdd1->setPosition(ADD_1_BUTTON_POSITION);
 	buttonAdd1->getText().setPosition(ADD_1_BUTTON_POSITION.x - 12, ADD_1_BUTTON_POSITION.y - 28);
@@ -2466,7 +2468,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonAdd1);
 	addAuctionButton(buttonAdd1);
 
-	std::shared_ptr<Button> buttonSubstract100(new Button(IDLE, "-", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonSubstract100 = (std::make_shared<Button>(IDLE, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract100->setFont(getFont());
 	buttonSubstract100->setPosition(SUBSTRACT_100_BUTTON_POSITION);
 	buttonSubstract100->getText().setPosition(
@@ -2485,7 +2487,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonSubstract100);
 	addAuctionButton(buttonSubstract100);
 
-	std::shared_ptr<Button> buttonSubstract10(new Button(IDLE, "-", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonSubstract10 = (std::make_shared<Button>(IDLE, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract10->setFont(getFont());
 	buttonSubstract10->setPosition(SUBSTRACT_10_BUTTON_POSITION);
 	buttonSubstract10->getText().setPosition(SUBSTRACT_10_BUTTON_POSITION.x - 6, SUBSTRACT_10_BUTTON_POSITION.y - 28);
@@ -2503,7 +2505,7 @@ void monopolyGameEngine::createAuctionOfferButtons() {
 	addButton(buttonSubstract10);
 	addAuctionButton(buttonSubstract10);
 
-	std::shared_ptr<Button> buttonSubstract1(new Button(IDLE, "-", buttonSize, getFontSize() + 10));
+	std::shared_ptr<Button> buttonSubstract1 = (std::make_shared<Button>(IDLE, "-", buttonSize, getFontSize() + 10));
 	buttonSubstract1->setFont(getFont());
 	buttonSubstract1->setPosition(SUBSTRACT_1_BUTTON_POSITION);
 	buttonSubstract1->getText().setPosition(SUBSTRACT_1_BUTTON_POSITION.x - 6, SUBSTRACT_1_BUTTON_POSITION.y - 28);
@@ -2531,7 +2533,7 @@ void monopolyGameEngine::createAuctionBidButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonBidAuction(new Button(IDLE, "Przebij", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonBidAuction = (std::make_shared<Button>(IDLE, "Przebij", buttonSize, getFontSize()));
 	buttonBidAuction->setFont(getFont());
 	buttonBidAuction->setPosition(AUCTION_BID_BUTTON_POSITION);
 	buttonBidAuction->setActiveBackColor(activeButtonBackColor);
@@ -2558,7 +2560,8 @@ void monopolyGameEngine::createAuctionResignButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonResignAuction(new Button(IDLE, "Rezygnuj", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonResignAuction =
+		(std::make_shared<Button>(IDLE, "Rezygnuj", buttonSize, getFontSize()));
 	buttonResignAuction->setFont(getFont());
 	buttonResignAuction->setPosition(AUCTION_RESIGN_BUTTON_POSITION);
 	buttonResignAuction->setActiveBackColor(activeButtonBackColor);
@@ -2584,7 +2587,7 @@ void monopolyGameEngine::createButtonWithdraw() {
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonWithdraw(new Button(IDLE, "Wymiana", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonWithdraw = (std::make_shared<Button>(IDLE, "Wymiana", buttonSize, getFontSize()));
 	buttonWithdraw->setFont(getFont());
 	buttonWithdraw->setPosition(WITHDRAW_BUTTON_POSITION);
 	buttonWithdraw->setActiveBackColor(activeButtonBackColor);
@@ -2650,7 +2653,7 @@ void monopolyGameEngine::createMortagingButton() {
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
 
-	std::shared_ptr<Button> buttonMortgage(new Button(IDLE, "Zastaw", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonMortgage = (std::make_shared<Button>(IDLE, "Zastaw", buttonSize, getFontSize()));
 	buttonMortgage->setFont(getFont());
 	buttonMortgage->setPosition(MORTGAGE_BUTTON_POSITION);
 	buttonMortgage->setActiveBackColor(activeButtonBackColor);
@@ -2666,7 +2669,7 @@ void monopolyGameEngine::createMortagingButton() {
 	MortgageButton_ = buttonMortgage;
 	addButton(buttonMortgage);
 
-	std::shared_ptr<Button> buttonUnMortgage(new Button(IDLE, "Wykup", buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonUnMortgage = (std::make_shared<Button>(IDLE, "Wykup", buttonSize, getFontSize()));
 	buttonUnMortgage->setFont(getFont());
 	buttonUnMortgage->setPosition(UNMORTGAGE_BUTTON_POSITION);
 	buttonUnMortgage->setActiveBackColor(activeButtonBackColor);
@@ -3172,7 +3175,7 @@ std::shared_ptr<Button> monopolyGameEngine::createDefaultButton(sf::String text,
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonDefault(new Button(IDLE, text, buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonDefault = (std::make_shared<Button>(IDLE, text, buttonSize, getFontSize()));
 	buttonDefault->setFont(getFont());
 	buttonDefault->setActiveBackColor(activeButtonBackColor);
 	buttonDefault->setActiveTextColor(activeButtonTextColor);

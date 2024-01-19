@@ -460,7 +460,7 @@ std::shared_ptr<Button> Withdraw::createDefaultButton(sf::String text, unsigned 
 	sf::Color activeButtonTextColor = sf::Color::Black;
 	sf::Color inActiveButtonTextColor = sf::Color::Black;
 	sf::Color FocusButtonTextColor = sf::Color::Green;
-	std::shared_ptr<Button> buttonDefault(new Button(IDLE, text, buttonSize, getFontSize()));
+	std::shared_ptr<Button> buttonDefault = (std::make_shared<Button>(IDLE, text, buttonSize, getFontSize()));
 	buttonDefault->setFont(getFont());
 	buttonDefault->setActiveBackColor(activeButtonBackColor);
 	buttonDefault->setActiveTextColor(activeButtonTextColor);

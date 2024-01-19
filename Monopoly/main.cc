@@ -108,10 +108,11 @@ int main() {
 						players.push_back(player4);
 						playerResults = runMonopolyGame(players);
 						++games_counter;
-						std::cout << "game counter: " << games_counter << std::endl;
+						std::cout << "//////////////////////////////////////////game counter: " << games_counter
+								  << std::endl;
 						// printResults(playerResults);
 
-						for (auto player: playerResults) {
+						for (auto player : playerResults) {
 							int reward = 5 - player->getResultPlace();
 							if (player->getId() == 0) {
 								g.fitness += reward;

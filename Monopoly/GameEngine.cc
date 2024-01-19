@@ -36,12 +36,11 @@ GameEngine::GameEngine(double frameRateHz) {
 	frameRateDelayMs_ = sf::milliseconds(1000.0 / frameRateHz_);
 
 	contextWindow_ = ContextWindow::GetInstance();
-	// getContextWindow()->getWindow().create(
-	// 	sf::VideoMode(WindowWidth, WindowHeight), "MonopolyVsAI", sf::Style::Default);
+	getContextWindow()->getWindow().create(sf::VideoMode(1, 1), "MonopolyVsAI", sf::Style::Default);
 
-	// const sf::Vector2i pos(0, 0);
-	// getContextWindow()->getWindow().setPosition(pos);
-	// getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
+	const sf::Vector2i pos(0, 0);
+	getContextWindow()->getWindow().setPosition(pos);
+	getContextWindow()->getView() = getContextWindow()->getWindow().getDefaultView();
 
 	// activeScreen_ = std::make_unique<MainMenuScreen>();
 
@@ -152,7 +151,6 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 				activeScreen_ = std::make_unique<GameScreen>(players_);
 			} break;
 			case GAME_ENDED:
-				getContextWindow()->getWindow().close();
 				return activeScreen_->getPlayersResult();
 				break;
 			default:
