@@ -3,6 +3,10 @@ Project of Monopoly vs AI game
 
 Authors: Kamil Kośnik, Kacper Radzikowski
 
+## Documentation
+* In directory "docs" theres pdf file "refman.pdf" containing whole doxygen generated project documentation.
+* If You would like to run html page of documentation, run "chromium docs/html/index.htnl". Of course chroimum can be replaced by Your prefered browser.
+    
 ## Used libraries
 * SFML v.2.6.0 - Graphic library used in games and multimedia projects
 * Catch v.2 - Unit test framework used for testing our code
