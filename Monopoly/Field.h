@@ -236,19 +236,19 @@ class PropertyField : public Field {
 	 * @brief Gets the mortgage value of the property.
 	 * @return The mortgage value of the property.
 	 */
-	const unsigned int getMortgage();
+	unsigned int getMortgage();
 
 	/**
 	 * @brief Checks if the property is mortgaged.
 	 * @return True if the property is mortgaged, false otherwise.
 	 */
-	const bool getIsMortgaged();
+	bool getIsMortgaged();
 
 	/**
 	 * @brief Gets the value needed to unmortgage the property.
 	 * @return The value needed to unmortgage the property.
 	 */
-	const unsigned int getUnmortgageValue();
+	unsigned int getUnmortgageValue();
 
 	/**
 	 * @brief Gets the owner of the property.

@@ -223,11 +223,10 @@ class Player {
 
 	/**
 	 * Get the AI adapter (virtual function, needs to be overridden by derived classes).
-	 *
+	 * DO NOT USE THIS
 	 * @return Reference to the AI adapter.
 	 */
-	virtual AiAdapter& getAdapter(){};
-
+	virtual AiAdapter& getAdapter();
 	/**
 	 * Make a buying decision (virtual function, needs to be overridden by derived classes).
 	 *

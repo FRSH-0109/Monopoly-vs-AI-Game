@@ -230,6 +230,11 @@ void Player::setSpritePosition(sf::Vector2f new_pos) {
 	player_sprite_.setPosition(new_pos);
 }
 
+AiAdapter& Player::getAdapter() {
+	AiAdapter adapter_;
+	return adapter_;
+}
+
 BuyDecision Player::decideBuy(unsigned int index) {
 	return BUY;
 }

@@ -143,15 +143,15 @@ const std::vector<unsigned int> PropertyField::getGroupMembers() {
 	return group_members_;
 };
 
-const unsigned int PropertyField::getMortgage() {
+unsigned int PropertyField::getMortgage() {
 	return mortgage_;
 };
 
-const bool PropertyField::getIsMortgaged() {
+bool PropertyField::getIsMortgaged() {
 	return is_mortgaged_;
 };
 
-const unsigned int PropertyField::getUnmortgageValue() {
+unsigned int PropertyField::getUnmortgageValue() {
 	return static_cast<int>(round(1.1 * mortgage_));
 };
 

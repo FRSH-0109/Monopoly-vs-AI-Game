@@ -70,7 +70,7 @@ void MonopolyGameEngine::createPlayers(std::vector<std::shared_ptr<Player>>& pla
 	std::mt19937 g(rd());
 	std::shuffle(std::begin(players_), std::end(players_), g);
 
-	for (int j = 0; j < PLAYERS_MAX_; ++j) {
+	for (unsigned int j = 0; j < PLAYERS_MAX_; ++j) {
 		players_starting_Ids_[j] = 255;  // mark no player in game with this ID
 	}
 
@@ -400,7 +400,6 @@ bool MonopolyGameEngine::isBuildingLegal(std::shared_ptr<Player> builder, Street
 		builder->getMoney() > field.getHousePrice() && field_houses < 4 &&
 		getHouseCount() > 0) {	// W tym if trzeba będzie dodać kontrolę budynków w puli
 		for (unsigned int i = 0; i < field.getGroupMembers().size(); ++i) {
-			unsigned int group_member_id = field.getGroupMembers()[i];
 			PossibleFields& group_member_variant = getBoard()->getFieldById(field.getGroupMembers()[i]);
 			StreetField& group_member = std::get<StreetField>(group_member_variant);
 			if (field_houses > group_member.getHouseNumber() || group_member.getIsMortgaged()) {
@@ -1116,14 +1115,14 @@ void MonopolyGameEngine::aiWithdrawWorker() {
 			}
 
 			// neurons setup for trade
-			for (int i = 0; i < properties_offered.size(); ++i) {
+			for (std::size_t i = 0; i < properties_offered.size(); ++i) {
 				players_[player_index_turn_]->getAdapter().setSelectionState(properties_offered[i], 1);
 				if (trade_with_ai) {
 					selected_player->getAdapter().setSelectionState(properties_offered[i], 1);
 				}
 			}
 
-			for (int i = 0; i < properties_receiven.size(); ++i) {
+			for (std::size_t i = 0; i < properties_receiven.size(); ++i) {
 				players_[player_index_turn_]->getAdapter().setSelectionState(properties_receiven[i], 1);
 				if (trade_with_ai) {
 					selected_player->getAdapter().setSelectionState(properties_receiven[i], 1);
@@ -1265,6 +1264,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 						decision = players_[player_index_turn_]->decideJail();
 					}
 					if (isButtonClicked(jail_pay_button_) || (players_[player_index_turn_]->getIsAi() && decision == PAY))
+					{
 						if (players_[player_index_turn_]->getMoney() < JAIL_PAY_MONEY) {
 							std::string notification_msg = "Brak kasy aby zaplacic kaucje";
 							notificationAdd(player_index_turn_, notification_msg);
@@ -1275,6 +1275,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 							notificationAdd(player_index_turn_, notification_msg);
 							jail_pay_button_->setIsVisible(false);
 						}
+					}
 				}
 
 				if (isButtonClicked(roll_dice_button_) || players_[player_index_turn_]->getIsAi()) {
@@ -1453,7 +1454,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 							setTurnState(TURN_END);
 							break;
 
-						case GO_TO_JAIL:
+						case GO_TO_JAIL_CARD:
 							sendToJail(player_index_turn_);
 							players_[player_index_turn_]->setJailStatus(3);
 							setTurnState(TURN_END);
