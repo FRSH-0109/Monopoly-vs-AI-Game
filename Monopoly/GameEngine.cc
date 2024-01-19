@@ -137,11 +137,11 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 							std::string nn_file;
 							unsigned int ai_level = playerSettings->level;
 							if (ai_level == 1) {
-								nn_file = "level_1_ai";
+								nn_file = "config_files/level_1_ai";
 							} else if (ai_level == 2) {
-								nn_file = "level_2_ai";
+								nn_file = "config_files/level_2_ai";
 							} else if (ai_level == 3) {
-								nn_file = "level_3_ai";
+								nn_file = "config_files/level_3_ai";
 							}
 							ann::neuralnet n;
 							n.import_fromfile(nn_file);
