@@ -19,10 +19,10 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<Player>>& players_) {
 	setScreenType(MONOPOLY_GAME);
 
 	// TODO: exception handling
-	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
+	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
 		// std::cout << "Font not found!\n";
 
-		setFont(getFont());
+	setFont(getFont());
 
 	monopoly_game_engine_.setFont(getFont());
 	monopoly_game_engine_.createBoard();

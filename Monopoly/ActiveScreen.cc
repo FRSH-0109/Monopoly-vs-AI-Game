@@ -76,10 +76,10 @@ void MainMenuScreen::mainMenuCreate() {
 	setContextWindow(ContextWindow::GetInstance());
 
 	// TODO: exception handling
-	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
+	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
 		// std::cout << "Font not found!\n";
 
-		setFont(getFont());
+	setFont(getFont());
 
 	std::shared_ptr<Button> buttonExit(new Button(EXIT, L"Wyjdź", {200, 100}, 30));
 	buttonExit->setFont(getFont());
@@ -193,10 +193,10 @@ void GameMenuScreen::gameMenuCreate() {
 	setContextWindow(ContextWindow::GetInstance());
 
 	// TODO: exception handling
-	if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
+	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
 		// std::cout << "Font not found!\n";
 
-		setFont(getFont());
+	setFont(getFont());
 
 	std::shared_ptr<Button> buttonPlay(new Button(START_GAME, L"Graj", {200, 100}, 30));
 	buttonPlay->setFont(getFont());

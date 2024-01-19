@@ -13,12 +13,12 @@
 
 monopolyGameEngine::monopolyGameEngine() {
 	turnState_ = ROLL_DICE;
-	if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
-		// TODO: exception
-	}
-	if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
-		// TODO: exception
-	}
+	// if (!houseTexture_.loadFromFile("textures_and_fonts/textures/house.png")) {
+	// 	// TODO: exception
+	// }
+	// if (!hotelTexture_.loadFromFile("textures_and_fonts/textures/hotel.png")) {
+	// 	// TODO: exception
+	// }
 
 	fileLoggerOpen();
 }
@@ -2742,9 +2742,9 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 	sf::Vector2f dataPos;
 	if (isPropertyShownToBuy) {
 		dataPos = PROPERTY_DATA_POSITION;
-		if (!propertyDataTexture_.loadFromFile(graphic_path)) {
-			propertyDataSprite_.setColor(sf::Color::Green);
-		}
+		// if (!propertyDataTexture_.loadFromFile(graphic_path)) {
+		// 	propertyDataSprite_.setColor(sf::Color::Green);
+		// }
 		propertyDataSprite_.setTexture(propertyDataTexture_, true);
 		sf::Vector2u texture_dim = propertyDataTexture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
@@ -2756,9 +2756,9 @@ void monopolyGameEngine::showPropertyData(unsigned int pos, bool isPropertyShown
 
 	} else {
 		dataPos = ALL_PROPERTY_DATA_POSITION;
-		if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
-			allPropertyDataSprite_.setColor(sf::Color::Green);
-		}
+		// if (!allPropertyDataTexture_.loadFromFile(graphic_path)) {
+		// 	allPropertyDataSprite_.setColor(sf::Color::Green);
+		// }
 		allPropertyDataSprite_.setTexture(allPropertyDataTexture_, true);
 		sf::Vector2u texture_dim = allPropertyDataTexture_.getSize();
 		float scale_x = (float)width / (float)texture_dim.x;
