@@ -40,7 +40,10 @@ class NotificationWall {
 	/** Clear all notifications from the wall. */
 	void clearWall();
 
-	/** Get the vector of shared pointers to sf::Text for notifications. */
+	/** Get the vector of shared pointers to sf::Text for notifications.
+	 *
+	 * @return Reference for vector of pointer to text messages in the wall.
+	 */
 	std::vector<std::shared_ptr<sf::Text>>& getWall();
 
 	/**
@@ -50,7 +53,10 @@ class NotificationWall {
 	 */
 	void addToWall(std::string text);
 
-	/** Get the font size used for rendering notifications. */
+	/** Get the font size used for rendering notifications.
+	 *
+	 * @return Used font size for Player object.
+	 */
 	unsigned int getFontSize() const;
 
 	/**
@@ -60,7 +66,10 @@ class NotificationWall {
 	 */
 	void setFont(sf::Font font);
 
-	/** Get the font used for rendering notifications. */
+	/** Get the font used for rendering notifications.
+	 *
+	 * @return Reference to font of Player object.
+	 */
 	sf::Font& getFont();
 };
 

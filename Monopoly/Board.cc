@@ -13,6 +13,10 @@
 
 using json = nlohmann::json;
 
+// =============================================================================
+// Board Class Implementation
+// =============================================================================
+
 Board::Board(const std::string file_path) {
 	std::map<std::string, FieldType> str_to_type = {{"STREET", STREET}, {"STATION", STATION}, {"UTILITY", UTILITY},
 		{"GO", GO}, {"CHANCE", CHANCE}, {"COMUNITY_CHEST", COMMUNITY_CHEST}, {"TAX", TAX}, {"JAIL", JAIL},
@@ -121,28 +125,28 @@ Board::Board(const std::string file_path) {
 	}
 };
 
-sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prevPos, unsigned int x, unsigned int y) {
+sf::Vector2i Board::getFieldPositon(unsigned int id, sf::Vector2i prev_pos, unsigned int x, unsigned int y) {
 	if (id == 0) {
 		return sf::Vector2i(BOARD_POSITION_.x, BOARD_POSITION_.y);
 	} else if (id > 0 && id <= 10) {
-		return sf::Vector2i(prevPos.x - x, prevPos.y);
+		return sf::Vector2i(prev_pos.x - x, prev_pos.y);
 	} else if (id > 10 && id < 20) {
 		if (id == 11) {
-			return sf::Vector2i(prevPos.x + y, prevPos.y - x);
+			return sf::Vector2i(prev_pos.x + y, prev_pos.y - x);
 		} else {
-			return sf::Vector2i(prevPos.x, prevPos.y - x);
+			return sf::Vector2i(prev_pos.x, prev_pos.y - x);
 		}
 	} else if (id >= 20 && id <= 30) {
 		if (id == 20) {
-			return sf::Vector2i(prevPos.x, prevPos.y);
+			return sf::Vector2i(prev_pos.x, prev_pos.y);
 		} else {
-			return sf::Vector2i(prevPos.x + x, prevPos.y);
+			return sf::Vector2i(prev_pos.x + x, prev_pos.y);
 		}
 	} else if (id > 30 && id <= 40) {
 		if (id == 31) {
-			return sf::Vector2i(prevPos.x - y, prevPos.y + x);
+			return sf::Vector2i(prev_pos.x - y, prev_pos.y + x);
 		} else {
-			return sf::Vector2i(prevPos.x, prevPos.y + x);
+			return sf::Vector2i(prev_pos.x, prev_pos.y + x);
 		}
 	}
 	return sf::Vector2i(0, 0);

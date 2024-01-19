@@ -10,6 +10,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/**
+ * @brief Exception for handling passing wrong dimensions to any displayed object
+ *
+ */
 class DimensionException : public std::exception {
 	unsigned int bad_dimension_;
 
@@ -19,6 +23,10 @@ class DimensionException : public std::exception {
 	unsigned int getBadDimension() { return bad_dimension_; };
 };
 
+/**
+ * @brief Exception for handling passing wrong rotation to any displayed object
+ *
+ */
 class RotationException : public std::exception {
 	float bad_rotation_;
 
@@ -28,6 +36,10 @@ class RotationException : public std::exception {
 	float getBadRotation() { return bad_rotation_; };
 };
 
+/**
+ * @brief Exception for handling wrong offset to any displayed object
+ *
+ */
 class SpriteOffsetException : public std::exception {
 	float bad_offset_;
 
@@ -37,12 +49,21 @@ class SpriteOffsetException : public std::exception {
 	float getBadOffset() { return bad_offset_; };
 };
 
+/**
+ * @brief Struct describing player settings
+ * manipulted from game menu
+ *
+ */
 struct playerSettings {
 	bool isNone;
 	bool isHuman;
 	int level;
 };
 
+/**
+ * @brief Enum describing monopoly game states
+ *
+ */
 enum TurnState {
 	ROLL_DICE,
 	FIELD_ACTION,
@@ -54,10 +75,23 @@ enum TurnState {
 	NO_TURN,
 };
 
+/**
+ * @brief Enum describing possible showed screens in game screen object
+ *
+ */
 enum GameScreenType { BOARDGAME, WITHDRAW_CHOOSE_PLAYER, WITHDRAW_ADD_VALUE, WITHDRAW_DECISION, AUCTION, RESULT };
 
+/**
+ * @brief Enum describing possible screen to be shown
+ *
+ */
 enum ActiveScreenType { NONE, MAIN_MENU, GAME_MENU, MONOPOLY_GAME };
 
+/**
+ * @brief Enum describing events that can be returned from showed screens
+ * of ActiveScreenType type
+ *
+ */
 enum ScreenEventType {
 	IDLE,
 	EXIT,
@@ -91,18 +125,36 @@ enum ScreenEventType {
 	GAME_ENDED
 };
 
+/**
+ * @brief Enum describing possible fields types in monopoly board
+ *
+ */
 enum FieldType { STREET, STATION, UTILITY, GO, CHANCE, COMMUNITY_CHEST, TAX, JAIL, FREE_PARKING, GO_TO_JAIL };
 
+/**
+ * @brief Enum describing possible street tiers (houses and hotel posessions)
+ *
+ */
 enum StreetTiers { NO_HOUSES, ONE_HOUSE, TWO_HOUESES, THREE_HOUSES, FOUR_HOUSES, HOTEL };
 
+/**
+ * @brief Enum describing possible station tiers (how many is owned)
+ *
+ */
 enum StationTiers { ONE_STATION, TWO_STATIONS, THREE_STATIONS, FOUR_STATIONS };
 
+/**
+ * @brief Enum describing possible utility tiers (how many is owned)
+ *
+ */
 enum UtilityTiers { ONE_UTILITY, TWO_UTILITIES };
 
+/**
+ * @brief Enums describing ai adapter decisions
+ *
+ */
 enum Decision { YES, NO };
-
 enum JailDecision { ROLL, PAY, CARD };
-
 enum BuyDecision { BUY, RESIGN };
 
 #endif

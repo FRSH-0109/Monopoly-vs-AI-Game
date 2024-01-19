@@ -25,8 +25,8 @@ using namespace std;
 TEST_CASE("GameEngine class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(test_engine.getWindowWidth() == 1000);
-	REQUIRE(test_engine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getwindow_width() == 1000);
+	REQUIRE(test_engine.getwindow_height() == 1200);
 
 	SECTION("GameEngine getContextWindow()") {
 		REQUIRE(test_engine.getContextWindow() == ContextWindow::GetInstance());
@@ -57,8 +57,8 @@ TEST_CASE("ActiveScreen classes") {
 	}
 }
 
-TEST_CASE("monopolyGameEngine") {
-	monopolyGameEngine monopoly_engine = monopolyGameEngine();
+TEST_CASE("MonopolyGameEngine") {
+	monopolyGameEngine monopoly_engine = MonopolyGameEngine();
 	monopoly_engine.createBoard();
 	monopoly_engine.clearPlayers();
 
@@ -85,7 +85,7 @@ TEST_CASE("monopolyGameEngine") {
 	player_settings_list.push_back(player_2_settings_ptr);
 	player_settings_list.push_back(player_3_settings_ptr);
 	monopoly_engine.createPlayers(player_settings_list);
-	monopoly_engine.setPlayerIndexTurn(0);
+	monopoly_engine.setplayer_index_turn(0);
 	REQUIRE(monopoly_engine.getHouseCount() == 32);
 	REQUIRE(monopoly_engine.getHotelCount() == 12);
 
@@ -681,25 +681,25 @@ TEST_CASE("monopolyGameEngine") {
 	// REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 	// REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 
-	// SECTION("monopolyGameEngine setPlayersHumanNumber()") {
+	// SECTION("MonopolyGameEngine setPlayersHumanNumber()") {
 	// 	monopolyEngine.setPlayersHumanNumber(3);
 	// 	REQUIRE(monopolyEngine.getPlayersHumanNumber() == 3);
 	// 	REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 	// }
 
-	// SECTION("monopolyGameEngine setPlayersHumanNumber() - illegal amount of players") {
+	// SECTION("MonopolyGameEngine setPlayersHumanNumber() - illegal amount of players") {
 	// 	monopolyEngine.setPlayersHumanNumber(5);
 	// 	REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 	// 	REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
 	// }
 
-	// SECTION("monopolyGameEngine setPlayersAINumber()") {
+	// SECTION("MonopolyGameEngine setPlayersAINumber()") {
 	// 	monopolyEngine.setPlayersAINumber(2);
 	// 	REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 	// 	REQUIRE(monopolyEngine.getPlayersAINumber() == 2);
 	// }
 
-	// SECTION("monopolyGameEngine setPlayersAINumber() - illegal amount of players") {
+	// SECTION("MonopolyGameEngine setPlayersAINumber() - illegal amount of players") {
 	// 	monopolyEngine.setPlayersAINumber(5);
 	// 	REQUIRE(monopolyEngine.getPlayersHumanNumber() == 1);
 	// 	REQUIRE(monopolyEngine.getPlayersAINumber() == 1);
@@ -709,8 +709,8 @@ TEST_CASE("monopolyGameEngine") {
 TEST_CASE("PropertyField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(test_engine.getWindowWidth() == 1000);
-	REQUIRE(test_engine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getwindow_width() == 1000);
+	REQUIRE(test_engine.getwindow_height() == 1200);
 
 	const unsigned int TEST_ID = 1;
 	const FieldType TEST_TYPE = STREET;
@@ -778,8 +778,8 @@ TEST_CASE("PropertyField class") {
 TEST_CASE("StreetField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(test_engine.getWindowWidth() == 1000);
-	REQUIRE(test_engine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getwindow_width() == 1000);
+	REQUIRE(test_engine.getwindow_height() == 1200);
 
 	const unsigned int TEST_ID = 1;
 	const FieldType TEST_TYPE = STREET;
@@ -902,8 +902,8 @@ TEST_CASE("StreetField class") {
 TEST_CASE("StationField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(test_engine.getWindowWidth() == 1000);
-	REQUIRE(test_engine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getwindow_width() == 1000);
+	REQUIRE(test_engine.getwindow_height() == 1200);
 
 	const unsigned int TEST_ID = 1;
 	const FieldType TEST_TYPE = STREET;
@@ -974,8 +974,8 @@ TEST_CASE("StationField class") {
 TEST_CASE("Utility class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(test_engine.getWindowWidth() == 1000);
-	REQUIRE(test_engine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getwindow_width() == 1000);
+	REQUIRE(test_engine.getwindow_height() == 1200);
 
 	const unsigned int TEST_ID = 1;
 	const FieldType TEST_TYPE = STREET;
@@ -1045,8 +1045,8 @@ TEST_CASE("Utility class") {
 TEST_CASE("TaxField class") {
 	GameEngine test_engine = GameEngine(30, 1000, 1200);
 
-	REQUIRE(test_engine.getWindowWidth() == 1000);
-	REQUIRE(test_engine.getWindowHeight() == 1200);
+	REQUIRE(test_engine.getwindow_width() == 1000);
+	REQUIRE(test_engine.getwindow_height() == 1200);
 
 	const unsigned int TEST_ID = 2;
 	const FieldType TEST_TYPE = TAX;

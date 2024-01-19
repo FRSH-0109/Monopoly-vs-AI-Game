@@ -37,7 +37,7 @@ static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::sha
 	return players_ret;
 }
 
-bool genomeComp(neat::genome g1, neat::genome g2) {
+static bool genomeComp(neat::genome g1, neat::genome g2) {
 	return g1.fitness > g2.fitness;
 }
 
@@ -64,7 +64,7 @@ int main() {
 		unsigned int second_fitness = 0;
 		unsigned int third_fitness = 0;
 		unsigned int generations = 100;
-		unsigned int swiss_rounds = 10;
+		// unsigned int swiss_rounds = 10;
 		auto spiece = p.species.begin();
 
 		neat::genome former_best_performer = (*spiece).genomes[0];
@@ -132,23 +132,23 @@ int main() {
 							// 	g4.fitness += reward;
 							// }
 						}
+					}
 
-						if (g.fitness > max_fitness) {
-							third_fitness = second_performer.fitness;
-							third_performer = second_performer;
-							second_fitness = best_performer.fitness;
-							second_performer = best_performer;
-							max_fitness = g.fitness;
-							best_performer = g;
-						} else if (g.fitness > second_fitness) {
-							third_fitness = second_performer.fitness;
-							third_performer = second_performer;
-							second_fitness = g.fitness;
-							second_performer = g;
-						} else if (g.fitness > third_fitness) {
-							third_fitness = g.fitness;
-							third_performer = g;
-						}
+					if (g.fitness > max_fitness) {
+						third_fitness = second_performer.fitness;
+						third_performer = second_performer;
+						second_fitness = best_performer.fitness;
+						second_performer = best_performer;
+						max_fitness = g.fitness;
+						best_performer = g;
+					} else if (g.fitness > second_fitness) {
+						third_fitness = second_performer.fitness;
+						third_performer = second_performer;
+						second_fitness = g.fitness;
+						second_performer = g;
+					} else if (g.fitness > third_fitness) {
+						third_fitness = g.fitness;
+						third_performer = g;
 					}
 				}
 				// std::sort((*s).genomes.begin(), (*s).genomes.end(), genomeComp);
@@ -159,6 +159,7 @@ int main() {
 			former_second_performer = second_performer;
 			former_third_performer = third_performer;
 			p.new_generation();
+			if (gen == 15) {
 			if (gen == 15) {
 				p.export_tofile("monopoly_level1_ai.res");
 				ann::neuralnet n;

@@ -28,10 +28,10 @@ GameScreen::GameScreen(std::vector<std::shared_ptr<Player>>& players_) {
 	monopoly_game_engine_.createBoard();
 	monopoly_game_engine_.clearPlayers();
 	monopoly_game_engine_.createPlayers(players_);
-	monopoly_game_engine_.setPlayerIndexTurn(0);
+	monopoly_game_engine_.setplayer_index_turn(0);
 	monopoly_game_engine_.createButtonRollDice();
 	monopoly_game_engine_.createTextTurnInfo();
-	monopoly_game_engine_.createTextRolledValue();
+	monopoly_game_engine_.createTextrolled_value();
 	monopoly_game_engine_.createTextPlayersInfo();
 	monopoly_game_engine_.createTextBiddedProperty();
 	monopoly_game_engine_.createTextBidderInfo();

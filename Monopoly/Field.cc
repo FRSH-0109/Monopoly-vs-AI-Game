@@ -11,6 +11,10 @@
 
 #include "Field.h"
 
+// =============================================================================
+// Field Class Implementation
+// =============================================================================
+
 Field::Field(const unsigned int id,
 	const FieldType type,
 	const std::string name,
@@ -33,8 +37,8 @@ Field::Field(const unsigned int id,
 }
 
 ContextWindow* Field::getContextWindow() {
-	contextWindow_ = ContextWindow::GetInstance();
-	return contextWindow_;
+	context_window_ = ContextWindow::GetInstance();
+	return context_window_;
 }
 
 unsigned int HouseException::getInvalidNumber() {
@@ -100,7 +104,7 @@ void Field::createSprite() {
 }
 
 void Field::setHeight(unsigned int new_height) {
-	if (contextWindow_->window_.getSize().y >= new_height && new_height != 0) {
+	if (context_window_->window_.getSize().y >= new_height && new_height != 0) {
 		height_ = new_height;
 	} else {
 		throw(DimensionException(new_height));
@@ -108,7 +112,7 @@ void Field::setHeight(unsigned int new_height) {
 };
 
 void Field::setWidth(unsigned int new_width) {
-	if (contextWindow_->window_.getSize().x >= new_width && new_width != 0) {
+	if (context_window_->window_.getSize().x >= new_width && new_width != 0) {
 		width_ = new_width;
 	} else {
 		throw(DimensionException(new_width));
@@ -127,6 +131,10 @@ void Field::setPosition(sf::Vector2i pos) {
 	position_ = pos;
 }
 
+// =============================================================================
+// PropertyField Class Implementation
+// =============================================================================
+
 unsigned int PropertyField::getPrice() {
 	return price_;
 };
@@ -135,15 +143,15 @@ const std::vector<unsigned int> PropertyField::getGroupMembers() {
 	return group_members_;
 };
 
-const unsigned int PropertyField::getMortgage() {
+unsigned int PropertyField::getMortgage() {
 	return mortgage_;
 };
 
-const bool PropertyField::getIsMortgaged() {
+bool PropertyField::getIsMortgaged() {
 	return is_mortgaged_;
 };
 
-const unsigned int PropertyField::getUnmortgageValue() {
+unsigned int PropertyField::getUnmortgageValue() {
 	return static_cast<int>(round(1.1 * mortgage_));
 };
 
@@ -208,6 +216,10 @@ void PropertyField::createFlagSprite() {
 	}
 };
 
+// =============================================================================
+// StreetField Class Implementation
+// =============================================================================
+
 const std::map<StreetTiers, unsigned int> StreetField::getRentValues() {
 	return rent_values_;
 };
@@ -247,13 +259,25 @@ void StreetField::resetDefault() {
 	resetOwner();
 };
 
+// =============================================================================
+// StationField Class Implementation
+// =============================================================================
+
 const std::map<StationTiers, unsigned int> StationField::getRentValues() {
 	return rent_values_;
 };
 
+// =============================================================================
+// UtilityField Class Implementation
+// =============================================================================
+
 const std::map<UtilityTiers, unsigned int> UtilityField::getRentMultipliers() {
 	return rent_multipliers_;
 };
+
+// =============================================================================
+// TaxField Class Implementation
+// =============================================================================
 
 unsigned int TaxField::getTaxValue() {
 	return tax_value_;
