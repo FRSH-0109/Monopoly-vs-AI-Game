@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::groupCompleted" name="MonopolyGameEngine::groupCompleted">
+<area shape="rect" id="node1" title="Checks if a group of properties is completed by a player." alt="" coords="5,5,175,47"/>
+<area shape="rect" id="node2" href="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f" title="Gets the IDs of the group members (properties in the same group)." alt="" coords="223,13,460,39"/>
+</map>

@@ -1,0 +1,1144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_player" xml:lang="en-US">
+<title>Player Class Reference</title>
+<indexterm><primary>Player</primary></indexterm>
+<para>
+
+<para>Represents a player in a Monopoly game. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Player.h&gt;</computeroutput>
+</para>
+Inheritance diagram for Player:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_player_1a56b1fc165843e6a22ba8e06348b05a60">Player</link> (unsigned int money)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1a2d4f3ca739a5500c9e5f32932ed13019">getPosition</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a2de8544be02b4464afb87b6169139068">setPosition</link> (unsigned int new_position)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1afbc9c4c7035653e4c4a56f863bd9f91c">hasFieldOwnedId</link> (unsigned int id) const</para>
+</listitem>
+            <listitem><para>std::vector&lt; unsigned int &gt; <link linkend="_class_player_1a223c145e34c3288cf74be4c77dc58591">getFieldOwnedId</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1afa1e3b200143dbd91fd746576bac8da4">addFieldOwnedId</link> (unsigned int id)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a1159031a207eddc655626adc8d420da4">removeFieldOwnedId</link> (unsigned int id)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1ac2f724596f37e2922bd2df2d4922d670">clearFieldOwnedId</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1aa44dae5224ce813c88265734662080bb">setMoney</link> (unsigned int value)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1a39465d76fc735a64d104b8b21e574b8c">getMoney</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a79f2a8218f4b17df9ed5ef79cfa85690">addMoney</link> (unsigned int value)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1a6d24d184974e84bb529bcfb1366d0f9d">substractMoney</link> (unsigned int value)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a67a3c5ddc234276cf72245f939a40438">setJailStatus</link> (unsigned int new_jail_status)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1ab27fb6eba2edafbe7c674abf2d85cc91">getJailStatus</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a66e516d298b44b902bf15732a0e66515">setJailCards</link> (unsigned int new_jail_cards)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1ad4d8755ebdffb8e7bfccc1119f0f7042">getJailCards</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a3ebff2af2ca397ffcb64a2ddd91d8cee">reduceJailStatus</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1aec0b2d2447f555e247ac01a54a15d77f">setId</link> (unsigned int new_id)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1a44be12490dcf4b7195ae494561f81c28">getId</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a0686aac84725114b7c5b540189b47c60">setColor</link> (sf::Color new_color)</para>
+</listitem>
+            <listitem><para>sf::Color <link linkend="_class_player_1a6af84629a95779c478adcd24efcefb1b">getColor</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1adbcc2bba53e6bb2837d763eef79edff9">setIsAi</link> (bool new_is_ai)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1a59d465cbbc51c4371d1e770a682e6d97">getIsAi</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1ab1032df37bafe0a30acadb7bb1ccb97a">setAiLevel</link> (unsigned int ai_level)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1a9ba3a7b625d50ad49f73eca39aff8248">getAiLevel</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a79df4c23544bfc40ec2d2420617da758">setResultPlace</link> (unsigned int place)</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_class_player_1a55e1a7856785c48db04f478ebc242cef">getResultPlace</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1aa6f0a7987a39716fb71558a017c75c51">createSprite</link> ()</para>
+</listitem>
+            <listitem><para>sf::Texture &amp; <link linkend="_class_player_1aa27d00d02d75f945a9b5bb8624104658">getTexture</link> ()</para>
+</listitem>
+            <listitem><para>sf::Sprite &amp; <link linkend="_class_player_1a408134399497e07b0ba53e82d5c40958">getSprite</link> ()</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_1ad7cbe5430cf9ade1cb6b60dc73019fb7">getSpriteOffsetX</link> () const</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_1aa59d45a1ed19a90404174126d69c55c1">getSpriteOffsetY</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a0861445aeb9c42d8f1da69e811ad4aa7">setSpriteOffsetX</link> (const float offset_x)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a53a4de1ec98d14b8648d12960bfef043">setSpriteOffsetY</link> (const float offset_y)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a804d87f26ce849e33068db8095f805d7">setSpritePosition</link> (sf::Vector2f new_pos)</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_ai_adapter">AiAdapter</link> &amp; <link linkend="_class_player_1ad1f5ed43230c25cd58b712a3ae64ef17">getAdapter</link> ()</para>
+</listitem>
+            <listitem><para>virtual BuyDecision <link linkend="_class_player_1adfeb87a6e956897e314f5396d5662293">decideBuy</link> (unsigned int index)</para>
+</listitem>
+            <listitem><para>virtual JailDecision <link linkend="_class_player_1a83461a9c984ddf60dd6f3a9775690d45">decideJail</link> ()</para>
+</listitem>
+            <listitem><para>virtual Decision <link linkend="_class_player_1a9c596f7c08886d9db546d3c222611f5f">decideMortgage</link> (unsigned int index)</para>
+</listitem>
+            <listitem><para>virtual Decision <link linkend="_class_player_1a612f3f8120ad911a6dded373573d55bc">decideUnmortgage</link> (unsigned int index)</para>
+</listitem>
+            <listitem><para>virtual unsigned int <link linkend="_class_player_1af3da06d4c1776f82ff4cd8619377fd7d">decideAuctionBid</link> (unsigned int price)</para>
+</listitem>
+            <listitem><para>virtual unsigned int <link linkend="_class_player_1a71313606c3b4a7b363cabd40bd9a7126">decideBuildHouse</link> ()</para>
+</listitem>
+            <listitem><para>virtual unsigned int <link linkend="_class_player_1afa5630a45ffb3f996be4229cbad75bb0">decideSellHouse</link> ()</para>
+</listitem>
+            <listitem><para>virtual Decision <link linkend="_class_player_1a42244fc7463a4fc447a73f35d2dcb483">decideOfferTrade</link> ()</para>
+</listitem>
+            <listitem><para>virtual Decision <link linkend="_class_player_1a7adf207e9b3b987da924fd602ecc6528">decideAcceptTrade</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents a player in a Monopoly game. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8"/>    <section>
+    <title>Player()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Player</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput>Player::Player ( )</computeroutput></para>
+<para>Default constructor for <link linkend="_class_player">Player</link> class. </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a56b1fc165843e6a22ba8e06348b05a60"/>    <section>
+    <title>Player()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Player</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput>Player::Player (unsigned int money)</computeroutput></para>
+<para>Constructor for <link linkend="_class_player">Player</link> class with initial money.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>money</entry>
+                                <entry>
+<para>Initial amount of money for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a56b1fc165843e6a22ba8e06348b05a60_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_player_1afa1e3b200143dbd91fd746576bac8da4"/>    <section>
+    <title>addFieldOwnedId()</title>
+<indexterm><primary>addFieldOwnedId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>addFieldOwnedId</secondary></indexterm>
+<para><computeroutput>void Player::addFieldOwnedId (unsigned int id)</computeroutput></para>
+<para>Add a property with the specified ID to the list of properties owned by the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>ID of the property to add. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_afa1e3b200143dbd91fd746576bac8da4_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a79f2a8218f4b17df9ed5ef79cfa85690"/>    <section>
+    <title>addMoney()</title>
+<indexterm><primary>addMoney</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>addMoney</secondary></indexterm>
+<para><computeroutput>void Player::addMoney (unsigned int value)</computeroutput></para>
+<para>Add a specified amount of money to the player&apos;s balance.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>Amount of money to add. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_class_player_1ac2f724596f37e2922bd2df2d4922d670"/>    <section>
+    <title>clearFieldOwnedId()</title>
+<indexterm><primary>clearFieldOwnedId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>clearFieldOwnedId</secondary></indexterm>
+<para><computeroutput>void Player::clearFieldOwnedId ( )</computeroutput></para>
+<para>Clear the list of properties owned by the player. </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_ac2f724596f37e2922bd2df2d4922d670_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1aa6f0a7987a39716fb71558a017c75c51"/>    <section>
+    <title>createSprite()</title>
+<indexterm><primary>createSprite</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>createSprite</secondary></indexterm>
+<para><computeroutput>void Player::createSprite ( )</computeroutput></para>
+<para>Create the sprite for the player. </para>
+    </section><anchor xml:id="_class_player_1a7adf207e9b3b987da924fd602ecc6528"/>    <section>
+    <title>decideAcceptTrade()</title>
+<indexterm><primary>decideAcceptTrade</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideAcceptTrade</secondary></indexterm>
+<para><computeroutput>Decision Player::decideAcceptTrade ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for accepting a trade (virtual function, needs to be overridden by derived classes).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Decision object representing the acceptance of the trade. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1affc4990f1252789326aa28a7797462ab">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1af3da06d4c1776f82ff4cd8619377fd7d"/>    <section>
+    <title>decideAuctionBid()</title>
+<indexterm><primary>decideAuctionBid</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideAuctionBid</secondary></indexterm>
+<para><computeroutput>unsigned int Player::decideAuctionBid (unsigned int price)<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for auction bidding (virtual function, needs to be overridden by derived classes).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>price</entry>
+                                <entry>
+<para>Current price in the auction. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The bid amount decided by the player. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1a441701de5fdaa5958fcc36e9791a9edc">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1a71313606c3b4a7b363cabd40bd9a7126"/>    <section>
+    <title>decideBuildHouse()</title>
+<indexterm><primary>decideBuildHouse</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideBuildHouse</secondary></indexterm>
+<para><computeroutput>unsigned int Player::decideBuildHouse ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for building a house (virtual function, needs to be overridden by derived classes).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The index of the property on which to build a house. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1a94760240482130380840c0d303a19642">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1adfeb87a6e956897e314f5396d5662293"/>    <section>
+    <title>decideBuy()</title>
+<indexterm><primary>decideBuy</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideBuy</secondary></indexterm>
+<para><computeroutput>BuyDecision Player::decideBuy (unsigned int index)<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a buying decision (virtual function, needs to be overridden by derived classes).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>Index of the property to consider. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>BuyDecision object representing the decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1a4ec346de3b8d48b157354452569ec266">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1a83461a9c984ddf60dd6f3a9775690d45"/>    <section>
+    <title>decideJail()</title>
+<indexterm><primary>decideJail</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideJail</secondary></indexterm>
+<para><computeroutput>JailDecision Player::decideJail ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a jail decision (virtual function, needs to be overridden by derived classes).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>JailDecision object representing the decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1a9c596f7c08886d9db546d3c222611f5f"/>    <section>
+    <title>decideMortgage()</title>
+<indexterm><primary>decideMortgage</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideMortgage</secondary></indexterm>
+<para><computeroutput>Decision Player::decideMortgage (unsigned int index)<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a mortgage decision (virtual function, needs to be overridden by derived classes).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>Index of the property to consider. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Decision object representing the mortgage decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9">AiPlayer</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a9c596f7c08886d9db546d3c222611f5f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a42244fc7463a4fc447a73f35d2dcb483"/>    <section>
+    <title>decideOfferTrade()</title>
+<indexterm><primary>decideOfferTrade</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideOfferTrade</secondary></indexterm>
+<para><computeroutput>Decision Player::decideOfferTrade ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for offering a trade (virtual function, needs to be overridden by derived classes).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Decision object representing the trade offer. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1a84e084321dab6cea80ec5ea0f5564c02">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1afa5630a45ffb3f996be4229cbad75bb0"/>    <section>
+    <title>decideSellHouse()</title>
+<indexterm><primary>decideSellHouse</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideSellHouse</secondary></indexterm>
+<para><computeroutput>unsigned int Player::decideSellHouse ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make a decision for selling a house (virtual function, needs to be overridden by derived classes).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The index of the property from which to sell a house. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135">AiPlayer</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_afa5630a45ffb3f996be4229cbad75bb0_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a612f3f8120ad911a6dded373573d55bc"/>    <section>
+    <title>decideUnmortgage()</title>
+<indexterm><primary>decideUnmortgage</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>decideUnmortgage</secondary></indexterm>
+<para><computeroutput>Decision Player::decideUnmortgage (unsigned int index)<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Make an unmortgage decision (virtual function, needs to be overridden by derived classes).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>Index of the property to consider. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Decision object representing the unmortgage decision. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1ad1f5ed43230c25cd58b712a3ae64ef17"/>    <section>
+    <title>getAdapter()</title>
+<indexterm><primary>getAdapter</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getAdapter</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_class_ai_adapter">AiAdapter</link>&amp; Player::getAdapter ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Get the AI adapter (virtual function, needs to be overridden by derived classes).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Reference to the AI adapter. </para>
+</formalpara>
+</para>
+<para>
+Reimplemented in <link linkend="_class_ai_player_1a5d5a34086d564d1de13ac38bf1885b3a">AiPlayer</link>.</para>
+    </section><anchor xml:id="_class_player_1a9ba3a7b625d50ad49f73eca39aff8248"/>    <section>
+    <title>getAiLevel()</title>
+<indexterm><primary>getAiLevel</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getAiLevel</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getAiLevel ( ) const</computeroutput></para>
+<para>Get the AI level of the player. </para>
+    </section><anchor xml:id="_class_player_1a6af84629a95779c478adcd24efcefb1b"/>    <section>
+    <title>getColor()</title>
+<indexterm><primary>getColor</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput>sf::Color Player::getColor ( ) const</computeroutput></para>
+<para>Get the color associated with the player. </para>
+    </section><anchor xml:id="_class_player_1a223c145e34c3288cf74be4c77dc58591"/>    <section>
+    <title>getFieldOwnedId()</title>
+<indexterm><primary>getFieldOwnedId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getFieldOwnedId</secondary></indexterm>
+<para><computeroutput>std::vector&lt; unsigned int &gt; Player::getFieldOwnedId ( ) const</computeroutput></para>
+<para>Get a vector of property IDs owned by the player. </para>
+    </section><anchor xml:id="_class_player_1a44be12490dcf4b7195ae494561f81c28"/>    <section>
+    <title>getId()</title>
+<indexterm><primary>getId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getId</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getId ( ) const</computeroutput></para>
+<para>Get the unique identifier of the player. </para>
+    </section><anchor xml:id="_class_player_1a59d465cbbc51c4371d1e770a682e6d97"/>    <section>
+    <title>getIsAi()</title>
+<indexterm><primary>getIsAi</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getIsAi</secondary></indexterm>
+<para><computeroutput>bool Player::getIsAi ( ) const</computeroutput></para>
+<para>Get the AI status of the player. </para>
+    </section><anchor xml:id="_class_player_1ad4d8755ebdffb8e7bfccc1119f0f7042"/>    <section>
+    <title>getJailCards()</title>
+<indexterm><primary>getJailCards</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getJailCards</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getJailCards ( ) const</computeroutput></para>
+<para>Get the current number of jail cards the player has. </para>
+    </section><anchor xml:id="_class_player_1ab27fb6eba2edafbe7c674abf2d85cc91"/>    <section>
+    <title>getJailStatus()</title>
+<indexterm><primary>getJailStatus</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getJailStatus</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getJailStatus ( ) const</computeroutput></para>
+<para>Get the current jail status of the player. </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_ab27fb6eba2edafbe7c674abf2d85cc91_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a39465d76fc735a64d104b8b21e574b8c"/>    <section>
+    <title>getMoney()</title>
+<indexterm><primary>getMoney</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getMoney</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getMoney ( ) const</computeroutput></para>
+<para>Get the current amount of money the player has. </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a39465d76fc735a64d104b8b21e574b8c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a2d4f3ca739a5500c9e5f32932ed13019"/>    <section>
+    <title>getPosition()</title>
+<indexterm><primary>getPosition</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getPosition</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getPosition ( ) const</computeroutput></para>
+<para>Get the current position of the player. </para>
+    </section><anchor xml:id="_class_player_1a55e1a7856785c48db04f478ebc242cef"/>    <section>
+    <title>getResultPlace()</title>
+<indexterm><primary>getResultPlace</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getResultPlace</secondary></indexterm>
+<para><computeroutput>unsigned int Player::getResultPlace ( ) const</computeroutput></para>
+<para>Get the final result place of the player in the game. </para>
+    </section><anchor xml:id="_class_player_1a408134399497e07b0ba53e82d5c40958"/>    <section>
+    <title>getSprite()</title>
+<indexterm><primary>getSprite</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getSprite</secondary></indexterm>
+<para><computeroutput>sf::Sprite &amp; Player::getSprite ( )</computeroutput></para>
+<para>Get the sprite representing the player on the game board. </para>
+    </section><anchor xml:id="_class_player_1ad7cbe5430cf9ade1cb6b60dc73019fb7"/>    <section>
+    <title>getSpriteOffsetX()</title>
+<indexterm><primary>getSpriteOffsetX</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getSpriteOffsetX</secondary></indexterm>
+<para><computeroutput>float Player::getSpriteOffsetX ( ) const</computeroutput></para>
+<para>Get the offset of the player sprite along the X-axis. </para>
+    </section><anchor xml:id="_class_player_1aa59d45a1ed19a90404174126d69c55c1"/>    <section>
+    <title>getSpriteOffsetY()</title>
+<indexterm><primary>getSpriteOffsetY</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getSpriteOffsetY</secondary></indexterm>
+<para><computeroutput>float Player::getSpriteOffsetY ( ) const</computeroutput></para>
+<para>Get the offset of the player sprite along the Y-axis. </para>
+    </section><anchor xml:id="_class_player_1aa27d00d02d75f945a9b5bb8624104658"/>    <section>
+    <title>getTexture()</title>
+<indexterm><primary>getTexture</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>getTexture</secondary></indexterm>
+<para><computeroutput>sf::Texture &amp; Player::getTexture ( )</computeroutput></para>
+<para>Get the texture of the player&apos;s sprite. </para>
+    </section><anchor xml:id="_class_player_1afbc9c4c7035653e4c4a56f863bd9f91c"/>    <section>
+    <title>hasFieldOwnedId()</title>
+<indexterm><primary>hasFieldOwnedId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>hasFieldOwnedId</secondary></indexterm>
+<para><computeroutput>bool Player::hasFieldOwnedId (unsigned int id) const</computeroutput></para>
+<para>Check if the player owns a property with the specified ID.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>ID of the property to check. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if the player owns the property, false otherwise. </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_afbc9c4c7035653e4c4a56f863bd9f91c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a3ebff2af2ca397ffcb64a2ddd91d8cee"/>    <section>
+    <title>reduceJailStatus()</title>
+<indexterm><primary>reduceJailStatus</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>reduceJailStatus</secondary></indexterm>
+<para><computeroutput>void Player::reduceJailStatus ( )</computeroutput></para>
+<para>Reduce the jail status of the player by one. </para>
+    </section><anchor xml:id="_class_player_1a1159031a207eddc655626adc8d420da4"/>    <section>
+    <title>removeFieldOwnedId()</title>
+<indexterm><primary>removeFieldOwnedId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>removeFieldOwnedId</secondary></indexterm>
+<para><computeroutput>void Player::removeFieldOwnedId (unsigned int id)</computeroutput></para>
+<para>Remove a property with the specified ID from the list of properties owned by the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>ID of the property to remove. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_class_player_1ab1032df37bafe0a30acadb7bb1ccb97a"/>    <section>
+    <title>setAiLevel()</title>
+<indexterm><primary>setAiLevel</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setAiLevel</secondary></indexterm>
+<para><computeroutput>void Player::setAiLevel (unsigned int ai_level)</computeroutput></para>
+<para>Set the AI level of the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ai_level</entry>
+                                <entry>
+<para>New AI level for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_ab1032df37bafe0a30acadb7bb1ccb97a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a0686aac84725114b7c5b540189b47c60"/>    <section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>void Player::setColor (sf::Color new_color)</computeroutput></para>
+<para>Set the color associated with the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_color</entry>
+                                <entry>
+<para>New color for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a0686aac84725114b7c5b540189b47c60_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1aec0b2d2447f555e247ac01a54a15d77f"/>    <section>
+    <title>setId()</title>
+<indexterm><primary>setId</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setId</secondary></indexterm>
+<para><computeroutput>void Player::setId (unsigned int new_id)</computeroutput></para>
+<para>Set the unique identifier for the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_id</entry>
+                                <entry>
+<para>New unique identifier for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_aec0b2d2447f555e247ac01a54a15d77f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_aec0b2d2447f555e247ac01a54a15d77f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1adbcc2bba53e6bb2837d763eef79edff9"/>    <section>
+    <title>setIsAi()</title>
+<indexterm><primary>setIsAi</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setIsAi</secondary></indexterm>
+<para><computeroutput>void Player::setIsAi (bool new_is_ai)</computeroutput></para>
+<para>Set the AI status of the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_is_ai</entry>
+                                <entry>
+<para>New AI status for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_adbcc2bba53e6bb2837d763eef79edff9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a66e516d298b44b902bf15732a0e66515"/>    <section>
+    <title>setJailCards()</title>
+<indexterm><primary>setJailCards</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setJailCards</secondary></indexterm>
+<para><computeroutput>void Player::setJailCards (unsigned int new_jail_cards)</computeroutput></para>
+<para>Set the number of jail cards the player has.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_jail_cards</entry>
+                                <entry>
+<para>New number of jail cards for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a66e516d298b44b902bf15732a0e66515_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a67a3c5ddc234276cf72245f939a40438"/>    <section>
+    <title>setJailStatus()</title>
+<indexterm><primary>setJailStatus</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setJailStatus</secondary></indexterm>
+<para><computeroutput>void Player::setJailStatus (unsigned int new_jail_status)</computeroutput></para>
+<para>Set the jail status of the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_jail_status</entry>
+                                <entry>
+<para>New jail status for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a67a3c5ddc234276cf72245f939a40438_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1aa44dae5224ce813c88265734662080bb"/>    <section>
+    <title>setMoney()</title>
+<indexterm><primary>setMoney</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setMoney</secondary></indexterm>
+<para><computeroutput>void Player::setMoney (unsigned int value)</computeroutput></para>
+<para>Set the amount of money the player has.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>New amount of money for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_aa44dae5224ce813c88265734662080bb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a2de8544be02b4464afb87b6169139068"/>    <section>
+    <title>setPosition()</title>
+<indexterm><primary>setPosition</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setPosition</secondary></indexterm>
+<para><computeroutput>void Player::setPosition (unsigned int new_position)</computeroutput></para>
+<para>Set the current position of the player.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_position</entry>
+                                <entry>
+<para>New position for the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a2de8544be02b4464afb87b6169139068_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a79df4c23544bfc40ec2d2420617da758"/>    <section>
+    <title>setResultPlace()</title>
+<indexterm><primary>setResultPlace</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setResultPlace</secondary></indexterm>
+<para><computeroutput>void Player::setResultPlace (unsigned int place)</computeroutput></para>
+<para>Set the final result place of the player in the game. </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_a79df4c23544bfc40ec2d2420617da758_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_class_player_1a0861445aeb9c42d8f1da69e811ad4aa7"/>    <section>
+    <title>setSpriteOffsetX()</title>
+<indexterm><primary>setSpriteOffsetX</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setSpriteOffsetX</secondary></indexterm>
+<para><computeroutput>void Player::setSpriteOffsetX (const float offset_x)</computeroutput></para>
+<para>Set the offset of the player sprite along the X-axis.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>offset_x</entry>
+                                <entry>
+<para>New offset value. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_class_player_1a53a4de1ec98d14b8648d12960bfef043"/>    <section>
+    <title>setSpriteOffsetY()</title>
+<indexterm><primary>setSpriteOffsetY</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setSpriteOffsetY</secondary></indexterm>
+<para><computeroutput>void Player::setSpriteOffsetY (const float offset_y)</computeroutput></para>
+<para>Set the offset of the player sprite along the Y-axis.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>offset_y</entry>
+                                <entry>
+<para>New offset value. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_class_player_1a804d87f26ce849e33068db8095f805d7"/>    <section>
+    <title>setSpritePosition()</title>
+<indexterm><primary>setSpritePosition</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>setSpritePosition</secondary></indexterm>
+<para><computeroutput>void Player::setSpritePosition (sf::Vector2f new_pos)</computeroutput></para>
+<para>Set the position of the player sprite.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>new_pos</entry>
+                                <entry>
+<para>New position for the player sprite. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_class_player_1a6d24d184974e84bb529bcfb1366d0f9d"/>    <section>
+    <title>substractMoney()</title>
+<indexterm><primary>substractMoney</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>substractMoney</secondary></indexterm>
+<para><computeroutput>bool Player::substractMoney (unsigned int value)</computeroutput></para>
+<para>Subtract a specified amount of money from the player&apos;s balance.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>Amount of money to subtract. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if the player had enough money and the subtraction was successful, false otherwise. </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__player_8h">Player.h</link>/home/kamil/zpr/Monopoly/<link linkend="__player_8cc">Player.cc</link></section>
+</section>

@@ -1,0 +1,373 @@
+\hypertarget{class_active_screen}{}\doxysection{Active\+Screen Class Reference}
+\label{class_active_screen}\index{ActiveScreen@{ActiveScreen}}
+
+
+Represents the base class for handling displayed screens in the project.  
+
+
+
+
+{\ttfamily \#include $<$Active\+Screen.\+h$>$}
+
+
+
+Inheritance diagram for Active\+Screen\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_active_screen_a8fbf39867108efbaf2d3e3102ec7d746}{Active\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_active_screen}{Active\+Screen}} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} \mbox{\hyperlink{class_active_screen_a3cd9d9f9571195d3fd030c41512348da}{worker}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function representing the worker function for the screen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_active_screen_a381ad867612f98caa038c0b775f0c39a}{draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to draw the screen. \end{DoxyCompactList}\item 
+sf\+::\+Font \& \mbox{\hyperlink{class_active_screen_a6566d6bd5327b662b7cf587b1c26ce61}{get\+Font}} ()
+\begin{DoxyCompactList}\small\item\em Gets the SFML font used for text on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_active_screen_ae56257f26e8cc35bc9bf476e4a633e20}{set\+Font}} (sf\+::\+Font font)
+\begin{DoxyCompactList}\small\item\em Sets the SFML font used for text on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_active_screen_ab51ef0260eead96cb3d88ecdb42cdd36}{add\+Button}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+\_\+tmp)
+\begin{DoxyCompactList}\small\item\em Adds a button to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_active_screen_a4115e6322ed681427d0cd92c5910ca5e}{add\+Text}} (std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ text\+\_\+tmp)
+\begin{DoxyCompactList}\small\item\em Adds a text object to the screen. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& \mbox{\hyperlink{class_active_screen_aefe54d9a04210b2985890f3657974484}{get\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Gets the vector of buttons displayed on the screen. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_active_screen_a83ce836bcc0364d216ee126716b27da0}{get\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Gets the vector of SFML Text objects displayed on the screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ \mbox{\hyperlink{class_active_screen_ac7c3386bd133917396975a4b0a5a6e68}{get\+Context\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Gets the pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_active_screen_a3de2c1b9355ef27577cf8af01c0f4632}{set\+Context\+Window}} (\mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Sets the pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_ace298d3cfe0ebb75e39a4454a9ccdf3e}{Active\+Screen\+Type}} \mbox{\hyperlink{class_active_screen_aa4db9f544d20ad9c7b1fe2af4d55ea3d}{get\+Screen\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the active screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_active_screen_ac551bc4bf328afb1226d57cdf9e13daf}{set\+Screen\+Type}} (\mbox{\hyperlink{main_8h_ace298d3cfe0ebb75e39a4454a9ccdf3e}{Active\+Screen\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Sets the type of the active screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_active_screen_a385001a5027f0b2f00145a54b668368f}{button\+Set\+Colors}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ button\+Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the colors of a button based on its state. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structplayer_settings}{player\+Settings}} $>$ $>$ \mbox{\hyperlink{class_active_screen_a571c9f50c3d50235b43a1d2cb01ad72f}{get\+Players\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em Virtual function to get players\textquotesingle{} settings. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \mbox{\hyperlink{class_active_screen_a33f41ba13061ef1700f475e916bcba3b}{get\+Players\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function to get players\textquotesingle{} results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the base class for handling displayed screens in the project. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_active_screen_a8fbf39867108efbaf2d3e3102ec7d746}\label{class_active_screen_a8fbf39867108efbaf2d3e3102ec7d746}} 
+\index{ActiveScreen@{ActiveScreen}!ActiveScreen@{ActiveScreen}}
+\index{ActiveScreen@{ActiveScreen}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{ActiveScreen()}{ActiveScreen()}}
+{\footnotesize\ttfamily Active\+Screen\+::\+Active\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_active_screen}{Active\+Screen}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_active_screen_ab51ef0260eead96cb3d88ecdb42cdd36}\label{class_active_screen_ab51ef0260eead96cb3d88ecdb42cdd36}} 
+\index{ActiveScreen@{ActiveScreen}!addButton@{addButton}}
+\index{addButton@{addButton}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}}
+{\footnotesize\ttfamily void Active\+Screen\+::add\+Button (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+\_\+tmp }\end{DoxyParamCaption})}
+
+
+
+Adds a button to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+\_\+tmp} & The button to add. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_ab51ef0260eead96cb3d88ecdb42cdd36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_a4115e6322ed681427d0cd92c5910ca5e}\label{class_active_screen_a4115e6322ed681427d0cd92c5910ca5e}} 
+\index{ActiveScreen@{ActiveScreen}!addText@{addText}}
+\index{addText@{addText}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{addText()}{addText()}}
+{\footnotesize\ttfamily void Active\+Screen\+::add\+Text (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$}]{text\+\_\+tmp }\end{DoxyParamCaption})}
+
+
+
+Adds a text object to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+tmp} & The SFML Text object to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_active_screen_a385001a5027f0b2f00145a54b668368f}\label{class_active_screen_a385001a5027f0b2f00145a54b668368f}} 
+\index{ActiveScreen@{ActiveScreen}!buttonSetColors@{buttonSetColors}}
+\index{buttonSetColors@{buttonSetColors}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{buttonSetColors()}{buttonSetColors()}}
+{\footnotesize\ttfamily void Active\+Screen\+::button\+Set\+Colors (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$}]{button\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Sets the colors of a button based on its state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+Ptr} & The shared pointer to the \mbox{\hyperlink{class_button}{Button}}. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_a385001a5027f0b2f00145a54b668368f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_a381ad867612f98caa038c0b775f0c39a}\label{class_active_screen_a381ad867612f98caa038c0b775f0c39a}} 
+\index{ActiveScreen@{ActiveScreen}!draw@{draw}}
+\index{draw@{draw}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Active\+Screen\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to draw the screen. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_screen_a0608fef110d89dab557fd0bac6950b77}{Game\+Screen}}, \mbox{\hyperlink{class_main_menu_screen_a6f640795fce8c271b2988ee05f545d37}{Main\+Menu\+Screen}}, and \mbox{\hyperlink{class_game_menu_screen_a4f3b0441bbb05d9c97a5f2970eeacd16}{Game\+Menu\+Screen}}.
+
+\mbox{\Hypertarget{class_active_screen_aefe54d9a04210b2985890f3657974484}\label{class_active_screen_aefe54d9a04210b2985890f3657974484}} 
+\index{ActiveScreen@{ActiveScreen}!getButtons@{getButtons}}
+\index{getButtons@{getButtons}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getButtons()}{getButtons()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& Active\+Screen\+::get\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the vector of buttons displayed on the screen. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to \mbox{\hyperlink{class_button}{Button}} objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_aefe54d9a04210b2985890f3657974484_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_ac7c3386bd133917396975a4b0a5a6e68}\label{class_active_screen_ac7c3386bd133917396975a4b0a5a6e68}} 
+\index{ActiveScreen@{ActiveScreen}!getContextWindow@{getContextWindow}}
+\index{getContextWindow@{getContextWindow}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getContextWindow()}{getContextWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ Active\+Screen\+::get\+Context\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_ac7c3386bd133917396975a4b0a5a6e68_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_a6566d6bd5327b662b7cf587b1c26ce61}\label{class_active_screen_a6566d6bd5327b662b7cf587b1c26ce61}} 
+\index{ActiveScreen@{ActiveScreen}!getFont@{getFont}}
+\index{getFont@{getFont}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily sf\+::\+Font \& Active\+Screen\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the SFML font used for text on the screen. 
+
+\begin{DoxyReturn}{Returns}
+The SFML font. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_a6566d6bd5327b662b7cf587b1c26ce61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_a33f41ba13061ef1700f475e916bcba3b}\label{class_active_screen_a33f41ba13061ef1700f475e916bcba3b}} 
+\index{ActiveScreen@{ActiveScreen}!getPlayersResult@{getPlayersResult}}
+\index{getPlayersResult@{getPlayersResult}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getPlayersResult()}{getPlayersResult()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ Active\+Screen\+::get\+Players\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function to get players\textquotesingle{} results. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to \mbox{\hyperlink{class_player}{Player}} objects. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_game_screen_a954ec5b6fb0da4ff4d6d3feccea9d4b5}{Game\+Screen}}.
+
+\mbox{\Hypertarget{class_active_screen_a571c9f50c3d50235b43a1d2cb01ad72f}\label{class_active_screen_a571c9f50c3d50235b43a1d2cb01ad72f}} 
+\index{ActiveScreen@{ActiveScreen}!getPlayersSettings@{getPlayersSettings}}
+\index{getPlayersSettings@{getPlayersSettings}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getPlayersSettings()}{getPlayersSettings()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structplayer_settings}{player\+Settings}} $>$ $>$ Active\+Screen\+::get\+Players\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function to get players\textquotesingle{} settings. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to \mbox{\hyperlink{structplayer_settings}{player\+Settings}} objects. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_game_menu_screen_a1ec0a4aa6bc44f2153e9d2abf290e7c4}{Game\+Menu\+Screen}}.
+
+\mbox{\Hypertarget{class_active_screen_aa4db9f544d20ad9c7b1fe2af4d55ea3d}\label{class_active_screen_aa4db9f544d20ad9c7b1fe2af4d55ea3d}} 
+\index{ActiveScreen@{ActiveScreen}!getScreenType@{getScreenType}}
+\index{getScreenType@{getScreenType}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getScreenType()}{getScreenType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_ace298d3cfe0ebb75e39a4454a9ccdf3e}{Active\+Screen\+Type}} Active\+Screen\+::get\+Screen\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the type of the active screen. 
+
+\begin{DoxyReturn}{Returns}
+The Active\+Screen\+Type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_active_screen_a83ce836bcc0364d216ee126716b27da0}\label{class_active_screen_a83ce836bcc0364d216ee126716b27da0}} 
+\index{ActiveScreen@{ActiveScreen}!getTexts@{getTexts}}
+\index{getTexts@{getTexts}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{getTexts()}{getTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Active\+Screen\+::get\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the vector of SFML Text objects displayed on the screen. 
+
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to SFML Text objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_a83ce836bcc0364d216ee126716b27da0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_a3de2c1b9355ef27577cf8af01c0f4632}\label{class_active_screen_a3de2c1b9355ef27577cf8af01c0f4632}} 
+\index{ActiveScreen@{ActiveScreen}!setContextWindow@{setContextWindow}}
+\index{setContextWindow@{setContextWindow}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{setContextWindow()}{setContextWindow()}}
+{\footnotesize\ttfamily void Active\+Screen\+::set\+Context\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$}]{cw }\end{DoxyParamCaption})}
+
+
+
+Sets the pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+window} & Pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}} to set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_a3de2c1b9355ef27577cf8af01c0f4632_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_ae56257f26e8cc35bc9bf476e4a633e20}\label{class_active_screen_ae56257f26e8cc35bc9bf476e4a633e20}} 
+\index{ActiveScreen@{ActiveScreen}!setFont@{setFont}}
+\index{setFont@{setFont}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Active\+Screen\+::set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font}]{font }\end{DoxyParamCaption})}
+
+
+
+Sets the SFML font used for text on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & The SFML font to set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_ae56257f26e8cc35bc9bf476e4a633e20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_ac551bc4bf328afb1226d57cdf9e13daf}\label{class_active_screen_ac551bc4bf328afb1226d57cdf9e13daf}} 
+\index{ActiveScreen@{ActiveScreen}!setScreenType@{setScreenType}}
+\index{setScreenType@{setScreenType}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{setScreenType()}{setScreenType()}}
+{\footnotesize\ttfamily void Active\+Screen\+::set\+Screen\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_ace298d3cfe0ebb75e39a4454a9ccdf3e}{Active\+Screen\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Sets the type of the active screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The Active\+Screen\+Type to set. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_active_screen_ac551bc4bf328afb1226d57cdf9e13daf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_active_screen_a3cd9d9f9571195d3fd030c41512348da}\label{class_active_screen_a3cd9d9f9571195d3fd030c41512348da}} 
+\index{ActiveScreen@{ActiveScreen}!worker@{worker}}
+\index{worker@{worker}!ActiveScreen@{ActiveScreen}}
+\doxysubsubsection{\texorpdfstring{worker()}{worker()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{main_8h_afc8403f5b733fde41aeaff7c853df0c3}{Screen\+Event\+Type}} Active\+Screen\+::worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function representing the worker function for the screen. 
+
+\begin{DoxyReturn}{Returns}
+The Screen\+Event\+Type associated with the user interaction. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_game_screen_a140fce95914abbf9efac4ad6bb0c98dc}{Game\+Screen}}, \mbox{\hyperlink{class_main_menu_screen_afdd21c26a37bfc5b952836e283b31688}{Main\+Menu\+Screen}}, and \mbox{\hyperlink{class_game_menu_screen_a930fac59e5231f348579a57991246e07}{Game\+Menu\+Screen}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_active_screen_8h}{Active\+Screen.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_active_screen_8cc}{Active\+Screen.\+cc}}\end{DoxyCompactItemize}

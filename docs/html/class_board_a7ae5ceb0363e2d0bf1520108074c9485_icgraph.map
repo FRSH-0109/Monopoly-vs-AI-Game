@@ -1,0 +1,4 @@
+<map id="Board::getFieldRotation" name="Board::getFieldRotation">
+<area shape="rect" id="node1" title="Getter for the rotation angle of a specific field on the board." alt="" coords="160,5,335,32"/>
+<area shape="rect" id="node2" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="5,5,112,32"/>
+</map>

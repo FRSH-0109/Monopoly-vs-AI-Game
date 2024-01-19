@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__withdraw_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Withdraw.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Withdraw.cc</primary></indexterm>
+<para>
+
+<para>Source file for trade/withdraw mehanism in monopoly game between players. </para>
+ 
+</para>
+<programlisting>#include &quot;Withdraw.h&quot;
+</programlisting>Include dependency graph for Withdraw.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_withdraw_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file for trade/withdraw mehanism in monopoly game between players. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

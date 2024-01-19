@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_notification_wall" kind="class" language="C++" prot="public">
+    <compoundname>NotificationWall</compoundname>
+    <includes refid="_notification_wall_8h" local="no">NotificationWall.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_notification_wall_1a946f7a88eec48887cf5e7da187ecffaf" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int NotificationWall::MAX_NOTIFICATIONS_</definition>
+        <argsstring></argsstring>
+        <name>MAX_NOTIFICATIONS_</name>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum number of notifications to display. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="28" column="14" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_notification_wall_1ae7105788177f83b3cb8ad7860393d32e" prot="private" static="no" mutable="no">
+        <type>sf::Vector2f</type>
+        <definition>sf::Vector2f NotificationWall::DRAW_OFFSET_</definition>
+        <argsstring></argsstring>
+        <name>DRAW_OFFSET_</name>
+        <initializer>= sf::Vector2f(200, 200)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Offset for drawing notifications on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="29" column="14" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_notification_wall_1a4e3faaf40db4e2cf0dab30420661cf7e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int NotificationWall::Y_STEP_OFFSET_</definition>
+        <argsstring></argsstring>
+        <name>Y_STEP_OFFSET_</name>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vertical step offset between notifications. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="30" column="14" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_notification_wall_1a0a473622636314fa3891e77190839b87" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;sf::Text&gt; &gt; NotificationWall::wall_texts_</definition>
+        <argsstring></argsstring>
+        <name>wall_texts_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector to store shared pointers to sf::Text for notifications. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="32" column="1" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_notification_wall_1a801f21ec4d18bc26ad6817ffe13b1c07" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int NotificationWall::FONT_SIZE_</definition>
+        <argsstring></argsstring>
+        <name>FONT_SIZE_</name>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Font size for notifications. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="33" column="14" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_notification_wall_1aaba4c2f2165f7b882fd22d23eafd3433" prot="private" static="no" mutable="no">
+        <type>sf::Font</type>
+        <definition>sf::Font NotificationWall::font_</definition>
+        <argsstring></argsstring>
+        <name>font_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Font used for rendering notifications. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="34" column="10" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_notification_wall_1a3ccb93b8fa08c067479db1c6bf8f2cac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NotificationWall::NotificationWall</definition>
+        <argsstring>()</argsstring>
+        <name>NotificationWall</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default constructor for the <ref refid="class_notification_wall" kindref="compound">NotificationWall</ref> class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="38" column="1" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="19" bodyend="25"/>
+        <references refid="class_notification_wall_1ae2f70a86d938bd130180d2e76079bcaf" compoundref="_notification_wall_8cc" startline="27" endline="29">clearWall</references>
+        <references refid="class_notification_wall_1aef1f5f7372c584354e1617c63bdee7cd" compoundref="_notification_wall_8cc" startline="58" endline="60">getFont</references>
+        <references refid="class_notification_wall_1a775496e213b1559aa63119829f5fe914" compoundref="_notification_wall_8cc" startline="54" endline="56">setFont</references>
+      </memberdef>
+      <memberdef kind="function" id="class_notification_wall_1ae2f70a86d938bd130180d2e76079bcaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NotificationWall::clearWall</definition>
+        <argsstring>()</argsstring>
+        <name>clearWall</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear all notifications from the wall. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="41" column="6" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="27" bodyend="29"/>
+        <referencedby refid="class_notification_wall_1a3ccb93b8fa08c067479db1c6bf8f2cac" compoundref="_notification_wall_8cc" startline="19" endline="25">NotificationWall</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_notification_wall_1a0dad79435cd7be0f9f20619172a7e168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; NotificationWall::getWall</definition>
+        <argsstring>()</argsstring>
+        <name>getWall</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the vector of shared pointers to sf::Text for notifications.</para>
+<para><simplesect kind="return"><para>Reference for vector of pointer to text messages in the wall. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="47" column="13" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="31" bodyend="33"/>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_notification_wall_1aa855b921732d7cffe8c8388d30ead116" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NotificationWall::addToWall</definition>
+        <argsstring>(std::string text)</argsstring>
+        <name>addToWall</name>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a new message to the notification wall.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text of the message to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="54" column="6" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="35" bodyend="48"/>
+        <references refid="class_notification_wall_1aef1f5f7372c584354e1617c63bdee7cd" compoundref="_notification_wall_8cc" startline="58" endline="60">getFont</references>
+        <references refid="class_notification_wall_1a168674a90c0e91e98f7535215c06c05c" compoundref="_notification_wall_8cc" startline="50" endline="52">getFontSize</references>
+      </memberdef>
+      <memberdef kind="function" id="class_notification_wall_1a168674a90c0e91e98f7535215c06c05c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int NotificationWall::getFontSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getFontSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the font size used for rendering notifications.</para>
+<para><simplesect kind="return"><para>Used font size for <ref refid="class_player" kindref="compound">Player</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="60" column="14" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="50" bodyend="52"/>
+        <referencedby refid="class_notification_wall_1aa855b921732d7cffe8c8388d30ead116" compoundref="_notification_wall_8cc" startline="35" endline="48">addToWall</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_notification_wall_1a775496e213b1559aa63119829f5fe914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NotificationWall::setFont</definition>
+        <argsstring>(sf::Font font)</argsstring>
+        <name>setFont</name>
+        <param>
+          <type>sf::Font</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the font for rendering notifications.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>font</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The font to be set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="67" column="6" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="54" bodyend="56"/>
+        <referencedby refid="class_notification_wall_1a3ccb93b8fa08c067479db1c6bf8f2cac" compoundref="_notification_wall_8cc" startline="19" endline="25">NotificationWall</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_notification_wall_1aef1f5f7372c584354e1617c63bdee7cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Font &amp;</type>
+        <definition>sf::Font &amp; NotificationWall::getFont</definition>
+        <argsstring>()</argsstring>
+        <name>getFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the font used for rendering notifications.</para>
+<para><simplesect kind="return"><para>Reference to font of <ref refid="class_player" kindref="compound">Player</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="73" column="10" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.cc" bodystart="58" bodyend="60"/>
+        <referencedby refid="class_notification_wall_1aa855b921732d7cffe8c8388d30ead116" compoundref="_notification_wall_8cc" startline="35" endline="48">addToWall</referencedby>
+        <referencedby refid="class_notification_wall_1a3ccb93b8fa08c067479db1c6bf8f2cac" compoundref="_notification_wall_8cc" startline="19" endline="25">NotificationWall</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a notification wall that displays messages. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/NotificationWall.h" line="26" column="1" bodyfile="/home/kamil/zpr/Monopoly/NotificationWall.h" bodystart="26" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_notification_wall_1aa855b921732d7cffe8c8388d30ead116" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>addToWall</name></member>
+      <member refid="class_notification_wall_1ae2f70a86d938bd130180d2e76079bcaf" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>clearWall</name></member>
+      <member refid="class_notification_wall_1ae7105788177f83b3cb8ad7860393d32e" prot="private" virt="non-virtual"><scope>NotificationWall</scope><name>DRAW_OFFSET_</name></member>
+      <member refid="class_notification_wall_1aaba4c2f2165f7b882fd22d23eafd3433" prot="private" virt="non-virtual"><scope>NotificationWall</scope><name>font_</name></member>
+      <member refid="class_notification_wall_1a801f21ec4d18bc26ad6817ffe13b1c07" prot="private" virt="non-virtual"><scope>NotificationWall</scope><name>FONT_SIZE_</name></member>
+      <member refid="class_notification_wall_1aef1f5f7372c584354e1617c63bdee7cd" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>getFont</name></member>
+      <member refid="class_notification_wall_1a168674a90c0e91e98f7535215c06c05c" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>getFontSize</name></member>
+      <member refid="class_notification_wall_1a0dad79435cd7be0f9f20619172a7e168" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>getWall</name></member>
+      <member refid="class_notification_wall_1a946f7a88eec48887cf5e7da187ecffaf" prot="private" virt="non-virtual"><scope>NotificationWall</scope><name>MAX_NOTIFICATIONS_</name></member>
+      <member refid="class_notification_wall_1a3ccb93b8fa08c067479db1c6bf8f2cac" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>NotificationWall</name></member>
+      <member refid="class_notification_wall_1a775496e213b1559aa63119829f5fe914" prot="public" virt="non-virtual"><scope>NotificationWall</scope><name>setFont</name></member>
+      <member refid="class_notification_wall_1a0a473622636314fa3891e77190839b87" prot="private" virt="non-virtual"><scope>NotificationWall</scope><name>wall_texts_</name></member>
+      <member refid="class_notification_wall_1a4e3faaf40db4e2cf0dab30420661cf7e" prot="private" virt="non-virtual"><scope>NotificationWall</scope><name>Y_STEP_OFFSET_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

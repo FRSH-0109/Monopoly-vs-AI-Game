@@ -1,0 +1,52 @@
+<map id="GameScreen::draw" name="GameScreen::draw">
+<area shape="rect" id="node1" title="Pure virtual function to draw the screen." alt="" coords="5,1358,151,1385"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac21527f42cd63f19528e7ab3f51363db" title="Returns the sprite representing all property data in the GUI." alt="" coords="212,5,404,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#aaf046cdf2a5b7bd05e1f8272b510de0f" title="Returns a vector of pointers to text elements representing all property data in the GUI." alt="" coords="214,71,402,112"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#afe06604028fa9abf53bae7fc6a909ae7" title="Returns a vector of pointers to auction buttons in the GUI." alt="" coords="223,136,393,177"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#accb94fe0ad5bc9ce44f3dda3c91a4ce7" title="Returns a vector of pointers to auction text elements in the GUI." alt="" coords="223,201,393,243"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a30c9e966d81c055c15cc5576243a83a2" title="Returns a pointer to the game board." alt="" coords="223,267,393,308"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a2b1fb71410fb88b1cde5077f62fb82fd" title="Returns a vector of pointers to buttons in the GUI." alt="" coords="223,332,393,373"/>
+<area shape="rect" id="node8" href="$class_withdraw.html#a9176fc09f39a59cec708685ee053b9ac" title="Getter for the vector of buttons used in the withdrawal process." alt="" coords="227,398,389,425"/>
+<area shape="rect" id="node9" href="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68" title="Gets the pointer to the ContextWindow." alt="" coords="215,449,401,491"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#a2831ee2158d97ff536fd0fee57e338e2" title="Gets the sprite for a hotel on a street." alt="" coords="223,567,393,608"/>
+<area shape="rect" id="node12" href="$class_monopoly_game_engine.html#ab55601ce0bb0b73719a5376723daa774" title="Returns the texture of the house used in the GUI." alt="" coords="465,512,635,553"/>
+<area shape="rect" id="node14" href="$class_field.html#a646e28cf7899eb73bd120e7e7f936633" title="Gets the rotation angle of the field." alt="" coords="481,695,619,722"/>
+<area shape="rect" id="node15" href="$class_monopoly_game_engine.html#a56b2b17c31119dac5b1933571bac35f6" title="Returns the texture of the hotel used in the GUI." alt="" coords="223,749,393,791"/>
+<area shape="rect" id="node16" href="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0" title="Gets the number of houses on the property." alt="" coords="201,815,415,842"/>
+<area shape="rect" id="node17" href="$class_monopoly_game_engine.html#a64330a6b6eea093a923675e749c00807" title="Gets the sprite for a house on a street." alt="" coords="223,632,393,673"/>
+<area shape="rect" id="node18" href="$class_street_field.html#a79785c76389d7bf9171797b9d1a16ebd" title="Checks if there is a hotel on the property." alt="" coords="225,866,391,893"/>
+<area shape="rect" id="node19" href="$class_property_field.html#ac52da7b908a73ce329c1aff55f971bed" title="Checks if the property is mortgaged." alt="" coords="199,917,417,943"/>
+<area shape="rect" id="node20" href="$class_field.html#a74d7c9f2b1b4ada1685410a5cfd45bc7" title="Gets the text representing the name of the field." alt="" coords="234,967,382,994"/>
+<area shape="rect" id="node21" href="$class_monopoly_game_engine.html#a19263d676193f65b54209020dfdb928e" title="Returns the notification wall used in the GUI." alt="" coords="223,1019,393,1060"/>
+<area shape="rect" id="node22" href="$class_property_field.html#a4e8d167377c43ea54f32d355d8d07993" title="Gets the owner of the property." alt="" coords="219,1085,397,1111"/>
+<area shape="rect" id="node23" href="$class_property_field.html#a1fc8ddd955fb2c1b271a259785eab177" title="Gets the owner flag sprite." alt="" coords="205,1135,411,1162"/>
+<area shape="rect" id="node24" href="$class_monopoly_game_engine.html#ab1be3d89016a48d4df0f8440a254e4d1" title="Returns a vector of pointers to players in the game." alt="" coords="223,1187,393,1228"/>
+<area shape="rect" id="node25" href="$class_monopoly_game_engine.html#a98b4a5fdbf5e68ab062cd677ccb24f74" title="Returns the sprite representing property data in the GUI." alt="" coords="221,1252,395,1293"/>
+<area shape="rect" id="node26" href="$class_monopoly_game_engine.html#ac70b0b504fb2271353038a59c6604691" title="Returns a vector of pointers to text elements representing property data in the GUI." alt="" coords="223,1317,393,1359"/>
+<area shape="rect" id="node27" href="$class_monopoly_game_engine.html#a838f18e88cd79f8cce47dd0dbb42ae3e" title="Gets the text suitable for drawing a property name." alt="" coords="211,1383,405,1424"/>
+<area shape="rect" id="node29" href="$class_monopoly_game_engine.html#af7cde31ae39d022e3d5f8be45d235ded" title="Returns a vector of pointers to text elements used in the result screen." alt="" coords="223,1448,393,1489"/>
+<area shape="rect" id="node30" href="$class_monopoly_game_engine.html#a5a7f70b3a7d70f563daf7426772590b4" title="Gets the current screen type." alt="" coords="223,1513,393,1555"/>
+<area shape="rect" id="node31" href="$class_field.html#ad9461468ec68a4148453553cc3150fa6" title="Gets the sprite representing the field." alt="" coords="248,1579,368,1606"/>
+<area shape="rect" id="node32" href="$class_withdraw.html#aaa00a66063e50b3aa3cf82a04d0fa859" title="Getter for Player 1&#39;s property sprite." alt="" coords="205,1631,411,1672"/>
+<area shape="rect" id="node33" href="$class_withdraw.html#a7b2ecdf7344d06ee5a1124a3e125618d" title="Getter for Player 1&#39;s offered property sprite." alt="" coords="205,1696,411,1737"/>
+<area shape="rect" id="node34" href="$class_withdraw.html#a7d62275f21184e601494c0068d28fab0" title="Getter for Player 2&#39;s property sprite." alt="" coords="205,1761,411,1803"/>
+<area shape="rect" id="node35" href="$class_withdraw.html#a398e4416dafd4543de2eebc4e8317e4b" title="Getter for Player 2&#39;s offered property sprite." alt="" coords="205,1827,411,1868"/>
+<area shape="rect" id="node36" href="$class_monopoly_game_engine.html#a3c28362ff3b68d93dec6dae6c0304641" title="Returns a vector of pointers to text elements in the GUI." alt="" coords="223,1892,393,1933"/>
+<area shape="rect" id="node37" href="$class_withdraw.html#a095689316bdad34354e14b8ffd18c995" title="Getter for the vector of text objects used in the withdrawal process." alt="" coords="235,1958,381,1985"/>
+<area shape="rect" id="node38" href="$class_withdraw.html#a3af83369b71131d448d48f9383c890c0" title="Getter for the text objects representing Player 1&#39;s property details." alt="" coords="207,2009,409,2051"/>
+<area shape="rect" id="node39" href="$class_withdraw.html#a516b9056df7808d8c2a33a57772d9ad8" title="Getter for the text objects representing Player 1&#39;s offered property details." alt="" coords="207,2075,409,2116"/>
+<area shape="rect" id="node40" href="$class_withdraw.html#af50af1bd76c6d76465a8fe344496b6e7" title="Getter for the text objects representing Player 2&#39;s property details." alt="" coords="207,2140,409,2181"/>
+<area shape="rect" id="node41" href="$class_withdraw.html#a947ffd9307c3592b6023d11d892f2692" title="Getter for the text objects representing Player 2&#39;s offered property details." alt="" coords="207,2205,409,2247"/>
+<area shape="rect" id="node42" href="$class_withdraw.html#aeb76e48063bbc11819fb5a9304c90aa1" title="Getter for Player 1&#39;s property texture." alt="" coords="201,2271,415,2312"/>
+<area shape="rect" id="node43" href="$class_withdraw.html#a30c3828b0c528ff79403158e1501358a" title="Getter for Player 1&#39;s offer property texture." alt="" coords="201,2336,415,2377"/>
+<area shape="rect" id="node44" href="$class_withdraw.html#a17a68a4b288fa26a7802c2f553fc6279" title="Getter for Player 2&#39;s property texture." alt="" coords="201,2401,415,2443"/>
+<area shape="rect" id="node45" href="$class_withdraw.html#a31943c48aa1e04aa4f1ec43900f5acc0" title="Getter for Player 2&#39;s offer property texture." alt="" coords="201,2467,415,2508"/>
+<area shape="rect" id="node46" href="$class_monopoly_game_engine.html#a3eb8af1a66fd12f93da8072c3a2edfa8" title="Gets the current turn state." alt="" coords="223,2532,393,2573"/>
+<area shape="rect" id="node47" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="252,2598,364,2625"/>
+<area shape="rect" id="node48" href="$class_notification_wall.html#a0dad79435cd7be0f9f20619172a7e168" title=" " alt="" coords="217,2649,399,2675"/>
+<area shape="rect" id="node49" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="205,2699,411,2726"/>
+<area shape="rect" id="node50" href="$class_monopoly_game_engine.html#a7a4c2e5ec5a548c44d2dca59438453b5" title="Returns a reference to the Withdraw object." alt="" coords="223,2751,393,2792"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#ad0390270b455b07db016a389c89df8ea" title="Returns the size of a house in the GUI." alt="" coords="465,629,635,671"/>
+<area shape="rect" id="node13" href="$class_field.html#a8b6e4fc0827f44e90449d6ad9a62dafd" title="Gets the position of the field on the board." alt="" coords="483,578,617,605"/>
+<area shape="rect" id="node28" href="$class_monopoly_game_engine.html#acaf81e835720ba22173b0dd6a0a87bf9" title="Returns the font used in the GUI." alt="" coords="465,1383,635,1424"/>
+</map>

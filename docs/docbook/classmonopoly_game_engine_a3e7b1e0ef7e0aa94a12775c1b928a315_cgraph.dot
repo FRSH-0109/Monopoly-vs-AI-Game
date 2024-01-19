@@ -1,0 +1,19 @@
+digraph "monopolyGameEngine::isDestroyingLegal"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="monopolyGameEngine\l::isDestroyingLegal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="monopolyGameEngine\l::getBoard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a7745bb931ce95f84f0b07843414e0d36",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PropertyField::getGroupMembers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_property_field.html#a676180ae8ad98644572c47787ea0a01f",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="StreetField::getHouseNumber",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_street_field.html#aaee4c344c359e9762653472f7f2e5df0",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="PropertyField::getIsMortgaged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_property_field.html#a1fffe1254ab983b26a27f44f60790118",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="monopolyGameEngine\l::groupCompleted",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a812b12efc4a929ca7d81d98cf9acf761",tooltip=" "];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

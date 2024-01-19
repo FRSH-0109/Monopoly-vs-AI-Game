@@ -1,0 +1,745 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}ann Namespace Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Enumeration Type Documentation}{9}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}type}{9}{subsubsection.5.1.1.1}%
+\contentsline {section}{\numberline {5.2}neat Namespace Reference}{9}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Active\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen Class Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{12}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{12}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}ActiveScreen()}{12}{subsubsection.6.1.2.1}%
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{12}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}addButton()}{12}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}addText()}{13}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}buttonSetColors()}{13}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}draw()}{14}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}getButtons()}{14}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}getContextWindow()}{15}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}getFont()}{15}{subsubsection.6.1.3.7}%
+\contentsline {subsubsection}{\numberline {6.1.3.8}getPlayersResult()}{16}{subsubsection.6.1.3.8}%
+\contentsline {subsubsection}{\numberline {6.1.3.9}getPlayersSettings()}{16}{subsubsection.6.1.3.9}%
+\contentsline {subsubsection}{\numberline {6.1.3.10}getScreenType()}{16}{subsubsection.6.1.3.10}%
+\contentsline {subsubsection}{\numberline {6.1.3.11}getTexts()}{17}{subsubsection.6.1.3.11}%
+\contentsline {subsubsection}{\numberline {6.1.3.12}setContextWindow()}{17}{subsubsection.6.1.3.12}%
+\contentsline {subsubsection}{\numberline {6.1.3.13}setFont()}{18}{subsubsection.6.1.3.13}%
+\contentsline {subsubsection}{\numberline {6.1.3.14}setScreenType()}{18}{subsubsection.6.1.3.14}%
+\contentsline {subsubsection}{\numberline {6.1.3.15}worker()}{19}{subsubsection.6.1.3.15}%
+\contentsline {section}{\numberline {6.2}Ai\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Adapter Class Reference}{19}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{20}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{20}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}AiAdapter()}{21}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{21}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}clearSelectionState()}{21}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}convertCard()}{21}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}convertHouse()}{22}{subsubsection.6.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.4}convertHouseValue()}{22}{subsubsection.6.2.3.4}%
+\contentsline {subsubsection}{\numberline {6.2.3.5}convertMoney()}{23}{subsubsection.6.2.3.5}%
+\contentsline {subsubsection}{\numberline {6.2.3.6}convertMoneyValue()}{23}{subsubsection.6.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.2.3.7}convertPosition()}{24}{subsubsection.6.2.3.7}%
+\contentsline {subsubsection}{\numberline {6.2.3.8}getInputs()}{25}{subsubsection.6.2.3.8}%
+\contentsline {subsubsection}{\numberline {6.2.3.9}setCard()}{25}{subsubsection.6.2.3.9}%
+\contentsline {subsubsection}{\numberline {6.2.3.10}setHouse()}{26}{subsubsection.6.2.3.10}%
+\contentsline {subsubsection}{\numberline {6.2.3.11}setJail()}{26}{subsubsection.6.2.3.11}%
+\contentsline {subsubsection}{\numberline {6.2.3.12}setMoney()}{27}{subsubsection.6.2.3.12}%
+\contentsline {subsubsection}{\numberline {6.2.3.13}setMoneyContext()}{27}{subsubsection.6.2.3.13}%
+\contentsline {subsubsection}{\numberline {6.2.3.14}setMortgage()}{28}{subsubsection.6.2.3.14}%
+\contentsline {subsubsection}{\numberline {6.2.3.15}setOwner()}{28}{subsubsection.6.2.3.15}%
+\contentsline {subsubsection}{\numberline {6.2.3.16}setPosition()}{28}{subsubsection.6.2.3.16}%
+\contentsline {subsubsection}{\numberline {6.2.3.17}setSelection()}{29}{subsubsection.6.2.3.17}%
+\contentsline {subsubsection}{\numberline {6.2.3.18}setSelectionState()}{29}{subsubsection.6.2.3.18}%
+\contentsline {subsubsection}{\numberline {6.2.3.19}setTurn()}{29}{subsubsection.6.2.3.19}%
+\contentsline {section}{\numberline {6.3}Ai\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player Class Reference}{30}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{31}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{31}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}AiPlayer()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{31}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}AiPlayer()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{31}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}AiPlayer()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{32}{subsubsection.6.3.2.3}%
+\contentsline {subsection}{\numberline {6.3.3}Member Function Documentation}{32}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}decideAcceptTrade()}{33}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}decideAuctionBid()}{33}{subsubsection.6.3.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3.3}decideBuildHouse()}{34}{subsubsection.6.3.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.4}decideBuy()}{35}{subsubsection.6.3.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.3.5}decideJail()}{35}{subsubsection.6.3.3.5}%
+\contentsline {subsubsection}{\numberline {6.3.3.6}decideMortgage()}{36}{subsubsection.6.3.3.6}%
+\contentsline {subsubsection}{\numberline {6.3.3.7}decideOfferTrade()}{37}{subsubsection.6.3.3.7}%
+\contentsline {subsubsection}{\numberline {6.3.3.8}decideSellHouse()}{38}{subsubsection.6.3.3.8}%
+\contentsline {subsubsection}{\numberline {6.3.3.9}decideUnmortgage()}{38}{subsubsection.6.3.3.9}%
+\contentsline {subsubsection}{\numberline {6.3.3.10}getAdapter()}{39}{subsubsection.6.3.3.10}%
+\contentsline {subsubsection}{\numberline {6.3.3.11}getNeuralNetwork()}{39}{subsubsection.6.3.3.11}%
+\contentsline {subsubsection}{\numberline {6.3.3.12}setNeuralNetwork()}{39}{subsubsection.6.3.3.12}%
+\contentsline {section}{\numberline {6.4}Board Class Reference}{40}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{40}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{40}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}Board()}{40}{subsubsection.6.4.2.1}%
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{41}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}clearBoard()}{41}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}getBoard()}{41}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}getBoardPosition()}{42}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}getFieldById()}{42}{subsubsection.6.4.3.4}%
+\contentsline {subsubsection}{\numberline {6.4.3.5}getFieldNumber()}{42}{subsubsection.6.4.3.5}%
+\contentsline {subsubsection}{\numberline {6.4.3.6}getFieldPositon()}{43}{subsubsection.6.4.3.6}%
+\contentsline {subsubsection}{\numberline {6.4.3.7}getFieldRotation()}{43}{subsubsection.6.4.3.7}%
+\contentsline {section}{\numberline {6.5}Button Class Reference}{44}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{45}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Constructor \& Destructor Documentation}{45}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}Button()}{46}{subsubsection.6.5.2.1}%
+\contentsline {subsection}{\numberline {6.5.3}Member Function Documentation}{47}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}draw()}{47}{subsubsection.6.5.3.1}%
+\contentsline {subsubsection}{\numberline {6.5.3.2}getEventType()}{47}{subsubsection.6.5.3.2}%
+\contentsline {subsubsection}{\numberline {6.5.3.3}getIsActive()}{47}{subsubsection.6.5.3.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.4}getIsClicked()}{48}{subsubsection.6.5.3.4}%
+\contentsline {subsubsection}{\numberline {6.5.3.5}getIsFocus()}{48}{subsubsection.6.5.3.5}%
+\contentsline {subsubsection}{\numberline {6.5.3.6}getIsVisible()}{48}{subsubsection.6.5.3.6}%
+\contentsline {subsubsection}{\numberline {6.5.3.7}getSize()}{48}{subsubsection.6.5.3.7}%
+\contentsline {subsubsection}{\numberline {6.5.3.8}getText()}{49}{subsubsection.6.5.3.8}%
+\contentsline {subsubsection}{\numberline {6.5.3.9}getWasReleased()}{49}{subsubsection.6.5.3.9}%
+\contentsline {subsubsection}{\numberline {6.5.3.10}isMouseOver()}{49}{subsubsection.6.5.3.10}%
+\contentsline {subsubsection}{\numberline {6.5.3.11}mouseIsNotOver()}{49}{subsubsection.6.5.3.11}%
+\contentsline {subsubsection}{\numberline {6.5.3.12}mouseIsOver()}{50}{subsubsection.6.5.3.12}%
+\contentsline {subsubsection}{\numberline {6.5.3.13}setActiveBackColor()}{50}{subsubsection.6.5.3.13}%
+\contentsline {subsubsection}{\numberline {6.5.3.14}setActiveTextColor()}{50}{subsubsection.6.5.3.14}%
+\contentsline {subsubsection}{\numberline {6.5.3.15}setButtonFocus()}{51}{subsubsection.6.5.3.15}%
+\contentsline {subsubsection}{\numberline {6.5.3.16}setButtonUnfocus()}{51}{subsubsection.6.5.3.16}%
+\contentsline {subsubsection}{\numberline {6.5.3.17}setEventType()}{52}{subsubsection.6.5.3.17}%
+\contentsline {subsubsection}{\numberline {6.5.3.18}setFocusBackColor()}{52}{subsubsection.6.5.3.18}%
+\contentsline {subsubsection}{\numberline {6.5.3.19}setFocusTextColor()}{52}{subsubsection.6.5.3.19}%
+\contentsline {subsubsection}{\numberline {6.5.3.20}setFont()}{53}{subsubsection.6.5.3.20}%
+\contentsline {subsubsection}{\numberline {6.5.3.21}setInactiveBackColor()}{53}{subsubsection.6.5.3.21}%
+\contentsline {subsubsection}{\numberline {6.5.3.22}setInactiveTextColor()}{53}{subsubsection.6.5.3.22}%
+\contentsline {subsubsection}{\numberline {6.5.3.23}setIsActive()}{53}{subsubsection.6.5.3.23}%
+\contentsline {subsubsection}{\numberline {6.5.3.24}setIsClicked()}{54}{subsubsection.6.5.3.24}%
+\contentsline {subsubsection}{\numberline {6.5.3.25}setIsFocus()}{54}{subsubsection.6.5.3.25}%
+\contentsline {subsubsection}{\numberline {6.5.3.26}setIsVisible()}{54}{subsubsection.6.5.3.26}%
+\contentsline {subsubsection}{\numberline {6.5.3.27}setPosition()}{55}{subsubsection.6.5.3.27}%
+\contentsline {subsubsection}{\numberline {6.5.3.28}setWasReleased()}{55}{subsubsection.6.5.3.28}%
+\contentsline {subsubsection}{\numberline {6.5.3.29}updateColors()}{55}{subsubsection.6.5.3.29}%
+\contentsline {section}{\numberline {6.6}Chance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Card Class Reference}{55}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{56}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Constructor \& Destructor Documentation}{56}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}ChanceCard()}{57}{subsubsection.6.6.2.1}%
+\contentsline {subsection}{\numberline {6.6.3}Member Function Documentation}{58}{subsection.6.6.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.1}createSprite()}{58}{subsubsection.6.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.6.3.2}getGraphicPath()}{58}{subsubsection.6.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.6.3.3}getHeight()}{58}{subsubsection.6.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.4}getId()}{59}{subsubsection.6.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.6.3.5}getPosition()}{59}{subsubsection.6.6.3.5}%
+\contentsline {subsubsection}{\numberline {6.6.3.6}getRotation()}{59}{subsubsection.6.6.3.6}%
+\contentsline {subsubsection}{\numberline {6.6.3.7}getSprite()}{59}{subsubsection.6.6.3.7}%
+\contentsline {subsubsection}{\numberline {6.6.3.8}getText()}{60}{subsubsection.6.6.3.8}%
+\contentsline {subsubsection}{\numberline {6.6.3.9}getTexture()}{60}{subsubsection.6.6.3.9}%
+\contentsline {subsubsection}{\numberline {6.6.3.10}getType()}{60}{subsubsection.6.6.3.10}%
+\contentsline {subsubsection}{\numberline {6.6.3.11}getValue()}{61}{subsubsection.6.6.3.11}%
+\contentsline {subsubsection}{\numberline {6.6.3.12}getWidth()}{61}{subsubsection.6.6.3.12}%
+\contentsline {subsubsection}{\numberline {6.6.3.13}setPosition()}{61}{subsubsection.6.6.3.13}%
+\contentsline {subsubsection}{\numberline {6.6.3.14}setRotation()}{62}{subsubsection.6.6.3.14}%
+\contentsline {section}{\numberline {6.7}Context\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{62}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{63}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{63}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}ContextWindow()}{63}{subsubsection.6.7.2.1}%
+\contentsline {subsection}{\numberline {6.7.3}Member Function Documentation}{63}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}clear()}{63}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}display()}{64}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}GetInstance()}{64}{subsubsection.6.7.3.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.4}getView()}{65}{subsubsection.6.7.3.4}%
+\contentsline {subsubsection}{\numberline {6.7.3.5}getWindow()}{65}{subsubsection.6.7.3.5}%
+\contentsline {subsubsection}{\numberline {6.7.3.6}isOpen()}{66}{subsubsection.6.7.3.6}%
+\contentsline {subsubsection}{\numberline {6.7.3.7}operator=()}{66}{subsubsection.6.7.3.7}%
+\contentsline {subsection}{\numberline {6.7.4}Member Data Documentation}{66}{subsection.6.7.4}%
+\contentsline {subsubsection}{\numberline {6.7.4.1}view\_}{66}{subsubsection.6.7.4.1}%
+\contentsline {subsubsection}{\numberline {6.7.4.2}window\_}{66}{subsubsection.6.7.4.2}%
+\contentsline {section}{\numberline {6.8}Dimension\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception Class Reference}{67}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{67}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Constructor \& Destructor Documentation}{67}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}DimensionException()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}DimensionException()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.6.8.2.2}%
+\contentsline {subsection}{\numberline {6.8.3}Member Function Documentation}{68}{subsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.1}getBadDimension()}{68}{subsubsection.6.8.3.1}%
+\contentsline {section}{\numberline {6.9}Field Class Reference}{68}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{69}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Constructor \& Destructor Documentation}{69}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}Field()}{70}{subsubsection.6.9.2.1}%
+\contentsline {subsection}{\numberline {6.9.3}Member Function Documentation}{70}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}createSprite()}{70}{subsubsection.6.9.3.1}%
+\contentsline {subsubsection}{\numberline {6.9.3.2}getContextWindow()}{71}{subsubsection.6.9.3.2}%
+\contentsline {subsubsection}{\numberline {6.9.3.3}getGraphicPath()}{71}{subsubsection.6.9.3.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.4}getHeight()}{72}{subsubsection.6.9.3.4}%
+\contentsline {subsubsection}{\numberline {6.9.3.5}getId()}{72}{subsubsection.6.9.3.5}%
+\contentsline {subsubsection}{\numberline {6.9.3.6}getName()}{73}{subsubsection.6.9.3.6}%
+\contentsline {subsubsection}{\numberline {6.9.3.7}getNameText()}{73}{subsubsection.6.9.3.7}%
+\contentsline {subsubsection}{\numberline {6.9.3.8}getPosition()}{74}{subsubsection.6.9.3.8}%
+\contentsline {subsubsection}{\numberline {6.9.3.9}getRotation()}{74}{subsubsection.6.9.3.9}%
+\contentsline {subsubsection}{\numberline {6.9.3.10}getSprite()}{75}{subsubsection.6.9.3.10}%
+\contentsline {subsubsection}{\numberline {6.9.3.11}getTexture()}{75}{subsubsection.6.9.3.11}%
+\contentsline {subsubsection}{\numberline {6.9.3.12}getType()}{75}{subsubsection.6.9.3.12}%
+\contentsline {subsubsection}{\numberline {6.9.3.13}getWidth()}{76}{subsubsection.6.9.3.13}%
+\contentsline {subsubsection}{\numberline {6.9.3.14}setHeight()}{76}{subsubsection.6.9.3.14}%
+\contentsline {subsubsection}{\numberline {6.9.3.15}setPosition()}{76}{subsubsection.6.9.3.15}%
+\contentsline {subsubsection}{\numberline {6.9.3.16}setRotation()}{77}{subsubsection.6.9.3.16}%
+\contentsline {subsubsection}{\numberline {6.9.3.17}setWidth()}{77}{subsubsection.6.9.3.17}%
+\contentsline {section}{\numberline {6.10}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine Class Reference}{77}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{78}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Constructor \& Destructor Documentation}{78}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}GameEngine()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{78}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}GameEngine()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{79}{subsubsection.6.10.2.2}%
+\contentsline {subsection}{\numberline {6.10.3}Member Function Documentation}{79}{subsection.6.10.3}%
+\contentsline {subsubsection}{\numberline {6.10.3.1}clear()}{80}{subsubsection.6.10.3.1}%
+\contentsline {subsubsection}{\numberline {6.10.3.2}display()}{80}{subsubsection.6.10.3.2}%
+\contentsline {subsubsection}{\numberline {6.10.3.3}getContextWindow()}{81}{subsubsection.6.10.3.3}%
+\contentsline {subsubsection}{\numberline {6.10.3.4}getwindow\_height()}{81}{subsubsection.6.10.3.4}%
+\contentsline {subsubsection}{\numberline {6.10.3.5}getwindow\_width()}{82}{subsubsection.6.10.3.5}%
+\contentsline {subsubsection}{\numberline {6.10.3.6}pollForEvents()}{82}{subsubsection.6.10.3.6}%
+\contentsline {subsubsection}{\numberline {6.10.3.7}worker()}{83}{subsubsection.6.10.3.7}%
+\contentsline {section}{\numberline {6.11}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen Class Reference}{83}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{85}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Constructor \& Destructor Documentation}{85}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}GameMenuScreen()}{85}{subsubsection.6.11.2.1}%
+\contentsline {subsection}{\numberline {6.11.3}Member Function Documentation}{85}{subsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.1}buttonClickHandle()}{85}{subsubsection.6.11.3.1}%
+\contentsline {subsubsection}{\numberline {6.11.3.2}draw()}{86}{subsubsection.6.11.3.2}%
+\contentsline {subsubsection}{\numberline {6.11.3.3}gameMenuCreate()}{87}{subsubsection.6.11.3.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.4}getPlayerNumFromEventType()}{87}{subsubsection.6.11.3.4}%
+\contentsline {subsubsection}{\numberline {6.11.3.5}getPlayersSettings()}{88}{subsubsection.6.11.3.5}%
+\contentsline {subsubsection}{\numberline {6.11.3.6}isEventTypeAILevel()}{88}{subsubsection.6.11.3.6}%
+\contentsline {subsubsection}{\numberline {6.11.3.7}isEventTypeSetAI()}{89}{subsubsection.6.11.3.7}%
+\contentsline {subsubsection}{\numberline {6.11.3.8}setAILevelColumnVisibility()}{89}{subsubsection.6.11.3.8}%
+\contentsline {subsubsection}{\numberline {6.11.3.9}setDefaultAILevelButtonsFocus()}{90}{subsubsection.6.11.3.9}%
+\contentsline {subsubsection}{\numberline {6.11.3.10}setOtherButtonsInactive()}{91}{subsubsection.6.11.3.10}%
+\contentsline {subsubsection}{\numberline {6.11.3.11}setPlayerSettings()}{92}{subsubsection.6.11.3.11}%
+\contentsline {subsubsection}{\numberline {6.11.3.12}worker()}{92}{subsubsection.6.11.3.12}%
+\contentsline {section}{\numberline {6.12}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen Class Reference}{93}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Constructor \& Destructor Documentation}{94}{subsection.6.12.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.1}GameScreen()}{94}{subsubsection.6.12.1.1}%
+\contentsline {subsection}{\numberline {6.12.2}Member Function Documentation}{95}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}draw()}{95}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}getPlayersResult()}{97}{subsubsection.6.12.2.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.3}worker()}{97}{subsubsection.6.12.2.3}%
+\contentsline {section}{\numberline {6.13}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::gene Struct Reference}{98}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Member Data Documentation}{99}{subsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.1}enabled}{99}{subsubsection.6.13.1.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.2}from\_node}{99}{subsubsection.6.13.1.2}%
+\contentsline {subsubsection}{\numberline {6.13.1.3}innovation\_num}{99}{subsubsection.6.13.1.3}%
+\contentsline {subsubsection}{\numberline {6.13.1.4}to\_node}{99}{subsubsection.6.13.1.4}%
+\contentsline {subsubsection}{\numberline {6.13.1.5}weight}{99}{subsubsection.6.13.1.5}%
+\contentsline {section}{\numberline {6.14}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::genome Class Reference}{100}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Constructor \& Destructor Documentation}{100}{subsection.6.14.1}%
+\contentsline {subsubsection}{\numberline {6.14.1.1}genome()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{100}{subsubsection.6.14.1.1}%
+\contentsline {subsubsection}{\numberline {6.14.1.2}genome()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{101}{subsubsection.6.14.1.2}%
+\contentsline {subsection}{\numberline {6.14.2}Member Data Documentation}{101}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}adjusted\_fitness}{101}{subsubsection.6.14.2.1}%
+\contentsline {subsubsection}{\numberline {6.14.2.2}can\_be\_recurrent}{101}{subsubsection.6.14.2.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.3}fitness}{101}{subsubsection.6.14.2.3}%
+\contentsline {subsubsection}{\numberline {6.14.2.4}genes}{101}{subsubsection.6.14.2.4}%
+\contentsline {subsubsection}{\numberline {6.14.2.5}global\_rank}{101}{subsubsection.6.14.2.5}%
+\contentsline {subsubsection}{\numberline {6.14.2.6}max\_neuron}{101}{subsubsection.6.14.2.6}%
+\contentsline {subsubsection}{\numberline {6.14.2.7}mutation\_rates}{102}{subsubsection.6.14.2.7}%
+\contentsline {subsubsection}{\numberline {6.14.2.8}network\_info}{102}{subsubsection.6.14.2.8}%
+\contentsline {section}{\numberline {6.15}House\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception Class Reference}{102}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{103}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Constructor \& Destructor Documentation}{103}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}HouseException()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{103}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}HouseException()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{103}{subsubsection.6.15.2.2}%
+\contentsline {subsection}{\numberline {6.15.3}Member Function Documentation}{103}{subsection.6.15.3}%
+\contentsline {subsubsection}{\numberline {6.15.3.1}getInvalidNumber()}{103}{subsubsection.6.15.3.1}%
+\contentsline {section}{\numberline {6.16}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::innovation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}container Class Reference}{103}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Constructor \& Destructor Documentation}{104}{subsection.6.16.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.1}innovation\_container()}{104}{subsubsection.6.16.1.1}%
+\contentsline {subsection}{\numberline {6.16.2}Member Function Documentation}{104}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}add\_gene()}{104}{subsubsection.6.16.2.1}%
+\contentsline {subsubsection}{\numberline {6.16.2.2}number()}{104}{subsubsection.6.16.2.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.3}reset()}{104}{subsubsection.6.16.2.3}%
+\contentsline {subsection}{\numberline {6.16.3}Friends And Related Function Documentation}{104}{subsection.6.16.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.1}pool}{105}{subsubsection.6.16.3.1}%
+\contentsline {section}{\numberline {6.17}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen Class Reference}{105}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{106}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Constructor \& Destructor Documentation}{106}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}MainMenuScreen()}{106}{subsubsection.6.17.2.1}%
+\contentsline {subsection}{\numberline {6.17.3}Member Function Documentation}{106}{subsection.6.17.3}%
+\contentsline {subsubsection}{\numberline {6.17.3.1}draw()}{107}{subsubsection.6.17.3.1}%
+\contentsline {subsubsection}{\numberline {6.17.3.2}mainMenuCreate()}{107}{subsubsection.6.17.3.2}%
+\contentsline {subsubsection}{\numberline {6.17.3.3}worker()}{108}{subsubsection.6.17.3.3}%
+\contentsline {section}{\numberline {6.18}Monopoly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine Class Reference}{108}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{112}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Constructor \& Destructor Documentation}{112}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}MonopolyGameEngine()}{112}{subsubsection.6.18.2.1}%
+\contentsline {subsection}{\numberline {6.18.3}Member Function Documentation}{112}{subsection.6.18.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.1}addAuctionButton()}{112}{subsubsection.6.18.3.1}%
+\contentsline {subsubsection}{\numberline {6.18.3.2}addAuctionText()}{113}{subsubsection.6.18.3.2}%
+\contentsline {subsubsection}{\numberline {6.18.3.3}addButton()}{114}{subsubsection.6.18.3.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.4}addHotels()}{115}{subsubsection.6.18.3.4}%
+\contentsline {subsubsection}{\numberline {6.18.3.5}addHouses()}{115}{subsubsection.6.18.3.5}%
+\contentsline {subsubsection}{\numberline {6.18.3.6}addText()}{116}{subsubsection.6.18.3.6}%
+\contentsline {subsubsection}{\numberline {6.18.3.7}aiBuildingsMangingWorker()}{117}{subsubsection.6.18.3.7}%
+\contentsline {subsubsection}{\numberline {6.18.3.8}buildingsManagingWorker()}{118}{subsubsection.6.18.3.8}%
+\contentsline {subsubsection}{\numberline {6.18.3.9}calculateGroupFieldsOwned()}{119}{subsubsection.6.18.3.9}%
+\contentsline {subsubsection}{\numberline {6.18.3.10}calculateRent()}{120}{subsubsection.6.18.3.10}%
+\contentsline {subsubsection}{\numberline {6.18.3.11}clearBoard()}{121}{subsubsection.6.18.3.11}%
+\contentsline {subsubsection}{\numberline {6.18.3.12}clearPlayers()}{122}{subsubsection.6.18.3.12}%
+\contentsline {subsubsection}{\numberline {6.18.3.13}colorGroupEmpty()}{122}{subsubsection.6.18.3.13}%
+\contentsline {subsubsection}{\numberline {6.18.3.14}createAuctionBidButton()}{123}{subsubsection.6.18.3.14}%
+\contentsline {subsubsection}{\numberline {6.18.3.15}createAuctionOfferButtons()}{124}{subsubsection.6.18.3.15}%
+\contentsline {subsubsection}{\numberline {6.18.3.16}createAuctionResignButton()}{124}{subsubsection.6.18.3.16}%
+\contentsline {subsubsection}{\numberline {6.18.3.17}createAvailableHousesHotelText()}{125}{subsubsection.6.18.3.17}%
+\contentsline {subsubsection}{\numberline {6.18.3.18}createBoard()}{126}{subsubsection.6.18.3.18}%
+\contentsline {subsubsection}{\numberline {6.18.3.19}createButtonBuyResign()}{127}{subsubsection.6.18.3.19}%
+\contentsline {subsubsection}{\numberline {6.18.3.20}createButtonNextProperty()}{127}{subsubsection.6.18.3.20}%
+\contentsline {subsubsection}{\numberline {6.18.3.21}createButtonPerviousProperty()}{128}{subsubsection.6.18.3.21}%
+\contentsline {subsubsection}{\numberline {6.18.3.22}createButtonRollDice()}{129}{subsubsection.6.18.3.22}%
+\contentsline {subsubsection}{\numberline {6.18.3.23}createButtonsBankrupt()}{130}{subsubsection.6.18.3.23}%
+\contentsline {subsubsection}{\numberline {6.18.3.24}createButtonsBuySellHouseHotel()}{130}{subsubsection.6.18.3.24}%
+\contentsline {subsubsection}{\numberline {6.18.3.25}createButtonsJailPay()}{131}{subsubsection.6.18.3.25}%
+\contentsline {subsubsection}{\numberline {6.18.3.26}createButtonsNextTurn()}{132}{subsubsection.6.18.3.26}%
+\contentsline {subsubsection}{\numberline {6.18.3.27}createButtonWithdraw()}{133}{subsubsection.6.18.3.27}%
+\contentsline {subsubsection}{\numberline {6.18.3.28}createChanceCards()}{134}{subsubsection.6.18.3.28}%
+\contentsline {subsubsection}{\numberline {6.18.3.29}createCurrentOfferBidderInfo()}{135}{subsubsection.6.18.3.29}%
+\contentsline {subsubsection}{\numberline {6.18.3.30}createMortagingButton()}{136}{subsubsection.6.18.3.30}%
+\contentsline {subsubsection}{\numberline {6.18.3.31}createPlayers()}{136}{subsubsection.6.18.3.31}%
+\contentsline {subsubsection}{\numberline {6.18.3.32}createResultScreenStuff()}{137}{subsubsection.6.18.3.32}%
+\contentsline {subsubsection}{\numberline {6.18.3.33}createTextBiddedProperty()}{138}{subsubsection.6.18.3.33}%
+\contentsline {subsubsection}{\numberline {6.18.3.34}createTextBidderInfo()}{139}{subsubsection.6.18.3.34}%
+\contentsline {subsubsection}{\numberline {6.18.3.35}createTextHighestBidInfo()}{139}{subsubsection.6.18.3.35}%
+\contentsline {subsubsection}{\numberline {6.18.3.36}createTextLeadingBidderInfo()}{140}{subsubsection.6.18.3.36}%
+\contentsline {subsubsection}{\numberline {6.18.3.37}createTextPlayersInfo()}{141}{subsubsection.6.18.3.37}%
+\contentsline {subsubsection}{\numberline {6.18.3.38}createTextrolled\_value()}{142}{subsubsection.6.18.3.38}%
+\contentsline {subsubsection}{\numberline {6.18.3.39}createTextTurnInfo()}{142}{subsubsection.6.18.3.39}%
+\contentsline {subsubsection}{\numberline {6.18.3.40}getAllPropertyDataSprite()}{143}{subsubsection.6.18.3.40}%
+\contentsline {subsubsection}{\numberline {6.18.3.41}getAllPropertyDataTexts()}{144}{subsubsection.6.18.3.41}%
+\contentsline {subsubsection}{\numberline {6.18.3.42}getAuctionButtons()}{144}{subsubsection.6.18.3.42}%
+\contentsline {subsubsection}{\numberline {6.18.3.43}getAuctionState()}{145}{subsubsection.6.18.3.43}%
+\contentsline {subsubsection}{\numberline {6.18.3.44}getAuctionTexts()}{145}{subsubsection.6.18.3.44}%
+\contentsline {subsubsection}{\numberline {6.18.3.45}getBoard()}{146}{subsubsection.6.18.3.45}%
+\contentsline {subsubsection}{\numberline {6.18.3.46}getButtons()}{146}{subsubsection.6.18.3.46}%
+\contentsline {subsubsection}{\numberline {6.18.3.47}getFont()}{147}{subsubsection.6.18.3.47}%
+\contentsline {subsubsection}{\numberline {6.18.3.48}getFontSize()}{148}{subsubsection.6.18.3.48}%
+\contentsline {subsubsection}{\numberline {6.18.3.49}getHotelCount()}{149}{subsubsection.6.18.3.49}%
+\contentsline {subsubsection}{\numberline {6.18.3.50}getHotelSprite()}{150}{subsubsection.6.18.3.50}%
+\contentsline {subsubsection}{\numberline {6.18.3.51}getHotelTexture()}{151}{subsubsection.6.18.3.51}%
+\contentsline {subsubsection}{\numberline {6.18.3.52}getHouseCount()}{151}{subsubsection.6.18.3.52}%
+\contentsline {subsubsection}{\numberline {6.18.3.53}getHouseSize()}{152}{subsubsection.6.18.3.53}%
+\contentsline {subsubsection}{\numberline {6.18.3.54}getHouseSprite()}{152}{subsubsection.6.18.3.54}%
+\contentsline {subsubsection}{\numberline {6.18.3.55}getHouseTexture()}{153}{subsubsection.6.18.3.55}%
+\contentsline {subsubsection}{\numberline {6.18.3.56}getNotificationsWall()}{154}{subsubsection.6.18.3.56}%
+\contentsline {subsubsection}{\numberline {6.18.3.57}getPlayers()}{155}{subsubsection.6.18.3.57}%
+\contentsline {subsubsection}{\numberline {6.18.3.58}getPlayersResult()}{155}{subsubsection.6.18.3.58}%
+\contentsline {subsubsection}{\numberline {6.18.3.59}getPropertyDataSprite()}{156}{subsubsection.6.18.3.59}%
+\contentsline {subsubsection}{\numberline {6.18.3.60}getPropertyDataTexts()}{156}{subsubsection.6.18.3.60}%
+\contentsline {subsubsection}{\numberline {6.18.3.61}getPropertyNameToDraw()}{156}{subsubsection.6.18.3.61}%
+\contentsline {subsubsection}{\numberline {6.18.3.62}getResultTexts()}{157}{subsubsection.6.18.3.62}%
+\contentsline {subsubsection}{\numberline {6.18.3.63}getScreenType()}{158}{subsubsection.6.18.3.63}%
+\contentsline {subsubsection}{\numberline {6.18.3.64}getTexts()}{158}{subsubsection.6.18.3.64}%
+\contentsline {subsubsection}{\numberline {6.18.3.65}getTurnState()}{159}{subsubsection.6.18.3.65}%
+\contentsline {subsubsection}{\numberline {6.18.3.66}getWithdraw()}{159}{subsubsection.6.18.3.66}%
+\contentsline {subsubsection}{\numberline {6.18.3.67}groupCompleted()}{160}{subsubsection.6.18.3.67}%
+\contentsline {subsubsection}{\numberline {6.18.3.68}isBuildingLegal()}{161}{subsubsection.6.18.3.68}%
+\contentsline {subsubsection}{\numberline {6.18.3.69}isDestroyingLegal()}{162}{subsubsection.6.18.3.69}%
+\contentsline {subsubsection}{\numberline {6.18.3.70}isHotelBuildingLegal()}{163}{subsubsection.6.18.3.70}%
+\contentsline {subsubsection}{\numberline {6.18.3.71}isHotelDestroyingLegal()}{164}{subsubsection.6.18.3.71}%
+\contentsline {subsubsection}{\numberline {6.18.3.72}monopolyGameWorker()}{165}{subsubsection.6.18.3.72}%
+\contentsline {subsubsection}{\numberline {6.18.3.73}performAuction()}{167}{subsubsection.6.18.3.73}%
+\contentsline {subsubsection}{\numberline {6.18.3.74}setAuctionState()}{168}{subsubsection.6.18.3.74}%
+\contentsline {subsubsection}{\numberline {6.18.3.75}setFont()}{168}{subsubsection.6.18.3.75}%
+\contentsline {subsubsection}{\numberline {6.18.3.76}setHotelCount()}{168}{subsubsection.6.18.3.76}%
+\contentsline {subsubsection}{\numberline {6.18.3.77}setHouseCount()}{169}{subsubsection.6.18.3.77}%
+\contentsline {subsubsection}{\numberline {6.18.3.78}setplayer\_index\_turn()}{169}{subsubsection.6.18.3.78}%
+\contentsline {subsubsection}{\numberline {6.18.3.79}setScreenType()}{170}{subsubsection.6.18.3.79}%
+\contentsline {subsubsection}{\numberline {6.18.3.80}showPropertyData()}{170}{subsubsection.6.18.3.80}%
+\contentsline {subsubsection}{\numberline {6.18.3.81}shuffleChanceCards()}{172}{subsubsection.6.18.3.81}%
+\contentsline {subsubsection}{\numberline {6.18.3.82}substractHotels()}{172}{subsubsection.6.18.3.82}%
+\contentsline {subsubsection}{\numberline {6.18.3.83}substractHouses()}{173}{subsubsection.6.18.3.83}%
+\contentsline {subsubsection}{\numberline {6.18.3.84}turnInfoTextShow()}{174}{subsubsection.6.18.3.84}%
+\contentsline {subsubsection}{\numberline {6.18.3.85}updateAvailableHousesHotelText()}{174}{subsubsection.6.18.3.85}%
+\contentsline {subsubsection}{\numberline {6.18.3.86}updateResultScreenStuff()}{175}{subsubsection.6.18.3.86}%
+\contentsline {subsubsection}{\numberline {6.18.3.87}updateTextPlayersInfo()}{176}{subsubsection.6.18.3.87}%
+\contentsline {section}{\numberline {6.19}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::mutation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}rate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}container Struct Reference}{176}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Member Function Documentation}{177}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}read()}{177}{subsubsection.6.19.1.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.2}write()}{177}{subsubsection.6.19.1.2}%
+\contentsline {subsection}{\numberline {6.19.2}Member Data Documentation}{177}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}bias\_mutation\_chance}{178}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}connection\_mutate\_chance}{178}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}crossover\_chance}{178}{subsubsection.6.19.2.3}%
+\contentsline {subsubsection}{\numberline {6.19.2.4}disable\_mutation\_chance}{178}{subsubsection.6.19.2.4}%
+\contentsline {subsubsection}{\numberline {6.19.2.5}enable\_mutation\_chance}{178}{subsubsection.6.19.2.5}%
+\contentsline {subsubsection}{\numberline {6.19.2.6}link\_mutation\_chance}{178}{subsubsection.6.19.2.6}%
+\contentsline {subsubsection}{\numberline {6.19.2.7}node\_mutation\_chance}{178}{subsubsection.6.19.2.7}%
+\contentsline {subsubsection}{\numberline {6.19.2.8}perturb\_chance}{178}{subsubsection.6.19.2.8}%
+\contentsline {subsubsection}{\numberline {6.19.2.9}step\_size}{179}{subsubsection.6.19.2.9}%
+\contentsline {section}{\numberline {6.20}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::network\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}info\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}container Struct Reference}{179}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Member Data Documentation}{179}{subsection.6.20.1}%
+\contentsline {subsubsection}{\numberline {6.20.1.1}bias\_size}{179}{subsubsection.6.20.1.1}%
+\contentsline {subsubsection}{\numberline {6.20.1.2}functional\_nodes}{179}{subsubsection.6.20.1.2}%
+\contentsline {subsubsection}{\numberline {6.20.1.3}input\_size}{179}{subsubsection.6.20.1.3}%
+\contentsline {subsubsection}{\numberline {6.20.1.4}output\_size}{180}{subsubsection.6.20.1.4}%
+\contentsline {subsubsection}{\numberline {6.20.1.5}recurrent}{180}{subsubsection.6.20.1.5}%
+\contentsline {section}{\numberline {6.21}ann\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::neuralnet Class Reference}{180}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Constructor \& Destructor Documentation}{180}{subsection.6.21.1}%
+\contentsline {subsubsection}{\numberline {6.21.1.1}neuralnet()}{180}{subsubsection.6.21.1.1}%
+\contentsline {subsection}{\numberline {6.21.2}Member Function Documentation}{180}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}evaluate()}{181}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}export\_tofile()}{181}{subsubsection.6.21.2.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.3}from\_genome()}{181}{subsubsection.6.21.2.3}%
+\contentsline {subsubsection}{\numberline {6.21.2.4}import\_fromfile()}{182}{subsubsection.6.21.2.4}%
+\contentsline {section}{\numberline {6.22}ann\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::neuron Class Reference}{182}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Constructor \& Destructor Documentation}{182}{subsection.6.22.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.1}neuron()}{182}{subsubsection.6.22.1.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.2}$\sim $neuron()}{183}{subsubsection.6.22.1.2}%
+\contentsline {subsection}{\numberline {6.22.2}Member Data Documentation}{183}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}in\_nodes}{183}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}type}{183}{subsubsection.6.22.2.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.3}value}{183}{subsubsection.6.22.2.3}%
+\contentsline {subsubsection}{\numberline {6.22.2.4}visited}{183}{subsubsection.6.22.2.4}%
+\contentsline {section}{\numberline {6.23}Notification\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall Class Reference}{183}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{184}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Constructor \& Destructor Documentation}{184}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}NotificationWall()}{184}{subsubsection.6.23.2.1}%
+\contentsline {subsection}{\numberline {6.23.3}Member Function Documentation}{184}{subsection.6.23.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.1}addToWall()}{184}{subsubsection.6.23.3.1}%
+\contentsline {subsubsection}{\numberline {6.23.3.2}clearWall()}{185}{subsubsection.6.23.3.2}%
+\contentsline {subsubsection}{\numberline {6.23.3.3}getFont()}{185}{subsubsection.6.23.3.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.4}getFontSize()}{186}{subsubsection.6.23.3.4}%
+\contentsline {subsubsection}{\numberline {6.23.3.5}getWall()}{186}{subsubsection.6.23.3.5}%
+\contentsline {subsubsection}{\numberline {6.23.3.6}setFont()}{187}{subsubsection.6.23.3.6}%
+\contentsline {section}{\numberline {6.24}Player Class Reference}{187}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{189}{subsection.6.24.1}%
+\contentsline {subsection}{\numberline {6.24.2}Constructor \& Destructor Documentation}{189}{subsection.6.24.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.1}Player()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{189}{subsubsection.6.24.2.1}%
+\contentsline {subsubsection}{\numberline {6.24.2.2}Player()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{190}{subsubsection.6.24.2.2}%
+\contentsline {subsection}{\numberline {6.24.3}Member Function Documentation}{190}{subsection.6.24.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.1}addFieldOwnedId()}{190}{subsubsection.6.24.3.1}%
+\contentsline {subsubsection}{\numberline {6.24.3.2}addMoney()}{191}{subsubsection.6.24.3.2}%
+\contentsline {subsubsection}{\numberline {6.24.3.3}clearFieldOwnedId()}{191}{subsubsection.6.24.3.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.4}createSprite()}{192}{subsubsection.6.24.3.4}%
+\contentsline {subsubsection}{\numberline {6.24.3.5}decideAcceptTrade()}{192}{subsubsection.6.24.3.5}%
+\contentsline {subsubsection}{\numberline {6.24.3.6}decideAuctionBid()}{192}{subsubsection.6.24.3.6}%
+\contentsline {subsubsection}{\numberline {6.24.3.7}decideBuildHouse()}{192}{subsubsection.6.24.3.7}%
+\contentsline {subsubsection}{\numberline {6.24.3.8}decideBuy()}{193}{subsubsection.6.24.3.8}%
+\contentsline {subsubsection}{\numberline {6.24.3.9}decideJail()}{193}{subsubsection.6.24.3.9}%
+\contentsline {subsubsection}{\numberline {6.24.3.10}decideMortgage()}{193}{subsubsection.6.24.3.10}%
+\contentsline {subsubsection}{\numberline {6.24.3.11}decideOfferTrade()}{194}{subsubsection.6.24.3.11}%
+\contentsline {subsubsection}{\numberline {6.24.3.12}decideSellHouse()}{194}{subsubsection.6.24.3.12}%
+\contentsline {subsubsection}{\numberline {6.24.3.13}decideUnmortgage()}{194}{subsubsection.6.24.3.13}%
+\contentsline {subsubsection}{\numberline {6.24.3.14}getAdapter()}{195}{subsubsection.6.24.3.14}%
+\contentsline {subsubsection}{\numberline {6.24.3.15}getAiLevel()}{195}{subsubsection.6.24.3.15}%
+\contentsline {subsubsection}{\numberline {6.24.3.16}getColor()}{196}{subsubsection.6.24.3.16}%
+\contentsline {subsubsection}{\numberline {6.24.3.17}getFieldOwnedId()}{196}{subsubsection.6.24.3.17}%
+\contentsline {subsubsection}{\numberline {6.24.3.18}getId()}{196}{subsubsection.6.24.3.18}%
+\contentsline {subsubsection}{\numberline {6.24.3.19}getIsAi()}{196}{subsubsection.6.24.3.19}%
+\contentsline {subsubsection}{\numberline {6.24.3.20}getJailCards()}{196}{subsubsection.6.24.3.20}%
+\contentsline {subsubsection}{\numberline {6.24.3.21}getJailStatus()}{197}{subsubsection.6.24.3.21}%
+\contentsline {subsubsection}{\numberline {6.24.3.22}getMoney()}{197}{subsubsection.6.24.3.22}%
+\contentsline {subsubsection}{\numberline {6.24.3.23}getNeuralNetwork()}{197}{subsubsection.6.24.3.23}%
+\contentsline {subsubsection}{\numberline {6.24.3.24}getPosition()}{198}{subsubsection.6.24.3.24}%
+\contentsline {subsubsection}{\numberline {6.24.3.25}getResultPlace()}{198}{subsubsection.6.24.3.25}%
+\contentsline {subsubsection}{\numberline {6.24.3.26}getSprite()}{198}{subsubsection.6.24.3.26}%
+\contentsline {subsubsection}{\numberline {6.24.3.27}getSpriteOffsetX()}{198}{subsubsection.6.24.3.27}%
+\contentsline {subsubsection}{\numberline {6.24.3.28}getSpriteOffsetY()}{198}{subsubsection.6.24.3.28}%
+\contentsline {subsubsection}{\numberline {6.24.3.29}getTexture()}{198}{subsubsection.6.24.3.29}%
+\contentsline {subsubsection}{\numberline {6.24.3.30}hasFieldOwnedId()}{198}{subsubsection.6.24.3.30}%
+\contentsline {subsubsection}{\numberline {6.24.3.31}reduceJailStatus()}{199}{subsubsection.6.24.3.31}%
+\contentsline {subsubsection}{\numberline {6.24.3.32}removeFieldOwnedId()}{199}{subsubsection.6.24.3.32}%
+\contentsline {subsubsection}{\numberline {6.24.3.33}setAiLevel()}{199}{subsubsection.6.24.3.33}%
+\contentsline {subsubsection}{\numberline {6.24.3.34}setColor()}{200}{subsubsection.6.24.3.34}%
+\contentsline {subsubsection}{\numberline {6.24.3.35}setId()}{200}{subsubsection.6.24.3.35}%
+\contentsline {subsubsection}{\numberline {6.24.3.36}setIsAi()}{201}{subsubsection.6.24.3.36}%
+\contentsline {subsubsection}{\numberline {6.24.3.37}setJailCards()}{202}{subsubsection.6.24.3.37}%
+\contentsline {subsubsection}{\numberline {6.24.3.38}setJailStatus()}{202}{subsubsection.6.24.3.38}%
+\contentsline {subsubsection}{\numberline {6.24.3.39}setMoney()}{203}{subsubsection.6.24.3.39}%
+\contentsline {subsubsection}{\numberline {6.24.3.40}setPosition()}{203}{subsubsection.6.24.3.40}%
+\contentsline {subsubsection}{\numberline {6.24.3.41}setResultPlace()}{204}{subsubsection.6.24.3.41}%
+\contentsline {subsubsection}{\numberline {6.24.3.42}setSpriteOffsetX()}{204}{subsubsection.6.24.3.42}%
+\contentsline {subsubsection}{\numberline {6.24.3.43}setSpriteOffsetY()}{205}{subsubsection.6.24.3.43}%
+\contentsline {subsubsection}{\numberline {6.24.3.44}setSpritePosition()}{205}{subsubsection.6.24.3.44}%
+\contentsline {subsubsection}{\numberline {6.24.3.45}substractMoney()}{205}{subsubsection.6.24.3.45}%
+\contentsline {section}{\numberline {6.25}player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings Struct Reference}{206}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{206}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Member Data Documentation}{206}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}isHuman}{206}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}isNone}{206}{subsubsection.6.25.2.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.3}level}{206}{subsubsection.6.25.2.3}%
+\contentsline {section}{\numberline {6.26}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::pool Class Reference}{207}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Constructor \& Destructor Documentation}{207}{subsection.6.26.1}%
+\contentsline {subsubsection}{\numberline {6.26.1.1}pool()}{207}{subsubsection.6.26.1.1}%
+\contentsline {subsection}{\numberline {6.26.2}Member Function Documentation}{208}{subsection.6.26.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.1}export\_tofile()}{208}{subsubsection.6.26.2.1}%
+\contentsline {subsubsection}{\numberline {6.26.2.2}generation()}{208}{subsubsection.6.26.2.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.3}get\_genomes()}{208}{subsubsection.6.26.2.3}%
+\contentsline {subsubsection}{\numberline {6.26.2.4}import\_fromfile()}{208}{subsubsection.6.26.2.4}%
+\contentsline {subsubsection}{\numberline {6.26.2.5}new\_generation()}{208}{subsubsection.6.26.2.5}%
+\contentsline {subsection}{\numberline {6.26.3}Member Data Documentation}{209}{subsection.6.26.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.1}generator}{209}{subsubsection.6.26.3.1}%
+\contentsline {subsubsection}{\numberline {6.26.3.2}max\_fitness}{209}{subsubsection.6.26.3.2}%
+\contentsline {subsubsection}{\numberline {6.26.3.3}mutation\_rates}{209}{subsubsection.6.26.3.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.4}network\_info}{209}{subsubsection.6.26.3.4}%
+\contentsline {subsubsection}{\numberline {6.26.3.5}rd}{209}{subsubsection.6.26.3.5}%
+\contentsline {subsubsection}{\numberline {6.26.3.6}speciating\_parameters}{209}{subsubsection.6.26.3.6}%
+\contentsline {subsubsection}{\numberline {6.26.3.7}species}{209}{subsubsection.6.26.3.7}%
+\contentsline {section}{\numberline {6.27}Property\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field Class Reference}{210}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Detailed Description}{211}{subsection.6.27.1}%
+\contentsline {subsection}{\numberline {6.27.2}Constructor \& Destructor Documentation}{211}{subsection.6.27.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.1}PropertyField()}{211}{subsubsection.6.27.2.1}%
+\contentsline {subsection}{\numberline {6.27.3}Member Function Documentation}{212}{subsection.6.27.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.1}createFlagSprite()}{212}{subsubsection.6.27.3.1}%
+\contentsline {subsubsection}{\numberline {6.27.3.2}getGroupMembers()}{213}{subsubsection.6.27.3.2}%
+\contentsline {subsubsection}{\numberline {6.27.3.3}getIsMortgaged()}{213}{subsubsection.6.27.3.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.4}getMortgage()}{214}{subsubsection.6.27.3.4}%
+\contentsline {subsubsection}{\numberline {6.27.3.5}getOwner()}{215}{subsubsection.6.27.3.5}%
+\contentsline {subsubsection}{\numberline {6.27.3.6}getOwnerFlag()}{215}{subsubsection.6.27.3.6}%
+\contentsline {subsubsection}{\numberline {6.27.3.7}getPrice()}{216}{subsubsection.6.27.3.7}%
+\contentsline {subsubsection}{\numberline {6.27.3.8}getUnmortgageValue()}{216}{subsubsection.6.27.3.8}%
+\contentsline {subsubsection}{\numberline {6.27.3.9}resetDefault()}{217}{subsubsection.6.27.3.9}%
+\contentsline {subsubsection}{\numberline {6.27.3.10}resetOwner()}{217}{subsubsection.6.27.3.10}%
+\contentsline {subsubsection}{\numberline {6.27.3.11}setIsMortgaged()}{217}{subsubsection.6.27.3.11}%
+\contentsline {subsubsection}{\numberline {6.27.3.12}setOwner()}{218}{subsubsection.6.27.3.12}%
+\contentsline {section}{\numberline {6.28}Rotation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception Class Reference}{218}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Detailed Description}{219}{subsection.6.28.1}%
+\contentsline {subsection}{\numberline {6.28.2}Constructor \& Destructor Documentation}{219}{subsection.6.28.2}%
+\contentsline {subsubsection}{\numberline {6.28.2.1}RotationException()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{219}{subsubsection.6.28.2.1}%
+\contentsline {subsubsection}{\numberline {6.28.2.2}RotationException()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{220}{subsubsection.6.28.2.2}%
+\contentsline {subsection}{\numberline {6.28.3}Member Function Documentation}{220}{subsection.6.28.3}%
+\contentsline {subsubsection}{\numberline {6.28.3.1}getBadRotation()}{220}{subsubsection.6.28.3.1}%
+\contentsline {section}{\numberline {6.29}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::speciating\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}parameter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}container Struct Reference}{220}{section.6.29}%
+\contentsline {subsection}{\numberline {6.29.1}Member Function Documentation}{220}{subsection.6.29.1}%
+\contentsline {subsubsection}{\numberline {6.29.1.1}read()}{220}{subsubsection.6.29.1.1}%
+\contentsline {subsubsection}{\numberline {6.29.1.2}write()}{221}{subsubsection.6.29.1.2}%
+\contentsline {subsection}{\numberline {6.29.2}Member Data Documentation}{221}{subsection.6.29.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.1}delta\_disjoint}{221}{subsubsection.6.29.2.1}%
+\contentsline {subsubsection}{\numberline {6.29.2.2}delta\_threshold}{221}{subsubsection.6.29.2.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.3}delta\_weights}{221}{subsubsection.6.29.2.3}%
+\contentsline {subsubsection}{\numberline {6.29.2.4}population}{221}{subsubsection.6.29.2.4}%
+\contentsline {subsubsection}{\numberline {6.29.2.5}stale\_species}{221}{subsubsection.6.29.2.5}%
+\contentsline {section}{\numberline {6.30}neat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::specie Struct Reference}{222}{section.6.30}%
+\contentsline {subsection}{\numberline {6.30.1}Member Data Documentation}{222}{subsection.6.30.1}%
+\contentsline {subsubsection}{\numberline {6.30.1.1}average\_fitness}{222}{subsubsection.6.30.1.1}%
+\contentsline {subsubsection}{\numberline {6.30.1.2}genomes}{222}{subsubsection.6.30.1.2}%
+\contentsline {subsubsection}{\numberline {6.30.1.3}staleness}{222}{subsubsection.6.30.1.3}%
+\contentsline {subsubsection}{\numberline {6.30.1.4}top\_fitness}{222}{subsubsection.6.30.1.4}%
+\contentsline {section}{\numberline {6.31}Sprite\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Offset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception Class Reference}{223}{section.6.31}%
+\contentsline {subsection}{\numberline {6.31.1}Detailed Description}{223}{subsection.6.31.1}%
+\contentsline {subsection}{\numberline {6.31.2}Constructor \& Destructor Documentation}{223}{subsection.6.31.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.1}SpriteOffsetException()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{224}{subsubsection.6.31.2.1}%
+\contentsline {subsubsection}{\numberline {6.31.2.2}SpriteOffsetException()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{224}{subsubsection.6.31.2.2}%
+\contentsline {subsection}{\numberline {6.31.3}Member Function Documentation}{224}{subsection.6.31.3}%
+\contentsline {subsubsection}{\numberline {6.31.3.1}getBadOffset()}{224}{subsubsection.6.31.3.1}%
+\contentsline {section}{\numberline {6.32}Station\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field Class Reference}{224}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Detailed Description}{225}{subsection.6.32.1}%
+\contentsline {subsection}{\numberline {6.32.2}Constructor \& Destructor Documentation}{225}{subsection.6.32.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.1}StationField()}{225}{subsubsection.6.32.2.1}%
+\contentsline {subsection}{\numberline {6.32.3}Member Function Documentation}{226}{subsection.6.32.3}%
+\contentsline {subsubsection}{\numberline {6.32.3.1}calculateRent()}{226}{subsubsection.6.32.3.1}%
+\contentsline {subsubsection}{\numberline {6.32.3.2}getRentValues()}{226}{subsubsection.6.32.3.2}%
+\contentsline {section}{\numberline {6.33}Street\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field Class Reference}{227}{section.6.33}%
+\contentsline {subsection}{\numberline {6.33.1}Detailed Description}{228}{subsection.6.33.1}%
+\contentsline {subsection}{\numberline {6.33.2}Constructor \& Destructor Documentation}{229}{subsection.6.33.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.1}StreetField()}{229}{subsubsection.6.33.2.1}%
+\contentsline {subsection}{\numberline {6.33.3}Member Function Documentation}{229}{subsection.6.33.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.1}calculateRent()}{229}{subsubsection.6.33.3.1}%
+\contentsline {subsubsection}{\numberline {6.33.3.2}getHotelPrice()}{230}{subsubsection.6.33.3.2}%
+\contentsline {subsubsection}{\numberline {6.33.3.3}getHouseNumber()}{230}{subsubsection.6.33.3.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.4}getHousePrice()}{231}{subsubsection.6.33.3.4}%
+\contentsline {subsubsection}{\numberline {6.33.3.5}getIsHotel()}{231}{subsubsection.6.33.3.5}%
+\contentsline {subsubsection}{\numberline {6.33.3.6}getRentValues()}{232}{subsubsection.6.33.3.6}%
+\contentsline {subsubsection}{\numberline {6.33.3.7}resetDefault()}{232}{subsubsection.6.33.3.7}%
+\contentsline {subsubsection}{\numberline {6.33.3.8}setHouseNumber()}{232}{subsubsection.6.33.3.8}%
+\contentsline {subsubsection}{\numberline {6.33.3.9}setIsHotel()}{233}{subsubsection.6.33.3.9}%
+\contentsline {section}{\numberline {6.34}Tax\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field Class Reference}{233}{section.6.34}%
+\contentsline {subsection}{\numberline {6.34.1}Detailed Description}{234}{subsection.6.34.1}%
+\contentsline {subsection}{\numberline {6.34.2}Constructor \& Destructor Documentation}{234}{subsection.6.34.2}%
+\contentsline {subsubsection}{\numberline {6.34.2.1}TaxField()}{235}{subsubsection.6.34.2.1}%
+\contentsline {subsection}{\numberline {6.34.3}Member Function Documentation}{235}{subsection.6.34.3}%
+\contentsline {subsubsection}{\numberline {6.34.3.1}getTaxValue()}{235}{subsubsection.6.34.3.1}%
+\contentsline {section}{\numberline {6.35}Utility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field Class Reference}{236}{section.6.35}%
+\contentsline {subsection}{\numberline {6.35.1}Constructor \& Destructor Documentation}{237}{subsection.6.35.1}%
+\contentsline {subsubsection}{\numberline {6.35.1.1}UtilityField()}{237}{subsubsection.6.35.1.1}%
+\contentsline {subsection}{\numberline {6.35.2}Member Function Documentation}{237}{subsection.6.35.2}%
+\contentsline {subsubsection}{\numberline {6.35.2.1}calculateRent()}{237}{subsubsection.6.35.2.1}%
+\contentsline {subsubsection}{\numberline {6.35.2.2}getRentMultipliers()}{238}{subsubsection.6.35.2.2}%
+\contentsline {section}{\numberline {6.36}Withdraw Class Reference}{238}{section.6.36}%
+\contentsline {subsection}{\numberline {6.36.1}Detailed Description}{242}{subsection.6.36.1}%
+\contentsline {subsection}{\numberline {6.36.2}Constructor \& Destructor Documentation}{242}{subsection.6.36.2}%
+\contentsline {subsubsection}{\numberline {6.36.2.1}Withdraw()}{242}{subsubsection.6.36.2.1}%
+\contentsline {subsection}{\numberline {6.36.3}Member Function Documentation}{242}{subsection.6.36.3}%
+\contentsline {subsubsection}{\numberline {6.36.3.1}addPropertyPlayerShowed()}{242}{subsubsection.6.36.3.1}%
+\contentsline {subsubsection}{\numberline {6.36.3.2}createChoosePlayerScreen()}{243}{subsubsection.6.36.3.2}%
+\contentsline {subsubsection}{\numberline {6.36.3.3}createDecisionPlayerScreen()}{243}{subsubsection.6.36.3.3}%
+\contentsline {subsubsection}{\numberline {6.36.3.4}createValuePlayerScreen()}{244}{subsubsection.6.36.3.4}%
+\contentsline {subsubsection}{\numberline {6.36.3.5}getAcceptDecisionButton()}{244}{subsubsection.6.36.3.5}%
+\contentsline {subsubsection}{\numberline {6.36.3.6}getButtons()}{245}{subsubsection.6.36.3.6}%
+\contentsline {subsubsection}{\numberline {6.36.3.7}getFont()}{245}{subsubsection.6.36.3.7}%
+\contentsline {subsubsection}{\numberline {6.36.3.8}getFontSize()}{246}{subsubsection.6.36.3.8}%
+\contentsline {subsubsection}{\numberline {6.36.3.9}getPlayer1AddButton()}{246}{subsubsection.6.36.3.9}%
+\contentsline {subsubsection}{\numberline {6.36.3.10}getPlayer1Button()}{246}{subsubsection.6.36.3.10}%
+\contentsline {subsubsection}{\numberline {6.36.3.11}getPlayer1IndexNextButton()}{247}{subsubsection.6.36.3.11}%
+\contentsline {subsubsection}{\numberline {6.36.3.12}getPlayer1IndexPreviousButton()}{247}{subsubsection.6.36.3.12}%
+\contentsline {subsubsection}{\numberline {6.36.3.13}getPlayer1IndexProperties()}{247}{subsubsection.6.36.3.13}%
+\contentsline {subsubsection}{\numberline {6.36.3.14}getPlayer1minus1()}{247}{subsubsection.6.36.3.14}%
+\contentsline {subsubsection}{\numberline {6.36.3.15}getPlayer1minus10()}{248}{subsubsection.6.36.3.15}%
+\contentsline {subsubsection}{\numberline {6.36.3.16}getPlayer1minus100()}{248}{subsubsection.6.36.3.16}%
+\contentsline {subsubsection}{\numberline {6.36.3.17}getPlayer1NextButton()}{248}{subsubsection.6.36.3.17}%
+\contentsline {subsubsection}{\numberline {6.36.3.18}getPlayer1plus1()}{248}{subsubsection.6.36.3.18}%
+\contentsline {subsubsection}{\numberline {6.36.3.19}getPlayer1plus10()}{249}{subsubsection.6.36.3.19}%
+\contentsline {subsubsection}{\numberline {6.36.3.20}getPlayer1plus100()}{249}{subsubsection.6.36.3.20}%
+\contentsline {subsubsection}{\numberline {6.36.3.21}getPlayer1PreviousButton()}{249}{subsubsection.6.36.3.21}%
+\contentsline {subsubsection}{\numberline {6.36.3.22}getPlayer1RemoveButton()}{249}{subsubsection.6.36.3.22}%
+\contentsline {subsubsection}{\numberline {6.36.3.23}getPlayer1ToWithdraw()}{250}{subsubsection.6.36.3.23}%
+\contentsline {subsubsection}{\numberline {6.36.3.24}getPlayer2AddButton()}{250}{subsubsection.6.36.3.24}%
+\contentsline {subsubsection}{\numberline {6.36.3.25}getPlayer2Button()}{250}{subsubsection.6.36.3.25}%
+\contentsline {subsubsection}{\numberline {6.36.3.26}getPlayer2IndexNextButton()}{250}{subsubsection.6.36.3.26}%
+\contentsline {subsubsection}{\numberline {6.36.3.27}getPlayer2IndexPreviousButton()}{251}{subsubsection.6.36.3.27}%
+\contentsline {subsubsection}{\numberline {6.36.3.28}getPlayer2IndexProperties()}{251}{subsubsection.6.36.3.28}%
+\contentsline {subsubsection}{\numberline {6.36.3.29}getPlayer2minus1()}{251}{subsubsection.6.36.3.29}%
+\contentsline {subsubsection}{\numberline {6.36.3.30}getPlayer2minus10()}{251}{subsubsection.6.36.3.30}%
+\contentsline {subsubsection}{\numberline {6.36.3.31}getPlayer2minus100()}{252}{subsubsection.6.36.3.31}%
+\contentsline {subsubsection}{\numberline {6.36.3.32}getPlayer2NextButton()}{252}{subsubsection.6.36.3.32}%
+\contentsline {subsubsection}{\numberline {6.36.3.33}getPlayer2plus1()}{252}{subsubsection.6.36.3.33}%
+\contentsline {subsubsection}{\numberline {6.36.3.34}getPlayer2plus10()}{252}{subsubsection.6.36.3.34}%
+\contentsline {subsubsection}{\numberline {6.36.3.35}getPlayer2plus100()}{253}{subsubsection.6.36.3.35}%
+\contentsline {subsubsection}{\numberline {6.36.3.36}getPlayer2PreviousButton()}{253}{subsubsection.6.36.3.36}%
+\contentsline {subsubsection}{\numberline {6.36.3.37}getPlayer2RemoveButton()}{253}{subsubsection.6.36.3.37}%
+\contentsline {subsubsection}{\numberline {6.36.3.38}getPlayer2ToWithdraw()}{253}{subsubsection.6.36.3.38}%
+\contentsline {subsubsection}{\numberline {6.36.3.39}getPlayer3Button()}{254}{subsubsection.6.36.3.39}%
+\contentsline {subsubsection}{\numberline {6.36.3.40}getPlayer4Button()}{254}{subsubsection.6.36.3.40}%
+\contentsline {subsubsection}{\numberline {6.36.3.41}getResignButton()}{254}{subsubsection.6.36.3.41}%
+\contentsline {subsubsection}{\numberline {6.36.3.42}getResignDecisionButton()}{254}{subsubsection.6.36.3.42}%
+\contentsline {subsubsection}{\numberline {6.36.3.43}getResignValueButton()}{255}{subsubsection.6.36.3.43}%
+\contentsline {subsubsection}{\numberline {6.36.3.44}getSpritePropertyPlayer1()}{255}{subsubsection.6.36.3.44}%
+\contentsline {subsubsection}{\numberline {6.36.3.45}getSpritePropertyPlayer1Index()}{255}{subsubsection.6.36.3.45}%
+\contentsline {subsubsection}{\numberline {6.36.3.46}getSpritePropertyPlayer2()}{256}{subsubsection.6.36.3.46}%
+\contentsline {subsubsection}{\numberline {6.36.3.47}getSpritePropertyPlayer2Index()}{256}{subsubsection.6.36.3.47}%
+\contentsline {subsubsection}{\numberline {6.36.3.48}getSubmitValueButton()}{257}{subsubsection.6.36.3.48}%
+\contentsline {subsubsection}{\numberline {6.36.3.49}getTexts()}{257}{subsubsection.6.36.3.49}%
+\contentsline {subsubsection}{\numberline {6.36.3.50}getTextsPropertyPlayer1()}{257}{subsubsection.6.36.3.50}%
+\contentsline {subsubsection}{\numberline {6.36.3.51}getTextsPropertyPlayer1Index()}{258}{subsubsection.6.36.3.51}%
+\contentsline {subsubsection}{\numberline {6.36.3.52}getTextsPropertyPlayer2()}{258}{subsubsection.6.36.3.52}%
+\contentsline {subsubsection}{\numberline {6.36.3.53}getTextsPropertyPlayer2Index()}{259}{subsubsection.6.36.3.53}%
+\contentsline {subsubsection}{\numberline {6.36.3.54}getTexturePropertyPlayer1()}{259}{subsubsection.6.36.3.54}%
+\contentsline {subsubsection}{\numberline {6.36.3.55}getTexturePropertyPlayer1Index()}{260}{subsubsection.6.36.3.55}%
+\contentsline {subsubsection}{\numberline {6.36.3.56}getTexturePropertyPlayer2()}{260}{subsubsection.6.36.3.56}%
+\contentsline {subsubsection}{\numberline {6.36.3.57}getTexturePropertyPlayer2Index()}{261}{subsubsection.6.36.3.57}%
+\contentsline {subsubsection}{\numberline {6.36.3.58}getTurnState()}{261}{subsubsection.6.36.3.58}%
+\contentsline {subsubsection}{\numberline {6.36.3.59}isNonZeroValue()}{261}{subsubsection.6.36.3.59}%
+\contentsline {subsubsection}{\numberline {6.36.3.60}makeWithdraw()}{262}{subsubsection.6.36.3.60}%
+\contentsline {subsubsection}{\numberline {6.36.3.61}moneyTextUpdate()}{262}{subsubsection.6.36.3.61}%
+\contentsline {subsubsection}{\numberline {6.36.3.62}moneyTransferIndex()}{262}{subsubsection.6.36.3.62}%
+\contentsline {subsubsection}{\numberline {6.36.3.63}propertyPlayerMoveIndex()}{263}{subsubsection.6.36.3.63}%
+\contentsline {subsubsection}{\numberline {6.36.3.64}setBoard()}{263}{subsubsection.6.36.3.64}%
+\contentsline {subsubsection}{\numberline {6.36.3.65}setChooseScreenVisible()}{264}{subsubsection.6.36.3.65}%
+\contentsline {subsubsection}{\numberline {6.36.3.66}setDecisionScreenVisible()}{264}{subsubsection.6.36.3.66}%
+\contentsline {subsubsection}{\numberline {6.36.3.67}setFont()}{265}{subsubsection.6.36.3.67}%
+\contentsline {subsubsection}{\numberline {6.36.3.68}setPlayer1IndexProperties()}{266}{subsubsection.6.36.3.68}%
+\contentsline {subsubsection}{\numberline {6.36.3.69}setPlayer1ToWithdraw()}{266}{subsubsection.6.36.3.69}%
+\contentsline {subsubsection}{\numberline {6.36.3.70}setPlayer2IndexProperties()}{266}{subsubsection.6.36.3.70}%
+\contentsline {subsubsection}{\numberline {6.36.3.71}setPlayer2ToWithdraw()}{266}{subsubsection.6.36.3.71}%
+\contentsline {subsubsection}{\numberline {6.36.3.72}setTurnState()}{267}{subsubsection.6.36.3.72}%
+\contentsline {subsubsection}{\numberline {6.36.3.73}setValueScreenVisible()}{267}{subsubsection.6.36.3.73}%
+\contentsline {subsubsection}{\numberline {6.36.3.74}showProperty()}{268}{subsubsection.6.36.3.74}%
+\contentsline {chapter}{\numberline {7}File Documentation}{271}{chapter.7}%
+\contentsline {section}{\numberline {7.1}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Active\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen.cc File Reference}{271}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{271}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Active\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen.h File Reference}{272}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{273}{subsection.7.2.1}%
+\contentsline {section}{\numberline {7.3}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ai\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Adapter.cc File Reference}{273}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{273}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ai\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Adapter.h File Reference}{274}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{274}{subsection.7.4.1}%
+\contentsline {section}{\numberline {7.5}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board.cc File Reference}{275}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{275}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Typedef Documentation}{275}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}json}{275}{subsubsection.7.5.2.1}%
+\contentsline {subsection}{\numberline {7.5.3}Function Documentation}{276}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}jsonToStationRent()}{276}{subsubsection.7.5.3.1}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}jsonToStreetRent()}{276}{subsubsection.7.5.3.2}%
+\contentsline {subsubsection}{\numberline {7.5.3.3}jsonToUtilityRent()}{277}{subsubsection.7.5.3.3}%
+\contentsline {section}{\numberline {7.6}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board.h File Reference}{277}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{279}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Typedef Documentation}{279}{subsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.1}json}{279}{subsubsection.7.6.2.1}%
+\contentsline {subsubsection}{\numberline {7.6.2.2}PossibleFields}{279}{subsubsection.7.6.2.2}%
+\contentsline {subsection}{\numberline {7.6.3}Function Documentation}{279}{subsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.1}jsonToStationRent()}{279}{subsubsection.7.6.3.1}%
+\contentsline {subsubsection}{\numberline {7.6.3.2}jsonToStreetRent()}{280}{subsubsection.7.6.3.2}%
+\contentsline {subsubsection}{\numberline {7.6.3.3}jsonToUtilityRent()}{281}{subsubsection.7.6.3.3}%
+\contentsline {section}{\numberline {7.7}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button.cc File Reference}{281}{section.7.7}%
+\contentsline {section}{\numberline {7.8}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button.h File Reference}{282}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{283}{subsection.7.8.1}%
+\contentsline {section}{\numberline {7.9}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chance.cc File Reference}{283}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{283}{subsection.7.9.1}%
+\contentsline {section}{\numberline {7.10}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chance.h File Reference}{284}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{285}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Enumeration Type Documentation}{285}{subsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.1}ChanceType}{285}{subsubsection.7.10.2.1}%
+\contentsline {section}{\numberline {7.11}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.cc File Reference}{285}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{286}{subsection.7.11.1}%
+\contentsline {section}{\numberline {7.12}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.h File Reference}{286}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{287}{subsection.7.12.1}%
+\contentsline {section}{\numberline {7.13}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field.cc File Reference}{287}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{288}{subsection.7.13.1}%
+\contentsline {section}{\numberline {7.14}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Field.h File Reference}{288}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Detailed Description}{289}{subsection.7.14.1}%
+\contentsline {section}{\numberline {7.15}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine.cc File Reference}{290}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{290}{subsection.7.15.1}%
+\contentsline {section}{\numberline {7.16}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine.h File Reference}{290}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{291}{subsection.7.16.1}%
+\contentsline {section}{\numberline {7.17}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen.cc File Reference}{291}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{292}{subsection.7.17.1}%
+\contentsline {section}{\numberline {7.18}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Screen.h File Reference}{292}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{293}{subsection.7.18.1}%
+\contentsline {section}{\numberline {7.19}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/main.cc File Reference}{293}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{293}{subsection.7.19.1}%
+\contentsline {subsection}{\numberline {7.19.2}Function Documentation}{294}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}main()}{294}{subsubsection.7.19.2.1}%
+\contentsline {subsection}{\numberline {7.19.3}Variable Documentation}{294}{subsection.7.19.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.1}FRAMES\_PER\_SEC\_MAX}{294}{subsubsection.7.19.3.1}%
+\contentsline {subsubsection}{\numberline {7.19.3.2}GAMES\_IN\_ROUND}{294}{subsubsection.7.19.3.2}%
+\contentsline {subsubsection}{\numberline {7.19.3.3}height}{294}{subsubsection.7.19.3.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.4}HEIGHT\_MAX}{294}{subsubsection.7.19.3.4}%
+\contentsline {subsubsection}{\numberline {7.19.3.5}TRAIN}{294}{subsubsection.7.19.3.5}%
+\contentsline {subsubsection}{\numberline {7.19.3.6}width}{295}{subsubsection.7.19.3.6}%
+\contentsline {subsubsection}{\numberline {7.19.3.7}WIDTH\_MAX}{295}{subsubsection.7.19.3.7}%
+\contentsline {section}{\numberline {7.20}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/main.h File Reference}{295}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Detailed Description}{296}{subsection.7.20.1}%
+\contentsline {subsection}{\numberline {7.20.2}Enumeration Type Documentation}{297}{subsection.7.20.2}%
+\contentsline {subsubsection}{\numberline {7.20.2.1}ActiveScreenType}{297}{subsubsection.7.20.2.1}%
+\contentsline {subsubsection}{\numberline {7.20.2.2}BuyDecision}{297}{subsubsection.7.20.2.2}%
+\contentsline {subsubsection}{\numberline {7.20.2.3}Decision}{297}{subsubsection.7.20.2.3}%
+\contentsline {subsubsection}{\numberline {7.20.2.4}FieldType}{297}{subsubsection.7.20.2.4}%
+\contentsline {subsubsection}{\numberline {7.20.2.5}GameScreenType}{299}{subsubsection.7.20.2.5}%
+\contentsline {subsubsection}{\numberline {7.20.2.6}JailDecision}{299}{subsubsection.7.20.2.6}%
+\contentsline {subsubsection}{\numberline {7.20.2.7}ScreenEventType}{299}{subsubsection.7.20.2.7}%
+\contentsline {subsubsection}{\numberline {7.20.2.8}StationTiers}{300}{subsubsection.7.20.2.8}%
+\contentsline {subsubsection}{\numberline {7.20.2.9}StreetTiers}{301}{subsubsection.7.20.2.9}%
+\contentsline {subsubsection}{\numberline {7.20.2.10}TurnState}{301}{subsubsection.7.20.2.10}%
+\contentsline {subsubsection}{\numberline {7.20.2.11}UtilityTiers}{301}{subsubsection.7.20.2.11}%
+\contentsline {section}{\numberline {7.21}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine.cc File Reference}{302}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{302}{subsection.7.21.1}%
+\contentsline {section}{\numberline {7.22}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine.h File Reference}{302}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Detailed Description}{303}{subsection.7.22.1}%
+\contentsline {subsection}{\numberline {7.22.2}Enumeration Type Documentation}{304}{subsection.7.22.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.1}AuctionState}{304}{subsubsection.7.22.2.1}%
+\contentsline {section}{\numberline {7.23}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Notification\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall.cc File Reference}{304}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Detailed Description}{304}{subsection.7.23.1}%
+\contentsline {section}{\numberline {7.24}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Notification\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall.h File Reference}{305}{section.7.24}%
+\contentsline {subsection}{\numberline {7.24.1}Detailed Description}{306}{subsection.7.24.1}%
+\contentsline {section}{\numberline {7.25}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player.cc File Reference}{306}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Detailed Description}{306}{subsection.7.25.1}%
+\contentsline {section}{\numberline {7.26}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player.h File Reference}{306}{section.7.26}%
+\contentsline {subsection}{\numberline {7.26.1}Detailed Description}{307}{subsection.7.26.1}%
+\contentsline {section}{\numberline {7.27}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tinyann.cc File Reference}{308}{section.7.27}%
+\contentsline {section}{\numberline {7.28}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tinyann.h File Reference}{308}{section.7.28}%
+\contentsline {subsection}{\numberline {7.28.1}Detailed Description}{309}{subsection.7.28.1}%
+\contentsline {section}{\numberline {7.29}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tinyneat.cc File Reference}{310}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Detailed Description}{310}{subsection.7.29.1}%
+\contentsline {section}{\numberline {7.30}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tinyneat.h File Reference}{310}{section.7.30}%
+\contentsline {subsection}{\numberline {7.30.1}Detailed Description}{311}{subsection.7.30.1}%
+\contentsline {section}{\numberline {7.31}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Withdraw.cc File Reference}{312}{section.7.31}%
+\contentsline {subsection}{\numberline {7.31.1}Detailed Description}{312}{subsection.7.31.1}%
+\contentsline {section}{\numberline {7.32}/home/kamil/zpr/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monopoly/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Withdraw.h File Reference}{312}{section.7.32}%
+\contentsline {subsection}{\numberline {7.32.1}Detailed Description}{313}{subsection.7.32.1}%
+\contentsline {chapter}{Index}{315}{section*.489}%

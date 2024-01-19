@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceann" xml:lang="en-US">
+<title>ann Namespace Reference</title>
+<indexterm><primary>ann</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classann_1_1neuron">neuron</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classann_1_1neuralnet">neuralnet</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330">type</link> { <link linkend="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330adb0340ee3e7f4110ed74767bef668989">RECURRENT</link>
+, <link linkend="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330a297553fb4a215cc42626d9eee9196880">NON_RECURRENT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330"/>    <section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>ann</secondary></indexterm>
+<indexterm><primary>ann</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330">ann::type</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>RECURRENT</primary><secondary>ann</secondary></indexterm>
+<indexterm><primary>ann</primary><secondary>RECURRENT</secondary></indexterm>
+<anchor xml:id="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330adb0340ee3e7f4110ed74767bef668989"/>RECURRENT</entry><entry></entry></row><row><entry><indexterm><primary>NON_RECURRENT</primary><secondary>ann</secondary></indexterm>
+<indexterm><primary>ann</primary><secondary>NON_RECURRENT</secondary></indexterm>
+<anchor xml:id="_namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330a297553fb4a215cc42626d9eee9196880"/>NON_RECURRENT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+</section>

@@ -1,0 +1,4 @@
+<map id="Button::setButtonFocus" name="Button::setButtonFocus">
+<area shape="rect" id="node1" title="Sets the button state to focused." alt="" coords="212,5,385,32"/>
+<area shape="rect" id="node2" href="$class_button.html#af56e575bb7162c0fd8d4957ba7d034d6" title="Virtual function called when the mouse is over the button." alt="" coords="5,5,164,32"/>
+</map>

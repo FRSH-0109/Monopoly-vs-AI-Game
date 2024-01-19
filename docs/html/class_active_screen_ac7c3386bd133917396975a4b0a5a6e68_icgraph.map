@@ -1,0 +1,13 @@
+<map id="ActiveScreen::getContextWindow" name="ActiveScreen::getContextWindow">
+<area shape="rect" id="node1" title="Gets the pointer to the ContextWindow." alt="" coords="548,191,735,233"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a4f3b0441bbb05d9c97a5f2970eeacd16" title="Draws the game menu screen." alt="" coords="298,5,479,32"/>
+<area shape="rect" id="node3" href="$class_main_menu_screen.html#a6f640795fce8c271b2988ee05f545d37" title="Draws the main menu screen." alt="" coords="301,56,476,83"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="316,107,461,133"/>
+<area shape="rect" id="node5" href="$class_game_menu_screen.html#af17f9c5e3353be5c531251c4e78d6d0c" title="Function to create the game menu." alt="" coords="277,158,500,199"/>
+<area shape="rect" id="node7" href="$class_main_menu_screen.html#ac1f40ff20eed76db8a0fc8cca1a8cd0b" title="Function to create the main menu." alt="" coords="283,223,494,265"/>
+<area shape="rect" id="node9" href="$class_game_menu_screen.html#a930fac59e5231f348579a57991246e07" title="Worker function for the game menu screen." alt="" coords="292,289,485,316"/>
+<area shape="rect" id="node10" href="$class_main_menu_screen.html#afdd21c26a37bfc5b952836e283b31688" title="Worker function for the main menu screen." alt="" coords="295,340,482,367"/>
+<area shape="rect" id="node11" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="310,391,467,417"/>
+<area shape="rect" id="node6" href="$class_game_menu_screen.html#a5c3726575383e12d2a0f55e035be6719" title="Constructor for the GameMenuScreen class." alt="" coords="5,158,229,199"/>
+<area shape="rect" id="node8" href="$class_main_menu_screen.html#a4d246c87a47788cf7802e145e9ab0f6e" title="Constructor for the MainMenuScreen class." alt="" coords="12,223,223,265"/>
+</map>

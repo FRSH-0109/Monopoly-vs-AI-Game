@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__active_screen_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/ActiveScreen.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/ActiveScreen.cc</primary></indexterm>
+<para>
+
+<para>Source file handling displayed screens of project Base claass is <link linkend="_class_active_screen">ActiveScreen</link>, then derived class are used to work with specific screen shown. </para>
+ 
+</para>
+<programlisting>#include &quot;ActiveScreen.h&quot;
+</programlisting>Include dependency graph for ActiveScreen.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_active_screen_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file handling displayed screens of project Base claass is <link linkend="_class_active_screen">ActiveScreen</link>, then derived class are used to work with specific screen shown. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

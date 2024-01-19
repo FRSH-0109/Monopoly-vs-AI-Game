@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structneat_1_1network__info__container" xml:lang="en-US">
+<title>neat::network_info_container Struct Reference</title>
+<indexterm><primary>neat::network_info_container</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242"/>unsigned int <emphasis role="strong">input_size</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a"/>unsigned int <emphasis role="strong">bias_size</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f"/>unsigned int <emphasis role="strong">output_size</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733"/>unsigned int <emphasis role="strong">functional_nodes</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c"/>bool <emphasis role="strong">recurrent</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link></section>

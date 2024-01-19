@@ -1,0 +1,8 @@
+<map id="ActiveScreen::getFont" name="ActiveScreen::getFont">
+<area shape="rect" id="node1" title="Gets the SFML font used for text on the screen." alt="" coords="548,71,712,98"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#af17f9c5e3353be5c531251c4e78d6d0c" title="Function to create the game menu." alt="" coords="277,5,500,47"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="291,71,487,98"/>
+<area shape="rect" id="node5" href="$class_main_menu_screen.html#ac1f40ff20eed76db8a0fc8cca1a8cd0b" title="Function to create the main menu." alt="" coords="283,123,494,164"/>
+<area shape="rect" id="node3" href="$class_game_menu_screen.html#a5c3726575383e12d2a0f55e035be6719" title="Constructor for the GameMenuScreen class." alt="" coords="5,5,229,47"/>
+<area shape="rect" id="node6" href="$class_main_menu_screen.html#a4d246c87a47788cf7802e145e9ab0f6e" title="Constructor for the MainMenuScreen class." alt="" coords="12,123,223,164"/>
+</map>

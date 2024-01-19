@@ -1,0 +1,16 @@
+<map id="Field::getType" name="Field::getType">
+<area shape="rect" id="node1" title=" " alt="" coords="916,249,1028,275"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="437,5,640,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,275,389,316"/>
+<area shape="rect" id="node5" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="725,122,831,149"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="439,151,638,192"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a2af1706f23548c8ad118133badfc0160" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="454,216,623,257"/>
+<area shape="rect" id="node8" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="705,274,851,301"/>
+<area shape="rect" id="node9" href="$class_withdraw.html#a19f82027534a13d80536846c5af25829" title="Initiates the withdrawal process (exchange of money and properties)." alt="" coords="444,282,633,309"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#aa95037b493d8fb2294404944a14dcca4" title="Performs the auction." alt="" coords="693,376,863,417"/>
+<area shape="rect" id="node11" href="$class_withdraw.html#ab7bdb73ec95d72b844d65de653cb4214" title="Shows the property details for the specified column during the withdrawal process." alt="" coords="688,442,868,469"/>
+<area shape="rect" id="node13" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="693,493,863,535"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,282,163,309"/>
+<area shape="rect" id="node12" href="$class_withdraw.html#acfbbad2752cb193ca17e8f2ab3ce9b1a" title="Sets the visibility of the value player screen." alt="" coords="443,435,634,476"/>
+<area shape="rect" id="node14" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="441,551,637,578"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="GameMenuScreen::gameMenuCreate" name="GameMenuScreen::gameMenuCreate">
+<area shape="rect" id="node1" title="Function to create the game menu." alt="" coords="277,5,500,47"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a5c3726575383e12d2a0f55e035be6719" title="Constructor for the GameMenuScreen class." alt="" coords="5,5,229,47"/>
+</map>

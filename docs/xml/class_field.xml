@@ -1,0 +1,725 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_field" kind="class" language="C++" prot="public">
+    <compoundname>Field</compoundname>
+    <derivedcompoundref refid="class_property_field" prot="public" virt="non-virtual">PropertyField</derivedcompoundref>
+    <derivedcompoundref refid="class_tax_field" prot="public" virt="non-virtual">TaxField</derivedcompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_field_1a4c6803162248992f72c7a61e96fd4ff5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow* Field::context_window_</definition>
+        <argsstring></argsstring>
+        <name>context_window_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="41" column="15" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a17d3660c47591bd97d543f3339012257" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Field::id_</definition>
+        <argsstring></argsstring>
+        <name>id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="42" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a03cd5f8f88fdd97eca97f6d3c85dae1e" prot="private" static="no" mutable="no">
+        <type><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+        <definition>FieldType Field::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="43" column="11" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a287c5c2f666ad5fc1754b9792dc63bcb" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Field::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="44" column="13" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a366b02d916f508ea15f324e6e1386105" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Field::graphic_path_</definition>
+        <argsstring></argsstring>
+        <name>graphic_path_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="45" column="13" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1af0e631283d2819b0784b2dd2f14e7e56" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Field::width_</definition>
+        <argsstring></argsstring>
+        <name>width_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="46" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a6873360eb944b4a6e04ebff5b377d99d" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Field::height_</definition>
+        <argsstring></argsstring>
+        <name>height_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="47" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a52581616df1b8b8fa0daac6147c49d31" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Field::rotation_</definition>
+        <argsstring></argsstring>
+        <name>rotation_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="48" column="7" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a4c623647a7f95f11f4b93a82e32db738" prot="private" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture Field::texture_</definition>
+        <argsstring></argsstring>
+        <name>texture_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="49" column="13" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1aacaa2bc22d8fab6e19a8c2030d701df6" prot="private" static="no" mutable="no">
+        <type>sf::Sprite</type>
+        <definition>sf::Sprite Field::sprite_</definition>
+        <argsstring></argsstring>
+        <name>sprite_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="50" column="12" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a2fd80a76875dce65ef9fa3b3a272540a" prot="private" static="no" mutable="no">
+        <type>sf::Vector2i</type>
+        <definition>sf::Vector2i Field::position_</definition>
+        <argsstring></argsstring>
+        <name>position_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="51" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_1a272eb42b2e99037e6417e72379053327" prot="private" static="no" mutable="no">
+        <type>sf::Text</type>
+        <definition>sf::Text Field::nameText_</definition>
+        <argsstring></argsstring>
+        <name>nameText_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="52" column="10" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_field_1acc8e72c4faac0f5c48b9d353e9350112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Field::Field</definition>
+        <argsstring>(const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position)</argsstring>
+        <name>Field</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>graphic_path</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2i</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_field" kindref="compound">Field</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graphic_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the field&apos;s graphic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation angle of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the field on the board. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="66" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="18" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1af1d9991ce36def51f2999a959b7873fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow * Field::getContextWindow</definition>
+        <argsstring>()</argsstring>
+        <name>getContextWindow</name>
+        <briefdescription>
+<para>Gets the pointer to the context window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the context window. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="79" column="15" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="39" bodyend="42"/>
+        <references refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" compoundref="_context_window_8cc" startline="22" endline="27">ContextWindow::GetInstance</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1aa3ea436b800a8078f04be2678c42f7c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Field::getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+<para>Gets the ID of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ID of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="85" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="48" bodyend="50"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" compoundref="_field_8cc" startline="183" endline="217">PropertyField::createFlagSprite</referencedby>
+        <referencedby refid="class_board_1aa9a40a410b22ebbb1c87a91d16741711" compoundref="_board_8cc" startline="185" endline="193">Board::getFieldById</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a3c5261dc7fc032dd06268d3c94028d73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+        <definition>FieldType Field::getType</definition>
+        <argsstring>()</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="91" column="11" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="52" bodyend="54"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_withdraw_1a19f82027534a13d80536846c5af25829" compoundref="_withdraw_8cc" startline="1333" endline="1396">Withdraw::makeWithdraw</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1aa95037b493d8fb2294404944a14dcca4" compoundref="_monopoly_game_engine_8cc" startline="219" endline="374">MonopolyGameEngine::performAuction</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1ad2e239a719acc3285a9b11b3aef6808c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string Field::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+<para>Gets the name of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The name of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="97" column="19" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="56" bodyend="58"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a32c0ecaa71c51cdaae65178836af75b0" compoundref="_monopoly_game_engine_8cc" startline="2043" endline="2088">MonopolyGameEngine::createTextPlayersInfo</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+        <referencedby refid="class_withdraw_1a554845d087366abdc2672a7b6224ff68" compoundref="_withdraw_8cc" startline="142" endline="204">Withdraw::setDecisionScreenVisible</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a153294a850e9c8d42d35e95eec1de17e" compoundref="_monopoly_game_engine_8cc" startline="2090" endline="2113">MonopolyGameEngine::updateTextPlayersInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string Field::getGraphicPath</definition>
+        <argsstring>()</argsstring>
+        <name>getGraphicPath</name>
+        <briefdescription>
+<para>Gets the file path to the field&apos;s graphic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The file path to the field&apos;s graphic. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="103" column="19" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="60" bodyend="62"/>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Field::getWidth</definition>
+        <argsstring>()</argsstring>
+        <name>getWidth</name>
+        <briefdescription>
+<para>Gets the width of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The width of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="109" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="64" bodyend="66"/>
+        <referencedby refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" compoundref="_field_8cc" startline="183" endline="217">PropertyField::createFlagSprite</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" compoundref="_monopoly_game_engine_8cc" startline="42" endline="108">MonopolyGameEngine::createPlayers</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a24552dc1bcb1f574ce8db0761c33790a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Field::getHeight</definition>
+        <argsstring>()</argsstring>
+        <name>getHeight</name>
+        <briefdescription>
+<para>Gets the height of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The height of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="115" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="68" bodyend="70"/>
+        <referencedby refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" compoundref="_field_8cc" startline="183" endline="217">PropertyField::createFlagSprite</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" compoundref="_monopoly_game_engine_8cc" startline="42" endline="108">MonopolyGameEngine::createPlayers</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a646e28cf7899eb73bd120e7e7f936633" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Field::getRotation</definition>
+        <argsstring>()</argsstring>
+        <name>getRotation</name>
+        <briefdescription>
+<para>Gets the rotation angle of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The rotation angle of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="121" column="7" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="72" bodyend="74"/>
+        <referencedby refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" compoundref="_field_8cc" startline="183" endline="217">PropertyField::createFlagSprite</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2831ee2158d97ff536fd0fee57e338e2" compoundref="_monopoly_game_engine_8cc" startline="3267" endline="3296">MonopolyGameEngine::getHotelSprite</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a64330a6b6eea093a923675e749c00807" compoundref="_monopoly_game_engine_8cc" startline="3223" endline="3265">MonopolyGameEngine::getHouseSprite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1ad9461468ec68a4148453553cc3150fa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Sprite &amp;</type>
+        <definition>const sf::Sprite &amp; Field::getSprite</definition>
+        <argsstring>()</argsstring>
+        <name>getSprite</name>
+        <briefdescription>
+<para>Gets the sprite representing the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The sprite representing the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="127" column="18" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="76" bodyend="78"/>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Texture &amp;</type>
+        <definition>const sf::Texture &amp; Field::getTexture</definition>
+        <argsstring>()</argsstring>
+        <name>getTexture</name>
+        <briefdescription>
+<para>Gets the texture of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The texture of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="133" column="19" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="84" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Vector2i &amp;</type>
+        <definition>const sf::Vector2i &amp; Field::getPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getPosition</name>
+        <briefdescription>
+<para>Gets the position of the field on the board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The position of the field on the board. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="139" column="20" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="88" bodyend="90"/>
+        <referencedby refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" compoundref="_field_8cc" startline="183" endline="217">PropertyField::createFlagSprite</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2831ee2158d97ff536fd0fee57e338e2" compoundref="_monopoly_game_engine_8cc" startline="3267" endline="3296">MonopolyGameEngine::getHotelSprite</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a64330a6b6eea093a923675e749c00807" compoundref="_monopoly_game_engine_8cc" startline="3223" endline="3265">MonopolyGameEngine::getHouseSprite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const sf::Text &amp;</type>
+        <definition>const sf::Text &amp; Field::getNameText</definition>
+        <argsstring>()</argsstring>
+        <name>getNameText</name>
+        <briefdescription>
+<para>Gets the text representing the name of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The text representing the name of the field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="145" column="16" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="80" bodyend="82"/>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1aba57b17e88be43f271fbcb85822a56c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Field::createSprite</definition>
+        <argsstring>()</argsstring>
+        <name>createSprite</name>
+        <briefdescription>
+<para>Creates the sprite for the field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="150" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="92" bodyend="104"/>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Field::setHeight</definition>
+        <argsstring>(unsigned int new_height)</argsstring>
+        <name>setHeight</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_height</declname>
+        </param>
+        <briefdescription>
+<para>Sets the height of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new height of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="156" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="106" bodyend="112"/>
+        <references refid="class_context_window_1a25341464088c696488399cdeb7d7b577" compoundref="_context_window_8h" startline="50">ContextWindow::window_</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1a664b22a22c392fcd9a20df37ab1e5739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Field::setWidth</definition>
+        <argsstring>(unsigned int new_width)</argsstring>
+        <name>setWidth</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_width</declname>
+        </param>
+        <briefdescription>
+<para>Sets the width of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new width of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="162" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="114" bodyend="120"/>
+        <references refid="class_context_window_1a25341464088c696488399cdeb7d7b577" compoundref="_context_window_8h" startline="50">ContextWindow::window_</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1ad43e7dadad3ce417d9b699f53f8adb83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Field::setRotation</definition>
+        <argsstring>(float new_rotation)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>float</type>
+          <declname>new_rotation</declname>
+        </param>
+        <briefdescription>
+<para>Sets the rotation angle of the field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new rotation angle of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="168" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="122" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_field_1ae4e02fa62cdb947a134ce665ac1b0f69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Field::setPosition</definition>
+        <argsstring>(sf::Vector2i pos)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>sf::Vector2i</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Sets the position of the field on the board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new position of the field. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="174" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="130" bodyend="132"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class representing a generic game field. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>UtilityField</label>
+        <link refid="class_utility_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+      <node id="6">
+        <label>TaxField</label>
+        <link refid="class_tax_field"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>StationField</label>
+        <link refid="class_station_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>StreetField</label>
+        <link refid="class_street_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/kamil/zpr/Monopoly/Field.h" line="40" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="40" bodyend="175"/>
+    <listofallmembers>
+      <member refid="class_field_1a4c6803162248992f72c7a61e96fd4ff5" prot="private" virt="non-virtual"><scope>Field</scope><name>context_window_</name></member>
+      <member refid="class_field_1aba57b17e88be43f271fbcb85822a56c3" prot="public" virt="non-virtual"><scope>Field</scope><name>createSprite</name></member>
+      <member refid="class_field_1acc8e72c4faac0f5c48b9d353e9350112" prot="public" virt="non-virtual"><scope>Field</scope><name>Field</name></member>
+      <member refid="class_field_1af1d9991ce36def51f2999a959b7873fa" prot="public" virt="non-virtual"><scope>Field</scope><name>getContextWindow</name></member>
+      <member refid="class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9" prot="public" virt="non-virtual"><scope>Field</scope><name>getGraphicPath</name></member>
+      <member refid="class_field_1a24552dc1bcb1f574ce8db0761c33790a" prot="public" virt="non-virtual"><scope>Field</scope><name>getHeight</name></member>
+      <member refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" prot="public" virt="non-virtual"><scope>Field</scope><name>getId</name></member>
+      <member refid="class_field_1ad2e239a719acc3285a9b11b3aef6808c" prot="public" virt="non-virtual"><scope>Field</scope><name>getName</name></member>
+      <member refid="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" prot="public" virt="non-virtual"><scope>Field</scope><name>getNameText</name></member>
+      <member refid="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" prot="public" virt="non-virtual"><scope>Field</scope><name>getPosition</name></member>
+      <member refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" prot="public" virt="non-virtual"><scope>Field</scope><name>getRotation</name></member>
+      <member refid="class_field_1ad9461468ec68a4148453553cc3150fa6" prot="public" virt="non-virtual"><scope>Field</scope><name>getSprite</name></member>
+      <member refid="class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00" prot="public" virt="non-virtual"><scope>Field</scope><name>getTexture</name></member>
+      <member refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" prot="public" virt="non-virtual"><scope>Field</scope><name>getType</name></member>
+      <member refid="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" prot="public" virt="non-virtual"><scope>Field</scope><name>getWidth</name></member>
+      <member refid="class_field_1a366b02d916f508ea15f324e6e1386105" prot="private" virt="non-virtual"><scope>Field</scope><name>graphic_path_</name></member>
+      <member refid="class_field_1a6873360eb944b4a6e04ebff5b377d99d" prot="private" virt="non-virtual"><scope>Field</scope><name>height_</name></member>
+      <member refid="class_field_1a17d3660c47591bd97d543f3339012257" prot="private" virt="non-virtual"><scope>Field</scope><name>id_</name></member>
+      <member refid="class_field_1a287c5c2f666ad5fc1754b9792dc63bcb" prot="private" virt="non-virtual"><scope>Field</scope><name>name_</name></member>
+      <member refid="class_field_1a272eb42b2e99037e6417e72379053327" prot="private" virt="non-virtual"><scope>Field</scope><name>nameText_</name></member>
+      <member refid="class_field_1a2fd80a76875dce65ef9fa3b3a272540a" prot="private" virt="non-virtual"><scope>Field</scope><name>position_</name></member>
+      <member refid="class_field_1a52581616df1b8b8fa0daac6147c49d31" prot="private" virt="non-virtual"><scope>Field</scope><name>rotation_</name></member>
+      <member refid="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" prot="public" virt="non-virtual"><scope>Field</scope><name>setHeight</name></member>
+      <member refid="class_field_1ae4e02fa62cdb947a134ce665ac1b0f69" prot="public" virt="non-virtual"><scope>Field</scope><name>setPosition</name></member>
+      <member refid="class_field_1ad43e7dadad3ce417d9b699f53f8adb83" prot="public" virt="non-virtual"><scope>Field</scope><name>setRotation</name></member>
+      <member refid="class_field_1a664b22a22c392fcd9a20df37ab1e5739" prot="public" virt="non-virtual"><scope>Field</scope><name>setWidth</name></member>
+      <member refid="class_field_1aacaa2bc22d8fab6e19a8c2030d701df6" prot="private" virt="non-virtual"><scope>Field</scope><name>sprite_</name></member>
+      <member refid="class_field_1a4c623647a7f95f11f4b93a82e32db738" prot="private" virt="non-virtual"><scope>Field</scope><name>texture_</name></member>
+      <member refid="class_field_1a03cd5f8f88fdd97eca97f6d3c85dae1e" prot="private" virt="non-virtual"><scope>Field</scope><name>type_</name></member>
+      <member refid="class_field_1af0e631283d2819b0784b2dd2f14e7e56" prot="private" virt="non-virtual"><scope>Field</scope><name>width_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

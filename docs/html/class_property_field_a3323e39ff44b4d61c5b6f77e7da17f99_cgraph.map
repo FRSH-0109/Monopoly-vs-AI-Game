@@ -1,0 +1,8 @@
+<map id="PropertyField::createFlagSprite" name="PropertyField::createFlagSprite">
+<area shape="rect" id="node1" title="Creates the owner flag sprite." alt="" coords="5,99,191,141"/>
+<area shape="rect" id="node2" href="$class_field.html#a24552dc1bcb1f574ce8db0761c33790a" title="Gets the height of the field." alt="" coords="245,5,370,32"/>
+<area shape="rect" id="node3" href="$class_field.html#aa3ea436b800a8078f04be2678c42f7c0" title="Gets the ID of the field." alt="" coords="260,56,355,83"/>
+<area shape="rect" id="node4" href="$class_field.html#a8b6e4fc0827f44e90449d6ad9a62dafd" title="Gets the position of the field on the board." alt="" coords="240,107,375,133"/>
+<area shape="rect" id="node5" href="$class_field.html#a646e28cf7899eb73bd120e7e7f936633" title="Gets the rotation angle of the field." alt="" coords="239,157,376,184"/>
+<area shape="rect" id="node6" href="$class_field.html#ad5706e4c154214fe43db7ecc7a6b74ca" title="Gets the width of the field." alt="" coords="247,208,367,235"/>
+</map>

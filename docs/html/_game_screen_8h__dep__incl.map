@@ -1,0 +1,7 @@
+<map id="/home/kamil/zpr/Monopoly/GameScreen.h" name="/home/kamil/zpr/Monopoly/GameScreen.h">
+<area shape="rect" id="node1" title="Header file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..." alt="" coords="224,5,419,47"/>
+<area shape="rect" id="node2" href="$_game_engine_8h.html" title="Header file for GameEngine class, used to handle lowes level program operations as input interactions..." alt="" coords="115,95,309,136"/>
+<area shape="rect" id="node5" href="$_game_screen_8cc.html" title="Source file for game screen class deriving from ActiveScreen class. Used to handle monopoly game acti..." alt="" coords="333,95,528,136"/>
+<area shape="rect" id="node3" href="$_game_engine_8cc.html" title="Source file for GameEngine class, used to handle lowes level program operations as input interactions..." alt="" coords="5,184,200,225"/>
+<area shape="rect" id="node4" href="$main_8cc.html" title="Source file launching monopoly game vs AI project." alt="" coords="224,184,419,225"/>
+</map>

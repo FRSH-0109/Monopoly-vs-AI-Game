@@ -1,0 +1,12 @@
+<map id="Field::getHeight" name="Field::getHeight">
+<area shape="rect" id="node1" title="Gets the height of the field." alt="" coords="915,112,1040,139"/>
+<area shape="rect" id="node2" href="$class_property_field.html#a3323e39ff44b4d61c5b6f77e7da17f99" title="Creates the owner flag sprite." alt="" coords="681,7,867,49"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#abc237772db36ef7096d874ac7bf15076" title="Creates player objects based on input vector." alt="" coords="689,134,859,175"/>
+<area shape="rect" id="node6" href="$class_withdraw.html#ab7bdb73ec95d72b844d65de653cb4214" title="Shows the property details for the specified column during the withdrawal process." alt="" coords="684,83,864,109"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="689,199,859,241"/>
+<area shape="rect" id="node3" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="482,5,589,32"/>
+<area shape="rect" id="node5" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="437,173,633,200"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,107,389,149"/>
+<area shape="rect" id="node9" href="$class_withdraw.html#acfbbad2752cb193ca17e8f2ab3ce9b1a" title="Sets the visibility of the value player screen." alt="" coords="440,107,631,149"/>
+<area shape="rect" id="node8" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,115,163,141"/>
+</map>

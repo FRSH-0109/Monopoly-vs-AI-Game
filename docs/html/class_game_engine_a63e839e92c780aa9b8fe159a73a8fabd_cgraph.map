@@ -1,0 +1,5 @@
+<map id="GameEngine::pollForEvents" name="GameEngine::pollForEvents">
+<area shape="rect" id="node1" title="Polls for events such as mouse and keyboard interactions." alt="" coords="5,31,207,57"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a2a10627656f88da08fc3bb9ec760323a" title="Gets the pointer to the context window." alt="" coords="255,5,492,32"/>
+<area shape="rect" id="node3" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="271,56,476,83"/>
+</map>

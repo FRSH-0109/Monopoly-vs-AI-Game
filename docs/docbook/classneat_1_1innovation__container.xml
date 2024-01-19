@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classneat_1_1innovation__container" xml:lang="en-US">
+<title>neat::innovation_container Class Reference</title>
+<indexterm><primary>neat::innovation_container</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classneat_1_1innovation__container_1ac26844581a79430afd26c114b8b1686d"/>void <emphasis role="strong">reset</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7"/>unsigned int <emphasis role="strong">add_gene</emphasis> (<link linkend="_structneat_1_1gene">gene</link> &amp;g)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classneat_1_1innovation__container_1a1afb92313cfd6d29afbb11c6655c442e"/>unsigned int <emphasis role="strong">number</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classneat_1_1innovation__container_1a94c3e431be20eea66837e1b894761647"/>class <emphasis role="strong">pool</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link></section>

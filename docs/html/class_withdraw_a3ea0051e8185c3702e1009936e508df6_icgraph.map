@@ -1,0 +1,11 @@
+<map id="Withdraw::getFont" name="Withdraw::getFont">
+<area shape="rect" id="node1" title="Getter for the font used in rendering text." alt="" coords="951,111,1091,138"/>
+<area shape="rect" id="node2" href="$class_withdraw.html#a2f8b173f0fdf10f7bb3232c57b96f114" title="Creates the screen for choosing players during withdrawal." alt="" coords="681,5,903,47"/>
+<area shape="rect" id="node4" href="$class_withdraw.html#ad4a9b237332fe45afa4730ccc20e1e0b" title="Creates the screen for making decisions during withdrawal." alt="" coords="698,71,886,112"/>
+<area shape="rect" id="node5" href="$class_withdraw.html#a1e777d7591c901b33d190e8f5c6f4a77" title="Creates the screen for specifying values during withdrawal." alt="" coords="687,136,897,177"/>
+<area shape="rect" id="node6" href="$class_withdraw.html#ab7bdb73ec95d72b844d65de653cb4214" title="Shows the property details for the specified column during the withdrawal process." alt="" coords="702,202,882,229"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="437,78,633,105"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,195,389,236"/>
+<area shape="rect" id="node9" href="$class_withdraw.html#acfbbad2752cb193ca17e8f2ab3ce9b1a" title="Sets the visibility of the value player screen." alt="" coords="440,224,631,265"/>
+<area shape="rect" id="node8" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,202,163,229"/>
+</map>

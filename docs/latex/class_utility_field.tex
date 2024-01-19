@@ -1,0 +1,123 @@
+\hypertarget{class_utility_field}{}\doxysection{Utility\+Field Class Reference}
+\label{class_utility_field}\index{UtilityField@{UtilityField}}
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+
+
+Inheritance diagram for Utility\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_utility_field__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Utility\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_utility_field__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utility_field_a45a2538cdf47bf12a8627539595a332f}{Utility\+Field}} (const unsigned int id, const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} type, const std\+::string name, const std\+::string graphic\+\_\+path, const unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}, const unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}, const float rotation, const sf\+::\+Vector2i position, const unsigned int price, const std\+::map$<$ \mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int $>$ rent\+\_\+multipliers, const std\+::vector$<$ unsigned int $>$ group\+\_\+members, const unsigned int Mortgage)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_utility_field}{Utility\+Field}} class. \end{DoxyCompactList}\item 
+const std\+::map$<$ \mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{class_utility_field_a5476d4355c82780f3ec8d173513590ae}{get\+Rent\+Multipliers}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the rent for the utility property. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_utility_field_a2eb2303132eb1de09539b0a8c1f9611c}{calculate\+Rent}} (unsigned int dice\+\_\+roll)
+\begin{DoxyCompactList}\small\item\em Calculates the rent for the utility property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_utility_field_a45a2538cdf47bf12a8627539595a332f}\label{class_utility_field_a45a2538cdf47bf12a8627539595a332f}} 
+\index{UtilityField@{UtilityField}!UtilityField@{UtilityField}}
+\index{UtilityField@{UtilityField}!UtilityField@{UtilityField}}
+\doxysubsubsection{\texorpdfstring{UtilityField()}{UtilityField()}}
+{\footnotesize\ttfamily Utility\+Field\+::\+Utility\+Field (\begin{DoxyParamCaption}\item[{const unsigned int}]{id,  }\item[{const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}}}]{type,  }\item[{const std\+::string}]{name,  }\item[{const std\+::string}]{graphic\+\_\+path,  }\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height,  }\item[{const float}]{rotation,  }\item[{const sf\+::\+Vector2i}]{position,  }\item[{const unsigned int}]{price,  }\item[{const std\+::map$<$ \mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int $>$}]{rent\+\_\+multipliers,  }\item[{const std\+::vector$<$ unsigned int $>$}]{group\+\_\+members,  }\item[{const unsigned int}]{Mortgage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{class_utility_field}{Utility\+Field}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the field. \\
+\hline
+{\em type} & The type of the field. \\
+\hline
+{\em name} & The name of the field. \\
+\hline
+{\em graphic\+\_\+path} & The file path to the field\textquotesingle{}s graphic. \\
+\hline
+{\em width} & The width of the field. \\
+\hline
+{\em height} & The height of the field. \\
+\hline
+{\em rotation} & The rotation angle of the field. \\
+\hline
+{\em position} & The position of the field on the board. \\
+\hline
+{\em price} & The price of the property. \\
+\hline
+{\em rent\+\_\+multipliers} & The rent multipliers for different tiers. \\
+\hline
+{\em group\+\_\+members} & The IDs of the group members (properties in the same group). \\
+\hline
+{\em mortgage} & The mortgage value of the property. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utility_field_a2eb2303132eb1de09539b0a8c1f9611c}\label{class_utility_field_a2eb2303132eb1de09539b0a8c1f9611c}} 
+\index{UtilityField@{UtilityField}!calculateRent@{calculateRent}}
+\index{calculateRent@{calculateRent}!UtilityField@{UtilityField}}
+\doxysubsubsection{\texorpdfstring{calculateRent()}{calculateRent()}}
+{\footnotesize\ttfamily unsigned int Utility\+Field\+::calculate\+Rent (\begin{DoxyParamCaption}\item[{unsigned int}]{dice\+\_\+roll }\end{DoxyParamCaption})}
+
+
+
+Calculates the rent for the utility property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dice\+\_\+roll} & The roll of the dice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated rent value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utility_field_a5476d4355c82780f3ec8d173513590ae}\label{class_utility_field_a5476d4355c82780f3ec8d173513590ae}} 
+\index{UtilityField@{UtilityField}!getRentMultipliers@{getRentMultipliers}}
+\index{getRentMultipliers@{getRentMultipliers}!UtilityField@{UtilityField}}
+\doxysubsubsection{\texorpdfstring{getRentMultipliers()}{getRentMultipliers()}}
+{\footnotesize\ttfamily const std\+::map$<$ \mbox{\hyperlink{main_8h_adcf7f1dbe13f702c7153ae56f085a113}{Utility\+Tiers}}, unsigned int $>$ Utility\+Field\+::get\+Rent\+Multipliers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the rent for the utility property. 
+
+\begin{DoxyReturn}{Returns}
+Map for Utility tiers mapped to mulitpliers values 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_utility_field_a5476d4355c82780f3ec8d173513590ae_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8h}{Field.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8cc}{Field.\+cc}}\end{DoxyCompactItemize}

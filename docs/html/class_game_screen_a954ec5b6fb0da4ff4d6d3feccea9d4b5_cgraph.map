@@ -1,0 +1,4 @@
+<map id="GameScreen::getPlayersResult" name="GameScreen::getPlayersResult">
+<area shape="rect" id="node1" title="Virtual function to get players&#39; results." alt="" coords="5,13,228,39"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#adac095bade2743a916480efc934911d5" title="Returns a vector of pointers to players based on game result." alt="" coords="276,5,445,47"/>
+</map>

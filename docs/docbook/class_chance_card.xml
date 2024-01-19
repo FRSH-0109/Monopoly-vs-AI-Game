@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_chance_card" xml:lang="en-US">
+<title>ChanceCard Class Reference</title>
+<indexterm><primary>ChanceCard</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_chance_card_1abbdcd4fe09d4310ae46d5ab35de0f59a"/><emphasis role="strong">ChanceCard</emphasis> (const unsigned int id, const ChanceType type, unsigned int value, const sf::String text, const std::string graphic_path, const unsigned int width, const unsigned int height, const sf::Vector2f position)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1af1c04b05577b32427b2c3777c1a89b7b"/>unsigned int <emphasis role="strong">getId</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a9a328e8b7d8630469f0c114dbb3f947f"/>ChanceType <emphasis role="strong">getType</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a648076fb0cbccc144fc76f241cc892ec"/>int <emphasis role="strong">getValue</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a3f54572894e5259f3f4ed887b6ca3e5d"/>const sf::String <emphasis role="strong">getText</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1aea4c2fcb474809701df580bfd8d50649"/>unsigned int <emphasis role="strong">getWidth</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1ac6be18fbd58a42f3a85833e52b3d4573"/>unsigned int <emphasis role="strong">getHeight</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1afa07dc486bd4180707f9502de3c039ea"/>const std::string <emphasis role="strong">getGraphicPath</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a38a4b0e0b09994e95321fc2f843a2f89"/>float <emphasis role="strong">getRotation</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1ada5b5f2faefed41ffe0e17a39f9c3967"/>const sf::Sprite &amp; <emphasis role="strong">getSprite</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a890639f01e47852617c617c0d992f80b"/>const sf::Texture &amp; <emphasis role="strong">getTexture</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a411399b942a676234c9e2ea93bbad98b"/>const sf::Vector2f &amp; <emphasis role="strong">getPosition</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a6e05f936f5bdfa29b8a4a12a368be4e3"/>void <emphasis role="strong">setRotation</emphasis> (float new_roation)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1a785f3e0c0122bf2015dcd62ff430a605"/>void <emphasis role="strong">setPosition</emphasis> (sf::Vector2f pos)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_chance_card_1ac676e005fc49d99abebff163a6252da5"/>void <emphasis role="strong">createSprite</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__chance_8h">Chance.h</link>/home/kamil/zpr/Monopoly/<link linkend="__chance_8cc">Chance.cc</link></section>

@@ -1,0 +1,7 @@
+<map id="MonopolyGameEngine::getWithdraw" name="MonopolyGameEngine::getWithdraw">
+<area shape="rect" id="node1" title="Returns a reference to the Withdraw object." alt="" coords="455,49,624,90"/>
+<area shape="rect" id="node2" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="236,5,381,32"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="211,56,407,83"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="219,107,398,149"/>
+<area shape="rect" id="node5" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,115,163,141"/>
+</map>

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8h" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/main.h File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/main.h</primary></indexterm>
+<para>
+
+<para>Header file containing structures shared between project files. </para>
+ 
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_dimension_exception">DimensionException</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_rotation_exception">RotationException</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_sprite_offset_exception">SpriteOffsetException</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structplayer_settings">playerSettings</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8h_1a1fbb23a4b2427b486453417312008cfb"/>enum <emphasis role="strong">TurnState</emphasis> { 
+<emphasis role="strong">ROLL_DICE</emphasis>
+, <emphasis role="strong">FIELD_ACTION</emphasis>
+, <emphasis role="strong">BUY_ACTION</emphasis>
+, <emphasis role="strong">PAY_RENT</emphasis>
+, 
+<emphasis role="strong">TURN_END</emphasis>
+, <emphasis role="strong">WITHDRAW_ONGOING</emphasis>
+, <emphasis role="strong">RESULTS</emphasis>
+, <emphasis role="strong">NO_TURN</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a816a6251d75e4dcd37d944ca68752095"/>enum <emphasis role="strong">GameScreenType</emphasis> { 
+<emphasis role="strong">BOARDGAME</emphasis>
+, <emphasis role="strong">WITHDRAW_CHOOSE_PLAYER</emphasis>
+, <emphasis role="strong">WITHDRAW_ADD_VALUE</emphasis>
+, <emphasis role="strong">WITHDRAW_DECISION</emphasis>
+, 
+<emphasis role="strong">AUCTION</emphasis>
+, <emphasis role="strong">RESULT</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e"/>enum <emphasis role="strong">ActiveScreenType</emphasis> { <emphasis role="strong">NONE</emphasis>
+, <emphasis role="strong">MAIN_MENU</emphasis>
+, <emphasis role="strong">GAME_MENU</emphasis>
+, <emphasis role="strong">MONOPOLY_GAME</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1afc8403f5b733fde41aeaff7c853df0c3"/>enum <emphasis role="strong">ScreenEventType</emphasis> { 
+<emphasis role="strong">IDLE</emphasis>
+, <emphasis role="strong">EXIT</emphasis>
+, <emphasis role="strong">PLAY</emphasis>
+, <emphasis role="strong">RETURN_TO_MAIN_MENU</emphasis>
+, 
+<emphasis role="strong">PLAYER_1_SET_NONE</emphasis>
+, <emphasis role="strong">PLAYER_2_SET_NONE</emphasis>
+, <emphasis role="strong">PLAYER_3_SET_NONE</emphasis>
+, <emphasis role="strong">PLAYER_4_SET_NONE</emphasis>
+, 
+<emphasis role="strong">PLAYER_1_SET_HUMAN</emphasis>
+, <emphasis role="strong">PLAYER_2_SET_HUMAN</emphasis>
+, <emphasis role="strong">PLAYER_3_SET_HUMAN</emphasis>
+, <emphasis role="strong">PLAYER_4_SET_HUMAN</emphasis>
+, 
+<emphasis role="strong">PLAYER_1_SET_AI</emphasis>
+, <emphasis role="strong">PLAYER_2_SET_AI</emphasis>
+, <emphasis role="strong">PLAYER_3_SET_AI</emphasis>
+, <emphasis role="strong">PLAYER_4_SET_AI</emphasis>
+, 
+<emphasis role="strong">PLAYER_1_SET_AI_LEVEL_1</emphasis>
+, <emphasis role="strong">PLAYER_2_SET_AI_LEVEL_1</emphasis>
+, <emphasis role="strong">PLAYER_3_SET_AI_LEVEL_1</emphasis>
+, <emphasis role="strong">PLAYER_4_SET_AI_LEVEL_1</emphasis>
+, 
+<emphasis role="strong">PLAYER_1_SET_AI_LEVEL_2</emphasis>
+, <emphasis role="strong">PLAYER_2_SET_AI_LEVEL_2</emphasis>
+, <emphasis role="strong">PLAYER_3_SET_AI_LEVEL_2</emphasis>
+, <emphasis role="strong">PLAYER_4_SET_AI_LEVEL_2</emphasis>
+, 
+<emphasis role="strong">PLAYER_1_SET_AI_LEVEL_3</emphasis>
+, <emphasis role="strong">PLAYER_2_SET_AI_LEVEL_3</emphasis>
+, <emphasis role="strong">PLAYER_3_SET_AI_LEVEL_3</emphasis>
+, <emphasis role="strong">PLAYER_4_SET_AI_LEVEL_3</emphasis>
+, 
+<emphasis role="strong">START_GAME</emphasis>
+, <emphasis role="strong">GAME_ENDED</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aa01498a3ceb2fa74dc9536c16caef1da"/>enum <emphasis role="strong">FieldType</emphasis> { 
+<emphasis role="strong">STREET</emphasis>
+, <emphasis role="strong">STATION</emphasis>
+, <emphasis role="strong">UTILITY</emphasis>
+, <emphasis role="strong">GO</emphasis>
+, 
+<emphasis role="strong">CHANCE</emphasis>
+, <emphasis role="strong">COMMUNITY_CHEST</emphasis>
+, <emphasis role="strong">TAX</emphasis>
+, <emphasis role="strong">JAIL</emphasis>
+, 
+<emphasis role="strong">FREE_PARKING</emphasis>
+, <emphasis role="strong">GO_TO_JAIL</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a98ed7cda9a98a2bc7217b41be46badc3"/>enum <emphasis role="strong">StreetTiers</emphasis> { 
+<emphasis role="strong">NO_HOUSES</emphasis>
+, <emphasis role="strong">ONE_HOUSE</emphasis>
+, <emphasis role="strong">TWO_HOUESES</emphasis>
+, <emphasis role="strong">THREE_HOUSES</emphasis>
+, 
+<emphasis role="strong">FOUR_HOUSES</emphasis>
+, <emphasis role="strong">HOTEL</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a5557e51432d2a191244125a3af3594be"/>enum <emphasis role="strong">StationTiers</emphasis> { <emphasis role="strong">ONE_STATION</emphasis>
+, <emphasis role="strong">TWO_STATIONS</emphasis>
+, <emphasis role="strong">THREE_STATIONS</emphasis>
+, <emphasis role="strong">FOUR_STATIONS</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1adcf7f1dbe13f702c7153ae56f085a113"/>enum <emphasis role="strong">UtilityTiers</emphasis> { <emphasis role="strong">ONE_UTILITY</emphasis>
+, <emphasis role="strong">TWO_UTILITIES</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c"/>enum <emphasis role="strong">Decision</emphasis> { <emphasis role="strong">YES</emphasis>
+, <emphasis role="strong">NO</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ab6ecd1223ac100310bac8f0f0131eb4a"/>enum <emphasis role="strong">JailDecision</emphasis> { <emphasis role="strong">ROLL</emphasis>
+, <emphasis role="strong">PAY</emphasis>
+, <emphasis role="strong">CARD</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a8a2b1218113cc3385a8aaf1870e4a007"/>enum <emphasis role="strong">BuyDecision</emphasis> { <emphasis role="strong">BUY</emphasis>
+, <emphasis role="strong">RESIGN</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file containing structures shared between project files. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

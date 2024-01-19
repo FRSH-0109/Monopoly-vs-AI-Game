@@ -1,0 +1,7 @@
+<map id="MonopolyGameEngine::addAuctionButton" name="MonopolyGameEngine::addAuctionButton">
+<area shape="rect" id="node1" title="Adds an auction button to the GUI." alt="" coords="504,71,673,112"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a8237eb4fd279a8f4b094c14987ea37a1" title="Creates a button for participating in an auction by bidding." alt="" coords="261,5,445,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a41effaad0143e79955701cff92b2620f" title="Creates buttons for handling auction offers." alt="" coords="251,71,454,112"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a3fc21384392435cdfcab356f98d5a838" title="Creates a button for resigning from an auction." alt="" coords="249,136,456,177"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="5,78,201,105"/>
+</map>

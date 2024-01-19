@@ -1,0 +1,5 @@
+<map id="MonopolyGameEngine::updateAvailableHousesHotelText" name="MonopolyGameEngine::updateAvailableHousesHotelText">
+<area shape="rect" id="node1" title="Updates the text displaying the available count of houses and hotels." alt="" coords="5,39,251,80"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a13906373d7ee42cd405154047d76b281" title="Gets the count of hotels available for purchase." alt="" coords="299,5,468,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#ae2a4e228360bfceb91c7a5cd6803b0fd" title="Gets the count of houses available for purchase." alt="" coords="299,71,468,112"/>
+</map>

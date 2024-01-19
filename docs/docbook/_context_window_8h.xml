@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__context_window_8h" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/ContextWindow.h File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/ContextWindow.h</primary></indexterm>
+<para>
+
+<para>Source file for context Window class It is Singleton class type used mainly for handling SFML window operations between other classes. </para>
+ 
+</para>
+<programlisting>#include &lt;SFML/Graphics.hpp&gt;
+</programlisting>Include dependency graph for ContextWindow.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_context_window_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_context_window_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_context_window">ContextWindow</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file for context Window class It is Singleton class type used mainly for handling SFML window operations between other classes. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

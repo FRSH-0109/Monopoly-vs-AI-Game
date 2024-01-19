@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__board_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Board.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Board.cc</primary></indexterm>
+<para>
+
+<para>Source file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+ 
+</para>
+<programlisting>#include &quot;Board.h&quot;
+</programlisting>Include dependency graph for Board.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_board_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__board_8cc_1ab701e3ac61a85b337ec5c1abaad6742d"/>using <emphasis role="strong">json</emphasis> = nlohmann::json</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__board_8cc_1a92671e84f9d38a1f5a64ef20ad23ec39"/>std::map&lt; StreetTiers, unsigned int &gt; <emphasis role="strong">jsonToStreetRent</emphasis> (const json &amp;element)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__board_8cc_1ad42d602c22869eaeb607bcce29881af1"/>std::map&lt; StationTiers, unsigned int &gt; <emphasis role="strong">jsonToStationRent</emphasis> (const json &amp;element)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__board_8cc_1a9f51f2d21bf4f1468f4481d2b6cf20a6"/>std::map&lt; UtilityTiers, unsigned int &gt; <emphasis role="strong">jsonToUtilityRent</emphasis> (const json &amp;element)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

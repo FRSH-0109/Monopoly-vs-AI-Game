@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_sprite_offset_exception" kind="class" language="C++" prot="public">
+    <compoundname>SpriteOffsetException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <includes refid="main_8h" local="no">main.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sprite_offset_exception_1aed2f44a7c1ea75288e6cf2fb9e2838f5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpriteOffsetException::bad_offset_</definition>
+        <argsstring></argsstring>
+        <name>bad_offset_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="44" column="7" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sprite_offset_exception_1a399916b1259c4f8ee2b8a2da0c71c40d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SpriteOffsetException::SpriteOffsetException</definition>
+        <argsstring>(float offset)</argsstring>
+        <name>SpriteOffsetException</name>
+        <param>
+          <type>float</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="47" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sprite_offset_exception_1a63919d23583c8ae96d23e6093cd8dacd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SpriteOffsetException::SpriteOffsetException</definition>
+        <argsstring>(const SpriteOffsetException &amp;e)</argsstring>
+        <name>SpriteOffsetException</name>
+        <param>
+          <type>const <ref refid="class_sprite_offset_exception" kindref="compound">SpriteOffsetException</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="48" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sprite_offset_exception_1a10004d81ae7236bd215d50fec24211da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float SpriteOffsetException::getBadOffset</definition>
+        <argsstring>()</argsstring>
+        <name>getBadOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="49" column="7" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exception for handling wrong offset to any displayed object. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+      <node id="1">
+        <label>SpriteOffsetException</label>
+        <link refid="class_sprite_offset_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+      <node id="1">
+        <label>SpriteOffsetException</label>
+        <link refid="class_sprite_offset_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/main.h" line="43" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="43" bodyend="50"/>
+    <listofallmembers>
+      <member refid="class_sprite_offset_exception_1aed2f44a7c1ea75288e6cf2fb9e2838f5" prot="private" virt="non-virtual"><scope>SpriteOffsetException</scope><name>bad_offset_</name></member>
+      <member refid="class_sprite_offset_exception_1a10004d81ae7236bd215d50fec24211da" prot="public" virt="non-virtual"><scope>SpriteOffsetException</scope><name>getBadOffset</name></member>
+      <member refid="class_sprite_offset_exception_1a399916b1259c4f8ee2b8a2da0c71c40d" prot="public" virt="non-virtual"><scope>SpriteOffsetException</scope><name>SpriteOffsetException</name></member>
+      <member refid="class_sprite_offset_exception_1a63919d23583c8ae96d23e6093cd8dacd" prot="public" virt="non-virtual"><scope>SpriteOffsetException</scope><name>SpriteOffsetException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

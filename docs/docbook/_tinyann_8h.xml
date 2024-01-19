@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__tinyann_8h" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Tinyann.h File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Tinyann.h</primary></indexterm>
+<para>
+
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+ 
+</para>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;array&gt;
+#include &lt;cmath&gt;
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;stack&gt;
+#include &lt;unordered_map&gt;
+#include &lt;vector&gt;
+#include &quot;Tinyneat.h&quot;
+</programlisting>Include dependency graph for Tinyann.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_tinyann_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_tinyann_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classann_1_1neuron">ann::neuron</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classann_1_1neuralnet">ann::neuralnet</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__tinyann_8h_1a2bc6262d836cadb5144e9f2ab25a7330"/>enum <emphasis role="strong">type</emphasis> { <emphasis role="strong">RECURRENT</emphasis>
+, <emphasis role="strong">NON_RECURRENT</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file for AI implementation of tiny library from github user hav4ik, repository: <link xlink:href="https://github.com/hav4ik/tinyai">https://github.com/hav4ik/tinyai</link>. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>hav4ik </para>
+</formalpara>
+</para>
+</section>
+</section>

@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_withdraw_8h" kind="file" language="C++">
+    <compoundname>Withdraw.h</compoundname>
+    <includes local="no">SFML/Graphics.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">variant</includes>
+    <includes local="no">vector</includes>
+    <includes refid="_board_8h" local="yes">Board.h</includes>
+    <includes refid="_button_8h" local="yes">Button.h</includes>
+    <includes refid="_field_8h" local="yes">Field.h</includes>
+    <includes refid="_player_8h" local="yes">Player.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="_monopoly_game_engine_8h" local="yes">/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</includedby>
+    <includedby refid="_withdraw_8cc" local="yes">/home/kamil/zpr/Monopoly/Withdraw.cc</includedby>
+    <incdepgraph>
+      <node id="24">
+        <label>list</label>
+      </node>
+      <node id="2">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="25">
+        <label>queue</label>
+      </node>
+      <node id="23">
+        <label>Tinyneat.h</label>
+        <link refid="_tinyneat_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>bits/stdc++.h</label>
+      </node>
+      <node id="4">
+        <label>variant</label>
+      </node>
+      <node id="11">
+        <label>../json/json.hpp</label>
+      </node>
+      <node id="13">
+        <label>cmath</label>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>map</label>
+      </node>
+      <node id="27">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+      </node>
+      <node id="7">
+        <label>fstream</label>
+      </node>
+      <node id="15">
+        <label>Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>random</label>
+      </node>
+      <node id="21">
+        <label>stack</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+      <node id="20">
+        <label>array</label>
+      </node>
+      <node id="28">
+        <label>Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Tinyann.h</label>
+        <link refid="_tinyann_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="22">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>algorithm</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="18">
+        <label>AiAdapter.h</label>
+        <link refid="_ai_adapter_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+      <node id="9">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.cc</label>
+        <link refid="_withdraw_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_withdraw" prot="public">Withdraw</innerclass>
+    <briefdescription>
+<para>Header file for trade/withdraw mechanism in the monopoly game between players. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the declaration of the <ref refid="class_withdraw" kindref="compound">Withdraw</ref> class, which represents the trade and withdraw mechanism in a monopoly game between players. <ref refid="class_player" kindref="compound">Player</ref> 1 - active in withdraw (offering one) <ref refid="class_player" kindref="compound">Player</ref> 2 - passive in withdraw (decision maker)</para>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>WITHDRAW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WITHDRAW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_board_8h" kindref="compound">Board.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_button_8h" kindref="compound">Button.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_field_8h" kindref="compound">Field.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_player_8h" kindref="compound">Player.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_withdraw" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_withdraw" kindref="compound">Withdraw</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Class<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ALLOW_ONE_SIDE_BENEFIT_WITHDRAW<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>PROPERTY_SHOW_SCALE<sp/>=<sp/>4;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Board&gt;<sp/>gameboard_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FONT_SIZE<sp/>=<sp/>30;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Font<sp/>font_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Button&gt;&gt;<sp/>buttons_;<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;<sp/>texts_;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Choose<sp/>Player<sp/>Screen<sp/>members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>choose_player_text_;<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>CHOOSE_PLAYER_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(980,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>200);<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>choose_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>choose_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>choose_player_3_button_;<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>choose_player_4_button_;<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>RESIGN_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(980,<sp/>700);<sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resign_button_;<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>Value<sp/>Screen<sp/>members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>RESIGN_VALUE_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(820,<sp/>100);<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>resign_value_button_;<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>submit_value_button_;<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>COLUMN_1_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(200,<sp/>200);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_1_text_;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_1_money_;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_1_money_buffer_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_1_money_index_buffer_;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/>player1Properties_;<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plus_1_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plus_10_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plus_100_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minus_1_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minus_10_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minus_100_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PROPERTY_PLAYER1_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(150,<sp/>450);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>property_player_1_sprite_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/>property_player_1_texture_;<sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>property_player_1_texts_;<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>NEXT_PROPERTY_PLAYER1_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(350,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PREVIOUS_PROPERTY_PLAYER1_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(200,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>next_property_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous_propertyplayer_1_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_property_player_1_showed_;<sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>COLUMN_2_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(600,<sp/>200);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_1_index_text_;<sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_1_index_money_;<sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/>player_1_index_properties_;<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PROPERTY_PLAYER1_INDEX_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(550,<sp/>450);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>property_player_1_index_sprite_;<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/>property_player_1_index_texture_;<sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>property_player_1_index_texts_;<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>NEXT_PROPERTY_PLAYER1_INDEX_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(750,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PREVIOUS_PROPERTY_PLAYER1_INDEX_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(600,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next_property_player_1_index_button_;<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>previous_property_player_1_index_button_;<sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_property_player_1_index_showed_;<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>COLUMN_3_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1000,<sp/>200);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_2_index_text_;<sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_2_index_money_;<sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/>player_2_index_properties_;<sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PROPERTY_PLAYER2_INDEX_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(950,<sp/>450);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>property_player_2_index_sprite_;<sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/>property_player_2_index_texture_;<sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>property_player_2_index_texts_;<sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>NEXT_PROPERTY_PLAYER2_INDEX_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1150,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PREVIOUS_PROPERTY_PLAYER2_INDEX_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1000,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next_property_player_2_index_button_;<sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previousPropertyPlayer2IndexButton_;<sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_property_player_2_index_showed_;<sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>COLUMN_4_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1400,<sp/>200);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_2_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_2_money_;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_2_money_buffer_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_2_money_index_buffer_;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/>player_2_properties_;<sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plus_1_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plus_10_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plus_100_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minus_1_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minus_10_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minus_100_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PROPERTY_PLAYER2_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1350,<sp/>450);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>property_player_2_sprite_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/>property_player_2_texture_;<sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>propertyPlayer2Texts_;<sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>NEXT_PROPERTY_PLAYER2_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1550,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PREVIOUS_PROPERTY_PLAYER2_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1400,<sp/>900);<sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>next_property_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous_propertyplayer_2_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_property_player_2_showed_;<sp/></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ADD_PROPERTY_PLAYER1_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(475,<sp/>550);<sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>REMOVE_PROPERTY_PLAYER1_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(475,<sp/>650);<sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add_property_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remove_property_player_1_button_;<sp/></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ADD_PROPERTY_PLAYER2_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1275,<sp/>550);<sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>REMOVE_PROPERTY_PLAYER2_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1275,<sp/>650);<sp/></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add_property_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remove_property_player_2_button_;<sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Submit<sp/>Screen<sp/>members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>DECISION_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(980,<sp/>200);<sp/></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_info_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>player_info_money_;<sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>player_info_get_properties_;<sp/></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>player_info_lose_properties_;<sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>RESIGN_DECISION_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(820,<sp/>400);<sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ACCEPT_DECISION_BUTTON_POSITION<sp/>=</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Vector2f(1140,<sp/>400);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>resign_decision_button_;<sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>accpet_decision_button_;<sp/></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/>turn_state_prev_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Player&gt;<sp/>player_1_to_with_draw_;<sp/></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Player&gt;<sp/>player_2_to_with_draw_;<sp/></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>createDefaultButton(sf::String<sp/>text,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addButton(std::shared_ptr&lt;Button&gt;<sp/>button_tmp);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addText(std::shared_ptr&lt;sf::Text&gt;<sp/>text_tmp);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_withdraw_1aa7f606a8ceb3f06ee4314d611da095c5" kindref="member">Withdraw</ref>();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/><ref refid="class_withdraw_1af44ca99891be717d4d35aa640ebd2189" kindref="member">getPlayer1IndexProperties</ref>();</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/><ref refid="class_withdraw_1a9d72290f34908615cffaeeba90119484" kindref="member">getPlayer2IndexProperties</ref>();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1ace23ed297ef8cfdce12fedf5866e4db0" kindref="member">setPlayer1IndexProperties</ref>(std::vector&lt;unsigned<sp/>int&gt;<sp/>new_index_properties);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a0203605f1161eed758e26bae91bc80ca" kindref="member">setPlayer2IndexProperties</ref>(std::vector&lt;unsigned<sp/>int&gt;<sp/>new_index_properties);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1ac3ff353242bfee519f0058258631c454" kindref="member">setBoard</ref>(std::shared_ptr&lt;Board&gt;<sp/>board_ptr);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a0f4055d95a2cefafbe974d49bcec5531" kindref="member">setTurnState</ref>(<ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/>state);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/><ref refid="class_withdraw_1a0f3fd96ab6c928dcac54ac55a1b7be3d" kindref="member">getTurnState</ref>();</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Font&amp;<sp/><ref refid="class_withdraw_1a3ea0051e8185c3702e1009936e508df6" kindref="member">getFont</ref>();</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1aed82a313991c3f3a38c68738a613256f" kindref="member">getFontSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a01109432adc0c8b78f288c1805ca02d0" kindref="member">setFont</ref>(sf::Font<sp/>font);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Button&gt;&gt;&amp;<sp/><ref refid="class_withdraw_1a9176fc09f39a59cec708685ee053b9ac" kindref="member">getButtons</ref>();</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_withdraw_1a095689316bdad34354e14b8ffd18c995" kindref="member">getTexts</ref>();</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a0b40b07770eab69344d8bdb35902155e" kindref="member">getPlayer1Button</ref>();</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a091c37bf6929de0085fabf2d7f59574b" kindref="member">getPlayer2Button</ref>();</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1ac2bbfa2841c0e30a80b78ac00b626df3" kindref="member">getPlayer3Button</ref>();</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a8466a780108a4cee43a60c7ce5f96286" kindref="member">getPlayer4Button</ref>();</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a710eb4657248e1b8d3d058dcdc576ff6" kindref="member">getResignButton</ref>();</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a2f8b173f0fdf10f7bb3232c57b96f114" kindref="member">createChoosePlayerScreen</ref>();</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a1e777d7591c901b33d190e8f5c6f4a77" kindref="member">createValuePlayerScreen</ref>();</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1ad4a9b237332fe45afa4730ccc20e1e0b" kindref="member">createDecisionPlayerScreen</ref>();</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a06d1cefc0b0fcf141a9a5c7ee0084a34" kindref="member">setChooseScreenVisible</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_visible);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1acfbbad2752cb193ca17e8f2ab3ce9b1a" kindref="member">setValueScreenVisible</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_visible);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a554845d087366abdc2672a7b6224ff68" kindref="member">setDecisionScreenVisible</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_visible);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1ad6d6fe6a2cc686f1deea05fa9ae5033f" kindref="member">setPlayer1ToWithdraw</ref>(std::shared_ptr&lt;Player&gt;<sp/>player_ptr);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1aed1f0d13e5f3ce83500ec90b9338796a" kindref="member">setPlayer2ToWithdraw</ref>(std::shared_ptr&lt;Player&gt;<sp/>player_ptr);</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Player&gt;<sp/><ref refid="class_withdraw_1aeb5e3609e3ff27cbcda1f564c18d256f" kindref="member">getPlayer1ToWithdraw</ref>();</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Player&gt;<sp/><ref refid="class_withdraw_1a82a457bf898c8845ab38458a8a2d3cf5" kindref="member">getPlayer2ToWithdraw</ref>();</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a08e2ce2ebc989bcabb109f6b8ca2489c" kindref="member">getResignValueButton</ref>();</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1ac604b13c491169954292fee491bcea26" kindref="member">getSubmitValueButton</ref>();</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a842454e0b86473552db820f70c703624" kindref="member">getPlayer1minus1</ref>();</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a10b2cabb94eb5d484271a94c97b70370" kindref="member">getPlayer1minus10</ref>();</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a4367d468bb941dd8326b5856dd525a37" kindref="member">getPlayer1minus100</ref>();</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a58b1ffd27603e753ba7abdb29acf1314" kindref="member">getPlayer1plus1</ref>();</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1acaf2b764f148764e5d4e600fc9291c6d" kindref="member">getPlayer1plus10</ref>();</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a3697bee3aadebc0cde7bb14b5734f200" kindref="member">getPlayer1plus100</ref>();</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a433b90092e9aea1deade9d09bf0f53bb" kindref="member">getPlayer2minus1</ref>();</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a2991a78ccf18dc06191bf5bb2493a8c8" kindref="member">getPlayer2minus10</ref>();</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1add8c0389fcb067416de24846724a90e3" kindref="member">getPlayer2minus100</ref>();</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1ad71f8629800c81970c28e69d19091fff" kindref="member">getPlayer2plus1</ref>();</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a510ba4ba2fa7044c7769f737158e7a84" kindref="member">getPlayer2plus10</ref>();</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1ab624df7121d9f7b636f712a141663ad0" kindref="member">getPlayer2plus100</ref>();</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a6a5f2ccfb239b924b0521a390609d5fc" kindref="member">getPlayer1NextButton</ref>();</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"></highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a6add7cd9e18b8066ce60af2722e84422" kindref="member">getPlayer1PreviousButton</ref>();</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1aaba58d928bb11f6430f0b3dee9e9114d" kindref="member">getPlayer2NextButton</ref>();</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1aa074572589a75bd97bd3771243752ace" kindref="member">getPlayer2PreviousButton</ref>();</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1ac0c3e2f788b930cd5ed0031bbf0fba92" kindref="member">getPlayer1IndexNextButton</ref>();</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a1efca195a06baa1f08d7183e994b7e0a" kindref="member">getPlayer1IndexPreviousButton</ref>();</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1aed5e9b3d3c905f942bc6e7dba72fda4e" kindref="member">getPlayer2IndexNextButton</ref>();</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a9ea76ae122045f46ab5afc2c6f73aa6a" kindref="member">getPlayer2IndexPreviousButton</ref>();</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1aceb8cd9e4b2c1ed99e72278ca840969d" kindref="member">getPlayer1AddButton</ref>();</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a0acdd19c19851dd0ea796de6d94b1ceb" kindref="member">getPlayer1RemoveButton</ref>();</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a36687d86bc6d5b4649b8a112d2e39fa6" kindref="member">getPlayer2AddButton</ref>();</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1afdd56cdac9e6e103132dd5f4b11dde82" kindref="member">getPlayer2RemoveButton</ref>();</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1a2852ce90c05783a2d8f1921ce5df4992" kindref="member">getResignDecisionButton</ref>();</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/><ref refid="class_withdraw_1aab8cdcdf3e5d4b4339b60f0808700838" kindref="member">getAcceptDecisionButton</ref>();</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a19f82027534a13d80536846c5af25829" kindref="member">makeWithdraw</ref>();</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"></highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1ad2d77a9938893978c4a83432d51b67f9" kindref="member">moneyTransferIndex</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_num,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>money);</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"></highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a90b6611bc2eeec22d3b562fd183bf81e" kindref="member">moneyTextUpdate</ref>();</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"></highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" kindref="member">showProperty</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>column);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"></highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="class_withdraw_1aaa00a66063e50b3aa3cf82a04d0fa859" kindref="member">getSpritePropertyPlayer1</ref>();</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"></highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_withdraw_1a3af83369b71131d448d48f9383c890c0" kindref="member">getTextsPropertyPlayer1</ref>();</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"></highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="class_withdraw_1a7b2ecdf7344d06ee5a1124a3e125618d" kindref="member">getSpritePropertyPlayer1Index</ref>();</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"></highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_withdraw_1a516b9056df7808d8c2a33a57772d9ad8" kindref="member">getTextsPropertyPlayer1Index</ref>();</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"></highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="class_withdraw_1a7d62275f21184e601494c0068d28fab0" kindref="member">getSpritePropertyPlayer2</ref>();</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"></highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_withdraw_1af50af1bd76c6d76465a8fe344496b6e7" kindref="member">getTextsPropertyPlayer2</ref>();</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"></highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="class_withdraw_1a398e4416dafd4543de2eebc4e8317e4b" kindref="member">getSpritePropertyPlayer2Index</ref>();</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"></highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_withdraw_1a947ffd9307c3592b6023d11d892f2692" kindref="member">getTextsPropertyPlayer2Index</ref>();</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"></highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/><ref refid="class_withdraw_1aeb76e48063bbc11819fb5a9304c90aa1" kindref="member">getTexturePropertyPlayer1</ref>();</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"></highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/><ref refid="class_withdraw_1a30c3828b0c528ff79403158e1501358a" kindref="member">getTexturePropertyPlayer1Index</ref>();</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"></highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/><ref refid="class_withdraw_1a17a68a4b288fa26a7802c2f553fc6279" kindref="member">getTexturePropertyPlayer2</ref>();</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"></highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Texture&gt;<sp/><ref refid="class_withdraw_1a31943c48aa1e04aa4f1ec43900f5acc0" kindref="member">getTexturePropertyPlayer2Index</ref>();</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"></highlight></codeline>
+<codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a8573a264b72dddafdf68ba509f3fc752" kindref="member">addPropertyPlayerShowed</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>col);</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"></highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a24f1c04617ff3aa4de94c1648360f7c4" kindref="member">propertyPlayerMoveIndex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>plr_num);</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"></highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_withdraw_1a076b7446fff22cc7357d92078e3f336f" kindref="member">isNonZeroValue</ref>();</highlight></codeline>
+<codeline lineno="761"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"></highlight></codeline>
+<codeline lineno="763"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/Withdraw.h"/>
+  </compounddef>
+</doxygen>

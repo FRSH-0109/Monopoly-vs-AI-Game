@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_tax_field" kind="class" language="C++" prot="public">
+    <compoundname>TaxField</compoundname>
+    <basecompoundref refid="class_field" prot="public" virt="non-virtual">Field</basecompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tax_field_1a80c57d62d39a6704b31db6b3117b75e1" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int TaxField::tax_value_</definition>
+        <argsstring></argsstring>
+        <name>tax_value_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="534" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="534" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tax_field_1af813a33b351b44ec8c47280f83a80da7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TaxField::TaxField</definition>
+        <argsstring>(const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int tax_value)</argsstring>
+        <name>TaxField</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>graphic_path</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2i</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>tax_value</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_tax_field" kindref="compound">TaxField</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graphic_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the graphic representation of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation angle of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the field on the game board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tax_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the tax. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="549" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="549" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tax_field_1ac1ed0a0b9fa1c10a67f9759bb6a0f3d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int TaxField::getTaxValue</definition>
+        <argsstring>()</argsstring>
+        <name>getTaxValue</name>
+        <briefdescription>
+<para>Calculates the tax for Tax property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated tax value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="567" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="282" bodyend="284"/>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Derived class representing a tax field on the monopoly board. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+      <node id="1">
+        <label>TaxField</label>
+        <link refid="class_tax_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+      <node id="1">
+        <label>TaxField</label>
+        <link refid="class_tax_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/Field.h" line="533" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="533" bodyend="568"/>
+    <listofallmembers>
+      <member refid="class_field_1aba57b17e88be43f271fbcb85822a56c3" prot="public" virt="non-virtual"><scope>TaxField</scope><name>createSprite</name></member>
+      <member refid="class_field_1acc8e72c4faac0f5c48b9d353e9350112" prot="public" virt="non-virtual"><scope>TaxField</scope><name>Field</name></member>
+      <member refid="class_field_1af1d9991ce36def51f2999a959b7873fa" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getContextWindow</name></member>
+      <member refid="class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getGraphicPath</name></member>
+      <member refid="class_field_1a24552dc1bcb1f574ce8db0761c33790a" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getHeight</name></member>
+      <member refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getId</name></member>
+      <member refid="class_field_1ad2e239a719acc3285a9b11b3aef6808c" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getName</name></member>
+      <member refid="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getNameText</name></member>
+      <member refid="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getPosition</name></member>
+      <member refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getRotation</name></member>
+      <member refid="class_field_1ad9461468ec68a4148453553cc3150fa6" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getSprite</name></member>
+      <member refid="class_tax_field_1ac1ed0a0b9fa1c10a67f9759bb6a0f3d9" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getTaxValue</name></member>
+      <member refid="class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getTexture</name></member>
+      <member refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getType</name></member>
+      <member refid="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" prot="public" virt="non-virtual"><scope>TaxField</scope><name>getWidth</name></member>
+      <member refid="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" prot="public" virt="non-virtual"><scope>TaxField</scope><name>setHeight</name></member>
+      <member refid="class_field_1ae4e02fa62cdb947a134ce665ac1b0f69" prot="public" virt="non-virtual"><scope>TaxField</scope><name>setPosition</name></member>
+      <member refid="class_field_1ad43e7dadad3ce417d9b699f53f8adb83" prot="public" virt="non-virtual"><scope>TaxField</scope><name>setRotation</name></member>
+      <member refid="class_field_1a664b22a22c392fcd9a20df37ab1e5739" prot="public" virt="non-virtual"><scope>TaxField</scope><name>setWidth</name></member>
+      <member refid="class_tax_field_1a80c57d62d39a6704b31db6b3117b75e1" prot="private" virt="non-virtual"><scope>TaxField</scope><name>tax_value_</name></member>
+      <member refid="class_tax_field_1af813a33b351b44ec8c47280f83a80da7" prot="public" virt="non-virtual"><scope>TaxField</scope><name>TaxField</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

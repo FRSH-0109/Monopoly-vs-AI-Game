@@ -1,0 +1,4 @@
+<map id="ContextWindow::clear" name="ContextWindow::clear">
+<area shape="rect" id="node1" title="Clears the contents of the window." alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node2" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="217,5,423,32"/>
+</map>

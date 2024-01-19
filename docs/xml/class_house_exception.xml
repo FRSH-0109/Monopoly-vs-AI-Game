@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_house_exception" kind="class" language="C++" prot="public">
+    <compoundname>HouseException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_house_exception_1a144c0183fe3c329a621dcd18698cd845" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int HouseException::invalid_number_</definition>
+        <argsstring></argsstring>
+        <name>invalid_number_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="29" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_house_exception_1aa89fb6aeb7766817198046f9a0bf3976" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HouseException::HouseException</definition>
+        <argsstring>(unsigned int houses)</argsstring>
+        <name>HouseException</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>houses</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="32" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_house_exception_1aa2b790bc114a9c1eca0a5cdcd1836da9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HouseException::HouseException</definition>
+        <argsstring>(const HouseException &amp;e)</argsstring>
+        <name>HouseException</name>
+        <param>
+          <type>const <ref refid="class_house_exception" kindref="compound">HouseException</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="33" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_house_exception_1a669fd71c193b4d08bd9afc9c0c60d003" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int HouseException::getInvalidNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getInvalidNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="34" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="44" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Custom exception class for handling invalid house numbers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>HouseException</label>
+        <link refid="class_house_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>HouseException</label>
+        <link refid="class_house_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/Field.h" line="28" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="28" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_house_exception_1a669fd71c193b4d08bd9afc9c0c60d003" prot="public" virt="non-virtual"><scope>HouseException</scope><name>getInvalidNumber</name></member>
+      <member refid="class_house_exception_1aa89fb6aeb7766817198046f9a0bf3976" prot="public" virt="non-virtual"><scope>HouseException</scope><name>HouseException</name></member>
+      <member refid="class_house_exception_1aa2b790bc114a9c1eca0a5cdcd1836da9" prot="public" virt="non-virtual"><scope>HouseException</scope><name>HouseException</name></member>
+      <member refid="class_house_exception_1a144c0183fe3c329a621dcd18698cd845" prot="private" virt="non-virtual"><scope>HouseException</scope><name>invalid_number_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<map id="MonopolyGameEngine::addButton" name="MonopolyGameEngine::addButton">
+<area shape="rect" id="node1" title="Adds a button to the GUI." alt="" coords="523,449,692,491"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a8237eb4fd279a8f4b094c14987ea37a1" title="Creates a button for participating in an auction by bidding." alt="" coords="270,5,454,47"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="5,457,201,483"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#a41effaad0143e79955701cff92b2620f" title="Creates buttons for handling auction offers." alt="" coords="261,123,463,164"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a3fc21384392435cdfcab356f98d5a838" title="Creates a button for resigning from an auction." alt="" coords="259,188,465,229"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a742de8013c1466a6913bb5f5eceafeb4" title="Creates a button for buying or resigning from a property." alt="" coords="271,253,453,295"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#a6a7786536439ae5af3c53d896b0a9a71" title="Creates a button for moving to the next property." alt="" coords="262,319,462,360"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#aa54fdcd0727761f010c096435dd40999" title="Creates a button for moving to the previous property." alt="" coords="249,384,475,425"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#ab7c6acc2b155fbdc1952280c494a05fe" title="Creates the button for rolling the dice." alt="" coords="277,449,447,491"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#af7a1b759d097257097926ed7fd60da14" title="Creates buttons for handling bankruptcy." alt="" coords="272,515,452,556"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#abbda29a495969e795d71c3a5d215b547" title="Creates buttons for buying, selling houses, and hotels." alt="" coords="257,581,467,637"/>
+<area shape="rect" id="node12" href="$class_monopoly_game_engine.html#ae9772861221c6ce195b7b63122bf5523" title="Creates buttons for handling actions related to the jail (paying to get out)." alt="" coords="277,661,447,703"/>
+<area shape="rect" id="node13" href="$class_monopoly_game_engine.html#a525ceed24c6db4fd8823fb1af27ba24b" title="Creates buttons for moving to the next turn." alt="" coords="273,727,451,768"/>
+<area shape="rect" id="node14" href="$class_monopoly_game_engine.html#a59d448ed643e21447ac85cdfeea1fa1b" title="Creates a button for withdrawing from the game." alt="" coords="274,792,450,833"/>
+<area shape="rect" id="node15" href="$class_monopoly_game_engine.html#af61f87c35e7969f4665091d80007a8dd" title="Creates buttons for mortgaging properties." alt="" coords="272,857,452,899"/>
+<area shape="rect" id="node16" href="$class_monopoly_game_engine.html#a746b88ee3a606c98cfa368192c1a34e9" title="Creates various elements for the result screen." alt="" coords="269,923,455,964"/>
+</map>

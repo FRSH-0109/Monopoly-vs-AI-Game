@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_6e2ea6425a12f66bcd9f62de814efeaf" kind="dir">
+    <compoundname>/home/kamil/zpr/Monopoly</compoundname>
+    <innerfile refid="_active_screen_8cc">ActiveScreen.cc</innerfile>
+    <innerfile refid="_active_screen_8h">ActiveScreen.h</innerfile>
+    <innerfile refid="_ai_adapter_8cc">AiAdapter.cc</innerfile>
+    <innerfile refid="_ai_adapter_8h">AiAdapter.h</innerfile>
+    <innerfile refid="_board_8cc">Board.cc</innerfile>
+    <innerfile refid="_board_8h">Board.h</innerfile>
+    <innerfile refid="_button_8cc">Button.cc</innerfile>
+    <innerfile refid="_button_8h">Button.h</innerfile>
+    <innerfile refid="_chance_8cc">Chance.cc</innerfile>
+    <innerfile refid="_chance_8h">Chance.h</innerfile>
+    <innerfile refid="_context_window_8cc">ContextWindow.cc</innerfile>
+    <innerfile refid="_context_window_8h">ContextWindow.h</innerfile>
+    <innerfile refid="_field_8cc">Field.cc</innerfile>
+    <innerfile refid="_field_8h">Field.h</innerfile>
+    <innerfile refid="_game_engine_8cc">GameEngine.cc</innerfile>
+    <innerfile refid="_game_engine_8h">GameEngine.h</innerfile>
+    <innerfile refid="_game_screen_8cc">GameScreen.cc</innerfile>
+    <innerfile refid="_game_screen_8h">GameScreen.h</innerfile>
+    <innerfile refid="main_8cc">main.cc</innerfile>
+    <innerfile refid="main_8h">main.h</innerfile>
+    <innerfile refid="_monopoly_game_engine_8cc">MonopolyGameEngine.cc</innerfile>
+    <innerfile refid="_monopoly_game_engine_8h">MonopolyGameEngine.h</innerfile>
+    <innerfile refid="_notification_wall_8cc">NotificationWall.cc</innerfile>
+    <innerfile refid="_notification_wall_8h">NotificationWall.h</innerfile>
+    <innerfile refid="_player_8cc">Player.cc</innerfile>
+    <innerfile refid="_player_8h">Player.h</innerfile>
+    <innerfile refid="_tinyann_8cc">Tinyann.cc</innerfile>
+    <innerfile refid="_tinyann_8h">Tinyann.h</innerfile>
+    <innerfile refid="_tinyneat_8cc">Tinyneat.cc</innerfile>
+    <innerfile refid="_tinyneat_8h">Tinyneat.h</innerfile>
+    <innerfile refid="_withdraw_8cc">Withdraw.cc</innerfile>
+    <innerfile refid="_withdraw_8h">Withdraw.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,6 @@
+<map id="ActiveScreen::setScreenType" name="ActiveScreen::setScreenType">
+<area shape="rect" id="node1" title="Sets the type of the active screen." alt="" coords="277,71,487,98"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a5c3726575383e12d2a0f55e035be6719" title="Constructor for the GameMenuScreen class." alt="" coords="5,5,229,47"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="19,71,215,98"/>
+<area shape="rect" id="node4" href="$class_main_menu_screen.html#a4d246c87a47788cf7802e145e9ab0f6e" title="Constructor for the MainMenuScreen class." alt="" coords="12,123,223,164"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="PropertyField::resetOwner" name="PropertyField::resetOwner">
+<area shape="rect" id="node1" title="Resets the owner of the property." alt="" coords="251,31,441,57"/>
+<area shape="rect" id="node2" href="$class_property_field.html#aa458959642c699213a8f537532e0f371" title="Resets the property to its default state." alt="" coords="5,5,203,32"/>
+<area shape="rect" id="node3" href="$class_street_field.html#a5a391c88f5e4fc890c151c2a3b248da8" title="Resets the property to its default state." alt="" coords="13,56,195,83"/>
+</map>

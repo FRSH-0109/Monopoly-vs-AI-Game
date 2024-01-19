@@ -1,0 +1,5 @@
+<map id="MonopolyGameEngine::updateResultScreenStuff" name="MonopolyGameEngine::updateResultScreenStuff">
+<area shape="rect" id="node1" title="Updates elements on the result screen." alt="" coords="437,5,628,47"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,5,389,47"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,13,163,39"/>
+</map>

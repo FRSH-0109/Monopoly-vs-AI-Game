@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__game_engine_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/GameEngine.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/GameEngine.cc</primary></indexterm>
+<para>
+
+<para>Source file for <link linkend="_class_game_engine">GameEngine</link> class, used to handle lowes level program operations as input interactions (mouse, keyboard) or display window. </para>
+ 
+</para>
+<programlisting>#include &quot;GameEngine.h&quot;
+</programlisting>Include dependency graph for GameEngine.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_game_engine_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file for <link linkend="_class_game_engine">GameEngine</link> class, used to handle lowes level program operations as input interactions (mouse, keyboard) or display window. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

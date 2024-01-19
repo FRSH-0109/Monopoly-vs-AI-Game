@@ -1,0 +1,7 @@
+<map id="GameMenuScreen::setOtherButtonsInactive" name="GameMenuScreen::setOtherButtonsInactive">
+<area shape="rect" id="node1" title="Sets other buttons inactive when a button is clicked." alt="" coords="5,90,211,131"/>
+<area shape="rect" id="node2" href="$class_active_screen.html#aefe54d9a04210b2985890f3657974484" title="Gets the vector of buttons displayed on the screen." alt="" coords="279,5,465,32"/>
+<area shape="rect" id="node3" href="$class_game_menu_screen.html#a974eb5076298fbba7e4d6b577f74e888" title="Gets the player number from the ScreenEventType." alt="" coords="267,57,477,98"/>
+<area shape="rect" id="node4" href="$class_game_menu_screen.html#a8734e38603d1886079ff185c5aa399bc" title="Checks if the ScreenEventType is related to AI level." alt="" coords="259,122,485,163"/>
+<area shape="rect" id="node5" href="$class_game_menu_screen.html#a704fad5ddf438187195732e2b727aaaf" title="Checks if the ScreenEventType is related to setting AI." alt="" coords="259,187,485,229"/>
+</map>

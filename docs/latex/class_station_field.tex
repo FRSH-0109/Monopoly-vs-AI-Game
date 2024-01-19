@@ -1,0 +1,126 @@
+\hypertarget{class_station_field}{}\doxysection{Station\+Field Class Reference}
+\label{class_station_field}\index{StationField@{StationField}}
+
+
+Derived class representing a station field on the game board.  
+
+
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+
+
+Inheritance diagram for Station\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_station_field__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Station\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_station_field__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_station_field_ac05ad21f6406bb6106e49ab5488a77b5}{Station\+Field}} (const unsigned int id, const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} type, const std\+::string name, const std\+::string graphic\+\_\+path, const unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}, const unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}, const float rotation, const sf\+::\+Vector2i position, const unsigned int price, const std\+::map$<$ \mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int $>$ rent\+\_\+values, const std\+::vector$<$ unsigned int $>$ group\+\_\+members, const unsigned int Mortgage)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_station_field}{Station\+Field}} class. \end{DoxyCompactList}\item 
+const std\+::map$<$ \mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{class_station_field_ae23e828cefa568b38ff525cd9db3b511}{get\+Rent\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rent values for different tiers. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_station_field_aa20df8c80cb42b080679ef12f81b842c}{calculate\+Rent}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the rent for the property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Derived class representing a station field on the game board. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_station_field_ac05ad21f6406bb6106e49ab5488a77b5}\label{class_station_field_ac05ad21f6406bb6106e49ab5488a77b5}} 
+\index{StationField@{StationField}!StationField@{StationField}}
+\index{StationField@{StationField}!StationField@{StationField}}
+\doxysubsubsection{\texorpdfstring{StationField()}{StationField()}}
+{\footnotesize\ttfamily Station\+Field\+::\+Station\+Field (\begin{DoxyParamCaption}\item[{const unsigned int}]{id,  }\item[{const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}}}]{type,  }\item[{const std\+::string}]{name,  }\item[{const std\+::string}]{graphic\+\_\+path,  }\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height,  }\item[{const float}]{rotation,  }\item[{const sf\+::\+Vector2i}]{position,  }\item[{const unsigned int}]{price,  }\item[{const std\+::map$<$ \mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int $>$}]{rent\+\_\+values,  }\item[{const std\+::vector$<$ unsigned int $>$}]{group\+\_\+members,  }\item[{const unsigned int}]{Mortgage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{class_station_field}{Station\+Field}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the field. \\
+\hline
+{\em type} & The type of the field. \\
+\hline
+{\em name} & The name of the field. \\
+\hline
+{\em graphic\+\_\+path} & The file path to the field\textquotesingle{}s graphic. \\
+\hline
+{\em width} & The width of the field. \\
+\hline
+{\em height} & The height of the field. \\
+\hline
+{\em rotation} & The rotation angle of the field. \\
+\hline
+{\em position} & The position of the field on the board. \\
+\hline
+{\em price} & The price of the property. \\
+\hline
+{\em rent\+\_\+values} & The rent values for different tiers. \\
+\hline
+{\em group\+\_\+members} & The IDs of the group members (properties in the same group). \\
+\hline
+{\em mortgage} & The mortgage value of the property. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_station_field_aa20df8c80cb42b080679ef12f81b842c}\label{class_station_field_aa20df8c80cb42b080679ef12f81b842c}} 
+\index{StationField@{StationField}!calculateRent@{calculateRent}}
+\index{calculateRent@{calculateRent}!StationField@{StationField}}
+\doxysubsubsection{\texorpdfstring{calculateRent()}{calculateRent()}}
+{\footnotesize\ttfamily unsigned int Station\+Field\+::calculate\+Rent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the rent for the property. 
+
+\begin{DoxyReturn}{Returns}
+The calculated rent value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_station_field_ae23e828cefa568b38ff525cd9db3b511}\label{class_station_field_ae23e828cefa568b38ff525cd9db3b511}} 
+\index{StationField@{StationField}!getRentValues@{getRentValues}}
+\index{getRentValues@{getRentValues}!StationField@{StationField}}
+\doxysubsubsection{\texorpdfstring{getRentValues()}{getRentValues()}}
+{\footnotesize\ttfamily const std\+::map$<$ \mbox{\hyperlink{main_8h_a5557e51432d2a191244125a3af3594be}{Station\+Tiers}}, unsigned int $>$ Station\+Field\+::get\+Rent\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the rent values for different tiers. 
+
+\begin{DoxyReturn}{Returns}
+The rent values for different tiers. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_station_field_ae23e828cefa568b38ff525cd9db3b511_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8h}{Field.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8cc}{Field.\+cc}}\end{DoxyCompactItemize}

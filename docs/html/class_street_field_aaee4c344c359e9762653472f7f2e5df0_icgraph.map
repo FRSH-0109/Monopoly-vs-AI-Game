@@ -1,0 +1,13 @@
+<map id="StreetField::getHouseNumber" name="StreetField::getHouseNumber">
+<area shape="rect" id="node1" title="Gets the number of houses on the property." alt="" coords="905,211,1120,238"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="437,138,640,180"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,172,389,213"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="439,204,638,245"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a2af1706f23548c8ad118133badfc0160" title="Calculates the rent to be paid based on the rolled dice value and property position." alt="" coords="454,324,623,365"/>
+<area shape="rect" id="node7" href="$class_monopoly_game_engine.html#afd604c9fd373fa220ebe04ff9d5f191b" title="Checks if a color group is empty (no properties owned) for a player." alt="" coords="688,138,857,180"/>
+<area shape="rect" id="node8" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title="Pure virtual function to draw the screen." alt="" coords="700,436,845,463"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#aaf7f625f32dc53f7413236a79afaf6d5" title="Checks if building houses on a street is legal for a player." alt="" coords="688,204,857,245"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#afaf31ce9d8aaef4b36bbefe9b4b72f78" title="Checks if destroying houses on a street is legal for a player." alt="" coords="688,269,857,310"/>
+<area shape="rect" id="node11" href="$class_monopoly_game_engine.html#a34646774679d5ef5e9bbc6317953c7fa" title="Checks if building a hotel on a street is legal for a player." alt="" coords="688,73,857,114"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,179,163,206"/>
+</map>

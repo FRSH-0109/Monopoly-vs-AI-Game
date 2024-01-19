@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceneat" kind="namespace" language="C++">
+    <compoundname>neat</compoundname>
+    <innerclass refid="structneat_1_1mutation__rate__container" prot="public">neat::mutation_rate_container</innerclass>
+    <innerclass refid="structneat_1_1speciating__parameter__container" prot="public">neat::speciating_parameter_container</innerclass>
+    <innerclass refid="structneat_1_1network__info__container" prot="public">neat::network_info_container</innerclass>
+    <innerclass refid="structneat_1_1gene" prot="public">neat::gene</innerclass>
+    <innerclass refid="classneat_1_1genome" prot="public">neat::genome</innerclass>
+    <innerclass refid="structneat_1_1specie" prot="public">neat::specie</innerclass>
+    <innerclass refid="classneat_1_1innovation__container" prot="public">neat::innovation_container</innerclass>
+    <innerclass refid="classneat_1_1pool" prot="public">neat::pool</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="34" column="1"/>
+  </compounddef>
+</doxygen>

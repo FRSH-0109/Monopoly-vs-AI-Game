@@ -1,0 +1,9 @@
+<map id="Field::getGraphicPath" name="Field::getGraphicPath">
+<area shape="rect" id="node1" title="Gets the file path to the field&#39;s graphic." alt="" coords="909,62,1069,89"/>
+<area shape="rect" id="node2" href="$class_withdraw.html#ab7bdb73ec95d72b844d65de653cb4214" title="Shows the property details for the specified column during the withdrawal process." alt="" coords="681,33,861,60"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a2056b74cb9e17d045b01b7e49db82afe" title="Shows property data on the GUI based on the position and whether it is shown to buy." alt="" coords="687,84,856,126"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,26,389,67"/>
+<area shape="rect" id="node5" href="$class_withdraw.html#acfbbad2752cb193ca17e8f2ab3ce9b1a" title="Sets the visibility of the value player screen." alt="" coords="440,26,631,67"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,33,163,60"/>
+<area shape="rect" id="node7" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="437,142,633,169"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ActiveScreen::getTexts" name="ActiveScreen::getTexts">
+<area shape="rect" id="node1" title="Gets the vector of SFML Text objects displayed on the screen." alt="" coords="235,5,405,32"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a4f3b0441bbb05d9c97a5f2970eeacd16" title="Draws the game menu screen." alt="" coords="5,5,187,32"/>
+</map>

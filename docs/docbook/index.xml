@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>MonopolyVsAi</title>
+    </info>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="class_active_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_ai_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_ai_player.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_board.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_button.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_chance_card.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_context_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_dimension_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_game_engine.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_game_menu_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_game_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structneat_1_1gene.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classneat_1_1genome.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_house_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classneat_1_1innovation__container.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_main_menu_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classmonopoly_game_engine.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structneat_1_1mutation__rate__container.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structneat_1_1network__info__container.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classann_1_1neuralnet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classann_1_1neuron.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_notification_wall.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_player.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structplayer_settings.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classneat_1_1pool.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_property_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_rotation_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structneat_1_1speciating__parameter__container.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structneat_1_1specie.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_sprite_offset_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_station_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_street_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_tax_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_utility_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_withdraw.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_active_screen_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_active_screen_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_ai_adapter_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_ai_adapter_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_board_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_board_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_button_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_chance_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_chance_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_context_window_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_context_window_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_field_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_field_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_game_engine_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_game_engine_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_game_screen_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_game_screen_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_monopoly_game_engine_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_monopoly_game_engine_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_notification_wall_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_notification_wall_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_player_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_player_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_tinyann_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_tinyneat_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_tinyneat_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_withdraw_8cc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_withdraw_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

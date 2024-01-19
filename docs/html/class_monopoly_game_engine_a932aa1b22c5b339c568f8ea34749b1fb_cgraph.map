@@ -1,0 +1,6 @@
+<map id="MonopolyGameEngine::createTextBidderInfo" name="MonopolyGameEngine::createTextBidderInfo">
+<area shape="rect" id="node1" title="Creates text for displaying information about the bidder." alt="" coords="5,71,175,112"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac523b02a2ad163063c25e7019f57774c" title="Adds auction text to the GUI." alt="" coords="223,5,392,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#acaf81e835720ba22173b0dd6a0a87bf9" title="Returns the font used in the GUI." alt="" coords="223,71,392,112"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#af3f9a189ddaca72b5eb57b72bc4fbbe4" title="Returns the font size used in the GUI." alt="" coords="223,136,392,177"/>
+</map>

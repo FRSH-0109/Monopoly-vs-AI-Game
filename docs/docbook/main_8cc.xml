@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/main.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/main.cc</primary></indexterm>
+<para>
+
+<para>Source file launching monopoly game vs AI project. </para>
+ 
+</para>
+<programlisting>#include &lt;memory&gt;
+#include &quot;GameEngine.h&quot;
+#include &quot;Player.h&quot;
+#include &quot;SFML/Graphics.hpp&quot;
+</programlisting>Include dependency graph for main.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>int <emphasis role="strong">main</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8cc_1a4233cd0fa7a215e3e35261915c005858"/>unsigned int <emphasis role="strong">WIDTH_MAX</emphasis> = 1920</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8cc_1a97bfb17362afc060c256392df5cfbe8f"/>unsigned int <emphasis role="strong">HEIGHT_MAX</emphasis> = 1080</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c"/>unsigned int <emphasis role="strong">width</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85"/>unsigned int <emphasis role="strong">height</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8cc_1a470b971ad6ac03ab790d05e24797ad98"/>unsigned int <emphasis role="strong">FRAMES_PER_SEC_MAX</emphasis> = 30</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file launching monopoly game vs AI project. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

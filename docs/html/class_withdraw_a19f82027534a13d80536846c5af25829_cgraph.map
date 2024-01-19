@@ -1,0 +1,5 @@
+<map id="Withdraw::makeWithdraw" name="Withdraw::makeWithdraw">
+<area shape="rect" id="node1" title="Initiates the withdrawal process (exchange of money and properties)." alt="" coords="5,31,195,57"/>
+<area shape="rect" id="node2" href="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73" title=" " alt="" coords="276,5,388,32"/>
+<area shape="rect" id="node3" href="$class_property_field.html#aff8b7ee4568a0721149145074f2aa160" title="Sets the owner of the property." alt="" coords="243,56,421,83"/>
+</map>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_game_engine" xml:lang="en-US">
+<title>GameEngine Class Reference</title>
+<indexterm><primary>GameEngine</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_game_engine_1a84c38ed3499952f75d1f5f6e536a3577"/><emphasis role="strong">GameEngine</emphasis> (double frameRateHz, uint WindowWidth, uint WindowHeight)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1a9bfc5c11e97601f3588c62027b43616d"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1acfa98b8be6a8843ec87d8dd3d7b23349"/>void <emphasis role="strong">display</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1a63e839e92c780aa9b8fe159a73a8fabd"/>void <emphasis role="strong">pollForEvents</emphasis> (sf::Event &amp;event)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1a44499a26d8c95de0bb649f43defd719a"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; &gt; <emphasis role="strong">worker</emphasis> (std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt;&gt; &amp;playersVec)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1a896db4d5e0f225eb3b7084cc2f282dec"/>unsigned int <emphasis role="strong">getWindowWidth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1a62450d311c2436cc4426b932422577ab"/>unsigned int <emphasis role="strong">getWindowHeight</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_game_engine_1a2a10627656f88da08fc3bb9ec760323a"/><link linkend="_class_context_window">ContextWindow</link> * <emphasis role="strong">getContextWindow</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__game_engine_8h">GameEngine.h</link>/home/kamil/zpr/Monopoly/<link linkend="__game_engine_8cc">GameEngine.cc</link></section>

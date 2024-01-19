@@ -1,0 +1,8 @@
+<map id="Field" name="Field">
+<area shape="rect" id="node1" title="Base class representing a generic game field." alt="" coords="205,5,259,32"/>
+<area shape="rect" id="node2" href="$class_property_field.html" title="Derived class representing a property field on the game board." alt="" coords="121,80,229,107"/>
+<area shape="rect" id="node6" href="$class_tax_field.html" title="Derived class representing a tax field on the monopoly board." alt="" coords="253,80,328,107"/>
+<area shape="rect" id="node3" href="$class_station_field.html" title="Derived class representing a station field on the game board." alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node4" href="$class_street_field.html" title="Derived class representing a street field on the game board." alt="" coords="129,155,221,181"/>
+<area shape="rect" id="node5" href="$class_utility_field.html" title=" " alt="" coords="245,155,339,181"/>
+</map>

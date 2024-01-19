@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceann" kind="namespace" language="C++">
+    <compoundname>ann</compoundname>
+    <innerclass refid="classann_1_1neuron" prot="public">ann::neuron</innerclass>
+    <innerclass refid="classann_1_1neuralnet" prot="public">ann::neuralnet</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330" prot="public" static="no" strong="no">
+        <type></type>
+        <name>type</name>
+        <enumvalue id="namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330adb0340ee3e7f4110ed74767bef668989" prot="public">
+          <name>RECURRENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330a297553fb4a215cc42626d9eee9196880" prot="public">
+          <name>NON_RECURRENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="27" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="25" column="1"/>
+  </compounddef>
+</doxygen>

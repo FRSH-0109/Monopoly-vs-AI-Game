@@ -1,0 +1,292 @@
+\hypertarget{class_street_field}{}\doxysection{Street\+Field Class Reference}
+\label{class_street_field}\index{StreetField@{StreetField}}
+
+
+Derived class representing a street field on the game board.  
+
+
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+
+
+Inheritance diagram for Street\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_street_field__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Street\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_street_field__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_street_field_a60e9414d1c6d7dbc49b3921ea53fd4eb}{Street\+Field}} (const unsigned int id, const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}} type, const std\+::string name, const std\+::string graphic\+\_\+path, const unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}, const unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}, const float rotation, const sf\+::\+Vector2i position, const unsigned int price, const unsigned int house\+\_\+price, const unsigned int hotel\+\_\+price, const std\+::map$<$ \mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int $>$ rent\+\_\+values, const std\+::vector$<$ unsigned int $>$ group\+\_\+members, const unsigned int Mortgage)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_street_field}{Street\+Field}} class. \end{DoxyCompactList}\item 
+const std\+::map$<$ \mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int $>$ \mbox{\hyperlink{class_street_field_af6ffa6777200808afa686a07a1be6e9a}{get\+Rent\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rent values for different tiers. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_street_field_a812b99b2c3dc615a26f81756fa41aa51}{get\+House\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Gets the price of a house. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_street_field_a51d31e674e5526536210d24ed5bdc2c2}{get\+Hotel\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Gets the price of a hotel. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_street_field_aaee4c344c359e9762653472f7f2e5df0}{get\+House\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of houses on the property. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_street_field_a79785c76389d7bf9171797b9d1a16ebd}{get\+Is\+Hotel}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there is a hotel on the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_street_field_a9cdeb6a4610eed4f47e20d2cdebbe3a1}{set\+House\+Number}} (unsigned int new\+\_\+house\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Sets the number of houses on the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_street_field_aa50b622f5cc3dfa6ee3d00aa1a24bd14}{set\+Is\+Hotel}} (bool new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Sets the hotel state on the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_street_field_a5a391c88f5e4fc890c151c2a3b248da8}{reset\+Default}} ()
+\begin{DoxyCompactList}\small\item\em Resets the property to its default state. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_street_field_ab7d65dbc871b6cb5ac683a286fec47b8}{calculate\+Rent}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the rent for the property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Derived class representing a street field on the game board. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_street_field_a60e9414d1c6d7dbc49b3921ea53fd4eb}\label{class_street_field_a60e9414d1c6d7dbc49b3921ea53fd4eb}} 
+\index{StreetField@{StreetField}!StreetField@{StreetField}}
+\index{StreetField@{StreetField}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{StreetField()}{StreetField()}}
+{\footnotesize\ttfamily Street\+Field\+::\+Street\+Field (\begin{DoxyParamCaption}\item[{const unsigned int}]{id,  }\item[{const \mbox{\hyperlink{main_8h_aa01498a3ceb2fa74dc9536c16caef1da}{Field\+Type}}}]{type,  }\item[{const std\+::string}]{name,  }\item[{const std\+::string}]{graphic\+\_\+path,  }\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height,  }\item[{const float}]{rotation,  }\item[{const sf\+::\+Vector2i}]{position,  }\item[{const unsigned int}]{price,  }\item[{const unsigned int}]{house\+\_\+price,  }\item[{const unsigned int}]{hotel\+\_\+price,  }\item[{const std\+::map$<$ \mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int $>$}]{rent\+\_\+values,  }\item[{const std\+::vector$<$ unsigned int $>$}]{group\+\_\+members,  }\item[{const unsigned int}]{Mortgage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{class_street_field}{Street\+Field}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the field. \\
+\hline
+{\em type} & The type of the field. \\
+\hline
+{\em name} & The name of the field. \\
+\hline
+{\em graphic\+\_\+path} & The file path to the field\textquotesingle{}s graphic. \\
+\hline
+{\em width} & The width of the field. \\
+\hline
+{\em height} & The height of the field. \\
+\hline
+{\em rotation} & The rotation angle of the field. \\
+\hline
+{\em position} & The position of the field on the board. \\
+\hline
+{\em price} & The price of the property. \\
+\hline
+{\em house\+\_\+price} & The price of a house. \\
+\hline
+{\em hotel\+\_\+price} & The price of a hotel. \\
+\hline
+{\em rent\+\_\+values} & The rent values for different tiers. \\
+\hline
+{\em group\+\_\+members} & The IDs of the group members (properties in the same group). \\
+\hline
+{\em mortgage} & The mortgage value of the property. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_street_field_ab7d65dbc871b6cb5ac683a286fec47b8}\label{class_street_field_ab7d65dbc871b6cb5ac683a286fec47b8}} 
+\index{StreetField@{StreetField}!calculateRent@{calculateRent}}
+\index{calculateRent@{calculateRent}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{calculateRent()}{calculateRent()}}
+{\footnotesize\ttfamily unsigned int Street\+Field\+::calculate\+Rent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the rent for the property. 
+
+\begin{DoxyReturn}{Returns}
+The calculated rent value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_street_field_a51d31e674e5526536210d24ed5bdc2c2}\label{class_street_field_a51d31e674e5526536210d24ed5bdc2c2}} 
+\index{StreetField@{StreetField}!getHotelPrice@{getHotelPrice}}
+\index{getHotelPrice@{getHotelPrice}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{getHotelPrice()}{getHotelPrice()}}
+{\footnotesize\ttfamily unsigned int Street\+Field\+::get\+Hotel\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the price of a hotel. 
+
+\begin{DoxyReturn}{Returns}
+The price of a hotel. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_a51d31e674e5526536210d24ed5bdc2c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_aaee4c344c359e9762653472f7f2e5df0}\label{class_street_field_aaee4c344c359e9762653472f7f2e5df0}} 
+\index{StreetField@{StreetField}!getHouseNumber@{getHouseNumber}}
+\index{getHouseNumber@{getHouseNumber}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{getHouseNumber()}{getHouseNumber()}}
+{\footnotesize\ttfamily unsigned int Street\+Field\+::get\+House\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of houses on the property. 
+
+\begin{DoxyReturn}{Returns}
+The number of houses on the property. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_aaee4c344c359e9762653472f7f2e5df0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_a812b99b2c3dc615a26f81756fa41aa51}\label{class_street_field_a812b99b2c3dc615a26f81756fa41aa51}} 
+\index{StreetField@{StreetField}!getHousePrice@{getHousePrice}}
+\index{getHousePrice@{getHousePrice}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{getHousePrice()}{getHousePrice()}}
+{\footnotesize\ttfamily unsigned int Street\+Field\+::get\+House\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the price of a house. 
+
+\begin{DoxyReturn}{Returns}
+The price of a house. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_a812b99b2c3dc615a26f81756fa41aa51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_a79785c76389d7bf9171797b9d1a16ebd}\label{class_street_field_a79785c76389d7bf9171797b9d1a16ebd}} 
+\index{StreetField@{StreetField}!getIsHotel@{getIsHotel}}
+\index{getIsHotel@{getIsHotel}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{getIsHotel()}{getIsHotel()}}
+{\footnotesize\ttfamily bool Street\+Field\+::get\+Is\+Hotel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if there is a hotel on the property. 
+
+\begin{DoxyReturn}{Returns}
+True if there is a hotel, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_a79785c76389d7bf9171797b9d1a16ebd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_af6ffa6777200808afa686a07a1be6e9a}\label{class_street_field_af6ffa6777200808afa686a07a1be6e9a}} 
+\index{StreetField@{StreetField}!getRentValues@{getRentValues}}
+\index{getRentValues@{getRentValues}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{getRentValues()}{getRentValues()}}
+{\footnotesize\ttfamily const std\+::map$<$ \mbox{\hyperlink{main_8h_a98ed7cda9a98a2bc7217b41be46badc3}{Street\+Tiers}}, unsigned int $>$ Street\+Field\+::get\+Rent\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the rent values for different tiers. 
+
+\begin{DoxyReturn}{Returns}
+The rent values for different tiers. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_af6ffa6777200808afa686a07a1be6e9a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_a5a391c88f5e4fc890c151c2a3b248da8}\label{class_street_field_a5a391c88f5e4fc890c151c2a3b248da8}} 
+\index{StreetField@{StreetField}!resetDefault@{resetDefault}}
+\index{resetDefault@{resetDefault}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{resetDefault()}{resetDefault()}}
+{\footnotesize\ttfamily void Street\+Field\+::reset\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the property to its default state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_a5a391c88f5e4fc890c151c2a3b248da8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_a9cdeb6a4610eed4f47e20d2cdebbe3a1}\label{class_street_field_a9cdeb6a4610eed4f47e20d2cdebbe3a1}} 
+\index{StreetField@{StreetField}!setHouseNumber@{setHouseNumber}}
+\index{setHouseNumber@{setHouseNumber}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{setHouseNumber()}{setHouseNumber()}}
+{\footnotesize\ttfamily void Street\+Field\+::set\+House\+Number (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+\_\+house\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Sets the number of houses on the property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+house\+\_\+number} & The new number of houses on the property. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_a9cdeb6a4610eed4f47e20d2cdebbe3a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_street_field_aa50b622f5cc3dfa6ee3d00aa1a24bd14}\label{class_street_field_aa50b622f5cc3dfa6ee3d00aa1a24bd14}} 
+\index{StreetField@{StreetField}!setIsHotel@{setIsHotel}}
+\index{setIsHotel@{setIsHotel}!StreetField@{StreetField}}
+\doxysubsubsection{\texorpdfstring{setIsHotel()}{setIsHotel()}}
+{\footnotesize\ttfamily void Street\+Field\+::set\+Is\+Hotel (\begin{DoxyParamCaption}\item[{bool}]{new\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Sets the hotel state on the property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & The new hotel state. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_street_field_aa50b622f5cc3dfa6ee3d00aa1a24bd14_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8h}{Field.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_field_8cc}{Field.\+cc}}\end{DoxyCompactItemize}

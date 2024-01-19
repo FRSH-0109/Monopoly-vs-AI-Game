@@ -1,0 +1,4 @@
+<map id="MonopolyGameEngine::addHouses" name="MonopolyGameEngine::addHouses">
+<area shape="rect" id="node1" title="Adds houses to the available count." alt="" coords="5,5,175,47"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac85b2577a665a2510cbd65226d4ae790" title="Sets the count of houses available for purchase." alt="" coords="223,5,392,47"/>
+</map>

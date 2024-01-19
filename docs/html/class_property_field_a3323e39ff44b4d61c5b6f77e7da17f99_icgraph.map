@@ -1,0 +1,4 @@
+<map id="PropertyField::createFlagSprite" name="PropertyField::createFlagSprite">
+<area shape="rect" id="node1" title="Creates the owner flag sprite." alt="" coords="160,5,345,47"/>
+<area shape="rect" id="node2" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="5,13,112,39"/>
+</map>

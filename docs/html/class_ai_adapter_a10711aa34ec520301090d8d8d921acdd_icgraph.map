@@ -1,0 +1,4 @@
+<map id="AiAdapter::convertHouse" name="AiAdapter::convertHouse">
+<area shape="rect" id="node1" title="Converts house state into a format suitable for AI input." alt="" coords="208,5,392,32"/>
+<area shape="rect" id="node2" href="$class_ai_adapter.html#a261820efa64eda05774ae3cafe20b460" title="Sets the house state for a given house." alt="" coords="5,5,160,32"/>
+</map>

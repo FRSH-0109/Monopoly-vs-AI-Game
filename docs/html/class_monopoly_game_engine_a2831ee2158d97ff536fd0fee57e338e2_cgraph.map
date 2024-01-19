@@ -1,0 +1,7 @@
+<map id="MonopolyGameEngine::getHotelSprite" name="MonopolyGameEngine::getHotelSprite">
+<area shape="rect" id="node1" title="Gets the sprite for a hotel on a street." alt="" coords="5,100,175,141"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ad0390270b455b07db016a389c89df8ea" title="Returns the size of a house in the GUI." alt="" coords="223,5,392,47"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#ab55601ce0bb0b73719a5376723daa774" title="Returns the texture of the house used in the GUI." alt="" coords="223,71,392,112"/>
+<area shape="rect" id="node4" href="$class_field.html#a8b6e4fc0827f44e90449d6ad9a62dafd" title="Gets the position of the field on the board." alt="" coords="240,137,375,163"/>
+<area shape="rect" id="node5" href="$class_field.html#a646e28cf7899eb73bd120e7e7f936633" title="Gets the rotation angle of the field." alt="" coords="239,187,376,214"/>
+</map>

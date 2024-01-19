@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_game_menu_screen" kind="class" language="C++" prot="public">
+    <compoundname>GameMenuScreen</compoundname>
+    <basecompoundref refid="class_active_screen" prot="public" virt="non-virtual">ActiveScreen</basecompoundref>
+    <includes refid="_active_screen_8h" local="no">ActiveScreen.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_menu_screen_1a793101a79a28b86e941f8c032188e83c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="structplayer_settings" kindref="compound">playerSettings</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;playerSettings&gt; &gt; GameMenuScreen::playerSettingsList_</definition>
+        <argsstring></argsstring>
+        <name>playerSettingsList_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector of players&apos; settings. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="138" column="13" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_game_menu_screen_1a6ef99d24168d2b2a01881a0dbbb69269" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::createPlayerSettingsColumn</definition>
+        <argsstring>(int colNum, sf::Vector2f posStart, int yStep)</argsstring>
+        <name>createPlayerSettingsColumn</name>
+        <param>
+          <type>int</type>
+          <declname>colNum</declname>
+        </param>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>posStart</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yStep</declname>
+        </param>
+        <briefdescription>
+<para>Creates player settings columns. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>colNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of columns to create. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posStart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting position of the columns. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yStep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The step between items in the columns. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="146" column="6" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="266" bodyend="441"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_menu_screen_1a5c3726575383e12d2a0f55e035be6719" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameMenuScreen::GameMenuScreen</definition>
+        <argsstring>()</argsstring>
+        <name>GameMenuScreen</name>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_game_menu_screen" kindref="compound">GameMenuScreen</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="152" column="5" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="147" bodyend="174"/>
+        <references refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3eaa65481e2492a0d2954f4e8de6dabf01d" compoundref="main_8h" startline="88">GAME_MENU</references>
+        <references refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">gameMenuCreate</references>
+        <references refid="class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf" compoundref="_active_screen_8cc" startline="51" endline="53">ActiveScreen::setScreenType</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::gameMenuCreate</definition>
+        <argsstring>()</argsstring>
+        <name>gameMenuCreate</name>
+        <briefdescription>
+<para>Function to create the game menu. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="157" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="176" bodyend="221"/>
+        <references refid="class_active_screen_1ab51ef0260eead96cb3d88ecdb42cdd36" compoundref="_active_screen_8cc" startline="29" endline="32">ActiveScreen::addButton</references>
+        <references refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" compoundref="_active_screen_8cc" startline="55" endline="57">ActiveScreen::getButtons</references>
+        <references refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" compoundref="_active_screen_8cc" startline="43" endline="45">ActiveScreen::getContextWindow</references>
+        <references refid="class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61" compoundref="_active_screen_8cc" startline="25" endline="27">ActiveScreen::getFont</references>
+        <references refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" compoundref="_context_window_8cc" startline="22" endline="27">ContextWindow::GetInstance</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a25009c3a00abcaa12abf0f04eb8d5b67" compoundref="main_8h" startline="99">RETURN_TO_MAIN_MENU</references>
+        <references refid="class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632" compoundref="_active_screen_8cc" startline="39" endline="41">ActiveScreen::setContextWindow</references>
+        <references refid="class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20" compoundref="_active_screen_8cc" startline="21" endline="23">ActiveScreen::setFont</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3accab244294e0e1bcded736405b2db375" compoundref="main_8h" startline="124">START_GAME</references>
+        <referencedby refid="class_game_menu_screen_1a5c3726575383e12d2a0f55e035be6719" compoundref="_active_screen_8cc" startline="147" endline="174">GameMenuScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+        <definition>ScreenEventType GameMenuScreen::worker</definition>
+        <argsstring>()</argsstring>
+        <name>worker</name>
+        <reimplements refid="class_active_screen_1a3cd9d9f9571195d3fd030c41512348da">worker</reimplements>
+        <briefdescription>
+<para>Worker function for the game menu screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ScreenEventType associated with the user interaction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="163" column="21" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="235" bodyend="264"/>
+        <references refid="class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6" compoundref="_active_screen_8cc" startline="452" endline="550">buttonClickHandle</references>
+        <references refid="class_active_screen_1a385001a5027f0b2f00145a54b668368f" compoundref="_active_screen_8cc" startline="63" endline="65">ActiveScreen::buttonSetColors</references>
+        <references refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" compoundref="_active_screen_8cc" startline="55" endline="57">ActiveScreen::getButtons</references>
+        <references refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" compoundref="_active_screen_8cc" startline="43" endline="45">ActiveScreen::getContextWindow</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afd6a0e4343048b10646dd2976cc5ad18" compoundref="main_8h" startline="96">IDLE</references>
+        <references refid="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" compoundref="_active_screen_8cc" startline="562" endline="572">setOtherButtonsInactive</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3accab244294e0e1bcded736405b2db375" compoundref="main_8h" startline="124">START_GAME</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1ade9e4b9082cd923b43e45ea1f74ebaba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::setPlayerSettings</definition>
+        <argsstring>(unsigned int index, bool isNone, bool isHuman, int level)</argsstring>
+        <name>setPlayerSettings</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isNone</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isHuman</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Sets the player settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the player. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isNone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if the player is set to None. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isHuman</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if the player is human. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The AI level of the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="172" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="443" bodyend="450"/>
+        <referencedby refid="class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6" compoundref="_active_screen_8cc" startline="452" endline="550">buttonClickHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::buttonClickHandle</definition>
+        <argsstring>(std::shared_ptr&lt; Button &gt; buttonPtr)</argsstring>
+        <name>buttonClickHandle</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_button" kindref="compound">Button</ref> &gt;</type>
+          <declname>buttonPtr</declname>
+        </param>
+        <briefdescription>
+<para>Handles button clicks in the game menu. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buttonPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shared pointer to the <ref refid="class_button" kindref="compound">Button</ref> clicked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="178" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="452" bodyend="550"/>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aea6984aa09b2b69208ca7eecf236f818" compoundref="main_8h" startline="108">PLAYER_1_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" compoundref="main_8h" startline="112">PLAYER_1_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" compoundref="main_8h" startline="116">PLAYER_1_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" compoundref="main_8h" startline="120">PLAYER_1_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a05eb103383e8fab8ec3c7bb0ce3b784c" compoundref="main_8h" startline="104">PLAYER_1_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aefeae4e7efa7be08dead75bb7d0bda64" compoundref="main_8h" startline="100">PLAYER_1_SET_NONE</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a3b399446ef96348a6d6f2c29b2167f8b" compoundref="main_8h" startline="109">PLAYER_2_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" compoundref="main_8h" startline="113">PLAYER_2_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" compoundref="main_8h" startline="117">PLAYER_2_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" compoundref="main_8h" startline="121">PLAYER_2_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a4e1b1f9764dc1d2478cc5a9293242cdd" compoundref="main_8h" startline="105">PLAYER_2_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a064250338f42c9f7e1befb71f7cf802e" compoundref="main_8h" startline="101">PLAYER_2_SET_NONE</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aff036f98f13340398bfa63e59f4b0356" compoundref="main_8h" startline="110">PLAYER_3_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" compoundref="main_8h" startline="114">PLAYER_3_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" compoundref="main_8h" startline="118">PLAYER_3_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" compoundref="main_8h" startline="122">PLAYER_3_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0ab423c3a677b07e0af42d5fdff4a05a" compoundref="main_8h" startline="106">PLAYER_3_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8325febe2c6095e6293d46c7642695ba" compoundref="main_8h" startline="102">PLAYER_3_SET_NONE</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a265730736e3985c3e75bc451b99978a8" compoundref="main_8h" startline="111">PLAYER_4_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" compoundref="main_8h" startline="115">PLAYER_4_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" compoundref="main_8h" startline="119">PLAYER_4_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" compoundref="main_8h" startline="123">PLAYER_4_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afc2c1b58ad426453cc5b6310d491fc7b" compoundref="main_8h" startline="107">PLAYER_4_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ab31023d85b15b88cd7ec364fead83304" compoundref="main_8h" startline="103">PLAYER_4_SET_NONE</references>
+        <references refid="class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e" compoundref="_active_screen_8cc" startline="552" endline="560">setAILevelColumnVisibility</references>
+        <references refid="class_game_menu_screen_1a348efe82320f6cf37be5b873343768d1" compoundref="_active_screen_8cc" startline="654" endline="689">setDefaultAILevelButtonsFocus</references>
+        <references refid="class_game_menu_screen_1ade9e4b9082cd923b43e45ea1f74ebaba" compoundref="_active_screen_8cc" startline="443" endline="450">setPlayerSettings</references>
+        <referencedby refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" compoundref="_active_screen_8cc" startline="235" endline="264">worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::setOtherButtonsInactive</definition>
+        <argsstring>(std::shared_ptr&lt; Button &gt; buttonPtr)</argsstring>
+        <name>setOtherButtonsInactive</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_button" kindref="compound">Button</ref> &gt;</type>
+          <declname>buttonPtr</declname>
+        </param>
+        <briefdescription>
+<para>Sets other buttons inactive when a button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buttonPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shared pointer to the <ref refid="class_button" kindref="compound">Button</ref> clicked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="184" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="562" bodyend="572"/>
+        <references refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" compoundref="_active_screen_8cc" startline="55" endline="57">ActiveScreen::getButtons</references>
+        <references refid="class_game_menu_screen_1a974eb5076298fbba7e4d6b577f74e888" compoundref="_active_screen_8cc" startline="636" endline="652">getPlayerNumFromEventType</references>
+        <references refid="class_game_menu_screen_1a8734e38603d1886079ff185c5aa399bc" compoundref="_active_screen_8cc" startline="603" endline="634">isEventTypeAILevel</references>
+        <references refid="class_game_menu_screen_1a704fad5ddf438187195732e2b727aaaf" compoundref="_active_screen_8cc" startline="574" endline="601">isEventTypeSetAI</references>
+        <referencedby refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" compoundref="_active_screen_8cc" startline="235" endline="264">worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a974eb5076298fbba7e4d6b577f74e888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int GameMenuScreen::getPlayerNumFromEventType</definition>
+        <argsstring>(ScreenEventType event)</argsstring>
+        <name>getPlayerNumFromEventType</name>
+        <param>
+          <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Gets the player number from the ScreenEventType. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ScreenEventType to analyze. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The player number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="191" column="9" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="636" bodyend="652"/>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aea6984aa09b2b69208ca7eecf236f818" compoundref="main_8h" startline="108">PLAYER_1_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" compoundref="main_8h" startline="112">PLAYER_1_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" compoundref="main_8h" startline="116">PLAYER_1_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" compoundref="main_8h" startline="120">PLAYER_1_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a05eb103383e8fab8ec3c7bb0ce3b784c" compoundref="main_8h" startline="104">PLAYER_1_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aefeae4e7efa7be08dead75bb7d0bda64" compoundref="main_8h" startline="100">PLAYER_1_SET_NONE</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a3b399446ef96348a6d6f2c29b2167f8b" compoundref="main_8h" startline="109">PLAYER_2_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" compoundref="main_8h" startline="113">PLAYER_2_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" compoundref="main_8h" startline="117">PLAYER_2_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" compoundref="main_8h" startline="121">PLAYER_2_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a4e1b1f9764dc1d2478cc5a9293242cdd" compoundref="main_8h" startline="105">PLAYER_2_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a064250338f42c9f7e1befb71f7cf802e" compoundref="main_8h" startline="101">PLAYER_2_SET_NONE</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aff036f98f13340398bfa63e59f4b0356" compoundref="main_8h" startline="110">PLAYER_3_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" compoundref="main_8h" startline="114">PLAYER_3_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" compoundref="main_8h" startline="118">PLAYER_3_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" compoundref="main_8h" startline="122">PLAYER_3_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0ab423c3a677b07e0af42d5fdff4a05a" compoundref="main_8h" startline="106">PLAYER_3_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8325febe2c6095e6293d46c7642695ba" compoundref="main_8h" startline="102">PLAYER_3_SET_NONE</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a265730736e3985c3e75bc451b99978a8" compoundref="main_8h" startline="111">PLAYER_4_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" compoundref="main_8h" startline="115">PLAYER_4_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" compoundref="main_8h" startline="119">PLAYER_4_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" compoundref="main_8h" startline="123">PLAYER_4_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afc2c1b58ad426453cc5b6310d491fc7b" compoundref="main_8h" startline="107">PLAYER_4_SET_HUMAN</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ab31023d85b15b88cd7ec364fead83304" compoundref="main_8h" startline="103">PLAYER_4_SET_NONE</references>
+        <referencedby refid="class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e" compoundref="_active_screen_8cc" startline="552" endline="560">setAILevelColumnVisibility</referencedby>
+        <referencedby refid="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" compoundref="_active_screen_8cc" startline="562" endline="572">setOtherButtonsInactive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::setAILevelColumnVisibility</definition>
+        <argsstring>(int playerNum, bool visible)</argsstring>
+        <name>setAILevelColumnVisibility</name>
+        <param>
+          <type>int</type>
+          <declname>playerNum</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>visible</declname>
+        </param>
+        <briefdescription>
+<para>Sets the AI level column visibility. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>visible</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag indicating if the column should be visible. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="198" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="552" bodyend="560"/>
+        <references refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" compoundref="_active_screen_8cc" startline="55" endline="57">ActiveScreen::getButtons</references>
+        <references refid="class_game_menu_screen_1a974eb5076298fbba7e4d6b577f74e888" compoundref="_active_screen_8cc" startline="636" endline="652">getPlayerNumFromEventType</references>
+        <references refid="class_game_menu_screen_1a8734e38603d1886079ff185c5aa399bc" compoundref="_active_screen_8cc" startline="603" endline="634">isEventTypeAILevel</references>
+        <referencedby refid="class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6" compoundref="_active_screen_8cc" startline="452" endline="550">buttonClickHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a8734e38603d1886079ff185c5aa399bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameMenuScreen::isEventTypeAILevel</definition>
+        <argsstring>(int playerNum, ScreenEventType event)</argsstring>
+        <name>isEventTypeAILevel</name>
+        <param>
+          <type>int</type>
+          <declname>playerNum</declname>
+        </param>
+        <param>
+          <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the ScreenEventType is related to AI level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ScreenEventType to analyze. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the event is related to AI level, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="206" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="603" bodyend="634"/>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" compoundref="main_8h" startline="112">PLAYER_1_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" compoundref="main_8h" startline="116">PLAYER_1_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" compoundref="main_8h" startline="120">PLAYER_1_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" compoundref="main_8h" startline="113">PLAYER_2_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" compoundref="main_8h" startline="117">PLAYER_2_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" compoundref="main_8h" startline="121">PLAYER_2_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" compoundref="main_8h" startline="114">PLAYER_3_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" compoundref="main_8h" startline="118">PLAYER_3_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" compoundref="main_8h" startline="122">PLAYER_3_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" compoundref="main_8h" startline="115">PLAYER_4_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" compoundref="main_8h" startline="119">PLAYER_4_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" compoundref="main_8h" startline="123">PLAYER_4_SET_AI_LEVEL_3</references>
+        <referencedby refid="class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e" compoundref="_active_screen_8cc" startline="552" endline="560">setAILevelColumnVisibility</referencedby>
+        <referencedby refid="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" compoundref="_active_screen_8cc" startline="562" endline="572">setOtherButtonsInactive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a704fad5ddf438187195732e2b727aaaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameMenuScreen::isEventTypeSetAI</definition>
+        <argsstring>(int playerNum, ScreenEventType event)</argsstring>
+        <name>isEventTypeSetAI</name>
+        <param>
+          <type>int</type>
+          <declname>playerNum</declname>
+        </param>
+        <param>
+          <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the ScreenEventType is related to setting AI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ScreenEventType to analyze. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the event is related to setting AI, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="214" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="574" bodyend="601"/>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aea6984aa09b2b69208ca7eecf236f818" compoundref="main_8h" startline="108">PLAYER_1_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a3b399446ef96348a6d6f2c29b2167f8b" compoundref="main_8h" startline="109">PLAYER_2_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3aff036f98f13340398bfa63e59f4b0356" compoundref="main_8h" startline="110">PLAYER_3_SET_AI</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a265730736e3985c3e75bc451b99978a8" compoundref="main_8h" startline="111">PLAYER_4_SET_AI</references>
+        <referencedby refid="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" compoundref="_active_screen_8cc" startline="562" endline="572">setOtherButtonsInactive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a348efe82320f6cf37be5b873343768d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::setDefaultAILevelButtonsFocus</definition>
+        <argsstring>(int playerNum)</argsstring>
+        <name>setDefaultAILevelButtonsFocus</name>
+        <param>
+          <type>int</type>
+          <declname>playerNum</declname>
+        </param>
+        <briefdescription>
+<para>Sets the default AI level buttons&apos; focus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="220" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="654" bodyend="689"/>
+        <references refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" compoundref="_active_screen_8cc" startline="55" endline="57">ActiveScreen::getButtons</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7abde556284abc671f4d94cef9635317" compoundref="main_8h" startline="112">PLAYER_1_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6fb3796b6a34cd0c5b9759e2679bb173" compoundref="main_8h" startline="116">PLAYER_1_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a6ec5929cc9a69a188cf1e57d6dcc5e3c" compoundref="main_8h" startline="120">PLAYER_1_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3adf3409bb571afce5a39cddc2dabf122b" compoundref="main_8h" startline="113">PLAYER_2_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afce7acf2d21b92023d481fdebb216e09" compoundref="main_8h" startline="117">PLAYER_2_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ae489344c0503d92b6b7229b226ce6fe2" compoundref="main_8h" startline="121">PLAYER_2_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a73d968e3ebe17cba94d0aea054ef6ac4" compoundref="main_8h" startline="114">PLAYER_3_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a48d544cd5966b5d7244c6c153217241f" compoundref="main_8h" startline="118">PLAYER_3_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a8eaefc9c7296cdd84bd3b6a13227f0d1" compoundref="main_8h" startline="122">PLAYER_3_SET_AI_LEVEL_3</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a597bb2ff9fd3e551e39eea248aa46e81" compoundref="main_8h" startline="115">PLAYER_4_SET_AI_LEVEL_1</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3ace4f305a3d973cf28640730067b7165b" compoundref="main_8h" startline="119">PLAYER_4_SET_AI_LEVEL_2</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a72f6c6f6ea777948316c7cb82745c178" compoundref="main_8h" startline="123">PLAYER_4_SET_AI_LEVEL_3</references>
+        <referencedby refid="class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6" compoundref="_active_screen_8cc" startline="452" endline="550">buttonClickHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a1ec0a4aa6bc44f2153e9d2abf290e7c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="structplayer_settings" kindref="compound">playerSettings</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; playerSettings &gt; &gt; GameMenuScreen::getPlayersSettings</definition>
+        <argsstring>() const</argsstring>
+        <name>getPlayersSettings</name>
+        <reimplements refid="class_active_screen_1a571c9f50c3d50235b43a1d2cb01ad72f">getPlayersSettings</reimplements>
+        <briefdescription>
+<para>Gets the players&apos; settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of shared pointers to <ref refid="structplayer_settings" kindref="compound">playerSettings</ref> objects. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="226" column="17" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="691" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void GameMenuScreen::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_active_screen_1a381ad867612f98caa038c0b775f0c39a">draw</reimplements>
+        <briefdescription>
+<para>Draws the game menu screen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="231" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="223" bodyend="233"/>
+        <references refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" compoundref="_active_screen_8cc" startline="55" endline="57">ActiveScreen::getButtons</references>
+        <references refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" compoundref="_active_screen_8cc" startline="43" endline="45">ActiveScreen::getContextWindow</references>
+        <references refid="class_active_screen_1a83ce836bcc0364d216ee126716b27da0" compoundref="_active_screen_8cc" startline="59" endline="61">ActiveScreen::getTexts</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the screen for the game menu. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ActiveScreen</label>
+        <link refid="class_active_screen"/>
+      </node>
+      <node id="1">
+        <label>GameMenuScreen</label>
+        <link refid="class_game_menu_screen"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ActiveScreen</label>
+        <link refid="class_active_screen"/>
+      </node>
+      <node id="1">
+        <label>GameMenuScreen</label>
+        <link refid="class_game_menu_screen"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="137" column="1" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="137" bodyend="232"/>
+    <listofallmembers>
+      <member refid="class_active_screen_1a8fbf39867108efbaf2d3e3102ec7d746" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>ActiveScreen</name></member>
+      <member refid="class_active_screen_1ab51ef0260eead96cb3d88ecdb42cdd36" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>addButton</name></member>
+      <member refid="class_active_screen_1a4115e6322ed681427d0cd92c5910ca5e" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>addText</name></member>
+      <member refid="class_game_menu_screen_1a5ec0f806edaf1275af6d9eb044e2d8f6" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>buttonClickHandle</name></member>
+      <member refid="class_active_screen_1a385001a5027f0b2f00145a54b668368f" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>buttonSetColors</name></member>
+      <member refid="class_game_menu_screen_1a6ef99d24168d2b2a01881a0dbbb69269" prot="private" virt="non-virtual"><scope>GameMenuScreen</scope><name>createPlayerSettingsColumn</name></member>
+      <member refid="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16" prot="public" virt="virtual"><scope>GameMenuScreen</scope><name>draw</name></member>
+      <member refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>gameMenuCreate</name></member>
+      <member refid="class_game_menu_screen_1a5c3726575383e12d2a0f55e035be6719" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>GameMenuScreen</name></member>
+      <member refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>getButtons</name></member>
+      <member refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>getContextWindow</name></member>
+      <member refid="class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>getFont</name></member>
+      <member refid="class_game_menu_screen_1a974eb5076298fbba7e4d6b577f74e888" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>getPlayerNumFromEventType</name></member>
+      <member refid="class_active_screen_1a33f41ba13061ef1700f475e916bcba3b" prot="public" virt="virtual"><scope>GameMenuScreen</scope><name>getPlayersResult</name></member>
+      <member refid="class_game_menu_screen_1a1ec0a4aa6bc44f2153e9d2abf290e7c4" prot="public" virt="virtual"><scope>GameMenuScreen</scope><name>getPlayersSettings</name></member>
+      <member refid="class_active_screen_1aa4db9f544d20ad9c7b1fe2af4d55ea3d" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>getScreenType</name></member>
+      <member refid="class_active_screen_1a83ce836bcc0364d216ee126716b27da0" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>getTexts</name></member>
+      <member refid="class_game_menu_screen_1a8734e38603d1886079ff185c5aa399bc" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>isEventTypeAILevel</name></member>
+      <member refid="class_game_menu_screen_1a704fad5ddf438187195732e2b727aaaf" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>isEventTypeSetAI</name></member>
+      <member refid="class_game_menu_screen_1a793101a79a28b86e941f8c032188e83c" prot="private" virt="non-virtual"><scope>GameMenuScreen</scope><name>playerSettingsList_</name></member>
+      <member refid="class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setAILevelColumnVisibility</name></member>
+      <member refid="class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setContextWindow</name></member>
+      <member refid="class_game_menu_screen_1a348efe82320f6cf37be5b873343768d1" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setDefaultAILevelButtonsFocus</name></member>
+      <member refid="class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setFont</name></member>
+      <member refid="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setOtherButtonsInactive</name></member>
+      <member refid="class_game_menu_screen_1ade9e4b9082cd923b43e45ea1f74ebaba" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setPlayerSettings</name></member>
+      <member refid="class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf" prot="public" virt="non-virtual"><scope>GameMenuScreen</scope><name>setScreenType</name></member>
+      <member refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" prot="public" virt="virtual"><scope>GameMenuScreen</scope><name>worker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

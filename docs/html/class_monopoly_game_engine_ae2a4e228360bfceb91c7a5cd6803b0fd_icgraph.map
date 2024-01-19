@@ -1,0 +1,12 @@
+<map id="MonopolyGameEngine::getHouseCount" name="MonopolyGameEngine::getHouseCount">
+<area shape="rect" id="node1" title="Gets the count of houses available for purchase." alt="" coords="1020,97,1189,139"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ac8629f2abd1bf12cfc0af747d16c867f" title="Creates text displaying the available count of houses and hotels." alt="" coords="731,5,972,47"/>
+<area shape="rect" id="node4" href="$class_monopoly_game_engine.html#aaf7f625f32dc53f7413236a79afaf6d5" title="Checks if building houses on a street is legal for a player." alt="" coords="767,127,936,168"/>
+<area shape="rect" id="node9" href="$class_monopoly_game_engine.html#ac01307d6ae292277aa3caf5855955a8c" title="Checks if destroying a hotel on a street is legal for a player." alt="" coords="760,192,943,233"/>
+<area shape="rect" id="node10" href="$class_monopoly_game_engine.html#ae9a8bf736199ef2e643f750be08b1bed" title="Updates the text displaying the available count of houses and hotels." alt="" coords="437,63,683,104"/>
+<area shape="rect" id="node3" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="462,11,658,38"/>
+<area shape="rect" id="node5" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="459,128,661,169"/>
+<area shape="rect" id="node8" href="$class_monopoly_game_engine.html#a6f09145fdc73c99a2fdf64c53ee1713a" title="Worker method for managing building and destroying houses/hotels." alt="" coords="461,193,659,235"/>
+<area shape="rect" id="node6" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,128,389,169"/>
+<area shape="rect" id="node7" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,135,163,162"/>
+</map>

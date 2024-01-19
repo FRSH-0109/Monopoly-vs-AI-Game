@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classann_1_1neuralnet" kind="class" language="C++" prot="public">
+    <compoundname>ann::neuralnet</compoundname>
+    <includes refid="_tinyann_8h" local="no">Tinyann.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classann_1_1neuralnet_1a1fd29e5944d000bd913ec85104e76127" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classann_1_1neuron" kindref="compound">neuron</ref> &gt;</type>
+        <definition>std::vector&lt;neuron&gt; ann::neuralnet::nodes</definition>
+        <argsstring></argsstring>
+        <name>nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="41" column="13" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classann_1_1neuralnet_1af84fcc28701e4860a7ef5fd0c7af5ba8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ann::neuralnet::recurrent</definition>
+        <argsstring></argsstring>
+        <name>recurrent</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="42" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classann_1_1neuralnet_1a05981b7c371fd4a395e52f70ec490f10" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; size_t &gt;</type>
+        <definition>std::vector&lt;size_t&gt; ann::neuralnet::input_nodes</definition>
+        <argsstring></argsstring>
+        <name>input_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="44" column="13" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classann_1_1neuralnet_1a55b5765468882ab9843b1a89fd12bb37" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; size_t &gt;</type>
+        <definition>std::vector&lt;size_t&gt; ann::neuralnet::bias_nodes</definition>
+        <argsstring></argsstring>
+        <name>bias_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="45" column="13" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classann_1_1neuralnet_1abaa6dc19282094d12fa4c1bb8d74ae61" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; size_t &gt;</type>
+        <definition>std::vector&lt;size_t&gt; ann::neuralnet::output_nodes</definition>
+        <argsstring></argsstring>
+        <name>output_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="46" column="13" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classann_1_1neuralnet_1ad0f6d09bf35710e5cb1877a4b01aa81d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ann::neuralnet::sigmoid</definition>
+        <argsstring>(double x)</argsstring>
+        <name>sigmoid</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="48" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classann_1_1neuralnet_1a81990e84bbabca27b75efa4a92eca6cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ann::neuralnet::evaluate_nonrecurrent</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;input, std::vector&lt; double &gt; &amp;output)</argsstring>
+        <name>evaluate_nonrecurrent</name>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="49" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="17" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classann_1_1neuralnet_1a115add9fd1ca1003af8b91a18367f852" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ann::neuralnet::evaluate_recurrent</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;input, std::vector&lt; double &gt; &amp;output)</argsstring>
+        <name>evaluate_recurrent</name>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="51" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="60" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classann_1_1neuralnet_1aadcc3e0659c327b2dc79eca2917f8524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ann::neuralnet::neuralnet</definition>
+        <argsstring>()</argsstring>
+        <name>neuralnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="54" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ann::neuralnet::from_genome</definition>
+        <argsstring>(const neat::genome &amp;a)</argsstring>
+        <name>from_genome</name>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">neat::genome</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="56" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="88" bodyend="139"/>
+        <references refid="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" compoundref="_tinyneat_8h" startline="64">neat::network_info_container::bias_size</references>
+        <references refid="classneat_1_1genome_1a31e3a36c77d9024226311780fc9a68f3" compoundref="_tinyneat_8h" startline="92">neat::genome::genes</references>
+        <references refid="classann_1_1neuron_1aaa89c9870e47b5a3d7ff99e3de9f92c0" compoundref="_tinyann_8h" startline="34">ann::neuron::in_nodes</references>
+        <references refid="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" compoundref="_tinyneat_8h" startline="63">neat::network_info_container::input_size</references>
+        <references refid="classneat_1_1genome_1a3254ddbe0d8e472670b0af13b4a42872" compoundref="_tinyneat_8h" startline="90">neat::genome::network_info</references>
+        <references refid="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" compoundref="_tinyneat_8h" startline="65">neat::network_info_container::output_size</references>
+        <references refid="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" compoundref="_tinyneat_8h" startline="67">neat::network_info_container::recurrent</references>
+        <references refid="classann_1_1neuron_1aabb42bdb443921bc5eb1f132d3d9d5aa" compoundref="_tinyann_8h" startline="31">ann::neuron::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classann_1_1neuralnet_1af6ea7c4bc68dbd966cc80a63a6a3519d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ann::neuralnet::evaluate</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;input, std::vector&lt; double &gt; &amp;output)</argsstring>
+        <name>evaluate</name>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="58" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="141" bodyend="146"/>
+        <referencedby refid="class_ai_player_1affc4990f1252789326aa28a7797462ab" compoundref="_player_8cc" startline="735" endline="783">AiPlayer::decideAcceptTrade</referencedby>
+        <referencedby refid="class_ai_player_1a441701de5fdaa5958fcc36e9791a9edc" compoundref="_player_8cc" startline="486" endline="520">AiPlayer::decideAuctionBid</referencedby>
+        <referencedby refid="class_ai_player_1a94760240482130380840c0d303a19642" compoundref="_player_8cc" startline="522" endline="597">AiPlayer::decideBuildHouse</referencedby>
+        <referencedby refid="class_ai_player_1a4ec346de3b8d48b157354452569ec266" compoundref="_player_8cc" startline="311" endline="363">AiPlayer::decideBuy</referencedby>
+        <referencedby refid="class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637" compoundref="_player_8cc" startline="365" endline="412">AiPlayer::decideJail</referencedby>
+        <referencedby refid="class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9" compoundref="_player_8cc" startline="414" endline="447">AiPlayer::decideMortgage</referencedby>
+        <referencedby refid="class_ai_player_1a84e084321dab6cea80ec5ea0f5564c02" compoundref="_player_8cc" startline="685" endline="733">AiPlayer::decideOfferTrade</referencedby>
+        <referencedby refid="class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135" compoundref="_player_8cc" startline="599" endline="683">AiPlayer::decideSellHouse</referencedby>
+        <referencedby refid="class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af" compoundref="_player_8cc" startline="449" endline="484">AiPlayer::decideUnmortgage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classann_1_1neuralnet_1aafc20f4edec46ac91452f5bb97152ebe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ann::neuralnet::import_fromfile</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>import_fromfile</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="60" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="148" bodyend="199"/>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">GameEngine::worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classann_1_1neuralnet_1ab06c14a353b59733365443f36dd40a37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ann::neuralnet::export_tofile</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>export_tofile</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="62" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.cc" bodystart="201" bodyend="219"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyann.h" line="39" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyann.h" bodystart="39" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classann_1_1neuralnet_1a55b5765468882ab9843b1a89fd12bb37" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>bias_nodes</name></member>
+      <member refid="classann_1_1neuralnet_1af6ea7c4bc68dbd966cc80a63a6a3519d" prot="public" virt="non-virtual"><scope>ann::neuralnet</scope><name>evaluate</name></member>
+      <member refid="classann_1_1neuralnet_1a81990e84bbabca27b75efa4a92eca6cd" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>evaluate_nonrecurrent</name></member>
+      <member refid="classann_1_1neuralnet_1a115add9fd1ca1003af8b91a18367f852" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>evaluate_recurrent</name></member>
+      <member refid="classann_1_1neuralnet_1ab06c14a353b59733365443f36dd40a37" prot="public" virt="non-virtual"><scope>ann::neuralnet</scope><name>export_tofile</name></member>
+      <member refid="classann_1_1neuralnet_1a0ae44c22c152757053aebcaa70f5f8bf" prot="public" virt="non-virtual"><scope>ann::neuralnet</scope><name>from_genome</name></member>
+      <member refid="classann_1_1neuralnet_1aafc20f4edec46ac91452f5bb97152ebe" prot="public" virt="non-virtual"><scope>ann::neuralnet</scope><name>import_fromfile</name></member>
+      <member refid="classann_1_1neuralnet_1a05981b7c371fd4a395e52f70ec490f10" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>input_nodes</name></member>
+      <member refid="classann_1_1neuralnet_1aadcc3e0659c327b2dc79eca2917f8524" prot="public" virt="non-virtual"><scope>ann::neuralnet</scope><name>neuralnet</name></member>
+      <member refid="classann_1_1neuralnet_1a1fd29e5944d000bd913ec85104e76127" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>nodes</name></member>
+      <member refid="classann_1_1neuralnet_1abaa6dc19282094d12fa4c1bb8d74ae61" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>output_nodes</name></member>
+      <member refid="classann_1_1neuralnet_1af84fcc28701e4860a7ef5fd0c7af5ba8" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>recurrent</name></member>
+      <member refid="classann_1_1neuralnet_1ad0f6d09bf35710e5cb1877a4b01aa81d" prot="private" virt="non-virtual"><scope>ann::neuralnet</scope><name>sigmoid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_context_window_8h" kind="file" language="C++">
+    <compoundname>ContextWindow.h</compoundname>
+    <includes local="no">SFML/Graphics.hpp</includes>
+    <includedby refid="_active_screen_8h" local="yes">/home/kamil/zpr/Monopoly/ActiveScreen.h</includedby>
+    <includedby refid="_context_window_8cc" local="yes">/home/kamil/zpr/Monopoly/ContextWindow.cc</includedby>
+    <includedby refid="_field_8h" local="yes">/home/kamil/zpr/Monopoly/Field.h</includedby>
+    <includedby refid="_game_engine_8h" local="yes">/home/kamil/zpr/Monopoly/GameEngine.h</includedby>
+    <includedby refid="_player_8h" local="yes">/home/kamil/zpr/Monopoly/Player.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/ActiveScreen.cc</label>
+        <link refid="_active_screen_8cc"/>
+      </node>
+      <node id="10">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/ActiveScreen.h</label>
+        <link refid="_active_screen_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/kamil/zpr/Monopoly/Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="11">
+        <label>/home/kamil/zpr/Monopoly/ContextWindow.cc</label>
+        <link refid="_context_window_8cc"/>
+      </node>
+      <node id="18">
+        <label>/home/kamil/zpr/Monopoly/Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/kamil/zpr/Monopoly/Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/home/kamil/zpr/Monopoly/Field.cc</label>
+        <link refid="_field_8cc"/>
+      </node>
+      <node id="9">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/kamil/zpr/Monopoly/Board.cc</label>
+        <link refid="_board_8cc"/>
+      </node>
+      <node id="19">
+        <label>/home/kamil/zpr/Monopoly/Player.cc</label>
+        <link refid="_player_8cc"/>
+      </node>
+      <node id="8">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+      <node id="16">
+        <label>/home/kamil/zpr/Monopoly/Withdraw.cc</label>
+        <link refid="_withdraw_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_context_window" prot="public">ContextWindow</innerclass>
+    <briefdescription>
+<para>Source file for context Window class It is Singleton class type used mainly for handling SFML window operations between other classes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONTEXT_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONTEXT_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_context_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_context_window" kindref="compound">ContextWindow</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_context_window" kindref="compound">ContextWindow</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_context_window" kindref="compound">ContextWindow</ref>*<sp/>context_window_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35" refid="class_context_window_1ae56e76fedccfadd3762531f1737428dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_context_window_1ae56e76fedccfadd3762531f1737428dd" kindref="member">ContextWindow</ref>(<ref refid="class_context_window" kindref="compound">ContextWindow</ref>&amp;<sp/>other)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_context_window_1a8625c1b2f2d6d6a73677cb04c9c4d69c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a8625c1b2f2d6d6a73677cb04c9c4d69c" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_context_window" kindref="compound">ContextWindow</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_context_window" kindref="compound">ContextWindow</ref>*<sp/><ref refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" kindref="member">GetInstance</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_context_window_1a25341464088c696488399cdeb7d7b577" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::RenderWindow<sp/><ref refid="class_context_window_1a25341464088c696488399cdeb7d7b577" kindref="member">window_</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="class_context_window_1a825b9ccdca45f2807b44e40077fbae02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::View<sp/><ref refid="class_context_window_1a825b9ccdca45f2807b44e40077fbae02" kindref="member">view_</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a08a570de8e104db8123418800b23ad2c" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_context_window_1a835148ceb6e0953cc7f63a57c0da4b40" kindref="member">isOpen</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::RenderWindow&amp;<sp/><ref refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" kindref="member">getWindow</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::View&amp;<sp/><ref refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" kindref="member">getView</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/ContextWindow.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classneat_1_1innovation__container" kind="class" language="C++" prot="public">
+    <compoundname>neat::innovation_container</compoundname>
+    <includes refid="_tinyneat_8h" local="no">Tinyneat.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classneat_1_1innovation__container_1afde0a2ad5dd16778a2bd244c613b8270" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::innovation_container::_number</definition>
+        <argsstring></argsstring>
+        <name>_number</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="113" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1innovation__container_1af420924d557e6ded9caed82d7d093352" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::pair&lt; unsigned int, unsigned int &gt;, unsigned int &gt;</type>
+        <definition>std::map&lt;std::pair&lt;unsigned int, unsigned int&gt;, unsigned int&gt; neat::innovation_container::track</definition>
+        <argsstring></argsstring>
+        <name>track</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="114" column="10" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classneat_1_1innovation__container_1a94c3e431be20eea66837e1b894761647" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class pool</definition>
+        <argsstring></argsstring>
+        <name>pool</name>
+        <param>
+          <type><ref refid="classneat_1_1pool" kindref="compound">pool</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="119" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classneat_1_1innovation__container_1a4a32b26f0fe0b4088302fd14ddcc9bc9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::innovation_container::set_innovation_number</definition>
+        <argsstring>(unsigned int num)</argsstring>
+        <name>set_innovation_number</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="115" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="115" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classneat_1_1innovation__container_1a26698188a50f5dbd5c72440a871efc1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>neat::innovation_container::innovation_container</definition>
+        <argsstring>()</argsstring>
+        <name>innovation_container</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="122" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1innovation__container_1ac26844581a79430afd26c114b8b1686d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::innovation_container::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="123" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::innovation_container::add_gene</definition>
+        <argsstring>(gene &amp;g)</argsstring>
+        <name>add_gene</name>
+        <param>
+          <type><ref refid="structneat_1_1gene" kindref="compound">gene</ref> &amp;</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="124" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="124" bodyend="130"/>
+        <references refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" compoundref="_tinyneat_8h" startline="72">neat::gene::from_node</references>
+        <references refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" compoundref="_tinyneat_8h" startline="73">neat::gene::to_node</references>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1innovation__container_1a1afb92313cfd6d29afbb11c6655c442e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::innovation_container::number</definition>
+        <argsstring>()</argsstring>
+        <name>number</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="131" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="131" bodyend="131"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="111" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="111" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classneat_1_1innovation__container_1afde0a2ad5dd16778a2bd244c613b8270" prot="private" virt="non-virtual"><scope>neat::innovation_container</scope><name>_number</name></member>
+      <member refid="classneat_1_1innovation__container_1aed018e7b91489d02006a291e5b78f2d7" prot="public" virt="non-virtual"><scope>neat::innovation_container</scope><name>add_gene</name></member>
+      <member refid="classneat_1_1innovation__container_1a26698188a50f5dbd5c72440a871efc1c" prot="public" virt="non-virtual"><scope>neat::innovation_container</scope><name>innovation_container</name></member>
+      <member refid="classneat_1_1innovation__container_1a1afb92313cfd6d29afbb11c6655c442e" prot="public" virt="non-virtual"><scope>neat::innovation_container</scope><name>number</name></member>
+      <member refid="classneat_1_1innovation__container_1a94c3e431be20eea66837e1b894761647" prot="private" virt="non-virtual"><scope>neat::innovation_container</scope><name>pool</name></member>
+      <member refid="classneat_1_1innovation__container_1ac26844581a79430afd26c114b8b1686d" prot="public" virt="non-virtual"><scope>neat::innovation_container</scope><name>reset</name></member>
+      <member refid="classneat_1_1innovation__container_1a4a32b26f0fe0b4088302fd14ddcc9bc9" prot="private" virt="non-virtual"><scope>neat::innovation_container</scope><name>set_innovation_number</name></member>
+      <member refid="classneat_1_1innovation__container_1af420924d557e6ded9caed82d7d093352" prot="private" virt="non-virtual"><scope>neat::innovation_container</scope><name>track</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

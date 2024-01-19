@@ -1,0 +1,5 @@
+<map id="GameEngine::clear" name="GameEngine::clear">
+<area shape="rect" id="node1" title="Clears content on the displayed window." alt="" coords="5,31,151,57"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a2a10627656f88da08fc3bb9ec760323a" title="Gets the pointer to the context window." alt="" coords="199,5,436,32"/>
+<area shape="rect" id="node3" href="$class_context_window.html#aeb95c8c03177e672167f42b7672f2d7f" title="Gets the SFML RenderWindow object." alt="" coords="215,56,420,83"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="ActiveScreen::getButtons" name="ActiveScreen::getButtons">
+<area shape="rect" id="node1" title="Gets the vector of buttons displayed on the screen." alt="" coords="789,245,976,272"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a4f3b0441bbb05d9c97a5f2970eeacd16" title="Draws the game menu screen." alt="" coords="539,5,721,32"/>
+<area shape="rect" id="node3" href="$class_main_menu_screen.html#a6f640795fce8c271b2988ee05f545d37" title="Draws the main menu screen." alt="" coords="543,56,717,83"/>
+<area shape="rect" id="node4" href="$class_game_menu_screen.html#af17f9c5e3353be5c531251c4e78d6d0c" title="Function to create the game menu." alt="" coords="519,107,741,149"/>
+<area shape="rect" id="node6" href="$class_main_menu_screen.html#ac1f40ff20eed76db8a0fc8cca1a8cd0b" title="Function to create the main menu." alt="" coords="525,173,735,214"/>
+<area shape="rect" id="node8" href="$class_game_menu_screen.html#ae427ab9331af7fb8bfa52d88a0977b3e" title="Sets the AI level column visibility." alt="" coords="521,238,739,279"/>
+<area shape="rect" id="node10" href="$class_game_menu_screen.html#a930fac59e5231f348579a57991246e07" title="Worker function for the game menu screen." alt="" coords="5,369,199,396"/>
+<area shape="rect" id="node11" href="$class_game_menu_screen.html#a348efe82320f6cf37be5b873343768d1" title="Sets the default AI level buttons&#39; focus." alt="" coords="521,303,739,345"/>
+<area shape="rect" id="node12" href="$class_game_menu_screen.html#aa5f7b6ac2cb57c6f700aefe1f727bd77" title="Sets other buttons inactive when a button is clicked." alt="" coords="256,421,461,462"/>
+<area shape="rect" id="node13" href="$class_main_menu_screen.html#afdd21c26a37bfc5b952836e283b31688" title="Worker function for the main menu screen." alt="" coords="537,471,723,497"/>
+<area shape="rect" id="node5" href="$class_game_menu_screen.html#a5c3726575383e12d2a0f55e035be6719" title="Constructor for the GameMenuScreen class." alt="" coords="247,107,471,149"/>
+<area shape="rect" id="node7" href="$class_main_menu_screen.html#a4d246c87a47788cf7802e145e9ab0f6e" title="Constructor for the MainMenuScreen class." alt="" coords="253,173,464,214"/>
+<area shape="rect" id="node9" href="$class_game_menu_screen.html#a5ec0f806edaf1275af6d9eb044e2d8f6" title="Handles button clicks in the game menu." alt="" coords="247,303,470,345"/>
+</map>

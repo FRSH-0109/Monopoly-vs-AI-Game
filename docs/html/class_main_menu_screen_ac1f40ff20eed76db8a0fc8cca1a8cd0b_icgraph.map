@@ -1,0 +1,4 @@
+<map id="MainMenuScreen::mainMenuCreate" name="MainMenuScreen::mainMenuCreate">
+<area shape="rect" id="node1" title="Function to create the main menu." alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node2" href="$class_main_menu_screen.html#a4d246c87a47788cf7802e145e9ab0f6e" title="Constructor for the MainMenuScreen class." alt="" coords="5,5,216,47"/>
+</map>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_notification_wall" xml:lang="en-US">
+<title>NotificationWall Class Reference</title>
+<indexterm><primary>NotificationWall</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_notification_wall_1ae2f70a86d938bd130180d2e76079bcaf"/>void <emphasis role="strong">clearWall</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_notification_wall_1a0dad79435cd7be0f9f20619172a7e168"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getWall</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_notification_wall_1aa855b921732d7cffe8c8388d30ead116"/>void <emphasis role="strong">addToWall</emphasis> (std::string text)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_notification_wall_1a168674a90c0e91e98f7535215c06c05c"/>unsigned int <emphasis role="strong">getFontSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_notification_wall_1a775496e213b1559aa63119829f5fe914"/>void <emphasis role="strong">setFont</emphasis> (sf::Font font)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_notification_wall_1aef1f5f7372c584354e1617c63bdee7cd"/>sf::Font &amp; <emphasis role="strong">getFont</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__notification_wall_8h">NotificationWall.h</link>/home/kamil/zpr/Monopoly/<link linkend="__notification_wall_8cc">NotificationWall.cc</link></section>

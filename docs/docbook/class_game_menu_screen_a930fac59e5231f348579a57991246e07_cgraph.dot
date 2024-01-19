@@ -1,0 +1,35 @@
+digraph "GameMenuScreen::worker"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="GameMenuScreen::worker",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GameMenuScreen::buttonClick\lHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a5ec0f806edaf1275af6d9eb044e2d8f6",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GameMenuScreen::setAILevel\lColumnVisibility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#ae427ab9331af7fb8bfa52d88a0977b3e",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ActiveScreen::getButtons",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_active_screen.html#aefe54d9a04210b2985890f3657974484",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="GameMenuScreen::getPlayer\lNumFromEventType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a974eb5076298fbba7e4d6b577f74e888",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="GameMenuScreen::isEventType\lAILevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a8734e38603d1886079ff185c5aa399bc",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="GameMenuScreen::setDefault\lAILevelButtonsFocus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a348efe82320f6cf37be5b873343768d1",tooltip=" "];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="GameMenuScreen::setPlayer\lSettings",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#ade9e4b9082cd923b43e45ea1f74ebaba",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ActiveScreen::buttonSetColors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_active_screen.html#a385001a5027f0b2f00145a54b668368f",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ActiveScreen::getContext\lWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_active_screen.html#ac7c3386bd133917396975a4b0a5a6e68",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="GameMenuScreen::setOther\lButtonsInactive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#aa5f7b6ac2cb57c6f700aefe1f727bd77",tooltip=" "];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="GameMenuScreen::isEventType\lSetAI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_menu_screen.html#a704fad5ddf438187195732e2b727aaaf",tooltip=" "];
+}

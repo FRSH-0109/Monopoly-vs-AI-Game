@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structneat_1_1mutation__rate__container" xml:lang="en-US">
+<title>neat::mutation_rate_container Struct Reference</title>
+<indexterm><primary>neat::mutation_rate_container</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1afeaa2325ca22c0b1f54f30bff2d4afed"/>void <emphasis role="strong">read</emphasis> (std::ifstream &amp;o)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a79b3a916b32de0d74446777a890260db"/>void <emphasis role="strong">write</emphasis> (std::ofstream &amp;o, std::string prefix)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a85fb4293430dff8370fd6c8dc605d632"/>double <emphasis role="strong">connection_mutate_chance</emphasis> = 0.25</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a324c7255ddf2ae3aa86641e5d2802b74"/>double <emphasis role="strong">perturb_chance</emphasis> = 0.90</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1af23420caa17f977d11d760be23915430"/>double <emphasis role="strong">crossover_chance</emphasis> = 0.75</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a78f5efae4c29355ec967433e97732eb0"/>double <emphasis role="strong">link_mutation_chance</emphasis> = 2.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a49d56c792a4f9b1d4fea921fb6b01660"/>double <emphasis role="strong">node_mutation_chance</emphasis> = 0.50</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1add0037d4a5c4b62f9eba2feaaf28bbc8"/>double <emphasis role="strong">bias_mutation_chance</emphasis> = 0.40</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1acd06788e00f7fdc2c12ff6ed64887dae"/>double <emphasis role="strong">step_size</emphasis> = 0.1</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a3b02ae2d4acd5e263b242357099120b7"/>double <emphasis role="strong">disable_mutation_chance</emphasis> = 0.4</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1mutation__rate__container_1a77ec9dfea30fe11c7d50f5a01e6cf4ef"/>double <emphasis role="strong">enable_mutation_chance</emphasis> = 0.2</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link>/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8cc">Tinyneat.cc</link></section>

@@ -1,0 +1,8 @@
+<map id="AiPlayer::decideJail" name="AiPlayer::decideJail">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,152,133"/>
+<area shape="rect" id="node2" href="$classann_1_1neuralnet.html#af6ea7c4bc68dbd966cc80a63a6a3519d" title=" " alt="" coords="200,5,381,32"/>
+<area shape="rect" id="node3" href="$class_player.html#a9ba3a7b625d50ad49f73eca39aff8248" title=" " alt="" coords="221,56,361,83"/>
+<area shape="rect" id="node4" href="$class_player.html#a223c145e34c3288cf74be4c77dc58591" title=" " alt="" coords="201,107,381,133"/>
+<area shape="rect" id="node5" href="$class_ai_adapter.html#ac76618fcec497abb9b30456c39bb824a" title="Gets the AI network inputs." alt="" coords="213,157,368,184"/>
+<area shape="rect" id="node6" href="$class_player.html#a39465d76fc735a64d104b8b21e574b8c" title=" " alt="" coords="223,208,359,235"/>
+</map>

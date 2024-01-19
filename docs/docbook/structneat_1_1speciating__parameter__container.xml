@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structneat_1_1speciating__parameter__container" xml:lang="en-US">
+<title>neat::speciating_parameter_container Struct Reference</title>
+<indexterm><primary>neat::speciating_parameter_container</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1aae938961a4707b04ea19f078d8af1fd6"/>void <emphasis role="strong">read</emphasis> (std::ifstream &amp;o)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1abcd57a349c318372854d94aa388944f3"/>void <emphasis role="strong">write</emphasis> (std::ofstream &amp;o, std::string prefix)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1ad2458c000476a017111cc5ae8adc8780"/>unsigned int <emphasis role="strong">population</emphasis> = 240</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1a031fef276c80aed6bc53ca26e2d4b801"/>double <emphasis role="strong">delta_disjoint</emphasis> = 2.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1a4bd4257f2cb785b4a652adfef4b2ab56"/>double <emphasis role="strong">delta_weights</emphasis> = 0.4</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1a73347a764c86e9775a17b27b4db0b583"/>double <emphasis role="strong">delta_threshold</emphasis> = 1.3</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structneat_1_1speciating__parameter__container_1a040a8d008b7400bf02d63d4c5ab0612f"/>unsigned int <emphasis role="strong">stale_species</emphasis> = 15</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8h">Tinyneat.h</link>/home/kamil/zpr/Monopoly/<link linkend="__tinyneat_8cc">Tinyneat.cc</link></section>

@@ -1,0 +1,1352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_player" kind="class" language="C++" prot="public">
+    <compoundname>Player</compoundname>
+    <derivedcompoundref refid="class_ai_player" prot="public" virt="non-virtual">AiPlayer</derivedcompoundref>
+    <includes refid="_player_8h" local="no">Player.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_player_1a5815055c7e76bdbb423651a8a1a9cb65" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Player::is_ai_</definition>
+        <argsstring></argsstring>
+        <name>is_ai_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indicates whether the player is controlled by AI. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="30" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1aaa91d3f7483ec31d8de441867a442b86" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::ai_level_</definition>
+        <argsstring></argsstring>
+        <name>ai_level_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AI level of the player. Useless if player is human. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="31" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a37144a57b1fb28ef20eea5fff1d8d506" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::id_</definition>
+        <argsstring></argsstring>
+        <name>id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique identifier for the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="32" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a7b4b6dafd58dc087179da444ce64adf1" prot="private" static="no" mutable="no">
+        <type>sf::Color</type>
+        <definition>sf::Color Player::color_</definition>
+        <argsstring></argsstring>
+        <name>color_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Color associated with the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="33" column="11" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a3ed5b6866dc86c7f6226b1860b3d83b7" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::position_</definition>
+        <argsstring></argsstring>
+        <name>position_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current position of the player on the game board. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="34" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a44dea37dbf80e5de50037cb837f8a7cb" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt;unsigned int&gt; Player::fields_owned_id_</definition>
+        <argsstring></argsstring>
+        <name>fields_owned_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>List of property IDs owned by the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="35" column="13" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a667a8df5c5762583dfd5a32e10682185" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::money_</definition>
+        <argsstring></argsstring>
+        <name>money_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Amount of money the player has. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="36" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a1dca74a37d227b5a193d30a9a40ed2aa" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::jail_status_</definition>
+        <argsstring></argsstring>
+        <name>jail_status_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Jail status of the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="37" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a7d3947e8e4c41de6ba2fc972a4de05ed" prot="private" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture Player::player_texture_</definition>
+        <argsstring></argsstring>
+        <name>player_texture_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Texture for the player&apos;s sprite. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="38" column="13" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1aa5164c90dddf4e7d523bce058f28452c" prot="private" static="no" mutable="no">
+        <type>sf::Sprite</type>
+        <definition>sf::Sprite Player::player_sprite_</definition>
+        <argsstring></argsstring>
+        <name>player_sprite_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sprite representing the player on the game board. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="39" column="12" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1ab1172a09090a3926cc7b854f54a468b6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Player::sprite_offset_x_</definition>
+        <argsstring></argsstring>
+        <name>sprite_offset_x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Offset of the player sprite along the X-axis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="40" column="7" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1aa262e9def260ab353baae2bc54866dc8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Player::sprite_offset_y_</definition>
+        <argsstring></argsstring>
+        <name>sprite_offset_y_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Offset of the player sprite along the Y-axis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="41" column="7" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a9205613eb9ea067a0e5b793c8bc3669d" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::jail_cards_</definition>
+        <argsstring></argsstring>
+        <name>jail_cards_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of jail cards the player has. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="42" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a11ba3de1e2168fdc07b716d11132c6e1" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::result_place_</definition>
+        <argsstring></argsstring>
+        <name>result_place_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Final result place of the player in the game. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="43" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Player::Player</definition>
+        <argsstring>()</argsstring>
+        <name>Player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default constructor for <ref refid="class_player" kindref="compound">Player</ref> class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="47" column="1" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="16" bodyend="26"/>
+        <references refid="class_player_1ac2f724596f37e2922bd2df2d4922d670" compoundref="_player_8cc" startline="72" endline="74">clearFieldOwnedId</references>
+        <references refid="class_player_1ab1032df37bafe0a30acadb7bb1ccb97a" compoundref="_player_8cc" startline="163" endline="165">setAiLevel</references>
+        <references refid="class_player_1aec0b2d2447f555e247ac01a54a15d77f" compoundref="_player_8cc" startline="121" endline="141">setId</references>
+        <references refid="class_player_1adbcc2bba53e6bb2837d763eef79edff9" compoundref="_player_8cc" startline="155" endline="157">setIsAi</references>
+        <references refid="class_player_1a66e516d298b44b902bf15732a0e66515" compoundref="_player_8cc" startline="113" endline="115">setJailCards</references>
+        <references refid="class_player_1a67a3c5ddc234276cf72245f939a40438" compoundref="_player_8cc" startline="99" endline="101">setJailStatus</references>
+        <references refid="class_player_1aa44dae5224ce813c88265734662080bb" compoundref="_player_8cc" startline="76" endline="78">setMoney</references>
+        <references refid="class_player_1a2de8544be02b4464afb87b6169139068" compoundref="_player_8cc" startline="44" endline="46">setPosition</references>
+        <references refid="class_player_1a79df4c23544bfc40ec2d2420617da758" compoundref="_player_8cc" startline="171" endline="173">setResultPlace</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a56b1fc165843e6a22ba8e06348b05a60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Player::Player</definition>
+        <argsstring>(unsigned int money)</argsstring>
+        <name>Player</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>money</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for <ref refid="class_player" kindref="compound">Player</ref> class with initial money.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>money</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial amount of money for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="54" column="1" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="28" bodyend="38"/>
+        <references refid="class_player_1ac2f724596f37e2922bd2df2d4922d670" compoundref="_player_8cc" startline="72" endline="74">clearFieldOwnedId</references>
+        <references refid="class_player_1ab1032df37bafe0a30acadb7bb1ccb97a" compoundref="_player_8cc" startline="163" endline="165">setAiLevel</references>
+        <references refid="class_player_1aec0b2d2447f555e247ac01a54a15d77f" compoundref="_player_8cc" startline="121" endline="141">setId</references>
+        <references refid="class_player_1adbcc2bba53e6bb2837d763eef79edff9" compoundref="_player_8cc" startline="155" endline="157">setIsAi</references>
+        <references refid="class_player_1a66e516d298b44b902bf15732a0e66515" compoundref="_player_8cc" startline="113" endline="115">setJailCards</references>
+        <references refid="class_player_1a67a3c5ddc234276cf72245f939a40438" compoundref="_player_8cc" startline="99" endline="101">setJailStatus</references>
+        <references refid="class_player_1aa44dae5224ce813c88265734662080bb" compoundref="_player_8cc" startline="76" endline="78">setMoney</references>
+        <references refid="class_player_1a2de8544be02b4464afb87b6169139068" compoundref="_player_8cc" startline="44" endline="46">setPosition</references>
+        <references refid="class_player_1a79df4c23544bfc40ec2d2420617da758" compoundref="_player_8cc" startline="171" endline="173">setResultPlace</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a2d4f3ca739a5500c9e5f32932ed13019" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>getPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current position of the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="57" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a2de8544be02b4464afb87b6169139068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setPosition</definition>
+        <argsstring>(unsigned int new_position)</argsstring>
+        <name>setPosition</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the current position of the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New position for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="64" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="44" bodyend="46"/>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1afbc9c4c7035653e4c4a56f863bd9f91c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::hasFieldOwnedId</definition>
+        <argsstring>(unsigned int id) const</argsstring>
+        <name>hasFieldOwnedId</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if the player owns a property with the specified ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the property to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the player owns the property, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="72" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="48" bodyend="55"/>
+        <referencedby refid="class_player_1afa1e3b200143dbd91fd746576bac8da4" compoundref="_player_8cc" startline="61" endline="66">addFieldOwnedId</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a223c145e34c3288cf74be4c77dc58591" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt; unsigned int &gt; Player::getFieldOwnedId</definition>
+        <argsstring>() const</argsstring>
+        <name>getFieldOwnedId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a vector of property IDs owned by the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="75" column="13" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="57" bodyend="59"/>
+        <referencedby refid="class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637" compoundref="_player_8cc" startline="365" endline="412">AiPlayer::decideJail</referencedby>
+        <referencedby refid="class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9" compoundref="_player_8cc" startline="414" endline="447">AiPlayer::decideMortgage</referencedby>
+        <referencedby refid="class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af" compoundref="_player_8cc" startline="449" endline="484">AiPlayer::decideUnmortgage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1afa1e3b200143dbd91fd746576bac8da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::addFieldOwnedId</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>addFieldOwnedId</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a property with the specified ID to the list of properties owned by the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the property to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="82" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="61" bodyend="66"/>
+        <references refid="class_player_1afbc9c4c7035653e4c4a56f863bd9f91c" compoundref="_player_8cc" startline="48" endline="55">hasFieldOwnedId</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a1159031a207eddc655626adc8d420da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::removeFieldOwnedId</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>removeFieldOwnedId</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove a property with the specified ID from the list of properties owned by the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the property to remove. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="89" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ac2f724596f37e2922bd2df2d4922d670" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::clearFieldOwnedId</definition>
+        <argsstring>()</argsstring>
+        <name>clearFieldOwnedId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear the list of properties owned by the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="92" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="72" bodyend="74"/>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aa44dae5224ce813c88265734662080bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setMoney</definition>
+        <argsstring>(unsigned int value)</argsstring>
+        <name>setMoney</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the amount of money the player has.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New amount of money for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="99" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="76" bodyend="78"/>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a39465d76fc735a64d104b8b21e574b8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getMoney</definition>
+        <argsstring>() const</argsstring>
+        <name>getMoney</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current amount of money the player has. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="102" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="80" bodyend="82"/>
+        <referencedby refid="class_ai_player_1a94760240482130380840c0d303a19642" compoundref="_player_8cc" startline="522" endline="597">AiPlayer::decideBuildHouse</referencedby>
+        <referencedby refid="class_ai_player_1a4ec346de3b8d48b157354452569ec266" compoundref="_player_8cc" startline="311" endline="363">AiPlayer::decideBuy</referencedby>
+        <referencedby refid="class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637" compoundref="_player_8cc" startline="365" endline="412">AiPlayer::decideJail</referencedby>
+        <referencedby refid="class_player_1a9c596f7c08886d9db546d3c222611f5f" compoundref="_player_8cc" startline="246" endline="252">decideMortgage</referencedby>
+        <referencedby refid="class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9" compoundref="_player_8cc" startline="414" endline="447">AiPlayer::decideMortgage</referencedby>
+        <referencedby refid="class_player_1afa5630a45ffb3f996be4229cbad75bb0" compoundref="_player_8cc" startline="266" endline="272">decideSellHouse</referencedby>
+        <referencedby refid="class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135" compoundref="_player_8cc" startline="599" endline="683">AiPlayer::decideSellHouse</referencedby>
+        <referencedby refid="class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af" compoundref="_player_8cc" startline="449" endline="484">AiPlayer::decideUnmortgage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a79f2a8218f4b17df9ed5ef79cfa85690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::addMoney</definition>
+        <argsstring>(unsigned int value)</argsstring>
+        <name>addMoney</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a specified amount of money to the player&apos;s balance.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Amount of money to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="109" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="84" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a6d24d184974e84bb529bcfb1366d0f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::substractMoney</definition>
+        <argsstring>(unsigned int value)</argsstring>
+        <name>substractMoney</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtract a specified amount of money from the player&apos;s balance.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Amount of money to subtract. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the player had enough money and the subtraction was successful, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="117" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="90" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a67a3c5ddc234276cf72245f939a40438" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setJailStatus</definition>
+        <argsstring>(unsigned int new_jail_status)</argsstring>
+        <name>setJailStatus</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_jail_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the jail status of the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_jail_status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New jail status for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="124" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="99" bodyend="101"/>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ab27fb6eba2edafbe7c674abf2d85cc91" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getJailStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getJailStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current jail status of the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="127" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a66e516d298b44b902bf15732a0e66515" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setJailCards</definition>
+        <argsstring>(unsigned int new_jail_cards)</argsstring>
+        <name>setJailCards</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_jail_cards</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the number of jail cards the player has.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_jail_cards</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New number of jail cards for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="134" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="113" bodyend="115"/>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ad4d8755ebdffb8e7bfccc1119f0f7042" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getJailCards</definition>
+        <argsstring>() const</argsstring>
+        <name>getJailCards</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current number of jail cards the player has. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="137" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a3ebff2af2ca397ffcb64a2ddd91d8cee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::reduceJailStatus</definition>
+        <argsstring>()</argsstring>
+        <name>reduceJailStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reduce the jail status of the player by one. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="140" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aec0b2d2447f555e247ac01a54a15d77f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setId</definition>
+        <argsstring>(unsigned int new_id)</argsstring>
+        <name>setId</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the unique identifier for the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New unique identifier for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="147" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="121" bodyend="141"/>
+        <references refid="class_player_1a0686aac84725114b7c5b540189b47c60" compoundref="_player_8cc" startline="147" endline="149">setColor</references>
+        <referencedby refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" compoundref="_monopoly_game_engine_8cc" startline="42" endline="108">MonopolyGameEngine::createPlayers</referencedby>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a44be12490dcf4b7195ae494561f81c28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getId</definition>
+        <argsstring>() const</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the unique identifier of the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="150" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="143" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a0686aac84725114b7c5b540189b47c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setColor</definition>
+        <argsstring>(sf::Color new_color)</argsstring>
+        <name>setColor</name>
+        <param>
+          <type>sf::Color</type>
+          <declname>new_color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the color associated with the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New color for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="157" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="147" bodyend="149"/>
+        <referencedby refid="class_player_1aec0b2d2447f555e247ac01a54a15d77f" compoundref="_player_8cc" startline="121" endline="141">setId</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a6af84629a95779c478adcd24efcefb1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Color</type>
+        <definition>sf::Color Player::getColor</definition>
+        <argsstring>() const</argsstring>
+        <name>getColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the color associated with the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="160" column="11" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="151" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1adbcc2bba53e6bb2837d763eef79edff9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setIsAi</definition>
+        <argsstring>(bool new_is_ai)</argsstring>
+        <name>setIsAi</name>
+        <param>
+          <type>bool</type>
+          <declname>new_is_ai</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the AI status of the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_is_ai</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New AI status for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="167" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="155" bodyend="157"/>
+        <referencedby refid="class_ai_player_1a8039dc621ac1f6b087d0f1732ce3ab55" compoundref="_player_8cc" startline="286" endline="288">AiPlayer::AiPlayer</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" compoundref="_monopoly_game_engine_8cc" startline="42" endline="108">MonopolyGameEngine::createPlayers</referencedby>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">GameEngine::worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a59d465cbbc51c4371d1e770a682e6d97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::getIsAi</definition>
+        <argsstring>() const</argsstring>
+        <name>getIsAi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the AI status of the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="170" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="159" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ab1032df37bafe0a30acadb7bb1ccb97a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setAiLevel</definition>
+        <argsstring>(unsigned int ai_level)</argsstring>
+        <name>setAiLevel</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>ai_level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the AI level of the player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ai_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New AI level for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="177" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="163" bodyend="165"/>
+        <referencedby refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" compoundref="_monopoly_game_engine_8cc" startline="42" endline="108">MonopolyGameEngine::createPlayers</referencedby>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">GameEngine::worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a9ba3a7b625d50ad49f73eca39aff8248" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getAiLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getAiLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the AI level of the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="180" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="167" bodyend="169"/>
+        <referencedby refid="class_ai_player_1affc4990f1252789326aa28a7797462ab" compoundref="_player_8cc" startline="735" endline="783">AiPlayer::decideAcceptTrade</referencedby>
+        <referencedby refid="class_ai_player_1a441701de5fdaa5958fcc36e9791a9edc" compoundref="_player_8cc" startline="486" endline="520">AiPlayer::decideAuctionBid</referencedby>
+        <referencedby refid="class_ai_player_1a94760240482130380840c0d303a19642" compoundref="_player_8cc" startline="522" endline="597">AiPlayer::decideBuildHouse</referencedby>
+        <referencedby refid="class_ai_player_1a4ec346de3b8d48b157354452569ec266" compoundref="_player_8cc" startline="311" endline="363">AiPlayer::decideBuy</referencedby>
+        <referencedby refid="class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637" compoundref="_player_8cc" startline="365" endline="412">AiPlayer::decideJail</referencedby>
+        <referencedby refid="class_ai_player_1a84e084321dab6cea80ec5ea0f5564c02" compoundref="_player_8cc" startline="685" endline="733">AiPlayer::decideOfferTrade</referencedby>
+        <referencedby refid="class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135" compoundref="_player_8cc" startline="599" endline="683">AiPlayer::decideSellHouse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a79df4c23544bfc40ec2d2420617da758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setResultPlace</definition>
+        <argsstring>(unsigned int place)</argsstring>
+        <name>setResultPlace</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>place</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the final result place of the player in the game. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="183" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="171" bodyend="173"/>
+        <referencedby refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" compoundref="_player_8cc" startline="16" endline="26">Player</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a55e1a7856785c48db04f478ebc242cef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::getResultPlace</definition>
+        <argsstring>() const</argsstring>
+        <name>getResultPlace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the final result place of the player in the game. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="186" column="14" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="175" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aa6f0a7987a39716fb71558a017c75c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::createSprite</definition>
+        <argsstring>()</argsstring>
+        <name>createSprite</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create the sprite for the player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="189" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="179" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aa27d00d02d75f945a9b5bb8624104658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Texture &amp;</type>
+        <definition>sf::Texture &amp; Player::getTexture</definition>
+        <argsstring>()</argsstring>
+        <name>getTexture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the texture of the player&apos;s sprite. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="192" column="13" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="197" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a408134399497e07b0ba53e82d5c40958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Sprite &amp;</type>
+        <definition>sf::Sprite &amp; Player::getSprite</definition>
+        <argsstring>()</argsstring>
+        <name>getSprite</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the sprite representing the player on the game board. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="195" column="12" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="201" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ad7cbe5430cf9ade1cb6b60dc73019fb7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Player::getSpriteOffsetX</definition>
+        <argsstring>() const</argsstring>
+        <name>getSpriteOffsetX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the offset of the player sprite along the X-axis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="198" column="7" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="205" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aa59d45a1ed19a90404174126d69c55c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Player::getSpriteOffsetY</definition>
+        <argsstring>() const</argsstring>
+        <name>getSpriteOffsetY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the offset of the player sprite along the Y-axis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="201" column="7" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a0861445aeb9c42d8f1da69e811ad4aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setSpriteOffsetX</definition>
+        <argsstring>(const float offset_x)</argsstring>
+        <name>setSpriteOffsetX</name>
+        <param>
+          <type>const float</type>
+          <declname>offset_x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the offset of the player sprite along the X-axis.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>offset_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New offset value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="208" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="213" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a53a4de1ec98d14b8648d12960bfef043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setSpriteOffsetY</definition>
+        <argsstring>(const float offset_y)</argsstring>
+        <name>setSpriteOffsetY</name>
+        <param>
+          <type>const float</type>
+          <declname>offset_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the offset of the player sprite along the Y-axis.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>offset_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New offset value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="215" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="221" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a804d87f26ce849e33068db8095f805d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setSpritePosition</definition>
+        <argsstring>(sf::Vector2f new_pos)</argsstring>
+        <name>setSpritePosition</name>
+        <param>
+          <type>sf::Vector2f</type>
+          <declname>new_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the position of the player sprite.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New position for the player sprite. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="222" column="6" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="229" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a963ec6ae7e632ce539c27761dac64260" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_ai_adapter" kindref="compound">AiAdapter</ref> &amp;</type>
+        <definition>AiAdapter &amp; Player::getAdapter</definition>
+        <argsstring>()</argsstring>
+        <name>getAdapter</name>
+        <reimplementedby refid="class_ai_player_1a5d5a34086d564d1de13ac38bf1885b3a">getAdapter</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the AI adapter (virtual function, needs to be overridden by derived classes). DO NOT USE THIS <simplesect kind="return"><para>Reference to the AI adapter. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="229" column="19" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a84e305a0a267be2c435a40544ddd35c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classann_1_1neuralnet" kindref="compound">ann::neuralnet</ref> &amp;</type>
+        <definition>virtual ann::neuralnet&amp; Player::getNeuralNetwork</definition>
+        <argsstring>()</argsstring>
+        <name>getNeuralNetwork</name>
+        <reimplementedby refid="class_ai_player_1a47e04e0a4457aaaef551c06eea00230f">getNeuralNetwork</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the Neural Network of a player (virtual function, needs to be overridden by derived classes).</para>
+<para><simplesect kind="return"><para>Reference to the neuralnet class from a tinyai library. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="235" column="24" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="235" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1adfeb87a6e956897e314f5396d5662293" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007" kindref="member">BuyDecision</ref></type>
+        <definition>BuyDecision Player::decideBuy</definition>
+        <argsstring>(unsigned int index)</argsstring>
+        <name>decideBuy</name>
+        <reimplementedby refid="class_ai_player_1a4ec346de3b8d48b157354452569ec266">decideBuy</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a buying decision (virtual function, needs to be overridden by derived classes).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the property to consider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>BuyDecision object representing the decision. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="243" column="21" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="238" bodyend="240"/>
+        <references refid="main_8h_1a8a2b1218113cc3385a8aaf1870e4a007a63bd0e8187aecf59420bcdb967a523ab" compoundref="main_8h" startline="158">BUY</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a83461a9c984ddf60dd6f3a9775690d45" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4a" kindref="member">JailDecision</ref></type>
+        <definition>JailDecision Player::decideJail</definition>
+        <argsstring>()</argsstring>
+        <name>decideJail</name>
+        <reimplementedby refid="class_ai_player_1add73dc5a5c94ac7afff1ee5be8fb7637">decideJail</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a jail decision (virtual function, needs to be overridden by derived classes).</para>
+<para><simplesect kind="return"><para>JailDecision object representing the decision. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="250" column="22" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="242" bodyend="244"/>
+        <references refid="main_8h_1ab6ecd1223ac100310bac8f0f0131eb4aa2eeb9fef8a6a516fa6437a44a6efbd52" compoundref="main_8h" startline="157">ROLL</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a9c596f7c08886d9db546d3c222611f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" kindref="member">Decision</ref></type>
+        <definition>Decision Player::decideMortgage</definition>
+        <argsstring>(unsigned int index)</argsstring>
+        <name>decideMortgage</name>
+        <reimplementedby refid="class_ai_player_1ade144bf242d81cb7e0b4b714545ebeb9">decideMortgage</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a mortgage decision (virtual function, needs to be overridden by derived classes).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the property to consider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Decision object representing the mortgage decision. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="258" column="18" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="246" bodyend="252"/>
+        <references refid="class_player_1a39465d76fc735a64d104b8b21e574b8c" compoundref="_player_8cc" startline="80" endline="82">getMoney</references>
+        <references refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca0d077f5b932ce05e5b9f30c6087a2f31" compoundref="main_8h" startline="156">NO</references>
+        <references refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca99f136a862ba5c7d16967231c29f09d6" compoundref="main_8h" startline="156">YES</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a612f3f8120ad911a6dded373573d55bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" kindref="member">Decision</ref></type>
+        <definition>Decision Player::decideUnmortgage</definition>
+        <argsstring>(unsigned int index)</argsstring>
+        <name>decideUnmortgage</name>
+        <reimplementedby refid="class_ai_player_1ad37f0daac7f78c3179a6bd95da7c07af">decideUnmortgage</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make an unmortgage decision (virtual function, needs to be overridden by derived classes).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the property to consider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Decision object representing the unmortgage decision. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="266" column="18" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="254" bodyend="256"/>
+        <references refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca99f136a862ba5c7d16967231c29f09d6" compoundref="main_8h" startline="156">YES</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1af3da06d4c1776f82ff4cd8619377fd7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::decideAuctionBid</definition>
+        <argsstring>(unsigned int price)</argsstring>
+        <name>decideAuctionBid</name>
+        <reimplementedby refid="class_ai_player_1a441701de5fdaa5958fcc36e9791a9edc">decideAuctionBid</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a decision for auction bidding (virtual function, needs to be overridden by derived classes).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current price in the auction. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bid amount decided by the player. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="274" column="22" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="258" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a71313606c3b4a7b363cabd40bd9a7126" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::decideBuildHouse</definition>
+        <argsstring>()</argsstring>
+        <name>decideBuildHouse</name>
+        <reimplementedby refid="class_ai_player_1a94760240482130380840c0d303a19642">decideBuildHouse</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a decision for building a house (virtual function, needs to be overridden by derived classes).</para>
+<para><simplesect kind="return"><para>The index of the property on which to build a house. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="281" column="22" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="262" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1afa5630a45ffb3f996be4229cbad75bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Player::decideSellHouse</definition>
+        <argsstring>()</argsstring>
+        <name>decideSellHouse</name>
+        <reimplementedby refid="class_ai_player_1a141ea4b1a96050ae1ac1f6925c308135">decideSellHouse</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a decision for selling a house (virtual function, needs to be overridden by derived classes).</para>
+<para><simplesect kind="return"><para>The index of the property from which to sell a house. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="288" column="22" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="266" bodyend="272"/>
+        <references refid="class_player_1a39465d76fc735a64d104b8b21e574b8c" compoundref="_player_8cc" startline="80" endline="82">getMoney</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a42244fc7463a4fc447a73f35d2dcb483" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" kindref="member">Decision</ref></type>
+        <definition>Decision Player::decideOfferTrade</definition>
+        <argsstring>()</argsstring>
+        <name>decideOfferTrade</name>
+        <reimplementedby refid="class_ai_player_1a84e084321dab6cea80ec5ea0f5564c02">decideOfferTrade</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a decision for offering a trade (virtual function, needs to be overridden by derived classes).</para>
+<para><simplesect kind="return"><para>Decision object representing the trade offer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="295" column="18" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="274" bodyend="276"/>
+        <references refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca0d077f5b932ce05e5b9f30c6087a2f31" compoundref="main_8h" startline="156">NO</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a7adf207e9b3b987da924fd602ecc6528" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9c" kindref="member">Decision</ref></type>
+        <definition>Decision Player::decideAcceptTrade</definition>
+        <argsstring>()</argsstring>
+        <name>decideAcceptTrade</name>
+        <reimplementedby refid="class_ai_player_1affc4990f1252789326aa28a7797462ab">decideAcceptTrade</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a decision for accepting a trade (virtual function, needs to be overridden by derived classes).</para>
+<para><simplesect kind="return"><para>Decision object representing the acceptance of the trade. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Player.h" line="302" column="18" bodyfile="/home/kamil/zpr/Monopoly/Player.cc" bodystart="278" bodyend="280"/>
+        <references refid="main_8h_1a45e4fd10ecc28edb6f4e3084b50ccb9ca0d077f5b932ce05e5b9f30c6087a2f31" compoundref="main_8h" startline="156">NO</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a player in a Monopoly game. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+      <node id="2">
+        <label>AiPlayer</label>
+        <link refid="class_ai_player"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/kamil/zpr/Monopoly/Player.h" line="29" column="1" bodyfile="/home/kamil/zpr/Monopoly/Player.h" bodystart="29" bodyend="303"/>
+    <listofallmembers>
+      <member refid="class_player_1afa1e3b200143dbd91fd746576bac8da4" prot="public" virt="non-virtual"><scope>Player</scope><name>addFieldOwnedId</name></member>
+      <member refid="class_player_1a79f2a8218f4b17df9ed5ef79cfa85690" prot="public" virt="non-virtual"><scope>Player</scope><name>addMoney</name></member>
+      <member refid="class_player_1aaa91d3f7483ec31d8de441867a442b86" prot="private" virt="non-virtual"><scope>Player</scope><name>ai_level_</name></member>
+      <member refid="class_player_1ac2f724596f37e2922bd2df2d4922d670" prot="public" virt="non-virtual"><scope>Player</scope><name>clearFieldOwnedId</name></member>
+      <member refid="class_player_1a7b4b6dafd58dc087179da444ce64adf1" prot="private" virt="non-virtual"><scope>Player</scope><name>color_</name></member>
+      <member refid="class_player_1aa6f0a7987a39716fb71558a017c75c51" prot="public" virt="non-virtual"><scope>Player</scope><name>createSprite</name></member>
+      <member refid="class_player_1a7adf207e9b3b987da924fd602ecc6528" prot="public" virt="virtual"><scope>Player</scope><name>decideAcceptTrade</name></member>
+      <member refid="class_player_1af3da06d4c1776f82ff4cd8619377fd7d" prot="public" virt="virtual"><scope>Player</scope><name>decideAuctionBid</name></member>
+      <member refid="class_player_1a71313606c3b4a7b363cabd40bd9a7126" prot="public" virt="virtual"><scope>Player</scope><name>decideBuildHouse</name></member>
+      <member refid="class_player_1adfeb87a6e956897e314f5396d5662293" prot="public" virt="virtual"><scope>Player</scope><name>decideBuy</name></member>
+      <member refid="class_player_1a83461a9c984ddf60dd6f3a9775690d45" prot="public" virt="virtual"><scope>Player</scope><name>decideJail</name></member>
+      <member refid="class_player_1a9c596f7c08886d9db546d3c222611f5f" prot="public" virt="virtual"><scope>Player</scope><name>decideMortgage</name></member>
+      <member refid="class_player_1a42244fc7463a4fc447a73f35d2dcb483" prot="public" virt="virtual"><scope>Player</scope><name>decideOfferTrade</name></member>
+      <member refid="class_player_1afa5630a45ffb3f996be4229cbad75bb0" prot="public" virt="virtual"><scope>Player</scope><name>decideSellHouse</name></member>
+      <member refid="class_player_1a612f3f8120ad911a6dded373573d55bc" prot="public" virt="virtual"><scope>Player</scope><name>decideUnmortgage</name></member>
+      <member refid="class_player_1a44dea37dbf80e5de50037cb837f8a7cb" prot="private" virt="non-virtual"><scope>Player</scope><name>fields_owned_id_</name></member>
+      <member refid="class_player_1a963ec6ae7e632ce539c27761dac64260" prot="public" virt="virtual"><scope>Player</scope><name>getAdapter</name></member>
+      <member refid="class_player_1a9ba3a7b625d50ad49f73eca39aff8248" prot="public" virt="non-virtual"><scope>Player</scope><name>getAiLevel</name></member>
+      <member refid="class_player_1a6af84629a95779c478adcd24efcefb1b" prot="public" virt="non-virtual"><scope>Player</scope><name>getColor</name></member>
+      <member refid="class_player_1a223c145e34c3288cf74be4c77dc58591" prot="public" virt="non-virtual"><scope>Player</scope><name>getFieldOwnedId</name></member>
+      <member refid="class_player_1a44be12490dcf4b7195ae494561f81c28" prot="public" virt="non-virtual"><scope>Player</scope><name>getId</name></member>
+      <member refid="class_player_1a59d465cbbc51c4371d1e770a682e6d97" prot="public" virt="non-virtual"><scope>Player</scope><name>getIsAi</name></member>
+      <member refid="class_player_1ad4d8755ebdffb8e7bfccc1119f0f7042" prot="public" virt="non-virtual"><scope>Player</scope><name>getJailCards</name></member>
+      <member refid="class_player_1ab27fb6eba2edafbe7c674abf2d85cc91" prot="public" virt="non-virtual"><scope>Player</scope><name>getJailStatus</name></member>
+      <member refid="class_player_1a39465d76fc735a64d104b8b21e574b8c" prot="public" virt="non-virtual"><scope>Player</scope><name>getMoney</name></member>
+      <member refid="class_player_1a84e305a0a267be2c435a40544ddd35c8" prot="public" virt="virtual"><scope>Player</scope><name>getNeuralNetwork</name></member>
+      <member refid="class_player_1a2d4f3ca739a5500c9e5f32932ed13019" prot="public" virt="non-virtual"><scope>Player</scope><name>getPosition</name></member>
+      <member refid="class_player_1a55e1a7856785c48db04f478ebc242cef" prot="public" virt="non-virtual"><scope>Player</scope><name>getResultPlace</name></member>
+      <member refid="class_player_1a408134399497e07b0ba53e82d5c40958" prot="public" virt="non-virtual"><scope>Player</scope><name>getSprite</name></member>
+      <member refid="class_player_1ad7cbe5430cf9ade1cb6b60dc73019fb7" prot="public" virt="non-virtual"><scope>Player</scope><name>getSpriteOffsetX</name></member>
+      <member refid="class_player_1aa59d45a1ed19a90404174126d69c55c1" prot="public" virt="non-virtual"><scope>Player</scope><name>getSpriteOffsetY</name></member>
+      <member refid="class_player_1aa27d00d02d75f945a9b5bb8624104658" prot="public" virt="non-virtual"><scope>Player</scope><name>getTexture</name></member>
+      <member refid="class_player_1afbc9c4c7035653e4c4a56f863bd9f91c" prot="public" virt="non-virtual"><scope>Player</scope><name>hasFieldOwnedId</name></member>
+      <member refid="class_player_1a37144a57b1fb28ef20eea5fff1d8d506" prot="private" virt="non-virtual"><scope>Player</scope><name>id_</name></member>
+      <member refid="class_player_1a5815055c7e76bdbb423651a8a1a9cb65" prot="private" virt="non-virtual"><scope>Player</scope><name>is_ai_</name></member>
+      <member refid="class_player_1a9205613eb9ea067a0e5b793c8bc3669d" prot="private" virt="non-virtual"><scope>Player</scope><name>jail_cards_</name></member>
+      <member refid="class_player_1a1dca74a37d227b5a193d30a9a40ed2aa" prot="private" virt="non-virtual"><scope>Player</scope><name>jail_status_</name></member>
+      <member refid="class_player_1a667a8df5c5762583dfd5a32e10682185" prot="private" virt="non-virtual"><scope>Player</scope><name>money_</name></member>
+      <member refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" prot="public" virt="non-virtual"><scope>Player</scope><name>Player</name></member>
+      <member refid="class_player_1a56b1fc165843e6a22ba8e06348b05a60" prot="public" virt="non-virtual"><scope>Player</scope><name>Player</name></member>
+      <member refid="class_player_1aa5164c90dddf4e7d523bce058f28452c" prot="private" virt="non-virtual"><scope>Player</scope><name>player_sprite_</name></member>
+      <member refid="class_player_1a7d3947e8e4c41de6ba2fc972a4de05ed" prot="private" virt="non-virtual"><scope>Player</scope><name>player_texture_</name></member>
+      <member refid="class_player_1a3ed5b6866dc86c7f6226b1860b3d83b7" prot="private" virt="non-virtual"><scope>Player</scope><name>position_</name></member>
+      <member refid="class_player_1a3ebff2af2ca397ffcb64a2ddd91d8cee" prot="public" virt="non-virtual"><scope>Player</scope><name>reduceJailStatus</name></member>
+      <member refid="class_player_1a1159031a207eddc655626adc8d420da4" prot="public" virt="non-virtual"><scope>Player</scope><name>removeFieldOwnedId</name></member>
+      <member refid="class_player_1a11ba3de1e2168fdc07b716d11132c6e1" prot="private" virt="non-virtual"><scope>Player</scope><name>result_place_</name></member>
+      <member refid="class_player_1ab1032df37bafe0a30acadb7bb1ccb97a" prot="public" virt="non-virtual"><scope>Player</scope><name>setAiLevel</name></member>
+      <member refid="class_player_1a0686aac84725114b7c5b540189b47c60" prot="public" virt="non-virtual"><scope>Player</scope><name>setColor</name></member>
+      <member refid="class_player_1aec0b2d2447f555e247ac01a54a15d77f" prot="public" virt="non-virtual"><scope>Player</scope><name>setId</name></member>
+      <member refid="class_player_1adbcc2bba53e6bb2837d763eef79edff9" prot="public" virt="non-virtual"><scope>Player</scope><name>setIsAi</name></member>
+      <member refid="class_player_1a66e516d298b44b902bf15732a0e66515" prot="public" virt="non-virtual"><scope>Player</scope><name>setJailCards</name></member>
+      <member refid="class_player_1a67a3c5ddc234276cf72245f939a40438" prot="public" virt="non-virtual"><scope>Player</scope><name>setJailStatus</name></member>
+      <member refid="class_player_1aa44dae5224ce813c88265734662080bb" prot="public" virt="non-virtual"><scope>Player</scope><name>setMoney</name></member>
+      <member refid="class_player_1a2de8544be02b4464afb87b6169139068" prot="public" virt="non-virtual"><scope>Player</scope><name>setPosition</name></member>
+      <member refid="class_player_1a79df4c23544bfc40ec2d2420617da758" prot="public" virt="non-virtual"><scope>Player</scope><name>setResultPlace</name></member>
+      <member refid="class_player_1a0861445aeb9c42d8f1da69e811ad4aa7" prot="public" virt="non-virtual"><scope>Player</scope><name>setSpriteOffsetX</name></member>
+      <member refid="class_player_1a53a4de1ec98d14b8648d12960bfef043" prot="public" virt="non-virtual"><scope>Player</scope><name>setSpriteOffsetY</name></member>
+      <member refid="class_player_1a804d87f26ce849e33068db8095f805d7" prot="public" virt="non-virtual"><scope>Player</scope><name>setSpritePosition</name></member>
+      <member refid="class_player_1ab1172a09090a3926cc7b854f54a468b6" prot="private" virt="non-virtual"><scope>Player</scope><name>sprite_offset_x_</name></member>
+      <member refid="class_player_1aa262e9def260ab353baae2bc54866dc8" prot="private" virt="non-virtual"><scope>Player</scope><name>sprite_offset_y_</name></member>
+      <member refid="class_player_1a6d24d184974e84bb529bcfb1366d0f9d" prot="public" virt="non-virtual"><scope>Player</scope><name>substractMoney</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

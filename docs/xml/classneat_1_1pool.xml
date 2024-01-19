@@ -1,0 +1,660 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classneat_1_1pool" kind="class" language="C++" prot="public">
+    <compoundname>neat::pool</compoundname>
+    <includes refid="_tinyneat_8h" local="no">Tinyneat.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classneat_1_1pool_1a918003e2af6ba6bca7bff2f516d93803" prot="private" static="no" mutable="no">
+        <type><ref refid="classneat_1_1innovation__container" kindref="compound">innovation_container</ref></type>
+        <definition>innovation_container neat::pool::innovation</definition>
+        <argsstring></argsstring>
+        <name>innovation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="142" column="22" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1a0d44e0e57fad8904b430ad3956eb8e66" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::pair&lt; unsigned int, unsigned int &gt;, unsigned int &gt;</type>
+        <definition>std::map&lt;std::pair&lt;unsigned int, unsigned int&gt;, unsigned int&gt; neat::pool::track</definition>
+        <argsstring></argsstring>
+        <name>track</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="145" column="10" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1addf245faa348e843b57fcc7e098faea1" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::pool::generation_number</definition>
+        <argsstring></argsstring>
+        <name>generation_number</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="147" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classneat_1_1pool_1ad22233683f54678400ef45fe6f7a38ed" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::pool::max_fitness</definition>
+        <argsstring></argsstring>
+        <name>max_fitness</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="175" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1a037e36677258536cfc40ad2dccfe4d7f" prot="public" static="no" mutable="no">
+        <type><ref refid="structneat_1_1mutation__rate__container" kindref="compound">mutation_rate_container</ref></type>
+        <definition>mutation_rate_container neat::pool::mutation_rates</definition>
+        <argsstring></argsstring>
+        <name>mutation_rates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="178" column="25" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1a19cf05d7934ea6033866da21eaf7252f" prot="public" static="no" mutable="no">
+        <type><ref refid="structneat_1_1speciating__parameter__container" kindref="compound">speciating_parameter_container</ref></type>
+        <definition>speciating_parameter_container neat::pool::speciating_parameters</definition>
+        <argsstring></argsstring>
+        <name>speciating_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="181" column="32" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1abe5e4171f187f19ebe85409369ede596" prot="public" static="no" mutable="no">
+        <type><ref refid="structneat_1_1network__info__container" kindref="compound">network_info_container</ref></type>
+        <definition>network_info_container neat::pool::network_info</definition>
+        <argsstring></argsstring>
+        <name>network_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="184" column="24" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7" prot="public" static="no" mutable="no">
+        <type>std::random_device</type>
+        <definition>std::random_device neat::pool::rd</definition>
+        <argsstring></argsstring>
+        <name>rd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="187" column="20" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="187" bodyend="-1"/>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705" prot="public" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 neat::pool::generator</definition>
+        <argsstring></argsstring>
+        <name>generator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="188" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="188" bodyend="-1"/>
+        <referencedby refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" compoundref="_tinyneat_8h" startline="194" endline="211">pool</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classneat_1_1pool_1a3056b5880db8c3837c1f2af0e4a3faff" prot="public" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="structneat_1_1specie" kindref="compound">specie</ref> &gt;</type>
+        <definition>std::list&lt;specie&gt; neat::pool::species</definition>
+        <argsstring></argsstring>
+        <name>species</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="191" column="11" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classneat_1_1pool_1a9c377737f695ad3c01bdb3b180ce5aba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>neat::pool::pool</definition>
+        <argsstring>()</argsstring>
+        <name>pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="139" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1af51ff0fb6b10b43c8508aa23d6d83edd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref></type>
+        <definition>neat::genome neat::pool::crossover</definition>
+        <argsstring>(const genome &amp;g1, const genome &amp;g2)</argsstring>
+        <name>crossover</name>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="150" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="37" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a40bf64f7ccaba957f634cb82f9feffbd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::mutate_weight</definition>
+        <argsstring>(genome &amp;g)</argsstring>
+        <name>mutate_weight</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="151" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="83" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1af302e6afeb8906182675c4f9d58e5309" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::mutate_enable_disable</definition>
+        <argsstring>(genome &amp;g, bool enable)</argsstring>
+        <name>mutate_enable_disable</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="152" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="95" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a09939cd2d09ce94968794fdd0f650509" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::mutate_link</definition>
+        <argsstring>(genome &amp;g, bool force_bias)</argsstring>
+        <name>mutate_link</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>force_bias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="153" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="111" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1adf08301c6aafa7c777c483d3516171b1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::mutate_node</definition>
+        <argsstring>(genome &amp;g)</argsstring>
+        <name>mutate_node</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="154" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="198" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1adf6d7b28eb6e800f40996d8690d012da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::mutate</definition>
+        <argsstring>(genome &amp;g)</argsstring>
+        <name>mutate</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="155" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="233" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a3eeebe4e216cd215cb4896d7ff249a00" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double neat::pool::disjoint</definition>
+        <argsstring>(const genome &amp;g1, const genome &amp;g2)</argsstring>
+        <name>disjoint</name>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="157" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="21" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1ab4af47a2eaab31591016c3ab3d370244" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double neat::pool::weights</definition>
+        <argsstring>(const genome &amp;g1, const genome &amp;g2)</argsstring>
+        <name>weights</name>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="158" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="291" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1ad4ff45c2803bc99bffe5a20e038b52d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool neat::pool::is_same_species</definition>
+        <argsstring>(const genome &amp;g1, const genome &amp;g2)</argsstring>
+        <name>is_same_species</name>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>g2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="159" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="326" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a7e5be339793eb25e8fa465b390dc6e3a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::rank_globally</definition>
+        <argsstring>()</argsstring>
+        <name>rank_globally</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="162" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="308" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a023379c752f27b9d99d0a9bdb2a9cfaa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::calculate_average_fitness</definition>
+        <argsstring>(specie &amp;s)</argsstring>
+        <name>calculate_average_fitness</name>
+        <param>
+          <type><ref refid="structneat_1_1specie" kindref="compound">specie</ref> &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="163" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="319" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1add5eca89df7b12698c034f4dcb882f94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::pool::total_average_fitness</definition>
+        <argsstring>()</argsstring>
+        <name>total_average_fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="164" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="332" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a8df0fc8ee2044da5e66f15a939e382a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::cull_species</definition>
+        <argsstring>(bool cut_to_one)</argsstring>
+        <name>cull_species</name>
+        <param>
+          <type>bool</type>
+          <declname>cut_to_one</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="167" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="339" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a3883b1d606b012efda1c1ea9bd59a467" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref></type>
+        <definition>neat::genome neat::pool::breed_child</definition>
+        <argsstring>(specie &amp;s)</argsstring>
+        <name>breed_child</name>
+        <param>
+          <type><ref refid="structneat_1_1specie" kindref="compound">specie</ref> &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="168" column="8" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="354" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1af113589d88e9df4d5b01a06e5037e3e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::remove_stale_species</definition>
+        <argsstring>()</argsstring>
+        <name>remove_stale_species</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="169" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="374" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a886dba978eb2c671fc7fa63e6027ec2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::remove_weak_species</definition>
+        <argsstring>()</argsstring>
+        <name>remove_weak_species</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="170" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="393" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a278609fbf25cf71d674cc5fe17dfa827" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::add_to_species</definition>
+        <argsstring>(genome &amp;child)</argsstring>
+        <name>add_to_species</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">genome</ref> &amp;</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="171" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="406" bodyend="421"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>neat::pool::pool</definition>
+        <argsstring>(unsigned int input, unsigned int output, unsigned int bias=1, bool rec=false)</argsstring>
+        <name>pool</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>bias</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rec</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="194" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="194" bodyend="211"/>
+        <references refid="structneat_1_1network__info__container_1a1052d41d3b475f00334671c417d9e76a" compoundref="_tinyneat_8h" startline="64">neat::network_info_container::bias_size</references>
+        <references refid="structneat_1_1network__info__container_1a36d75d4749708fe9e7b473f7dc799733" compoundref="_tinyneat_8h" startline="66">neat::network_info_container::functional_nodes</references>
+        <references refid="classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705" compoundref="_tinyneat_8h" startline="188">generator</references>
+        <references refid="structneat_1_1network__info__container_1aa818a5a37db7684d6cc8a62e7485c242" compoundref="_tinyneat_8h" startline="63">neat::network_info_container::input_size</references>
+        <references refid="structneat_1_1network__info__container_1a7900ea6a27d8d3e282c5d98097924c1f" compoundref="_tinyneat_8h" startline="65">neat::network_info_container::output_size</references>
+        <references refid="structneat_1_1speciating__parameter__container_1ad2458c000476a017111cc5ae8adc8780" compoundref="_tinyneat_8h" startline="52">neat::speciating_parameter_container::population</references>
+        <references refid="classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7" compoundref="_tinyneat_8h" startline="187">rd</references>
+        <references refid="structneat_1_1network__info__container_1ae3efec6e1821b2530f2631b947fcf45c" compoundref="_tinyneat_8h" startline="67">neat::network_info_container::recurrent</references>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a5abf875445e788d913ab8416a47e8ee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::new_generation</definition>
+        <argsstring>()</argsstring>
+        <name>new_generation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="214" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="423" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a6811b1137e4eb75496f0319cf7ce3349" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int neat::pool::generation</definition>
+        <argsstring>()</argsstring>
+        <name>generation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="215" column="14" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="215" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a34603a3e12abf4f136c294933a9d2cc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::pair&lt; <ref refid="structneat_1_1specie" kindref="compound">specie</ref> *, <ref refid="classneat_1_1genome" kindref="compound">genome</ref> * &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;specie*, genome*&gt; &gt; neat::pool::get_genomes</definition>
+        <argsstring>()</argsstring>
+        <name>get_genomes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="218" column="13" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="218" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::import_fromfile</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>import_fromfile</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="227" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="460" bodyend="544"/>
+        <references refid="classneat_1_1genome_1a2524aa01356e2f4bea91b7a836928d5d" compoundref="_tinyneat_8h" startline="84">neat::genome::adjusted_fitness</references>
+        <references refid="structneat_1_1specie_1adffda9390477e12b247eacb028c62382" compoundref="_tinyneat_8h" startline="102">neat::specie::average_fitness</references>
+        <references refid="structneat_1_1gene_1accac39e6c4341708d6036e2f773b5b40" compoundref="_tinyneat_8h" startline="75">neat::gene::enabled</references>
+        <references refid="classneat_1_1genome_1a5f409ba7667960382e1a389e711dff62" compoundref="_tinyneat_8h" startline="83">neat::genome::fitness</references>
+        <references refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" compoundref="_tinyneat_8h" startline="72">neat::gene::from_node</references>
+        <references refid="classneat_1_1genome_1a31e3a36c77d9024226311780fc9a68f3" compoundref="_tinyneat_8h" startline="92">neat::genome::genes</references>
+        <references refid="structneat_1_1specie_1ad1a5d5c0334db03479f217a132da0a5b" compoundref="_tinyneat_8h" startline="108">neat::specie::genomes</references>
+        <references refid="classneat_1_1genome_1a7bd0ce5d45f57fd761fe60707d9dcd13" compoundref="_tinyneat_8h" startline="85">neat::genome::global_rank</references>
+        <references refid="structneat_1_1gene_1a63201e3e9dfa24c572adaf6c2d7664cd" compoundref="_tinyneat_8h" startline="71">neat::gene::innovation_num</references>
+        <references refid="classneat_1_1genome_1a0e1bbbb2b2fb52ed1ba29e1f56e1c591" compoundref="_tinyneat_8h" startline="86">neat::genome::max_neuron</references>
+        <references refid="classneat_1_1genome_1a8382d3c24160873ffa8a01450a7a28bd" compoundref="_tinyneat_8h" startline="89">neat::genome::mutation_rates</references>
+        <references refid="structneat_1_1mutation__rate__container_1afeaa2325ca22c0b1f54f30bff2d4afed" compoundref="_tinyneat_8cc" startline="609" endline="619">neat::mutation_rate_container::read</references>
+        <references refid="structneat_1_1specie_1a01beb89b7df29bf481d2608bce8445a8" compoundref="_tinyneat_8h" startline="103">neat::specie::staleness</references>
+        <references refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" compoundref="_tinyneat_8h" startline="73">neat::gene::to_node</references>
+        <references refid="structneat_1_1specie_1ad988c29b7f9cbb0cf5df431cdcaa0edc" compoundref="_tinyneat_8h" startline="101">neat::specie::top_fitness</references>
+        <references refid="structneat_1_1gene_1a6a8213ab23b642b97e013856df0f29bd" compoundref="_tinyneat_8h" startline="74">neat::gene::weight</references>
+      </memberdef>
+      <memberdef kind="function" id="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neat::pool::export_tofile</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>export_tofile</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="228" column="6" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.cc" bodystart="546" bodyend="607"/>
+        <references refid="structneat_1_1gene_1accac39e6c4341708d6036e2f773b5b40" compoundref="_tinyneat_8h" startline="75">neat::gene::enabled</references>
+        <references refid="structneat_1_1gene_1a641865cacfdafffe283110962e57ce13" compoundref="_tinyneat_8h" startline="72">neat::gene::from_node</references>
+        <references refid="structneat_1_1gene_1a63201e3e9dfa24c572adaf6c2d7664cd" compoundref="_tinyneat_8h" startline="71">neat::gene::innovation_num</references>
+        <references refid="structneat_1_1gene_1aa033c2490027941f12dfb03700cf1ab2" compoundref="_tinyneat_8h" startline="73">neat::gene::to_node</references>
+        <references refid="structneat_1_1gene_1a6a8213ab23b642b97e013856df0f29bd" compoundref="_tinyneat_8h" startline="74">neat::gene::weight</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>neat::pool</label>
+        <link refid="classneat_1_1pool"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>network_info</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>speciating_parameters</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>mutation_rates</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>neat::speciating_parameter_container</label>
+        <link refid="structneat_1_1speciating__parameter__container"/>
+      </node>
+      <node id="4">
+        <label>neat::mutation_rate_container</label>
+        <link refid="structneat_1_1mutation__rate__container"/>
+      </node>
+      <node id="2">
+        <label>neat::network_info_container</label>
+        <link refid="structneat_1_1network__info__container"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/Tinyneat.h" line="137" column="1" bodyfile="/home/kamil/zpr/Monopoly/Tinyneat.h" bodystart="137" bodyend="229"/>
+    <listofallmembers>
+      <member refid="classneat_1_1pool_1a278609fbf25cf71d674cc5fe17dfa827" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>add_to_species</name></member>
+      <member refid="classneat_1_1pool_1a3883b1d606b012efda1c1ea9bd59a467" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>breed_child</name></member>
+      <member refid="classneat_1_1pool_1a023379c752f27b9d99d0a9bdb2a9cfaa" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>calculate_average_fitness</name></member>
+      <member refid="classneat_1_1pool_1af51ff0fb6b10b43c8508aa23d6d83edd" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>crossover</name></member>
+      <member refid="classneat_1_1pool_1a8df0fc8ee2044da5e66f15a939e382a1" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>cull_species</name></member>
+      <member refid="classneat_1_1pool_1a3eeebe4e216cd215cb4896d7ff249a00" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>disjoint</name></member>
+      <member refid="classneat_1_1pool_1a24aac8dd547c4089a5b5617e1c5824b5" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>export_tofile</name></member>
+      <member refid="classneat_1_1pool_1a6811b1137e4eb75496f0319cf7ce3349" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>generation</name></member>
+      <member refid="classneat_1_1pool_1addf245faa348e843b57fcc7e098faea1" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>generation_number</name></member>
+      <member refid="classneat_1_1pool_1a3095de5083752395ffd294b95b4a1705" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>generator</name></member>
+      <member refid="classneat_1_1pool_1a34603a3e12abf4f136c294933a9d2cc9" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>get_genomes</name></member>
+      <member refid="classneat_1_1pool_1a4e8227c81e53bc040698bb0db18f4c0f" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>import_fromfile</name></member>
+      <member refid="classneat_1_1pool_1a918003e2af6ba6bca7bff2f516d93803" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>innovation</name></member>
+      <member refid="classneat_1_1pool_1ad4ff45c2803bc99bffe5a20e038b52d8" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>is_same_species</name></member>
+      <member refid="classneat_1_1pool_1ad22233683f54678400ef45fe6f7a38ed" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>max_fitness</name></member>
+      <member refid="classneat_1_1pool_1adf6d7b28eb6e800f40996d8690d012da" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>mutate</name></member>
+      <member refid="classneat_1_1pool_1af302e6afeb8906182675c4f9d58e5309" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>mutate_enable_disable</name></member>
+      <member refid="classneat_1_1pool_1a09939cd2d09ce94968794fdd0f650509" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>mutate_link</name></member>
+      <member refid="classneat_1_1pool_1adf08301c6aafa7c777c483d3516171b1" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>mutate_node</name></member>
+      <member refid="classneat_1_1pool_1a40bf64f7ccaba957f634cb82f9feffbd" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>mutate_weight</name></member>
+      <member refid="classneat_1_1pool_1a037e36677258536cfc40ad2dccfe4d7f" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>mutation_rates</name></member>
+      <member refid="classneat_1_1pool_1abe5e4171f187f19ebe85409369ede596" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>network_info</name></member>
+      <member refid="classneat_1_1pool_1a5abf875445e788d913ab8416a47e8ee3" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>new_generation</name></member>
+      <member refid="classneat_1_1pool_1a9c377737f695ad3c01bdb3b180ce5aba" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>pool</name></member>
+      <member refid="classneat_1_1pool_1a7ef3d5df12e96e0be1db0d2d6e86a595" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>pool</name></member>
+      <member refid="classneat_1_1pool_1a7e5be339793eb25e8fa465b390dc6e3a" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>rank_globally</name></member>
+      <member refid="classneat_1_1pool_1a421cb787dd4759f77f88e019a2b62fc7" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>rd</name></member>
+      <member refid="classneat_1_1pool_1af113589d88e9df4d5b01a06e5037e3e0" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>remove_stale_species</name></member>
+      <member refid="classneat_1_1pool_1a886dba978eb2c671fc7fa63e6027ec2f" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>remove_weak_species</name></member>
+      <member refid="classneat_1_1pool_1a19cf05d7934ea6033866da21eaf7252f" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>speciating_parameters</name></member>
+      <member refid="classneat_1_1pool_1a3056b5880db8c3837c1f2af0e4a3faff" prot="public" virt="non-virtual"><scope>neat::pool</scope><name>species</name></member>
+      <member refid="classneat_1_1pool_1add5eca89df7b12698c034f4dcb882f94" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>total_average_fitness</name></member>
+      <member refid="classneat_1_1pool_1a0d44e0e57fad8904b430ad3956eb8e66" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>track</name></member>
+      <member refid="classneat_1_1pool_1ab4af47a2eaab31591016c3ab3d370244" prot="private" virt="non-virtual"><scope>neat::pool</scope><name>weights</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

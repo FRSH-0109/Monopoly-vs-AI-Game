@@ -1,0 +1,19 @@
+<map id="monopolyGameEngine::getBoard" name="monopolyGameEngine::getBoard">
+<area shape="rect" id="node1" title=" " alt="" coords="919,435,1089,476"/>
+<area shape="rect" id="node2" href="$classmonopoly_game_engine.html#aa16c7ef618a34bfe7139734f98731d7e" title=" " alt="" coords="437,304,640,345"/>
+<area shape="rect" id="node3" href="$classmonopoly_game_engine.html#acfa722f1ffec4781429f86997595db7d" title=" " alt="" coords="211,369,389,411"/>
+<area shape="rect" id="node5" href="$classmonopoly_game_engine.html#aa5881c8915bd0277e2094b5b0bfaf337" title=" " alt="" coords="439,369,638,411"/>
+<area shape="rect" id="node6" href="$classmonopoly_game_engine.html#a8d42166e5ec753ab32057e6584602644" title=" " alt="" coords="453,447,624,488"/>
+<area shape="rect" id="node7" href="$classmonopoly_game_engine.html#af0dcb169ec97293dadc327ad4b861df5" title=" " alt="" coords="694,239,865,280"/>
+<area shape="rect" id="node8" href="$classmonopoly_game_engine.html#a04045ab52d75c210266c71ba994e7871" title=" " alt="" coords="694,719,865,760"/>
+<area shape="rect" id="node9" href="$class_game_screen.html#a3866912fd5861b29c9ad3c08ea67fd16" title=" " alt="" coords="441,726,637,753"/>
+<area shape="rect" id="node10" href="$class_game_screen.html#a0608fef110d89dab557fd0bac6950b77" title=" " alt="" coords="707,835,852,862"/>
+<area shape="rect" id="node11" href="$classmonopoly_game_engine.html#afe6721e131658a56956b4aca576420bf" title=" " alt="" coords="694,304,865,345"/>
+<area shape="rect" id="node12" href="$classmonopoly_game_engine.html#a3e7b1e0ef7e0aa94a12775c1b928a315" title=" " alt="" coords="694,369,865,411"/>
+<area shape="rect" id="node13" href="$classmonopoly_game_engine.html#a4b8a36fd929cbdfebba4aed60c4c9300" title=" " alt="" coords="694,435,865,476"/>
+<area shape="rect" id="node14" href="$classmonopoly_game_engine.html#a3e437e4b8342de7d4b4476c0cdcff6a0" title=" " alt="" coords="688,173,871,215"/>
+<area shape="rect" id="node15" href="$classmonopoly_game_engine.html#a722f01bafc4530dbc53a51f053612fd7" title=" " alt="" coords="453,536,624,577"/>
+<area shape="rect" id="node16" href="$classmonopoly_game_engine.html#aacbd6ca705e1af117659326ed41739e9" title=" " alt="" coords="694,653,865,695"/>
+<area shape="rect" id="node17" href="$classmonopoly_game_engine.html#ab00dbe0baa4635500d93c2004f7e0218" title=" " alt="" coords="451,5,626,47"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title=" " alt="" coords="5,377,163,403"/>
+</map>

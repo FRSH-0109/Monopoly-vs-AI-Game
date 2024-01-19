@@ -1,0 +1,7 @@
+<map id="AiPlayer::decideAuctionBid" name="AiPlayer::decideAuctionBid">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,203,108"/>
+<area shape="rect" id="node2" href="$class_ai_adapter.html#a840ba14a6c65e4b7572ca9838b62c4f7" title="Converts money value into a format suitable for AI input." alt="" coords="251,5,473,32"/>
+<area shape="rect" id="node3" href="$classann_1_1neuralnet.html#af6ea7c4bc68dbd966cc80a63a6a3519d" title=" " alt="" coords="271,56,453,83"/>
+<area shape="rect" id="node4" href="$class_player.html#a9ba3a7b625d50ad49f73eca39aff8248" title=" " alt="" coords="292,107,432,133"/>
+<area shape="rect" id="node5" href="$class_ai_adapter.html#ac76618fcec497abb9b30456c39bb824a" title="Gets the AI network inputs." alt="" coords="285,157,439,184"/>
+</map>

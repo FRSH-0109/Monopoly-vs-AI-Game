@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_main_menu_screen" xml:lang="en-US">
+<title>MainMenuScreen Class Reference</title>
+<indexterm><primary>MainMenuScreen</primary></indexterm>
+Inheritance diagram for MainMenuScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_main_menu_screen__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for MainMenuScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_main_menu_screen__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b"/>void <emphasis role="strong">mainMenuCreate</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_main_menu_screen_1afdd21c26a37bfc5b952836e283b31688"/>ScreenEventType <emphasis role="strong">worker</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_main_menu_screen_1a6f640795fce8c271b2988ee05f545d37"/>void <emphasis role="strong">draw</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__active_screen_8h">ActiveScreen.h</link>/home/kamil/zpr/Monopoly/<link linkend="__active_screen_8cc">ActiveScreen.cc</link></section>

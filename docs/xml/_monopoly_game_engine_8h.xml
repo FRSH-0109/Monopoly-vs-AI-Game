@@ -1,0 +1,813 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_monopoly_game_engine_8h" kind="file" language="C++">
+    <compoundname>MonopolyGameEngine.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">random</includes>
+    <includes local="no">vector</includes>
+    <includes refid="_active_screen_8h" local="yes">ActiveScreen.h</includes>
+    <includes refid="_board_8h" local="yes">Board.h</includes>
+    <includes refid="_chance_8h" local="yes">Chance.h</includes>
+    <includes refid="_notification_wall_8h" local="yes">NotificationWall.h</includes>
+    <includes refid="_withdraw_8h" local="yes">Withdraw.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="_game_screen_8h" local="yes">/home/kamil/zpr/Monopoly/GameScreen.h</includedby>
+    <includedby refid="_monopoly_game_engine_8cc" local="yes">/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>list</label>
+      </node>
+      <node id="9">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="26">
+        <label>queue</label>
+      </node>
+      <node id="24">
+        <label>Tinyneat.h</label>
+        <link refid="_tinyneat_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>bits/stdc++.h</label>
+      </node>
+      <node id="32">
+        <label>NotificationWall.h</label>
+        <link refid="_notification_wall_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>variant</label>
+      </node>
+      <node id="29">
+        <label>../json/json.hpp</label>
+      </node>
+      <node id="8">
+        <label>ActiveScreen.h</label>
+        <link refid="_active_screen_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cmath</label>
+      </node>
+      <node id="33">
+        <label>Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="25">
+        <label>map</label>
+      </node>
+      <node id="15">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="17">
+        <label>Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>random</label>
+      </node>
+      <node id="31">
+        <label>Chance.h</label>
+        <link refid="_chance_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>stack</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+      <node id="21">
+        <label>array</label>
+      </node>
+      <node id="13">
+        <label>Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Tinyann.h</label>
+        <link refid="_tinyann_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>iostream</label>
+      </node>
+      <node id="23">
+        <label>unordered_map</label>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="10">
+        <label>SFML/System/Clock.hpp</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="19">
+        <label>AiAdapter.h</label>
+        <link refid="_ai_adapter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_monopoly_game_engine" prot="public">MonopolyGameEngine</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>AuctionState</name>
+        <enumvalue id="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3aace6aedb9800fa923394608e2fd6e511" prot="public">
+          <name>NO_AUCTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3a3f68f09b467e0062fc47370c7e961578" prot="public">
+          <name>INITIALIZATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3a013bcca5bdca5ab04d8cc6f7b91cda21" prot="public">
+          <name>PASS_BIDDING_TURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3a1c0f067e43e3fe18cbcd1073bcd0848b" prot="public">
+          <name>BIDDING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3aca114391980a4b8e57873b25c0e16b75" prot="public">
+          <name>ENDING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the state of an auction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/MonopolyGameEngine.h" line="31" column="1" bodyfile="/home/kamil/zpr/Monopoly/MonopolyGameEngine.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file of class used to handle whole monopoly game process, turns, actions with players, board etc. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MONOPOLY_GAME_ENGINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MONOPOLY_GAME_ENGINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_active_screen_8h" kindref="compound">ActiveScreen.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_board_8h" kindref="compound">Board.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_chance_8h" kindref="compound">Chance.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_notification_wall_8h" kindref="compound">NotificationWall.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_withdraw_8h" kindref="compound">Withdraw.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3" kindref="member">AuctionState</ref><sp/>{<sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3aace6aedb9800fa923394608e2fd6e511" kindref="member">NO_AUCTION</ref>,<sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3a3f68f09b467e0062fc47370c7e961578" kindref="member">INITIALIZATION</ref>,<sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3a013bcca5bdca5ab04d8cc6f7b91cda21" kindref="member">PASS_BIDDING_TURN</ref>,<sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3a1c0f067e43e3fe18cbcd1073bcd0848b" kindref="member">BIDDING</ref>,<sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3aca114391980a4b8e57873b25c0e16b75" kindref="member">ENDING</ref><sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_monopoly_game_engine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_monopoly_game_engine" kindref="compound">MonopolyGameEngine</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/>turn_state_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PLAYERS_MAX_<sp/>=<sp/>4;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PLAYERS_MIN_<sp/>=<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>players_starting_amount_<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;unsigned<sp/>int,<sp/>4&gt;<sp/>players_starting_Ids_;<sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>house_count_<sp/>=<sp/>32;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hotel_count_<sp/>=<sp/>12;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_index_turn_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_ai_game_only_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095" kindref="member">GameScreenType</ref><sp/>screen_type_<sp/>=<sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a346a9950c4deb7434599827156fb0a5d" kindref="member">BOARDGAME</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PLAYER_MONEY_DEFAULT_<sp/>=<sp/>1500;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>START_PASSING_MONEY_<sp/>=<sp/>200;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GAME_TURNS_MAX<sp/>=<sp/>50;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>game_turns_globally_done_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;bool,<sp/>4&gt;<sp/>game_turn_by_player_done_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3" kindref="member">AuctionState</ref><sp/>auction_state_<sp/>=<sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3aace6aedb9800fa923394608e2fd6e511" kindref="member">NO_AUCTION</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>CHANCE_FILE_PATH_<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Monopoly/game_config_json/chance.json&quot;</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>GAMEBOARD_FILE_PATH_<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Monopoly/game_config_json/board.json&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Board&gt;<sp/>gameboard_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>players_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>players_bankrupted_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GUI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FONT_SIZE<sp/>=<sp/>30;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Font<sp/>font_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Button&gt;&gt;<sp/>buttons_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;<sp/>texts_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Button&gt;&gt;<sp/>auction_buttons_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;<sp/>auction_texts_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ROLL_DICE_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(965,<sp/>120);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>roll_dice_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>TURN_INFO_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(900,<sp/>50);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>turn_info_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ROLLED_VALUE_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(900,<sp/>100);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>rolled_value_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PLAYERS_INFO_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(850,<sp/>800);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;,<sp/>4&gt;<sp/>player_info_text_;<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>BUY_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(965,<sp/>220);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>buy_field_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>resign_buy_field_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PROPERTY_DATA_POSITION<sp/>=<sp/>sf::Vector2f(910,<sp/>260);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PROPERTY_DATA_AUCTION_POSITION<sp/>=<sp/>sf::Vector2f(200,<sp/>300);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>PROPERTY_DATA_SCALE<sp/>=<sp/>4;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>property_data_sprite_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture<sp/>property_data_texture_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;<sp/>property_data_texts_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ALL_PROPERTY_DATA_POSITION<sp/>=<sp/>sf::Vector2f(1400,<sp/>260);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>all_property_data_sprite_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture<sp/>all_property_data_texture_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;<sp/>all_property_data_texts_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>NEXT_PROPERTY_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1595,<sp/>700);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>PREVIOUS_PROPERTY_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1445,<sp/>700);<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>next_property_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>previous_property_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_property_showed_<sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>available_houses_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>availableH_hotels_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>AVAILABLE_HOUSE_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(1675,<sp/>110);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>bidded_property_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>BIDDED_PROPERTY_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(200,<sp/>250);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>bidder_info_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>BIDDER_INFO_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(1360,<sp/>105);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>highest_bid_info_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>HIGHEST_BID_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(820,<sp/>100);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>leading_bidder_info_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>LEADING_BIDDER_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(820,<sp/>145);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>current_offer_info_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>CURRENT_OFFER_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(820,<sp/>680);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>house_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>hotel_text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>HOUSE_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(1445,<sp/>80);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>HOTEL_TEXT_POSITION<sp/>=<sp/>sf::Vector2f(1595,<sp/>80);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>buy_house_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>sell_house_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>buy_hotel_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>sell_hotel_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>BUY_HOUSE_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1445,<sp/>120);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>SELL_HOUSE_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1445,<sp/>180);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>BUY_HOTEL_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1595,<sp/>120);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>SELL_HOTEL_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1595,<sp/>180);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>bankrupt_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>next_turn_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>BANKRUPT_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1270,<sp/>50);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>NEXT_TURN_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1270,<sp/>180);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>houses<sp/>and<sp/>hotels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>house_size_<sp/>=<sp/>sf::Vector2f(22,<sp/>13);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture<sp/>house_texture_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture<sp/>hotel_texture_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pay<sp/>jail<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>jail_pay_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>JAIL_PAY_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1000,<sp/>250);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>JAIL_PAY_MONEY<sp/>=<sp/>50;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Auction<sp/>change<sp/>offer<sp/>buttons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>Text1_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>Text10_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;sf::Text&gt;<sp/>Text100_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>TEXT_1_POSITION<sp/>=<sp/>sf::Vector2f(975,<sp/>880);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>TEXT_10_POSITION<sp/>=<sp/>sf::Vector2f(975,<sp/>820);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>TEXT_100_POSITION<sp/>=<sp/>sf::Vector2f(975,<sp/>760);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>add_1_to_offer_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>add_10_to_offer_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>add_100_to_offer_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>substract_1_from_offer_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>substract_10_from_offer_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>substract_100_from_offer_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ADD_1_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(900,<sp/>880);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ADD_10_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(900,<sp/>820);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>ADD_100_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(900,<sp/>760);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>SUBSTRACT_1_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1050,<sp/>880);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>SUBSTRACT_10_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1050,<sp/>820);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>SUBSTRACT_100_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1050,<sp/>760);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>auction_bid_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>AUCTION_BID_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1200,<sp/>880);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Auction<sp/>resign<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>auction_resign_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>AUCTION_RESIGN_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1330,<sp/>880);<sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>withdraw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_withdraw" kindref="compound">Withdraw</ref><sp/>withdraw_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>withdraw_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>WITHDRAW_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(400,<sp/>900);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Mortgaging<sp/>mechanic<sp/>buttons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>mortgage_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>unmortgage_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>MORTGAGE_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1445,<sp/>760);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>UNMORTGAGE_BUTTON_POSITION<sp/>=<sp/>sf::Vector2f(1595,<sp/>760);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>chance<sp/>cards</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ChanceCard&gt;<sp/>chance_cards_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chance_card_current_<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_notification_wall" kindref="compound">NotificationWall</ref><sp/>notifications_wall_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>result<sp/>screen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>RESULT_DATA_Y<sp/>=<sp/>200;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;<sp/>result_players_places_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>return_to_main_menu_button_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>File<sp/>logger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>file_logger;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>FILE_LOGGER_PATH<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;game_logs.txt&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getplayer_index_turn()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>incplayer_index_turn();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTurnState(<ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/>new_state);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buttonsWorker();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>getUpdatePlayerSpritePosition();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>clearPropertyData(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_property_shown_to_buy);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getFieldPriceByPosition(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addOwnerToPropertyField(std::shared_ptr&lt;Player&gt;<sp/>player,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isButtonClicked(std::shared_ptr&lt;Button&gt;<sp/>button_ptr);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rollDice()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>movePlayer(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>turn_index,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position_increment);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sendToJail(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>turn_index);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notificationAdd(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/>std::string<sp/>text);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handlePassingStart(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>old_pos,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_pos);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>makePlayerBankrupt(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_index_turn);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showAllPropertiesWorker();</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>boardToAuctionSwitchHandler(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_auction);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>withdrawWorker();</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>aiWithdrawWorker();</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_chance_card" kindref="compound">ChanceCard</ref>&amp;<sp/>getChanceCard();</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateChanceCard();</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gameFinishedCheckWinner();</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gameFinishedCheckDraw();</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gameTurnsCounterHandle();</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removePlayerFromGame(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player_index_turn,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_draw);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Button&gt;<sp/>createDefaultButton(sf::String<sp/>text,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fileLoggerOpen();</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fileLoggerWrite(std::string<sp/>text);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fileLoggerClose();</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_monopoly_game_engine_1a0145e733b4897ca398f0d0505a58be6c" kindref="member">MonopolyGameEngine</ref>();</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a1687a15b6b383199232fa95b947a4b6f" kindref="member">setScreenType</ref>(<ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095" kindref="member">GameScreenType</ref><sp/>new_screen_type);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a816a6251d75e4dcd37d944ca68752095" kindref="member">GameScreenType</ref><sp/><ref refid="class_monopoly_game_engine_1a5a7f70b3a7d70f563daf7426772590b4" kindref="member">getScreenType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GUI<sp/>methods</highlight></codeline>
+<codeline lineno="421"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ab7c6acc2b155fbdc1952280c494a05fe" kindref="member">createButtonRollDice</ref>();</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a7b07579e424f37298496eefaae2390e1" kindref="member">createTextTurnInfo</ref>();</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a73d985dc04d394ec469ee5d01e6b9a89" kindref="member">createTextrolled_value</ref>();</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a32c0ecaa71c51cdaae65178836af75b0" kindref="member">createTextPlayersInfo</ref>();</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a153294a850e9c8d42d35e95eec1de17e" kindref="member">updateTextPlayersInfo</ref>();</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a9655bc29084d61fe0503ec16272630e6" kindref="member">createTextBiddedProperty</ref>();</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a932aa1b22c5b339c568f8ea34749b1fb" kindref="member">createTextBidderInfo</ref>();</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a04528f2dbaa4725b4430bdef63b2d9d0" kindref="member">createTextHighestBidInfo</ref>();</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ac4396e37a67a062d796345afc0642af2" kindref="member">createTextLeadingBidderInfo</ref>();</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a555cc64819179c99afb2b39b58599074" kindref="member">createCurrentOfferBidderInfo</ref>();</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a742de8013c1466a6913bb5f5eceafeb4" kindref="member">createButtonBuyResign</ref>();</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a6a7786536439ae5af3c53d896b0a9a71" kindref="member">createButtonNextProperty</ref>();</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aa54fdcd0727761f010c096435dd40999" kindref="member">createButtonPerviousProperty</ref>();</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1abbda29a495969e795d71c3a5d215b547" kindref="member">createButtonsBuySellHouseHotel</ref>();</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1af7a1b759d097257097926ed7fd60da14" kindref="member">createButtonsBankrupt</ref>();</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a525ceed24c6db4fd8823fb1af27ba24b" kindref="member">createButtonsNextTurn</ref>();</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ae9772861221c6ce195b7b63122bf5523" kindref="member">createButtonsJailPay</ref>();</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a41effaad0143e79955701cff92b2620f" kindref="member">createAuctionOfferButtons</ref>();</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a8237eb4fd279a8f4b094c14987ea37a1" kindref="member">createAuctionBidButton</ref>();</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a3fc21384392435cdfcab356f98d5a838" kindref="member">createAuctionResignButton</ref>();</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a59d448ed643e21447ac85cdfeea1fa1b" kindref="member">createButtonWithdraw</ref>();</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1af61f87c35e7969f4665091d80007a8dd" kindref="member">createMortagingButton</ref>();</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a746b88ee3a606c98cfa368192c1a34e9" kindref="member">createResultScreenStuff</ref>();</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1abdc99bcb328742800042bcbbfe1bc3f7" kindref="member">updateResultScreenStuff</ref>();</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" kindref="member">showPropertyData</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_property_shown_to_buy);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a73ae5aa5598545a9b12264072a087364" kindref="member">turnInfoTextShow</ref>();</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Font&amp;<sp/><ref refid="class_monopoly_game_engine_1acaf81e835720ba22173b0dd6a0a87bf9" kindref="member">getFont</ref>();</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1af3f9a189ddaca72b5eb57b72bc4fbbe4" kindref="member">getFontSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a034d5e74627aa03da60bbcc92d671a61" kindref="member">setFont</ref>(sf::Font<sp/>font);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1adf5644d237334e6749252420d80fac32" kindref="member">addButton</ref>(std::shared_ptr&lt;Button&gt;<sp/>button_tmp);</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a8a92e457e602fcf6a0e1dbd2dbccc856" kindref="member">addText</ref>(std::shared_ptr&lt;sf::Text&gt;<sp/>text_tmp);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"></highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a653ae4bf65d14a524938058081a2f12d" kindref="member">addAuctionButton</ref>(std::shared_ptr&lt;Button&gt;<sp/>button_tmp);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ac523b02a2ad163063c25e7019f57774c" kindref="member">addAuctionText</ref>(std::shared_ptr&lt;sf::Text&gt;<sp/>text_tmp);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Button&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1a2b1fb71410fb88b1cde5077f62fb82fd" kindref="member">getButtons</ref>();</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"></highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1a3c28362ff3b68d93dec6dae6c0304641" kindref="member">getTexts</ref>();</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Button&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1afe06604028fa9abf53bae7fc6a909ae7" kindref="member">getAuctionButtons</ref>();</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1accb94fe0ad5bc9ce44f3dda3c91a4ce7" kindref="member">getAuctionTexts</ref>();</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1af7cde31ae39d022e3d5f8be45d235ded" kindref="member">getResultTexts</ref>();</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="class_monopoly_game_engine_1a98b4a5fdbf5e68ab062cd677ccb24f74" kindref="member">getPropertyDataSprite</ref>();</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1ac70b0b504fb2271353038a59c6604691" kindref="member">getPropertyDataTexts</ref>();</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="class_monopoly_game_engine_1ac21527f42cd63f19528e7ab3f51363db" kindref="member">getAllPropertyDataSprite</ref>();</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sf::Text&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1aaf046cdf2a5b7bd05e1f8272b510de0f" kindref="member">getAllPropertyDataTexts</ref>();</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"></highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_notification_wall" kindref="compound">NotificationWall</ref>&amp;<sp/><ref refid="class_monopoly_game_engine_1a19263d676193f65b54209020dfdb928e" kindref="member">getNotificationsWall</ref>();</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Text<sp/><ref refid="class_monopoly_game_engine_1a838f18e88cd79f8cce47dd0dbb42ae3e" kindref="member">getPropertyNameToDraw</ref>(sf::Text<sp/>text,<sp/>sf::Sprite&amp;<sp/>sprite,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotation);</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture&amp;<sp/><ref refid="class_monopoly_game_engine_1ab55601ce0bb0b73719a5376723daa774" kindref="member">getHouseTexture</ref>();</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"></highlight></codeline>
+<codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture&amp;<sp/><ref refid="class_monopoly_game_engine_1a56b2b17c31119dac5b1933571bac35f6" kindref="member">getHotelTexture</ref>();</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"></highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f&amp;<sp/><ref refid="class_monopoly_game_engine_1ad0390270b455b07db016a389c89df8ea" kindref="member">getHouseSize</ref>();</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"></highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Game<sp/>staff<sp/>methods</highlight></codeline>
+<codeline lineno="684"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" kindref="member">createPlayers</ref>(std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;&amp;<sp/>players_from_game_engine);</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ac6f1dd50f3c5eecc6ba2872a1b895fd9" kindref="member">clearPlayers</ref>();</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a01c8f3df78160a7b8719e1ad06d9c239" kindref="member">createBoard</ref>();</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"></highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aca3157b9d922346e32ba8777f0b439e0" kindref="member">clearBoard</ref>();</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"></highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Board&gt;<sp/><ref refid="class_monopoly_game_engine_1a30c9e966d81c055c15cc5576243a83a2" kindref="member">getBoard</ref>();</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"></highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;&amp;<sp/><ref refid="class_monopoly_game_engine_1ab1be3d89016a48d4df0f8440a254e4d1" kindref="member">getPlayers</ref>();</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"></highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/><ref refid="class_monopoly_game_engine_1adac095bade2743a916480efc934911d5" kindref="member">getPlayersResult</ref>();</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"></highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ad6860ebdf586eff99b476ff529fb4e96" kindref="member">setplayer_index_turn</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indx);</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1fbb23a4b2427b486453417312008cfb" kindref="member">TurnState</ref><sp/><ref refid="class_monopoly_game_engine_1a3eb8af1a66fd12f93da8072c3a2edfa8" kindref="member">getTurnState</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"></highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aa95963ea9455d6ac635d27eab779b6ce" kindref="member">setAuctionState</ref>(<ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3" kindref="member">AuctionState</ref><sp/>new_state);</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"></highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_monopoly_game_engine_8h_1a7a1cb6d43fe517095daf4aa86259b5e3" kindref="member">AuctionState</ref><sp/><ref refid="class_monopoly_game_engine_1ac157740551b8c65aefd2f1563305406a" kindref="member">getAuctionState</ref>();</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"></highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ae2a4e228360bfceb91c7a5cd6803b0fd" kindref="member">getHouseCount</ref>();</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"></highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a13906373d7ee42cd405154047d76b281" kindref="member">getHotelCount</ref>();</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"></highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ac85b2577a665a2510cbd65226d4ae790" kindref="member">setHouseCount</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_count);</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"></highlight></codeline>
+<codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aa705a9f340c99ddf656caec00e2ae107" kindref="member">setHotelCount</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_count);</highlight></codeline>
+<codeline lineno="766"><highlight class="normal"></highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a398cb3a8d88d5cbec47ec7230408a59f" kindref="member">addHouses</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>added_amount);</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"></highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1afa5bca69b0ead2b54879815f37f06a1f" kindref="member">substractHouses</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>substracted_amount);</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"></highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a48c42eb3f7bdd1a2758f196d83f83cdd" kindref="member">addHotels</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>added_amount);</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"></highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aff717ed99341b6d5ead0f68553803738" kindref="member">substractHotels</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>substracted_amount);</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"></highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aa95037b493d8fb2294404944a14dcca4" kindref="member">performAuction</ref>();</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"></highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1af6b0a0923148f7dc901195dccfdc7952" kindref="member">calculateGroupFieldsOwned</ref>(std::vector&lt;unsigned<sp/>int&gt;<sp/>player_fields,<sp/><ref refid="class_property_field" kindref="compound">PropertyField</ref>&amp;<sp/>field)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"></highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aa486edceb7c305c2f24785a6ee8ca2fc" kindref="member">groupCompleted</ref>(std::vector&lt;unsigned<sp/>int&gt;<sp/>player_fields,<sp/><ref refid="class_property_field" kindref="compound">PropertyField</ref>&amp;<sp/>field)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"></highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1aaf7f625f32dc53f7413236a79afaf6d5" kindref="member">isBuildingLegal</ref>(std::shared_ptr&lt;Player&gt;<sp/>builder,<sp/><ref refid="class_street_field" kindref="compound">StreetField</ref><sp/>field);</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"></highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1afaf31ce9d8aaef4b36bbefe9b4b72f78" kindref="member">isDestroyingLegal</ref>(std::shared_ptr&lt;Player&gt;<sp/>builder,<sp/><ref refid="class_street_field" kindref="compound">StreetField</ref><sp/>field);</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"></highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a34646774679d5ef5e9bbc6317953c7fa" kindref="member">isHotelBuildingLegal</ref>(std::shared_ptr&lt;Player&gt;<sp/>builder,<sp/><ref refid="class_street_field" kindref="compound">StreetField</ref>&amp;<sp/>field);</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"></highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ac01307d6ae292277aa3caf5855955a8c" kindref="member">isHotelDestroyingLegal</ref>(std::shared_ptr&lt;Player&gt;<sp/>builder,<sp/><ref refid="class_street_field" kindref="compound">StreetField</ref>&amp;<sp/>field);</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"></highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1afd604c9fd373fa220ebe04ff9d5f191b" kindref="member">colorGroupEmpty</ref>(std::shared_ptr&lt;Player&gt;<sp/>mortgaging,<sp/><ref refid="class_street_field" kindref="compound">StreetField</ref>&amp;<sp/>field);</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"></highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/><ref refid="class_monopoly_game_engine_1a64330a6b6eea093a923675e749c00807" kindref="member">getHouseSprite</ref>(<ref refid="class_street_field" kindref="compound">StreetField</ref>&amp;<sp/>field,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>houses_number);</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"></highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/><ref refid="class_monopoly_game_engine_1a2831ee2158d97ff536fd0fee57e338e2" kindref="member">getHotelSprite</ref>(<ref refid="class_street_field" kindref="compound">StreetField</ref>&amp;<sp/>field);</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"></highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ac8629f2abd1bf12cfc0af747d16c867f" kindref="member">createAvailableHousesHotelText</ref>();</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"></highlight></codeline>
+<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ae9a8bf736199ef2e643f750be08b1bed" kindref="member">updateAvailableHousesHotelText</ref>();</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"></highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" kindref="member">calculateRent</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rolled_val,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"></highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" kindref="member">buildingsManagingWorker</ref>();</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"></highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" kindref="member">aiBuildingsMangingWorker</ref>();</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"></highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" kindref="member">monopolyGameWorker</ref>();</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"></highlight></codeline>
+<codeline lineno="905"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_withdraw" kindref="compound">Withdraw</ref>&amp;<sp/><ref refid="class_monopoly_game_engine_1a7a4c2e5ec5a548c44d2dca59438453b5" kindref="member">getWithdraw</ref>();</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"></highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a3e16a285485813a9e4a121a198739176" kindref="member">createChanceCards</ref>();</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"></highlight></codeline>
+<codeline lineno="921"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_monopoly_game_engine_1a198a2731eb63d6c0a57bd0411bad89e9" kindref="member">shuffleChanceCards</ref>();</highlight></codeline>
+<codeline lineno="922"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"></highlight></codeline>
+<codeline lineno="924"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/MonopolyGameEngine.h"/>
+  </compounddef>
+</doxygen>

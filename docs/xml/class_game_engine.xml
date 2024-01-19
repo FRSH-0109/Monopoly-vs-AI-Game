@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_game_engine" kind="class" language="C++" prot="public">
+    <compoundname>GameEngine</compoundname>
+    <includes refid="_game_engine_8h" local="no">GameEngine.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_engine_1a87b710ea924fbd271f6c08662cc6f569" prot="private" static="no" mutable="no">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow* GameEngine::context_window_</definition>
+        <argsstring></argsstring>
+        <name>context_window_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the context window used for rendering graphics. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="39" column="15" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1a9e4dbe64ebb7ef57e900813ffb262691" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_active_screen" kindref="compound">ActiveScreen</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ActiveScreen&gt; GameEngine::active_screen_</definition>
+        <argsstring></argsstring>
+        <name>active_screen_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique pointer to the active screen managing different purpose screens. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="41" column="17" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1aed22f2981e9a5f318f5505cf9df56c91" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double GameEngine::frame_rate_hz_</definition>
+        <argsstring></argsstring>
+        <name>frame_rate_hz_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frame rate in Hertz (frames per second). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="43" column="8" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1a413ed1f4753ed4e6efdf02b41e898157" prot="private" static="no" mutable="no">
+        <type>sf::Time</type>
+        <definition>sf::Time GameEngine::frame_rate_delay_ms_</definition>
+        <argsstring></argsstring>
+        <name>frame_rate_delay_ms_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time delay for achieving the specified frame rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="44" column="10" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1a7345f4997b1d5ee1af1451f8d042c5a1" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int GameEngine::window_width_</definition>
+        <argsstring></argsstring>
+        <name>window_width_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the game window in pixels. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="45" column="14" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1afb86863274d66d119cd1b2cc6bf68304" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int GameEngine::window_height_</definition>
+        <argsstring></argsstring>
+        <name>window_height_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Height of the game window in pixels. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="46" column="14" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1aafd18fc9a70ecc867a3d4e175e4b3878" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Player&gt; &gt; GameEngine::players_</definition>
+        <argsstring></argsstring>
+        <name>players_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector of shared pointers to <ref refid="class_player" kindref="compound">Player</ref> objects representing game players. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="48" column="13" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_engine_1a398cd2cb9ed1f5b94a6e8c008f2249ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameEngine::GameEngine</definition>
+        <argsstring>(double frame_rate_hz, uint window_width, uint window_height)</argsstring>
+        <name>GameEngine</name>
+        <param>
+          <type>double</type>
+          <declname>frame_rate_hz</declname>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>window_width</declname>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>window_height</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_game_engine" kindref="compound">GameEngine</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame_rate_hz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired frame rate in Hertz (frames per second). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>window_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the game window in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>window_height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the game window in pixels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="58" column="1" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="18" bodyend="36"/>
+        <references refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" compoundref="_game_engine_8cc" startline="54" endline="56">getContextWindow</references>
+        <references refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" compoundref="_context_window_8cc" startline="22" endline="27">ContextWindow::GetInstance</references>
+        <references refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" compoundref="_context_window_8cc" startline="45" endline="47">ContextWindow::getView</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a7e3617896a88ed2b335fddae5611dbd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameEngine::GameEngine</definition>
+        <argsstring>(double frame_rate_hz)</argsstring>
+        <name>GameEngine</name>
+        <param>
+          <type>double</type>
+          <declname>frame_rate_hz</declname>
+        </param>
+        <briefdescription>
+<para>Additional constructor for the <ref refid="class_game_engine" kindref="compound">GameEngine</ref> class. Used only to train AI players. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame_rate_hz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired frame rate in Hertz (frames per second). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="65" column="1" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="38" bodyend="52"/>
+        <references refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" compoundref="_game_engine_8cc" startline="54" endline="56">getContextWindow</references>
+        <references refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" compoundref="_context_window_8cc" startline="22" endline="27">ContextWindow::GetInstance</references>
+        <references refid="class_context_window_1ac743eeaa2b5ef0f8e4955b28f5a7ee26" compoundref="_context_window_8cc" startline="45" endline="47">ContextWindow::getView</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a9bfc5c11e97601f3588c62027b43616d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Clears content on the displayed window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="70" column="6" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="58" bodyend="60"/>
+        <references refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" compoundref="_game_engine_8cc" startline="54" endline="56">getContextWindow</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1acfa98b8be6a8843ec87d8dd3d7b23349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::display</definition>
+        <argsstring>()</argsstring>
+        <name>display</name>
+        <briefdescription>
+<para>Displays the content of the context window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="75" column="6" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="78" bodyend="87"/>
+        <references refid="class_context_window_1a019a0ab11babadc9059ca0f7bb0aabf5" compoundref="_context_window_8cc" startline="29" endline="31">ContextWindow::display</references>
+        <references refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" compoundref="_game_engine_8cc" startline="54" endline="56">getContextWindow</references>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a63e839e92c780aa9b8fe159a73a8fabd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::pollForEvents</definition>
+        <argsstring>(sf::Event &amp;event)</argsstring>
+        <name>pollForEvents</name>
+        <param>
+          <type>sf::Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Polls for events such as mouse and keyboard interactions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to an sf::Event object to store the polled event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="82" column="6" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="62" bodyend="76"/>
+        <references refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" compoundref="_game_engine_8cc" startline="54" endline="56">getContextWindow</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; Player &gt; &gt; GameEngine::worker</definition>
+        <argsstring>(std::vector&lt; std::shared_ptr&lt; Player &gt;&gt; &amp;players_vec)</argsstring>
+        <name>worker</name>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;&gt; &amp;</type>
+          <declname>players_vec</declname>
+        </param>
+        <briefdescription>
+<para>Worker function for processing player-related tasks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>players_vec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of shared pointers to <ref refid="class_player" kindref="compound">Player</ref> objects representing game players. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of shared pointers to <ref refid="class_player" kindref="compound">Player</ref> objects after processing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="90" column="13" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="89" bodyend="179"/>
+        <references refid="class_game_engine_1a9bfc5c11e97601f3588c62027b43616d" compoundref="_game_engine_8cc" startline="58" endline="60">clear</references>
+        <references refid="class_game_engine_1acfa98b8be6a8843ec87d8dd3d7b23349" compoundref="_game_engine_8cc" startline="78" endline="87">display</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a7a10b5d68d31711288e1fe0fa17dbf4f" compoundref="main_8h" startline="97">EXIT</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a176f3285bbb35321f21db4745967df3a" compoundref="main_8h" startline="125">GAME_ENDED</references>
+        <references refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" compoundref="_game_engine_8cc" startline="54" endline="56">getContextWindow</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afd6a0e4343048b10646dd2976cc5ad18" compoundref="main_8h" startline="96">IDLE</references>
+        <references refid="classann_1_1neuralnet_1aafc20f4edec46ac91452f5bb97152ebe" compoundref="_tinyann_8cc" startline="148" endline="199">ann::neuralnet::import_fromfile</references>
+        <references refid="structplayer_settings_1a7e4f4f6444ffff96d1d0a2f24702227e" compoundref="main_8h" startline="59">playerSettings::isHuman</references>
+        <references refid="structplayer_settings_1a4e09d82bad1ebe1d80d01b77f6c22af8" compoundref="main_8h" startline="58">playerSettings::isNone</references>
+        <references refid="structplayer_settings_1a8c54bc6ea5588e457e7f4a4a3e8d7b5e" compoundref="main_8h" startline="60">playerSettings::level</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a0352906d1ea1dfcd663c918f3a86755b" compoundref="main_8h" startline="98">PLAY</references>
+        <references refid="class_game_engine_1a63e839e92c780aa9b8fe159a73a8fabd" compoundref="_game_engine_8cc" startline="62" endline="76">pollForEvents</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a25009c3a00abcaa12abf0f04eb8d5b67" compoundref="main_8h" startline="99">RETURN_TO_MAIN_MENU</references>
+        <references refid="class_player_1ab1032df37bafe0a30acadb7bb1ccb97a" compoundref="_player_8cc" startline="163" endline="165">Player::setAiLevel</references>
+        <references refid="class_player_1adbcc2bba53e6bb2837d763eef79edff9" compoundref="_player_8cc" startline="155" endline="157">Player::setIsAi</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3accab244294e0e1bcded736405b2db375" compoundref="main_8h" startline="124">START_GAME</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1adc65f1c736a6bf641eb750bce2c46a69" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int GameEngine::getwindow_width</definition>
+        <argsstring>() const</argsstring>
+        <name>getwindow_width</name>
+        <briefdescription>
+<para>Gets the width of the game window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Width of the game window in pixels. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="97" column="14" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="181" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1af3951e4fdf03fe94fa07f1c3d71c98c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int GameEngine::getwindow_height</definition>
+        <argsstring>() const</argsstring>
+        <name>getwindow_height</name>
+        <briefdescription>
+<para>Gets the height of the game window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Height of the game window in pixels. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="104" column="14" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="185" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow * GameEngine::getContextWindow</definition>
+        <argsstring>()</argsstring>
+        <name>getContextWindow</name>
+        <briefdescription>
+<para>Gets the pointer to the context window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the context window used for rendering graphics. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="111" column="15" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.cc" bodystart="54" bodyend="56"/>
+        <referencedby refid="class_game_engine_1a9bfc5c11e97601f3588c62027b43616d" compoundref="_game_engine_8cc" startline="58" endline="60">clear</referencedby>
+        <referencedby refid="class_game_engine_1acfa98b8be6a8843ec87d8dd3d7b23349" compoundref="_game_engine_8cc" startline="78" endline="87">display</referencedby>
+        <referencedby refid="class_game_engine_1a398cd2cb9ed1f5b94a6e8c008f2249ca" compoundref="_game_engine_8cc" startline="18" endline="36">GameEngine</referencedby>
+        <referencedby refid="class_game_engine_1a63e839e92c780aa9b8fe159a73a8fabd" compoundref="_game_engine_8cc" startline="62" endline="76">pollForEvents</referencedby>
+        <referencedby refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" compoundref="_game_engine_8cc" startline="89" endline="179">worker</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Handles low-level program operations, including input interactions and window display. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_game_engine" kindref="compound">GameEngine</ref> class manages fundamental program operations, such as handling input interactions (mouse, keyboard) and displaying the window. It incorporates an <ref refid="class_active_screen" kindref="compound">ActiveScreen</ref> to manage various game screens. Also connects main monopolyGame engine with main loop in main.c to exchange data about results. </para>
+    </detaileddescription>
+    <location file="/home/kamil/zpr/Monopoly/GameEngine.h" line="37" column="1" bodyfile="/home/kamil/zpr/Monopoly/GameEngine.h" bodystart="37" bodyend="112"/>
+    <listofallmembers>
+      <member refid="class_game_engine_1a9e4dbe64ebb7ef57e900813ffb262691" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>active_screen_</name></member>
+      <member refid="class_game_engine_1a9bfc5c11e97601f3588c62027b43616d" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>clear</name></member>
+      <member refid="class_game_engine_1a87b710ea924fbd271f6c08662cc6f569" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>context_window_</name></member>
+      <member refid="class_game_engine_1acfa98b8be6a8843ec87d8dd3d7b23349" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>display</name></member>
+      <member refid="class_game_engine_1a413ed1f4753ed4e6efdf02b41e898157" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>frame_rate_delay_ms_</name></member>
+      <member refid="class_game_engine_1aed22f2981e9a5f318f5505cf9df56c91" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>frame_rate_hz_</name></member>
+      <member refid="class_game_engine_1a398cd2cb9ed1f5b94a6e8c008f2249ca" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>GameEngine</name></member>
+      <member refid="class_game_engine_1a7e3617896a88ed2b335fddae5611dbd8" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>GameEngine</name></member>
+      <member refid="class_game_engine_1a2a10627656f88da08fc3bb9ec760323a" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getContextWindow</name></member>
+      <member refid="class_game_engine_1af3951e4fdf03fe94fa07f1c3d71c98c2" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getwindow_height</name></member>
+      <member refid="class_game_engine_1adc65f1c736a6bf641eb750bce2c46a69" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getwindow_width</name></member>
+      <member refid="class_game_engine_1aafd18fc9a70ecc867a3d4e175e4b3878" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>players_</name></member>
+      <member refid="class_game_engine_1a63e839e92c780aa9b8fe159a73a8fabd" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>pollForEvents</name></member>
+      <member refid="class_game_engine_1afb86863274d66d119cd1b2cc6bf68304" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>window_height_</name></member>
+      <member refid="class_game_engine_1a7345f4997b1d5ee1af1451f8d042c5a1" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>window_width_</name></member>
+      <member refid="class_game_engine_1a2f16fc4e451a3a4942992319eb37455b" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>worker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

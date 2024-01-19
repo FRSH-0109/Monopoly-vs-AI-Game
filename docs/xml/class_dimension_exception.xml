@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_dimension_exception" kind="class" language="C++" prot="public">
+    <compoundname>DimensionException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <includes refid="main_8h" local="no">main.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_dimension_exception_1accaa99d969372496f3472d8e17271c72" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DimensionException::bad_dimension_</definition>
+        <argsstring></argsstring>
+        <name>bad_dimension_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="18" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dimension_exception_1a205b2338798ce20d22bc13908b45f1eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DimensionException::DimensionException</definition>
+        <argsstring>(unsigned int dimension)</argsstring>
+        <name>DimensionException</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="21" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dimension_exception_1aeea90857bf7639ea21ca8dbfdef5805e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DimensionException::DimensionException</definition>
+        <argsstring>(const DimensionException &amp;e)</argsstring>
+        <name>DimensionException</name>
+        <param>
+          <type>const <ref refid="class_dimension_exception" kindref="compound">DimensionException</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="22" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dimension_exception_1a78036604ba7a79af8e5dd438ad41e388" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int DimensionException::getBadDimension</definition>
+        <argsstring>()</argsstring>
+        <name>getBadDimension</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.h" line="23" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exception for handling passing wrong dimensions to any displayed object. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DimensionException</label>
+        <link refid="class_dimension_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>DimensionException</label>
+        <link refid="class_dimension_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/main.h" line="17" column="1" bodyfile="/home/kamil/zpr/Monopoly/main.h" bodystart="17" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_dimension_exception_1accaa99d969372496f3472d8e17271c72" prot="private" virt="non-virtual"><scope>DimensionException</scope><name>bad_dimension_</name></member>
+      <member refid="class_dimension_exception_1a205b2338798ce20d22bc13908b45f1eb" prot="public" virt="non-virtual"><scope>DimensionException</scope><name>DimensionException</name></member>
+      <member refid="class_dimension_exception_1aeea90857bf7639ea21ca8dbfdef5805e" prot="public" virt="non-virtual"><scope>DimensionException</scope><name>DimensionException</name></member>
+      <member refid="class_dimension_exception_1a78036604ba7a79af8e5dd438ad41e388" prot="public" virt="non-virtual"><scope>DimensionException</scope><name>getBadDimension</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

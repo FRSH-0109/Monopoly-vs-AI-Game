@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_property_field" xml:lang="en-US">
+<title>PropertyField Class Reference</title>
+<indexterm><primary>PropertyField</primary></indexterm>
+Inheritance diagram for PropertyField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_property_field__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for PropertyField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_property_field__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_property_field_1aba9f3d809377e263842e8aa382e78a49"/><emphasis role="strong">PropertyField</emphasis> (const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int price, const std::vector&lt; unsigned int &gt; group_members, const unsigned int mortgage)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1aafcf4b8fd5fb49a727cb564c0c99a3eb"/>unsigned int <emphasis role="strong">getPrice</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a676180ae8ad98644572c47787ea0a01f"/>const std::vector&lt; unsigned int &gt; <emphasis role="strong">getGroupMembers</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1afeddcb21f639b779a94a5d471059e7e3"/>const unsigned int <emphasis role="strong">getMortgage</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a1fffe1254ab983b26a27f44f60790118"/>const bool <emphasis role="strong">getIsMortgaged</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a5e8b305dba61b190acbfbf4f1e82af96"/>const unsigned int <emphasis role="strong">getUnmortgageValue</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a4e8d167377c43ea54f32d355d8d07993"/>std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; <emphasis role="strong">getOwner</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a1fc8ddd955fb2c1b271a259785eab177"/>sf::RectangleShape &amp; <emphasis role="strong">getOwnerFlag</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a8ed81fa863c3d443a69141445d66616e"/>void <emphasis role="strong">setIsMortgaged</emphasis> (bool new_state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1aff8b7ee4568a0721149145074f2aa160"/>void <emphasis role="strong">setOwner</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; new_owner)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1aa3a6b0249d36134b9cc63872922e447f"/>void <emphasis role="strong">resetOwner</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1aa458959642c699213a8f537532e0f371"/>void <emphasis role="strong">resetDefault</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99"/>void <emphasis role="strong">createFlagSprite</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__field_8h">Field.h</link>/home/kamil/zpr/Monopoly/<link linkend="__field_8cc">Field.cc</link></section>

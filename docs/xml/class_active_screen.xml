@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_active_screen" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>ActiveScreen</compoundname>
+    <derivedcompoundref refid="class_game_menu_screen" prot="public" virt="non-virtual">GameMenuScreen</derivedcompoundref>
+    <derivedcompoundref refid="class_game_screen" prot="public" virt="non-virtual">GameScreen</derivedcompoundref>
+    <derivedcompoundref refid="class_main_menu_screen" prot="public" virt="non-virtual">MainMenuScreen</derivedcompoundref>
+    <includes refid="_active_screen_8h" local="no">ActiveScreen.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_active_screen_1a4f92f1a6e827f428e24df6cab8682a82" prot="private" static="no" mutable="no">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow* ActiveScreen::context_window_</definition>
+        <argsstring></argsstring>
+        <name>context_window_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the context window. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="31" column="15" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_active_screen_1afce9503e4b8ea8b24db87cd902702d13" prot="private" static="no" mutable="no">
+        <type>sf::Font</type>
+        <definition>sf::Font ActiveScreen::font_</definition>
+        <argsstring></argsstring>
+        <name>font_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The SFML font used for text on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="32" column="14" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_active_screen_1aac396c3c4502718d9f51bc007869edef" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_button" kindref="compound">Button</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Button&gt; &gt; ActiveScreen::buttons_</definition>
+        <argsstring></argsstring>
+        <name>buttons_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector of buttons displayed on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="33" column="17" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_active_screen_1a1ff41954dc11f652f0c726ed7c5fe4f5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;sf::Text&gt; &gt; ActiveScreen::texts_</definition>
+        <argsstring></argsstring>
+        <name>texts_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector of SFML Text objects displayed on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="34" column="17" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_active_screen_1a25aeb35054d68d709744499149d5183f" prot="private" static="no" mutable="no">
+        <type><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e" kindref="member">ActiveScreenType</ref></type>
+        <definition>ActiveScreenType ActiveScreen::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of the active screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="35" column="22" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_active_screen_1a8fbf39867108efbaf2d3e3102ec7d746" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ActiveScreen::ActiveScreen</definition>
+        <argsstring>()</argsstring>
+        <name>ActiveScreen</name>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_active_screen" kindref="compound">ActiveScreen</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="41" column="5" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a3cd9d9f9571195d3fd030c41512348da" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+        <definition>virtual ScreenEventType ActiveScreen::worker</definition>
+        <argsstring>()=0</argsstring>
+        <name>worker</name>
+        <reimplementedby refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07">worker</reimplementedby>
+        <reimplementedby refid="class_main_menu_screen_1afdd21c26a37bfc5b952836e283b31688">worker</reimplementedby>
+        <reimplementedby refid="class_game_screen_1a140fce95914abbf9efac4ad6bb0c98dc">worker</reimplementedby>
+        <briefdescription>
+<para>Pure virtual function representing the worker function for the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ScreenEventType associated with the user interaction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="47" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a381ad867612f98caa038c0b775f0c39a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void ActiveScreen::draw</definition>
+        <argsstring>()=0</argsstring>
+        <name>draw</name>
+        <reimplementedby refid="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16">draw</reimplementedby>
+        <reimplementedby refid="class_main_menu_screen_1a6f640795fce8c271b2988ee05f545d37">draw</reimplementedby>
+        <reimplementedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77">draw</reimplementedby>
+        <briefdescription>
+<para>Pure virtual function to draw the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="52" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sf::Font &amp;</type>
+        <definition>sf::Font &amp; ActiveScreen::getFont</definition>
+        <argsstring>()</argsstring>
+        <name>getFont</name>
+        <briefdescription>
+<para>Gets the SFML font used for text on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The SFML font. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="58" column="14" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="25" bodyend="27"/>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" compoundref="_game_screen_8cc" startline="17" endline="66">GameScreen::GameScreen</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ActiveScreen::setFont</definition>
+        <argsstring>(sf::Font font)</argsstring>
+        <name>setFont</name>
+        <param>
+          <type>sf::Font</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+<para>Sets the SFML font used for text on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>font</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML font to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="64" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="21" bodyend="23"/>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" compoundref="_game_screen_8cc" startline="17" endline="66">GameScreen::GameScreen</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1ab51ef0260eead96cb3d88ecdb42cdd36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ActiveScreen::addButton</definition>
+        <argsstring>(std::shared_ptr&lt; Button &gt; button_tmp)</argsstring>
+        <name>addButton</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_button" kindref="compound">Button</ref> &gt;</type>
+          <declname>button_tmp</declname>
+        </param>
+        <briefdescription>
+<para>Adds a button to the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button_tmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The button to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="70" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="29" bodyend="32"/>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a4115e6322ed681427d0cd92c5910ca5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ActiveScreen::addText</definition>
+        <argsstring>(std::shared_ptr&lt; sf::Text &gt; text_tmp)</argsstring>
+        <name>addText</name>
+        <param>
+          <type>std::shared_ptr&lt; sf::Text &gt;</type>
+          <declname>text_tmp</declname>
+        </param>
+        <briefdescription>
+<para>Adds a text object to the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text_tmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SFML Text object to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="76" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1aefe54d9a04210b2985890f3657974484" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_button" kindref="compound">Button</ref> &gt; &gt; &amp;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; Button &gt; &gt; &amp; ActiveScreen::getButtons</definition>
+        <argsstring>()</argsstring>
+        <name>getButtons</name>
+        <briefdescription>
+<para>Gets the vector of buttons displayed on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of shared pointers to <ref refid="class_button" kindref="compound">Button</ref> objects. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="82" column="17" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="55" bodyend="57"/>
+        <referencedby refid="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16" compoundref="_active_screen_8cc" startline="223" endline="233">GameMenuScreen::draw</referencedby>
+        <referencedby refid="class_main_menu_screen_1a6f640795fce8c271b2988ee05f545d37" compoundref="_active_screen_8cc" startline="139" endline="145">MainMenuScreen::draw</referencedby>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+        <referencedby refid="class_game_menu_screen_1ae427ab9331af7fb8bfa52d88a0977b3e" compoundref="_active_screen_8cc" startline="552" endline="560">GameMenuScreen::setAILevelColumnVisibility</referencedby>
+        <referencedby refid="class_game_menu_screen_1a348efe82320f6cf37be5b873343768d1" compoundref="_active_screen_8cc" startline="654" endline="689">GameMenuScreen::setDefaultAILevelButtonsFocus</referencedby>
+        <referencedby refid="class_game_menu_screen_1aa5f7b6ac2cb57c6f700aefe1f727bd77" compoundref="_active_screen_8cc" startline="562" endline="572">GameMenuScreen::setOtherButtonsInactive</referencedby>
+        <referencedby refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" compoundref="_active_screen_8cc" startline="235" endline="264">GameMenuScreen::worker</referencedby>
+        <referencedby refid="class_main_menu_screen_1afdd21c26a37bfc5b952836e283b31688" compoundref="_active_screen_8cc" startline="118" endline="137">MainMenuScreen::worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a83ce836bcc0364d216ee126716b27da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; ActiveScreen::getTexts</definition>
+        <argsstring>()</argsstring>
+        <name>getTexts</name>
+        <briefdescription>
+<para>Gets the vector of SFML Text objects displayed on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of shared pointers to SFML Text objects. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="88" column="17" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="59" bodyend="61"/>
+        <referencedby refid="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16" compoundref="_active_screen_8cc" startline="223" endline="233">GameMenuScreen::draw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+        <definition>ContextWindow * ActiveScreen::getContextWindow</definition>
+        <argsstring>()</argsstring>
+        <name>getContextWindow</name>
+        <briefdescription>
+<para>Gets the pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="94" column="19" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="43" bodyend="45"/>
+        <referencedby refid="class_game_menu_screen_1a4f3b0441bbb05d9c97a5f2970eeacd16" compoundref="_active_screen_8cc" startline="223" endline="233">GameMenuScreen::draw</referencedby>
+        <referencedby refid="class_main_menu_screen_1a6f640795fce8c271b2988ee05f545d37" compoundref="_active_screen_8cc" startline="139" endline="145">MainMenuScreen::draw</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+        <referencedby refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" compoundref="_active_screen_8cc" startline="235" endline="264">GameMenuScreen::worker</referencedby>
+        <referencedby refid="class_main_menu_screen_1afdd21c26a37bfc5b952836e283b31688" compoundref="_active_screen_8cc" startline="118" endline="137">MainMenuScreen::worker</referencedby>
+        <referencedby refid="class_game_screen_1a140fce95914abbf9efac4ad6bb0c98dc" compoundref="_game_screen_8cc" startline="68" endline="98">GameScreen::worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ActiveScreen::setContextWindow</definition>
+        <argsstring>(ContextWindow *)</argsstring>
+        <name>setContextWindow</name>
+        <param>
+          <type><ref refid="class_context_window" kindref="compound">ContextWindow</ref> *</type>
+          <defname>cw</defname>
+        </param>
+        <briefdescription>
+<para>Sets the pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context_window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="class_context_window" kindref="compound">ContextWindow</ref> to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="100" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="39" bodyend="41"/>
+        <referencedby refid="class_game_menu_screen_1af17f9c5e3353be5c531251c4e78d6d0c" compoundref="_active_screen_8cc" startline="176" endline="221">GameMenuScreen::gameMenuCreate</referencedby>
+        <referencedby refid="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" compoundref="_game_screen_8cc" startline="17" endline="66">GameScreen::GameScreen</referencedby>
+        <referencedby refid="class_main_menu_screen_1ac1f40ff20eed76db8a0fc8cca1a8cd0b" compoundref="_active_screen_8cc" startline="82" endline="116">MainMenuScreen::mainMenuCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1aa4db9f544d20ad9c7b1fe2af4d55ea3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e" kindref="member">ActiveScreenType</ref></type>
+        <definition>ActiveScreenType ActiveScreen::getScreenType</definition>
+        <argsstring>()</argsstring>
+        <name>getScreenType</name>
+        <briefdescription>
+<para>Gets the type of the active screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ActiveScreenType. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="106" column="22" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ActiveScreen::setScreenType</definition>
+        <argsstring>(ActiveScreenType type)</argsstring>
+        <name>setScreenType</name>
+        <param>
+          <type><ref refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3e" kindref="member">ActiveScreenType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Sets the type of the active screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ActiveScreenType to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="112" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="51" bodyend="53"/>
+        <referencedby refid="class_game_menu_screen_1a5c3726575383e12d2a0f55e035be6719" compoundref="_active_screen_8cc" startline="147" endline="174">GameMenuScreen::GameMenuScreen</referencedby>
+        <referencedby refid="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" compoundref="_game_screen_8cc" startline="17" endline="66">GameScreen::GameScreen</referencedby>
+        <referencedby refid="class_main_menu_screen_1a4d246c87a47788cf7802e145e9ab0f6e" compoundref="_active_screen_8cc" startline="77" endline="80">MainMenuScreen::MainMenuScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a385001a5027f0b2f00145a54b668368f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ActiveScreen::buttonSetColors</definition>
+        <argsstring>(std::shared_ptr&lt; Button &gt; buttonPtr)</argsstring>
+        <name>buttonSetColors</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_button" kindref="compound">Button</ref> &gt;</type>
+          <declname>buttonPtr</declname>
+        </param>
+        <briefdescription>
+<para>Sets the colors of a button based on its state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buttonPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shared pointer to the <ref refid="class_button" kindref="compound">Button</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="118" column="10" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="63" bodyend="65"/>
+        <referencedby refid="class_game_menu_screen_1a930fac59e5231f348579a57991246e07" compoundref="_active_screen_8cc" startline="235" endline="264">GameMenuScreen::worker</referencedby>
+        <referencedby refid="class_main_menu_screen_1afdd21c26a37bfc5b952836e283b31688" compoundref="_active_screen_8cc" startline="118" endline="137">MainMenuScreen::worker</referencedby>
+        <referencedby refid="class_game_screen_1a140fce95914abbf9efac4ad6bb0c98dc" compoundref="_game_screen_8cc" startline="68" endline="98">GameScreen::worker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a571c9f50c3d50235b43a1d2cb01ad72f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="structplayer_settings" kindref="compound">playerSettings</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; playerSettings &gt; &gt; ActiveScreen::getPlayersSettings</definition>
+        <argsstring>() const</argsstring>
+        <name>getPlayersSettings</name>
+        <reimplementedby refid="class_game_menu_screen_1a1ec0a4aa6bc44f2153e9d2abf290e7c4">getPlayersSettings</reimplementedby>
+        <briefdescription>
+<para>Virtual function to get players&apos; settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of shared pointers to <ref refid="structplayer_settings" kindref="compound">playerSettings</ref> objects. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="124" column="25" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_active_screen_1a33f41ba13061ef1700f475e916bcba3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; Player &gt; &gt; ActiveScreen::getPlayersResult</definition>
+        <argsstring>()</argsstring>
+        <name>getPlayersResult</name>
+        <reimplementedby refid="class_game_screen_1a954ec5b6fb0da4ff4d6d3feccea9d4b5">getPlayersResult</reimplementedby>
+        <briefdescription>
+<para>Virtual function to get players&apos; results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of shared pointers to <ref refid="class_player" kindref="compound">Player</ref> objects. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="130" column="25" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.cc" bodystart="72" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the base class for handling displayed screens in the project. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ActiveScreen</label>
+        <link refid="class_active_screen"/>
+      </node>
+      <node id="3">
+        <label>GameScreen</label>
+        <link refid="class_game_screen"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>MainMenuScreen</label>
+        <link refid="class_main_menu_screen"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GameMenuScreen</label>
+        <link refid="class_game_menu_screen"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/kamil/zpr/Monopoly/ActiveScreen.h" line="30" column="1" bodyfile="/home/kamil/zpr/Monopoly/ActiveScreen.h" bodystart="30" bodyend="131"/>
+    <listofallmembers>
+      <member refid="class_active_screen_1a8fbf39867108efbaf2d3e3102ec7d746" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>ActiveScreen</name></member>
+      <member refid="class_active_screen_1ab51ef0260eead96cb3d88ecdb42cdd36" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>addButton</name></member>
+      <member refid="class_active_screen_1a4115e6322ed681427d0cd92c5910ca5e" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>addText</name></member>
+      <member refid="class_active_screen_1aac396c3c4502718d9f51bc007869edef" prot="private" virt="non-virtual"><scope>ActiveScreen</scope><name>buttons_</name></member>
+      <member refid="class_active_screen_1a385001a5027f0b2f00145a54b668368f" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>buttonSetColors</name></member>
+      <member refid="class_active_screen_1a4f92f1a6e827f428e24df6cab8682a82" prot="private" virt="non-virtual"><scope>ActiveScreen</scope><name>context_window_</name></member>
+      <member refid="class_active_screen_1a381ad867612f98caa038c0b775f0c39a" prot="public" virt="pure-virtual"><scope>ActiveScreen</scope><name>draw</name></member>
+      <member refid="class_active_screen_1afce9503e4b8ea8b24db87cd902702d13" prot="private" virt="non-virtual"><scope>ActiveScreen</scope><name>font_</name></member>
+      <member refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>getButtons</name></member>
+      <member refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>getContextWindow</name></member>
+      <member refid="class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>getFont</name></member>
+      <member refid="class_active_screen_1a33f41ba13061ef1700f475e916bcba3b" prot="public" virt="virtual"><scope>ActiveScreen</scope><name>getPlayersResult</name></member>
+      <member refid="class_active_screen_1a571c9f50c3d50235b43a1d2cb01ad72f" prot="public" virt="virtual"><scope>ActiveScreen</scope><name>getPlayersSettings</name></member>
+      <member refid="class_active_screen_1aa4db9f544d20ad9c7b1fe2af4d55ea3d" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>getScreenType</name></member>
+      <member refid="class_active_screen_1a83ce836bcc0364d216ee126716b27da0" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>getTexts</name></member>
+      <member refid="class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>setContextWindow</name></member>
+      <member refid="class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>setFont</name></member>
+      <member refid="class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf" prot="public" virt="non-virtual"><scope>ActiveScreen</scope><name>setScreenType</name></member>
+      <member refid="class_active_screen_1a1ff41954dc11f652f0c726ed7c5fe4f5" prot="private" virt="non-virtual"><scope>ActiveScreen</scope><name>texts_</name></member>
+      <member refid="class_active_screen_1a25aeb35054d68d709744499149d5183f" prot="private" virt="non-virtual"><scope>ActiveScreen</scope><name>type_</name></member>
+      <member refid="class_active_screen_1a3cd9d9f9571195d3fd030c41512348da" prot="public" virt="pure-virtual"><scope>ActiveScreen</scope><name>worker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,5 @@
+<map id="AiAdapter::convertHouseValue" name="AiAdapter::convertHouseValue">
+<area shape="rect" id="node1" title="Converts house value into a format suitable for AI input." alt="" coords="255,31,475,57"/>
+<area shape="rect" id="node2" href="$class_ai_player.html#a94760240482130380840c0d303a19642" title=" " alt="" coords="5,5,207,32"/>
+<area shape="rect" id="node3" href="$class_ai_player.html#a141ea4b1a96050ae1ac1f6925c308135" title=" " alt="" coords="10,56,202,83"/>
+</map>

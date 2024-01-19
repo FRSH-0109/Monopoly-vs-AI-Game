@@ -1,0 +1,9 @@
+<map id="Field::getId" name="Field::getId">
+<area shape="rect" id="node1" title="Gets the ID of the field." alt="" coords="688,78,783,105"/>
+<area shape="rect" id="node2" href="$class_monopoly_game_engine.html#ad9478380894898178164adc82c2fabeb" title="AI worker method for managing building and destroying houses/hotels." alt="" coords="437,5,640,47"/>
+<area shape="rect" id="node5" href="$class_property_field.html#a3323e39ff44b4d61c5b6f77e7da17f99" title="Creates the owner flag sprite." alt="" coords="446,71,631,112"/>
+<area shape="rect" id="node7" href="$class_board.html#aa9a40a410b22ebbb1c87a91d16741711" title="Getter for a specific field on the board by its unique identifier." alt="" coords="464,137,613,163"/>
+<area shape="rect" id="node3" href="$class_monopoly_game_engine.html#a01eac196ca3a5c26194165c9efd470da" title="Main Worker method for whole monopoly game engine." alt="" coords="211,5,389,47"/>
+<area shape="rect" id="node4" href="$class_game_screen.html#a140fce95914abbf9efac4ad6bb0c98dc" title="Pure virtual function representing the worker function for the screen." alt="" coords="5,13,163,39"/>
+<area shape="rect" id="node6" href="$class_board.html#a79e3b8de081a3c283aebb122cc333dc3" title="Constructor for the Board class." alt="" coords="247,78,353,105"/>
+</map>

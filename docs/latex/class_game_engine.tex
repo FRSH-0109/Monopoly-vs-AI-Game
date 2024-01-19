@@ -1,0 +1,255 @@
+\hypertarget{class_game_engine}{}\doxysection{Game\+Engine Class Reference}
+\label{class_game_engine}\index{GameEngine@{GameEngine}}
+
+
+Handles low-\/level program operations, including input interactions and window display.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Engine.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_engine_a398cd2cb9ed1f5b94a6e8c008f2249ca}{Game\+Engine}} (double frame\+\_\+rate\+\_\+hz, uint window\+\_\+width, uint window\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_game_engine}{Game\+Engine}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_engine_a7e3617896a88ed2b335fddae5611dbd8}{Game\+Engine}} (double frame\+\_\+rate\+\_\+hz)
+\begin{DoxyCompactList}\small\item\em Additional constructor for the \mbox{\hyperlink{class_game_engine}{Game\+Engine}} class. Used only to train AI players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_engine_a9bfc5c11e97601f3588c62027b43616d}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears content on the displayed window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_engine_acfa98b8be6a8843ec87d8dd3d7b23349}{display}} ()
+\begin{DoxyCompactList}\small\item\em Displays the content of the context window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_engine_a63e839e92c780aa9b8fe159a73a8fabd}{poll\+For\+Events}} (sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Polls for events such as mouse and keyboard interactions. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \mbox{\hyperlink{class_game_engine_a2f16fc4e451a3a4942992319eb37455b}{worker}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&players\+\_\+vec)
+\begin{DoxyCompactList}\small\item\em Worker function for processing player-\/related tasks. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_game_engine_adc65f1c736a6bf641eb750bce2c46a69}{getwindow\+\_\+width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the game window. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_game_engine_af3951e4fdf03fe94fa07f1c3d71c98c2}{getwindow\+\_\+height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the game window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ \mbox{\hyperlink{class_game_engine_a2a10627656f88da08fc3bb9ec760323a}{get\+Context\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Gets the pointer to the context window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles low-\/level program operations, including input interactions and window display. 
+
+The \mbox{\hyperlink{class_game_engine}{Game\+Engine}} class manages fundamental program operations, such as handling input interactions (mouse, keyboard) and displaying the window. It incorporates an \mbox{\hyperlink{class_active_screen}{Active\+Screen}} to manage various game screens. Also connects main monopoly\+Game engine with main loop in main.\+c to exchange data about results. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_engine_a398cd2cb9ed1f5b94a6e8c008f2249ca}\label{class_game_engine_a398cd2cb9ed1f5b94a6e8c008f2249ca}} 
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{GameEngine()}{GameEngine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Game\+Engine (\begin{DoxyParamCaption}\item[{double}]{frame\+\_\+rate\+\_\+hz,  }\item[{uint}]{window\+\_\+width,  }\item[{uint}]{window\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_game_engine}{Game\+Engine}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+rate\+\_\+hz} & Desired frame rate in Hertz (frames per second). \\
+\hline
+{\em window\+\_\+width} & Width of the game window in pixels. \\
+\hline
+{\em window\+\_\+height} & Height of the game window in pixels. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a398cd2cb9ed1f5b94a6e8c008f2249ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_engine_a7e3617896a88ed2b335fddae5611dbd8}\label{class_game_engine_a7e3617896a88ed2b335fddae5611dbd8}} 
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{GameEngine()}{GameEngine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Game\+Engine (\begin{DoxyParamCaption}\item[{double}]{frame\+\_\+rate\+\_\+hz }\end{DoxyParamCaption})}
+
+
+
+Additional constructor for the \mbox{\hyperlink{class_game_engine}{Game\+Engine}} class. Used only to train AI players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+rate\+\_\+hz} & Desired frame rate in Hertz (frames per second). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a7e3617896a88ed2b335fddae5611dbd8_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_engine_a9bfc5c11e97601f3588c62027b43616d}\label{class_game_engine_a9bfc5c11e97601f3588c62027b43616d}} 
+\index{GameEngine@{GameEngine}!clear@{clear}}
+\index{clear@{clear}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Game\+Engine\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears content on the displayed window. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a9bfc5c11e97601f3588c62027b43616d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_game_engine_a9bfc5c11e97601f3588c62027b43616d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_engine_acfa98b8be6a8843ec87d8dd3d7b23349}\label{class_game_engine_acfa98b8be6a8843ec87d8dd3d7b23349}} 
+\index{GameEngine@{GameEngine}!display@{display}}
+\index{display@{display}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Game\+Engine\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the content of the context window. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_acfa98b8be6a8843ec87d8dd3d7b23349_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_acfa98b8be6a8843ec87d8dd3d7b23349_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_engine_a2a10627656f88da08fc3bb9ec760323a}\label{class_game_engine_a2a10627656f88da08fc3bb9ec760323a}} 
+\index{GameEngine@{GameEngine}!getContextWindow@{getContextWindow}}
+\index{getContextWindow@{getContextWindow}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getContextWindow()}{getContextWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ Game\+Engine\+::get\+Context\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the pointer to the context window. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the context window used for rendering graphics. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a2a10627656f88da08fc3bb9ec760323a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_engine_af3951e4fdf03fe94fa07f1c3d71c98c2}\label{class_game_engine_af3951e4fdf03fe94fa07f1c3d71c98c2}} 
+\index{GameEngine@{GameEngine}!getwindow\_height@{getwindow\_height}}
+\index{getwindow\_height@{getwindow\_height}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getwindow\_height()}{getwindow\_height()}}
+{\footnotesize\ttfamily unsigned int Game\+Engine\+::getwindow\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the height of the game window. 
+
+\begin{DoxyReturn}{Returns}
+Height of the game window in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_engine_adc65f1c736a6bf641eb750bce2c46a69}\label{class_game_engine_adc65f1c736a6bf641eb750bce2c46a69}} 
+\index{GameEngine@{GameEngine}!getwindow\_width@{getwindow\_width}}
+\index{getwindow\_width@{getwindow\_width}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getwindow\_width()}{getwindow\_width()}}
+{\footnotesize\ttfamily unsigned int Game\+Engine\+::getwindow\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the width of the game window. 
+
+\begin{DoxyReturn}{Returns}
+Width of the game window in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_engine_a63e839e92c780aa9b8fe159a73a8fabd}\label{class_game_engine_a63e839e92c780aa9b8fe159a73a8fabd}} 
+\index{GameEngine@{GameEngine}!pollForEvents@{pollForEvents}}
+\index{pollForEvents@{pollForEvents}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{pollForEvents()}{pollForEvents()}}
+{\footnotesize\ttfamily void Game\+Engine\+::poll\+For\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Polls for events such as mouse and keyboard interactions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Reference to an sf\+::\+Event object to store the polled event. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a63e839e92c780aa9b8fe159a73a8fabd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a63e839e92c780aa9b8fe159a73a8fabd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_engine_a2f16fc4e451a3a4942992319eb37455b}\label{class_game_engine_a2f16fc4e451a3a4942992319eb37455b}} 
+\index{GameEngine@{GameEngine}!worker@{worker}}
+\index{worker@{worker}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{worker()}{worker()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ Game\+Engine\+::worker (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$$>$ \&}]{players\+\_\+vec }\end{DoxyParamCaption})}
+
+
+
+Worker function for processing player-\/related tasks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em players\+\_\+vec} & Vector of shared pointers to \mbox{\hyperlink{class_player}{Player}} objects representing game players. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of shared pointers to \mbox{\hyperlink{class_player}{Player}} objects after processing. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a2f16fc4e451a3a4942992319eb37455b_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_game_engine_8h}{Game\+Engine.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_game_engine_8cc}{Game\+Engine.\+cc}}\end{DoxyCompactItemize}

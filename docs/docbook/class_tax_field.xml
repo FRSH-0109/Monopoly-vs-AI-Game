@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_tax_field" xml:lang="en-US">
+<title>TaxField Class Reference</title>
+<indexterm><primary>TaxField</primary></indexterm>
+Inheritance diagram for TaxField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_tax_field__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for TaxField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_tax_field__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_tax_field_1af813a33b351b44ec8c47280f83a80da7"/><emphasis role="strong">TaxField</emphasis> (const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int tax_value)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_tax_field_1ac1ed0a0b9fa1c10a67f9759bb6a0f3d9"/>unsigned int <emphasis role="strong">getTaxValue</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__field_8h">Field.h</link>/home/kamil/zpr/Monopoly/<link linkend="__field_8cc">Field.cc</link></section>

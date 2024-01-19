@@ -1,0 +1,483 @@
+\hypertarget{class_ai_adapter}{}\doxysection{Ai\+Adapter Class Reference}
+\label{class_ai_adapter}\index{AiAdapter@{AiAdapter}}
+
+
+Represents an adapter for AI input data.  
+
+
+
+
+{\ttfamily \#include $<$Ai\+Adapter.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ai_adapter_a99a98174664d073aa341565e965cec08}{Ai\+Adapter}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_ai_adapter}{Ai\+Adapter}} class. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_ai_adapter_ac76618fcec497abb9b30456c39bb824a}{get\+Inputs}} ()
+\begin{DoxyCompactList}\small\item\em Gets the AI network inputs. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ai_adapter_a00bc5e6ed594a79e67736032d552ccf6}{convert\+Money}} (unsigned int money)
+\begin{DoxyCompactList}\small\item\em Converts money into a format suitable for AI input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ai_adapter_a840ba14a6c65e4b7572ca9838b62c4f7}{convert\+Money\+Value}} (double value)
+\begin{DoxyCompactList}\small\item\em Converts money value into a format suitable for AI input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ai_adapter_a0e0bbefc2b13cefab3ab2ccf16851bfe}{convert\+House\+Value}} (double value)
+\begin{DoxyCompactList}\small\item\em Converts house value into a format suitable for AI input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ai_adapter_a82fc215a8ade845e9d7e786364d65c73}{convert\+Position}} (unsigned int position)
+\begin{DoxyCompactList}\small\item\em Converts position into a format suitable for AI input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ai_adapter_a0629687775c5795afacc09ad37a18d09}{convert\+Card}} (unsigned int cards)
+\begin{DoxyCompactList}\small\item\em Converts card value into a format suitable for AI input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ai_adapter_a10711aa34ec520301090d8d8d921acdd}{convert\+House}} (bool is\+Hotel, unsigned int house\+Number)
+\begin{DoxyCompactList}\small\item\em Converts house state into a format suitable for AI input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a7b67096720f25f078235770a288360a9}{set\+Turn}} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Sets the turn for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a6993afbe81e3e8d5f94fb39ad932f80c}{set\+Selection}} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Sets the selection for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_aec456f7628cc0301d98584fb60216cbd}{set\+Selection\+State}} (unsigned int index, int state)
+\begin{DoxyCompactList}\small\item\em Sets the selection state for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_ab128b51a88ba6205c3aa30d790727363}{set\+Money\+Context}} (int state)
+\begin{DoxyCompactList}\small\item\em Sets the money context state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a42eddc31ae4a6ead2f0ae64e6ab84b3f}{clear\+Selection\+State}} ()
+\begin{DoxyCompactList}\small\item\em Clears the selection state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_ad77b636dd77f7cec496a3cee56a62e78}{set\+Position}} (unsigned int index, unsigned int position)
+\begin{DoxyCompactList}\small\item\em Sets the position for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_adb20752fe0a0030069c6ff1fd8464f4a}{set\+Money}} (unsigned int index, unsigned int money)
+\begin{DoxyCompactList}\small\item\em Sets the money for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a70dc5b14b109ce0b77865676e804b6f6}{set\+Card}} (unsigned int index, unsigned int cards)
+\begin{DoxyCompactList}\small\item\em Sets the card for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a99a38f215b9c4244e2db1ddc7f2466d1}{set\+Jail}} (unsigned int index, unsigned int state)
+\begin{DoxyCompactList}\small\item\em Sets the jail state for a given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a5c1c7ba8e34cabe430825dd185beb547}{set\+Owner}} (unsigned int property, unsigned int state)
+\begin{DoxyCompactList}\small\item\em Sets the owner state for a given property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a266f351cf8ecd0aa00943068b7357bc8}{set\+Mortgage}} (unsigned int property, unsigned int state)
+\begin{DoxyCompactList}\small\item\em Sets the mortgage state for a given property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ai_adapter_a261820efa64eda05774ae3cafe20b460}{set\+House}} (bool is\+Hotel, unsigned int house\+Number, unsigned int id)
+\begin{DoxyCompactList}\small\item\em Sets the house state for a given house. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an adapter for AI input data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ai_adapter_a99a98174664d073aa341565e965cec08}\label{class_ai_adapter_a99a98174664d073aa341565e965cec08}} 
+\index{AiAdapter@{AiAdapter}!AiAdapter@{AiAdapter}}
+\index{AiAdapter@{AiAdapter}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{AiAdapter()}{AiAdapter()}}
+{\footnotesize\ttfamily Ai\+Adapter\+::\+Ai\+Adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_ai_adapter}{Ai\+Adapter}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ai_adapter_a42eddc31ae4a6ead2f0ae64e6ab84b3f}\label{class_ai_adapter_a42eddc31ae4a6ead2f0ae64e6ab84b3f}} 
+\index{AiAdapter@{AiAdapter}!clearSelectionState@{clearSelectionState}}
+\index{clearSelectionState@{clearSelectionState}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{clearSelectionState()}{clearSelectionState()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::clear\+Selection\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the selection state. 
+
+\mbox{\Hypertarget{class_ai_adapter_a0629687775c5795afacc09ad37a18d09}\label{class_ai_adapter_a0629687775c5795afacc09ad37a18d09}} 
+\index{AiAdapter@{AiAdapter}!convertCard@{convertCard}}
+\index{convertCard@{convertCard}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{convertCard()}{convertCard()}}
+{\footnotesize\ttfamily double Ai\+Adapter\+::convert\+Card (\begin{DoxyParamCaption}\item[{unsigned int}]{cards }\end{DoxyParamCaption})}
+
+
+
+Converts card value into a format suitable for AI input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cards} & The card value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted card value. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a0629687775c5795afacc09ad37a18d09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a10711aa34ec520301090d8d8d921acdd}\label{class_ai_adapter_a10711aa34ec520301090d8d8d921acdd}} 
+\index{AiAdapter@{AiAdapter}!convertHouse@{convertHouse}}
+\index{convertHouse@{convertHouse}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{convertHouse()}{convertHouse()}}
+{\footnotesize\ttfamily double Ai\+Adapter\+::convert\+House (\begin{DoxyParamCaption}\item[{bool}]{is\+Hotel,  }\item[{unsigned int}]{house\+Number }\end{DoxyParamCaption})}
+
+
+
+Converts house state into a format suitable for AI input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Hotel} & Flag indicating if it\textquotesingle{}s a hotel. \\
+\hline
+{\em house\+Number} & The house number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted house state. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a10711aa34ec520301090d8d8d921acdd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a0e0bbefc2b13cefab3ab2ccf16851bfe}\label{class_ai_adapter_a0e0bbefc2b13cefab3ab2ccf16851bfe}} 
+\index{AiAdapter@{AiAdapter}!convertHouseValue@{convertHouseValue}}
+\index{convertHouseValue@{convertHouseValue}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{convertHouseValue()}{convertHouseValue()}}
+{\footnotesize\ttfamily double Ai\+Adapter\+::convert\+House\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Converts house value into a format suitable for AI input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The house value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted house value. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a0e0bbefc2b13cefab3ab2ccf16851bfe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a00bc5e6ed594a79e67736032d552ccf6}\label{class_ai_adapter_a00bc5e6ed594a79e67736032d552ccf6}} 
+\index{AiAdapter@{AiAdapter}!convertMoney@{convertMoney}}
+\index{convertMoney@{convertMoney}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{convertMoney()}{convertMoney()}}
+{\footnotesize\ttfamily double Ai\+Adapter\+::convert\+Money (\begin{DoxyParamCaption}\item[{unsigned int}]{money }\end{DoxyParamCaption})}
+
+
+
+Converts money into a format suitable for AI input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & The money value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted money value. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a00bc5e6ed594a79e67736032d552ccf6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a840ba14a6c65e4b7572ca9838b62c4f7}\label{class_ai_adapter_a840ba14a6c65e4b7572ca9838b62c4f7}} 
+\index{AiAdapter@{AiAdapter}!convertMoneyValue@{convertMoneyValue}}
+\index{convertMoneyValue@{convertMoneyValue}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{convertMoneyValue()}{convertMoneyValue()}}
+{\footnotesize\ttfamily double Ai\+Adapter\+::convert\+Money\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Converts money value into a format suitable for AI input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The money value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted money value. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a840ba14a6c65e4b7572ca9838b62c4f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a82fc215a8ade845e9d7e786364d65c73}\label{class_ai_adapter_a82fc215a8ade845e9d7e786364d65c73}} 
+\index{AiAdapter@{AiAdapter}!convertPosition@{convertPosition}}
+\index{convertPosition@{convertPosition}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{convertPosition()}{convertPosition()}}
+{\footnotesize\ttfamily double Ai\+Adapter\+::convert\+Position (\begin{DoxyParamCaption}\item[{unsigned int}]{position }\end{DoxyParamCaption})}
+
+
+
+Converts position into a format suitable for AI input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted position. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a82fc215a8ade845e9d7e786364d65c73_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_ac76618fcec497abb9b30456c39bb824a}\label{class_ai_adapter_ac76618fcec497abb9b30456c39bb824a}} 
+\index{AiAdapter@{AiAdapter}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Ai\+Adapter\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the AI network inputs. 
+
+\begin{DoxyReturn}{Returns}
+Vector of AI network inputs. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_ac76618fcec497abb9b30456c39bb824a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a70dc5b14b109ce0b77865676e804b6f6}\label{class_ai_adapter_a70dc5b14b109ce0b77865676e804b6f6}} 
+\index{AiAdapter@{AiAdapter}!setCard@{setCard}}
+\index{setCard@{setCard}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setCard()}{setCard()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Card (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{cards }\end{DoxyParamCaption})}
+
+
+
+Sets the card for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the card. \\
+\hline
+{\em cards} & The card to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a70dc5b14b109ce0b77865676e804b6f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a261820efa64eda05774ae3cafe20b460}\label{class_ai_adapter_a261820efa64eda05774ae3cafe20b460}} 
+\index{AiAdapter@{AiAdapter}!setHouse@{setHouse}}
+\index{setHouse@{setHouse}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setHouse()}{setHouse()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+House (\begin{DoxyParamCaption}\item[{bool}]{is\+Hotel,  }\item[{unsigned int}]{house\+Number,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Sets the house state for a given house. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Hotel} & Flag indicating if it\textquotesingle{}s a hotel. \\
+\hline
+{\em house\+Number} & The house number. \\
+\hline
+{\em id} & The ID to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_a261820efa64eda05774ae3cafe20b460_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a99a38f215b9c4244e2db1ddc7f2466d1}\label{class_ai_adapter_a99a38f215b9c4244e2db1ddc7f2466d1}} 
+\index{AiAdapter@{AiAdapter}!setJail@{setJail}}
+\index{setJail@{setJail}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setJail()}{setJail()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Jail (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the jail state for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the jail state. \\
+\hline
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ai_adapter_adb20752fe0a0030069c6ff1fd8464f4a}\label{class_ai_adapter_adb20752fe0a0030069c6ff1fd8464f4a}} 
+\index{AiAdapter@{AiAdapter}!setMoney@{setMoney}}
+\index{setMoney@{setMoney}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setMoney()}{setMoney()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Money (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{money }\end{DoxyParamCaption})}
+
+
+
+Sets the money for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the money. \\
+\hline
+{\em money} & The money to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_adb20752fe0a0030069c6ff1fd8464f4a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_ab128b51a88ba6205c3aa30d790727363}\label{class_ai_adapter_ab128b51a88ba6205c3aa30d790727363}} 
+\index{AiAdapter@{AiAdapter}!setMoneyContext@{setMoneyContext}}
+\index{setMoneyContext@{setMoneyContext}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setMoneyContext()}{setMoneyContext()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Money\+Context (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the money context state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ai_adapter_a266f351cf8ecd0aa00943068b7357bc8}\label{class_ai_adapter_a266f351cf8ecd0aa00943068b7357bc8}} 
+\index{AiAdapter@{AiAdapter}!setMortgage@{setMortgage}}
+\index{setMortgage@{setMortgage}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setMortgage()}{setMortgage()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Mortgage (\begin{DoxyParamCaption}\item[{unsigned int}]{property,  }\item[{unsigned int}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the mortgage state for a given property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & The property for which to set the mortgage state. \\
+\hline
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ai_adapter_a5c1c7ba8e34cabe430825dd185beb547}\label{class_ai_adapter_a5c1c7ba8e34cabe430825dd185beb547}} 
+\index{AiAdapter@{AiAdapter}!setOwner@{setOwner}}
+\index{setOwner@{setOwner}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setOwner()}{setOwner()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Owner (\begin{DoxyParamCaption}\item[{unsigned int}]{property,  }\item[{unsigned int}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the owner state for a given property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & The property for which to set the owner state. \\
+\hline
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ai_adapter_ad77b636dd77f7cec496a3cee56a62e78}\label{class_ai_adapter_ad77b636dd77f7cec496a3cee56a62e78}} 
+\index{AiAdapter@{AiAdapter}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Position (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{position }\end{DoxyParamCaption})}
+
+
+
+Sets the position for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the position. \\
+\hline
+{\em position} & The position to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ai_adapter_ad77b636dd77f7cec496a3cee56a62e78_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ai_adapter_a6993afbe81e3e8d5f94fb39ad932f80c}\label{class_ai_adapter_a6993afbe81e3e8d5f94fb39ad932f80c}} 
+\index{AiAdapter@{AiAdapter}!setSelection@{setSelection}}
+\index{setSelection@{setSelection}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setSelection()}{setSelection()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Selection (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Sets the selection for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the selection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ai_adapter_aec456f7628cc0301d98584fb60216cbd}\label{class_ai_adapter_aec456f7628cc0301d98584fb60216cbd}} 
+\index{AiAdapter@{AiAdapter}!setSelectionState@{setSelectionState}}
+\index{setSelectionState@{setSelectionState}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setSelectionState()}{setSelectionState()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Selection\+State (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the selection state for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the selection state. \\
+\hline
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ai_adapter_a7b67096720f25f078235770a288360a9}\label{class_ai_adapter_a7b67096720f25f078235770a288360a9}} 
+\index{AiAdapter@{AiAdapter}!setTurn@{setTurn}}
+\index{setTurn@{setTurn}!AiAdapter@{AiAdapter}}
+\doxysubsubsection{\texorpdfstring{setTurn()}{setTurn()}}
+{\footnotesize\ttfamily void Ai\+Adapter\+::set\+Turn (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Sets the turn for a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which to set the turn. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_ai_adapter_8h}{Ai\+Adapter.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_ai_adapter_8cc}{Ai\+Adapter.\+cc}}\end{DoxyCompactItemize}

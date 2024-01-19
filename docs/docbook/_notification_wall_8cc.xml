@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__notification_wall_8cc" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/NotificationWall.cc File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/NotificationWall.cc</primary></indexterm>
+<para>
+
+<para>Source file of class used to display list of messages/notifications as finite list with certain length. It automatically rolls over when gets next message. </para>
+ 
+</para>
+<programlisting>#include &quot;NotificationWall.h&quot;
+</programlisting>Include dependency graph for NotificationWall.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_notification_wall_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file of class used to display list of messages/notifications as finite list with certain length. It automatically rolls over when gets next message. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

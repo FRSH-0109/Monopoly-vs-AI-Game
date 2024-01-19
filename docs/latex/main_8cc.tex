@@ -1,0 +1,103 @@
+\hypertarget{main_8cc}{}\doxysection{/home/kamil/zpr/\+Monopoly/main.cc File Reference}
+\label{main_8cc}\index{/home/kamil/zpr/Monopoly/main.cc@{/home/kamil/zpr/Monopoly/main.cc}}
+
+
+Source file launching monopoly game vs AI project.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}Game\+Engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SFML/\+Graphics.\+hpp\char`\"{}}\newline
+Include dependency graph for main.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{main_8cc_a4233cd0fa7a215e3e35261915c005858}{WIDTH\+\_\+\+MAX}} = 1920
+\item 
+unsigned int \mbox{\hyperlink{main_8cc_a97bfb17362afc060c256392df5cfbe8f}{HEIGHT\+\_\+\+MAX}} = 1080
+\item 
+unsigned int \mbox{\hyperlink{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}{width}}
+\item 
+unsigned int \mbox{\hyperlink{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}{height}}
+\item 
+unsigned int \mbox{\hyperlink{main_8cc_a470b971ad6ac03ab790d05e24797ad98}{FRAMES\+\_\+\+PER\+\_\+\+SEC\+\_\+\+MAX}} = 30
+\item 
+bool \mbox{\hyperlink{main_8cc_ac1a49585c0839ea20703d0b3aaef480f}{TRAIN}} = false
+\item 
+int \mbox{\hyperlink{main_8cc_a9a16347f6ba617ae1dee2765e37f98a1}{GAMES\+\_\+\+IN\+\_\+\+ROUND}} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source file launching monopoly game vs AI project. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Kosnik, Kacper Radzikowski 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cc@{main.cc}!main@{main}}
+\index{main@{main}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cc_a470b971ad6ac03ab790d05e24797ad98}\label{main_8cc_a470b971ad6ac03ab790d05e24797ad98}} 
+\index{main.cc@{main.cc}!FRAMES\_PER\_SEC\_MAX@{FRAMES\_PER\_SEC\_MAX}}
+\index{FRAMES\_PER\_SEC\_MAX@{FRAMES\_PER\_SEC\_MAX}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_SEC\_MAX}{FRAMES\_PER\_SEC\_MAX}}
+{\footnotesize\ttfamily unsigned int FRAMES\+\_\+\+PER\+\_\+\+SEC\+\_\+\+MAX = 30}
+
+\mbox{\Hypertarget{main_8cc_a9a16347f6ba617ae1dee2765e37f98a1}\label{main_8cc_a9a16347f6ba617ae1dee2765e37f98a1}} 
+\index{main.cc@{main.cc}!GAMES\_IN\_ROUND@{GAMES\_IN\_ROUND}}
+\index{GAMES\_IN\_ROUND@{GAMES\_IN\_ROUND}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{GAMES\_IN\_ROUND}{GAMES\_IN\_ROUND}}
+{\footnotesize\ttfamily int GAMES\+\_\+\+IN\+\_\+\+ROUND = 5}
+
+\mbox{\Hypertarget{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}\label{main_8cc_ab2e78c61905b4419fcc7b4cfc500fe85}} 
+\index{main.cc@{main.cc}!height@{height}}
+\index{height@{height}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily unsigned int height}
+
+\mbox{\Hypertarget{main_8cc_a97bfb17362afc060c256392df5cfbe8f}\label{main_8cc_a97bfb17362afc060c256392df5cfbe8f}} 
+\index{main.cc@{main.cc}!HEIGHT\_MAX@{HEIGHT\_MAX}}
+\index{HEIGHT\_MAX@{HEIGHT\_MAX}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{HEIGHT\_MAX}{HEIGHT\_MAX}}
+{\footnotesize\ttfamily unsigned int HEIGHT\+\_\+\+MAX = 1080}
+
+\mbox{\Hypertarget{main_8cc_ac1a49585c0839ea20703d0b3aaef480f}\label{main_8cc_ac1a49585c0839ea20703d0b3aaef480f}} 
+\index{main.cc@{main.cc}!TRAIN@{TRAIN}}
+\index{TRAIN@{TRAIN}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{TRAIN}{TRAIN}}
+{\footnotesize\ttfamily bool TRAIN = false}
+
+\mbox{\Hypertarget{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}\label{main_8cc_aca34d28e3d8bcbcadb8edb4e3af24f8c}} 
+\index{main.cc@{main.cc}!width@{width}}
+\index{width@{width}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily unsigned int width}
+
+\mbox{\Hypertarget{main_8cc_a4233cd0fa7a215e3e35261915c005858}\label{main_8cc_a4233cd0fa7a215e3e35261915c005858}} 
+\index{main.cc@{main.cc}!WIDTH\_MAX@{WIDTH\_MAX}}
+\index{WIDTH\_MAX@{WIDTH\_MAX}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{WIDTH\_MAX}{WIDTH\_MAX}}
+{\footnotesize\ttfamily unsigned int WIDTH\+\_\+\+MAX = 1920}
+

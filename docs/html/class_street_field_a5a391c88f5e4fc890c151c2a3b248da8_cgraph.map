@@ -1,0 +1,7 @@
+<map id="StreetField::resetDefault" name="StreetField::resetDefault">
+<area shape="rect" id="node1" title="Resets the property to its default state." alt="" coords="5,81,187,108"/>
+<area shape="rect" id="node2" href="$class_property_field.html#aa3a6b0249d36134b9cc63872922e447f" title="Resets the owner of the property." alt="" coords="248,5,439,32"/>
+<area shape="rect" id="node3" href="$class_street_field.html#a9cdeb6a4610eed4f47e20d2cdebbe3a1" title="Sets the number of houses on the property." alt="" coords="237,56,450,83"/>
+<area shape="rect" id="node4" href="$class_street_field.html#aa50b622f5cc3dfa6ee3d00aa1a24bd14" title="Sets the hotel state on the property." alt="" coords="260,107,427,133"/>
+<area shape="rect" id="node5" href="$class_property_field.html#a8ed81fa863c3d443a69141445d66616e" title="Sets the mortgaged state of the property." alt="" coords="235,157,452,184"/>
+</map>

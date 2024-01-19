@@ -1,0 +1,4 @@
+<map id="GameEngine::clear" name="GameEngine::clear">
+<area shape="rect" id="node1" title="Clears content on the displayed window." alt="" coords="211,5,356,32"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a2f16fc4e451a3a4942992319eb37455b" title="Worker function for processing player&#45;related tasks." alt="" coords="5,5,163,32"/>
+</map>

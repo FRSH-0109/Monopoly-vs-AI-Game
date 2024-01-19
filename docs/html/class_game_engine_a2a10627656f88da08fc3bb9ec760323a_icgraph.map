@@ -1,0 +1,8 @@
+<map id="GameEngine::getContextWindow" name="GameEngine::getContextWindow">
+<area shape="rect" id="node1" title="Gets the pointer to the context window." alt="" coords="460,107,697,133"/>
+<area shape="rect" id="node2" href="$class_game_engine.html#a9bfc5c11e97601f3588c62027b43616d" title="Clears content on the displayed window." alt="" coords="239,5,384,32"/>
+<area shape="rect" id="node3" href="$class_game_engine.html#a2f16fc4e451a3a4942992319eb37455b" title="Worker function for processing player&#45;related tasks." alt="" coords="5,81,163,108"/>
+<area shape="rect" id="node4" href="$class_game_engine.html#acfa98b8be6a8843ec87d8dd3d7b23349" title="Displays the content of the context window." alt="" coords="231,107,391,133"/>
+<area shape="rect" id="node5" href="$class_game_engine.html#a398cd2cb9ed1f5b94a6e8c008f2249ca" title="Constructor for the GameEngine class." alt="" coords="213,157,409,184"/>
+<area shape="rect" id="node6" href="$class_game_engine.html#a63e839e92c780aa9b8fe159a73a8fabd" title="Polls for events such as mouse and keyboard interactions." alt="" coords="211,208,412,235"/>
+</map>

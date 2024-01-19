@@ -1,0 +1,14 @@
+digraph "NotificationWall::NotificationWall"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NotificationWall::NotificationWall",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="NotificationWall::clearWall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_notification_wall.html#ae2f70a86d938bd130180d2e76079bcaf",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="NotificationWall::getFont",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_notification_wall.html#aef1f5f7372c584354e1617c63bdee7cd",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="NotificationWall::setFont",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_notification_wall.html#a775496e213b1559aa63119829f5fe914",tooltip=" "];
+}

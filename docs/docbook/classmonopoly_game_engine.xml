@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classmonopoly_game_engine" xml:lang="en-US">
+<title>monopolyGameEngine Class Reference</title>
+<indexterm><primary>monopolyGameEngine</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ac54a5e28a83fa032b0a435e68ad79bf5"/>void <emphasis role="strong">setScreenType</emphasis> (GameScreenType newScreenType)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a2b6b4f415cc0b8dca63c44d01eb052c3"/>GameScreenType <emphasis role="strong">getScreenType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a08991c84ad649cea8a1e8d93f911c5ad"/>void <emphasis role="strong">createButtonRollDice</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a442f54154ce96c27af24e3e3767bf2ab"/>void <emphasis role="strong">createTextTurnInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a603ea518679d0045b3c9cd9567a57aa8"/>void <emphasis role="strong">createTextRolledValue</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a04045ab52d75c210266c71ba994e7871"/>void <emphasis role="strong">createTextPlayersInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab00dbe0baa4635500d93c2004f7e0218"/>void <emphasis role="strong">updateTextPlayersInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a7ff28e544f58693a35065b83f2a9ab05"/>void <emphasis role="strong">createTextBiddedProperty</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a61b780452ccbef3a005727902e6fd104"/>void <emphasis role="strong">createTextBidderInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1af9e9f54376e8ba1c7d5550585e8a5157"/>void <emphasis role="strong">createTextHighestBidInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a5b52940b42693c329db1e770bca763e5"/>void <emphasis role="strong">createTextLeadingBidderInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a6eec29c749588b03ff06b4ad6c436077"/>void <emphasis role="strong">createCurrentOfferBidderInfo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1afc6f2b5737a9a642d6531e7e35043d3b"/>void <emphasis role="strong">createButtonBuyResign</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a1aa1e4532404965b9fbf59ee5a1b34ff"/>void <emphasis role="strong">createButtonNextProperty</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a439ef95f3f0eb956fa7a7f1cefc3e251"/>void <emphasis role="strong">createButtonPerviousProperty</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a34df202e27c1adb6a3db0e74e99d0eae"/>void <emphasis role="strong">createButtonsBuySellHouseHotel</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ae0b8e1bb219ee27ca82ad4dacdef6db5"/>void <emphasis role="strong">createButtonsBankrupt</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aabdbae2868a603ba37b4d00161da7d2a"/>void <emphasis role="strong">createButtonsNextTurn</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a3f7ab310f0aaf5dad6a174c1b6c058dc"/>void <emphasis role="strong">createButtonsJailPay</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a7848f61249fb58380e8ca9f11e599fe6"/>void <emphasis role="strong">createAuctionOfferButtons</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aecb1bcba8503a9b60df0563557c27a78"/>void <emphasis role="strong">createAuctionBidButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a0d8cbc20ae90259c3f0e5258472c6532"/>void <emphasis role="strong">createAuctionResignButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a4244d1a680b65483d836e11fe697d09c"/>void <emphasis role="strong">createButtonWithdraw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a8ae1626f4ffd737295fd1786ca3d2dbe"/>void <emphasis role="strong">createMortagingButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a35ed5314742ad633d58bc7fcb975a7e4"/>void <emphasis role="strong">createResultScreenStuff</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a6dbe0b7eb3ce8969cd6c0fead31d1de0"/>void <emphasis role="strong">updateResultScreenStuff</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aacbd6ca705e1af117659326ed41739e9"/>void <emphasis role="strong">showPropertyData</emphasis> (unsigned int pos, bool isPropertyShownToBuy)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a25420ad24a931e657807ebd75deeac21"/>void <emphasis role="strong">turnInfoTextShow</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aa1c15fdbe8a343109e69453126c99d90"/>sf::Font &amp; <emphasis role="strong">getFont</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a2e00931eaa6fae4e2967e73503264f7a"/>unsigned int <emphasis role="strong">getFontSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a37eb275ab8693e3a9cb880ed28e96619"/>void <emphasis role="strong">setFont</emphasis> (sf::Font font)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1adaefef1ef3de4e2ef27e98af810b41f1"/>void <emphasis role="strong">addButton</emphasis> (std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; buttonTmp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a1799fd373de57a19e6ae6ec093d9da98"/>void <emphasis role="strong">addText</emphasis> (std::shared_ptr&lt; sf::Text &gt; textTmp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ad78a5696a741e9d5b2d9c623c838794f"/>void <emphasis role="strong">addAuctionButton</emphasis> (std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; buttonTmp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ad0583aed4fa19f0cc2af556756cf35de"/>void <emphasis role="strong">addAuctionText</emphasis> (std::shared_ptr&lt; sf::Text &gt; textTmp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a112d14d9d3f29d4eff3c1e6312cd2b74"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; &gt; &amp; <emphasis role="strong">getButtons</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a725648837b685e09ad109b1df5fe6b26"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aa3147ef9aec82d45897d26876501c941"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_button">Button</link> &gt; &gt; &amp; <emphasis role="strong">getAuctionButtons</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a0c520ed7bbed4b79a2751fab3a3e5a06"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getAuctionTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a698cc15829ce7746aa91d13b1118f775"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getResultTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1af39261a73081362104f6903cbb0d9fac"/>sf::Sprite &amp; <emphasis role="strong">getPropertyDataSprite</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a67985c9d763b7be9fb7862c8bae68093"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getPropertyDataTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ac90ad5e071142c64f6e5afd1b6cd05a7"/>sf::Sprite &amp; <emphasis role="strong">getAllPropertyDataSprite</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a95b9271cec3eaea84db5bbfed9dcb39a"/>std::vector&lt; std::shared_ptr&lt; sf::Text &gt; &gt; &amp; <emphasis role="strong">getAllPropertyDataTexts</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a013e2403ef046ed54fb174e5be2fb778"/><link linkend="_class_notification_wall">NotificationWall</link> &amp; <emphasis role="strong">getNotificationsWall</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aad007df963dd4282db08c76e822ee4d4"/>sf::Text <emphasis role="strong">getPropertyNameToDraw</emphasis> (sf::Text text, sf::Sprite &amp;sprite, float rotation)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a95fe88c83c04b63fba78639fc7c959fb"/>sf::Texture &amp; <emphasis role="strong">getHouseTexture</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a3136df257c81ea381b1f1ab79645ee08"/>sf::Texture &amp; <emphasis role="strong">getHotelTexture</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab1341f5f1118c0917188762027f75b24"/>sf::Vector2f &amp; <emphasis role="strong">getHouseSize</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ae0c334aca31dcd731e7e514b4617a60d"/>void <emphasis role="strong">createPlayers</emphasis> (std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt;&gt; &amp;playersFromGameEngine)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab0261bd52e57d53b7606c1e5afe0a1e0"/>void <emphasis role="strong">clearPlayers</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a24a5d04b4a2fa46edbd26fc4e818d0d7"/>void <emphasis role="strong">createBoard</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1af068824bca82230623d71c92905ea467"/>void <emphasis role="strong">clearBoard</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a7745bb931ce95f84f0b07843414e0d36"/>std::shared_ptr&lt; <link linkend="_class_board">Board</link> &gt; <emphasis role="strong">getBoard</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a67825c05bbd8b0619f56b4a41af75573"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; &gt; &amp; <emphasis role="strong">getPlayers</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ade2307b4ac8c360c2934853a8b5bd3c0"/>std::vector&lt; std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; &gt; <emphasis role="strong">getPlayersResult</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a448fc541c7d6c8d928294241336d03ac"/>void <emphasis role="strong">setPlayerIndexTurn</emphasis> (unsigned int indx)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab70a61e0dc47c4cab5b451adfb5229d3"/>TurnState <emphasis role="strong">getTurnState</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab9fe1412aa26177e7cc8a19871c7678b"/>void <emphasis role="strong">setAuctionState</emphasis> (AuctionState newState)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab4df2acc56199304443a249c4534fefe"/>AuctionState <emphasis role="strong">getAuctionState</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1afed3b08203b9ef68ed47018e29739c94"/>unsigned int <emphasis role="strong">getHouseCount</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1af6479c9c150af4f6f19811427b18675f"/>unsigned int <emphasis role="strong">getHotelCount</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a69495369d29826bab9be4555184c89a3"/>void <emphasis role="strong">setHouseCount</emphasis> (unsigned int new_count)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a929ee51bc796ef0d0cd8500d79bf488b"/>void <emphasis role="strong">setHotelCount</emphasis> (unsigned int new_count)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab7de7f4666764569f6bf3cbad8408ed1"/>void <emphasis role="strong">addHouses</emphasis> (unsigned int added_amount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab76a68872f1e019cdebe742806333fb9"/>void <emphasis role="strong">substractHouses</emphasis> (unsigned int substracted_amount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a99af650b99e1f4a3bc186da3aac6743f"/>void <emphasis role="strong">addHotels</emphasis> (unsigned int added_amount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a277d25afb09545726767d1330b70bce5"/>void <emphasis role="strong">substractHotels</emphasis> (unsigned int substracted_amount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a722f01bafc4530dbc53a51f053612fd7"/>void <emphasis role="strong">performAuction</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ae11118cfb349e2ed9d3e4119e1a82240"/>unsigned int <emphasis role="strong">calculateGroupFieldsOwned</emphasis> (std::vector&lt; unsigned int &gt; player_fields, <link linkend="_class_property_field">PropertyField</link> &amp;field) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a812b12efc4a929ca7d81d98cf9acf761"/>bool <emphasis role="strong">groupCompleted</emphasis> (std::vector&lt; unsigned int &gt; player_fields, <link linkend="_class_property_field">PropertyField</link> &amp;field) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1afe6721e131658a56956b4aca576420bf"/>bool <emphasis role="strong">isBuildingLegal</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; builder, <link linkend="_class_street_field">StreetField</link> field)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a3e7b1e0ef7e0aa94a12775c1b928a315"/>bool <emphasis role="strong">isDestroyingLegal</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; builder, <link linkend="_class_street_field">StreetField</link> field)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a4b8a36fd929cbdfebba4aed60c4c9300"/>bool <emphasis role="strong">isHotelBuildingLegal</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; builder, <link linkend="_class_street_field">StreetField</link> &amp;field)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a3e437e4b8342de7d4b4476c0cdcff6a0"/>bool <emphasis role="strong">isHotelDestroyingLegal</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; builder, <link linkend="_class_street_field">StreetField</link> &amp;field)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1af0dcb169ec97293dadc327ad4b861df5"/>bool <emphasis role="strong">colorGroupEmpty</emphasis> (std::shared_ptr&lt; <link linkend="_class_player">Player</link> &gt; mortaging, <link linkend="_class_street_field">StreetField</link> &amp;field)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ad5a4954bfbbea5ddef2adc8def7319e2"/>sf::Sprite <emphasis role="strong">getHouseSprite</emphasis> (<link linkend="_class_street_field">StreetField</link> &amp;field, unsigned int housesNumber)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ad10ae26632d0940098e4fda5c428a0bb"/>sf::Sprite <emphasis role="strong">getHotelSprite</emphasis> (<link linkend="_class_street_field">StreetField</link> &amp;field)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a8b035a55bf9704c96b24dd363b217530"/>void <emphasis role="strong">createAvailableHousesHotelText</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a10ce9db1976a313762833e15f8c2dd6f"/>void <emphasis role="strong">updateAvailableHousesHotelText</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a8d42166e5ec753ab32057e6584602644"/>unsigned int <emphasis role="strong">calculateRent</emphasis> (unsigned int rolledVal, int pos)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aa5881c8915bd0277e2094b5b0bfaf337"/>void <emphasis role="strong">buildingsManagingWorker</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1aa16c7ef618a34bfe7139734f98731d7e"/>void <emphasis role="strong">aiBuildingsMangingWorker</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1acfa722f1ffec4781429f86997595db7d"/>bool <emphasis role="strong">monopolyGameWorker</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1ab619c0b887da09afd07e451166bc81db"/><link linkend="_class_withdraw">Withdraw</link> &amp; <emphasis role="strong">getWithdraw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a04b039c88593d22fd66fe63172513f16"/>void <emphasis role="strong">createChanceCards</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classmonopoly_game_engine_1a56dd279003ce0c1c7415692cacdb06ea"/>void <emphasis role="strong">shuffleChanceCards</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__monopoly_game_engine_8h">MonopolyGameEngine.h</link>/home/kamil/zpr/Monopoly/<link linkend="__monopoly_game_engine_8cc">MonopolyGameEngine.cc</link></section>

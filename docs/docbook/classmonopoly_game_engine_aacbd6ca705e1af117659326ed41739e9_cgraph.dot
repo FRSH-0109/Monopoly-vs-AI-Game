@@ -1,0 +1,38 @@
+digraph "monopolyGameEngine::showPropertyData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="monopolyGameEngine\l::showPropertyData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="monopolyGameEngine\l::getBoard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a7745bb931ce95f84f0b07843414e0d36",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="monopolyGameEngine\l::getFont",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#aa1c15fdbe8a343109e69453126c99d90",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="monopolyGameEngine\l::getFontSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmonopoly_game_engine.html#a2e00931eaa6fae4e2967e73503264f7a",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Field::getGraphicPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_field.html#a2bca2e8d2cb8bfc9ebbc61f617e3e7b9",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Field::getHeight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_field.html#a24552dc1bcb1f574ce8db0761c33790a",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="StreetField::getHotelPrice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_street_field.html#a51d31e674e5526536210d24ed5bdc2c2",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="StreetField::getHousePrice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_street_field.html#a812b99b2c3dc615a26f81756fa41aa51",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="PropertyField::getMortgage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_property_field.html#afeddcb21f639b779a94a5d471059e7e3",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Field::getName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_field.html#ad2e239a719acc3285a9b11b3aef6808c",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="PropertyField::getPrice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_property_field.html#aafcf4b8fd5fb49a727cb564c0c99a3eb",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="UtilityField::getRentMultipliers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utility_field.html#a5476d4355c82780f3ec8d173513590ae",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="StreetField::getRentValues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_street_field.html#af6ffa6777200808afa686a07a1be6e9a",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="StationField::getRentValues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_station_field.html#ae23e828cefa568b38ff525cd9db3b511",tooltip=" "];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Field::getType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_field.html#a3c5261dc7fc032dd06268d3c94028d73",tooltip=" "];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Field::getWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_field.html#ad5706e4c154214fe43db7ecc7a6b74ca",tooltip=" "];
+}

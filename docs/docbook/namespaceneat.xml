@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceneat" xml:lang="en-US">
+<title>neat Namespace Reference</title>
+<indexterm><primary>neat</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structneat_1_1mutation__rate__container">mutation_rate_container</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1speciating__parameter__container">speciating_parameter_container</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1network__info__container">network_info_container</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1gene">gene</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classneat_1_1genome">genome</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structneat_1_1specie">specie</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classneat_1_1innovation__container">innovation_container</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classneat_1_1pool">pool</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_utility_field" kind="class" language="C++" prot="public">
+    <compoundname>UtilityField</compoundname>
+    <basecompoundref refid="class_property_field" prot="public" virt="non-virtual">PropertyField</basecompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_utility_field_1a6633396b57ef3811dcf7ad628bf6389a" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113" kindref="member">UtilityTiers</ref>, unsigned int &gt;</type>
+        <definition>std::map&lt;UtilityTiers, unsigned int&gt; UtilityField::rent_multipliers_</definition>
+        <argsstring></argsstring>
+        <name>rent_multipliers_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="470" column="10" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="470" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_utility_field_1a45a2538cdf47bf12a8627539595a332f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>UtilityField::UtilityField</definition>
+        <argsstring>(const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int price, const std::map&lt; UtilityTiers, unsigned int &gt; rent_multipliers, const std::vector&lt; unsigned int &gt; group_members, const unsigned int Mortgage)</argsstring>
+        <name>UtilityField</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>graphic_path</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2i</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>price</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; <ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113" kindref="member">UtilityTiers</ref>, unsigned int &gt;</type>
+          <declname>rent_multipliers</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; unsigned int &gt;</type>
+          <declname>group_members</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>Mortgage</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_utility_field" kindref="compound">UtilityField</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graphic_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the field&apos;s graphic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation angle of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the field on the board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The price of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rent_multipliers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rent multipliers for different tiers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>group_members</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The IDs of the group members (properties in the same group). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mortgage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mortgage value of the property. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="488" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="488" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="class_utility_field_1a5476d4355c82780f3ec8d173513590ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; <ref refid="main_8h_1adcf7f1dbe13f702c7153ae56f085a113" kindref="member">UtilityTiers</ref>, unsigned int &gt;</type>
+        <definition>const std::map&lt; UtilityTiers, unsigned int &gt; UtilityField::getRentMultipliers</definition>
+        <argsstring>()</argsstring>
+        <name>getRentMultipliers</name>
+        <briefdescription>
+<para>Calculates the rent for the utility property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Map for Utility tiers mapped to mulitpliers values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="519" column="16" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="274" bodyend="276"/>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_utility_field_1a2eb2303132eb1de09539b0a8c1f9611c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int UtilityField::calculateRent</definition>
+        <argsstring>(unsigned int dice_roll)</argsstring>
+        <name>calculateRent</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>dice_roll</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the rent for the utility property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dice_roll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The roll of the dice. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The calculated rent value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="526" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>UtilityField</label>
+        <link refid="class_utility_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>UtilityField</label>
+        <link refid="class_utility_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/Field.h" line="469" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="469" bodyend="527"/>
+    <listofallmembers>
+      <member refid="class_utility_field_1a2eb2303132eb1de09539b0a8c1f9611c" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>calculateRent</name></member>
+      <member refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>createFlagSprite</name></member>
+      <member refid="class_field_1aba57b17e88be43f271fbcb85822a56c3" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>createSprite</name></member>
+      <member refid="class_field_1acc8e72c4faac0f5c48b9d353e9350112" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>Field</name></member>
+      <member refid="class_field_1af1d9991ce36def51f2999a959b7873fa" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getContextWindow</name></member>
+      <member refid="class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getGraphicPath</name></member>
+      <member refid="class_property_field_1a676180ae8ad98644572c47787ea0a01f" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getGroupMembers</name></member>
+      <member refid="class_field_1a24552dc1bcb1f574ce8db0761c33790a" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getHeight</name></member>
+      <member refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getId</name></member>
+      <member refid="class_property_field_1ac52da7b908a73ce329c1aff55f971bed" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getIsMortgaged</name></member>
+      <member refid="class_property_field_1a118e8dac5640ec978cbd14519e0880fe" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getMortgage</name></member>
+      <member refid="class_field_1ad2e239a719acc3285a9b11b3aef6808c" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getName</name></member>
+      <member refid="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getNameText</name></member>
+      <member refid="class_property_field_1a4e8d167377c43ea54f32d355d8d07993" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getOwner</name></member>
+      <member refid="class_property_field_1a1fc8ddd955fb2c1b271a259785eab177" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getOwnerFlag</name></member>
+      <member refid="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getPosition</name></member>
+      <member refid="class_property_field_1aafcf4b8fd5fb49a727cb564c0c99a3eb" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getPrice</name></member>
+      <member refid="class_utility_field_1a5476d4355c82780f3ec8d173513590ae" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getRentMultipliers</name></member>
+      <member refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getRotation</name></member>
+      <member refid="class_field_1ad9461468ec68a4148453553cc3150fa6" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getSprite</name></member>
+      <member refid="class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getTexture</name></member>
+      <member refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getType</name></member>
+      <member refid="class_property_field_1aa323b39c72226b6d81782fb9f8b5ffd7" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getUnmortgageValue</name></member>
+      <member refid="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>getWidth</name></member>
+      <member refid="class_property_field_1aba9f3d809377e263842e8aa382e78a49" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>PropertyField</name></member>
+      <member refid="class_utility_field_1a6633396b57ef3811dcf7ad628bf6389a" prot="private" virt="non-virtual"><scope>UtilityField</scope><name>rent_multipliers_</name></member>
+      <member refid="class_property_field_1aa458959642c699213a8f537532e0f371" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>resetDefault</name></member>
+      <member refid="class_property_field_1aa3a6b0249d36134b9cc63872922e447f" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>resetOwner</name></member>
+      <member refid="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>setHeight</name></member>
+      <member refid="class_property_field_1a8ed81fa863c3d443a69141445d66616e" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>setIsMortgaged</name></member>
+      <member refid="class_property_field_1aff8b7ee4568a0721149145074f2aa160" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>setOwner</name></member>
+      <member refid="class_field_1ae4e02fa62cdb947a134ce665ac1b0f69" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>setPosition</name></member>
+      <member refid="class_field_1ad43e7dadad3ce417d9b699f53f8adb83" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>setRotation</name></member>
+      <member refid="class_field_1a664b22a22c392fcd9a20df37ab1e5739" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>setWidth</name></member>
+      <member refid="class_utility_field_1a45a2538cdf47bf12a8627539595a332f" prot="public" virt="non-virtual"><scope>UtilityField</scope><name>UtilityField</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

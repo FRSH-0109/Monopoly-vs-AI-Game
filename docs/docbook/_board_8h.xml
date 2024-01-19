@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__board_8h" xml:lang="en-US">
+<title>/home/kamil/zpr/Monopoly/Board.h File Reference</title>
+<indexterm><primary>/home/kamil/zpr/Monopoly/Board.h</primary></indexterm>
+<para>
+
+<para>Header file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+ 
+</para>
+<programlisting>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &lt;variant&gt;
+#include &lt;vector&gt;
+#include &quot;../json/json.hpp&quot;
+#include &quot;Field.h&quot;
+#include &quot;main.h&quot;
+</programlisting>Include dependency graph for Board.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_board_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_board_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_board">Board</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__board_8h_1ab701e3ac61a85b337ec5c1abaad6742d"/>using <emphasis role="strong">json</emphasis> = nlohmann::json</para>
+</listitem>
+            <listitem><para><anchor xml:id="__board_8h_1ae4f6d1a835154c5a19b08659d48d433d"/>using <emphasis role="strong">PossibleFields</emphasis> = std::variant&lt; <link linkend="_class_field">Field</link>, <link linkend="_class_property_field">PropertyField</link>, <link linkend="_class_street_field">StreetField</link>, <link linkend="_class_station_field">StationField</link>, <link linkend="_class_utility_field">UtilityField</link>, <link linkend="_class_tax_field">TaxField</link> &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__board_8h_1a92671e84f9d38a1f5a64ef20ad23ec39"/>std::map&lt; StreetTiers, unsigned int &gt; <emphasis role="strong">jsonToStreetRent</emphasis> (const json &amp;element)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__board_8h_1ad42d602c22869eaeb607bcce29881af1"/>std::map&lt; StationTiers, unsigned int &gt; <emphasis role="strong">jsonToStationRent</emphasis> (const json &amp;element)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__board_8h_1a9f51f2d21bf4f1468f4481d2b6cf20a6"/>std::map&lt; UtilityTiers, unsigned int &gt; <emphasis role="strong">jsonToUtilityRent</emphasis> (const json &amp;element)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file for monopoly game board, creation is based on json file &apos;board.json&apos;. Mainly handles all types of fields and their usage. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Kamil Kosnik, Kacper Radzikowski </para>
+</formalpara>
+</para>
+</section>
+</section>

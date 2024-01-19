@@ -1,0 +1,105 @@
+\hypertarget{_chance_8h}{}\doxysection{/home/kamil/zpr/\+Monopoly/\+Chance.h File Reference}
+\label{_chance_8h}\index{/home/kamil/zpr/Monopoly/Chance.h@{/home/kamil/zpr/Monopoly/Chance.h}}
+
+
+Header file for monopoly game chance cards, their types, actions...  
+
+
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+Include dependency graph for Chance.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{_chance_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_chance_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_chance_card}{Chance\+Card}}
+\begin{DoxyCompactList}\small\item\em Represents a chance card in the monopoly game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}{Chance\+Type}} \{ \newline
+\mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8aa6abdb82a1c36610b878bca693dadba4}{MOVEMENT\+\_\+\+TO\+\_\+\+PROPERTY}}
+, \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a34f8758edb9d9a4750a3adff079468ce}{MOVEMENT\+\_\+\+WITH\+\_\+\+BUY\+\_\+\+OR\+\_\+\+PAY}}
+, \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8adba348bd899d580b26fd03130ce990e5}{BANK\+\_\+\+PAYS\+\_\+\+YOU}}
+, \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a36b866fb0ef0a43e97d45afd676331db}{GET\+\_\+\+OUT\+\_\+\+OF\+\_\+\+JAIL\+\_\+\+CARD}}
+, \newline
+\mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a801c173bca36ec416f11048e1b2c6f47}{MOVEMENT\+\_\+\+SPACES}}
+, \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a91bf8067739ba90229c9778cc2e8fc5b}{GO\+\_\+\+TO\+\_\+\+JAIL\+\_\+\+CARD}}
+, \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a9e8cedcbf09748fa4a4cd4501eed3d3f}{PAY\+\_\+\+FOR\+\_\+\+HOUSE\+\_\+\+HOTEL}}
+, \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a074dbd69a3e9903629893556d8b1a350}{TAX\+\_\+\+CARD}}
+, \newline
+\mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a970e023f8dba8b70f2496f9b712e6d95}{PAY\+\_\+\+PLAYERS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing different types of chance cards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for monopoly game chance cards, their types, actions... 
+
+\begin{DoxyAuthor}{Author}
+Kamil Kosnik, Kacper Radzikowski 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}} 
+\index{Chance.h@{Chance.h}!ChanceType@{ChanceType}}
+\index{ChanceType@{ChanceType}!Chance.h@{Chance.h}}
+\doxysubsubsection{\texorpdfstring{ChanceType}{ChanceType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8}{Chance\+Type}}}
+
+
+
+Enumeration representing different types of chance cards. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVEMENT\_TO\_PROPERTY@{MOVEMENT\_TO\_PROPERTY}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!MOVEMENT\_TO\_PROPERTY@{MOVEMENT\_TO\_PROPERTY}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8aa6abdb82a1c36610b878bca693dadba4}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8aa6abdb82a1c36610b878bca693dadba4}} 
+MOVEMENT\+\_\+\+TO\+\_\+\+PROPERTY&Move to a specific property. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVEMENT\_WITH\_BUY\_OR\_PAY@{MOVEMENT\_WITH\_BUY\_OR\_PAY}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!MOVEMENT\_WITH\_BUY\_OR\_PAY@{MOVEMENT\_WITH\_BUY\_OR\_PAY}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a34f8758edb9d9a4750a3adff079468ce}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a34f8758edb9d9a4750a3adff079468ce}} 
+MOVEMENT\+\_\+\+WITH\+\_\+\+BUY\+\_\+\+OR\+\_\+\+PAY&Move with the option to buy or pay. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BANK\_PAYS\_YOU@{BANK\_PAYS\_YOU}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!BANK\_PAYS\_YOU@{BANK\_PAYS\_YOU}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8adba348bd899d580b26fd03130ce990e5}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8adba348bd899d580b26fd03130ce990e5}} 
+BANK\+\_\+\+PAYS\+\_\+\+YOU&Receive money from the bank. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GET\_OUT\_OF\_JAIL\_CARD@{GET\_OUT\_OF\_JAIL\_CARD}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!GET\_OUT\_OF\_JAIL\_CARD@{GET\_OUT\_OF\_JAIL\_CARD}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a36b866fb0ef0a43e97d45afd676331db}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a36b866fb0ef0a43e97d45afd676331db}} 
+GET\+\_\+\+OUT\+\_\+\+OF\+\_\+\+JAIL\+\_\+\+CARD&Receive a \char`\"{}\+Get Out of Jail Free\char`\"{} card. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVEMENT\_SPACES@{MOVEMENT\_SPACES}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!MOVEMENT\_SPACES@{MOVEMENT\_SPACES}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a801c173bca36ec416f11048e1b2c6f47}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a801c173bca36ec416f11048e1b2c6f47}} 
+MOVEMENT\+\_\+\+SPACES&Move a certain number of spaces. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GO\_TO\_JAIL\_CARD@{GO\_TO\_JAIL\_CARD}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!GO\_TO\_JAIL\_CARD@{GO\_TO\_JAIL\_CARD}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a91bf8067739ba90229c9778cc2e8fc5b}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a91bf8067739ba90229c9778cc2e8fc5b}} 
+GO\+\_\+\+TO\+\_\+\+JAIL\+\_\+\+CARD&Go directly to jail. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAY\_FOR\_HOUSE\_HOTEL@{PAY\_FOR\_HOUSE\_HOTEL}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!PAY\_FOR\_HOUSE\_HOTEL@{PAY\_FOR\_HOUSE\_HOTEL}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a9e8cedcbf09748fa4a4cd4501eed3d3f}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a9e8cedcbf09748fa4a4cd4501eed3d3f}} 
+PAY\+\_\+\+FOR\+\_\+\+HOUSE\+\_\+\+HOTEL&Pay for each house and hotel owned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TAX\_CARD@{TAX\_CARD}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!TAX\_CARD@{TAX\_CARD}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a074dbd69a3e9903629893556d8b1a350}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a074dbd69a3e9903629893556d8b1a350}} 
+TAX\+\_\+\+CARD&Pay a tax. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAY\_PLAYERS@{PAY\_PLAYERS}!Chance.h@{Chance.h}}\index{Chance.h@{Chance.h}!PAY\_PLAYERS@{PAY\_PLAYERS}}}\mbox{\Hypertarget{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a970e023f8dba8b70f2496f9b712e6d95}\label{_chance_8h_a5c239f5706ef4b178a48d01f1f8736c8a970e023f8dba8b70f2496f9b712e6d95}} 
+PAY\+\_\+\+PLAYERS&Pay other players. \\
+\hline
+
+\end{DoxyEnumFields}

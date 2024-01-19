@@ -1,0 +1,560 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_street_field" kind="class" language="C++" prot="public">
+    <compoundname>StreetField</compoundname>
+    <basecompoundref refid="class_property_field" prot="public" virt="non-virtual">PropertyField</basecompoundref>
+    <includes refid="_field_8h" local="no">Field.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_street_field_1acb4a19b5a71212364ec7a699e7b31787" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3" kindref="member">StreetTiers</ref>, unsigned int &gt;</type>
+        <definition>std::map&lt;StreetTiers, unsigned int&gt; StreetField::rent_values_</definition>
+        <argsstring></argsstring>
+        <name>rent_values_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="298" column="10" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_street_field_1aef2cabee91bc70b191d668b78e6fe216" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::house_price_</definition>
+        <argsstring></argsstring>
+        <name>house_price_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="299" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_street_field_1a5652c10a407e748bff7bfbe8d94a0c4e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::hotel_price_</definition>
+        <argsstring></argsstring>
+        <name>hotel_price_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="300" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_street_field_1a8ac1d25df8a8acdecc7c7fe916d26cce" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::house_number_</definition>
+        <argsstring></argsstring>
+        <name>house_number_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="301" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_street_field_1a0d7dbbdeb1948c3131397a9896f7085d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StreetField::is_hotel_</definition>
+        <argsstring></argsstring>
+        <name>is_hotel_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="302" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_street_field_1a60e9414d1c6d7dbc49b3921ea53fd4eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>StreetField::StreetField</definition>
+        <argsstring>(const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int price, const unsigned int house_price, const unsigned int hotel_price, const std::map&lt; StreetTiers, unsigned int &gt; rent_values, const std::vector&lt; unsigned int &gt; group_members, const unsigned int Mortgage)</argsstring>
+        <name>StreetField</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1da" kindref="member">FieldType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>graphic_path</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const sf::Vector2i</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>price</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>house_price</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>hotel_price</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; <ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3" kindref="member">StreetTiers</ref>, unsigned int &gt;</type>
+          <declname>rent_values</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; unsigned int &gt;</type>
+          <declname>group_members</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>Mortgage</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="class_street_field" kindref="compound">StreetField</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graphic_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the field&apos;s graphic. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation angle of the field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the field on the board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The price of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>house_price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The price of a house. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hotel_price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The price of a hotel. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rent_values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rent values for different tiers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>group_members</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The IDs of the group members (properties in the same group). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mortgage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mortgage value of the property. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="322" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="322" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1af6ffa6777200808afa686a07a1be6e9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; <ref refid="main_8h_1a98ed7cda9a98a2bc7217b41be46badc3" kindref="member">StreetTiers</ref>, unsigned int &gt;</type>
+        <definition>const std::map&lt; StreetTiers, unsigned int &gt; StreetField::getRentValues</definition>
+        <argsstring>()</argsstring>
+        <name>getRentValues</name>
+        <briefdescription>
+<para>Gets the rent values for different tiers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The rent values for different tiers. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="358" column="16" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="223" bodyend="225"/>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1a812b99b2c3dc615a26f81756fa41aa51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::getHousePrice</definition>
+        <argsstring>()</argsstring>
+        <name>getHousePrice</name>
+        <briefdescription>
+<para>Gets the price of a house. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The price of a house. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="364" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="227" bodyend="229"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1aaf7f625f32dc53f7413236a79afaf6d5" compoundref="_monopoly_game_engine_8cc" startline="398" endline="415">MonopolyGameEngine::isBuildingLegal</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1a51d31e674e5526536210d24ed5bdc2c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::getHotelPrice</definition>
+        <argsstring>()</argsstring>
+        <name>getHotelPrice</name>
+        <briefdescription>
+<para>Gets the price of a hotel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The price of a hotel. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="370" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="231" bodyend="233"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a34646774679d5ef5e9bbc6317953c7fa" compoundref="_monopoly_game_engine_8cc" startline="433" endline="450">MonopolyGameEngine::isHotelBuildingLegal</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1aaee4c344c359e9762653472f7f2e5df0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::getHouseNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getHouseNumber</name>
+        <briefdescription>
+<para>Gets the number of houses on the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of houses on the property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="376" column="14" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="235" bodyend="237"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1afd604c9fd373fa220ebe04ff9d5f191b" compoundref="_monopoly_game_engine_8cc" startline="467" endline="485">MonopolyGameEngine::colorGroupEmpty</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1aaf7f625f32dc53f7413236a79afaf6d5" compoundref="_monopoly_game_engine_8cc" startline="398" endline="415">MonopolyGameEngine::isBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1afaf31ce9d8aaef4b36bbefe9b4b72f78" compoundref="_monopoly_game_engine_8cc" startline="417" endline="431">MonopolyGameEngine::isDestroyingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a34646774679d5ef5e9bbc6317953c7fa" compoundref="_monopoly_game_engine_8cc" startline="433" endline="450">MonopolyGameEngine::isHotelBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1a79785c76389d7bf9171797b9d1a16ebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool StreetField::getIsHotel</definition>
+        <argsstring>()</argsstring>
+        <name>getIsHotel</name>
+        <briefdescription>
+<para>Checks if there is a hotel on the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if there is a hotel, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="382" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="239" bodyend="241"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2af1706f23548c8ad118133badfc0160" compoundref="_monopoly_game_engine_8cc" startline="487" endline="535">MonopolyGameEngine::calculateRent</referencedby>
+        <referencedby refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" compoundref="_game_screen_8cc" startline="100" endline="305">GameScreen::draw</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a34646774679d5ef5e9bbc6317953c7fa" compoundref="_monopoly_game_engine_8cc" startline="433" endline="450">MonopolyGameEngine::isHotelBuildingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1ac01307d6ae292277aa3caf5855955a8c" compoundref="_monopoly_game_engine_8cc" startline="452" endline="465">MonopolyGameEngine::isHotelDestroyingLegal</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1a9cdeb6a4610eed4f47e20d2cdebbe3a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StreetField::setHouseNumber</definition>
+        <argsstring>(unsigned int new_house_number)</argsstring>
+        <name>setHouseNumber</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>new_house_number</declname>
+        </param>
+        <briefdescription>
+<para>Sets the number of houses on the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_house_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new number of houses on the property. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="388" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="243" bodyend="249"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8" compoundref="_field_8cc" startline="255" endline="260">resetDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1aa50b622f5cc3dfa6ee3d00aa1a24bd14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StreetField::setIsHotel</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>setIsHotel</name>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+<para>Sets the hotel state on the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new hotel state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="394" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="251" bodyend="253"/>
+        <referencedby refid="class_monopoly_game_engine_1ad9478380894898178164adc82c2fabeb" compoundref="_monopoly_game_engine_8cc" startline="743" endline="987">MonopolyGameEngine::aiBuildingsMangingWorker</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a6f09145fdc73c99a2fdf64c53ee1713a" compoundref="_monopoly_game_engine_8cc" startline="600" endline="741">MonopolyGameEngine::buildingsManagingWorker</referencedby>
+        <referencedby refid="class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8" compoundref="_field_8cc" startline="255" endline="260">resetDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StreetField::resetDefault</definition>
+        <argsstring>()</argsstring>
+        <name>resetDefault</name>
+        <briefdescription>
+<para>Resets the property to its default state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="399" column="6" bodyfile="/home/kamil/zpr/Monopoly/Field.cc" bodystart="255" bodyend="260"/>
+        <references refid="class_property_field_1aa3a6b0249d36134b9cc63872922e447f" compoundref="_field_8cc" startline="174" endline="176">PropertyField::resetOwner</references>
+        <references refid="class_street_field_1a9cdeb6a4610eed4f47e20d2cdebbe3a1" compoundref="_field_8cc" startline="243" endline="249">setHouseNumber</references>
+        <references refid="class_street_field_1aa50b622f5cc3dfa6ee3d00aa1a24bd14" compoundref="_field_8cc" startline="251" endline="253">setIsHotel</references>
+        <references refid="class_property_field_1a8ed81fa863c3d443a69141445d66616e" compoundref="_field_8cc" startline="166" endline="168">PropertyField::setIsMortgaged</references>
+      </memberdef>
+      <memberdef kind="function" id="class_street_field_1ab7d65dbc871b6cb5ac683a286fec47b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int StreetField::calculateRent</definition>
+        <argsstring>()</argsstring>
+        <name>calculateRent</name>
+        <briefdescription>
+<para>Calculates the rent for the property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated rent value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Field.h" line="405" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Derived class representing a street field on the game board. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+      <node id="1">
+        <label>StreetField</label>
+        <link refid="class_street_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PropertyField</label>
+        <link refid="class_property_field"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Field</label>
+        <link refid="class_field"/>
+      </node>
+      <node id="1">
+        <label>StreetField</label>
+        <link refid="class_street_field"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/Field.h" line="297" column="1" bodyfile="/home/kamil/zpr/Monopoly/Field.h" bodystart="297" bodyend="406"/>
+    <listofallmembers>
+      <member refid="class_street_field_1ab7d65dbc871b6cb5ac683a286fec47b8" prot="public" virt="non-virtual"><scope>StreetField</scope><name>calculateRent</name></member>
+      <member refid="class_property_field_1a3323e39ff44b4d61c5b6f77e7da17f99" prot="public" virt="non-virtual"><scope>StreetField</scope><name>createFlagSprite</name></member>
+      <member refid="class_field_1aba57b17e88be43f271fbcb85822a56c3" prot="public" virt="non-virtual"><scope>StreetField</scope><name>createSprite</name></member>
+      <member refid="class_field_1acc8e72c4faac0f5c48b9d353e9350112" prot="public" virt="non-virtual"><scope>StreetField</scope><name>Field</name></member>
+      <member refid="class_field_1af1d9991ce36def51f2999a959b7873fa" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getContextWindow</name></member>
+      <member refid="class_field_1a2bca2e8d2cb8bfc9ebbc61f617e3e7b9" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getGraphicPath</name></member>
+      <member refid="class_property_field_1a676180ae8ad98644572c47787ea0a01f" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getGroupMembers</name></member>
+      <member refid="class_field_1a24552dc1bcb1f574ce8db0761c33790a" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getHeight</name></member>
+      <member refid="class_street_field_1a51d31e674e5526536210d24ed5bdc2c2" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getHotelPrice</name></member>
+      <member refid="class_street_field_1aaee4c344c359e9762653472f7f2e5df0" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getHouseNumber</name></member>
+      <member refid="class_street_field_1a812b99b2c3dc615a26f81756fa41aa51" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getHousePrice</name></member>
+      <member refid="class_field_1aa3ea436b800a8078f04be2678c42f7c0" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getId</name></member>
+      <member refid="class_street_field_1a79785c76389d7bf9171797b9d1a16ebd" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getIsHotel</name></member>
+      <member refid="class_property_field_1ac52da7b908a73ce329c1aff55f971bed" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getIsMortgaged</name></member>
+      <member refid="class_property_field_1a118e8dac5640ec978cbd14519e0880fe" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getMortgage</name></member>
+      <member refid="class_field_1ad2e239a719acc3285a9b11b3aef6808c" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getName</name></member>
+      <member refid="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getNameText</name></member>
+      <member refid="class_property_field_1a4e8d167377c43ea54f32d355d8d07993" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getOwner</name></member>
+      <member refid="class_property_field_1a1fc8ddd955fb2c1b271a259785eab177" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getOwnerFlag</name></member>
+      <member refid="class_field_1a8b6e4fc0827f44e90449d6ad9a62dafd" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getPosition</name></member>
+      <member refid="class_property_field_1aafcf4b8fd5fb49a727cb564c0c99a3eb" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getPrice</name></member>
+      <member refid="class_street_field_1af6ffa6777200808afa686a07a1be6e9a" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getRentValues</name></member>
+      <member refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getRotation</name></member>
+      <member refid="class_field_1ad9461468ec68a4148453553cc3150fa6" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getSprite</name></member>
+      <member refid="class_field_1a0c228e9b9ccc6465183a2b82c9a7ef00" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getTexture</name></member>
+      <member refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getType</name></member>
+      <member refid="class_property_field_1aa323b39c72226b6d81782fb9f8b5ffd7" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getUnmortgageValue</name></member>
+      <member refid="class_field_1ad5706e4c154214fe43db7ecc7a6b74ca" prot="public" virt="non-virtual"><scope>StreetField</scope><name>getWidth</name></member>
+      <member refid="class_street_field_1a5652c10a407e748bff7bfbe8d94a0c4e" prot="private" virt="non-virtual"><scope>StreetField</scope><name>hotel_price_</name></member>
+      <member refid="class_street_field_1a8ac1d25df8a8acdecc7c7fe916d26cce" prot="private" virt="non-virtual"><scope>StreetField</scope><name>house_number_</name></member>
+      <member refid="class_street_field_1aef2cabee91bc70b191d668b78e6fe216" prot="private" virt="non-virtual"><scope>StreetField</scope><name>house_price_</name></member>
+      <member refid="class_street_field_1a0d7dbbdeb1948c3131397a9896f7085d" prot="private" virt="non-virtual"><scope>StreetField</scope><name>is_hotel_</name></member>
+      <member refid="class_property_field_1aba9f3d809377e263842e8aa382e78a49" prot="public" virt="non-virtual"><scope>StreetField</scope><name>PropertyField</name></member>
+      <member refid="class_street_field_1acb4a19b5a71212364ec7a699e7b31787" prot="private" virt="non-virtual"><scope>StreetField</scope><name>rent_values_</name></member>
+      <member refid="class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8" prot="public" virt="non-virtual"><scope>StreetField</scope><name>resetDefault</name></member>
+      <member refid="class_property_field_1aa3a6b0249d36134b9cc63872922e447f" prot="public" virt="non-virtual"><scope>StreetField</scope><name>resetOwner</name></member>
+      <member refid="class_field_1a7fe07fc987253e7c5dd7c5cccf30c2a1" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setHeight</name></member>
+      <member refid="class_street_field_1a9cdeb6a4610eed4f47e20d2cdebbe3a1" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setHouseNumber</name></member>
+      <member refid="class_street_field_1aa50b622f5cc3dfa6ee3d00aa1a24bd14" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setIsHotel</name></member>
+      <member refid="class_property_field_1a8ed81fa863c3d443a69141445d66616e" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setIsMortgaged</name></member>
+      <member refid="class_property_field_1aff8b7ee4568a0721149145074f2aa160" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setOwner</name></member>
+      <member refid="class_field_1ae4e02fa62cdb947a134ce665ac1b0f69" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setPosition</name></member>
+      <member refid="class_field_1ad43e7dadad3ce417d9b699f53f8adb83" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setRotation</name></member>
+      <member refid="class_field_1a664b22a22c392fcd9a20df37ab1e5739" prot="public" virt="non-virtual"><scope>StreetField</scope><name>setWidth</name></member>
+      <member refid="class_street_field_1a60e9414d1c6d7dbc49b3921ea53fd4eb" prot="public" virt="non-virtual"><scope>StreetField</scope><name>StreetField</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

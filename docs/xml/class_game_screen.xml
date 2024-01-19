@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_game_screen" kind="class" language="C++" prot="public">
+    <compoundname>GameScreen</compoundname>
+    <basecompoundref refid="class_active_screen" prot="public" virt="non-virtual">ActiveScreen</basecompoundref>
+    <includes refid="_game_screen_8h" local="no">GameScreen.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_screen_1a4a107a4533a39241acfd570f52f03c8f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_monopoly_game_engine" kindref="compound">MonopolyGameEngine</ref></type>
+        <definition>MonopolyGameEngine GameScreen::monopoly_game_engine_</definition>
+        <argsstring></argsstring>
+        <name>monopoly_game_engine_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameScreen.h" line="20" column="20" bodyfile="/home/kamil/zpr/Monopoly/GameScreen.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameScreen::GameScreen</definition>
+        <argsstring>(std::vector&lt; std::shared_ptr&lt; Player &gt;&gt; &amp;players_)</argsstring>
+        <name>GameScreen</name>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;&gt; &amp;</type>
+          <declname>players_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameScreen.h" line="23" column="1" bodyfile="/home/kamil/zpr/Monopoly/GameScreen.cc" bodystart="17" bodyend="66"/>
+        <references refid="class_monopoly_game_engine_1adf5644d237334e6749252420d80fac32" compoundref="_monopoly_game_engine_8cc" startline="1945" endline="1948">MonopolyGameEngine::addButton</references>
+        <references refid="class_monopoly_game_engine_1ac6f1dd50f3c5eecc6ba2872a1b895fd9" compoundref="_monopoly_game_engine_8cc" startline="110" endline="112">MonopolyGameEngine::clearPlayers</references>
+        <references refid="class_monopoly_game_engine_1a8237eb4fd279a8f4b094c14987ea37a1" compoundref="_monopoly_game_engine_8cc" startline="2544" endline="2569">MonopolyGameEngine::createAuctionBidButton</references>
+        <references refid="class_monopoly_game_engine_1a41effaad0143e79955701cff92b2620f" compoundref="_monopoly_game_engine_8cc" startline="2407" endline="2542">MonopolyGameEngine::createAuctionOfferButtons</references>
+        <references refid="class_monopoly_game_engine_1a3fc21384392435cdfcab356f98d5a838" compoundref="_monopoly_game_engine_8cc" startline="2571" endline="2597">MonopolyGameEngine::createAuctionResignButton</references>
+        <references refid="class_monopoly_game_engine_1ac8629f2abd1bf12cfc0af747d16c867f" compoundref="_monopoly_game_engine_8cc" startline="1895" endline="1909">MonopolyGameEngine::createAvailableHousesHotelText</references>
+        <references refid="class_monopoly_game_engine_1a01c8f3df78160a7b8719e1ad06d9c239" compoundref="_monopoly_game_engine_8cc" startline="38" endline="40">MonopolyGameEngine::createBoard</references>
+        <references refid="class_monopoly_game_engine_1a742de8013c1466a6913bb5f5eceafeb4" compoundref="_monopoly_game_engine_8cc" startline="2155" endline="2194">MonopolyGameEngine::createButtonBuyResign</references>
+        <references refid="class_monopoly_game_engine_1a6a7786536439ae5af3c53d896b0a9a71" compoundref="_monopoly_game_engine_8cc" startline="2196" endline="2219">MonopolyGameEngine::createButtonNextProperty</references>
+        <references refid="class_monopoly_game_engine_1aa54fdcd0727761f010c096435dd40999" compoundref="_monopoly_game_engine_8cc" startline="2221" endline="2244">MonopolyGameEngine::createButtonPerviousProperty</references>
+        <references refid="class_monopoly_game_engine_1ab7c6acc2b155fbdc1952280c494a05fe" compoundref="_monopoly_game_engine_8cc" startline="2001" endline="2025">MonopolyGameEngine::createButtonRollDice</references>
+        <references refid="class_monopoly_game_engine_1af7a1b759d097257097926ed7fd60da14" compoundref="_monopoly_game_engine_8cc" startline="2329" endline="2352">MonopolyGameEngine::createButtonsBankrupt</references>
+        <references refid="class_monopoly_game_engine_1abbda29a495969e795d71c3a5d215b547" compoundref="_monopoly_game_engine_8cc" startline="2246" endline="2327">MonopolyGameEngine::createButtonsBuySellHouseHotel</references>
+        <references refid="class_monopoly_game_engine_1ae9772861221c6ce195b7b63122bf5523" compoundref="_monopoly_game_engine_8cc" startline="2380" endline="2405">MonopolyGameEngine::createButtonsJailPay</references>
+        <references refid="class_monopoly_game_engine_1a525ceed24c6db4fd8823fb1af27ba24b" compoundref="_monopoly_game_engine_8cc" startline="2354" endline="2378">MonopolyGameEngine::createButtonsNextTurn</references>
+        <references refid="class_monopoly_game_engine_1a59d448ed643e21447ac85cdfeea1fa1b" compoundref="_monopoly_game_engine_8cc" startline="2599" endline="2622">MonopolyGameEngine::createButtonWithdraw</references>
+        <references refid="class_monopoly_game_engine_1a3e16a285485813a9e4a121a198739176" compoundref="_monopoly_game_engine_8cc" startline="3302" endline="3329">MonopolyGameEngine::createChanceCards</references>
+        <references refid="class_withdraw_1a2f8b173f0fdf10f7bb3232c57b96f114" compoundref="_withdraw_8cc" startline="483" endline="516">Withdraw::createChoosePlayerScreen</references>
+        <references refid="class_monopoly_game_engine_1a555cc64819179c99afb2b39b58599074" compoundref="_monopoly_game_engine_8cc" startline="2147" endline="2153">MonopolyGameEngine::createCurrentOfferBidderInfo</references>
+        <references refid="class_withdraw_1ad4a9b237332fe45afa4730ccc20e1e0b" compoundref="_withdraw_8cc" startline="206" endline="244">Withdraw::createDecisionPlayerScreen</references>
+        <references refid="class_monopoly_game_engine_1af61f87c35e7969f4665091d80007a8dd" compoundref="_monopoly_game_engine_8cc" startline="2664" endline="2704">MonopolyGameEngine::createMortagingButton</references>
+        <references refid="class_monopoly_game_engine_1abc237772db36ef7096d874ac7bf15076" compoundref="_monopoly_game_engine_8cc" startline="42" endline="108">MonopolyGameEngine::createPlayers</references>
+        <references refid="class_monopoly_game_engine_1a746b88ee3a606c98cfa368192c1a34e9" compoundref="_monopoly_game_engine_8cc" startline="2624" endline="2637">MonopolyGameEngine::createResultScreenStuff</references>
+        <references refid="class_monopoly_game_engine_1a9655bc29084d61fe0503ec16272630e6" compoundref="_monopoly_game_engine_8cc" startline="2115" endline="2121">MonopolyGameEngine::createTextBiddedProperty</references>
+        <references refid="class_monopoly_game_engine_1a932aa1b22c5b339c568f8ea34749b1fb" compoundref="_monopoly_game_engine_8cc" startline="2123" endline="2129">MonopolyGameEngine::createTextBidderInfo</references>
+        <references refid="class_monopoly_game_engine_1a04528f2dbaa4725b4430bdef63b2d9d0" compoundref="_monopoly_game_engine_8cc" startline="2131" endline="2137">MonopolyGameEngine::createTextHighestBidInfo</references>
+        <references refid="class_monopoly_game_engine_1ac4396e37a67a062d796345afc0642af2" compoundref="_monopoly_game_engine_8cc" startline="2139" endline="2145">MonopolyGameEngine::createTextLeadingBidderInfo</references>
+        <references refid="class_monopoly_game_engine_1a32c0ecaa71c51cdaae65178836af75b0" compoundref="_monopoly_game_engine_8cc" startline="2043" endline="2088">MonopolyGameEngine::createTextPlayersInfo</references>
+        <references refid="class_monopoly_game_engine_1a73d985dc04d394ec469ee5d01e6b9a89" compoundref="_monopoly_game_engine_8cc" startline="2035" endline="2041">MonopolyGameEngine::createTextrolled_value</references>
+        <references refid="class_monopoly_game_engine_1a7b07579e424f37298496eefaae2390e1" compoundref="_monopoly_game_engine_8cc" startline="2027" endline="2033">MonopolyGameEngine::createTextTurnInfo</references>
+        <references refid="class_withdraw_1a1e777d7591c901b33d190e8f5c6f4a77" compoundref="_withdraw_8cc" startline="246" endline="457">Withdraw::createValuePlayerScreen</references>
+        <references refid="class_monopoly_game_engine_1a30c9e966d81c055c15cc5576243a83a2" compoundref="_monopoly_game_engine_8cc" startline="118" endline="120">MonopolyGameEngine::getBoard</references>
+        <references refid="class_withdraw_1a9176fc09f39a59cec708685ee053b9ac" compoundref="_withdraw_8cc" startline="552" endline="554">Withdraw::getButtons</references>
+        <references refid="class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61" compoundref="_active_screen_8cc" startline="25" endline="27">ActiveScreen::getFont</references>
+        <references refid="class_context_window_1ae1d1fa169768a6ed2a1651f6d5594fc2" compoundref="_context_window_8cc" startline="22" endline="27">ContextWindow::GetInstance</references>
+        <references refid="class_monopoly_game_engine_1a7a4c2e5ec5a548c44d2dca59438453b5" compoundref="_monopoly_game_engine_8cc" startline="3298" endline="3300">MonopolyGameEngine::getWithdraw</references>
+        <references refid="main_8h_1ace298d3cfe0ebb75e39a4454a9ccdf3ea562b9839d5f81729482626570ca43b5e" compoundref="main_8h" startline="88">MONOPOLY_GAME</references>
+        <references refid="class_withdraw_1ac3ff353242bfee519f0058258631c454" compoundref="_withdraw_8cc" startline="518" endline="520">Withdraw::setBoard</references>
+        <references refid="class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632" compoundref="_active_screen_8cc" startline="39" endline="41">ActiveScreen::setContextWindow</references>
+        <references refid="class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20" compoundref="_active_screen_8cc" startline="21" endline="23">ActiveScreen::setFont</references>
+        <references refid="class_monopoly_game_engine_1a034d5e74627aa03da60bbcc92d671a61" compoundref="_monopoly_game_engine_8cc" startline="1937" endline="1939">MonopolyGameEngine::setFont</references>
+        <references refid="class_withdraw_1a01109432adc0c8b78f288c1805ca02d0" compoundref="_withdraw_8cc" startline="530" endline="532">Withdraw::setFont</references>
+        <references refid="class_monopoly_game_engine_1ad6860ebdf586eff99b476ff529fb4e96" compoundref="_monopoly_game_engine_8cc" startline="130" endline="134">MonopolyGameEngine::setplayer_index_turn</references>
+        <references refid="class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf" compoundref="_active_screen_8cc" startline="51" endline="53">ActiveScreen::setScreenType</references>
+        <references refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</references>
+        <references refid="class_monopoly_game_engine_1a73ae5aa5598545a9b12264072a087364" compoundref="_monopoly_game_engine_8cc" startline="183" endline="185">MonopolyGameEngine::turnInfoTextShow</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_screen_1a140fce95914abbf9efac4ad6bb0c98dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3" kindref="member">ScreenEventType</ref></type>
+        <definition>ScreenEventType GameScreen::worker</definition>
+        <argsstring>()</argsstring>
+        <name>worker</name>
+        <reimplements refid="class_active_screen_1a3cd9d9f9571195d3fd030c41512348da">worker</reimplements>
+        <briefdescription>
+<para>Pure virtual function representing the worker function for the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ScreenEventType associated with the user interaction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameScreen.h" line="24" column="17" bodyfile="/home/kamil/zpr/Monopoly/GameScreen.cc" bodystart="68" bodyend="98"/>
+        <references refid="class_active_screen_1a385001a5027f0b2f00145a54b668368f" compoundref="_active_screen_8cc" startline="63" endline="65">ActiveScreen::buttonSetColors</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3a176f3285bbb35321f21db4745967df3a" compoundref="main_8h" startline="125">GAME_ENDED</references>
+        <references refid="class_monopoly_game_engine_1a2b1fb71410fb88b1cde5077f62fb82fd" compoundref="_monopoly_game_engine_8cc" startline="1965" endline="1967">MonopolyGameEngine::getButtons</references>
+        <references refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" compoundref="_active_screen_8cc" startline="43" endline="45">ActiveScreen::getContextWindow</references>
+        <references refid="main_8h_1afc8403f5b733fde41aeaff7c853df0c3afd6a0e4343048b10646dd2976cc5ad18" compoundref="main_8h" startline="96">IDLE</references>
+        <references refid="class_monopoly_game_engine_1a01eac196ca3a5c26194165c9efd470da" compoundref="_monopoly_game_engine_8cc" startline="1214" endline="1888">MonopolyGameEngine::monopolyGameWorker</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void GameScreen::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_active_screen_1a381ad867612f98caa038c0b775f0c39a">draw</reimplements>
+        <briefdescription>
+<para>Pure virtual function to draw the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameScreen.h" line="25" column="6" bodyfile="/home/kamil/zpr/Monopoly/GameScreen.cc" bodystart="100" bodyend="305"/>
+        <references refid="main_8h_1a816a6251d75e4dcd37d944ca68752095ad1d2481f8e5c8b3feb0e8e1e10d2605d" compoundref="main_8h" startline="82">AUCTION</references>
+        <references refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a346a9950c4deb7434599827156fb0a5d" compoundref="main_8h" startline="82">BOARDGAME</references>
+        <references refid="main_8h_1a1fbb23a4b2427b486453417312008cfbaadfb6dd0e03e15e442580ace912d1b71" compoundref="main_8h" startline="70">BUY_ACTION</references>
+        <references refid="class_monopoly_game_engine_1ac21527f42cd63f19528e7ab3f51363db" compoundref="_monopoly_game_engine_8cc" startline="1993" endline="1995">MonopolyGameEngine::getAllPropertyDataSprite</references>
+        <references refid="class_monopoly_game_engine_1aaf046cdf2a5b7bd05e1f8272b510de0f" compoundref="_monopoly_game_engine_8cc" startline="1997" endline="1999">MonopolyGameEngine::getAllPropertyDataTexts</references>
+        <references refid="class_monopoly_game_engine_1afe06604028fa9abf53bae7fc6a909ae7" compoundref="_monopoly_game_engine_8cc" startline="1973" endline="1975">MonopolyGameEngine::getAuctionButtons</references>
+        <references refid="class_monopoly_game_engine_1accb94fe0ad5bc9ce44f3dda3c91a4ce7" compoundref="_monopoly_game_engine_8cc" startline="1977" endline="1979">MonopolyGameEngine::getAuctionTexts</references>
+        <references refid="class_monopoly_game_engine_1a30c9e966d81c055c15cc5576243a83a2" compoundref="_monopoly_game_engine_8cc" startline="118" endline="120">MonopolyGameEngine::getBoard</references>
+        <references refid="class_monopoly_game_engine_1a2b1fb71410fb88b1cde5077f62fb82fd" compoundref="_monopoly_game_engine_8cc" startline="1965" endline="1967">MonopolyGameEngine::getButtons</references>
+        <references refid="class_withdraw_1a9176fc09f39a59cec708685ee053b9ac" compoundref="_withdraw_8cc" startline="552" endline="554">Withdraw::getButtons</references>
+        <references refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" compoundref="_active_screen_8cc" startline="43" endline="45">ActiveScreen::getContextWindow</references>
+        <references refid="class_monopoly_game_engine_1a2831ee2158d97ff536fd0fee57e338e2" compoundref="_monopoly_game_engine_8cc" startline="3267" endline="3296">MonopolyGameEngine::getHotelSprite</references>
+        <references refid="class_monopoly_game_engine_1a56b2b17c31119dac5b1933571bac35f6" compoundref="_monopoly_game_engine_8cc" startline="3215" endline="3217">MonopolyGameEngine::getHotelTexture</references>
+        <references refid="class_street_field_1aaee4c344c359e9762653472f7f2e5df0" compoundref="_field_8cc" startline="235" endline="237">StreetField::getHouseNumber</references>
+        <references refid="class_monopoly_game_engine_1a64330a6b6eea093a923675e749c00807" compoundref="_monopoly_game_engine_8cc" startline="3223" endline="3265">MonopolyGameEngine::getHouseSprite</references>
+        <references refid="class_monopoly_game_engine_1ab55601ce0bb0b73719a5376723daa774" compoundref="_monopoly_game_engine_8cc" startline="3211" endline="3213">MonopolyGameEngine::getHouseTexture</references>
+        <references refid="class_street_field_1a79785c76389d7bf9171797b9d1a16ebd" compoundref="_field_8cc" startline="239" endline="241">StreetField::getIsHotel</references>
+        <references refid="class_property_field_1ac52da7b908a73ce329c1aff55f971bed" compoundref="_field_8cc" startline="150" endline="152">PropertyField::getIsMortgaged</references>
+        <references refid="class_field_1a74d7c9f2b1b4ada1685410a5cfd45bc7" compoundref="_field_8cc" startline="80" endline="82">Field::getNameText</references>
+        <references refid="class_monopoly_game_engine_1a19263d676193f65b54209020dfdb928e" compoundref="_monopoly_game_engine_8cc" startline="3093" endline="3095">MonopolyGameEngine::getNotificationsWall</references>
+        <references refid="class_property_field_1a4e8d167377c43ea54f32d355d8d07993" compoundref="_field_8cc" startline="158" endline="160">PropertyField::getOwner</references>
+        <references refid="class_property_field_1a1fc8ddd955fb2c1b271a259785eab177" compoundref="_field_8cc" startline="162" endline="164">PropertyField::getOwnerFlag</references>
+        <references refid="class_monopoly_game_engine_1ab1be3d89016a48d4df0f8440a254e4d1" compoundref="_monopoly_game_engine_8cc" startline="122" endline="124">MonopolyGameEngine::getPlayers</references>
+        <references refid="class_monopoly_game_engine_1a98b4a5fdbf5e68ab062cd677ccb24f74" compoundref="_monopoly_game_engine_8cc" startline="1985" endline="1987">MonopolyGameEngine::getPropertyDataSprite</references>
+        <references refid="class_monopoly_game_engine_1ac70b0b504fb2271353038a59c6604691" compoundref="_monopoly_game_engine_8cc" startline="1989" endline="1991">MonopolyGameEngine::getPropertyDataTexts</references>
+        <references refid="class_monopoly_game_engine_1a838f18e88cd79f8cce47dd0dbb42ae3e" compoundref="_monopoly_game_engine_8cc" startline="3113" endline="3135">MonopolyGameEngine::getPropertyNameToDraw</references>
+        <references refid="class_monopoly_game_engine_1af7cde31ae39d022e3d5f8be45d235ded" compoundref="_monopoly_game_engine_8cc" startline="1981" endline="1983">MonopolyGameEngine::getResultTexts</references>
+        <references refid="class_field_1a646e28cf7899eb73bd120e7e7f936633" compoundref="_field_8cc" startline="72" endline="74">Field::getRotation</references>
+        <references refid="class_monopoly_game_engine_1a5a7f70b3a7d70f563daf7426772590b4" compoundref="_monopoly_game_engine_8cc" startline="34" endline="36">MonopolyGameEngine::getScreenType</references>
+        <references refid="class_field_1ad9461468ec68a4148453553cc3150fa6" compoundref="_field_8cc" startline="76" endline="78">Field::getSprite</references>
+        <references refid="class_withdraw_1aaa00a66063e50b3aa3cf82a04d0fa859" compoundref="_withdraw_8cc" startline="1110" endline="1112">Withdraw::getSpritePropertyPlayer1</references>
+        <references refid="class_withdraw_1a7b2ecdf7344d06ee5a1124a3e125618d" compoundref="_withdraw_8cc" startline="1118" endline="1120">Withdraw::getSpritePropertyPlayer1Index</references>
+        <references refid="class_withdraw_1a7d62275f21184e601494c0068d28fab0" compoundref="_withdraw_8cc" startline="1126" endline="1128">Withdraw::getSpritePropertyPlayer2</references>
+        <references refid="class_withdraw_1a398e4416dafd4543de2eebc4e8317e4b" compoundref="_withdraw_8cc" startline="1134" endline="1136">Withdraw::getSpritePropertyPlayer2Index</references>
+        <references refid="class_monopoly_game_engine_1a3c28362ff3b68d93dec6dae6c0304641" compoundref="_monopoly_game_engine_8cc" startline="1969" endline="1971">MonopolyGameEngine::getTexts</references>
+        <references refid="class_withdraw_1a095689316bdad34354e14b8ffd18c995" compoundref="_withdraw_8cc" startline="556" endline="558">Withdraw::getTexts</references>
+        <references refid="class_withdraw_1a3af83369b71131d448d48f9383c890c0" compoundref="_withdraw_8cc" startline="1114" endline="1116">Withdraw::getTextsPropertyPlayer1</references>
+        <references refid="class_withdraw_1a516b9056df7808d8c2a33a57772d9ad8" compoundref="_withdraw_8cc" startline="1122" endline="1124">Withdraw::getTextsPropertyPlayer1Index</references>
+        <references refid="class_withdraw_1af50af1bd76c6d76465a8fe344496b6e7" compoundref="_withdraw_8cc" startline="1130" endline="1132">Withdraw::getTextsPropertyPlayer2</references>
+        <references refid="class_withdraw_1a947ffd9307c3592b6023d11d892f2692" compoundref="_withdraw_8cc" startline="1138" endline="1140">Withdraw::getTextsPropertyPlayer2Index</references>
+        <references refid="class_withdraw_1aeb76e48063bbc11819fb5a9304c90aa1" compoundref="_withdraw_8cc" startline="1142" endline="1144">Withdraw::getTexturePropertyPlayer1</references>
+        <references refid="class_withdraw_1a30c3828b0c528ff79403158e1501358a" compoundref="_withdraw_8cc" startline="1146" endline="1148">Withdraw::getTexturePropertyPlayer1Index</references>
+        <references refid="class_withdraw_1a17a68a4b288fa26a7802c2f553fc6279" compoundref="_withdraw_8cc" startline="1150" endline="1152">Withdraw::getTexturePropertyPlayer2</references>
+        <references refid="class_withdraw_1a31943c48aa1e04aa4f1ec43900f5acc0" compoundref="_withdraw_8cc" startline="1154" endline="1156">Withdraw::getTexturePropertyPlayer2Index</references>
+        <references refid="class_monopoly_game_engine_1a3eb8af1a66fd12f93da8072c3a2edfa8" compoundref="_monopoly_game_engine_8cc" startline="167" endline="169">MonopolyGameEngine::getTurnState</references>
+        <references refid="class_field_1a3c5261dc7fc032dd06268d3c94028d73" compoundref="_field_8cc" startline="52" endline="54">Field::getType</references>
+        <references refid="class_notification_wall_1a0dad79435cd7be0f9f20619172a7e168" compoundref="_notification_wall_8cc" startline="31" endline="33">NotificationWall::getWall</references>
+        <references refid="class_context_window_1aeb95c8c03177e672167f42b7672f2d7f" compoundref="_context_window_8cc" startline="41" endline="43">ContextWindow::getWindow</references>
+        <references refid="class_monopoly_game_engine_1a7a4c2e5ec5a548c44d2dca59438453b5" compoundref="_monopoly_game_engine_8cc" startline="3298" endline="3300">MonopolyGameEngine::getWithdraw</references>
+        <references refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a7186ecefe792fdae9fec0a42f105ad6b" compoundref="main_8h" startline="82">RESULT</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daabe1ce018b886341a69d81ead8cffc786" compoundref="main_8h" startline="132">STATION</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa4bcaa53ccaacd4fb0a09eda9b8666ec8" compoundref="main_8h" startline="132">STREET</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daa30e59148af45aa6e6ab6bf5250a83f95" compoundref="main_8h" startline="132">TAX</references>
+        <references refid="main_8h_1aa01498a3ceb2fa74dc9536c16caef1daaf91e6d92929883d407d0e190c4f45ad5" compoundref="main_8h" startline="132">UTILITY</references>
+        <references refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a676348a9c84d4798693550bfe5abefb4" compoundref="main_8h" startline="82">WITHDRAW_ADD_VALUE</references>
+        <references refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a101eeb39bd34a660642f0049a15b9a00" compoundref="main_8h" startline="82">WITHDRAW_CHOOSE_PLAYER</references>
+        <references refid="main_8h_1a816a6251d75e4dcd37d944ca68752095a54a1652cbf634efed1a32b13ce600121" compoundref="main_8h" startline="82">WITHDRAW_DECISION</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_screen_1a954ec5b6fb0da4ff4d6d3feccea9d4b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; Player &gt; &gt; GameScreen::getPlayersResult</definition>
+        <argsstring>()</argsstring>
+        <name>getPlayersResult</name>
+        <reimplements refid="class_active_screen_1a33f41ba13061ef1700f475e916bcba3b">getPlayersResult</reimplements>
+        <briefdescription>
+<para>Virtual function to get players&apos; results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of shared pointers to <ref refid="class_player" kindref="compound">Player</ref> objects. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/GameScreen.h" line="26" column="13" bodyfile="/home/kamil/zpr/Monopoly/GameScreen.cc" bodystart="307" bodyend="309"/>
+        <references refid="class_monopoly_game_engine_1adac095bade2743a916480efc934911d5" compoundref="_monopoly_game_engine_8cc" startline="126" endline="128">MonopolyGameEngine::getPlayersResult</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ActiveScreen</label>
+        <link refid="class_active_screen"/>
+      </node>
+      <node id="1">
+        <label>GameScreen</label>
+        <link refid="class_game_screen"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ActiveScreen</label>
+        <link refid="class_active_screen"/>
+      </node>
+      <node id="1">
+        <label>GameScreen</label>
+        <link refid="class_game_screen"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/kamil/zpr/Monopoly/GameScreen.h" line="19" column="1" bodyfile="/home/kamil/zpr/Monopoly/GameScreen.h" bodystart="19" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_active_screen_1a8fbf39867108efbaf2d3e3102ec7d746" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>ActiveScreen</name></member>
+      <member refid="class_active_screen_1ab51ef0260eead96cb3d88ecdb42cdd36" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>addButton</name></member>
+      <member refid="class_active_screen_1a4115e6322ed681427d0cd92c5910ca5e" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>addText</name></member>
+      <member refid="class_active_screen_1a385001a5027f0b2f00145a54b668368f" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>buttonSetColors</name></member>
+      <member refid="class_game_screen_1a0608fef110d89dab557fd0bac6950b77" prot="public" virt="virtual"><scope>GameScreen</scope><name>draw</name></member>
+      <member refid="class_game_screen_1a3866912fd5861b29c9ad3c08ea67fd16" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>GameScreen</name></member>
+      <member refid="class_active_screen_1aefe54d9a04210b2985890f3657974484" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>getButtons</name></member>
+      <member refid="class_active_screen_1ac7c3386bd133917396975a4b0a5a6e68" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>getContextWindow</name></member>
+      <member refid="class_active_screen_1a6566d6bd5327b662b7cf587b1c26ce61" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>getFont</name></member>
+      <member refid="class_game_screen_1a954ec5b6fb0da4ff4d6d3feccea9d4b5" prot="public" virt="virtual"><scope>GameScreen</scope><name>getPlayersResult</name></member>
+      <member refid="class_active_screen_1a571c9f50c3d50235b43a1d2cb01ad72f" prot="public" virt="virtual"><scope>GameScreen</scope><name>getPlayersSettings</name></member>
+      <member refid="class_active_screen_1aa4db9f544d20ad9c7b1fe2af4d55ea3d" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>getScreenType</name></member>
+      <member refid="class_active_screen_1a83ce836bcc0364d216ee126716b27da0" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>getTexts</name></member>
+      <member refid="class_game_screen_1a4a107a4533a39241acfd570f52f03c8f" prot="private" virt="non-virtual"><scope>GameScreen</scope><name>monopoly_game_engine_</name></member>
+      <member refid="class_active_screen_1a3de2c1b9355ef27577cf8af01c0f4632" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>setContextWindow</name></member>
+      <member refid="class_active_screen_1ae56257f26e8cc35bc9bf476e4a633e20" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>setFont</name></member>
+      <member refid="class_active_screen_1ac551bc4bf328afb1226d57cdf9e13daf" prot="public" virt="non-virtual"><scope>GameScreen</scope><name>setScreenType</name></member>
+      <member refid="class_game_screen_1a140fce95914abbf9efac4ad6bb0c98dc" prot="public" virt="virtual"><scope>GameScreen</scope><name>worker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

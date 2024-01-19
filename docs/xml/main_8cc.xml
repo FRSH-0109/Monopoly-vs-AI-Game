@@ -1,0 +1,601 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="main_8cc" kind="file" language="C++">
+    <compoundname>main.cc</compoundname>
+    <includes local="no">memory</includes>
+    <includes refid="_game_engine_8h" local="yes">GameEngine.h</includes>
+    <includes refid="_player_8h" local="yes">Player.h</includes>
+    <includes local="yes">SFML/Graphics.hpp</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>list</label>
+      </node>
+      <node id="4">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="30">
+        <label>GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>queue</label>
+      </node>
+      <node id="26">
+        <label>Tinyneat.h</label>
+        <link refid="_tinyneat_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>bits/stdc++.h</label>
+      </node>
+      <node id="36">
+        <label>NotificationWall.h</label>
+        <link refid="_notification_wall_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>variant</label>
+      </node>
+      <node id="33">
+        <label>../json/json.hpp</label>
+      </node>
+      <node id="9">
+        <label>ActiveScreen.h</label>
+        <link refid="_active_screen_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>cmath</label>
+      </node>
+      <node id="37">
+        <label>Withdraw.h</label>
+        <link refid="_withdraw_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>Board.h</label>
+        <link refid="_board_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="27">
+        <label>map</label>
+      </node>
+      <node id="14">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+      </node>
+      <node id="23">
+        <label>fstream</label>
+      </node>
+      <node id="16">
+        <label>Player.h</label>
+        <link refid="_player_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ContextWindow.h</label>
+        <link refid="_context_window_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>random</label>
+      </node>
+      <node id="35">
+        <label>Chance.h</label>
+        <link refid="_chance_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>typeinfo</label>
+      </node>
+      <node id="24">
+        <label>stack</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="21">
+        <label>array</label>
+      </node>
+      <node id="12">
+        <label>Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Field.h</label>
+        <link refid="_field_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Tinyann.h</label>
+        <link refid="_tinyann_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>iostream</label>
+      </node>
+      <node id="25">
+        <label>unordered_map</label>
+      </node>
+      <node id="18">
+        <label>algorithm</label>
+      </node>
+      <node id="5">
+        <label>SFML/System/Clock.hpp</label>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+      <node id="19">
+        <label>AiAdapter.h</label>
+        <link refid="_ai_adapter_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cc_1a4233cd0fa7a215e3e35261915c005858" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int WIDTH_MAX</definition>
+        <argsstring></argsstring>
+        <name>WIDTH_MAX</name>
+        <initializer>= 1920</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="15" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="15" bodyend="-1"/>
+        <referencedby refid="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cc" startline="44" endline="60">main</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cc_1a97bfb17362afc060c256392df5cfbe8f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int HEIGHT_MAX</definition>
+        <argsstring></argsstring>
+        <name>HEIGHT_MAX</name>
+        <initializer>= 1080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="16" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="16" bodyend="-1"/>
+        <referencedby refid="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cc" startline="44" endline="60">main</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="17" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="17" bodyend="-1"/>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+        <referencedby refid="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cc" startline="44" endline="60">main</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="18" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="18" bodyend="-1"/>
+        <referencedby refid="class_board_1a79e3b8de081a3c283aebb122cc333dc3" compoundref="_board_8cc" startline="20" endline="126">Board::Board</referencedby>
+        <referencedby refid="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cc" startline="44" endline="60">main</referencedby>
+        <referencedby refid="class_withdraw_1ab7bdb73ec95d72b844d65de653cb4214" compoundref="_withdraw_8cc" startline="715" endline="1108">Withdraw::showProperty</referencedby>
+        <referencedby refid="class_monopoly_game_engine_1a2056b74cb9e17d045b01b7e49db82afe" compoundref="_monopoly_game_engine_8cc" startline="2714" endline="3063">MonopolyGameEngine::showPropertyData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cc_1a470b971ad6ac03ab790d05e24797ad98" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FRAMES_PER_SEC_MAX</definition>
+        <argsstring></argsstring>
+        <name>FRAMES_PER_SEC_MAX</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="20" column="14" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cc_1ac1a49585c0839ea20703d0b3aaef480f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TRAIN</definition>
+        <argsstring></argsstring>
+        <name>TRAIN</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="22" column="6" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cc_1a9a16347f6ba617ae1dee2765e37f98a1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GAMES_IN_ROUND</definition>
+        <argsstring></argsstring>
+        <name>GAMES_IN_ROUND</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="23" column="5" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cc_1a89964fe2ce85953746915bf02d681042" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void printResults</definition>
+        <argsstring>(std::vector&lt; std::shared_ptr&lt; Player &gt;&gt; &amp;playerResults)</argsstring>
+        <name>printResults</name>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;&gt; &amp;</type>
+          <declname>playerResults</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="25" column="13" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cc_1a79635c2994404bfa60eff5d96d72bc9f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt; &gt;</type>
+        <definition>static std::vector&lt;std::shared_ptr&lt;Player&gt; &gt; runMonopolyGame</definition>
+        <argsstring>(std::vector&lt; std::shared_ptr&lt; Player &gt;&gt; players)</argsstring>
+        <name>runMonopolyGame</name>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;&gt;</type>
+          <declname>players</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="32" column="20" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="32" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cc_1add56cef378ad1e790efb3d61150de95a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool genomeComp</definition>
+        <argsstring>(neat::genome g1, neat::genome g2)</argsstring>
+        <name>genomeComp</name>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">neat::genome</ref></type>
+          <declname>g1</declname>
+        </param>
+        <param>
+          <type><ref refid="classneat_1_1genome" kindref="compound">neat::genome</ref></type>
+          <declname>g2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="40" column="13" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/main.cc" line="44" column="5" bodyfile="/home/kamil/zpr/Monopoly/main.cc" bodystart="44" bodyend="60"/>
+        <references refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" compoundref="main_8cc" startline="18">height</references>
+        <references refid="main_8cc_1a97bfb17362afc060c256392df5cfbe8f" compoundref="main_8cc" startline="16">HEIGHT_MAX</references>
+        <references refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" compoundref="main_8cc" startline="17">width</references>
+        <references refid="main_8cc_1a4233cd0fa7a215e3e35261915c005858" compoundref="main_8cc" startline="15">WIDTH_MAX</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Source file launching monopoly game vs AI project. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_game_engine_8h" kindref="compound">GameEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_player_8h" kindref="compound">Player.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFML/Graphics.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="main_8cc_1a4233cd0fa7a215e3e35261915c005858" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1a4233cd0fa7a215e3e35261915c005858" kindref="member">WIDTH_MAX</ref><sp/>=<sp/>1920;</highlight></codeline>
+<codeline lineno="16" refid="main_8cc_1a97bfb17362afc060c256392df5cfbe8f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1a97bfb17362afc060c256392df5cfbe8f" kindref="member">HEIGHT_MAX</ref><sp/>=<sp/>1080;</highlight></codeline>
+<codeline lineno="17" refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="18" refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="main_8cc_1a470b971ad6ac03ab790d05e24797ad98" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1a470b971ad6ac03ab790d05e24797ad98" kindref="member">FRAMES_PER_SEC_MAX</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="main_8cc_1ac1a49585c0839ea20703d0b3aaef480f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1ac1a49585c0839ea20703d0b3aaef480f" kindref="member">TRAIN</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23" refid="main_8cc_1a9a16347f6ba617ae1dee2765e37f98a1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1a9a16347f6ba617ae1dee2765e37f98a1" kindref="member">GAMES_IN_ROUND</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printResults(std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;&amp;<sp/>playerResults)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>playerResults.size()<sp/>-<sp/>1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>--i)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Player<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>playerResults[i]-&gt;getId()<sp/>+<sp/>1<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>miejsce<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>playerResults[i]-&gt;getResultPlace()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>runMonopolyGame(std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>players)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GameEngine&gt;<sp/>gameEngine<sp/>=<sp/>std::make_unique&lt;GameEngine&gt;(<ref refid="main_8cc_1a470b971ad6ac03ab790d05e24797ad98" kindref="member">FRAMES_PER_SEC_MAX</ref>,<sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref>,<sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref>);<sp/></highlight><highlight class="comment">//<sp/>,<sp/>width,<sp/>height</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>players_ret<sp/>=<sp/>gameEngine-&gt;worker(players);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>gameEngine-&gt;getContextWindow()-&gt;getWindow().close();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>gameEngine.reset();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>players_ret;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>genomeComp(<ref refid="classneat_1_1genome" kindref="compound">neat::genome</ref><sp/>g1,<sp/><ref refid="classneat_1_1genome" kindref="compound">neat::genome</ref><sp/>g2)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g1.<ref refid="classneat_1_1genome_1a5f409ba7667960382e1a389e711dff62" kindref="member">fitness</ref><sp/>&gt;<sp/>g2.<ref refid="classneat_1_1genome_1a5f409ba7667960382e1a389e711dff62" kindref="member">fitness</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref><sp/>=<sp/>sf::VideoMode::getDesktopMode().width;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref><sp/>=<sp/>sf::VideoMode::getDesktopMode().height;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref><sp/>&gt;<sp/><ref refid="main_8cc_1a4233cd0fa7a215e3e35261915c005858" kindref="member">WIDTH_MAX</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref><sp/>=<sp/><ref refid="main_8cc_1a4233cd0fa7a215e3e35261915c005858" kindref="member">WIDTH_MAX</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref><sp/>&gt;<sp/><ref refid="main_8cc_1a97bfb17362afc060c256392df5cfbe8f" kindref="member">HEIGHT_MAX</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref><sp/>=<sp/><ref refid="main_8cc_1a97bfb17362afc060c256392df5cfbe8f" kindref="member">HEIGHT_MAX</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>playerResults;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Player&gt;&gt;<sp/>players;<sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>empty<sp/>players<sp/>vector<sp/>to<sp/>start<sp/>game</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>playerResults<sp/>=<sp/>runMonopolyGame(players);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>printResults(playerResults);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/main.cc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_chance_8h" kind="file" language="C++">
+    <compoundname>Chance.h</compoundname>
+    <includes local="no">SFML/Graphics.hpp</includes>
+    <includes local="no">string</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="_chance_8cc" local="yes">/home/kamil/zpr/Monopoly/Chance.cc</includedby>
+    <includedby refid="_monopoly_game_engine_8h" local="yes">/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Chance.h</label>
+        <link refid="_chance_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.cc</label>
+        <link refid="_monopoly_game_engine_8cc"/>
+      </node>
+      <node id="4">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.h</label>
+        <link refid="_game_screen_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.h</label>
+        <link refid="_game_engine_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/kamil/zpr/Monopoly/GameEngine.cc</label>
+        <link refid="_game_engine_8cc"/>
+      </node>
+      <node id="7">
+        <label>/home/kamil/zpr/Monopoly/main.cc</label>
+        <link refid="main_8cc"/>
+      </node>
+      <node id="1">
+        <label>/home/kamil/zpr/Monopoly/Chance.h</label>
+        <link refid="_chance_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/kamil/zpr/Monopoly/Chance.cc</label>
+        <link refid="_chance_8cc"/>
+      </node>
+      <node id="3">
+        <label>/home/kamil/zpr/Monopoly/MonopolyGameEngine.h</label>
+        <link refid="_monopoly_game_engine_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/home/kamil/zpr/Monopoly/GameScreen.cc</label>
+        <link refid="_game_screen_8cc"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_chance_card" prot="public">ChanceCard</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ChanceType</name>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8aa6abdb82a1c36610b878bca693dadba4" prot="public">
+          <name>MOVEMENT_TO_PROPERTY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Move to a specific property. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a34f8758edb9d9a4750a3adff079468ce" prot="public">
+          <name>MOVEMENT_WITH_BUY_OR_PAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Move with the option to buy or pay. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8adba348bd899d580b26fd03130ce990e5" prot="public">
+          <name>BANK_PAYS_YOU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Receive money from the bank. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a36b866fb0ef0a43e97d45afd676331db" prot="public">
+          <name>GET_OUT_OF_JAIL_CARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Receive a &quot;Get Out of Jail Free&quot; card. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a801c173bca36ec416f11048e1b2c6f47" prot="public">
+          <name>MOVEMENT_SPACES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Move a certain number of spaces. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a91bf8067739ba90229c9778cc2e8fc5b" prot="public">
+          <name>GO_TO_JAIL_CARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Go directly to jail. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a9e8cedcbf09748fa4a4cd4501eed3d3f" prot="public">
+          <name>PAY_FOR_HOUSE_HOTEL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pay for each house and hotel owned. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a074dbd69a3e9903629893556d8b1a350" prot="public">
+          <name>TAX_CARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pay a tax. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a970e023f8dba8b70f2496f9b712e6d95" prot="public">
+          <name>PAY_PLAYERS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pay other players. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration representing different types of chance cards. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/kamil/zpr/Monopoly/Chance.h" line="23" column="1" bodyfile="/home/kamil/zpr/Monopoly/Chance.h" bodystart="23" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file for monopoly game chance cards, their types, actions... </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kamil Kosnik, Kacper Radzikowski </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CHANCE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHANCE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SFML/Graphics.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref><sp/>{</highlight></codeline>
+<codeline lineno="24" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8aa6abdb82a1c36610b878bca693dadba4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8aa6abdb82a1c36610b878bca693dadba4" kindref="member">MOVEMENT_TO_PROPERTY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a34f8758edb9d9a4750a3adff079468ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a34f8758edb9d9a4750a3adff079468ce" kindref="member">MOVEMENT_WITH_BUY_OR_PAY</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8adba348bd899d580b26fd03130ce990e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8adba348bd899d580b26fd03130ce990e5" kindref="member">BANK_PAYS_YOU</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a36b866fb0ef0a43e97d45afd676331db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a36b866fb0ef0a43e97d45afd676331db" kindref="member">GET_OUT_OF_JAIL_CARD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a801c173bca36ec416f11048e1b2c6f47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a801c173bca36ec416f11048e1b2c6f47" kindref="member">MOVEMENT_SPACES</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a91bf8067739ba90229c9778cc2e8fc5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a91bf8067739ba90229c9778cc2e8fc5b" kindref="member">GO_TO_JAIL_CARD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a9e8cedcbf09748fa4a4cd4501eed3d3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a9e8cedcbf09748fa4a4cd4501eed3d3f" kindref="member">PAY_FOR_HOUSE_HOTEL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a074dbd69a3e9903629893556d8b1a350" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a074dbd69a3e9903629893556d8b1a350" kindref="member">TAX_CARD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32" refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a970e023f8dba8b70f2496f9b712e6d95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8a970e023f8dba8b70f2496f9b712e6d95" kindref="member">PAY_PLAYERS</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_chance_card" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_chance_card" kindref="compound">ChanceCard</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>id_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref><sp/>type_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::String<sp/>text_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>graphic_path_;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Texture<sp/>texture_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Sprite<sp/>sprite_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>sf::Vector2f<sp/>position_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotation_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_chance_card_1abbdcd4fe09d4310ae46d5ab35de0f59a" kindref="member">ChanceCard</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref><sp/><ref refid="namespaceann_1a2bc6262d836cadb5144e9f2ab25a7330" kindref="member">type</ref>,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::String<sp/>text,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>graphic_path,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1aca34d28e3d8bcbcadb8edb4e3af24f8c" kindref="member">width</ref>,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cc_1ab2e78c61905b4419fcc7b4cfc500fe85" kindref="member">height</ref>,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2f<sp/>position);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1af1c04b05577b32427b2c3777c1a89b7b" kindref="member">getId</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_chance_8h_1a5c239f5706ef4b178a48d01f1f8736c8" kindref="member">ChanceType</ref><sp/><ref refid="class_chance_card_1a9a328e8b7d8630469f0c114dbb3f947f" kindref="member">getType</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1a648076fb0cbccc144fc76f241cc892ec" kindref="member">getValue</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::String<sp/><ref refid="class_chance_card_1a3f54572894e5259f3f4ed887b6ca3e5d" kindref="member">getText</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1aea4c2fcb474809701df580bfd8d50649" kindref="member">getWidth</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1ac6be18fbd58a42f3a85833e52b3d4573" kindref="member">getHeight</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_chance_card_1afa07dc486bd4180707f9502de3c039ea" kindref="member">getGraphicPath</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1a38a4b0e0b09994e95321fc2f843a2f89" kindref="member">getRotation</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Sprite&amp;<sp/><ref refid="class_chance_card_1ada5b5f2faefed41ffe0e17a39f9c3967" kindref="member">getSprite</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Texture&amp;<sp/><ref refid="class_chance_card_1a890639f01e47852617c617c0d992f80b" kindref="member">getTexture</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2f&amp;<sp/><ref refid="class_chance_card_1a411399b942a676234c9e2ea93bbad98b" kindref="member">getPosition</ref>();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="class_chance_card_1a6e05f936f5bdfa29b8a4a12a368be4e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1a6e05f936f5bdfa29b8a4a12a368be4e3" kindref="member">setRotation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>new_roation);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="class_chance_card_1a785f3e0c0122bf2015dcd62ff430a605" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1a785f3e0c0122bf2015dcd62ff430a605" kindref="member">setPosition</ref>(sf::Vector2f<sp/>pos);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_chance_card_1ac676e005fc49d99abebff163a6252da5" kindref="member">createSprite</ref>();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/kamil/zpr/Monopoly/Chance.h"/>
+  </compounddef>
+</doxygen>

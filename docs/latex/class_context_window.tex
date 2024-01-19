@@ -1,0 +1,220 @@
+\hypertarget{class_context_window}{}\doxysection{Context\+Window Class Reference}
+\label{class_context_window}\index{ContextWindow@{ContextWindow}}
+
+
+Represents a Singleton class for handling SFML window operations.  
+
+
+
+
+{\ttfamily \#include $<$Context\+Window.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_context_window_ae56e76fedccfadd3762531f1737428dd}{Context\+Window}} (\mbox{\hyperlink{class_context_window}{Context\+Window}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted constructor for proper Singleton class implementation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_window_a8625c1b2f2d6d6a73677cb04c9c4d69c}{operator=}} (const \mbox{\hyperlink{class_context_window}{Context\+Window}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted = operator for proper Singleton class implementation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_window_a019a0ab11babadc9059ca0f7bb0aabf5}{display}} ()
+\begin{DoxyCompactList}\small\item\em Displays the contents of the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_window_a08a570de8e104db8123418800b23ad2c}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the contents of the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_window_a835148ceb6e0953cc7f63a57c0da4b40}{is\+Open}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the window is open. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{class_context_window_aeb95c8c03177e672167f42b7672f2d7f}{get\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Gets the SFML Render\+Window object. \end{DoxyCompactList}\item 
+sf\+::\+View \& \mbox{\hyperlink{class_context_window_ac743eeaa2b5ef0f8e4955b28f5a7ee26}{get\+View}} ()
+\begin{DoxyCompactList}\small\item\em Gets the SFML View object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ \mbox{\hyperlink{class_context_window_ae1d1fa169768a6ed2a1651f6d5594fc2}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{class_context_window_a25341464088c696488399cdeb7d7b577}{window\+\_\+}}
+\item 
+sf\+::\+View \mbox{\hyperlink{class_context_window_a825b9ccdca45f2807b44e40077fbae02}{view\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Singleton class for handling SFML window operations. 
+
+The \mbox{\hyperlink{class_context_window}{Context\+Window}} class is a Singleton class used mainly for handling SFML window operations between other classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_context_window_ae56e76fedccfadd3762531f1737428dd}\label{class_context_window_ae56e76fedccfadd3762531f1737428dd}} 
+\index{ContextWindow@{ContextWindow}!ContextWindow@{ContextWindow}}
+\index{ContextWindow@{ContextWindow}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{ContextWindow()}{ContextWindow()}}
+{\footnotesize\ttfamily Context\+Window\+::\+Context\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_context_window}{Context\+Window}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted constructor for proper Singleton class implementation. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_context_window_a08a570de8e104db8123418800b23ad2c}\label{class_context_window_a08a570de8e104db8123418800b23ad2c}} 
+\index{ContextWindow@{ContextWindow}!clear@{clear}}
+\index{clear@{clear}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Context\+Window\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the contents of the window. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_a08a570de8e104db8123418800b23ad2c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_window_a019a0ab11babadc9059ca0f7bb0aabf5}\label{class_context_window_a019a0ab11babadc9059ca0f7bb0aabf5}} 
+\index{ContextWindow@{ContextWindow}!display@{display}}
+\index{display@{display}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Context\+Window\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the contents of the window. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_a019a0ab11babadc9059ca0f7bb0aabf5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_a019a0ab11babadc9059ca0f7bb0aabf5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_window_ae1d1fa169768a6ed2a1651f6d5594fc2}\label{class_context_window_ae1d1fa169768a6ed2a1651f6d5594fc2}} 
+\index{ContextWindow@{ContextWindow}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_context_window}{Context\+Window}} $\ast$ Context\+Window\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}} instance. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{class_context_window}{Context\+Window}} instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_ae1d1fa169768a6ed2a1651f6d5594fc2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_window_ac743eeaa2b5ef0f8e4955b28f5a7ee26}\label{class_context_window_ac743eeaa2b5ef0f8e4955b28f5a7ee26}} 
+\index{ContextWindow@{ContextWindow}!getView@{getView}}
+\index{getView@{getView}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{getView()}{getView()}}
+{\footnotesize\ttfamily sf\+::\+View \& Context\+Window\+::get\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the SFML View object. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the SFML View object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_ac743eeaa2b5ef0f8e4955b28f5a7ee26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_window_aeb95c8c03177e672167f42b7672f2d7f}\label{class_context_window_aeb95c8c03177e672167f42b7672f2d7f}} 
+\index{ContextWindow@{ContextWindow}!getWindow@{getWindow}}
+\index{getWindow@{getWindow}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{getWindow()}{getWindow()}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window \& Context\+Window\+::get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the SFML Render\+Window object. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the SFML Render\+Window object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_aeb95c8c03177e672167f42b7672f2d7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_window_a835148ceb6e0953cc7f63a57c0da4b40}\label{class_context_window_a835148ceb6e0953cc7f63a57c0da4b40}} 
+\index{ContextWindow@{ContextWindow}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool Context\+Window\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the window is open. 
+
+\begin{DoxyReturn}{Returns}
+True if the window is open, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_window_a835148ceb6e0953cc7f63a57c0da4b40_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_window_a8625c1b2f2d6d6a73677cb04c9c4d69c}\label{class_context_window_a8625c1b2f2d6d6a73677cb04c9c4d69c}} 
+\index{ContextWindow@{ContextWindow}!operator=@{operator=}}
+\index{operator=@{operator=}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Context\+Window\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_context_window}{Context\+Window}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted = operator for proper Singleton class implementation. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_context_window_a825b9ccdca45f2807b44e40077fbae02}\label{class_context_window_a825b9ccdca45f2807b44e40077fbae02}} 
+\index{ContextWindow@{ContextWindow}!view\_@{view\_}}
+\index{view\_@{view\_}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{view\_}{view\_}}
+{\footnotesize\ttfamily sf\+::\+View Context\+Window\+::view\+\_\+}
+
+SFML View object for defining a camera in the 2D scene. \mbox{\Hypertarget{class_context_window_a25341464088c696488399cdeb7d7b577}\label{class_context_window_a25341464088c696488399cdeb7d7b577}} 
+\index{ContextWindow@{ContextWindow}!window\_@{window\_}}
+\index{window\_@{window\_}!ContextWindow@{ContextWindow}}
+\doxysubsubsection{\texorpdfstring{window\_}{window\_}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window Context\+Window\+::window\+\_\+}
+
+SFML Render\+Window object for rendering graphics. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_context_window_8h}{Context\+Window.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_context_window_8cc}{Context\+Window.\+cc}}\end{DoxyCompactItemize}

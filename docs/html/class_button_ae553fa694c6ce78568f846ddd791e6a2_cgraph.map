@@ -1,0 +1,4 @@
+<map id="Button::setButtonFocus" name="Button::setButtonFocus">
+<area shape="rect" id="node1" title="Sets the button state to focused." alt="" coords="5,5,179,32"/>
+<area shape="rect" id="node2" href="$class_button.html#ae84c0d3f2c6f047455de3ff91f1322d9" title="Sets the focus state of the button." alt="" coords="227,5,368,32"/>
+</map>

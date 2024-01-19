@@ -1,0 +1,28 @@
+digraph "Player::Player"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Player::Player",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Player::clearFieldOwnedId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#ac2f724596f37e2922bd2df2d4922d670",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Player::setAiLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#ab1032df37bafe0a30acadb7bb1ccb97a",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Player::setId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#aec0b2d2447f555e247ac01a54a15d77f",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Player::setColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a0686aac84725114b7c5b540189b47c60",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Player::setIsAi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#adbcc2bba53e6bb2837d763eef79edff9",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Player::setJailCards",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a66e516d298b44b902bf15732a0e66515",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Player::setJailStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a67a3c5ddc234276cf72245f939a40438",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Player::setMoney",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#aa44dae5224ce813c88265734662080bb",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Player::setPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a2de8544be02b4464afb87b6169139068",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Player::setResultPlace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a79df4c23544bfc40ec2d2420617da758",tooltip=" "];
+}

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_street_field" xml:lang="en-US">
+<title>StreetField Class Reference</title>
+<indexterm><primary>StreetField</primary></indexterm>
+Inheritance diagram for StreetField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_street_field__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for StreetField:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_street_field__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_street_field_1a60e9414d1c6d7dbc49b3921ea53fd4eb"/><emphasis role="strong">StreetField</emphasis> (const unsigned int id, const FieldType type, const std::string name, const std::string graphic_path, const unsigned int width, const unsigned int height, const float rotation, const sf::Vector2i position, const unsigned int price, const unsigned int house_price, const unsigned int hotel_price, const std::map&lt; StreetTiers, unsigned int &gt; rent_values, const std::vector&lt; unsigned int &gt; group_members, const unsigned int Mortgage)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1af6ffa6777200808afa686a07a1be6e9a"/>const std::map&lt; StreetTiers, unsigned int &gt; <emphasis role="strong">getRentValues</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1a812b99b2c3dc615a26f81756fa41aa51"/>unsigned int <emphasis role="strong">getHousePrice</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1a51d31e674e5526536210d24ed5bdc2c2"/>unsigned int <emphasis role="strong">getHotelPrice</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1aaee4c344c359e9762653472f7f2e5df0"/>unsigned int <emphasis role="strong">getHouseNumber</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1a79785c76389d7bf9171797b9d1a16ebd"/>bool <emphasis role="strong">getIsHotel</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1a9cdeb6a4610eed4f47e20d2cdebbe3a1"/>void <emphasis role="strong">setHouseNumber</emphasis> (unsigned int new_house_number)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1aa50b622f5cc3dfa6ee3d00aa1a24bd14"/>void <emphasis role="strong">setIsHotel</emphasis> (bool new_state)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1a5a391c88f5e4fc890c151c2a3b248da8"/>void <emphasis role="strong">resetDefault</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_street_field_1ab7d65dbc871b6cb5ac683a286fec47b8"/>unsigned int <emphasis role="strong">calculateRent</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/kamil/zpr/Monopoly/<link linkend="__field_8h">Field.h</link>/home/kamil/zpr/Monopoly/<link linkend="__field_8cc">Field.cc</link></section>

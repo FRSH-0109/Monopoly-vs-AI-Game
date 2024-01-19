@@ -1,0 +1,1476 @@
+\hypertarget{class_withdraw}{}\doxysection{Withdraw Class Reference}
+\label{class_withdraw}\index{Withdraw@{Withdraw}}
+
+
+Represents the trade and withdraw mechanism in a monopoly game.  
+
+
+
+
+{\ttfamily \#include $<$Withdraw.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_withdraw_aa7f606a8ceb3f06ee4314d611da095c5}{Withdraw}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_withdraw}{Withdraw}} class. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_withdraw_af44ca99891be717d4d35aa640ebd2189}{get\+Player1\+Index\+Properties}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the properties of \mbox{\hyperlink{class_player}{Player}} 1 offer. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_withdraw_a9d72290f34908615cffaeeba90119484}{get\+Player2\+Index\+Properties}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the properties of \mbox{\hyperlink{class_player}{Player}} 2 offer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_ace23ed297ef8cfdce12fedf5866e4db0}{set\+Player1\+Index\+Properties}} (std\+::vector$<$ unsigned int $>$ new\+\_\+index\+\_\+properties)
+\begin{DoxyCompactList}\small\item\em Setter for the properties of \mbox{\hyperlink{class_player}{Player}} 1 offer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a0203605f1161eed758e26bae91bc80ca}{set\+Player2\+Index\+Properties}} (std\+::vector$<$ unsigned int $>$ new\+\_\+index\+\_\+properties)
+\begin{DoxyCompactList}\small\item\em Setter for the properties of \mbox{\hyperlink{class_player}{Player}} 2 offer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_ac3ff353242bfee519f0058258631c454}{set\+Board}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_board}{Board}} $>$ board\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Setter for the gameboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a0f4055d95a2cefafbe974d49bcec5531}{set\+Turn\+State}} (\mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} state)
+\begin{DoxyCompactList}\small\item\em Setter for the turn state of monopolygame when withdraw was started. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} \mbox{\hyperlink{class_withdraw_a0f3fd96ab6c928dcac54ac55a1b7be3d}{get\+Turn\+State}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the turn state. \end{DoxyCompactList}\item 
+sf\+::\+Font \& \mbox{\hyperlink{class_withdraw_a3ea0051e8185c3702e1009936e508df6}{get\+Font}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the font used in rendering text. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_withdraw_aed82a313991c3f3a38c68738a613256f}{get\+Font\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the font size used in rendering text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a01109432adc0c8b78f288c1805ca02d0}{set\+Font}} (sf\+::\+Font font)
+\begin{DoxyCompactList}\small\item\em Setter for the font used in rendering text. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& \mbox{\hyperlink{class_withdraw_a9176fc09f39a59cec708685ee053b9ac}{get\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the vector of buttons used in the withdrawal process. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_withdraw_a095689316bdad34354e14b8ffd18c995}{get\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the vector of text objects used in the withdrawal process. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a0b40b07770eab69344d8bdb35902155e}{get\+Player1\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 1 as passive in withdraw. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a091c37bf6929de0085fabf2d7f59574b}{get\+Player2\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 2 as passive in withdraw. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_ac2bbfa2841c0e30a80b78ac00b626df3}{get\+Player3\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 3 as passive in withdraw. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a8466a780108a4cee43a60c7ce5f96286}{get\+Player4\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 4 as passive in withdraw. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a710eb4657248e1b8d3d058dcdc576ff6}{get\+Resign\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the resign button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a2f8b173f0fdf10f7bb3232c57b96f114}{create\+Choose\+Player\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Creates the screen for choosing players during withdrawal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a1e777d7591c901b33d190e8f5c6f4a77}{create\+Value\+Player\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Creates the screen for specifying values during withdrawal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_ad4a9b237332fe45afa4730ccc20e1e0b}{create\+Decision\+Player\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Creates the screen for making decisions during withdrawal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a06d1cefc0b0fcf141a9a5c7ee0084a34}{set\+Choose\+Screen\+Visible}} (bool is\+\_\+visible)
+\begin{DoxyCompactList}\small\item\em Sets the visibility of the choose player screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_acfbbad2752cb193ca17e8f2ab3ce9b1a}{set\+Value\+Screen\+Visible}} (bool is\+\_\+visible)
+\begin{DoxyCompactList}\small\item\em Sets the visibility of the value player screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a554845d087366abdc2672a7b6224ff68}{set\+Decision\+Screen\+Visible}} (bool is\+\_\+visible)
+\begin{DoxyCompactList}\small\item\em Sets the visibility of the decision player screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_ad6d6fe6a2cc686f1deea05fa9ae5033f}{set\+Player1\+To\+Withdraw}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ player\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Sets Active \mbox{\hyperlink{class_player}{Player}} for withdrawal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_aed1f0d13e5f3ce83500ec90b9338796a}{set\+Player2\+To\+Withdraw}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ player\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Sets Passive \mbox{\hyperlink{class_player}{Player}} for withdrawal. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ \mbox{\hyperlink{class_withdraw_aeb5e3609e3ff27cbcda1f564c18d256f}{get\+Player1\+To\+Withdraw}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ \mbox{\hyperlink{class_withdraw_a82a457bf898c8845ab38458a8a2d3cf5}{get\+Player2\+To\+Withdraw}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a08e2ce2ebc989bcabb109f6b8ca2489c}{get\+Resign\+Value\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the resign button from value screen. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_ac604b13c491169954292fee491bcea26}{get\+Submit\+Value\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the submit value button from value screen. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a842454e0b86473552db820f70c703624}{get\+Player1minus1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} minus 1 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a10b2cabb94eb5d484271a94c97b70370}{get\+Player1minus10}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} minus 10 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a4367d468bb941dd8326b5856dd525a37}{get\+Player1minus100}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} minus 100 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a58b1ffd27603e753ba7abdb29acf1314}{get\+Player1plus1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} plus 1 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_acaf2b764f148764e5d4e600fc9291c6d}{get\+Player1plus10}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} plus 10 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a3697bee3aadebc0cde7bb14b5734f200}{get\+Player1plus100}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Active \mbox{\hyperlink{class_player}{Player}} plus 100 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a433b90092e9aea1deade9d09bf0f53bb}{get\+Player2minus1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} minus 1 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a2991a78ccf18dc06191bf5bb2493a8c8}{get\+Player2minus10}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} minus 10 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_add8c0389fcb067416de24846724a90e3}{get\+Player2minus100}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} minus 100 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_ad71f8629800c81970c28e69d19091fff}{get\+Player2plus1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} plus 1 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a510ba4ba2fa7044c7769f737158e7a84}{get\+Player2plus10}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} plus 10 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_ab624df7121d9f7b636f712a141663ad0}{get\+Player2plus100}} ()
+\begin{DoxyCompactList}\small\item\em Getter for Passive \mbox{\hyperlink{class_player}{Player}} plus 100 money button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a6a5f2ccfb239b924b0521a390609d5fc}{get\+Player1\+Next\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1 next property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a6add7cd9e18b8066ce60af2722e84422}{get\+Player1\+Previous\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1 previous property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_aaba58d928bb11f6430f0b3dee9e9114d}{get\+Player2\+Next\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2 next property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_aa074572589a75bd97bd3771243752ace}{get\+Player2\+Previous\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2 previous property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_ac0c3e2f788b930cd5ed0031bbf0fba92}{get\+Player1\+Index\+Next\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1 offer next property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a1efca195a06baa1f08d7183e994b7e0a}{get\+Player1\+Index\+Previous\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1 index previous property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_aed5e9b3d3c905f942bc6e7dba72fda4e}{get\+Player2\+Index\+Next\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2 index next property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a9ea76ae122045f46ab5afc2c6f73aa6a}{get\+Player2\+Index\+Previous\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2 index previous property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_aceb8cd9e4b2c1ed99e72278ca840969d}{get\+Player1\+Add\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1 add to offer property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a0acdd19c19851dd0ea796de6d94b1ceb}{get\+Player1\+Remove\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1 remove from offer property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a36687d86bc6d5b4649b8a112d2e39fa6}{get\+Player2\+Add\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2 add to offer property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_afdd56cdac9e6e103132dd5f4b11dde82}{get\+Player2\+Remove\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2 remove from offer property button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_a2852ce90c05783a2d8f1921ce5df4992}{get\+Resign\+Decision\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the resign decision button. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ \mbox{\hyperlink{class_withdraw_aab8cdcdf3e5d4b4339b60f0808700838}{get\+Accept\+Decision\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the accept decision button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a19f82027534a13d80536846c5af25829}{make\+Withdraw}} ()
+\begin{DoxyCompactList}\small\item\em Initiates the withdrawal process (exchange of money and properties). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_ad2d77a9938893978c4a83432d51b67f9}{money\+Transfer\+Index}} (unsigned int player\+\_\+num, int money)
+\begin{DoxyCompactList}\small\item\em Transfers money during the withdrawal process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a90b6611bc2eeec22d3b562fd183bf81e}{money\+Text\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the displayed money text during the withdrawal process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_ab7bdb73ec95d72b844d65de653cb4214}{show\+Property}} (int column)
+\begin{DoxyCompactList}\small\item\em Shows the property details for the specified column during the withdrawal process. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_withdraw_aaa00a66063e50b3aa3cf82a04d0fa859}{get\+Sprite\+Property\+Player1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s property sprite. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_withdraw_a3af83369b71131d448d48f9383c890c0}{get\+Texts\+Property\+Player1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s property details. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_withdraw_a7b2ecdf7344d06ee5a1124a3e125618d}{get\+Sprite\+Property\+Player1\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offered property sprite. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_withdraw_a516b9056df7808d8c2a33a57772d9ad8}{get\+Texts\+Property\+Player1\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offered property details. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_withdraw_a7d62275f21184e601494c0068d28fab0}{get\+Sprite\+Property\+Player2}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s property sprite. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_withdraw_af50af1bd76c6d76465a8fe344496b6e7}{get\+Texts\+Property\+Player2}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s property details. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_withdraw_a398e4416dafd4543de2eebc4e8317e4b}{get\+Sprite\+Property\+Player2\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offered property sprite. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& \mbox{\hyperlink{class_withdraw_a947ffd9307c3592b6023d11d892f2692}{get\+Texts\+Property\+Player2\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offered property details. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_withdraw_aeb76e48063bbc11819fb5a9304c90aa1}{get\+Texture\+Property\+Player1}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s property texture. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_withdraw_a30c3828b0c528ff79403158e1501358a}{get\+Texture\+Property\+Player1\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offer property texture. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_withdraw_a17a68a4b288fa26a7802c2f553fc6279}{get\+Texture\+Property\+Player2}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s property texture. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_withdraw_a31943c48aa1e04aa4f1ec43900f5acc0}{get\+Texture\+Property\+Player2\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offer property texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a8573a264b72dddafdf68ba509f3fc752}{add\+Property\+Player\+Showed}} (int i, unsigned int col)
+\begin{DoxyCompactList}\small\item\em Changes showed property in certain column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_withdraw_a24f1c04617ff3aa4de94c1648360f7c4}{property\+Player\+Move\+Index}} (int dir, unsigned int plr\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Moves properties between players ownership and withdraw offer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_withdraw_a076b7446fff22cc7357d92078e3f336f}{is\+Non\+Zero\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Check whenever withdraw is legal to be done. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the trade and withdraw mechanism in a monopoly game. 
+
+The \mbox{\hyperlink{class_withdraw}{Withdraw}} class handles the trade and withdraw functionality between players in a monopoly game. It includes features such as choosing players, specifying values, and making decisions during the withdrawal process. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_withdraw_aa7f606a8ceb3f06ee4314d611da095c5}\label{class_withdraw_aa7f606a8ceb3f06ee4314d611da095c5}} 
+\index{Withdraw@{Withdraw}!Withdraw@{Withdraw}}
+\index{Withdraw@{Withdraw}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{Withdraw()}{Withdraw()}}
+{\footnotesize\ttfamily Withdraw\+::\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_withdraw}{Withdraw}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_withdraw_a8573a264b72dddafdf68ba509f3fc752}\label{class_withdraw_a8573a264b72dddafdf68ba509f3fc752}} 
+\index{Withdraw@{Withdraw}!addPropertyPlayerShowed@{addPropertyPlayerShowed}}
+\index{addPropertyPlayerShowed@{addPropertyPlayerShowed}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{addPropertyPlayerShowed()}{addPropertyPlayerShowed()}}
+{\footnotesize\ttfamily void Withdraw\+::add\+Property\+Player\+Showed (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{unsigned int}]{col }\end{DoxyParamCaption})}
+
+
+
+Changes showed property in certain column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & if i $>$ 0 moves righ in properties vector, if i $<$ 0 moves left \\
+\hline
+{\em col} & (1-\/4) defines properties column \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a8573a264b72dddafdf68ba509f3fc752_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a2f8b173f0fdf10f7bb3232c57b96f114}\label{class_withdraw_a2f8b173f0fdf10f7bb3232c57b96f114}} 
+\index{Withdraw@{Withdraw}!createChoosePlayerScreen@{createChoosePlayerScreen}}
+\index{createChoosePlayerScreen@{createChoosePlayerScreen}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{createChoosePlayerScreen()}{createChoosePlayerScreen()}}
+{\footnotesize\ttfamily void Withdraw\+::create\+Choose\+Player\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the screen for choosing players during withdrawal. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a2f8b173f0fdf10f7bb3232c57b96f114_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a2f8b173f0fdf10f7bb3232c57b96f114_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_ad4a9b237332fe45afa4730ccc20e1e0b}\label{class_withdraw_ad4a9b237332fe45afa4730ccc20e1e0b}} 
+\index{Withdraw@{Withdraw}!createDecisionPlayerScreen@{createDecisionPlayerScreen}}
+\index{createDecisionPlayerScreen@{createDecisionPlayerScreen}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{createDecisionPlayerScreen()}{createDecisionPlayerScreen()}}
+{\footnotesize\ttfamily void Withdraw\+::create\+Decision\+Player\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the screen for making decisions during withdrawal. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_ad4a9b237332fe45afa4730ccc20e1e0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_ad4a9b237332fe45afa4730ccc20e1e0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a1e777d7591c901b33d190e8f5c6f4a77}\label{class_withdraw_a1e777d7591c901b33d190e8f5c6f4a77}} 
+\index{Withdraw@{Withdraw}!createValuePlayerScreen@{createValuePlayerScreen}}
+\index{createValuePlayerScreen@{createValuePlayerScreen}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{createValuePlayerScreen()}{createValuePlayerScreen()}}
+{\footnotesize\ttfamily void Withdraw\+::create\+Value\+Player\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the screen for specifying values during withdrawal. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a1e777d7591c901b33d190e8f5c6f4a77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a1e777d7591c901b33d190e8f5c6f4a77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_aab8cdcdf3e5d4b4339b60f0808700838}\label{class_withdraw_aab8cdcdf3e5d4b4339b60f0808700838}} 
+\index{Withdraw@{Withdraw}!getAcceptDecisionButton@{getAcceptDecisionButton}}
+\index{getAcceptDecisionButton@{getAcceptDecisionButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getAcceptDecisionButton()}{getAcceptDecisionButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Accept\+Decision\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the accept decision button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the accept decision \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a9176fc09f39a59cec708685ee053b9ac}\label{class_withdraw_a9176fc09f39a59cec708685ee053b9ac}} 
+\index{Withdraw@{Withdraw}!getButtons@{getButtons}}
+\index{getButtons@{getButtons}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getButtons()}{getButtons()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ $>$ \& Withdraw\+::get\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the vector of buttons used in the withdrawal process. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to \mbox{\hyperlink{class_button}{Button}} objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a9176fc09f39a59cec708685ee053b9ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a3ea0051e8185c3702e1009936e508df6}\label{class_withdraw_a3ea0051e8185c3702e1009936e508df6}} 
+\index{Withdraw@{Withdraw}!getFont@{getFont}}
+\index{getFont@{getFont}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily sf\+::\+Font \& Withdraw\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the font used in rendering text. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the SFML Font object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a3ea0051e8185c3702e1009936e508df6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_aed82a313991c3f3a38c68738a613256f}\label{class_withdraw_aed82a313991c3f3a38c68738a613256f}} 
+\index{Withdraw@{Withdraw}!getFontSize@{getFontSize}}
+\index{getFontSize@{getFontSize}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
+{\footnotesize\ttfamily unsigned int Withdraw\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the font size used in rendering text. 
+
+\begin{DoxyReturn}{Returns}
+An unsigned integer representing the font size. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_aed82a313991c3f3a38c68738a613256f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_aceb8cd9e4b2c1ed99e72278ca840969d}\label{class_withdraw_aceb8cd9e4b2c1ed99e72278ca840969d}} 
+\index{Withdraw@{Withdraw}!getPlayer1AddButton@{getPlayer1AddButton}}
+\index{getPlayer1AddButton@{getPlayer1AddButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1AddButton()}{getPlayer1AddButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Add\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1 add to offer property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the add property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 1 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a0b40b07770eab69344d8bdb35902155e}\label{class_withdraw_a0b40b07770eab69344d8bdb35902155e}} 
+\index{Withdraw@{Withdraw}!getPlayer1Button@{getPlayer1Button}}
+\index{getPlayer1Button@{getPlayer1Button}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1Button()}{getPlayer1Button()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 1 as passive in withdraw. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to choose \mbox{\hyperlink{class_player}{Player}} 1 \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_ac0c3e2f788b930cd5ed0031bbf0fba92}\label{class_withdraw_ac0c3e2f788b930cd5ed0031bbf0fba92}} 
+\index{Withdraw@{Withdraw}!getPlayer1IndexNextButton@{getPlayer1IndexNextButton}}
+\index{getPlayer1IndexNextButton@{getPlayer1IndexNextButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1IndexNextButton()}{getPlayer1IndexNextButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Index\+Next\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1 offer next property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the next property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 1 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a1efca195a06baa1f08d7183e994b7e0a}\label{class_withdraw_a1efca195a06baa1f08d7183e994b7e0a}} 
+\index{Withdraw@{Withdraw}!getPlayer1IndexPreviousButton@{getPlayer1IndexPreviousButton}}
+\index{getPlayer1IndexPreviousButton@{getPlayer1IndexPreviousButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1IndexPreviousButton()}{getPlayer1IndexPreviousButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Index\+Previous\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1 index previous property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the previous property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 1 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_af44ca99891be717d4d35aa640ebd2189}\label{class_withdraw_af44ca99891be717d4d35aa640ebd2189}} 
+\index{Withdraw@{Withdraw}!getPlayer1IndexProperties@{getPlayer1IndexProperties}}
+\index{getPlayer1IndexProperties@{getPlayer1IndexProperties}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1IndexProperties()}{getPlayer1IndexProperties()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned int $>$ Withdraw\+::get\+Player1\+Index\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the properties of \mbox{\hyperlink{class_player}{Player}} 1 offer. 
+
+\begin{DoxyReturn}{Returns}
+A vector of unsigned integers representing the indexes of \mbox{\hyperlink{class_player}{Player}} 1 offer properties. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a842454e0b86473552db820f70c703624}\label{class_withdraw_a842454e0b86473552db820f70c703624}} 
+\index{Withdraw@{Withdraw}!getPlayer1minus1@{getPlayer1minus1}}
+\index{getPlayer1minus1@{getPlayer1minus1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1minus1()}{getPlayer1minus1()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1minus1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} minus 1 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 1 \mbox{\hyperlink{class_button}{Button}} object for Active \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a10b2cabb94eb5d484271a94c97b70370}\label{class_withdraw_a10b2cabb94eb5d484271a94c97b70370}} 
+\index{Withdraw@{Withdraw}!getPlayer1minus10@{getPlayer1minus10}}
+\index{getPlayer1minus10@{getPlayer1minus10}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1minus10()}{getPlayer1minus10()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1minus10 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} minus 10 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 10 \mbox{\hyperlink{class_button}{Button}} object for Active \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a4367d468bb941dd8326b5856dd525a37}\label{class_withdraw_a4367d468bb941dd8326b5856dd525a37}} 
+\index{Withdraw@{Withdraw}!getPlayer1minus100@{getPlayer1minus100}}
+\index{getPlayer1minus100@{getPlayer1minus100}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1minus100()}{getPlayer1minus100()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1minus100 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} minus 100 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 100 \mbox{\hyperlink{class_button}{Button}} object for Active \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a6a5f2ccfb239b924b0521a390609d5fc}\label{class_withdraw_a6a5f2ccfb239b924b0521a390609d5fc}} 
+\index{Withdraw@{Withdraw}!getPlayer1NextButton@{getPlayer1NextButton}}
+\index{getPlayer1NextButton@{getPlayer1NextButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1NextButton()}{getPlayer1NextButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Next\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1 next property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the next property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a58b1ffd27603e753ba7abdb29acf1314}\label{class_withdraw_a58b1ffd27603e753ba7abdb29acf1314}} 
+\index{Withdraw@{Withdraw}!getPlayer1plus1@{getPlayer1plus1}}
+\index{getPlayer1plus1@{getPlayer1plus1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1plus1()}{getPlayer1plus1()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1plus1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} plus 1 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 1 \mbox{\hyperlink{class_button}{Button}} object for Active \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_acaf2b764f148764e5d4e600fc9291c6d}\label{class_withdraw_acaf2b764f148764e5d4e600fc9291c6d}} 
+\index{Withdraw@{Withdraw}!getPlayer1plus10@{getPlayer1plus10}}
+\index{getPlayer1plus10@{getPlayer1plus10}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1plus10()}{getPlayer1plus10()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1plus10 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} plus 10 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 10 \mbox{\hyperlink{class_button}{Button}} object for Active \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a3697bee3aadebc0cde7bb14b5734f200}\label{class_withdraw_a3697bee3aadebc0cde7bb14b5734f200}} 
+\index{Withdraw@{Withdraw}!getPlayer1plus100@{getPlayer1plus100}}
+\index{getPlayer1plus100@{getPlayer1plus100}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1plus100()}{getPlayer1plus100()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1plus100 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} plus 100 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 100 \mbox{\hyperlink{class_button}{Button}} object for Active \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a6add7cd9e18b8066ce60af2722e84422}\label{class_withdraw_a6add7cd9e18b8066ce60af2722e84422}} 
+\index{Withdraw@{Withdraw}!getPlayer1PreviousButton@{getPlayer1PreviousButton}}
+\index{getPlayer1PreviousButton@{getPlayer1PreviousButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1PreviousButton()}{getPlayer1PreviousButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Previous\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1 previous property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the previous property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a0acdd19c19851dd0ea796de6d94b1ceb}\label{class_withdraw_a0acdd19c19851dd0ea796de6d94b1ceb}} 
+\index{Withdraw@{Withdraw}!getPlayer1RemoveButton@{getPlayer1RemoveButton}}
+\index{getPlayer1RemoveButton@{getPlayer1RemoveButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1RemoveButton()}{getPlayer1RemoveButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player1\+Remove\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1 remove from offer property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the remove property \mbox{\hyperlink{class_button}{Button}} object from \mbox{\hyperlink{class_player}{Player}} 1 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_aeb5e3609e3ff27cbcda1f564c18d256f}\label{class_withdraw_aeb5e3609e3ff27cbcda1f564c18d256f}} 
+\index{Withdraw@{Withdraw}!getPlayer1ToWithdraw@{getPlayer1ToWithdraw}}
+\index{getPlayer1ToWithdraw@{getPlayer1ToWithdraw}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer1ToWithdraw()}{getPlayer1ToWithdraw()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ Withdraw\+::get\+Player1\+To\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Active \mbox{\hyperlink{class_player}{Player}} object. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the \mbox{\hyperlink{class_player}{Player}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a36687d86bc6d5b4649b8a112d2e39fa6}\label{class_withdraw_a36687d86bc6d5b4649b8a112d2e39fa6}} 
+\index{Withdraw@{Withdraw}!getPlayer2AddButton@{getPlayer2AddButton}}
+\index{getPlayer2AddButton@{getPlayer2AddButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2AddButton()}{getPlayer2AddButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Add\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2 add to offer property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the add property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 2 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a091c37bf6929de0085fabf2d7f59574b}\label{class_withdraw_a091c37bf6929de0085fabf2d7f59574b}} 
+\index{Withdraw@{Withdraw}!getPlayer2Button@{getPlayer2Button}}
+\index{getPlayer2Button@{getPlayer2Button}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2Button()}{getPlayer2Button()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 2 as passive in withdraw. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to choose \mbox{\hyperlink{class_player}{Player}} 2 \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_aed5e9b3d3c905f942bc6e7dba72fda4e}\label{class_withdraw_aed5e9b3d3c905f942bc6e7dba72fda4e}} 
+\index{Withdraw@{Withdraw}!getPlayer2IndexNextButton@{getPlayer2IndexNextButton}}
+\index{getPlayer2IndexNextButton@{getPlayer2IndexNextButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2IndexNextButton()}{getPlayer2IndexNextButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Index\+Next\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2 index next property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the next property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 2 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a9ea76ae122045f46ab5afc2c6f73aa6a}\label{class_withdraw_a9ea76ae122045f46ab5afc2c6f73aa6a}} 
+\index{Withdraw@{Withdraw}!getPlayer2IndexPreviousButton@{getPlayer2IndexPreviousButton}}
+\index{getPlayer2IndexPreviousButton@{getPlayer2IndexPreviousButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2IndexPreviousButton()}{getPlayer2IndexPreviousButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Index\+Previous\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2 index previous property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the previous property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 2 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a9d72290f34908615cffaeeba90119484}\label{class_withdraw_a9d72290f34908615cffaeeba90119484}} 
+\index{Withdraw@{Withdraw}!getPlayer2IndexProperties@{getPlayer2IndexProperties}}
+\index{getPlayer2IndexProperties@{getPlayer2IndexProperties}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2IndexProperties()}{getPlayer2IndexProperties()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned int $>$ Withdraw\+::get\+Player2\+Index\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the properties of \mbox{\hyperlink{class_player}{Player}} 2 offer. 
+
+\begin{DoxyReturn}{Returns}
+A vector of unsigned integers representing the indexes of \mbox{\hyperlink{class_player}{Player}} 2 offer properties. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a433b90092e9aea1deade9d09bf0f53bb}\label{class_withdraw_a433b90092e9aea1deade9d09bf0f53bb}} 
+\index{Withdraw@{Withdraw}!getPlayer2minus1@{getPlayer2minus1}}
+\index{getPlayer2minus1@{getPlayer2minus1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2minus1()}{getPlayer2minus1()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2minus1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} minus 1 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 1 \mbox{\hyperlink{class_button}{Button}} object for Passive \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a2991a78ccf18dc06191bf5bb2493a8c8}\label{class_withdraw_a2991a78ccf18dc06191bf5bb2493a8c8}} 
+\index{Withdraw@{Withdraw}!getPlayer2minus10@{getPlayer2minus10}}
+\index{getPlayer2minus10@{getPlayer2minus10}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2minus10()}{getPlayer2minus10()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2minus10 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} minus 10 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 10 \mbox{\hyperlink{class_button}{Button}} object for Passive \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_add8c0389fcb067416de24846724a90e3}\label{class_withdraw_add8c0389fcb067416de24846724a90e3}} 
+\index{Withdraw@{Withdraw}!getPlayer2minus100@{getPlayer2minus100}}
+\index{getPlayer2minus100@{getPlayer2minus100}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2minus100()}{getPlayer2minus100()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2minus100 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} minus 100 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the minus 100 \mbox{\hyperlink{class_button}{Button}} object for Passive \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_aaba58d928bb11f6430f0b3dee9e9114d}\label{class_withdraw_aaba58d928bb11f6430f0b3dee9e9114d}} 
+\index{Withdraw@{Withdraw}!getPlayer2NextButton@{getPlayer2NextButton}}
+\index{getPlayer2NextButton@{getPlayer2NextButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2NextButton()}{getPlayer2NextButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Next\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2 next property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the next property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_ad71f8629800c81970c28e69d19091fff}\label{class_withdraw_ad71f8629800c81970c28e69d19091fff}} 
+\index{Withdraw@{Withdraw}!getPlayer2plus1@{getPlayer2plus1}}
+\index{getPlayer2plus1@{getPlayer2plus1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2plus1()}{getPlayer2plus1()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2plus1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} plus 1 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the plus 1 \mbox{\hyperlink{class_button}{Button}} object for Passive \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a510ba4ba2fa7044c7769f737158e7a84}\label{class_withdraw_a510ba4ba2fa7044c7769f737158e7a84}} 
+\index{Withdraw@{Withdraw}!getPlayer2plus10@{getPlayer2plus10}}
+\index{getPlayer2plus10@{getPlayer2plus10}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2plus10()}{getPlayer2plus10()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2plus10 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} plus 10 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the plus 10 \mbox{\hyperlink{class_button}{Button}} object for Passive \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_ab624df7121d9f7b636f712a141663ad0}\label{class_withdraw_ab624df7121d9f7b636f712a141663ad0}} 
+\index{Withdraw@{Withdraw}!getPlayer2plus100@{getPlayer2plus100}}
+\index{getPlayer2plus100@{getPlayer2plus100}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2plus100()}{getPlayer2plus100()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2plus100 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} plus 100 money button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the plus 100 \mbox{\hyperlink{class_button}{Button}} object for Passive \mbox{\hyperlink{class_player}{Player}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_aa074572589a75bd97bd3771243752ace}\label{class_withdraw_aa074572589a75bd97bd3771243752ace}} 
+\index{Withdraw@{Withdraw}!getPlayer2PreviousButton@{getPlayer2PreviousButton}}
+\index{getPlayer2PreviousButton@{getPlayer2PreviousButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2PreviousButton()}{getPlayer2PreviousButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Previous\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2 previous property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the previous property \mbox{\hyperlink{class_button}{Button}} object for \mbox{\hyperlink{class_player}{Player}} 2 . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_afdd56cdac9e6e103132dd5f4b11dde82}\label{class_withdraw_afdd56cdac9e6e103132dd5f4b11dde82}} 
+\index{Withdraw@{Withdraw}!getPlayer2RemoveButton@{getPlayer2RemoveButton}}
+\index{getPlayer2RemoveButton@{getPlayer2RemoveButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2RemoveButton()}{getPlayer2RemoveButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player2\+Remove\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2 remove from offer property button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the remove property \mbox{\hyperlink{class_button}{Button}} object from \mbox{\hyperlink{class_player}{Player}} 2 offer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a82a457bf898c8845ab38458a8a2d3cf5}\label{class_withdraw_a82a457bf898c8845ab38458a8a2d3cf5}} 
+\index{Withdraw@{Withdraw}!getPlayer2ToWithdraw@{getPlayer2ToWithdraw}}
+\index{getPlayer2ToWithdraw@{getPlayer2ToWithdraw}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer2ToWithdraw()}{getPlayer2ToWithdraw()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ Withdraw\+::get\+Player2\+To\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for Passive \mbox{\hyperlink{class_player}{Player}} object. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the \mbox{\hyperlink{class_player}{Player}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_ac2bbfa2841c0e30a80b78ac00b626df3}\label{class_withdraw_ac2bbfa2841c0e30a80b78ac00b626df3}} 
+\index{Withdraw@{Withdraw}!getPlayer3Button@{getPlayer3Button}}
+\index{getPlayer3Button@{getPlayer3Button}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer3Button()}{getPlayer3Button()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player3\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 3 as passive in withdraw. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to choose \mbox{\hyperlink{class_player}{Player}} 3 \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a8466a780108a4cee43a60c7ce5f96286}\label{class_withdraw_a8466a780108a4cee43a60c7ce5f96286}} 
+\index{Withdraw@{Withdraw}!getPlayer4Button@{getPlayer4Button}}
+\index{getPlayer4Button@{getPlayer4Button}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getPlayer4Button()}{getPlayer4Button()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Player4\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for button for choosing \mbox{\hyperlink{class_player}{Player}} 4 as passive in withdraw. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to choose \mbox{\hyperlink{class_player}{Player}} 4 \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a710eb4657248e1b8d3d058dcdc576ff6}\label{class_withdraw_a710eb4657248e1b8d3d058dcdc576ff6}} 
+\index{Withdraw@{Withdraw}!getResignButton@{getResignButton}}
+\index{getResignButton@{getResignButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getResignButton()}{getResignButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Resign\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the resign button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the resign \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a2852ce90c05783a2d8f1921ce5df4992}\label{class_withdraw_a2852ce90c05783a2d8f1921ce5df4992}} 
+\index{Withdraw@{Withdraw}!getResignDecisionButton@{getResignDecisionButton}}
+\index{getResignDecisionButton@{getResignDecisionButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getResignDecisionButton()}{getResignDecisionButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Resign\+Decision\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the resign decision button. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the resign decision \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a08e2ce2ebc989bcabb109f6b8ca2489c}\label{class_withdraw_a08e2ce2ebc989bcabb109f6b8ca2489c}} 
+\index{Withdraw@{Withdraw}!getResignValueButton@{getResignValueButton}}
+\index{getResignValueButton@{getResignValueButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getResignValueButton()}{getResignValueButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Resign\+Value\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the resign button from value screen. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the resign value \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_aaa00a66063e50b3aa3cf82a04d0fa859}\label{class_withdraw_aaa00a66063e50b3aa3cf82a04d0fa859}} 
+\index{Withdraw@{Withdraw}!getSpritePropertyPlayer1@{getSpritePropertyPlayer1}}
+\index{getSpritePropertyPlayer1@{getSpritePropertyPlayer1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getSpritePropertyPlayer1()}{getSpritePropertyPlayer1()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Withdraw\+::get\+Sprite\+Property\+Player1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s property sprite. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the SFML Sprite object representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_aaa00a66063e50b3aa3cf82a04d0fa859_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a7b2ecdf7344d06ee5a1124a3e125618d}\label{class_withdraw_a7b2ecdf7344d06ee5a1124a3e125618d}} 
+\index{Withdraw@{Withdraw}!getSpritePropertyPlayer1Index@{getSpritePropertyPlayer1Index}}
+\index{getSpritePropertyPlayer1Index@{getSpritePropertyPlayer1Index}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getSpritePropertyPlayer1Index()}{getSpritePropertyPlayer1Index()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Withdraw\+::get\+Sprite\+Property\+Player1\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offered property sprite. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the SFML Sprite object representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offered properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a7b2ecdf7344d06ee5a1124a3e125618d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a7d62275f21184e601494c0068d28fab0}\label{class_withdraw_a7d62275f21184e601494c0068d28fab0}} 
+\index{Withdraw@{Withdraw}!getSpritePropertyPlayer2@{getSpritePropertyPlayer2}}
+\index{getSpritePropertyPlayer2@{getSpritePropertyPlayer2}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getSpritePropertyPlayer2()}{getSpritePropertyPlayer2()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Withdraw\+::get\+Sprite\+Property\+Player2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s property sprite. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the SFML Sprite object representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a7d62275f21184e601494c0068d28fab0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a398e4416dafd4543de2eebc4e8317e4b}\label{class_withdraw_a398e4416dafd4543de2eebc4e8317e4b}} 
+\index{Withdraw@{Withdraw}!getSpritePropertyPlayer2Index@{getSpritePropertyPlayer2Index}}
+\index{getSpritePropertyPlayer2Index@{getSpritePropertyPlayer2Index}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getSpritePropertyPlayer2Index()}{getSpritePropertyPlayer2Index()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Withdraw\+::get\+Sprite\+Property\+Player2\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offered property sprite. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the SFML Sprite object representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offered properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a398e4416dafd4543de2eebc4e8317e4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_ac604b13c491169954292fee491bcea26}\label{class_withdraw_ac604b13c491169954292fee491bcea26}} 
+\index{Withdraw@{Withdraw}!getSubmitValueButton@{getSubmitValueButton}}
+\index{getSubmitValueButton@{getSubmitValueButton}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getSubmitValueButton()}{getSubmitValueButton()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_button}{Button}} $>$ Withdraw\+::get\+Submit\+Value\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the submit value button from value screen. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the submit value \mbox{\hyperlink{class_button}{Button}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a095689316bdad34354e14b8ffd18c995}\label{class_withdraw_a095689316bdad34354e14b8ffd18c995}} 
+\index{Withdraw@{Withdraw}!getTexts@{getTexts}}
+\index{getTexts@{getTexts}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTexts()}{getTexts()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Withdraw\+::get\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the vector of text objects used in the withdrawal process. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to SFML Text objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_withdraw_a095689316bdad34354e14b8ffd18c995_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a3af83369b71131d448d48f9383c890c0}\label{class_withdraw_a3af83369b71131d448d48f9383c890c0}} 
+\index{Withdraw@{Withdraw}!getTextsPropertyPlayer1@{getTextsPropertyPlayer1}}
+\index{getTextsPropertyPlayer1@{getTextsPropertyPlayer1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTextsPropertyPlayer1()}{getTextsPropertyPlayer1()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Withdraw\+::get\+Texts\+Property\+Player1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s property details. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to SFML Text objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a3af83369b71131d448d48f9383c890c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a516b9056df7808d8c2a33a57772d9ad8}\label{class_withdraw_a516b9056df7808d8c2a33a57772d9ad8}} 
+\index{Withdraw@{Withdraw}!getTextsPropertyPlayer1Index@{getTextsPropertyPlayer1Index}}
+\index{getTextsPropertyPlayer1Index@{getTextsPropertyPlayer1Index}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTextsPropertyPlayer1Index()}{getTextsPropertyPlayer1Index()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Withdraw\+::get\+Texts\+Property\+Player1\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offered property details. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to SFML Text objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a516b9056df7808d8c2a33a57772d9ad8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_af50af1bd76c6d76465a8fe344496b6e7}\label{class_withdraw_af50af1bd76c6d76465a8fe344496b6e7}} 
+\index{Withdraw@{Withdraw}!getTextsPropertyPlayer2@{getTextsPropertyPlayer2}}
+\index{getTextsPropertyPlayer2@{getTextsPropertyPlayer2}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTextsPropertyPlayer2()}{getTextsPropertyPlayer2()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Withdraw\+::get\+Texts\+Property\+Player2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s property details. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to SFML Text objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_af50af1bd76c6d76465a8fe344496b6e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a947ffd9307c3592b6023d11d892f2692}\label{class_withdraw_a947ffd9307c3592b6023d11d892f2692}} 
+\index{Withdraw@{Withdraw}!getTextsPropertyPlayer2Index@{getTextsPropertyPlayer2Index}}
+\index{getTextsPropertyPlayer2Index@{getTextsPropertyPlayer2Index}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTextsPropertyPlayer2Index()}{getTextsPropertyPlayer2Index()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Text $>$ $>$ \& Withdraw\+::get\+Texts\+Property\+Player2\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the text objects representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offered property details. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to SFML Text objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a947ffd9307c3592b6023d11d892f2692_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_aeb76e48063bbc11819fb5a9304c90aa1}\label{class_withdraw_aeb76e48063bbc11819fb5a9304c90aa1}} 
+\index{Withdraw@{Withdraw}!getTexturePropertyPlayer1@{getTexturePropertyPlayer1}}
+\index{getTexturePropertyPlayer1@{getTexturePropertyPlayer1}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTexturePropertyPlayer1()}{getTexturePropertyPlayer1()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ Withdraw\+::get\+Texture\+Property\+Player1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s property texture. 
+
+\begin{DoxyReturn}{Returns}
+SFML Texrute object representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_aeb76e48063bbc11819fb5a9304c90aa1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a30c3828b0c528ff79403158e1501358a}\label{class_withdraw_a30c3828b0c528ff79403158e1501358a}} 
+\index{Withdraw@{Withdraw}!getTexturePropertyPlayer1Index@{getTexturePropertyPlayer1Index}}
+\index{getTexturePropertyPlayer1Index@{getTexturePropertyPlayer1Index}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTexturePropertyPlayer1Index()}{getTexturePropertyPlayer1Index()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ Withdraw\+::get\+Texture\+Property\+Player1\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s offer property texture. 
+
+\begin{DoxyReturn}{Returns}
+SFML Texrute object representing \mbox{\hyperlink{class_player}{Player}} 1\textquotesingle{}s properties offer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a30c3828b0c528ff79403158e1501358a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a17a68a4b288fa26a7802c2f553fc6279}\label{class_withdraw_a17a68a4b288fa26a7802c2f553fc6279}} 
+\index{Withdraw@{Withdraw}!getTexturePropertyPlayer2@{getTexturePropertyPlayer2}}
+\index{getTexturePropertyPlayer2@{getTexturePropertyPlayer2}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTexturePropertyPlayer2()}{getTexturePropertyPlayer2()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ Withdraw\+::get\+Texture\+Property\+Player2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s property texture. 
+
+\begin{DoxyReturn}{Returns}
+SFML Texrute object representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s properties. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a17a68a4b288fa26a7802c2f553fc6279_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a31943c48aa1e04aa4f1ec43900f5acc0}\label{class_withdraw_a31943c48aa1e04aa4f1ec43900f5acc0}} 
+\index{Withdraw@{Withdraw}!getTexturePropertyPlayer2Index@{getTexturePropertyPlayer2Index}}
+\index{getTexturePropertyPlayer2Index@{getTexturePropertyPlayer2Index}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTexturePropertyPlayer2Index()}{getTexturePropertyPlayer2Index()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ Withdraw\+::get\+Texture\+Property\+Player2\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s offer property texture. 
+
+\begin{DoxyReturn}{Returns}
+SFML Texrute object representing \mbox{\hyperlink{class_player}{Player}} 2\textquotesingle{}s properties offer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a31943c48aa1e04aa4f1ec43900f5acc0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a0f3fd96ab6c928dcac54ac55a1b7be3d}\label{class_withdraw_a0f3fd96ab6c928dcac54ac55a1b7be3d}} 
+\index{Withdraw@{Withdraw}!getTurnState@{getTurnState}}
+\index{getTurnState@{getTurnState}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{getTurnState()}{getTurnState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}} Withdraw\+::get\+Turn\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the turn state. 
+
+\begin{DoxyReturn}{Returns}
+The current Turn\+State enumeration representing the turn state of monopolygame when withdraw was started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a076b7446fff22cc7357d92078e3f336f}\label{class_withdraw_a076b7446fff22cc7357d92078e3f336f}} 
+\index{Withdraw@{Withdraw}!isNonZeroValue@{isNonZeroValue}}
+\index{isNonZeroValue@{isNonZeroValue}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{isNonZeroValue()}{isNonZeroValue()}}
+{\footnotesize\ttfamily bool Withdraw\+::is\+Non\+Zero\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check whenever withdraw is legal to be done. 
+
+\begin{DoxyReturn}{Returns}
+true if withdraw is legal, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_withdraw_a19f82027534a13d80536846c5af25829}\label{class_withdraw_a19f82027534a13d80536846c5af25829}} 
+\index{Withdraw@{Withdraw}!makeWithdraw@{makeWithdraw}}
+\index{makeWithdraw@{makeWithdraw}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{makeWithdraw()}{makeWithdraw()}}
+{\footnotesize\ttfamily void Withdraw\+::make\+Withdraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initiates the withdrawal process (exchange of money and properties). 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a19f82027534a13d80536846c5af25829_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a19f82027534a13d80536846c5af25829_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a90b6611bc2eeec22d3b562fd183bf81e}\label{class_withdraw_a90b6611bc2eeec22d3b562fd183bf81e}} 
+\index{Withdraw@{Withdraw}!moneyTextUpdate@{moneyTextUpdate}}
+\index{moneyTextUpdate@{moneyTextUpdate}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{moneyTextUpdate()}{moneyTextUpdate()}}
+{\footnotesize\ttfamily void Withdraw\+::money\+Text\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the displayed money text during the withdrawal process. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a90b6611bc2eeec22d3b562fd183bf81e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_ad2d77a9938893978c4a83432d51b67f9}\label{class_withdraw_ad2d77a9938893978c4a83432d51b67f9}} 
+\index{Withdraw@{Withdraw}!moneyTransferIndex@{moneyTransferIndex}}
+\index{moneyTransferIndex@{moneyTransferIndex}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{moneyTransferIndex()}{moneyTransferIndex()}}
+{\footnotesize\ttfamily void Withdraw\+::money\+Transfer\+Index (\begin{DoxyParamCaption}\item[{unsigned int}]{player\+\_\+num,  }\item[{int}]{money }\end{DoxyParamCaption})}
+
+
+
+Transfers money during the withdrawal process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+num} & An unsigned integer representing the player number (1-\/2). \\
+\hline
+{\em money} & An integer representing the amount of money to transfer (can be negative). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_ad2d77a9938893978c4a83432d51b67f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a24f1c04617ff3aa4de94c1648360f7c4}\label{class_withdraw_a24f1c04617ff3aa4de94c1648360f7c4}} 
+\index{Withdraw@{Withdraw}!propertyPlayerMoveIndex@{propertyPlayerMoveIndex}}
+\index{propertyPlayerMoveIndex@{propertyPlayerMoveIndex}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{propertyPlayerMoveIndex()}{propertyPlayerMoveIndex()}}
+{\footnotesize\ttfamily void Withdraw\+::property\+Player\+Move\+Index (\begin{DoxyParamCaption}\item[{int}]{dir,  }\item[{unsigned int}]{plr\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Moves properties between players ownership and withdraw offer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & if $>$ 0 moves to offer vector, if $<$ 0 moves from offer vectpr \\
+\hline
+{\em plr\+\_\+num} & if 1 -\/ active player, if 2 -\/ passive player, in withdraw \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a24f1c04617ff3aa4de94c1648360f7c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_ac3ff353242bfee519f0058258631c454}\label{class_withdraw_ac3ff353242bfee519f0058258631c454}} 
+\index{Withdraw@{Withdraw}!setBoard@{setBoard}}
+\index{setBoard@{setBoard}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setBoard()}{setBoard()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Board (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_board}{Board}} $>$}]{board\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Setter for the gameboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board\+\_\+ptr} & A shared pointer to the \mbox{\hyperlink{class_board}{Board}} object. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_ac3ff353242bfee519f0058258631c454_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a06d1cefc0b0fcf141a9a5c7ee0084a34}\label{class_withdraw_a06d1cefc0b0fcf141a9a5c7ee0084a34}} 
+\index{Withdraw@{Withdraw}!setChooseScreenVisible@{setChooseScreenVisible}}
+\index{setChooseScreenVisible@{setChooseScreenVisible}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setChooseScreenVisible()}{setChooseScreenVisible()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Choose\+Screen\+Visible (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Sets the visibility of the choose player screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+visible} & A boolean indicating whether the screen should be visible. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a06d1cefc0b0fcf141a9a5c7ee0084a34_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a554845d087366abdc2672a7b6224ff68}\label{class_withdraw_a554845d087366abdc2672a7b6224ff68}} 
+\index{Withdraw@{Withdraw}!setDecisionScreenVisible@{setDecisionScreenVisible}}
+\index{setDecisionScreenVisible@{setDecisionScreenVisible}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setDecisionScreenVisible()}{setDecisionScreenVisible()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Decision\+Screen\+Visible (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Sets the visibility of the decision player screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+visible} & A boolean indicating whether the screen should be visible. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a554845d087366abdc2672a7b6224ff68_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a554845d087366abdc2672a7b6224ff68_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a01109432adc0c8b78f288c1805ca02d0}\label{class_withdraw_a01109432adc0c8b78f288c1805ca02d0}} 
+\index{Withdraw@{Withdraw}!setFont@{setFont}}
+\index{setFont@{setFont}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font}]{font }\end{DoxyParamCaption})}
+
+
+
+Setter for the font used in rendering text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & A reference to the SFML Font object. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_a01109432adc0c8b78f288c1805ca02d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_ace23ed297ef8cfdce12fedf5866e4db0}\label{class_withdraw_ace23ed297ef8cfdce12fedf5866e4db0}} 
+\index{Withdraw@{Withdraw}!setPlayer1IndexProperties@{setPlayer1IndexProperties}}
+\index{setPlayer1IndexProperties@{setPlayer1IndexProperties}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setPlayer1IndexProperties()}{setPlayer1IndexProperties()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Player1\+Index\+Properties (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{new\+\_\+index\+\_\+properties }\end{DoxyParamCaption})}
+
+
+
+Setter for the properties of \mbox{\hyperlink{class_player}{Player}} 1 offer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+index\+\_\+properties} & A vector of unsigned integers representing the new index for \mbox{\hyperlink{class_player}{Player}} 1 offer properties. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_withdraw_ad6d6fe6a2cc686f1deea05fa9ae5033f}\label{class_withdraw_ad6d6fe6a2cc686f1deea05fa9ae5033f}} 
+\index{Withdraw@{Withdraw}!setPlayer1ToWithdraw@{setPlayer1ToWithdraw}}
+\index{setPlayer1ToWithdraw@{setPlayer1ToWithdraw}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setPlayer1ToWithdraw()}{setPlayer1ToWithdraw()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Player1\+To\+Withdraw (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{player\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Sets Active \mbox{\hyperlink{class_player}{Player}} for withdrawal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+ptr} & A shared pointer to the \mbox{\hyperlink{class_player}{Player}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_withdraw_a0203605f1161eed758e26bae91bc80ca}\label{class_withdraw_a0203605f1161eed758e26bae91bc80ca}} 
+\index{Withdraw@{Withdraw}!setPlayer2IndexProperties@{setPlayer2IndexProperties}}
+\index{setPlayer2IndexProperties@{setPlayer2IndexProperties}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setPlayer2IndexProperties()}{setPlayer2IndexProperties()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Player2\+Index\+Properties (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{new\+\_\+index\+\_\+properties }\end{DoxyParamCaption})}
+
+
+
+Setter for the properties of \mbox{\hyperlink{class_player}{Player}} 2 offer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+index\+\_\+properties} & A vector of unsigned integers representing the new index for \mbox{\hyperlink{class_player}{Player}} 2 offer properties. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_withdraw_aed1f0d13e5f3ce83500ec90b9338796a}\label{class_withdraw_aed1f0d13e5f3ce83500ec90b9338796a}} 
+\index{Withdraw@{Withdraw}!setPlayer2ToWithdraw@{setPlayer2ToWithdraw}}
+\index{setPlayer2ToWithdraw@{setPlayer2ToWithdraw}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setPlayer2ToWithdraw()}{setPlayer2ToWithdraw()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Player2\+To\+Withdraw (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$}]{player\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Sets Passive \mbox{\hyperlink{class_player}{Player}} for withdrawal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+ptr} & A shared pointer to the \mbox{\hyperlink{class_player}{Player}} object. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_aed1f0d13e5f3ce83500ec90b9338796a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_a0f4055d95a2cefafbe974d49bcec5531}\label{class_withdraw_a0f4055d95a2cefafbe974d49bcec5531}} 
+\index{Withdraw@{Withdraw}!setTurnState@{setTurnState}}
+\index{setTurnState@{setTurnState}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setTurnState()}{setTurnState()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Turn\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8h_a1fbb23a4b2427b486453417312008cfb}{Turn\+State}}}]{state }\end{DoxyParamCaption})}
+
+
+
+Setter for the turn state of monopolygame when withdraw was started. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & A Turn\+State enumeration representing the turn state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_withdraw_acfbbad2752cb193ca17e8f2ab3ce9b1a}\label{class_withdraw_acfbbad2752cb193ca17e8f2ab3ce9b1a}} 
+\index{Withdraw@{Withdraw}!setValueScreenVisible@{setValueScreenVisible}}
+\index{setValueScreenVisible@{setValueScreenVisible}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{setValueScreenVisible()}{setValueScreenVisible()}}
+{\footnotesize\ttfamily void Withdraw\+::set\+Value\+Screen\+Visible (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Sets the visibility of the value player screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+visible} & A boolean indicating whether the screen should be visible. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_acfbbad2752cb193ca17e8f2ab3ce9b1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_acfbbad2752cb193ca17e8f2ab3ce9b1a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_withdraw_ab7bdb73ec95d72b844d65de653cb4214}\label{class_withdraw_ab7bdb73ec95d72b844d65de653cb4214}} 
+\index{Withdraw@{Withdraw}!showProperty@{showProperty}}
+\index{showProperty@{showProperty}!Withdraw@{Withdraw}}
+\doxysubsubsection{\texorpdfstring{showProperty()}{showProperty()}}
+{\footnotesize\ttfamily void Withdraw\+::show\+Property (\begin{DoxyParamCaption}\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Shows the property details for the specified column during the withdrawal process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & An integer representing the column index (1-\/4). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_ab7bdb73ec95d72b844d65de653cb4214_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_withdraw_ab7bdb73ec95d72b844d65de653cb4214_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_withdraw_8h}{Withdraw.\+h}}\item 
+/home/kamil/zpr/\+Monopoly/\mbox{\hyperlink{_withdraw_8cc}{Withdraw.\+cc}}\end{DoxyCompactItemize}

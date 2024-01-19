@@ -1,0 +1,4 @@
+<map id="GameMenuScreen::buttonClickHandle" name="GameMenuScreen::buttonClickHandle">
+<area shape="rect" id="node1" title="Handles button clicks in the game menu." alt="" coords="247,5,469,47"/>
+<area shape="rect" id="node2" href="$class_game_menu_screen.html#a930fac59e5231f348579a57991246e07" title="Worker function for the game menu screen." alt="" coords="5,13,199,39"/>
+</map>
