@@ -37,7 +37,7 @@ static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::sha
 	return players_ret;
 }
 
-bool genomeComp(neat::genome g1, neat::genome g2) {
+static bool genomeComp(neat::genome g1, neat::genome g2) {
 	return g1.fitness > g2.fitness;
 }
 

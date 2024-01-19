@@ -1434,7 +1434,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 					notificationAdd(player_index_turn_, notification_msg + chance_card.getText());
 
 					switch (chance_card.getType()) {
-						case MovementToProperty: {
+						case MOVEMENT_TO_PROPERTY: {
 							int old_pos = players_[player_index_turn_]->getPosition();
 							int posIncrement = (40 + chance_card.getValue()) - old_pos;
 							movePlayer(player_index_turn_, posIncrement);
@@ -1443,23 +1443,23 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 							setTurnState(FIELD_ACTION);
 						} break;
 
-						case BankPaysYou:
+						case BANK_PAYS_YOU:
 							players_[player_index_turn_]->addMoney(chance_card.getValue());
 							setTurnState(TURN_END);
 							break;
 
-						case GetOutOfJailCard:
+						case GET_OUT_OF_JAIL_CARD:
 							players_[player_index_turn_]->setJailCards(players_[player_index_turn_]->getJailCards() + 1);
 							setTurnState(TURN_END);
 							break;
 
-						case GoToJail:
+						case GO_TO_JAIL:
 							sendToJail(player_index_turn_);
 							players_[player_index_turn_]->setJailStatus(3);
 							setTurnState(TURN_END);
 							break;
 
-						case PayForHouseHotel: {
+						case PAY_FOR_HOUSE_HOTEL: {
 							unsigned int sum = 0;
 							for (auto field_id : players_[player_index_turn_]->getFieldOwnedId()) {
 								FieldType fieldType = std::visit(
@@ -1496,7 +1496,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 							}
 						} break;
 
-						case Tax: {
+						case TAX_CARD: {
 							if ((int)players_[player_index_turn_]->getMoney() >= chance_card.getValue()) {
 								players_[player_index_turn_]->substractMoney(chance_card.getValue());
 								std::string notification_msg =
@@ -1516,7 +1516,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 
 						} break;
 
-						case MovementSpaces: {
+						case MOVEMENT_SPACES: {
 							int old_pos = players_[player_index_turn_]->getPosition();
 							int posIncrement = chance_card.getValue();
 							movePlayer(player_index_turn_, posIncrement);
@@ -1527,7 +1527,7 @@ bool MonopolyGameEngine::monopolyGameWorker() {
 							setTurnState(FIELD_ACTION);
 						} break;
 
-						case PayPlayers: {
+						case PAY_PLAYERS: {
 							unsigned int toPay = chance_card.getValue() * (players_.size() - 1);
 
 							if (players_[player_index_turn_]->getMoney() >= toPay) {
@@ -3290,10 +3290,10 @@ void MonopolyGameEngine::createChanceCards() {
 	const std::string file_path = CHANCE_FILE_PATH_;
 	const std::string graphic_path = "textures_and_fonts/textures/monopoly_single_square_chance.png";
 	sf::Vector2f position = sf::Vector2f(500, 500);
-	std::map<std::string, ChanceType> str_to_type = {{"MovementToProperty", MovementToProperty},
-		{"MovementWithBuyOrPay", MovementWithBuyOrPay}, {"BankPaysYou", BankPaysYou},
-		{"GetOutOfJailCard", GetOutOfJailCard}, {"MovementSpaces", MovementSpaces}, {"GoToJail", GoToJail},
-		{"PayForHouseHotel", PayForHouseHotel}, {"Tax", Tax}, {"PayPlayers", PayPlayers}};
+	std::map<std::string, ChanceType> str_to_type = {{"MOVEMENT_TO_PROPERTY", MOVEMENT_TO_PROPERTY},
+		{"MOVEMENT_WITH_BUY_OR_PAY", MOVEMENT_WITH_BUY_OR_PAY}, {"BANK_PAYS_YOU", BANK_PAYS_YOU},
+		{"GET_OUT_OF_JAIL_CARD", GET_OUT_OF_JAIL_CARD}, {"MOVEMENT_SPACES", MOVEMENT_SPACES}, {"GO_TO_JAIL", GO_TO_JAIL_CARD},
+		{"PAY_FOR_HOUSE_HOTEL", PAY_FOR_HOUSE_HOTEL}, {"Tax", TAX_CARD}, {"PAY_PLAYERS", PAY_PLAYERS}};
 
 	std::ifstream f(file_path);
 	json data = json::parse(f);

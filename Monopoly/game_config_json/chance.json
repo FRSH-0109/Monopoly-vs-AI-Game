@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "type": "MovementToProperty",
+        "type": "MOVEMENT_TO_PROPERTY",
         "value": 0,
         "text": "Idz na 'Start'. (Otrzymujesz $200)",
         "width": 60,
@@ -9,7 +9,7 @@
     },
     {
         "id": 1,
-        "type": "MovementToProperty",
+        "type": "MOVEMENT_TO_PROPERTY",
         "value": 24,
         "text": "Idz do nieruchomosci 402. Jesli mijasz Start, otrzymujesz $200.",
         "width": 60,
@@ -17,7 +17,7 @@
     },
     {
         "id": 2,
-        "type": "MovementToProperty",
+        "type": "MOVEMENT_TO_PROPERTY",
         "value": 11,
         "text": "Idz do nieruchomosci P211. Jesli mijasz Start, otrzymujesz $200.",
         "width": 60,
@@ -25,7 +25,7 @@
     },
     {
         "id": 5,
-        "type": "BankPaysYou",
+        "type": "BANK_PAYS_YOU",
         "value": 50,
         "text": "Bank placi Ci dywidende $50.",
         "width": 60,
@@ -33,7 +33,7 @@
     },
     {
         "id": 6,
-        "type": "GetOutOfJailCard",
+        "type": "GET_OUT_OF_JAIL_CARD",
         "value": 0,
         "text": "Wyjdz z wiezienia. Tak karta moze byc uzyta pozniej.",
         "width": 60,
@@ -41,7 +41,7 @@
     },
     {
         "id": 7,
-        "type": "MovementSpaces",
+        "type": "MOVEMENT_SPACES",
         "value": -3,
         "text": "Cofnij sie o 3 pola",
         "width": 60,
@@ -49,7 +49,7 @@
     },
     {
         "id": 8,
-        "type": "GoToJail",
+        "type": "GO_TO_JAIL_CARD",
         "value": 0,
         "text": "Idz do wiezienia, nie mijasz START'u",
         "width": 60,
@@ -57,7 +57,7 @@
     },
     {
         "id": 9,
-        "type": "PayForHouseHotel",
+        "type": "PAY_FOR_HOUSE_HOTEL",
         "value": 0,
         "text": "Naprawiasz swoje nieruchomosci: zaplac za kazdy dom $25, za hotel $100.",
         "width": 60,
@@ -65,7 +65,7 @@
     },
     {
         "id": 10,
-        "type": "MovementToProperty",
+        "type": "MOVEMENT_TO_PROPERTY",
         "value": 5,
         "text": "Idz do Baru Polnego. Jesli mijasz Start, otrzymujesz $200.",
         "width": 60,
@@ -73,7 +73,7 @@
     },
     {
         "id": 11,
-        "type": "Tax",
+        "type": "TAX_CARD",
         "value": 15,
         "text": "Zaplac niski podatek: $15",
         "width": 60,
@@ -81,7 +81,7 @@
     },
     {
         "id": 12,
-        "type": "MovementToProperty",
+        "type": "MOVEMENT_TO_PROPERTY",
         "value": 39,
         "text": "Idz do nieruchomosci 506",
         "width": 60,
@@ -89,7 +89,7 @@
     },
     {
         "id": 13,
-        "type": "PayPlayers",
+        "type": "PAY_PLAYERS",
         "value": 50,
         "text": "Zostales wybrany przewodniczacym. Zaplac kazdemu po $50.",
         "width": 60,
@@ -97,7 +97,7 @@
     },
     {
         "id": 14,
-        "type": "BankPaysYou",
+        "type": "BANK_PAYS_YOU",
         "value": 150,
         "text": "Wynajmujesz innym nieruchomosci. Otrzymujesz $150.",
         "width": 60,
