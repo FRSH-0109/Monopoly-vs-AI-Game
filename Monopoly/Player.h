@@ -229,6 +229,13 @@ class Player {
 	virtual AiAdapter& getAdapter(){};
 
 	/**
+	 * Get the Neural Network of a player (virtual function, needs to be overridden by derived classes).
+	 *
+	 * @return Reference to the neuralnet class from a tinyai library.
+	 */
+	virtual ann::neuralnet& getNeuralNetwork(){};
+
+	/**
 	 * Make a buying decision (virtual function, needs to be overridden by derived classes).
 	 *
 	 * @param index Index of the property to consider.

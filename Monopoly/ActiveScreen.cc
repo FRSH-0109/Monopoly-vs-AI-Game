@@ -77,7 +77,7 @@ void MainMenuScreen::mainMenuCreate() {
 
 	// TODO: exception handling
 	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
-		// std::cout << "Font not found!\n";
+	// 	std::cout << "Font not found!\n";
 
 	setFont(getFont());
 
@@ -194,7 +194,7 @@ void GameMenuScreen::gameMenuCreate() {
 
 	// TODO: exception handling
 	// if (!getFont().loadFromFile("textures_and_fonts/fonts/Kabel-Heavy.otf"))
-		// std::cout << "Font not found!\n";
+	// 	std::cout << "Font not found!\n";
 
 	setFont(getFont());
 

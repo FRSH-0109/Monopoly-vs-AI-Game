@@ -130,9 +130,22 @@ std::vector<std::shared_ptr<Player>> GameEngine::worker(std::vector<std::shared_
 							new_player.setAiLevel(playerSettings->level);
 							players_.push_back(std::make_shared<Player>(new_player));
 						} else {
-							AiPlayer new_player = AiPlayer(0);
+							std::string nn_file;
+							unsigned int ai_level = playerSettings->level;
+							if (ai_level == 1) {
+								nn_file = "level_1_ai";
+							} else if (ai_level == 2) {
+								nn_file = "level_2_ai";
+							} else if (ai_level == 3) {
+								nn_file = "level_3_ai";
+							}
+							ann::neuralnet n;
+							n.import_fromfile(nn_file);
+							srand(time(NULL));
+							AiPlayer new_player = AiPlayer(0, n);
 							new_player.setIsAi(!(playerSettings->isHuman));
 							new_player.setAiLevel(playerSettings->level);
+
 							players_.push_back(std::make_shared<AiPlayer>(new_player));
 						}
 					}

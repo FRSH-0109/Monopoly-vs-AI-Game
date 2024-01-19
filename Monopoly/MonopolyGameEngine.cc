@@ -53,9 +53,11 @@ void monopolyGameEngine::createPlayers(std::vector<std::shared_ptr<Player>>& pla
 			players_.push_back(std::make_shared<Player>(new_player));
 		} else {
 			AiPlayer new_player = AiPlayer(PLAYER_MONEY_DEFAULT_);
+			unsigned int ai_level = player_ptr->getAiLevel();
 			new_player.setIsAi(true);
 			new_player.setAiLevel(player_ptr->getAiLevel());
 			new_player.setId(playerId);
+			new_player.setNeuralNetwork(player_ptr->getNeuralNetwork());
 			players_.push_back(std::make_shared<AiPlayer>(new_player));
 		}
 		++playerId;

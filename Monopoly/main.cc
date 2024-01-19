@@ -30,7 +30,7 @@ static void printResults(std::vector<std::shared_ptr<Player>>& playerResults) {
 }
 
 static std::vector<std::shared_ptr<Player>> runMonopolyGame(std::vector<std::shared_ptr<Player>> players) {
-	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX);
+	std::unique_ptr<GameEngine> gameEngine = std::make_unique<GameEngine>(FRAMES_PER_SEC_MAX); // , width, height
 	std::vector<std::shared_ptr<Player>> players_ret = gameEngine->worker(players);
 	gameEngine->getContextWindow()->getWindow().close();
 	gameEngine.reset();
@@ -58,7 +58,7 @@ int main() {
 
 	if (TRAIN) {
 		neat::pool p(127, 9);
-		p.import_fromfile("monopoly_level1_ai.res");
+		p.import_fromfile("monopoly_level3_ai.res");
 		srand(time(NULL));
 		unsigned int max_fitness = 0;
 		unsigned int second_fitness = 0;
@@ -108,7 +108,7 @@ int main() {
 						players.push_back(player4);
 						playerResults = runMonopolyGame(players);
 						++games_counter;
-						std::cout << "//////////////////////////////////////////game counter: " << games_counter
+						std::cout << "game counter: " << games_counter
 								  << std::endl;
 						// printResults(playerResults);
 
@@ -125,6 +125,8 @@ int main() {
 							// 	g4.fitness += reward;
 							// }
 						}
+
+						player_1_nn.export_tofile("level_3_ai");
 
 						if (g.fitness > max_fitness) {
 							third_fitness = second_performer.fitness;
@@ -147,24 +149,33 @@ int main() {
 				// std::sort((*s).genomes.begin(), (*s).genomes.end(), genomeComp);
 				// }
 			}
+
 			former_best_performer = best_performer;
 			former_second_performer = second_performer;
 			former_third_performer = third_performer;
 			p.new_generation();
-			if (gen == 29) {
+			if (gen == 15) {
 				p.export_tofile("monopoly_level1_ai.res");
-			} else if (gen == 59) {
+				ann::neuralnet n;
+				n.from_genome(best_performer);
+				n.export_tofile("level_1_ai");
+			} else if (gen == 29) {
 				p.export_tofile("monopoly_level2_ai.res");
+				ann::neuralnet n;
+				n.from_genome(best_performer);
+				n.export_tofile("level_2_ai");
 			}
 			std::cout << "gen: " << gen << std::endl;
+			p.export_tofile("monopoly_level3_ai.res");
+			ann::neuralnet n;
+			n.from_genome(best_performer);
+			n.export_tofile("level_3_ai");
 		}
-		p.export_tofile("monopoly_level3_ai.res");
+	} else { // play game with all custom players, passed vector is empty
+		players.clear();
+		playerResults = runMonopolyGame(players);
+		printResults(playerResults);
 	}
-
-	// play game with all custom players, passed vector is empty
-	// players.clear();
-	// playerResults = runMonopolyGame(players);
-	// printResults(playerResults);
 
 	return 0;
 }

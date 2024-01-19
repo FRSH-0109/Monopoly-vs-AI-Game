@@ -84,7 +84,7 @@ const sf::Texture& Field::getTexture() {
 const sf::Vector2i& Field::getPosition() {
 	return position_;
 }
-	
+
 void Field::createSprite() {
 	// if (!texture_.loadFromFile(graphic_path_)) {
 	// 	sprite_.setColor(sf::Color::Green);
