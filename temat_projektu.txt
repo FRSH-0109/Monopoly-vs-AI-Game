@@ -1,0 +1,2 @@
+Gra w Monopoly z komputerem. Proszę skupić się na rozwoju AI w grze. Jedno z możliwych podejść jest ogólnie opisane tu, a tu jest implementacja.
+Można zajrzeć (i użyć jasno wyodrębnionych fragmentów) jednej z wielu bibliotek, np. tinyai, open-neat. Przed rozpoczęciem realizacji projektu proszę zapoznać się z zawartością strony. 
