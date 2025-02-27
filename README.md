@@ -1,63 +1,121 @@
-# Monopoly-vs-AI-Game
-Project of Monopoly vs AI game
+# Monopoly vs AI: A C++ AI-Powered Monopoly Game
 
-Authors: Kamil Kośnik, Kacper Radzikowski
+## 🎮 Overview
 
-## Documentation
-* In directory "docs" theres pdf file "refman.pdf" containing whole doxygen generated project documentation.
-* If You would like to run html page of documentation, run "chromium docs/html/index.htnl". Of course chroimum can be replaced by Your prefered browser.
-    
-## Used libraries
-* SFML v.2.6.0 - Graphic library used in games and multimedia projects
-* Catch v.2 - Unit test framework used for testing our code
+**Monopoly vs AI** is a C++ implementation of the classic Monopoly board game, where a human player can face off against a strategic AI opponent or other human players. The game follows the traditional rules and includes an intelligent AI capable of making strategic decisions. This project aims to provide a fun and challenging experience while demonstrating proficiency in using **C++ with SFML library**.
 
-## Build and run project on linux
-For building project run
+---
 
-    make
-For launching game
+![alt text](docs/gameplay_ss.jpg?raw=true)
 
-    sh monopolyVsAI.sh
 
-## Tests framework Build on linux
+## 🚀 Features
+
+✔️ **Nearly all Monopoly Rules**: Classic Monopoly mechanics with buying, trading, and property management.
+
+✔️ **AI Opponents**: A strategic AI that simulates intelligent gameplay.
+
+✔️ **Human Opponents**: Local friend player that simulates a bit less intelligent gameplay.
+
+✔️ **Customizable Settings**: Adjust AI difficulty and other gameplay settings.
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+
+- C++ compiler (e.g., g++, clang++)
+- Make as build tool
+- SFML v.2.6.0 - Graphic library used in games and multimedia projects
+- Catch v.2 - Unit test framework used for testing our code
+
+### Steps to Install
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/FRSH-0109/Monopoly-vs-AI-Game.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+    cd Monopoly-vs-AI-Game
+   ```
+3. **Build the project:**
+   ```bash
+   make
+   ```
+4. **Start the game:**
+   ```bash
+   sh monopolyVsAI.sh
+   ```
+
+> **Note:** Ensure you have the SFML library (v2.6.0) installed on your machine!.
+
+---
+
+### Unit tests
 Unit testing framework - Catch2.
 
-This part have to be done only once, repeat only if "make cleanAll" or "make cleanTestsConfig" was called
-
-For downloading and building tests framework run
-    
-    make testsConfig
-
-## Tests Build and Run on linux
-To build avaiable tests run
-
+1. **Tests framework build**:
+   ```bash
+   make testsConfig
+   ```
+2. **Unit tests build**
+   ```bash
     make tests
-For launching testing script run
-    
-    sh monopolyTests
+   ```
+3. **Run test**
+   ```bash
+   sh monopolyTests
+   ```
 
-## Code formatting
-Before running clang-format you need to have it installed. In case you don't have it installed run:
+---
 
-    sudo apt install clang-format
+## 🎮 How to Play
 
-With clang-format installed code can be formatted by running
+🎯 **Objective:** Guide your frog from the bottom to the top of the screen, avoiding obstacles and hazards.
 
-    sh clang-format.sh
+- Players: From 1 to 4 human players faces off against the AI.
+- Game Flow: Players roll dice, buy properties, and make strategic decisions to defeat other players.
+- AI Difficulty: The game includes multiple difficulty levels for the AI.
 
-## Cleaning project directory
-For cleaning all project run
+---
 
-    make cleanAll
+## 🤝 Contributing
 
-For cleaning only game files run
+Contributions are welcome! To contribute:
 
-    make clean
+1. **Fork** the repository.
+2. **Create a new branch:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make your changes and commit them:**
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. **Push to the branch:**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open a Pull Request.**
 
-For cleaninig only tests files run
+📌 Please ensure your code follows the project's coding standards and includes appropriate tests.
 
-    make cleanTests
+---
 
-For cleaning tests framework run
+## 📜 License
 
-    make cleanTestsConfig
+This project is licensed under the **[MIT License](LICENSE)**.
+
+---
+
+## 🙌 Acknowledgements
+
+🎮 Monopoly is an iconic game, and this project is inspired by the classic board game version.
+
+---
+
+🚀 **Enjoy the game and happy coding!** 🐸🎉
+
+
